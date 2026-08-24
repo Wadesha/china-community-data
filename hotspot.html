@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国城市热点片区 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-size:14px;line-height:1.8;color:#111;background:#fff}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1240px;margin:0 auto;padding:0 20px}
+nav.toc{width:216px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px}
+nav.toc .toc-title{font-weight:700;margin-bottom:10px;color:#666;letter-spacing:2px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc .vol-h{font-weight:700;color:#000;margin:10px 0 3px 8px;font-size:11px;letter-spacing:1px}
+nav.toc .sub{padding-left:18px;color:#666}
+main{flex:1;min-width:0;padding:28px 0 80px 40px;max-width:920px}
+header.top{border-bottom:3px double #111;padding-bottom:16px;margin-bottom:24px}
+header.top .kicker{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11px;color:#666;letter-spacing:3px;margin-bottom:6px}
+header.top h1{font-size:27px;font-weight:700;letter-spacing:1px}
+header.top .sub{color:#333;margin-top:8px;font-size:14px;font-style:italic}
+.topnav{display:flex;gap:18px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px;margin-top:12px;padding:8px 0;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{font-weight:700;border-bottom:2px solid #111}
+p{margin:9px 0}
+p.lead{font-size:15px;line-height:1.9}
+.howto{border:1px solid #111;margin:0 0 30px}
+.howto .hd{background:#111;color:#fff;padding:6px 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px}
+.howto .bd{padding:12px 16px;font-size:13px}
+.howto .bd b{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;background:#f0f0f0;border:1px solid #bbb;padding:0 6px;margin-right:6px;font-weight:600}
+.vol{margin:56px 0 8px;padding:14px 0 10px;border-top:3px solid #111;border-bottom:1px solid #111}
+.vol .vol-no{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:4px;color:#666}
+.vol h2{font-size:22px;font-weight:700;margin-top:2px}
+.vol .vol-range{font-size:13px;color:#555;font-style:italic;margin-top:2px}
+.sec{margin:36px 0 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h3{font-size:17px;font-weight:700;border-left:5px solid #111;padding-left:10px}
+.sec .sec-sub{font-size:12px;color:#777;margin-left:15px;margin-top:2px}
+h4{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:14.5px;font-weight:700;margin:24px 0 6px}
+.entry{border:1px solid #bbb;margin:20px 0}
+.entry-head{padding:10px 16px 8px;border-bottom:1px solid #e5e5e5}
+.entry-head .zh{font-size:21px;font-weight:700;letter-spacing:1px}
+.entry-head .en{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#666;margin-left:10px}
+.entry-head .meta{font-size:12px;color:#888;margin-top:2px}
+.entry-def{border-left:4px solid #111;background:#fafafa;padding:9px 14px;margin:10px 14px;font-style:italic;font-size:13.5px;color:#222}
+.entry-bd{padding:2px 16px 10px}
+.spec{border:1px solid #111;margin:14px 0}
+.spec .spec-hd{background:#111;color:#fff;padding:5px 12px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11.5px;letter-spacing:2px;display:flex;justify-content:space-between}
+.spec .spec-hd .no{color:#aaa}
+table.spec-t{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px}
+table.spec-t td{border-bottom:1px solid #e8e8e8;padding:5px 12px;vertical-align:top}
+table.spec-t td.k{width:118px;background:#f5f5f5;font-weight:600;border-right:1px solid #e8e8e8}
+table.spec-t tr:last-child td{border-bottom:none}
+.fig{border:1px solid #111;margin:18px 0;background:#fff}
+.fig .fig-hd{display:flex;justify-content:space-between;align-items:baseline;padding:6px 12px;border-bottom:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fig .fig-hd .no{font-size:11px;letter-spacing:2px;color:#666}
+.fig .fig-hd .t{font-size:13px;font-weight:700}
+.fig .fig-bd{padding:10px 12px 4px}
+.fig .fig-note{padding:6px 12px 9px;font-size:12px;color:#555;border-top:1px dashed #ddd;margin-top:6px;line-height:1.6}
+.fig svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.cr{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;color:#777;margin:8px 0}
+.cr a{color:#444}
+blockquote{border-left:3px solid #999;margin:12px 0;padding:7px 16px;color:#444;font-size:13.5px;background:#fafafa}
+blockquote cite{display:block;font-size:11.5px;color:#888;margin-top:4px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.5px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t th{background:#111;color:#fff;text-align:left;font-weight:600;border:1px solid #111;padding:5px 9px;white-space:nowrap}
+table.t td{border:1px solid #ccc;padding:5px 9px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f7f7}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:12.5px;color:#333}
+.dim{color:#666}
+.band{margin:16px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.band .band-t{font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;color:#333}
+.band .bar{display:flex;height:40px;border:1px solid #111}
+.band .seg{border-right:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;text-align:center;line-height:1.3;padding:0 4px}
+.band .seg:nth-child(odd){background:#efefef}
+.band .seg:nth-child(even){background:#dcdcdc}
+.band .seg:last-child{border-right:none}
+.band .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:#888;margin-top:2px}
+.stat-row{display:flex;gap:12px;margin:14px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;border:1px solid #111;padding:8px 12px}
+.stat .v{font-size:20px;font-weight:700}
+.stat .k{font-size:11.5px;color:#666;margin-top:2px}
+ol.src{font-size:12px;color:#444;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+ol.src li{margin:4px 0;word-break:break-all}
+.lemma{border-bottom:1px dotted #bbb;padding:7px 0;font-size:13px}
+.lemma b{font-size:14.5px}
+.lemma .pos{font-size:11.5px;color:#888;font-family:Georgia,serif;font-style:italic;margin:0 4px}
+sup.ref{font-size:10.5px;color:#999}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+@media (max-width:900px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">卷目</div>
+  <div class="vol-h">卷首</div>
+  <a href="#howto">凡例</a>
+  <a href="#gen">总纲 · 六类框架</a>
+  <div class="vol-h">第一编</div>
+  <a href="#v1">滨水更新 2017—2026</a>
+  <a href="#s11" class="sub">§1.1 总论:岸线还给了走路的人</a>
+  <a href="#s12" class="sub">§1.2 上海"一江一河"</a>
+  <a href="#s13" class="sub">§1.3 亮马河与白鹅潭</a>
+  <div class="vol-h">第二编</div>
+  <a href="#v2">总部集聚</a>
+  <a href="#s21" class="sub">§2.1 总论:总部为什么扎堆</a>
+  <a href="#s22" class="sub">§2.2 深圳湾超总</a>
+  <a href="#s23" class="sub">§2.3 前滩·琶洲·交子·丽泽</a>
+  <div class="vol-h">第三编</div>
+  <a href="#v3">科学城</a>
+  <a href="#s31" class="sub">§3.1 总论:从园区到科学城</a>
+  <a href="#s32" class="sub">§3.2 张江与光谷</a>
+  <a href="#s33" class="sub">§3.3 装置先行的三个科学城</a>
+  <div class="vol-h">第四编</div>
+  <a href="#v4">制度合作区</a>
+  <a href="#s41" class="sub">§4.1 总论:一线与二线</a>
+  <a href="#s42" class="sub">§4.2 琴澳与深港</a>
+  <a href="#s43" class="sub">§4.3 临港·南沙·海南</a>
+  <div class="vol-h">第五编</div>
+  <a href="#v5">新中心</a>
+  <a href="#s51" class="sub">§5.1 总论:再造中心</a>
+  <a href="#s52" class="sub">§5.2 雄安</a>
+  <a href="#s53" class="sub">§5.3 杭州·合肥·成都·济南</a>
+  <div class="vol-h">第六编</div>
+  <a href="#v6">存量再生</a>
+  <a href="#s61" class="sub">§6.1 总论:从拆到绣</a>
+  <a href="#s62" class="sub">§6.2 张园与首钢园</a>
+  <a href="#s63" class="sub">§6.3 广深蓉渝</a>
+  <a href="#s64" class="sub">§6.4 隆福寺与烟台山</a>
+  <div class="vol-h">附录</div>
+  <a href="#appA">A · 术语表</a>
+  <a href="#appB">B · 参考来源</a>
+  <a href="#appC">C · 总年表</a>
+  <a href="#appD">D · 图版与档案目录</a>
+</nav>
+<main>
+
+<header class="top">
+  <div class="kicker">ENCYCLOPEDIA OF CHINESE RESIDENTIAL COMMUNITIES · 第五卷</div>
+  <h1>中国城市热点片区</h1>
+  <div class="sub">三十六个近几年被反复谈论的小地方:滨水、总部、科学城、制度区、新中心、存量再生——每条先写能看到什么,再写近几年发生了什么,最后写怎么来的</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+    <a href="planning.html">城市与区域</a>
+    <a href="landscape.html">城乡风貌</a>
+    <a href="region.html">区域志</a>
+    <a href="hotspot.html" class="cur">热点片区</a>
+  </div>
+</header>
+
+<!-- ==================== 凡例 ==================== -->
+<div class="howto" id="howto">
+  <div class="hd">凡例 · CONVENTIONS</div>
+  <div class="bd">
+    本卷为第五卷,与前四卷同体例:以条目(entry)为基本单元,词条头、定义段(楷体)、技术档案(档 n-n)、图版(图 n-n)、参见(→)俱全,<b>编号独立</b>——本卷"图 1-1"指本卷第一编第一图,与前四卷互不相涉。五卷分工:卷一讲<b>房子</b>,卷二讲<b>制度</b>,卷三讲<b>风貌</b>,卷四讲<b>大区实录</b>,本卷把镜头推近一层,讲<b>片区</b>——几平方公里、步行可穿、近年被反复谈论的小地方。<b>收录标准四条</b>:一,尺度为片区级(约 1—15 平方公里),不收城市级(如"整个成都")与单体项目级(如"一栋楼");二,时间上 2016—2026 年有连续可观察的变化,重点为 2022—2026;三,知名度上进入公共谈论——"周末去哪儿""公司搬哪儿""钱往哪儿去"三个问题至少占一个;四,只用现行通名与真实地名,不立新概念。<b>叙述纪律三段式</b>:每条先写"能看到什么"(现象:载体、业态、可核对的事实),再写"近几年发生了什么"(事件:具体到年月),最后写"怎么来的"(成因:规划决策、政策文件、资本与产业的接力)。不写行情判断,不作预测,不评好坏;数据以官方发布与主流媒体报道为准,时间截至 2026 年 8 月;引用以<sup class="ref">[n]</sup>标注,对应附录 B;与前四卷互见处以(→卷n §n.n)标出。
+  </div>
+</div>
+
+<!-- ==================== 总纲 ==================== -->
+<div class="sec" id="gen"><h3>总纲:为什么是"小区域"<span class="sec-sub">SIX TYPES, THIRTY-SIX DISTRICTS</span></h3></div>
+
+<p class="lead">城市谈论的单位变小了。2010 年代,公共话题里比较的是城市——一线、二线、新一线;到 2020 年代中期,被反复谈论的变成了城市里的<b>片区</b>:上海人说"去西岸",不说"去徐汇";深圳人问"公司搬到超总没有",不问"搬去南山没有"。这个变化有三个来源:城镇化放缓后,增量建设收敛到少数重点片区,塔吊集中在哪里,话题就在哪里;社交媒体把"去哪儿"变成可以精确到一个码头、一条街的日常问答;城市之间的竞争也从"城市对城市"落到"片区对片区"——西岸对前滩,超总对前海,张江对光谷。片区是政策、资本与话题的最小公约数。</p>
+
+<p>本卷收三十六个片区,按其"热"的来源分六类。分类标准是驱动机制,不是地理:</p>
+
+<table class="t">
+<tr><th>类型</th><th>共同动作</th><th>代表片区</th><th>关键词</th></tr>
+<tr><td><b>一 滨水更新</b></td><td>工业码头腾退 → 岸线贯通 → 场馆商业注入 → 产业叠加</td><td>徐汇滨江、杨浦滨江、北外滩、苏州河、世博文化公园、亮马河、白鹅潭</td><td>还江于民 · 三道贯通 · 美术馆群</td></tr>
+<tr><td><b>二 总部集聚</b></td><td>整片土地预留给企业总部 → 楼宇密集封顶入驻</td><td>深圳湾超总、前滩、琶洲、交子公园、丽泽</td><td>总部基地 · 中央绿轴 · 税收</td></tr>
+<tr><td><b>三 科学城</b></td><td>大科学装置先行 → 实验室与研发机构围装置布局</td><td>张江、光谷、怀柔、松山湖、合肥滨湖</td><td>大科学装置 · 国家科学中心</td></tr>
+<tr><td><b>四 制度合作区</b></td><td>中央文件划定边界 → 特殊政策在围墙内运行</td><td>横琴、前海、河套、临港、南沙、海南</td><td>封关运作 · 一线二线 · 零关税</td></tr>
+<tr><td><b>五 新中心</b></td><td>在主城之外另起一个中心 → 大事件(赛事/疏解)定型</td><td>雄安、杭州奥体、合肥骆岗、天府新区、济南起步区</td><td>疏解 · 赛后利用 · 公园城市</td></tr>
+<tr><td><b>六 存量再生</b></td><td>老城/老厂不拆 → 修缮与业态替换 → 演艺与首店引流</td><td>张园、首钢园、永庆坊、东郊记忆、十八梯、南头古城、隆福寺、烟台山</td><td>微改造 · 绣花功夫 · 演艺经济</td></tr>
+</table>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 0-1</span><span class="t">三十六片区类型 × 城市矩阵</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 430" width="100%" role="img" aria-label="三十六片区类型与城市矩阵图">
+<text x="16" y="24" font-size="12" font-weight="700">城市</text>
+<text x="80" y="24" font-size="12" font-weight="700">滨水</text>
+<text x="150" y="24" font-size="12" font-weight="700">总部</text>
+<text x="220" y="24" font-size="12" font-weight="700">科学城</text>
+<text x="300" y="24" font-size="12" font-weight="700">制度区</text>
+<text x="375" y="24" font-size="12" font-weight="700">新中心</text>
+<text x="450" y="24" font-size="12" font-weight="700">存量再生</text>
+<line x1="14" y1="32" x2="746" y2="32" stroke="#111" stroke-width="1.5"/>
+<text x="16" y="56" font-size="11.5" font-weight="700">上海</text>
+<rect x="80" y="44" width="62" height="18" fill="#111"/><text x="111" y="57" font-size="10" fill="#fff" text-anchor="middle">西岸等5</text>
+<rect x="150" y="44" width="62" height="18" fill="#555"/><text x="181" y="57" font-size="10" fill="#fff" text-anchor="middle">前滩</text>
+<rect x="220" y="44" width="72" height="18" fill="#777"/><text x="256" y="57" font-size="10" fill="#fff" text-anchor="middle">张江</text>
+<rect x="300" y="44" width="66" height="18" fill="#999"/><text x="333" y="57" font-size="10" fill="#fff" text-anchor="middle">临港</text>
+<rect x="450" y="44" width="72" height="18" fill="#bbb"/><text x="486" y="57" font-size="10" fill="#111" text-anchor="middle">张园</text>
+<text x="16" y="86" font-size="11.5" font-weight="700">北京</text>
+<rect x="80" y="74" width="62" height="18" fill="#111"/><text x="111" y="87" font-size="10" fill="#fff" text-anchor="middle">亮马河</text>
+<rect x="150" y="74" width="62" height="18" fill="#555"/><text x="181" y="87" font-size="10" fill="#fff" text-anchor="middle">丽泽</text>
+<rect x="220" y="74" width="72" height="18" fill="#777"/><text x="256" y="87" font-size="10" fill="#fff" text-anchor="middle">怀柔</text>
+<rect x="450" y="74" width="72" height="18" fill="#bbb"/><text x="486" y="87" font-size="10" fill="#111" text-anchor="middle">首钢园·隆福寺</text>
+<text x="16" y="116" font-size="11.5" font-weight="700">深圳</text>
+<rect x="150" y="104" width="62" height="18" fill="#555"/><text x="181" y="117" font-size="10" fill="#fff" text-anchor="middle">超总</text>
+<rect x="300" y="104" width="66" height="18" fill="#999"/><text x="333" y="117" font-size="10" fill="#fff" text-anchor="middle">前海·河套</text>
+<rect x="450" y="104" width="72" height="18" fill="#bbb"/><text x="486" y="117" font-size="10" fill="#111" text-anchor="middle">南头古城</text>
+<text x="16" y="146" font-size="11.5" font-weight="700">广州</text>
+<rect x="80" y="134" width="62" height="18" fill="#111"/><text x="111" y="147" font-size="10" fill="#fff" text-anchor="middle">白鹅潭</text>
+<rect x="150" y="134" width="62" height="18" fill="#555"/><text x="181" y="147" font-size="10" fill="#fff" text-anchor="middle">琶洲</text>
+<rect x="300" y="134" width="66" height="18" fill="#999"/><text x="333" y="147" font-size="10" fill="#fff" text-anchor="middle">南沙</text>
+<rect x="450" y="134" width="72" height="18" fill="#bbb"/><text x="486" y="147" font-size="10" fill="#111" text-anchor="middle">永庆坊</text>
+<text x="16" y="176" font-size="11.5" font-weight="700">成都</text>
+<rect x="150" y="164" width="62" height="18" fill="#555"/><text x="181" y="177" font-size="10" fill="#fff" text-anchor="middle">交子公园</text>
+<rect x="375" y="164" width="66" height="18" fill="#888"/><text x="408" y="177" font-size="10" fill="#fff" text-anchor="middle">天府新区</text>
+<rect x="450" y="164" width="72" height="18" fill="#bbb"/><text x="486" y="177" font-size="10" fill="#111" text-anchor="middle">东郊记忆</text>
+<text x="16" y="206" font-size="11.5" font-weight="700">杭州</text>
+<rect x="375" y="194" width="66" height="18" fill="#888"/><text x="408" y="207" font-size="10" fill="#fff" text-anchor="middle">奥体</text>
+<text x="16" y="236" font-size="11.5" font-weight="700">武汉</text>
+<rect x="220" y="224" width="72" height="18" fill="#777"/><text x="256" y="237" font-size="10" fill="#fff" text-anchor="middle">光谷</text>
+<text x="16" y="266" font-size="11.5" font-weight="700">合肥</text>
+<rect x="220" y="254" width="72" height="18" fill="#777"/><text x="256" y="267" font-size="10" fill="#fff" text-anchor="middle">滨湖科学城</text>
+<rect x="375" y="254" width="66" height="18" fill="#888"/><text x="408" y="267" font-size="10" fill="#fff" text-anchor="middle">骆岗公园</text>
+<text x="16" y="296" font-size="11.5" font-weight="700">东莞</text>
+<rect x="220" y="284" width="72" height="18" fill="#777"/><text x="256" y="297" font-size="10" fill="#fff" text-anchor="middle">松山湖</text>
+<text x="16" y="326" font-size="11.5" font-weight="700">雄安</text>
+<rect x="375" y="314" width="66" height="18" fill="#888"/><text x="408" y="327" font-size="10" fill="#fff" text-anchor="middle">启动区</text>
+<text x="16" y="356" font-size="11.5" font-weight="700">济南</text>
+<rect x="375" y="344" width="66" height="18" fill="#888"/><text x="408" y="357" font-size="10" fill="#fff" text-anchor="middle">起步区</text>
+<text x="16" y="386" font-size="11.5" font-weight="700">重庆</text>
+<rect x="450" y="374" width="72" height="18" fill="#bbb"/><text x="486" y="387" font-size="10" fill="#111" text-anchor="middle">十八梯</text>
+<text x="16" y="416" font-size="11.5" font-weight="700">福州</text>
+<rect x="450" y="404" width="72" height="18" fill="#bbb"/><text x="486" y="417" font-size="10" fill="#111" text-anchor="middle">烟台山</text>
+<text x="16" y="416" x="540" font-size="11.5" font-weight="700">海南</text>
+<rect x="590" y="404" width="80" height="18" fill="#999"/><text x="630" y="417" font-size="10" fill="#fff" text-anchor="middle">全岛封关</text>
+</svg>
+</div>
+<div class="fig-note">上海一城占七条(滨水五条 + 前滩 + 张园):不是偏心,是"一江一河"工程把上海滨水线整体推成了全国密度最高的热点片区带。制度区一类深圳、广州各占两条,因为深港、琴澳各有一组"制度对"。图中小格为该城在该类的代表条目,"等5"表示上海滨水共收五条。</div>
+</div>
+
+<div class="stat-row">
+<div class="stat"><div class="v">36</div><div class="k">收录片区(条目)</div></div>
+<div class="stat"><div class="v">15</div><div class="k">涉及城市(含海南全岛与雄安)</div></div>
+<div class="stat"><div class="v">6</div><div class="k">类型(按驱动机制分)</div></div>
+<div class="stat"><div class="v">2016—2026</div><div class="k">重点观察窗口(重心在 2022—2026)</div></div>
+</div>
+
+<div class="note">本卷主线一句话:<b>热点片区 = 一张图纸 + 一个主体 + 一串事件。</b>图纸是规划或中央文件(黄浦江两岸综合开发规划、深超总城市设计、《横琴方案》),主体是管委会或平台公司(西岸集团、深投控湾区城建、前海管理局),事件是可被看见的开业、封顶、入驻、封关、出光。图纸给边界,主体给执行,事件给热度——三者齐备,一片地方才会从"在建"变成"被谈论"。以下六编,每编先讲该类机制,再逐条过片区。</div>
+
+<!-- ============================================================ -->
+<!-- 第一编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v1">
+<div class="vol-no">第一编</div>
+<h2>滨水更新</h2>
+<div class="vol-range">2017 — 2026 · 从工业岸线到客厅岸线</div>
+</div>
+
+<div class="sec" id="s11"><h3>§1.1 总论:岸线还给了走路的人<span class="sec-sub">WATERFRONT RE-OPENING</span></h3></div>
+
+<p>中国城市的滨水线,在 2000 年之前基本是"生产性"的:码头、仓库、电厂、水泥厂、船厂贴着江修,市民看不见水。转折从上海开始——2002 年黄浦江两岸综合开发启动,把"生产岸线"换成"生活岸线"写进了官方语言;此后二十年,这条逻辑推广到几乎每座有水的城市。<b>滨水更新的通用流程是四步</b>:一,工业腾退(码头、工厂迁走,土地转换性质);二,岸线贯通(打通被单位大院和货场截断的沿江步道);三,内容注入(美术馆、商业、公园沿水排布);四,产业叠加(近三年最常见的是把科技公司与总部写字楼放进滨水区)。本编七条,全部落在这个流程的不同步序上。</p>
+
+<p>四步里最被低估的是第二步"贯通"。它的技术含量不在工程而在产权——岸线被几十家单位各占一段,打通一段要谈一家;上海黄浦江 45 公里贯通(2017 年底)、苏州河中心城段 42 公里贯通(2020 年底)动辄"辟通断点六十余处"<sup class="ref">[1][7]</sup>。贯通之后的断面也有通行配置:<b>三道并列</b>——贴水一层漫步道,中间一层跑步道,上面一层骑行道,绿化夹层,总宽十几米到几十米。这套断面从黄浦江复制到苏州河、亮马河、白鹅潭,已成滨水工程的"标准图"(→卷三 §6.2 工业遗存)。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-2</span><span class="t">"一江一河"贯通体系</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="上海一江一河贯通体系示意图">
+<text x="30" y="28" font-size="12.5" font-weight="700">黄浦江 · 45 公里岸线贯通(2017 年底)</text>
+<text x="30" y="46" font-size="10" fill="#666">杨浦大桥 —— 徐浦大桥,两岸贯通,本卷收其五段</text>
+<rect x="30" y="56" width="700" height="18" fill="#ddd" stroke="#111"/>
+<rect x="30" y="56" width="60" height="18" fill="#999"/><text x="60" y="69" font-size="9.5" fill="#fff" text-anchor="middle">杨浦滨江</text>
+<rect x="110" y="56" width="60" height="18" fill="#bbb"/><text x="140" y="69" font-size="9.5" fill="#111" text-anchor="middle">北外滩</text>
+<rect x="190" y="56" width="55" height="18" fill="#ddd"/><text x="217" y="69" font-size="9.5" fill="#111" text-anchor="middle">外滩</text>
+<rect x="265" y="56" width="62" height="18" fill="#ddd"/><text x="296" y="69" font-size="9.5" fill="#111" text-anchor="middle">陆家嘴</text>
+<rect x="345" y="56" width="80" height="18" fill="#bbb"/><text x="385" y="69" font-size="9.5" fill="#111" text-anchor="middle">世博文化公园</text>
+<rect x="445" y="56" width="100" height="18" fill="#999"/><text x="495" y="69" font-size="9.5" fill="#fff" text-anchor="middle">徐汇滨江(西岸)</text>
+<rect x="565" y="56" width="60" height="18" fill="#bbb"/><text x="595" y="69" font-size="9.5" fill="#111" text-anchor="middle">前滩</text>
+<text x="30" y="102" font-size="10" fill="#666">北 ↑</text>
+<text x="720" y="102" font-size="10" fill="#666">南 ↓</text>
+
+<line x1="30" y1="120" x2="730" y2="120" stroke="#999" stroke-dasharray="4 3"/>
+<text x="380" y="138" font-size="10.5" fill="#666" text-anchor="middle">苏州河在外白渡桥汇入黄浦江 —— 两套贯通系统在此接头</text>
+
+<text x="30" y="170" font-size="12.5" font-weight="700">苏州河 · 中心城段 42 公里贯通(2020 年底)</text>
+<text x="30" y="188" font-size="10" fill="#666">辟通断点 63 处,新建约 15 公里滨河绿道;2023 年起游船复航</text>
+<rect x="30" y="198" width="700" height="18" fill="#ddd" stroke="#111"/>
+<rect x="30" y="198" width="70" height="18" fill="#bbb"/><text x="65" y="211" font-size="9.5" fill="#111" text-anchor="middle">外白渡桥</text>
+<rect x="130" y="198" width="60" height="18" fill="#ddd"/><text x="160" y="211" font-size="9.5" fill="#111" text-anchor="middle">邮政大楼</text>
+<rect x="210" y="198" width="70" height="18" fill="#999"/><text x="245" y="211" font-size="9.5" fill="#fff" text-anchor="middle">M50·千树</text>
+<rect x="300" y="198" width="80" height="18" fill="#bbb"/><text x="340" y="211" font-size="9.5" fill="#111" text-anchor="middle">华东政法段</text>
+<rect x="400" y="198" width="80" height="18" fill="#ddd"/><text x="440" y="211" font-size="9.5" fill="#111" text-anchor="middle">中山公园码头</text>
+<rect x="500" y="198" width="80" height="18" fill="#999"/><text x="540" y="211" font-size="9.5" fill="#fff" text-anchor="middle">半马苏河公园</text>
+<text x="30" y="244" font-size="10" fill="#666">西 ↑(上游)</text>
+<text x="700" y="244" font-size="10" fill="#666">东 ↓(入江口)</text>
+
+<rect x="30" y="262" width="700" height="44" fill="#f7f7f7" stroke="#999" stroke-dasharray="3 3"/>
+<text x="44" y="280" font-size="11" font-weight="700">三道断面(通行配置)</text>
+<text x="44" y="297" font-size="10" fill="#444">漫步道(贴水)—— 跑步道(中层)—— 骑行道(上层);绿化夹层,总宽十几米至几十米,从黄浦江复制到全国</text>
+</svg>
+</div>
+<div class="fig-note">深色段为本卷单独成条的片区。黄浦江五条 + 苏州河一条,再加北京亮马河、广州白鹅潭——本编七条覆盖"一江一河"的完整样本:上海的滨水工程是理解全国同类片区的基准参照系。</div>
+</div>
+
+<p>七条的分布:上海五条(徐汇滨江、杨浦滨江、北外滩、苏州河、世博文化公园)构成"一江一河"的完整剖面——徐汇滨江是"文化+AI"复合型,杨浦滨江是"工业遗存+科创"型,北外滩是"商务楼宇"型,苏州河是"窄水生活"型,世博文化公园是"大事件场地转公园"型;北京亮马河是"城市支流治理"型(河窄、楼密、消费贴水);广州白鹅潭是"三江交汇+文化地标"型。同是滨水,七个答案。</p>
+
+<div class="sec" id="s12"><h3>§1.2 上海"一江一河"<span class="sec-sub">HUANGPU RIVER &amp; SUZHOU CREEK · 5 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">徐汇滨江(西岸)</span><span class="en">West Bund</span>
+<div class="meta">上海 · 徐汇区 · 黄浦江西岸 · 岸线约 11.4 公里 · 类型:工业岸线 → 文化岸线 → AI 岸线</div></div>
+<div class="entry-def">黄浦江边由煤码头、水泥厂和机场油库变成的"文化走廊":美术馆沿江一字排开,步道贴着水走,背后是大模型公司扎堆的写字楼——上海这几年"去哪儿玩、聊什么产业"两个问题的答案,有一阵都指向这里。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从北端日晖港桥沿龙腾大道向南走,岸线像一条展廊:先是龙美术馆西岸馆的清水混凝土伞拱(2014 年开馆),往南是西岸美术馆(2019 年开馆)与它的广场,再往南是五个白色圆罐——油罐艺术中心(2019 年 3 月开放),罐体之间的绿地可以野餐;继续南行是西岸传媒港的楼群,最南端是工业遗存改造的滨水商业"Gate M 西岸梦中心"(2024 年 9 月 26 日开业)。贴水一层是漫步道,上面一层跑步道、再上面骑行道,三层平行贯通 8.95 公里<sup class="ref">[1][2]</sup>;江对岸正对前滩的天际线。塔吊、铁轨、水泥筒仓没有拆,立在步道边当景观。</p>
+<p><b>近几年发生了什么。</b>2019 年是"双馆年":西岸美术馆开馆并与法国蓬皮杜中心启动五年合作项目,油罐艺术中心同年 3 月开放。2023 年 9 月,"模速空间"大模型创新生态社区在滨江揭牌——总建筑面积 5 万平方米,是全国首个大模型生态社区;到 2026 年已吸纳超过 300 家大模型企业、带动集聚 1700 多家人工智能企业,上海人工智能实验室等机构同在西岸片区<sup class="ref">[2]</sup>。2024 年 9 月 26 日,Gate M 西岸梦中心正式开业;同月西岸"漫游线"样板段试运行。文化场馆、滨水商业、AI 产业三条线叠在同一条岸线上,是它近三年被反复谈论的原因。</p>
+<p><b>怎么来的。</b>这片岸线原是北票煤码头、上海水泥厂等工业与仓储用地,黄浦江两岸 2002 年起启动综合开发,2010 年世博会前后完成腾退;此后徐汇区把滨江定位为"西岸文化走廊",逐馆落成美术馆群,把码头吊机与铁轨留在原地(工业遗存的通用做法,→卷三 §6.2)。2017 年底黄浦江从杨浦大桥到徐浦大桥 45 公里岸线贯通<sup class="ref">[1]</sup>,"三道"断面成为滨水更新的通行配置(→图 1-2)。产业这半边是 2010 年代规划的西岸传媒港与西岸数字谷,大模型公司进来后,滨江从"文化岸线"再叠一层"AI 岸线"——馆是十年前种的,热度是近三年结的。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-1</span><span class="t">西岸岸线纵剖面:三层功能叠合</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 310" width="100%" role="img" aria-label="徐汇滨江岸线纵剖面示意图">
+<rect x="30" y="210" width="700" height="28" fill="#ddd" stroke="#111"/>
+<text x="380" y="228" font-size="11" text-anchor="middle">黄 浦 江</text>
+<rect x="60" y="120" width="92" height="90" fill="#f5f5f5" stroke="#111"/>
+<text x="106" y="146" font-size="11" font-weight="700" text-anchor="middle">龙美术馆</text>
+<text x="106" y="163" font-size="9.5" text-anchor="middle" fill="#444">2014 开馆</text>
+<text x="106" y="179" font-size="9.5" text-anchor="middle" fill="#444">清水混凝土伞拱</text>
+<rect x="180" y="120" width="92" height="90" fill="#fff" stroke="#111"/>
+<text x="226" y="146" font-size="11" font-weight="700" text-anchor="middle">西岸美术馆</text>
+<text x="226" y="163" font-size="9.5" text-anchor="middle" fill="#444">2019 开馆</text>
+<text x="226" y="179" font-size="9.5" text-anchor="middle" fill="#444">与蓬皮杜合作</text>
+<rect x="300" y="120" width="92" height="90" fill="#f5f5f5" stroke="#111"/>
+<text x="346" y="146" font-size="11" font-weight="700" text-anchor="middle">油罐艺术中心</text>
+<text x="346" y="163" font-size="9.5" text-anchor="middle" fill="#444">2019 开放</text>
+<text x="346" y="179" font-size="9.5" text-anchor="middle" fill="#444">五个航空油罐</text>
+<rect x="420" y="120" width="110" height="90" fill="#fff" stroke="#111"/>
+<text x="475" y="146" font-size="11" font-weight="700" text-anchor="middle">西岸数字谷</text>
+<text x="475" y="163" font-size="9.5" text-anchor="middle" fill="#444">模速空间 2023</text>
+<text x="475" y="179" font-size="9.5" text-anchor="middle" fill="#444">300+ 大模型企业</text>
+<rect x="560" y="120" width="92" height="90" fill="#f5f5f5" stroke="#111"/>
+<text x="606" y="146" font-size="11" font-weight="700" text-anchor="middle">西岸梦中心</text>
+<text x="606" y="163" font-size="9.5" text-anchor="middle" fill="#444">2024 开业</text>
+<text x="606" y="179" font-size="9.5" text-anchor="middle" fill="#444">工业遗存商业</text>
+<line x1="30" y1="248" x2="730" y2="248" stroke="#111"/>
+<rect x="30" y="248" width="700" height="16" fill="#111"/>
+<text x="380" y="260" font-size="9.5" fill="#fff" text-anchor="middle">漫步道 —— 跑步道 —— 骑行道(三层平行贯通 8.95 公里,塔吊与铁轨留在步道边)</text>
+<text x="30" y="292" font-size="10.5" fill="#444">纵剖面自北(日晖港桥)向南:文化(三馆)→ 产业(数字谷)→ 商业(梦中心);北端城市、南端徐汇滨江跑道公园。</text>
+</svg>
+</div>
+<div class="fig-note">西岸的排列不是偶然:文化设施靠北(衔接市区人流),产业组团居中(数字谷写字楼),商业收在南端(梦中心)。同一条岸线十年里换了三种身份——煤码头(—2002)、文化走廊(2014—2019)、AI 岸线(2023—)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-1</span><span class="no">西岸三级跳:一条岸线的三次定位</span></div>
+<table class="spec-t">
+<tr><td class="k">一级:工业岸线</td><td>—2002:北票煤码头、上海水泥厂、龙华机场油库、铁路南浦站——生产性岸线,市民不可进入;2002 年黄浦江两岸综合开发启动,土地性质开始转换</td></tr>
+<tr><td class="k">二级:文化岸线</td><td>2014—2019:龙美术馆西岸馆(2014)、余德耀美术馆、星美术馆、油罐艺术中心(2019.3)、西岸美术馆(2019.11,与蓬皮杜中心五年合作)——以美术馆群定义"西岸文化走廊"</td></tr>
+<tr><td class="k">三级:AI 岸线</td><td>2023—:模速空间(2023.9,5 万㎡,全国首个大模型生态社区)→ 2026 年超 300 家大模型企业、带动 1700 余家 AI 企业;叠加西岸传媒港、西岸数字谷既有载体</td></tr>
+<tr><td class="k">商业补点</td><td>Gate M 西岸梦中心(2024.9.26 开业):由原上海飞机制造厂装配车间与龙华机场油库区改造的滨水商业街区</td></tr>
+<tr><td class="k">贯通参数</td><td>徐汇段岸线约 11.4 公里;"三道"贯通 8.95 公里;2017 年底随黄浦江 45 公里贯通整体开放</td></tr>
+</table></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">杨浦滨江</span><span class="en">Yangpu Riverside</span>
+<div class="meta">上海 · 杨浦区 · 黄浦江西岸 · 滨江南段约 5.5 公里 · 类型:工业锈带 → 生活秀带 → 科创岸线</div></div>
+<div class="entry-def">中国近代工业的发源岸线——水厂、纱厂、船厂连成排——如今被叫作"世界仅存的工业遗产带之一":水管栈桥上走人,老厂房里做展览,美团、B 站、字节的新楼正在岸线后面长出来。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从秦皇岛路轮渡站沿江向北:杨树浦水厂的英式城堡立面(1883 年建,仍在供水)贴着江,栈桥从水厂上方跨过;永安栈房、毛麻仓库、明华糖仓、祥泰木行一字排开,都换了新身份——仓库变展厅、糖仓变书店与秀场<sup class="ref">[5]</sup>。江边保留着吊车、系缆桩和铁轨,步行道从工业构筑物之间穿过去。再往北,复兴岛的共青路边,原中华造船厂的船台 2025 年 9 月 30 日作为"船台公园"开放——船坞骨架罩在公园上头<sup class="ref">[5]</sup>。</p>
+<p><b>近几年发生了什么。</b>2019 年 11 月,杨浦滨江公共空间全线贯通,"工业锈带"变"生活秀带"的说法从这一年进入公共语言。此后是科创接力:滨江南段 5.5 公里中,3.8 公里被规划为"新质秀岸",2025 年起向全球推介 43 公顷 16 幅地块;美团上海科技中心、B 站全球总部、抖音集团上海滨江中心三个项目在建,预计 2026 年同步竣工<sup class="ref">[5]</sup>。2023 年 12 月,杨浦滨江入选国家文物保护利用示范区。老厂区、新总部、艺术展在同一段岸线上排队出现。</p>
+<p><b>怎么来的。</b>杨浦是中国近代工业的起点之一:1883 年杨树浦水厂、1890 年代起的纱厂群、1930 年代的船厂,把这段江岸排成了"中国近代工业遗产最完整的岸线"(上海官方表述)。2000 年代制造业退出,2010 年代进入"以遗存保护带动更新"的轨道——这与徐汇滨江"推倒重来做文化走廊"不同,杨浦的厂房密度太高,只能留下来用(两种路径的分岔,→图 1-2 注)。科创企业进来是第三步:杨浦有复旦、同济的高校底子,互联网大厂沿江买地建楼,把"大学—厂区—江岸"串成一条线。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">北外滩</span><span class="en">North Bund</span>
+<div class="meta">上海 · 虹口区 · 黄浦江西岸 · 约 4 平方公里 · 类型:航运服务 + 商务楼宇型滨水区</div></div>
+<div class="entry-def">外滩对岸、陆家嘴身后的"第三块":浦东天际线照片里经常闯进画面的那片楼。它的热不是靠美术馆,而是靠一栋比一栋高的写字楼——包括一栋正在长到 480 米的"浦西第一高楼"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从外白渡桥向北,滨江步道贴着历史建筑走(上海大厦、俄罗斯联邦驻沪总领事馆旧址),隔江正对陆家嘴三件套——这是上海最出片的机位之一。往里走是白玉兰广场(320 米,2017 年竣工,浦西已建成的最高楼,2024 年观景台开放),山寿里、提篮桥一带的里弄与犹太难民纪念馆夹在楼宇之间;来福士、友邦金融中心等商业楼宇沿东长治路排开<sup class="ref">[6]</sup>。</p>
+<p><b>近几年发生了什么。</b>主角是一栋楼:北外滩中心(91 街坊)2023 年 3 月开工,480 米、99 层、总建筑面积约 45.4 万平方米、总投资约 193 亿元,KPF 设计;2025 年 11 月出正负零,12 月主体结构突破 100 米,2026 年 7 月核心筒突破 200 米,预计 2030 年全面竣工——建成后是浦西第一高楼<sup class="ref">[6]</sup>。围绕它,2026 年上半年北外滩商圈新增首店、旗舰店、体验店 12 家。航运是另一半叙事:这里集聚航运功能性机构与航运服务企业,是上海国际航运中心的"服务客厅"。</p>
+<p><b>怎么来的。</b>北外滩的规划定位几经抬升:2020 年上海把它与外滩、陆家嘴并列为"黄金三角",提出"运作全球资本的总部聚集地、具有全球影响力的世界会客厅"。它的土地逻辑与陆家嘴三十年前相同——拆出整片可开发用地、留给金融机构与企业总部——只是这次抢楼的是航运、金融与科技企业的中国总部。里弄与新房、老教堂与玻璃楼叠在一起,是"黄金三角"里更新最晚、混杂度最高的一角。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">苏州河两岸</span><span class="en">Suzhou Creek</span>
+<div class="meta">上海 · 跨六区 · 中心城段 42 公里 · 类型:窄水生活型滨水区</div></div>
+<div class="entry-def">比黄浦江窄、比黄浦江日常的那条河:两岸是老仓库、新楼盘和大学校园,步道贴着水从居民楼下穿过——上海人叫它"外婆家的河",近五年它从"看不见的水沟"变成了全程可以散步、坐船的公共空间。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从外白渡桥沿河向西:邮政总局大楼的巴洛克穹顶压着河口;M50 创意园(原 1937 年英商信和纱厂,1999 年停产后被画家租下)的涂鸦墙贴着河;再往西,天安千树像一座种满树的山立在昌化路桥边;华东政法大学长宁校区的滨河段把校园围墙打开,步道从 27 栋历史建筑脚下过;普陀段的"半马苏河公园"沿北岸铺开 35 公顷绿地<sup class="ref">[7]</sup>。游船 2023 年复航,中山公园码头到外白渡桥可以坐船走完。</p>
+<p><b>近几年发生了什么。</b>时间线三步:2018 年苏州河中心城段贯通工程全面启动;2020 年底 42 公里基本贯通,辟通断点 63 处,新建约 15 公里滨河绿道<sup class="ref">[7]</sup>;2021 年 10 月起进入"文旅提升"阶段。2023 年是内容年:1 月半马苏河公园开放,5 月中山公园码头启用、华东政法段水岸联动线路开通,全年"悠游苏州河"接待游客超 12 万人次;9 月首届苏州河彩船巡游。2025 年,"一江一河"全年大型主题活动超 800 场、到访群众超 1.7 亿人次<sup class="ref">[1][7]</sup>。</p>
+<p><b>怎么来的。</b>苏州河是上海的"工业内河":1920 年代沿河挤满纱厂、面粉厂、仓库,河水黑臭了大半个世纪,1990 年代起截污治水,2000 年代初见清。但岸线仍被单位、小区、围墙切成分段私有——贯通工程谈的比建的多。它的更新逻辑与黄浦江不同:黄浦江岸宽楼大,做的是"景观+地标";苏州河河窄楼密,做的是"生活+通勤"——步道宽处三五米,从居民晾衣杆下面过。窄水更新的样本意义在这里:全国大量城市拥有的是苏州河这种尺度的河,而不是黄浦江。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">世博文化公园</span><span class="en">Expo Culture Park</span>
+<div class="meta">上海 · 浦东新区 · 黄浦江东岸 · 约 2 平方公里 · 类型:大事件场地 → 城市公园</div></div>
+<div class="entry-def">2010 年世博会浦东园区原址上长出来的公园:保留了四座世博场馆,堆了一座 48 米的"双子山",旁边是刚建成的上海大歌剧院——上海把最后一块临江大地留给了绿地而不是楼。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>公园分两期:北区 2021 年 12 月 31 日先开,江南园林"申园"、保留的卢森堡馆、意大利馆在其中;南区 2024 年 9 月 20 日开园,主角是双子山——主峰 48 米、次峰 37 米,占地上百亩,是国内第一座高度超过 40 米的空腔结构人工仿自然山林(山体里是停车库),实行预约登山<sup class="ref">[8]</sup>。温室花园 2.2 万平方米,玻璃穹顶下分海市沙洲、云上森林、云雾峡谷三馆。公园东南角,上海大歌剧院的白色螺旋扇形屋面已经完工——斯诺赫塔(Snøhetta)设计,总建筑面积 14.6 万平方米<sup class="ref">[8]</sup>。</p>
+<p><b>近几年发生了什么。</b>2024 年 9 月 20 日南区开园、双子山开放,是当年上海最受关注的公共空间事件——这座山从动工起就被市民"云监工",开放首月预约爆满<sup class="ref">[8]</sup>。2026 年 6 月,上海大歌剧院完成竣工验收备案、建筑本体首次完整亮相,进入开幕倒计时,预计 2026 年 10 月投入运营<sup class="ref">[8]</sup>。温室花园、世界花艺园陆续开放后,公园从"绿地"变成"目的地"。</p>
+<p><b>怎么来的。</b>2010 年世博会闭幕后,浦东园区留下大片临时场馆用地。2017 年 9 月,上海决定在原址建"世博文化公园"——这个决定本身就是事件:同一时期多数城市把大型活动场地转为商务开发,上海选择了公园,官方表述是"把最好的资源留给人民"。四座外国馆保留改造,大歌剧院、国际马术中心作为文化设施新插入。双子山的来历更直白:周边居民在规划征询中提出"这里缺一座山",规划方就堆了一座——人工山的空腔正好解决了公园的停车需求。</p>
+</div>
+</div>
+
+<div class="sec" id="s13"><h3>§1.3 亮马河与白鹅潭<span class="sec-sub">BEYOND SHANGHAI · 2 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">亮马河</span><span class="en">Liangma River</span>
+<div class="meta">北京 · 朝阳区 · 三环至四环之间 · 航线 6 公里 / 绿道 18 公里 · 类型:城市支流治理型滨水区</div></div>
+<div class="entry-def">北京东北角一条不起眼的小河,治理后成了"京城塞纳河":白天有人钓鱼、皮划艇,晚上游船和两岸灯光挤满相机——它是"窄水更新"在北京的翻版,也是近三年北京出镜率最高的水岸。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>河道从燕莎友谊商城东侧的燕莎码头出发,经蓝色港湾、郡王府,下穿东四环路,到红领巾湖,航线全长 6 公里;两岸串起 24 座桥、18 个景观节点,官方概括为"1 河 2 湖 24 桥 18 景"<sup class="ref">[3]</sup>。蓝色港湾(2004 年开业的欧式商业小镇)是人流枢纽,灯光节每年冬天办;燕莎码头和蓝港码头排着等游船的队。18 公里滨水绿道全线连通,跑步的人从朝阳公园一路跑到三里屯方向。</p>
+<p><b>近几年发生了什么。</b>时间线:2019 年 4 月朝阳区启动亮马河滨水空间更新,实施岸线整治、桥梁改造、慢行连通、旅游通航等六大工程;2020 年燕莎码头开放,航线通航;2023 年燕莎桥滨水通道贯通,18 公里绿道全线连通——当年 12 月 31 日跨年夜,亮马河商圈一夜接待 19.7 万人<sup class="ref">[3]</sup>。2024 年"时光闸"水上裸眼 3D 落成;2025 年夏季日均客流超 2 万人次,游船票价 80 元、夜游好评率 98.6%<sup class="ref">[3]</sup>。第十八届蓝色港湾灯光节 2025 年 12 月 19 日启幕,已与广州、佛山跨城联动<sup class="ref">[3]</sup>。</p>
+<p><b>怎么来的。</b>亮马河原是排水河道,1980 年代整治过一次,长期"有水无岸"——水在,但两岸走不通、坐不下。2019 年的更新把"治水"与"治岸"合并做:桥梁改造预留 2.5 米通航净高,为游船穿桥做准备;商业(蓝港、燕莎)、使馆区、居住区沿河排布,天然有消费人口。它证明了一件事:滨水更新不依赖大江大河——一条 6 公里的城市支流,只要岸线贯通、商业衔接、灯光到位,同样能成为城市客厅。这与苏州河是同一个尺度的成功(→§1.2 苏州河)。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">白鹅潭</span><span class="en">Bai'etan (White Goose Pool)</span>
+<div class="meta">广州 · 荔湾区 · 珠江三江交汇处 · 类型:老城滨水 + 文化地标型</div></div>
+<div class="entry-def">珠江在广州老城西端摊开的那片宽水面——三江在此交汇。它的东岸是骑楼老城,西岸一百多年是仓库与码头;现在,一艘"珠江巨轮"形状的建筑横在水边,把广州的文化注意力拉回了老西关。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>白鹅潭大湾区艺术中心横卧在荔湾区白鹅潭畔:广东美术馆、广东省非物质文化遗产馆、广东文学馆"三馆合一",总建筑面积约 14.4 万平方米,外立面像一艘起航的巨轮<sup class="ref">[4]</sup>。沿江向东是沙面岛的欧式建筑群与白天鹅宾馆;对岸(珠江南岸)是太古仓码头改造的商业街区。往南,聚龙湾片区的滨水商业"聚龙湾太古里"2025 年 12 月首开区试运营,红砖厂房与滨水步道相接——老仓库区在换新内容<sup class="ref">[4]</sup>。</p>
+<p><b>近几年发生了什么。</b>2022 年 5 月艺术中心主体结构封顶;2024 年 4 月 28 日正式启用,五一向公众开放,当年即被评为广州十大文化地标<sup class="ref">[4]</sup>。聚龙湾太古里首开区 2025 年 12 月 23 日试运营,一期建筑面积约 5 万平方米,至当月底入驻商户 70 余家、华南及广州首店占比近四成;片区内的聚龙湾首发中心已封顶,预计 2026 年下半年交付<sup class="ref">[4]</sup>。三江交汇的岸线上,"文化场馆 + 太古系商业"的组合正在合龙。</p>
+<p><b>怎么来的。</b>白鹅潭是广州近代航运的心脏:沙面对岸的太古仓、渣甸仓沿江排开,货轮在此调头。2010 年代广州把文化设施布局重心从珠江新城西移,2018 年广东省决定"三馆合一"落子白鹅潭,2019 年 12 月奠基<sup class="ref">[4]</sup>。选址逻辑与上海的西岸同构:老城滨水、工业遗存多、地价相对低、岸线完整——文化地标是滨水老城更新的"第一张多米诺"。聚龙湾则是第二张:场馆聚人气,商业接住人气,老仓库变消费场景。</p>
+</div>
+</div>
+<!-- ============================================================ -->
+<!-- 第二编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v2">
+<div class="vol-no">第二编</div>
+<h2>总部集聚</h2>
+<div class="vol-range">2016 — 2026 · 把整片地预留给企业的城市赌注</div>
+</div>
+
+<div class="sec" id="s21"><h3>§2.1 总论:总部为什么扎堆<span class="sec-sub">HEADQUARTERS DISTRICTS</span></h3></div>
+
+<p>"总部经济"这个词 2000 年代就有,但"总部<b>基地</b>"——整片几平方公里的土地统一规划、定向出让给龙头企业、只盖总部楼——是 2016 年以后才密集出现的做法。它的生成逻辑是三段:地方政府不再零散给税收优惠,而是<b>给地</b>——划出一片完整地块,统一做城市设计,基础设施先行;企业不再买楼入驻,而是<b>拿地自建</b>——楼是自己的,名字刻在楼顶,搬不走;城市得到的回报是税收、就业与"天际线广告"。本编五条,是这套逻辑在五种条件下的展开。</p>
+
+<p>五个样本的差别在于"招谁":深圳湾超总招的是<b>旗舰混合</b>——央企、金融、科技、制造业龙头各来几家,谁都不是唯一主角;上海前滩招的是<b>综合新城</b>——总部之外配住宅、学校、医院、商业,把"上班的地方"做成"生活的地方";广州琶洲招的是<b>单一行业</b>——互联网大厂集中拿地,十年成势;成都交子公园招的是<b>金融</b>——机构总部加公园与商业配套;北京丽泽招的是<b>金融次中心</b>——在金融街之外再造一个"第二金融街"。判断一个总部基地成没成,看三个可见信号:楼封顶没有(资本到位)、名字挂出来没有(企业到位)、晚上亮灯没有(人到位)。</p>
+
+<div class="sec" id="s22"><h3>§2.2 深圳湾超总<span class="sec-sub">SHENZHEN BAY SUPER HEADQUARTERS BASE · 1 ENTRY</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">深圳湾超级总部基地</span><span class="en">Shenzhen Bay Super Headquarters Base</span>
+<div class="meta">深圳 · 南山区 · 红树湾片区 · 用地约 117 公顷 · 规划建筑面积约 520 万㎡ · 类型:旗舰混合型总部基地</div></div>
+<div class="entry-def">深圳在最后一整块临海地段上押的注:117 公顷土地不留住宅、不搞开发,全部预留给"别人的总部"——央企、银行、手机厂、无人机公司各盖各的楼,楼群里嵌一条贯通到海的中央绿轴。它的看点不是哪一栋楼,而是十几栋总部楼在同一张时间表上封顶、入驻。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从深圳湾公园向北望,超总的塔楼群贴着海岸线排开:招商银行全球总部大厦、中国电子总部、中兴通讯总部、欧加(OPPO)总部、京东深圳总部等相继封顶或投用;最显眼的将是碳云智能总部那座造型独特的双塔。地块中央,滨海大道下沉入隧道、顶上覆土成绿——中央绿轴的上盖覆绿区域约 10.5 万平方米,2026 年 7 月 30 日向市民开放,从此可以从深圳湾公园一路步行穿过超总街区<sup class="ref">[9]</sup>。东侧的深圳湾文化广场(占地约 19 万平方米)已建成亮相,2023 年起限时开放参观<sup class="ref">[9]</sup>。</p>
+<p><b>近几年发生了什么。</b>深超总是深圳十九个重点开发建设片区之一,由深投控旗下深圳湾区城市建设发展有限公司操盘。截至 2026 年 2 月,已迎来 19 家企业总部入驻:中国电子、招商银行、深投控、京东、恒力集团、中兴通讯、中信证券、欧加(OPPO)、大疆、传音、TCL 华星光电、神州数码、天音通信、联泰集团、深圳地铁、万科、碳云智能等<sup class="ref">[9]</sup>。总投资约 2100 亿元,已累计完成投资约 1200 亿元。2026 年 7 月 30 日中央绿轴开放,是片区从"工地"转"街区"的标志性一天——超总开始能走了,不只是能看<sup class="ref">[9]</sup>。</p>
+<p><b>怎么来的。</b>这块地的命运转了三道弯:1990 年代是沙河高尔夫球场与临海荒地;2000 年代规划为"塘朗山—深圳湾城市客厅"序列的核心段;2013 年前后定名"超级总部基地",深圳给它的定义是"全球总部聚集区、都会核心功能承载区"——"超级"二字指的不是楼高,而是总部密度与功能复合度。规划按 9 个单元编号开发,就业人口按 30 万人配置<sup class="ref">[9]</sup>。它与隔湾相望的前海(→§4.2 前海)分工明确:前海做制度与服务业开放,超总做企业旗舰与城市形象——一个深圳,两种总部叙事。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-1</span><span class="t">深超总:中央绿轴缝合楼与海</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 320" width="100%" role="img" aria-label="深圳湾超级总部基地结构示意">
+<rect x="30" y="250" width="700" height="46" fill="#ddd" stroke="#111"/>
+<text x="380" y="270" font-size="11.5" text-anchor="middle" font-weight="700">深 圳 湾</text>
+<text x="380" y="287" font-size="9.5" text-anchor="middle" fill="#444">深圳湾公园(滨海休闲带)</text>
+<rect x="30" y="216" width="700" height="34" fill="#f0f0f0" stroke="#111"/>
+<text x="380" y="233" font-size="10.5" text-anchor="middle">总部塔楼带(招商银行 · 中国电子 · 中兴 · OPPO · 京东 · 大疆 · 碳云 · TCL 华星 …)</text>
+<text x="380" y="246" font-size="9" text-anchor="middle" fill="#555">19 家总部入驻(截至 2026.2)· 总投资约 2100 亿元</text>
+<rect x="330" y="60" width="100" height="156" fill="#111"/>
+<text x="380" y="120" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">中央绿轴</text>
+<text x="380" y="138" font-size="9.5" fill="#fff" text-anchor="middle">滨海大道下沉</text>
+<text x="380" y="153" font-size="9.5" fill="#fff" text-anchor="middle">上盖覆绿 10.5 万㎡</text>
+<text x="380" y="168" font-size="9.5" fill="#fff" text-anchor="middle">2026.7.30 开放</text>
+<text x="380" y="183" font-size="9.5" fill="#fff" text-anchor="middle">北接华侨城湿地</text>
+<text x="380" y="198" font-size="9.5" fill="#fff" text-anchor="middle">南通深圳湾公园</text>
+<rect x="60" y="60" width="240" height="156" fill="#fafafa" stroke="#999"/>
+<text x="180" y="88" font-size="11" text-anchor="middle" font-weight="700">西部组团</text>
+<text x="180" y="110" font-size="9.5" text-anchor="middle" fill="#444">9 个开发单元 · 约 520 万㎡</text>
+<text x="180" y="128" font-size="9.5" text-anchor="middle" fill="#444">用地约 117 公顷 · 就业约 30 万人</text>
+<text x="180" y="146" font-size="9.5" text-anchor="middle" fill="#444">实施主体:深投控湾区城建</text>
+<rect x="460" y="60" width="240" height="156" fill="#fafafa" stroke="#999"/>
+<text x="580" y="88" font-size="11" text-anchor="middle" font-weight="700">东部组团</text>
+<text x="580" y="110" font-size="9.5" text-anchor="middle" fill="#444">深圳湾文化广场(约 19 万㎡)</text>
+<text x="580" y="128" font-size="9.5" text-anchor="middle" fill="#444">2023 年起限时开放参观</text>
+<text x="580" y="146" font-size="9.5" text-anchor="middle" fill="#444">科苑南路一线</text>
+<line x1="30" y1="52" x2="730" y2="52" stroke="#111" stroke-width="1.5"/>
+<text x="30" y="44" font-size="10" fill="#444">北 ↑ 华侨城湿地 / 欢乐海岸方向</text>
+</svg>
+</div>
+<div class="fig-note">深超总的规划核心是"先地下、后地上":滨海大道下沉入隧道,把原被快速路切断的地块缝合起来,绿轴从华侨城湿地直通海边。判断这类片区,看一条硬指标——绿轴开放之日,才是片区从工地变成街区之时(2026 年 7 月 30 日)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 2-1</span><span class="no">深超总开发参数</span></div>
+<table class="spec-t">
+<tr><td class="k">用地 / 建面</td><td>用地约 117 公顷;规划总开发建筑面积约 520 万平方米;按 9 个单元编号开发</td></tr>
+<tr><td class="k">定位表述</td><td>全球总部聚集区、都会核心功能承载区;深圳十九个重点开发建设片区之一</td></tr>
+<tr><td class="k">实施主体</td><td>深投控旗下深圳湾区城市建设发展有限公司(片区战略实施平台)</td></tr>
+<tr><td class="k">入驻总部</td><td>截至 2026 年 2 月共 19 家:中国电子、招商银行、深投控、京东、恒力集团、中兴通讯、中信证券、欧加(OPPO)、大疆、传音、TCL 华星光电、神州数码、天音通信、联泰集团、深圳地铁、万科、碳云智能等</td></tr>
+<tr><td class="k">投资</td><td>总投资约 2100 亿元;截至 2026 年初累计完成约 1200 亿元</td></tr>
+<tr><td class="k">公共空间</td><td>中央绿轴滨海大道上盖覆绿约 10.5 万㎡(2026.7.30 开放);深圳湾文化广场约 19 万㎡</td></tr>
+<tr><td class="k">配置人口</td><td>就业人口约 30 万人;片区不做商品住宅</td></tr>
+</table></div>
+
+<div class="sec" id="s23"><h3>§2.3 前滩·琶洲·交子·丽泽<span class="sec-sub">FOUR MORE HEADQUARTERS DISTRICTS · 4 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">前滩</span><span class="en">Qiantan (New Bund)</span>
+<div class="meta">上海 · 浦东新区 · 黄浦江东岸 · 约 2.83 平方公里 · 类型:综合功能型总部新城</div></div>
+<div class="entry-def">上海在世博园区南侧"先造城、后招商"的一块地:企业总部、国际学校、体育场馆、开放式商业一起上——太古里开业的那个十一,日均 16 万人涌进来,前滩从此不再只是规划图上的名字。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>前滩的格局是一张"小而全"的城市拼图:东侧黄浦江边是前滩休闲公园与体育公园,东方体育中心(承办顶级赛事与演唱会)立在江边;中央是前滩太古里——开放式街区商业,双层"天空环道"绕建筑一圈;企业天地、晶耀前滩等写字楼群沿地铁 6/8/11 号线三线换乘站排开;惠灵顿国际学校等十余所学校与国际社区散布其间。对岸就是徐汇滨江的美术馆群——一江两岸,两种打法<sup class="ref">[10]</sup>。</p>
+<p><b>近几年发生了什么。</b>前滩太古里 2021 年 9 月 30 日开业,开业黄金周日均客流 16 万人次,数年后年营业额跻身上海前列<sup class="ref">[10]</sup>。2023 年 10 月,前滩 31 综合体全业态开幕——其中文化演艺中心 1.7 万平方米、2500 座,补上了片区的演艺短板<sup class="ref">[10]</sup>。2024 年初,世博前滩片区入选第三批国家级夜间文化和旅游消费集聚区;2025 年,前滩累计吸引近 300 家企业入驻,含 33 家跨国公司地区总部、9 家世界 500 强,开发建设进入收尾<sup class="ref">[10]</sup>。从 2012 年启动到 2025 年收尾,前滩用十三年完成了"造一个中心"的全过程。</p>
+<p><b>怎么来的。</b>前滩的土地逻辑是上海式的"整体出让 + 功能配平":陆家嘴集团整体开发,总部办公、商业、住宅、教育、体育按比例配齐,先修轨交与学校,再卖写字楼——与陆家嘴 1990 年代"先金融后配套"的顺序相反。命名也是策略:"前滩"对"外滩",一个"前"字把滨江叙事接了过去。它证明了总部区的一种解法:<b>把总部区做成完整城市</b>,企业才敢把国际总部搬来——员工的孩子有学上、家人有商场逛,总部楼才留得住。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">琶洲</span><span class="en">Pazhou</span>
+<div class="meta">广州 · 海珠区 · 珠江南岸 · 西区为主 · 类型:单一行业(互联网)集聚型总部区</div></div>
+<div class="entry-def">广州把珠江边一块岛尖地整片划给互联网公司:腾讯、阿里、唯品会们各自拿地盖楼,楼群贴着广交会展馆——"会展 + 互联网"两件不相干的事,在琶洲合成了广州的新名片。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>琶洲岛上两件事并排发生:西半边是广交会展馆——世界最大展览综合体之一,四期扩建后总建筑面积超 150 万平方米;东边一路之隔,互联网企业总部楼群沿江排开,腾讯广州总部大楼的"智慧城"造型已启用,阿里巴巴华南总部、唯品会总部大厦立在侧后。琶洲实验室(人工智能与数字经济广东省实验室)嵌在楼群中间。晚上从对岸看,琶洲的天际线已经是广州最亮的一段之一<sup class="ref">[11]</sup>。</p>
+<p><b>近几年发生了什么。</b>2020 年 2 月,广东省发布《广州人工智能与数字经济试验区建设总体方案》,琶洲成为"一江两岸三片区"的核心区<sup class="ref">[11]</sup>;同年 12 月广交会展馆四期投入使用,新增展位近 6000 个<sup class="ref">[11]</sup>。此后是企业楼集中交付:腾讯广州总部大楼 2025 年 7 月通过竣工联合验收、9 月 8 日正式搬迁启用<sup class="ref">[11]</sup>。2025 年第 138 届广交会到会境外采购商超 31 万人、连续四届创历史新高——会展人气与互联网产业在同一座岛上互相加热<sup class="ref">[11]</sup>。截至 2026 年,琶洲集聚企业超 3.6 万家,每年新增约 3000 家;海珠区正推动省级层面印发《琶洲人工智能产业集聚区总体规划》<sup class="ref">[11]</sup>。</p>
+<p><b>怎么来的。</b>琶洲的起点是会展:1957 年广交会创办,2003 年起琶洲展馆分期建成,展览城的客流与酒店先行。2014 年广州把琶洲西区划为互联网创新集聚区,定向出让给头部企业"自建总部"——这是全国最早的"整片地给互联网公司"案例之一,比多数城市的数字经济园区早了五六年。2020 年升级为省级试验区后,琶洲的叙事从"互联网集聚区"扩容为"人工智能与数字经济"。路径与深超总互补:超总是"混合旗舰",琶洲是"行业单打"——押一个行业,押成了。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">交子公园金融商圈</span><span class="en">Jiaozi Park Financial District</span>
+<div class="meta">成都 · 高新区 · 锦江两侧 · 类型:金融总部 + 公园商业型</div></div>
+<div class="entry-def">成都的"第二城市主中心":双塔灯光秀是它的招牌,SKP 是它的客流发动机——金融城的光、交子大道的街、公园的水,拼出成都人晚上"去哪儿"的默认答案之一。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>天府国际金融中心双塔(220 米,2020 年 10 月投用)立在交子大道西端,是成都灯光秀的主角;双塔对面十字路口架着环形人行天桥"交子之环",是拍双塔的标准机位。交子大道 2021 年开街,两侧是街区式商业与写字楼;锦江对岸,成都 SKP 藏在公园之下——地面是绿地与雕塑,商业全在地下,2022 年 12 月 20 日试营业<sup class="ref">[12]</sup>。交子公园沿锦江铺开,3 公里绿道串起商圈。白天是金融城的西装配咖啡,晚上是环桥上的三脚架。</p>
+<p><b>近几年发生了什么。</b>2022 年 12 月成都 SKP 开门,成为全国第四座 SKP;2023 年交子公园商圈获评全国示范智慧商圈;2024 年成都 SKP 位列四川全省商业综合体社消零贡献值第一<sup class="ref">[12]</sup>。到 2025 年,交子公园金融商务区累计建成项目 18 个,配套建成 20 公里市政道路、5 公里地下环形车道、4 公里综合管廊——地下工程的密度说明这是一次完整的"造城"而非零星招商<sup class="ref">[12]</sup>。2025 年 10 月,双塔下的新商业空间陆续开业,商圈从"白天金融"转向"全时段"运转<sup class="ref">[12]</sup>。</p>
+<p><b>怎么来的。</b>成都的金融城规划始于 2000 年代,起初是政府机构与金融机构南迁;2010 年代定位升级为"交子公园金融商圈"——"交子"取自北宋成都诞生的世界最早纸币,是成都金融叙事的历史锚点。它的生成顺序是"行政 → 金融 → 商业":先把机构搬来,再配总部楼宇,最后用公园与商业把人气从白天延长到夜里。这个顺序与琶洲(会展→互联网)、前滩(配套先行)都不同——三座城市,三种排序,各自成立。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">丽泽金融商务区</span><span class="en">Lize Financial Business District</span>
+<div class="meta">北京 · 丰台区 · 二三环之间西南侧 · 约 2.8 平方公里 · 类型:金融次中心型总部区</div></div>
+<div class="entry-def">北京在西二环与南二环夹角里种的"第二金融街":丽泽 SOHO 的中庭世界最长的说法流传甚广,航站楼在地下修了十年——到 2026 年,楼齐了、税破了百亿,这块地的慢生意终于结了账。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>丽泽的天际线在西南二环外拔起:丽泽 SOHO 的双塔扭转中庭、国家金融信息大厦、锐中心、平安金融中心等超高层沿丽泽路排开;丽泽天街(2021 年开业)是片区商业与地铁枢纽的接点。地下,丽泽城市航站楼将连通 11 号线、14 号线、16 号线、丽-金联络线与新机场线五条轨道,形成"一站五轨",乘客可在此办理值机与行李托运,20 分钟抵达大兴国际机场<sup class="ref">[13]</sup>。</p>
+<p><b>近几年发生了什么。</b>2025 年 1 月 19 日,地铁 16 号线丽泽金融商务区站开通;四季度,城市航站楼综合交通枢纽地下主体结构基本完工,2026 年内具备运营条件<sup class="ref">[13]</sup>。企业侧持续爬坡:截至 2025 年 3 月入驻企业 1182 家,其中金融企业 477 家、新兴金融企业 443 家、科技类企业 343 家;2025 年 12 月,丽泽金融商务区税收突破百亿元<sup class="ref">[13]</sup>——这是"第二金融街"从口号变现实最硬的一块试金石。</p>
+<p><b>怎么来的。</b>丽泽 2008 年前后启动规划,定位"新兴金融产业集聚区",是对金融街容量饱和的承接。它走得慢:土地权属复杂、市场周期波动,一度被叫作"睡城工地"。转机在 2019 年前后——地铁 14 号线丽泽段重启、新机场线北延规划落定,交通把丽泽重新接进城市骨架;此后楼宇交付与机构搬迁进入快车道。丽泽的价值在于提供了总部区的另一种时间尺度:<b>慢二十年,但没停</b>——与"五年成势"的琶洲、超总相比,它是总部基地里的长跑样本。</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 第三编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v3">
+<div class="vol-no">第三编</div>
+<h2>科学城</h2>
+<div class="vol-range">2016 — 2026 · 大科学装置先行的片区</div>
+</div>
+
+<div class="sec" id="s31"><h3>§3.1 总论:从园区到科学城<span class="sec-sub">SCIENCE CITIES</span></h3></div>
+
+<p>中国有几百个叫"高新区""开发区"的园区,但 2016 年后新出现了一个词:"科学城"。园区与科学城的差别不在名字,在<b>第一块砖</b>:园区的第一块砖是标准厂房,招的是企业;科学城的第一块砖是<b>大科学装置</b>——同步辐射光源、散裂中子源、聚变堆——招的是科学家。装置一旦落地,周边地价与产业逻辑全变:实验室围着装置建,研发机构围着实验室建,转化企业围着研发机构建,二十年长出一个"科学城"。本编五条,全部踩在这条链上。</p>
+
+<p>制度台阶有两级:<b>综合性国家科学中心</b>(2016 年上海张江首个获批,其后合肥、北京怀柔、深圳、西安陆续布局)与<b>区域科学城</b>(东莞松山湖等)。装置的可见标志是建筑本身——环形的光源、靶站的的中子源、"人造太阳"的真空室——它们是这十年中国土地上最有辨识度的新建筑类型。判断一个科学城的进度,看装置状态:在建 → 出光/出束 → 通过国家验收 → 对用户开放——四级台阶,一级比一级难。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-1</span><span class="t">科学城的"三环"结构</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="科学城三环结构示意">
+<circle cx="260" cy="165" r="38" fill="#111"/>
+<text x="260" y="155" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">装置环</text>
+<text x="260" y="172" font-size="9" fill="#fff" text-anchor="middle">光源·中子源</text>
+<text x="260" y="185" font-size="9" fill="#fff" text-anchor="middle">聚变堆</text>
+<circle cx="260" cy="165" r="76" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="260" y="86" font-size="10.5" text-anchor="middle" font-weight="700">实验室环</text>
+<text x="260" y="100" font-size="9" text-anchor="middle" fill="#555">材料实验室 · 研究院 · 数学中心</text>
+<circle cx="260" cy="165" r="114" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="260" y="40" font-size="10.5" text-anchor="middle" font-weight="700">转化环</text>
+<text x="260" y="54" font-size="9" text-anchor="middle" fill="#555">生物医药 · 芯片 · 光电子 · 无人机企业</text>
+<text x="260" y="300" font-size="10" text-anchor="middle" fill="#444">张江(光源→药谷)· 光谷(光电子)· 怀柔(五装置)· 松山湖(中子源→材料)· 合肥(聚变)</text>
+<rect x="430" y="70" width="300" height="190" fill="#fafafa" stroke="#999"/>
+<text x="446" y="96" font-size="11.5" font-weight="700">装置进度四级台阶</text>
+<text x="446" y="120" font-size="10.5">① 在建(打桩/封顶)</text>
+<text x="446" y="146" font-size="10.5">② 出光 / 出束(首束流)</text>
+<text x="446" y="172" font-size="10.5">③ 通过国家验收</text>
+<text x="446" y="198" font-size="10.5">④ 对全球用户开放机时</text>
+<text x="446" y="228" font-size="9.5" fill="#666">例:HEPS 2024.10 出光 → 2025.12 试运行 → 2026 支撑 222 项课题</text>
+<text x="446" y="244" font-size="9.5" fill="#666">散裂中子源 2018 验收 → 2024 二期开工(→2029)</text>
+</svg>
+</div>
+<div class="fig-note">三环结构不是规划术语,是观察事实:五个样本无一例外,装置(黑)在最内,实验室(虚线圈)环之,转化企业与配套城区(外圈)再环之。科学城的用地时序因此与总部区相反——总部区五年见楼,科学城十年见"光"。</div>
+</div>
+
+<div class="sec" id="s32"><h3>§3.2 张江与光谷<span class="sec-sub">ZHANGJIANG &amp; OPTICS VALLEY · 2 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">张江科学城</span><span class="en">Zhangjiang Science City</span>
+<div class="meta">上海 · 浦东新区中部 · 规划面积约 220 平方公里(2021 年扩容后) · 类型:装置+产业双强型科学城</div></div>
+<div class="entry-def">从"张江高科技园区"升格为"科学城"的那块地:鹦鹉螺造型的上海光源是它的心脏,围绕心脏长出了中国最密的一张"药谷"网——科学城三个字的标准像,先照着张江画。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>张江的地标是装置与实验室:上海光源的环形建筑(2009 年开放运行,二期 2024 年通过国家验收,现有 34 条光束线、46 个实验站)<sup class="ref">[14]</sup>;张江科学会堂的瓷板幕墙(包赞巴克设计,2022 年启用);李政道研究所的实验楼群(2025 年通过国家验收)<sup class="ref">[14]</sup>。产业侧是"张江药谷"——生物医药企业与研发外包公司的楼宇群,以及人工智能岛。地铁 2 号线穿城而过,科学会堂与药谷隔线相望。</p>
+<p><b>近几年发生了什么。</b>2021 年 7 月,《张江科学城发展"十四五"规划》把面积从 95 平方公里扩至约 220 平方公里——科学城与城市的关系从"城中园"变为"城即园"<sup class="ref">[14]</sup>。2024 年上海光源线站工程通过国家验收;2025 年张江重大科技基础设施达 14 个,居全国科学城前列<sup class="ref">[14]</sup>。产业侧,生物医药与集成电路两大集群持续加密——全国创新药研发管线相当比例在张江产生,这不是招商成果,是三十年装置与实验室的复利。</p>
+<p><b>怎么来的。</b>张江 1992 年开园,是国家级高新区;2016 年 2 月国家批复建设张江综合性国家科学中心——这是全国第一个综合性国家科学中心,张江的身份从"产业园区"切换为"科学中心承载区"<sup class="ref">[14]</sup>;2017 年 7 月《张江科学城建设规划》批复,"科学城"定名。三十年三级跳:园区(1992)→科学中心(2016)→科学城(2017)。它的特殊之处是"装置+产业"两条腿都粗:多数科学城产业薄弱,多数园区没有装置,张江两头都占(→卷四 张江档案)。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">光谷(东湖高新区)</span><span class="en">Optics Valley of China</span>
+<div class="meta">武汉 · 东湖高新区 · 规划面积 518 平方公里 · 类型:产业先行型科学城</div></div>
+<div class="entry-def">中国光电子产业的老家:一根光纤起家,长成五千亿级的光产业集群;近年它被谈论,一半因为产业规模,一半因为一条挂在空中跑的观光轨道——"光谷光子号"空轨,全国首条。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>光谷的可见地标有三:光谷广场的"星河"雕塑(2019 年建成)罩在直径 200 米的地下综合体上方;光谷公共服务中心的"马蹄莲"大楼(128 米,仿马蹄莲花冠的造型);以及 2023 年开通的光谷空轨——悬挂式单轨列车挂在轨道梁下方行驶,全长 10.5 公里,串联九峰山、龙泉山等生态景观,全自动无人驾驶<sup class="ref">[15]</sup>。光谷中心城的商务楼宇群、大悦城与创新天地商业是新一代城市界面;大学(华科、地大等)环列四周。</p>
+<p><b>近几年发生了什么。</b>2023 年 9 月 26 日光谷空轨旅游线开通,是国内首条开通运营的空轨线路——2025 年单日客流连破 2 万人次,截至 2026 年 6 月累计接待游客突破 490 万人次<sup class="ref">[15]</sup>;一条通勤兼观光的轨道成了片区最硬的传播符号。产业数据连年跳档:光电子信息产业规模 2022 年 5814 亿元、2023 年 6769 亿元、2024 年 7566 亿元、2025 年突破 8533 亿元;光谷地区生产总值 2024 年突破 3200 亿元<sup class="ref">[15]</sup>。2024 年瑞安光谷创新天地开业,中心城商业补齐。</p>
+<p><b>怎么来的。</b>光谷 1988 年成立东湖高新区,2001 年被批准为国家光电子产业基地,"光谷"得名;光纤光缆、光器件起家(长飞、烽火都在此),产业先于科学装置三十年。近年补装置课:脉冲强磁场、精密重力测量等大科学装置相继布局,武汉获批建设具有全国影响力的科技创新中心。它是"产业先行型"科学城的代表——先有工厂与大学,再有装置与城区,顺序与张江相反、与松山湖类似(→§3.3)。</p>
+</div>
+</div>
+
+<div class="sec" id="s33"><h3>§3.3 装置先行的三个科学城<span class="sec-sub">FACILITY-LED SCIENCE CITIES · 3 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">怀柔科学城</span><span class="en">Huairou Science City</span>
+<div class="meta">北京 · 怀柔区 · 距市中心约 50 公里 · 类型:大科学装置集群型科学城</div></div>
+<div class="entry-def">北京在雁栖湖北边押的科学注:五个国家重大科技基础设施在同一张施工图上排开,圆形的高能同步辐射光源是主角——2024 年它"出光"那一晚,中国有了自己的高能 X 射线"超级显微镜"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>怀柔科学城的核心区是装置区:高能同步辐射光源(HEPS)的环形建筑直径数百米,是华北平原上最像"科学装置"的形制;综合极端条件实验装置、地球系统数值模拟装置("地球实验室")、多模态跨尺度生物医学成像设施、子午工程二期环列周边<sup class="ref">[16]</sup>。雁栖湖畔还有应用数学的研究院与中科院大学。整个城区人口不多、塔吊不少——白天看是工地,夜里装置楼的灯常亮。</p>
+<p><b>近几年发生了什么。</b>怀柔的装置进度是五年连跳:综合极端条件实验装置 2023 年 3 月全面投入试运行;HEPS 2024 年 10 月 12 日发出"第一束光",2025 年 12 月 3 日启动试运行,2026 年 2 月已支撑来自 91 个单位的 222 项课题、提供用户机时近 5000 小时<sup class="ref">[16]</sup>;多模态成像设施、子午工程二期于 2025 年 3 月先后通过国家验收<sup class="ref">[16]</sup>。截至 2025 年,怀柔综合性国家科学中心布局科技设施 37 个,其中 16 个已向全球开放<sup class="ref">[16]</sup>——"开放机时"是科学城成熟的标志。</p>
+<p><b>怎么来的。</b>2017 年怀柔综合性国家科学中心获批,与张江、合肥并列全国首批;科学城的骨架是"装置先行"——先定五个大装置的位置,再配实验室、人才社区与市政。选址怀柔的逻辑:距城够远(环境振动小,装置需要)、交通够近(京沈高铁设站)。它的生长顺序是本编最纯粹的样本:<b>先有装置,才有城</b>——城区界面仍在追赶装置进度,这既是短板也是特征。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-1</span><span class="no">怀柔科学城五大科学装置进度</span></div>
+<table class="spec-t">
+<tr><td class="k">高能同步辐射光源</td><td>HEPS;2024.10.12 发出第一束光;2025.12.3 启动试运行;2026 年支撑 222 项课题、机时近 5000 小时;环形加速器建筑为其地标识</td></tr>
+<tr><td class="k">综合极端条件实验装置</td><td>2020.7 完成竣工验收备案;2022.1 部分实验站试运行;2023.3 起全面投入试运行——极低温、超高压、强磁场条件下做实验的"组合厨房"</td></tr>
+<tr><td class="k">地球系统数值模拟装置</td><td>"地球实验室";已开放运行——用超级计算机模拟地球系统的气候变化与演化</td></tr>
+<tr><td class="k">多模态跨尺度生物医学成像设施</td><td>2025.3.21 通过国家验收——从分子到全身多尺度医学成像研究的公共平台</td></tr>
+<tr><td class="k">子午工程二期</td><td>空间环境地面综合监测网二期;2025.3 通过国家验收——沿东经 120°/北纬 30° 布设的"空间天气"观测链</td></tr>
+</table></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">松山湖科学城</span><span class="en">Songshan Lake Science City</span>
+<div class="meta">东莞 · 松山湖高新区 · 与深圳光明科学城共同构成先行启动区 · 类型:装置+企业研发型科学城</div></div>
+<div class="entry-def">东莞用一片湖装下的两件大事:中国散裂中子源——华南第一个国家大科学装置,和华为的欧洲小镇——十二个欧洲街区复制在湖边。科学家与工程师在同一片湖光里上班。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>松山湖的环湖绿道串起完全不同的两界:南岸是散裂中子源园区——靶站与实验厅建筑群嵌在山坡间;华为溪流背坡村在湖的另一侧,红砖小镇复制了海德堡、巴黎等十二个欧洲街区,通勤小火车穿楼而过(2018 年整体竣工入驻)<sup class="ref">[17]</sup>。松山湖材料实验室的实验楼群在湖畔;环湖跑道与骑行道是东莞人的周末去处——科学城同时也是城市公园。</p>
+<p><b>近几年发生了什么。</b>散裂中子源 2018 年 8 月通过国家验收投入运行——这是我国首台、世界第四台脉冲式散裂中子源;2024 年 1 月二期工程正式启动建设(预计 2029 年建成),同年 10 月装置打靶功率达到 170 千瓦稳定运行;2025 年 7 月二期首栋建筑开工,2026 年加速器低温系统罐区安装启动<sup class="ref">[17]</sup>。松山湖材料实验室 2017 年 12 月启动建设,已成大湾区材料研究重镇。2020 年 7 月,国家批复以光明科学城—松山湖科学城为主体建设大湾区综合性国家科学中心先行启动区——一城跨两市,深圳与东莞共建<sup class="ref">[17]</sup>。</p>
+<p><b>怎么来的。</b>松山湖 2001 年设园区,先是生态与产业新城;华为 2014 年在此动工建终端总部,把数万研发人员带进湖边;散裂中子源 2011 年选址落地,科学身份才真正确立。"企业研发 + 大装置"的组合全国独此一家:华为解决"谁来用科技",中子源解决"科技从哪来"——松山湖把产业链与创新链装进了同一个湖。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">合肥滨湖科学城</span><span class="en">Hefei Binhu Science City</span>
+<div class="meta">合肥 · 巢湖之滨 · 以"科学岛"为核心 · 类型:聚变与量子型科学城</div></div>
+<div class="entry-def">把"科教基地"做成城市招牌的那座城:西郊科学岛上的"人造太阳"一次次刷新世界纪录,岛外聚变堆工地、量子实验室与未来大科学城连成一片——合肥的热度,一半是科学给的。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>科学岛(中科院合肥物质科学研究院)董铺水库环抱,EAST 全超导托卡马克装置的实验大厅是心脏;岛南不远处,聚变堆主机关键系统综合研究设施(CRAFT,"夸父")的巨型厂房与环形装置在安装;合肥先进光源的主体建筑已封顶验收<sup class="ref">[18]</sup>。城市这半边,量子大道两侧排着量子信息企业,"科大硅谷"在孵化。巢湖北岸,合肥未来大科学城(规划约 19.2 平方公里)依托科学岛与 CRAFT 展开<sup class="ref">[18]</sup>。</p>
+<p><b>近几年发生了什么。</b>聚变线三连跳:EAST 2025 年 1 月创造"亿度千秒"世界纪录——1 亿摄氏度等离子体运行 1066 秒<sup class="ref">[18]</sup>;CRAFT 2025 年 12 月 2 日通过第一次性能工艺测试,2026 年偏滤器、低杂波等子系统相继通过验收<sup class="ref">[18]</sup>;紧凑型聚变能实验装置(BEST)在建,计划 2026 年底完成基建工程<sup class="ref">[18]</sup>。装置账面:合肥已有、在建与预研的大科学装置共 13 个,其中 9 个布局在滨湖科学城<sup class="ref">[18]</sup>——一座中部省会握着全国最密的装置清单之一。</p>
+<p><b>怎么来的。</b>合肥的科学底子是 1970 年中国科学技术大学南迁——一座城与一所大学的绑定由此开始。科学岛 1990 年代建成,HT-7 到 EAST 到 CRAFT 到 BEST,聚变路线三十年一条线;2017 年合肥获批综合性国家科学中心(全国第二个)。城市叙事的转折在 2020 年前后:"最牛风投城市"的说法把合肥的产业招商(京东方、蔚来、长鑫)与科学底座打包成了一个流行故事——科学城第一次成为一座城市的"人设"。</p>
+</div>
+</div>
+<!-- ============================================================ -->
+<!-- 第四编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v4">
+<div class="vol-no">第四编</div>
+<h2>制度合作区</h2>
+<div class="vol-range">2010 — 2026 · 用中央文件画出来的片区</div>
+</div>
+
+<div class="sec" id="s41"><h3>§4.1 总论:一线与二线<span class="sec-sub">SPECIAL ECONOMIC ZONES OF THE NEW ERA</span></h3></div>
+
+<p>1980 年代的特区靠"税收优惠 + 招商引资"起家;2010 年代以后出现的新一代"制度合作区"靠<b>中央文件</b>——一份文件划定边界、给定特殊政策、明确到某年建成什么。它们的共同制度骨架是海关上的"线":<b>一线放开、二线管住</b>——与境外(或港澳)之间的一线尽量放开货物与人员流动,与内地之间的二线设置监管,区内实行另一套税制与规则。这条"线"画在哪里,哪里就是片区边界——制度合作区的地图不是画在地上的,是画在海关章程上的。</p>
+
+<p>六个样本按合作对象分三组:<b>琴澳组</b>(横琴——对澳门)、<b>深港组</b>(前海、河套——对香港)、<b>沿海开放组</b>(临港、南沙、海南)。它们的"热"各有来源:横琴热在封关(2024)、海南热在全岛封关(2025)——制度落地之日就是流量峰值之日;前海热在 GDP 翻番与企业数;河套热在"最小面积干最大规格的事"(3 平方公里装进国务院规划);临港热在特斯拉与金融湾;南沙热在全运会与深水港。读懂这一编的关键词只有一组:<b>一线、二线、封关、零关税</b>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-2</span><span class="t">制度合作区政策时序 2010—2025</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 240" width="100%" role="img" aria-label="制度合作区政策时序图">
+<line x1="40" y1="130" x2="730" y2="130" stroke="#111" stroke-width="2"/>
+<text x="40" y="222" font-size="10" fill="#666">2010</text>
+<text x="150" y="222" font-size="10" fill="#666">2016</text>
+<text x="260" y="222" font-size="10" fill="#666">2019</text>
+<text x="370" y="222" font-size="10" fill="#666">2021</text>
+<text x="480" y="222" font-size="10" fill="#666">2022—23</text>
+<text x="620" y="222" font-size="10" fill="#666">2024—25</text>
+<line x1="60" y1="126" x2="60" y2="134" stroke="#111"/>
+<line x1="170" y1="126" x2="170" y2="134" stroke="#111"/>
+<line x1="280" y1="126" x2="280" y2="134" stroke="#111"/>
+<line x1="390" y1="126" x2="390" y2="134" stroke="#111"/>
+<line x1="500" y1="126" x2="500" y2="134" stroke="#111"/>
+<line x1="640" y1="126" x2="640" y2="134" stroke="#111"/>
+<circle cx="60" cy="130" r="6" fill="#111"/><text x="60" y="106" font-size="10.5" text-anchor="middle" font-weight="700">前海设立</text><text x="60" y="119" font-size="9" text-anchor="middle" fill="#555">国务院批复规划</text>
+<circle cx="170" cy="130" r="6" fill="#111"/><text x="170" y="106" font-size="10.5" text-anchor="middle" font-weight="700">河套备忘录</text><text x="170" y="119" font-size="9" text-anchor="middle" fill="#555">深港签署合作备忘录</text>
+<circle cx="280" cy="130" r="6" fill="#111"/><text x="280" y="106" font-size="10.5" text-anchor="middle" font-weight="700">临港新片区</text><text x="280" y="119" font-size="9" text-anchor="middle" fill="#555">总体方案印发</text>
+<circle cx="335" cy="130" r="6" fill="#111"/><text x="335" y="152" font-size="10.5" text-anchor="middle" font-weight="700">海南自贸港方案</text><text x="335" y="165" font-size="9" text-anchor="middle" fill="#555">2020.6 总体方案</text>
+<circle cx="390" cy="130" r="6" fill="#111"/><text x="390" y="152" font-size="10.5" text-anchor="middle" font-weight="700">前海扩区 + 横琴方案</text><text x="390" y="165" font-size="9" text-anchor="middle" fill="#555">2021.9 同月两份文件</text>
+<circle cx="460" cy="130" r="6" fill="#111"/><text x="460" y="106" font-size="10.5" text-anchor="middle" font-weight="700">南沙方案</text><text x="460" y="119" font-size="9" text-anchor="middle" fill="#555">2022.6</text>
+<circle cx="520" cy="130" r="6" fill="#111"/><text x="520" y="152" font-size="10.5" text-anchor="middle" font-weight="700">河套规划</text><text x="520" y="165" font-size="9" text-anchor="middle" fill="#555">2023.8 国务院印发</text>
+<circle cx="610" cy="130" r="6" fill="#111"/><text x="610" y="106" font-size="10.5" text-anchor="middle" font-weight="700">横琴封关</text><text x="610" y="119" font-size="9" text-anchor="middle" fill="#555">2024.3.1</text>
+<circle cx="690" cy="130" r="6" fill="#111"/><text x="690" y="106" font-size="10.5" text-anchor="middle" font-weight="700">海南封关</text><text x="690" y="119" font-size="9" text-anchor="middle" fill="#555">2025.12.18</text>
+<text x="40" y="50" font-size="11" font-weight="700">三代节奏</text>
+<text x="40" y="70" font-size="10" fill="#444">2010—2019 立框架(前海·河套·临港)</text>
+<text x="40" y="88" font-size="10" fill="#444">2020—2023 扩权限(海南·前海扩区·横琴·南沙·河套)</text>
+<text x="40" y="106" font-size="10" fill="#444">2024—2025 见落地(横琴封关 → 海南封关)</text>
+</svg>
+</div>
+<div class="fig-note">十五年六区:从 2010 年前海算起,制度合作区以"三四年一份文件"的节奏推进;2024—2025 两年内两个"封关"落地,标志这批文件从"给了政策"进入"政策运转"阶段。横琴与海南是同一套"分线管理"技术的两个量级——106 平方公里对 3.54 万平方公里。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-2</span><span class="no">六大制度合作区文件与参数</span></div>
+<table class="spec-t">
+<tr><td class="k">前海</td><td>2010 国务院批复总体发展规划;2021.9《全面深化前海深港现代服务业合作区改革开放方案》扩区至 120.56 平方公里(原 14.92);深港合作,现代服务业</td></tr>
+<tr><td class="k">临港</td><td>2019.8《中国(上海)自由贸易试验区临港新片区总体方案》;特殊经济功能区,投资贸易自由化;滴水湖为核心区</td></tr>
+<tr><td class="k">海南</td><td>2020.6《海南自由贸易港建设总体方案》;全岛 3.54 万平方公里;2025.12.18 全岛封关运作,"零关税、低税率、简税制"</td></tr>
+<tr><td class="k">横琴</td><td>2021.9《横琴粤澳深度合作区建设总体方案》;合作区实施范围约 106 平方公里;2024.3.1 封关运行,分线管理;对澳门经济适度多元</td></tr>
+<tr><td class="k">南沙</td><td>2022.6《广州南沙深化面向世界的粤港澳全面合作方案》;粤港澳全面合作,南部(南沙湾·南沙枢纽·庆盛)先行</td></tr>
+<tr><td class="k">河套</td><td>2023.8 国务院印发《河套深港科技创新合作区深圳园区发展规划》;深圳园区 3.02 平方公里 + 香港园区 0.87 平方公里,"一区两园";科技创新规则衔接</td></tr>
+</table></div>
+
+<div class="sec" id="s42"><h3>§4.2 琴澳与深港<span class="sec-sub">MACAU &amp; HONG KONG PAIRS · 3 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">横琴粤澳深度合作区</span><span class="en">Hengqin Guangdong-Macao In-Depth Cooperation Zone</span>
+<div class="meta">珠海 · 横琴岛 · 实施范围约 106 平方公里 · 类型:封关运行的对澳合作区</div></div>
+<div class="entry-def">一个岛,两种制度,三道关卡:横琴与澳门之间叫"一线",基本放开;横琴与内地之间叫"二线",设卡监管;岛内按"合作区"一套规则运转。2024 年 3 月 1 日封关那一夜起,琴澳之间的日常开始变得像同城通勤。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>横琴口岸的旅检大厅连接着澳门莲花口岸,2026 年起 64 条"合作智能快捷通道"可以刷脸通行——这是全国首个实现"合作查验、一次放行"并升级到刷脸的口岸<sup class="ref">[24]</sup>。岛上,长隆海洋王国是流量大头;天沐河两岸的"澳门新街坊"是专为澳门居民建的社区——4000 多套住宅、学校与卫生站配套,楼是横琴的,服务是澳门标准的。岛的四周,"二线"通道共 7 处:横琴大桥、深井通道、横琴隧道、十字门隧道、广珠城轨横琴站与长隆站、横琴码头——货车过二线要申报,这圈卡口就是"合作区"的物理边界<sup class="ref">[24]</sup>。</p>
+<p><b>近几年发生了什么。</b>2024 年 3 月 1 日封关运行,"一线放开、二线管住"的税收与监管框架当日启动<sup class="ref">[24]</sup>。此后数字一路上行:至 2026 年 3 月分线管理两周年,经横琴口岸出入境人员超 5560 万人次(同比增 103.4%),海关监管车辆超 626.5 万辆次;2026 年 6 月合作快捷通道全面投用<sup class="ref">[24]</sup>。人也在搬:截至 2025 年 8 月底,在合作区就业生活的澳门居民增至 2.8 万人;澳门新街坊 2023 年 11 月开售,至 2025 年一季度已有超 1400 户澳门家庭购买<sup class="ref">[24]</sup>。资金线同步铺开:2026 年 1 月末,试点银行累计开立 EF 账户超 700 户,跨一线二线资金划转超 4700 亿元<sup class="ref">[24]</sup>。</p>
+<p><b>怎么来的。</b>横琴开发的初衷就是服务澳门——澳门土地太小(33 平方公里)、产业太偏(博彩一业独大),中央给的政策一直围绕"澳门经济适度多元"这个母题:2009 年横琴新区设立,2015 年自贸片区挂牌,2021 年 9 月《横琴粤澳深度合作区建设总体方案》把规格提到"粤澳共管、共商共建共管共享"<sup class="ref">[24]</sup>。封关是这套设计的收口:一线放开让澳门的生活与要素低成本过岛,二线管住让横琴的政策红利不漏进内地——"分线管理"是全国自贸区里最接近"境内关外"的一次实操。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-1</span><span class="t">横琴"分线管理"示意</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="横琴分线管理示意图">
+<rect x="30" y="60" width="150" height="180" fill="#eee" stroke="#111"/>
+<text x="105" y="95" font-size="13" font-weight="700" text-anchor="middle">澳 门</text>
+<text x="105" y="116" font-size="9.5" text-anchor="middle" fill="#444">33 平方公里</text>
+<text x="105" y="132" font-size="9.5" text-anchor="middle" fill="#444">博彩一业独大</text>
+<text x="105" y="148" font-size="9.5" text-anchor="middle" fill="#444">→ 产业多元需空间</text>
+<rect x="250" y="60" width="260" height="180" fill="#f7f7f7" stroke="#111"/>
+<text x="380" y="88" font-size="13" font-weight="700" text-anchor="middle">横琴粤澳深度合作区</text>
+<text x="380" y="107" font-size="9.5" text-anchor="middle" fill="#444">约 106 平方公里 · 粤澳共管</text>
+<rect x="270" y="120" width="105" height="60" fill="#fff" stroke="#999"/>
+<text x="322" y="142" font-size="9.5" text-anchor="middle">澳门新街坊</text>
+<text x="322" y="158" font-size="9" text-anchor="middle" fill="#666">4000+ 套 · 1400+ 户</text>
+<text x="322" y="172" font-size="9" text-anchor="middle" fill="#666">澳门家庭购(2025Q1)</text>
+<rect x="385" y="120" width="105" height="60" fill="#fff" stroke="#999"/>
+<text x="437" y="142" font-size="9.5" text-anchor="middle">长隆 / 天沐河</text>
+<text x="437" y="158" font-size="9" text-anchor="middle" fill="#666">文旅流量大头</text>
+<text x="437" y="172" font-size="9" text-anchor="middle" fill="#666">琴澳日夜通勤带</text>
+<text x="380" y="205" font-size="9.5" text-anchor="middle" fill="#444">2024.3.1 封关运行 · 15% 企业所得税 · 高端人才个税超 15% 部分免征</text>
+<text x="380" y="222" font-size="9.5" text-anchor="middle" fill="#444">加工增值 ≥30% 货物经"二线"进内地免征进口关税</text>
+<rect x="580" y="60" width="150" height="180" fill="#eee" stroke="#111"/>
+<text x="655" y="95" font-size="13" font-weight="700" text-anchor="middle">内 地</text>
+<text x="655" y="116" font-size="9.5" text-anchor="middle" fill="#444">珠海 · 广东</text>
+<text x="655" y="132" font-size="9.5" text-anchor="middle" fill="#444">全国大市场</text>
+<line x1="180" y1="60" x2="250" y2="60" stroke="#111" stroke-width="2"/>
+<line x1="180" y1="240" x2="250" y2="240" stroke="#111" stroke-width="2"/>
+<text x="215" y="40" font-size="11" font-weight="700" text-anchor="middle">一 线</text>
+<text x="215" y="268" font-size="9" text-anchor="middle" fill="#444">横琴口岸:合作查验</text>
+<text x="215" y="281" font-size="9" text-anchor="middle" fill="#444">刷脸通行(2026)</text>
+<line x1="510" y1="60" x2="580" y2="60" stroke="#111" stroke-width="2" stroke-dasharray="6 3"/>
+<line x1="510" y1="240" x2="580" y2="240" stroke="#111" stroke-width="2" stroke-dasharray="6 3"/>
+<text x="545" y="40" font-size="11" font-weight="700" text-anchor="middle">二 线</text>
+<text x="545" y="268" font-size="9" text-anchor="middle" fill="#444">7 处通道:横琴大桥 · 隧道 ·</text>
+<text x="545" y="281" font-size="9" text-anchor="middle" fill="#444">十字门隧道 · 城轨两站 · 码头等</text>
+<text x="380" y="28" font-size="10.5" text-anchor="middle" font-weight="700">一线放开 · 二线管住 · 岛内自由</text>
+</svg>
+</div>
+<div class="fig-note">分线管理的精妙在"放"与"管"各取一半:一线放开的是澳门居民与货物(低成本上岛),二线管住的是政策红利(免税货物未经加工不得直接流入内地,加工增值达 30% 视同境内货物)。这套技术 2024 年在 106 平方公里的横琴试跑,2025 年放大到整个海南岛。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-1</span><span class="no">横琴封关运行参数</span></div>
+<table class="spec-t">
+<tr><td class="k">一线通道</td><td>横琴口岸(2020.8.18 新旅检区域启用);2026 年 64 条合作智能快捷通道全面投用,全国首个"合作刷脸"口岸;启用六周年累计查验出入境人员超 1.1 亿人次</td></tr>
+<tr><td class="k">二线通道</td><td>7 处:横琴大桥、深井通道、横琴隧道、十字门隧道、广珠城轨延长线横琴站、长隆站、横琴码头</td></tr>
+<tr><td class="k">税收政策</td><td>符合条件产业企业减按 15% 征收企业所得税;高端与紧缺人才个税负超 15% 部分免征;旅游业/现代服务业/高新技术新增境外直接投资所得免征</td></tr>
+<tr><td class="k">货物规则</td><td>"一线"不涉证不涉检的免保税货物"极简"申报;区内加工增值 ≥30% 的货物经"二线"进入内地免征进口关税</td></tr>
+<tr><td class="k">封关两年数据</td><td>2024.3—2026.3:出入境人员超 5560 万人次(+103.4%),监管车辆超 626.5 万辆次;EF 账户超 700 户,跨线资金划转超 4700 亿元</td></tr>
+</table></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">前海深港现代服务业合作区</span><span class="en">Qianhai Shenzhen-Hong Kong Cooperation Zone</span>
+<div class="meta">深圳 · 前海 · 扩区后 120.56 平方公里 · 类型:深港服务业合作区</div></div>
+<div class="entry-def">一张"填海造出来的白纸"十五年画成了什么:2010 年批复时是 15 平方公里的滩涂,2021 年扩区八倍,2026 年已有 21.6 万家企业、1.1 万家港企——深圳湾西岸这片楼群,一半的身份是"香港的延伸"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>前海的地标是一块石头——"前海石"立在滨海公园里,是这片填海区的精神原点;周边桂湾片区的高层楼群(前海嘉里中心等)已连片成界面。深港青年梦工场是港澳创业者的第一站;前海综合保税区、深港国际金融城的楼群沿听海大道铺开。夜晚从前海石公园回望,塔吊灯与写字楼灯连成一片——这片工地十五年没停过。</p>
+<p><b>近几年发生了什么。</b>2021 年 9 月《全面深化前海深港现代服务业合作区改革开放方案》把面积从 14.92 扩至 120.56 平方公里,蛇口及南山、宝安大片区域纳入<sup class="ref">[25]</sup>。数据随即翻番:2025 年前海地区生产总值达 3318.1 亿元,较扩区前接近翻一番;累计固定资产投资突破 7000 亿元;实际管理人口 130 多万、集聚企业 21.6 万家<sup class="ref">[25]</sup>。港味指标:截至 2025 年底港资企业超 1.1 万家,新增外企中八成以上是港企;梦工场累计孵化创业团队 1632 家,其中港澳台及国际团队 1201 家<sup class="ref">[25]</sup>。2026 年,首单"TIR+保税"业务从前海发车直抵莫斯科——制度创新的样本还在继续出。</p>
+<p><b>怎么来的。</b>前海 2010 年由国务院批复设立,定位"深港现代服务业合作区"——香港强在金融、法律、专业服务,深圳给地给政策,让服务业跨境落地。十五年三段:2010—2015 填海与基础设施;2015—2021 自贸片区挂牌、企业起步;2021 扩区后进入产出期。它验证了制度合作区的一条规律:<b>面积即政策</b>——扩区八倍后,前海从"试验区"变成"深圳西岸常态化的城市片区"。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">河套深港科技创新合作区</span><span class="en">Hetao Shenzhen-Hong Kong Science and Technology Innovation Cooperation Zone</span>
+<div class="meta">深圳福田 / 香港北区 · 深圳河两岸 · 深圳园区 3.02 平方公里 + 香港园区 0.87 平方公里 · 类型:科创规则衔接试验田</div></div>
+<div class="entry-def">全国规格面积比最悬殊的一片地:深圳河两岸不到 4 平方公里,2023 年由国务院专门印发发展规划——"一区两园"隔河相望,香港的科研、深圳的产业、两套制度在这里互设接口。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>站在深圳河口岸桥上,一河两岸两种城市形态:北岸福田保税区的高层厂房与写字楼(深圳园区),南岸香港园区仍在建设初期。深圳侧已运行的载体包括河套科创中心(2024 年 6 月开园)与国际人才驿站;皇岗口岸在整体重建,未来是"合作区+口岸"的复合枢纽<sup class="ref">[26]</sup>。这片地小到步行半小时穿完,但装着 52 家高端科研机构与顶尖企业研发中心、6 家国际产业与标准组织<sup class="ref">[26]</sup>。</p>
+<p><b>近几年发生了什么。</b>2023 年 8 月 8 日,国务院印发《河套深港科技创新合作区深圳园区发展规划》——规格与横琴、南沙方案同级,面积却只有它们的百分之一<sup class="ref">[26]</sup>。落地节奏:2024 年 6 月河套科创中心开园、首批 13 个重点项目签约;9 月香港科学园深圳分园开园——香港科研机构第一次成建制过河北岸;10 月"科汇通"试点打通科研资金跨境<sup class="ref">[26]</sup>。2025 年 11 月,粤港澳大湾区临床试验协作平台在"一区两园"同步设立;2026 年 3 月 1 日,《深圳经济特区河套深港科技创新合作区深圳园区条例》施行——小片区有了专属立法<sup class="ref">[26]</sup>。</p>
+<p><b>怎么来的。</b>河套的起点是 2017 年深港两地政府签署合作备忘录,把落马洲河套地区(香港一侧)确定为共建"港深创新及科技园"的用地;深圳一侧的福田保税区与皇岗口岸片区随后纳入,拼成"一区两园"。它的核心命题不是招商引资,是<b>规则衔接</b>:科研货物免税过河、数据与资金跨境流动、两地知识产权互认——每一条都在拆制度的墙。如果说前海做的是"服务业的深港通",河套做的是"实验室的深港通"。</p>
+</div>
+</div>
+
+<div class="sec" id="s43"><h3>§4.3 临港·南沙·海南<span class="sec-sub">COASTAL OPENING TRIO · 3 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">临港新片区</span><span class="en">Lingang Special Area</span>
+<div class="meta">上海 · 浦东新区东南端 · 滴水湖为核心 · 类型:特殊经济功能区</div></div>
+<div class="entry-def">上海把城市最东南角的一座圆形人工湖交给了一项任务:"具有较强国际市场影响力和竞争力的特殊经济功能区"。特斯拉在这里建了厂,金融城在湖边生长,七年后这片风最大的地方有了 1366 亿 GDP。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>滴水湖是圆规画出来的正圆形人工湖,湖面直径约 2.5 公里,环湖一圈是临港的城市客厅:湖畔的商业与文体设施、在建的滴水湖金融湾——二期 150 万平方米建筑群 2026 年 6 月主体全部封顶,标志建筑"荣耀之环"悬在湖畔<sup class="ref">[27]</sup>。产业区在湖的西与北:特斯拉超级工厂(2019 年开工、次年交付整车)、储能超级工厂(2025 年投产,年产 Megapack 超万台)与集成电路、航空装备企业群<sup class="ref">[27]</sup>。洋山深水港通过东海大桥连着这里——临港的另一半身份是港口腹地。</p>
+<p><b>近几年发生了什么。</b>2019 年 8 月《临港新片区总体方案》印发后,七年三级跳:2024 年 5 月特斯拉储能超级工厂签约(当年开工);2025 年投产,当年临港地区生产总值达 1366 亿元——是成立之初的 3.3 倍,规上工业总产值突破 4500 亿元<sup class="ref">[27]</sup>。金融侧,滴水湖金融湾一期 2025 年全部交付;2026 年 6 月,离岸贸易金融服务综合改革试点扩围方案在陆家嘴论坛发布<sup class="ref">[27]</sup>。数据侧,临港国际数据港已开通通往香港、东京、新加坡、伦敦的四条国际数据专线——"数字出海"的物理通道<sup class="ref">[27]</sup>。2026 年 8 月,"十五五"规划发布:2030 年 GDP 2000 亿元、常住人口 60 万<sup class="ref">[27]</sup>。</p>
+<p><b>怎么来的。</b>临港开发始于 2003 年的临港新城(深水港配套),长期"有港无城";2019 年自贸区新片区方案把它推上制度前台——"特殊经济功能区"的意思是:比自贸区更开放的税制、资金与人员安排在这里先行先试。特斯拉工厂是第一个引爆点:当年签约、当年开工、次年交付的"特斯拉速度"成了临港的名片。它的城市逻辑与陆家嘴相反:陆家嘴是"金融先到、住宅后补",临港是"产业先行、造城跟上"——滴水湖的天际线至今仍在长。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">南沙</span><span class="en">Nansha</span>
+<div class="meta">广州 · 最南端 · 珠江出海口 · 类型:粤港澳全面合作平台</div></div>
+<div class="entry-def">广州把珠江入海口的整座半岛拿来对接港澳:香港科技大学把内地校区建在这,全运会在海边起了三座场馆,深水港的桥吊在伶仃洋边排成行——南沙的故事是"离广州远、离世界近"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>南沙的城市界面分三块:蕉门河一带是行政与生活主城;明珠湾起步区的高层楼宇群在灵山岛尖成型;最南端万顷沙二十一涌,大湾区文化体育中心三馆并立——6 万座综合体育场、2 万座体育馆、4000 座游泳跳水馆,2025 年 9 月建成投用,第十五届全运会的赛事在这里举行<sup class="ref">[28]</sup>。教育科研侧,香港科技大学(广州)2022 年开学,红砖校园沿河展开,在校学生已近 4000 人、累计孵化超 240 个科创项目<sup class="ref">[28]</sup>。港口侧,南沙港区的桥吊与堆场沿龙穴岛铺开,五期工程 2026 年 5 月开工——建成后南沙港区集装箱通过能力将超 3500 万标箱<sup class="ref">[28]</sup>。</p>
+<p><b>近几年发生了什么。</b>2022 年 6 月《南沙方案》印发,赋予南沙"立足湾区、协同港澳、面向世界"的定位;此后是密集的设施交付:香港科技大学(广州)开学(2022)、大湾区文化体育中心建成(2025.9)、全运会赛事(2025.11)<sup class="ref">[28]</sup>。经济体量同步爬坡:2025 年南沙地区生产总值 2402.26 亿元;吸引集聚港澳企业超 3800 家、港澳居民超 1.1 万人,19 家港澳青创基地累计入驻项目 2818 个<sup class="ref">[28]</sup>。2026 年,粤港合作咨询委员会与粤澳发展促进会相继落地——合作从项目级升级到机制级<sup class="ref">[28]</sup>。</p>
+<p><b>怎么来的。</b>南沙的区位曾是劣势:距广州市中心 50 多公里,被珠江口的水网隔开;1993 年霍英东开发南沙东部的码头与新城是第一波,2005 年设南沙区是第二波。2012 年后国家级平台层层加码(自贸区南沙片区→粤港澳全面合作示范区→《南沙方案》),定位从"广州的港"升为"大湾区的几何中心"。它的慢与快值得对照:基础设施等了二十年,国家级文件之后五年,大学、场馆、港口全部到位——制度合作区的"文件效应"在南沙最直观。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">海南自由贸易港</span><span class="en">Hainan Free Trade Port</span>
+<div class="meta">海南全岛 · 观察落点:海口江东新区 / 三亚崖州湾科技城 / 三亚国际免税城 · 类型:全岛封关型制度区</div></div>
+<div class="entry-def">本编唯一超"片区"尺度的样本,但无法绕开:2025 年 12 月 18 日全岛封关运作,是中国对外开放制度的一次整省试验——"一线放开、二线管住"在 3.54 万平方公里上跑起来,封关首半年新增经营主体 17 万家。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>制度的具体长相在三个片区:海口江东新区——总部经济区与跨境金融、数字贸易的楼群在铺;三亚崖州湾科技城——深海装备产线与南繁育种的实验田在此聚集,32 条深海装备产线落地、57 个国家级和省部级科创平台汇聚<sup class="ref">[29]</sup>;三亚国际免税城——离岛免税的物理主场,封关后商品类别扩至 47 类<sup class="ref">[29]</sup>。全岛的"二线"海关监管设施 2025 年就位——海峡口岸与机场的卡口,是这条看不见的线最可见的部分。</p>
+<p><b>近几年发生了什么。</b>2025 年 12 月 18 日,全岛封关运作启动——"零关税、低税率、简税制"框架正式运转<sup class="ref">[29]</sup>。首年的数字密集披露:封关满月,离岛免税购物金额 48.6 亿元、新增备案外贸企业超 5000 家;百日,"零关税"商品增至约 6600 个税号、零关税水平达 74%,首条第七航权客运航线开通;至 2026 年 5 月底,全岛进口"零关税"商品 26.45 亿元(同比 +112%),新增注册经营主体 17.21 万家(+61%),离岛免税销售 203.4 亿元(+20.5%),企业货物贸易进出口 1739.8 亿元(+54.6%)<sup class="ref">[29]</sup>。洋浦港前 5 个月集装箱吞吐量 164.4 万标箱(+53.9%)——西部陆海新通道的支点在同步起量<sup class="ref">[29]</sup>。</p>
+<p><b>怎么来的。</b>海南的开放序列:1988 年建省办经济特区;2010 年国际旅游岛;2018 年自贸区全覆盖;2020 年 6 月《海南自由贸易港建设总体方案》公布"分两步走"——2025 年前适时启动全岛封关,2035 年前成为我国开放型经济新高地<sup class="ref">[29]</sup>。封关运作把此前零散的优惠政策合并成一套体系:货物"一线放开、二线管住",岛内自由流动。它与横琴的关系是技术的放大:横琴 106 平方公里试跑分线管理两年后,海南把同一套技术用在全岛——制度合作区的"试点—推广"链条,在这两个样本间完整可见。</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 第五编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v5">
+<div class="vol-no">第五编</div>
+<h2>新中心</h2>
+<div class="vol-range">2017 — 2026 · 在主城之外另起一个中心</div>
+</div>
+
+<div class="sec" id="s51"><h3>§5.1 总论:再造中心<span class="sec-sub">NEW CENTERS</span></h3></div>
+
+<p>前三编的片区都在既有城市里做加法,第五编是<b>另起炉灶</b>:在主城之外找一块地,从零造一个中心。这件事中国城市做了四十年(→卷二 §5.2 开发区时代),但 2016 年后的五个样本各有新的触发器:<b>中央指令</b>(雄安——疏解北京非首都功能)、<b>大事件</b>(杭州奥体——亚运会、合肥骆岗——园博会)、<b>理念命名</b>(成都天府——"公园城市"首提地)、<b>省级战略</b>(济南起步区——新旧动能转换)。共同点是都拿到了"国家级或准国家级"的身份文件,都配了超常规的基础设施,都以十年为最小时间单位。</p>
+
+<p>判断新中心成色的三问:一,<b>有人搬来吗</b>(常住人口与机构迁驻)——雄安的央企总部、杭州亚运村的住宅交付是硬答案;二,<b>有内容运转吗</b>(场馆赛后利用、园区入住率)——骆岗公园的客流、兴隆湖的赛事是答案;三,<b>自己会造血吗</b>(产业与税收)——起步区的比亚迪工厂是答案。五个样本正好各答了一问。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-1</span><span class="t">五个新中心的触发器与生成模式</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="五个新中心生成模式对比">
+<text x="20" y="26" font-size="12" font-weight="700">片区</text>
+<text x="110" y="26" font-size="12" font-weight="700">触发器</text>
+<text x="230" y="26" font-size="12" font-weight="700">核心动作</text>
+<text x="500" y="26" font-size="12" font-weight="700">成色检验</text>
+<line x1="16" y1="34" x2="744" y2="34" stroke="#111" stroke-width="1.5"/>
+<text x="20" y="60" font-size="11.5" font-weight="700">雄安</text>
+<text x="110" y="60" font-size="10.5">中央指令(疏解)</text>
+<text x="230" y="60" font-size="10.5">白纸建城 · 央企高校迁驻</text>
+<text x="500" y="60" font-size="10.5" fill="#444">三家央企总部落地(2024—25)</text>
+<text x="20" y="106" font-size="11.5" font-weight="700">杭州奥体</text>
+<text x="110" y="106" font-size="10.5">大事件(亚运 2023)</text>
+<text x="230" y="106" font-size="10.5">场馆群 + 亚运村赛后转化</text>
+<text x="500" y="106" font-size="10.5" fill="#444">亚运村住宅交付 · 公寓满租</text>
+<text x="20" y="152" font-size="11.5" font-weight="700">合肥骆岗</text>
+<text x="110" y="152" font-size="10.5">大事件(园博 2023)</text>
+<text x="230" y="152" font-size="10.5">机场旧址 → 12.7 km² 中央公园</text>
+<text x="500" y="152" font-size="10.5" fill="#444">开园一年客流破千万</text>
+<text x="20" y="198" font-size="11.5" font-weight="700">天府新区</text>
+<text x="110" y="198" font-size="10.5">理念命名(公园城市)</text>
+<text x="230" y="198" font-size="10.5">兴隆湖生态 + 总部商务区</text>
+<text x="500" y="198" font-size="10.5" fill="#444">世运赛场 · 独角兽岛封顶</text>
+<text x="20" y="244" font-size="11.5" font-weight="700">济南起步区</text>
+<text x="110" y="244" font-size="10.5">省级战略(动能转换)</text>
+<text x="230" y="244" font-size="10.5">携河北跨 · 产城同步</text>
+<text x="500" y="244" font-size="10.5" fill="#444">比亚迪投产 · 足球场将竣工</text>
+<rect x="16" y="262" width="728" height="26" fill="#f7f7f7" stroke="#999" stroke-dasharray="3 3"/>
+<text x="380" y="279" font-size="10" text-anchor="middle" fill="#444">共同点:国家级/准国家级身份文件 + 超常规基础设施 + 十年起的最小时间单位;差异点在"先有人、先有事还是先有理念"</text>
+</svg>
+</div>
+<div class="fig-note">五条路径没有优劣:雄安"先有文件等人来",杭州"先有事再留人",骆岗"先有园再装内容",天府"先有湖再长城",济南"先有厂再造城"。新中心是长周期产品,本卷只截取它们 2022—2026 的横断面。</div>
+</div>
+
+<div class="sec" id="s52"><h3>§5.2 雄安<span class="sec-sub">XIONG'AN · 1 ENTRY</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">雄安新区</span><span class="en">Xiong'an New Area</span>
+<div class="meta">河北 · 保定境内白洋淀以北 · 起步区约 100 平方公里 · 类型:疏解承接型新中心</div></div>
+<div class="entry-def">一张白纸上的"千年大计":2017 年设立,前五年地下管廊与骨架路网先行,后五年轮到央企总部与高校进场——到 2025 年秋天,三家央企总部大楼在同一周内亮灯,这座城第一次有了"下班的人流"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>雄安站是华北最大的高铁站之一(2020 年投用),站房屋顶铺光伏,京雄城际 50 分钟到北京西;站前的启动区塔吊成阵,中国星网、中国华能、中国中化的总部大楼已落成——造型分别是卫星阵列、能源水晶与"金芦苇"的意向。白洋淀边的千年秀林一望无际,悦容公园、金湖公园串起已建成的城区;地下,综合管廊里走电力与通信,地面不见电线杆——"先地下后地上"是雄安最与众不同的建造顺序。</p>
+<p><b>近几年发生了什么。</b>疏解在 2024—2025 年密集兑现:2024 年 10 月,中国星网集团总部及四家二级子公司迁驻雄安<sup class="ref">[19]</sup>;2025 年 10 月 9 日,中国华能与中国中化总部同日正式迁驻——华能总部及直属单位 1000 余名员工、中化总部近 1000 名员工进入常态化办公<sup class="ref">[19]</sup>。首批疏解的四所高校(北京交通大学、北京科技大学、北京林业大学、中国地质大学(北京))雄安校区陆续开工;宣武医院等医疗配套先行投用。城市框架同步成形:起步区"三横四纵"骨干路网贯通,市场化项目按"市场化项目六成以上"的结构推进。</p>
+<p><b>怎么来的。</b>2017 年 4 月 1 日,中共中央、国务院决定设立雄安新区,定位"北京非首都功能疏解集中承载地"——疏解对象是北京不想再承担的功能:央企总部、高校、医院。选址白洋淀北岸的三个县,理由是区位(北京南 100 公里)、洼地(开发度低、拆迁量小)与生态(淀泊水系)。建设节奏刻意放慢:2017—2019 做规划("1+4+26"规划体系),2019—2022 建骨架,2022 年后建功能——这是中国新城建设里罕见的"规划先行九年不动土"的样本(→卷二 §6.3)。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 5-1</span><span class="no">雄安首批疏解清单</span></div>
+<table class="spec-t">
+<tr><td class="k">中国星网</td><td>卫星互联网央企;总部大楼 2024 年投用,2024.10 总部及 4 家二级子公司迁驻办公</td></tr>
+<tr><td class="k">中国华能</td><td>能源央企;2025.10.9 总部正式迁驻,总部及直属单位 1000 余名员工常态化办公</td></tr>
+<tr><td class="k">中国中化</td><td>化工央企;2025.10.9 与华能同日迁驻,总部及配套单元近 1000 名员工</td></tr>
+<tr><td class="k">疏解高校</td><td>首批四所:北京交通大学、北京科技大学、北京林业大学、中国地质大学(北京)——雄安校区陆续开工建设中</td></tr>
+<tr><td class="k">医疗配套</td><td>宣武医院雄安院区等先行投用——"先配套后疏解"的顺序安排</td></tr>
+<tr><td class="k">基础设施</td><td>雄安站 2020 年投用;京雄城际约 50 分钟至北京西;综合管廊随路网同步入地</td></tr>
+</table></div>
+
+<div class="sec" id="s53"><h3>§5.3 杭州·合肥·成都·济南<span class="sec-sub">FOUR MORE NEW CENTERS · 4 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">杭州奥体板块</span><span class="en">Hangzhou Olympic Area (Qianjiang Century City)</span>
+<div class="meta">杭州 · 萧山区钱塘江南岸 · 类型:赛事触发型新中心</div></div>
+<div class="entry-def">钱塘江拐弯处那朵"大莲花":2016 年 G20、2023 年亚运会两场大事件把这片滩涂变成了杭州的新封面——亚运村的房子赛后交付成住宅,媒体村变成满租的租赁社区,"莲花"底下开了商业街。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>杭州奥体中心由"大莲花"(主体育场,8 万座,花瓣状钢结构罩棚)与"小莲花"(网球中心,屋顶可开合)组成,立在钱塘江与七甲河之间;对岸是钱江新城的"日月同辉"天际线——江的两岸分别是杭州的现在与新中心。亚运村在城市东北侧,赛后已转成商品住宅与配套社区;"大莲花"LG 层 2024 年 9 月开出了"莲荷里"商业街区,面积约 10 万平方米<sup class="ref">[20]</sup>。钱塘湾一带的总部楼宇沿江排开。</p>
+<p><b>近几年发生了什么。</b>2023 年 9—10 月杭州亚运会举办,大莲花承办开闭幕式;赛后转化随即启动:2024 年 9 月 28 日莲荷里商业街区开业——场馆商业化的样本<sup class="ref">[20]</sup>;2025 年,亚运村运动员村与技术官员村作为商品住宅全面交付业主,媒体村转型为宁巢·美地公寓,首个运营年度出租率 100%<sup class="ref">[20]</sup>。小莲花持续承办网球赛事与演唱会,场馆群的"赛后利用清单"一年比一年长——赛事场馆最容易"赛后空转",杭州给出了目前国内最完整的解法之一。</p>
+<p><b>怎么来的。</b>这片地的规划起点是 2010 年代的钱江世纪城(杭州城市东扩的主战场),2016 年 G20 峰会用 B20 主场馆等设施提前"开了光";2015 年杭州获亚运承办权后,奥体中心与亚运村按赛时标准建设。两场大事件间隔七年,恰好覆盖"建场馆—办赛事—转民用"全周期。新中心的生成通常缺一个"转民用"的闭环,杭州奥体是少数跑完全程的样本(对照:多数城市场馆赛后仍以"办大赛"为主要用途)。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">骆岗公园</span><span class="en">Luogang Park</span>
+<div class="meta">合肥 · 包河区 · 骆岗机场旧址 · 公园总面积 12.7 平方公里 · 类型:事件转公园型新中心</div></div>
+<div class="entry-def">一座机场停飞十年后变成的"世界最大城市公园之一":跑道还在,旁边长了 11.45 平方公里的绿地——合肥用一届园博会把老机场改成中央公园,开园一年客流破千万。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>原骆岗机场的 3000 米跑道保留为公园主轴,两侧是草原、花海与湖泊;园博园的各城市展园沿轴线展开(2023 年园博会遗存);锦绣湖与沿湖生态景观区 2025 年开放,田园花海、樱花湖岸、沙滩与杉林水湾拼出一片"可以野的城市边缘"<sup class="ref">[21]</sup>。公园北区,科创 CBD 与梦想大草坪在规划建设——12.7 平方公里里,绿地占 11.45 平方公里,蓝绿空间占比达 90%<sup class="ref">[21]</sup>。</p>
+<p><b>近几年发生了什么。</b>2023 年 9 月 26 日,第十四届中国(合肥)国际园林博览会在骆岗开幕,展期三个月——这是园博会第一次建在机场跑道上;会后园博园整体保留为城市公园<sup class="ref">[21]</sup>。2024 年 4 月,公园累计入园人数达 1000.7 万<sup class="ref">[21]</sup>——平均每天三万人。2025 年起二期内容持续加载:锦绣湖开放,"超级科技梦工场"、人形机器人主题业态在规划<sup class="ref">[21]</sup>——公园的下一层身份是"科技场景试验场"。</p>
+<p><b>怎么来的。</b>骆岗机场 1977 年启用、2013 年 5 月永久关闭(新桥机场转场),此后这块 12.7 平方公里的城区宝地空了七年。2020 年合肥获得第十四届园博会承办权,决定"不新征地、利用机场旧址办园博会"——省下拆迁、留下跑道。这是"大事件选址存量用地"的代表案例:与杭州(新城建场馆)相反,合肥是"旧地找事办"。园博会结束后场地不拆,转成永久公园——一届三个月的展会,换来一座长期城市资产。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">天府新区(兴隆湖)</span><span class="en">Tianfu New Area (Xinglong Lake)</span>
+<div class="meta">成都 · 天府新区 · 兴隆湖水域约 4500 亩 · 类型:理念命名型新中心</div></div>
+<div class="entry-def">"公园城市"四个字第一次被说出来的地方:2018 年 2 月在兴隆湖畔提出,此后这片人工湖成了中国"城中有湖、湖中有城"的头号样板——湖边有书店、有体育场,2025 年世界运动会的龙舟就在这里划。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>兴隆湖是一片 2013 年开挖的人工湖(水域约 4500 亩、蓄水约 670 万立方米),环湖绿道一圈 8 公里;湖畔书店(中信书店兴隆湖店)的玻璃盒子一半探进水里,是成都出镜率最高的书店<sup class="ref">[22]</sup>。湖东岸,独角兽岛(成都科创生态岛)的环形建筑群已全面封顶——25 栋建筑、最高 249 米;湖西北是中国西部国际博览城与天府总部商务区的楼宇群。中科院成都分院、成都科学城的实验室沿湖北岸排开。</p>
+<p><b>近几年发生了什么。</b>2021 年是"内容年":10 月兴隆湖水生态综合提升完工开放,水质整体达地表水Ⅲ类、局部Ⅱ类,"水下森林"约 210 万平方米;同月底湖畔书店开业<sup class="ref">[22]</sup>。2024—2025 年是"项目年":独角兽岛 2024 年 6 月园区钢结构主体封顶,2025 年 7 月 N1 塔楼封顶、全岛 25 栋建筑主体结构全面完工<sup class="ref">[22]</sup>;2025 年 8 月,成都世界运动会把龙舟、皮划艇马拉松等赛事放在兴隆湖——"公园城市"第一次以赛场身份出圈,同年兴隆湖入选全国美丽河湖优秀案例<sup class="ref">[22]</sup>。环湖鸟类观测记录已达 181 种——一座新湖长出了自己的生态。</p>
+<p><b>怎么来的。</b>天府新区 2014 年获批国家级新区,最初按常规产业新城推进;转折点是 2018 年 2 月 11 日——"公园城市"理念在兴隆湖畔首次提出,天府新区被定位为"公园城市首提地"<sup class="ref">[22]</sup>。此后开发顺序反转:先做水与绿(湖、绿道、湿地),再放楼与厂(科学城、总部商务区)。理念命名改变了片区的估值逻辑——土地价值不再只看容积率,也看窗外有没有湖。全国此后数百个"公园城市"项目,源头都在这片湖。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">济南新旧动能转换起步区</span><span class="en">Jinan Start-Up Zone</span>
+<div class="meta">济南 · 黄河北岸 · 798 平方公里 · 类型:省级战略升级型新中心</div></div>
+<div class="entry-def">济南"携河北跨"的落子:黄河把城市拦了一百多年,2021 年国务院批复起步区后,桥、隧、厂、场在北岸一起上——比亚迪的整车厂先到,6 万座的足球场正在收尾。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>黄河北岸的崔寨片区,黄河体育中心的巨型专业足球场已经封顶合龙——山东省首座 6 万座专业足球场,总投资约 95 亿元,连同体育馆、游泳馆组群总建面约 47.2 万平方米<sup class="ref">[23]</sup>。比亚迪济南基地的厂房群在起步区西部,整车下线;鹊山生态文化区的绿色山体在西北角成形。跨河通道排成串:凤凰大桥、齐鲁大桥、黄河大桥复线桥与济泺路穿黄隧道等,构成"10 桥 1 隧"布局<sup class="ref">[23]</sup>——每一条都把北岸与主城缝紧一分。</p>
+<p><b>近几年发生了什么。</b>2021 年 4 月 25 日国务院批复《济南新旧动能转换起步区建设实施方案》,起步区成为继雄安之后全国第二个以"起步区"命名的国家级新区级平台<sup class="ref">[23]</sup>。产业先落:比亚迪济南基地 2022 年一期建成并下线首辆新能源汽车,2023—2024 年产能持续爬坡<sup class="ref">[23]</sup>。文体设施跟上:黄河体育中心足球场 2025 年 3 月完成钢结构施工,预计 2026 年 12 月达到竣工验收条件<sup class="ref">[23]</sup>。2026 年,起步区获批五年,"新城成形"成为官方表述——北岸从"黄河滩"变成"城市北翼"用了五年。</p>
+<p><b>怎么来的。</b>济南的城市地理被黄河锁死:主城在南岸,北岸长期是滩区与农田。"携河北跨"提了多年,真正动起来靠两个文件:2018 年国家批复山东新旧动能转换综合试验区(济南是三核之一),2021 年起步区方案落地——"起步区"三个字意味着这不是普通新城,而是"跨黄河发展的国家级试验"。它的生成顺序是本编最"重"的:先通道(桥隧)、再产业(比亚迪)、后生活(体育中心与社区)——与杭州"先事后人"、雄安"先地下后地上"又是一种排法。</p>
+</div>
+</div>
+<!-- ==================== 第六编 存量再生 ==================== -->
+<div class="vol" id="v6">
+<div class="vol-no">第六编</div>
+<h2>存量再生</h2>
+<div class="vol-range">老城与老厂不拆而活:微改造、绣花功夫与"流量落户" · 2016—2026 · 八条目</div>
+</div>
+
+<div class="sec" id="s61"><h3>§6.1 总论:从拆到绣<span class="sec-sub">REGENERATION, NOT DEMOLITION</span></h3></div>
+
+<p class="lead">前五编的片区都是"新地做新事"——滩涂、农田、机场旧址上起楼。第六编相反:<b>老地上做新事</b>。石库门里弄、旧厂高炉、骑楼老街、城中村,这些二十年前的标准答案只有一个字——拆;2021 年之后,答案改成了"绣"。<b>本编收录的八个片区,是"从拆到绣"这条政策线走完一遍之后的样本身</b>:上海张园(石库门)、北京首钢园(重工业)、北京隆福寺(老商业区)、广州永庆坊(骑楼)、成都东郊记忆(电子厂)、重庆十八梯(山城老街)、深圳南头古城(古城+城中村)、福州烟台山(领事馆区)。</p>
+
+<p>政策线本身只有十年,但坡度极陡。2016 年永庆坊一期开街时,"微改造"还是广州一家的地方词汇;2021 年,城市更新行动写入国家"十四五"规划,住建部同年发文明确"坚持留改拆并举、以保留利用提升为主",大拆大建被正式叫停<sup class="ref">[40][42]</sup>;上海(2021 年 9 月施行)、深圳(2021 年 3 月施行)、北京(2023 年 3 月施行)相继为城市更新立法,到 2026 年 4 月,全国已有 18 个省市出台《城市更新条例》<sup class="ref">[43]</sup>。2025 年 5 月,中办国办印发《关于持续推进城市更新行动的意见》;同年 7 月,中央城市工作会议在北京举行,距上一次召开已隔十年;2026 年 5 月,国务院印发《城市更新"十五五"规划》,给出 2030、2035 两个时间表<sup class="ref">[40]</sup>。政策从"文件用语"变成"国家行动",只用了五年。</p>
+
+<p>另一条线是数字。全国城镇老旧小区改造 2019 年启动,至 2024 年累计开工 28 万个小区,惠及居民 4800 万户、约 1.2 亿人;2025 年一年新开工 2.71 万个小区,完成投资 1332 亿元,加装电梯 1.4 万部<sup class="ref">[41]</sup>。这是本编八个片区背后的大盘子:明星街区是塔尖,老旧小区改造是塔身——同一个政策语系、不同的工程尺度。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-1</span><span class="t">存量再生政策时序 2016—2026</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="存量再生政策时序图">
+<line x1="70" y1="250" x2="720" y2="250" stroke="#111" stroke-width="2"/>
+<text x="70" y="272" font-size="10" fill="#666">2016</text>
+<text x="355" y="272" font-size="10" fill="#666">2021</text>
+<text x="640" y="272" font-size="10" fill="#666">2026</text>
+<line x1="70" y1="245" x2="70" y2="255" stroke="#111"/>
+<line x1="355" y1="245" x2="355" y2="255" stroke="#111"/>
+<line x1="640" y1="245" x2="640" y2="255" stroke="#111"/>
+<!-- 2016 -->
+<line x1="70" y1="250" x2="70" y2="215" stroke="#999"/>
+<text x="70" y="200" font-size="10.5" text-anchor="start">广州永庆坊一期开街,"微改造"首例</text>
+<text x="70" y="187" font-size="9.5" fill="#888">绣花功夫的地方起点</text>
+<!-- 2017 -->
+<line x1="140" y1="250" x2="140" y2="150" stroke="#999"/>
+<text x="140" y="135" font-size="10.5">深双主展场进南头古城(2017)</text>
+<text x="140" y="122" font-size="9.5" fill="#888">城中村成为展场</text>
+<!-- 2019 -->
+<line x1="225" y1="250" x2="225" y2="215" stroke="#999"/>
+<text x="225" y="200" font-size="10.5">全国老旧小区改造启动(2019)</text>
+<text x="225" y="187" font-size="9.5" fill="#888">28 万个小区的大盘子由此开始</text>
+<!-- 2021 -->
+<line x1="355" y1="250" x2="355" y2="70" stroke="#111" stroke-width="2"/>
+<rect x="300" y="52" width="150" height="20" fill="#111"/>
+<text x="375" y="66" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">转折年 2021</text>
+<text x="355" y="90" font-size="10.5" text-anchor="middle">城市更新写入"十四五"规划</text>
+<text x="355" y="103" font-size="10.5" text-anchor="middle">住建部 63 号文:防止大拆大建</text>
+<text x="355" y="116" font-size="10.5" text-anchor="middle">深圳、上海城市更新条例施行</text>
+<text x="355" y="129" font-size="10.5" text-anchor="middle">首钢园借冬奥完成转身</text>
+<!-- 2025 -->
+<line x1="545" y1="250" x2="545" y2="180" stroke="#999"/>
+<text x="545" y="165" font-size="10.5" text-anchor="middle">中办国办意见(2025.5)</text>
+<text x="545" y="152" font-size="10.5" text-anchor="middle">中央城市工作会议(2025.7)</text>
+<text x="545" y="139" font-size="9.5" fill="#888" text-anchor="middle">时隔十年再开</text>
+<!-- 2026 -->
+<line x1="640" y1="250" x2="640" y2="215" stroke="#999"/>
+<text x="640" y="200" font-size="10.5" text-anchor="middle">《城市更新"十五五"规划》</text>
+<text x="640" y="187" font-size="9.5" fill="#888" text-anchor="middle">18 省市已立法</text>
+</svg>
+</div>
+<div class="fig-note">政策坡度:2016—2020 为地方试点期(永庆坊、南头古城先行),2021 年一年之内"规划+禁令+立法"三件齐发,此后每年递进一层。"从拆到绣"不是审美转向,而是土地财政收缩后开发模式的被动转型——增量见顶,存量才成为主战场(→卷二 §5.3)。</div>
+</div>
+
+<p>八个片区的共同动作可以拆成三步:<b>一,不拆</b>——建筑本体留下,产权与用途腾换(腾退、统租、平移保护都是这一步的技术手段);<b>二,换芯</b>——居住或生产功能退出,文化、商业、办公功能进入,主理人品牌与首店是最常见的"新芯";<b>三,引流</b>——用一个文化事件或一个打卡点把人流带进来,再让业态接住人流。八片区的差异在第一步用什么手段、第三步用什么引子:张园用建筑平移与保税仓,首钢园用冬奥与科幻大会,永庆坊用粤剧与非遗,东郊记忆用一面红墙与 livehouse,十八梯用一条石梯,南头古城用双年展,隆福寺用剧场,烟台山用领事馆建筑群本身。手段不同,账本相同:改造投入要靠运营收入回收,"流量"第一次成为老房子的财务指标。</p>
+
+<div class="sec" id="s62"><h3>§6.2 张园与首钢园<span class="sec-sub">SHANGHAI ZHANGYUAN &amp; BEIJING SHOUGANG PARK · 2 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">张园</span><span class="en">Zhangyuan</span>
+<div class="meta">上海 · 静安区 · 威海路 590 弄 · 42 栋 170 幢历史建筑 · 类型:石库门里弄整体修缮型</div></div>
+<div class="entry-def">上海最大、保存最完整的石库门建筑群,用"最重"的保护手段做"最轻"的生意:整个里弄落架封存,逐幢平移归位,再让奢侈品首店搬进百年弄堂——2022 年西区开街即成顶流,2026 年东区接续开放,"逛弄堂"重新成为南京西路的一等消费。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>威海路 590 弄的主弄两侧,清水砖墙、石库门门头、天井与晒台原样立在原地;弄内按业态重排——路易威登、迪奥、古驰、江诗丹顿等品牌各自占一幢或几幢老宅,门头是石库门,橱窗是当代的;茂名北路辟为限时步行街,与弄堂打通成环。西区 17 幢、东区 26 幢,以主弄为界"东静西闹":西边是首发首秀与限时店,东边规划高端办公、精品酒店、演艺中心与美术馆<sup class="ref">[30][31]</sup>。与其他石库门商业(新天地、田子坊)不同,张园的天井、客堂、厢房格局几乎未动,展览与店铺嵌在原房型里。</p>
+<p><b>近几年发生了什么。</b>2022 年 11 月西区开业,太古地产与静安置业合资运营;至 2026 年已引入 50 余个高能级品牌,入驻率突破 90%,日均客流约 5 万人次、高峰时段 9.2 万人次<sup class="ref">[30]</sup>。2024 年底,全国首个设于文物保护建筑内的保税仓落地张园(约 200 平方米),一线进出境货值累计 2.6 亿元——"展品即商品"的跨境零售在石库门里跑通了<sup class="ref">[30]</sup>。2025 年 6 月,东区 7500 吨的石库门建筑群"华严里"整体平移归位——累计已有 25 幢历史建筑采用"平移后复原"技术<sup class="ref">[30]</sup>。2026 年 6 月 30 日,东区首开区开放,引入 37 个首店品牌(其中 8 家为全球或亚洲首发概念);剩余 21 幢预计 2027 年底全部开放<sup class="ref">[31]</sup>。</p>
+<p><b>怎么来的。</b>张园是 1882 年建成的私家园林,清末民初是上海最著名的公共娱乐场——电灯、话剧、照相馆都在此首演;1919 年后园址改建为石库门里弄,遂成今日格局。2018 年静安区启动保护性征收,采用"征而不拆、人走房留":居民动迁、建筑整体保留,再逐幢勘察编号、加固修缮。它与新天地的路线分岔正在于此:新天地是"拆除重建、立面保留"的第一代石库门商业(→卷三 §4.3),张园是"本体全保、平移复原"的第三代——保护等级提高后,商业从"造场景"转向"借本体",建筑本身就是货品的一部分。保税仓与首店经济的政策叠加,则把一块老里弄推成了跨国品牌的首发地:历史保护区的身份第一次被用作关税与通关上的便利条件<sup class="ref">[30]</sup>。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">首钢园</span><span class="en">Shougang Park</span>
+<div class="meta">北京 · 石景山区 · 永定河东岸 · 7.8 平方公里 · 类型:重工业基地整体转型型</div></div>
+<div class="entry-def">一座停产钢厂的中国式转世:四座高炉分别变成科幻乐园、数字博物馆、会展中心与发布会场,冷却塔下开咖啡店,冬奥滑雪大跳台立在原冷却塔旁——"工业锈带变城市秀场"这句话,全国的样板间在这里。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>长安街西延线尽端,群明湖与秀池的水面映着高炉群:一号高炉外壳未动,炉内是 2.2 万平方米的 SoReal 科幻乐园;三号高炉改造为百年首钢博物馆,高炉本体可登临;四号高炉群已改为会展中心综合体(总建筑面积 14.46 万平方米)<sup class="ref">[32][33]</sup>。六工汇由泵站、风机房、总降压站等车间改造而成,是园区日常的商业面;电力厂改为香格里拉酒店,制氧车间改为演播厅,熄焦塔下是咖啡馆<sup class="ref">[32]</sup>。首钢滑雪大跳台("雪飞天")立于园区西侧,是北京冬奥唯一留在北京赛区的雪上竞赛场馆。整体 7.8 平方公里,地铁与骑行道贯穿,高炉之间可以步行。</p>
+<p><b>近几年发生了什么。</b>2022 年冬奥之后,园区进入"内容填充期"。会展线:中国服贸会自 2021 年起将首钢园设为展区之一,2026 年服贸会(9 月)四高炉会展中心全部投用<sup class="ref">[33]</sup>。科幻线:中国科幻大会连续多届在园内举办,2026 年 3 月第十届吸引入园客流 21.6 万人次<sup class="ref">[32]</sup>。演艺与电竞线:2026 年 6 月,由原短道速滑训练基地改造的首钢园电竞中心启幕,场芯 2800 平方米、可容近 3000 名观众<sup class="ref">[32]</sup>。运营数字上,2026 年上半年在园企业达 1286 家(同比增长 32%),入园客流 839 万人次(同比增长 40%),其中 35 岁以下占 52%<sup class="ref">[32]</sup>——一座"老钢厂"成了北京年轻客流量最大的园区之一。</p>
+<p><b>怎么来的。</b>首钢 1919 年建厂于石景山,为备战 2001 年申奥成功后的环境治理,2005 年启动搬迁、2010 年主厂区停产——"钢厂搬家、土地留下"的格局由此定型。之后的转型走了三步:先是冬奥会选址(2016 年冬奥组委入驻原西十筒仓办公),把国际赛事钉在这块地上;再是工业遗存的系统性改造(高炉、筒仓、车间逐个定功能);最后才是商业与活动的填充。它的体量决定了它不是"一个景区"而是一个"城中之城":会展、科幻、电竞、体育四条内容线并行,比单一业态的更新区抗周期(→卷三 §6.2 工业遗存的通用做法)。对其他工业城市(沈阳铁西、武汉青山、重庆重钢片区)而言,首钢园给出的最重要参数不是美学,而是"先定大事件、再做改造、后引内容"的次序。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-1</span><span class="no">八个存量再生片区参数对照</span></div>
+<table class="spec-t">
+<tr><td class="k">上海张园</td><td>载体:石库门里弄(1880s—1920s) · 规模:42 栋 170 幢 · 手段:保护性征收+平移复原 · 首开:2022.11 西区 · 引子:顶奢首店+保税仓 · 2026 客流:日均约 5 万<sup class="ref">[30]</sup></td></tr>
+<tr><td class="k">北京首钢园</td><td>载体:钢铁联合企业(1919—2010) · 规模:7.8 km² · 手段:搬迁后整体保留+逐炉定功能 · 首开:冬奥 2022 · 引子:冬奥+服贸会+科幻大会 · 2026 上半年客流 839 万<sup class="ref">[32]</sup></td></tr>
+<tr><td class="k">北京隆福寺</td><td>载体:庙会商业区(明代起) · 规模:一二期合计约 18.5 万㎡ · 手段:绣花式更新 · 首开:2019.8 一期 · 引子:剧场+飞行影院 · 2025 客流近 800 万<sup class="ref">[34]</sup></td></tr>
+<tr><td class="k">广州永庆坊</td><td>载体:骑楼街+西关民居(民国) · 规模:一期 8000㎡+二期 9 万㎡ · 手段:微改造(修旧如旧) · 首开:2016.9 一期 · 引子:粤剧+非遗街区 · 国家 4A 景区<sup class="ref">[35]</sup></td></tr>
+<tr><td class="k">成都东郊记忆</td><td>载体:电子管厂(1950s 苏援) · 规模:282 亩/20 万㎡ · 手段:工业遗存活化 · 首开:2011(2020s 转型) · 引子:红墙+livehouse+国风 · 2025 客流超 1800 万<sup class="ref">[36]</sup></td></tr>
+<tr><td class="k">重庆十八梯</td><td>载体:山城老街(七街六巷) · 规模:88 亩/17 万㎡ · 手段:拆除重建+格局复原 · 首开:2021.9 · 引子:梯坎+国潮 · 2024 客流 2311 万<sup class="ref">[37]</sup></td></tr>
+<tr><td class="k">深圳南头古城</td><td>载体:古县城+城中村(331 年起) · 规模:19 万㎡/296 栋改造 · 手段:统租+微改造(改造面≤30%) · 首开:2020.8 · 引子:深双+主理人 · 年均访客超 1000 万<sup class="ref">[38]</sup></td></tr>
+<tr><td class="k">福州烟台山</td><td>载体:领事馆区(1845 起) · 规模:53.22 公顷 · 手段:修缮+商业漫步街区 · 首开:2021.10/2022.9 · 引子:万国建筑+主理人 · 2025 客流超 1900 万<sup class="ref">[39]</sup></td></tr>
+</table>
+<div style="padding:6px 12px;font-size:11.5px;color:#666;border-top:1px dashed #ddd">读法:载体决定保护等级(文物/历史建筑/风貌建筑),保护等级决定手段(平移/修缮/重建),手段决定成本,成本反过来决定业态必须走多高的客单价或多大的流量——八片区的"商业气质"差异,根子都在这张因果链上。</div>
+</div>
+
+<div class="sec" id="s63"><h3>§6.3 广深蓉渝<span class="sec-sub">GUANGZHOU · CHENGDU · CHONGQING · SHENZHEN · 4 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">永庆坊</span><span class="en">Yongqingfang</span>
+<div class="meta">广州 · 荔湾区 · 恩宁路 · 一期 8000㎡ + 二期约 9 万㎡ · 类型:骑楼街微改造型</div></div>
+<div class="entry-def">"微改造"一词的出土地:恩宁路的骑楼不拆、危房按原样修,巷子里塞进粤剧、非遗与咖啡——2016 年一期开街时它还是个地方案例,如今"绣花功夫"已写进中央文件,这里成了教科书的第一页。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>恩宁路是广州现存最长最完整的骑楼街,沿线 82 处保护建筑<sup class="ref">[35]</sup>。永庆坊嵌在骑楼街内侧的麻石巷里:青砖墙、趟栊门、满洲窗按原工艺修复,巷子拐角是李小龙祖居(其父粤剧演员李海泉旧居);片区一端的粤剧艺术博物馆是园林式建筑群,广福台上每日有粤剧轮演<sup class="ref">[35]</sup>。二期沿恩宁路向上下游展开八个片区——骑楼段、滨河段、金声电影院段等,把"一条巷子的改造"扩成了"一片街区的更新"。业态以非遗工作室、老字号、咖啡与轻餐为主,密度高、单体小。</p>
+<p><b>近几年发生了什么。</b>2018 年 10 月二期启动,分期逐段开放;金声电影院(1932 年建的老影院)的改造成为标志节点<sup class="ref">[35]</sup>。非遗线越铺越厚:至 2026 年,永庆坊非遗街区已入驻 13 家非遗大师工作室,广彩、广绣、醒狮等在此设常态点位,星巴克在此开出华南首家非遗概念店;永庆坊—沙面—西堤线路入选全国非遗主题旅游线路,旅游区获评国家 4A 级景区<sup class="ref">[35]</sup>。客流数据成为常态新闻:2026 年春节假期接待 125.43 万人次,端午假期约 31.15 万人次<sup class="ref">[35]</sup>——老城区街区做到日均数万人,在全国骑楼片区中无出其右。</p>
+<p><b>怎么来的。</b>恩宁路片区民国时期成形,2000 年代陷入"危房集中、设施落后"的困境,2007 年曾启动大拆大建式改造,因反对而搁浅。转机是 2015 年广州城市更新"1+3"政策确立"微改造"路径,永庆坊成为第一个试点:政府主导、企业承办、居民参与,建筑"修旧如旧、新旧融合"。2018 年 10 月,最高领导人在此视察时提出的"城市留住记忆,让人们记住乡愁"与"绣花功夫",此后成为全国城市更新的标准语汇<sup class="ref">[35]</sup>。个案由此升格为范式:中国历史文化街区更新的"广州模式"(微改造、以用促保)与上海的"本体保护模式"(张园)、北京的"功能置换模式"(首钢园)并列,各自对应不同的保护等级与成本结构。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">东郊记忆</span><span class="en">Eastern Suburb Memory</span>
+<div class="meta">成都 · 成华区 · 原国营红光电子管厂 · 282 亩/建面约 20 万㎡ · 类型:工业遗存流量化型</div></div>
+<div class="entry-def">一座 1950 年代电子管厂的"二次点火":第一次转型做音乐公园不温不火,第二次靠一面红墙、一场场 livehouse 和满街汉服变成全国客流最大的工业遗存街区之一——年轻人占比超八成,是它区别于所有"遗产式"更新的底色。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>苏式红砖厂房、桁架管线、烟囱与铁轨原样保留,一列老火车头停在厂房之间;保留物里还有 843 雷达天线和 1958 年出厂的摇臂钻床——它们是"一五"时期苏联援建电子工业的实物档案<sup class="ref">[36]</sup>。园区里最出名的"展品"其实是一面墙:三层红砖墙上"成都"两个白色大字,是社交平台上成都出镜率最高的机位之一<sup class="ref">[36]</sup>。业态是演艺与潮流:livehouse、音乐节、漫展、国风市集、汉服体验店、买手店,晚间与周末最满。厂房间穿插小广场与市集,动线密,适合"逛"而不只是"看"。</p>
+<p><b>近几年发生了什么。</b>园区 2011 年以"东区音乐公园"开园,2012 年更名东郊记忆,此后经历从"音乐主题公园"到"潮流文化街区"的重定位。近三年是数据陡升期:2024 年全年客流 1700 万人次、活动超 2500 场;2025 年上半年近 920 万人次(同比增长 10.5%),外地游客占比超五成、年轻群体占比超八成;2025 年全年客流超 1800 万人次<sup class="ref">[36]</sup>。国庆假期曾连续四天单日破 12 万人次<sup class="ref">[36]</sup>。内容线也在加码:2026 年 APEC 数字周期间,多国嘉宾到访园内的数字文创展览——工业遗存开始叠加"数字文创"的第二层身份<sup class="ref">[36]</sup>。</p>
+<p><b>怎么来的。</b>红光电子管厂是"一五"时期苏联援建的电子工业项目,1990 年代后逐步停产闲置。2011 年成都将其改造为音乐主题公园,定位演出与音乐产业;但真正把它推成现象级的是 2020 年代初的重运营:管理方放弃"产业园"思维,把园区当"内容场"经营——红墙机位、汉服友好、livehouse 密度、二次元活动,每一个动作都对着年轻客流的算法逻辑去(→§6.1 第三步"引流")。它是本编里"改造动作最少、运营动作最多"的案例:建筑 2011 年就修完了,热度是运营做出来的。这给同类项目(全国工业遗存改造园区超千个,多数客流平平)的提示很直接——遗存只解决"值得来一次",常态内容才解决"来第二次"。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">十八梯</span><span class="en">Shibati</span>
+<div class="meta">重庆 · 渝中区 · 较场口至解放西路 · 占地约 88 亩/建面约 17 万㎡ · 类型:山城老街拆除重建型</div></div>
+<div class="entry-def">一条连接上半城与下半城的石梯老街:改造走了"拆了照原样重建"的重庆路线——七街六巷的格局、堡坎与梯坎的原位置原高度,全按老地图复原,再填进火锅、民宿与国潮。它的争议(老味道还剩几分)与它的客流(2024 年 2311 万人次)同样著名。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从较场口下行,主梯道两侧是复原的青石板路与吊脚楼、竹编墙、老砖墙立面;上下高差数十米,梯道分岔成"七街六巷"的鱼骨状格局——堡坎、陡坡都在原位置、原高度、原尺度<sup class="ref">[37]</sup>。片区内布置了十八个景点:山城记忆馆、大隧道遗址(抗战时期较场口防空隧道体系的出入口之一)、老井与黄葛树等,自然风貌、历史展陈与市井景观各占一块<sup class="ref">[37]</sup>。业态按功能分区:A、B 区为传统文化体验,餐饮民宿为主;C 区为国潮文创,民宿、手办市集、小吃集市集中。站在梯道中段回望,解放碑的塔楼与老街的坡屋顶同框——重庆"上半城/下半城"的垂直城市感在这里最直观。</p>
+<p><b>近几年发生了什么。</b>项目 2017 年 5 月开工,2021 年 9 月 30 日 A、B、C 区开街,127 户商家同时开业<sup class="ref">[37]</sup>。运营三年后数据爬坡:2024 年全年接待 2311 万人次、销售额 4.8 亿元,日均客流超 8 万、峰值突破 22 万;游客平均停留时间从开街初期的 40 分钟延长到 80 分钟<sup class="ref">[37]</sup>。2025 年除夕至元宵接待 219.31 万人次<sup class="ref">[37]</sup>。2026 年的更新动作很"场景化":6 月底长江为幕、梯坎为台的国潮时装周启幕;入夏后沿主街拉起 400 余米黄葛树主题天幕并叠加雾森系统——给无空调的室外老街装"物理降温",是山城街区特有的运营题<sup class="ref">[37]</sup>。</p>
+<p><b>怎么来的。</b>十八梯因"上半城到下半城的十八级石梯"得名,是老重庆陆路交通的干道;1990 年代后沦为危房密集的棚户区,2015 年前后启动征收。它选择了与永庆坊相反的技术路线:原始建筑质量过差,修缮不经济,于是"拆除重建+格局复原"——街巷肌理、堡坎高程、青石板材按史料与测绘复刻,建筑立面做旧。这条路线代价是"原真性"的折损,换来的是消防、结构与人流的彻底现代化。重庆此后在南岸下浩里等项目中转向"微改造",官方表述也从十八梯的"重建"变为下浩里的"有机更新"——同一座城市,两种路线并存,正好构成本编的一组对照实验。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">南头古城</span><span class="en">Nantou Ancient City</span>
+<div class="meta">深圳 · 南山区 · 占地约 19 万㎡/改造楼栋 296 栋 · 类型:古城与城中村共生型</div></div>
+<div class="entry-def">深圳的"城市原点":东晋设郡的县治所在,1700 年后仍是活着的城中村——改造不迁走一户原住民,统租后再出租,主街给了主理人,背街仍是出租屋。它回答了一个尖锐问题:城中村改造,能不能不绅士化?</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>南城门洞进城,一条主街贯穿南北:信国公文氏祠(纪念文天祥)、新安县衙、报德祠、东莞会馆等文保建筑夹在握手楼之间;古城 992 栋建筑以居民私宅为主,改造涉及 296 栋,"六纵一横"的街巷肌理原封未动,核心改造面积控制在 30% 以内<sup class="ref">[38]</sup>。主街两侧是 280 多个主理人品牌——咖啡、买手店、设计工作室、展览空间;if 工厂(原服装厂,1.1 万平方米)是最大的单体改造,内为创意办公<sup class="ref">[38]</sup>。背街小巷仍是城中村原貌:握手楼、晾衣绳、5 元理发店。新旧两层的空间切片在同一座"城"里,构成深圳最特殊的城市景观(→卷三 §6.2 城中村谱系)。</p>
+<p><b>近几年发生了什么。</b>2019 年 3 月保护与利用项目启动,采用"政府主导、企业实施(万科)、村民参与"模式,统一回租物业再改造运营;2020 年 8 月 26 日——深圳经济特区四十岁生日当天——南北街示范段开街<sup class="ref">[38]</sup>。此后内容线持续:2023 年第九届深港城市\建筑双城双年展在此设分展场,六栋民居微改造为展场;2024 年米兰双城时尚周落地;2025 年 8 月焕新五周年时民艺市集持续整月<sup class="ref">[38]</sup>。头衔与数字:深圳首个国家级旅游休闲街区、国家级夜间文旅消费集聚区,年均访客超 1000 万人次;2026 年 7 月,其综合整治规划获城市更新"最佳创新实践案例"<sup class="ref">[38]</sup>。</p>
+<p><b>怎么来的。</b>南头的历史层积在珠三角独一无二:东晋咸和六年(331 年)设东官郡,明万历元年(1573 年)设新安县,辖地包括今深圳与香港——"深港同源"的行政原点就在这里<sup class="ref">[38]</sup>。1950 年代城墙逐渐拆尽,城内演变为城中村;2017 年第七届深双以"城市共生"为主题把主展场设进古城,学术目光第一次聚焦于此,两年后改造启动。技术方案是本编最大胆的一档:不征收、不大拆、不驱赶——产权与租户结构保留,只对统租物业做立面、管线与公区改造,原商铺大半迁往背街(主街仅存一家老字号糖水铺)<sup class="ref">[38]</sup>。它与"完全绅士化"(北京杨梅竹斜街早期)和"完全推倒"(十八梯)构成三种路线:南头证明"低成本微改造+高密度内容"在一线城市核心区也能跑通,城中村不必清空才有价值。</p>
+</div>
+</div>
+
+<div class="sec" id="s64"><h3>§6.4 隆福寺与烟台山<span class="sec-sub">BEIJING LONGFU &amp; FUZHOU YANTAISHAN · 2 ENTRIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">隆福寺</span><span class="en">Longfu Temple Area</span>
+<div class="meta">北京 · 东城区 · 东四十字路口西南 · 一二期合计约 18.5 万㎡ · 类型:老城商业区长期更新型</div></div>
+<div class="entry-def">一处烧了三十年的商业废墟,用十二年更新爬回顶流:明代"诸市之冠"的庙街,火灾后沉寂,如今剧场、飞行影院与老字号同街——北京老城更新里周期最长、争议最多、也最像"慢功"的样本。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>隆福寺街与北侧的隆福大厦、东院、南坊围合出一片新旧拼贴的街区:二期新建部分以灰砖、玻璃与陶板立面延续胡同肌理;改造后的长虹影院内是 70 个体感座椅与巨型球幕的飞行影院(Funfly 环游天地)<sup class="ref">[34]</sup>。业态是"文化+老字号"混编:开心麻花 A99 剧场、VR 影院与 XR 艺术中心挨着稻香村零号寻宝馆、同仁堂知嘛健康、紫光园、姚记炒肝、丰年灌肠<sup class="ref">[34]</sup>——上午排炒肝,下午排沉浸展,是这条街的日常。街北端屋顶平台可望故宫方向的天际线,一期(隆福大厦+北里)以文化办公与艺术空间为主,木木美术馆曾是早期旗店。</p>
+<p><b>近几年发生了什么。</b>更新周期拉得很长:2012 年 8 月项目启动,2019 年 8 月一期(隆福大厦、北里,约 7.5 万平方米)开业;2023 年东城区印发《隆福寺园区发展建设三年行动方案(2023—2025)》提速二期<sup class="ref">[34]</sup>。2025 年 9 月 17 日二期开业——东院、南坊与环游天地,总建筑面积约 11 万平方米,商业面积 3.5 万余平方米<sup class="ref">[34]</sup>。运营数据随之兑现:2025 年街区客流近 800 万人次;自一期开业累计举办线下文化活动超 600 场<sup class="ref">[34]</sup>。老字号的排队成为新景观——稻香村蜜三刀、奶油麻花、开花枣被称为这条街的年货"三件套"<sup class="ref">[34]</sup>。</p>
+<p><b>怎么来的。</b>隆福寺明代为京城庙市之冠,1952 年摊贩集中为"东四人民市场",1988 年建隆福大厦达到商业顶峰,1993 年大火后一蹶不振——此后二十年,这块地是北京二环内最著名的"沉睡资产"。2012 年启动的更新由国企平台操盘,思路经历过反复:早期偏重商业综合体,后期转向"文化先行"(剧场、美术馆、艺术展),二期才把"演艺+体验+老字号"的组合装齐。它的十二年周期说明老城更新的真实节奏:产权复杂(庙产、国企、商户交织)、限高与风貌约束严、投资回收慢——快不了的客观条件反而塑造了它的业态厚度。与张园(五年出形象)、首钢园(事件定输赢)相比,隆福寺是"熬出来的更新",这类样本在老城更新里占多数,只是多数没有熬出名。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">烟台山历史风貌区</span><span class="en">Yantaishan Historic Area</span>
+<div class="meta">福州 · 仓山区 · 闽江南岸 · 53.22 公顷(核心区 30 公顷) · 类型:近代领事馆区修缮型</div></div>
+<div class="entry-def">五口通商时代留下的"万国建筑博物馆":17 国领事馆、33 家洋行、8 座教堂散布在一座小山上,百年后修缮成主理人街区——石厝教堂旁开咖啡馆,领事馆官邸里办展,是近年二线城市老街区里热度最高的一个。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>闽江南岸的仓山山地上,乐群路为主干,串起石厝教堂(花岗石砌筑的哥特小教堂)、闽海关税务司官邸(1877 年,殖民地外廊式)、乐群楼(1854 年,各国领事集资兴建的俱乐部建筑,今大观美术馆)、仓山影剧院(原荷兰领事馆)等<sup class="ref">[39]</sup>。风貌区现存历史建筑 163 处、历史街巷 38 条<sup class="ref">[39]</sup>。商业街区沿山势铺设步道,近三百个特色店铺(买手店、咖啡馆、文创空间)嵌在洋行、领事馆旧址之间,主理人品牌占比超七成<sup class="ref">[39]</sup>。街区制式与鼓浪屿相类——山地、老洋房、无车步行——但业态更"日常",不是纯景区。</p>
+<p><b>近几年发生了什么。</b>修缮分两步:至 2021 年 7 月完成 48 处保留建筑修缮;2021 年 10 月商业漫步街区一期开街,2022 年 9 月 30 日全面开业,近两百个品牌亮相<sup class="ref">[39]</sup>。此后进入运营爬坡:2023 年以来累计引进全国首店 21 家、全省首店 14 家、全市首店 30 家;2025 年全年客流突破 1900 万人次,暑期单日客流超 5 万,18—34 岁消费者占比超七成<sup class="ref">[39]</sup>;2026 年春节客流 124.2 万人次,同比增长约三成<sup class="ref">[39]</sup>。2026 年 6 月,仓山区明确二期范围(上藤路—塔亭路—立新路—象山里—巷下路区域),先行启动塔亭地块——领事馆区的更新开始向纵深推进<sup class="ref">[39]</sup>。</p>
+<p><b>怎么来的。</b>1844 年福州开埠,次年英国设领事馆,此后 17 国领事馆、33 家洋行、教堂、教会学校与医院在仓山集聚,留下成片西式建筑<sup class="ref">[39]</sup>——烟台山因此得名"万国建筑博物馆",与鼓浪屿同为近代口岸"领事馆山"的双子样本(→卷三 §1.2)。但它的更新晚了鼓浪屿一代:2010 年代中期才启动征收与修缮,赶上的是"微改造+商业运营"成熟期,所以直接跳过了"景区化"阶段,按"城市街区"运营——首店与主理人制度、常态市集、会员体系都是这套打法的标配。区位也是变量:山脚即是福州传统中轴线的南端,与上下杭、三坊七巷串成"中轴文旅带",客流有城市基本盘托底。烟台山因此成为二线省会老街区更新的参照系:同样造价,借的是"近代建筑群+城市中轴"的双重位置红利。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-2</span><span class="t">八个存量片区年客流量对比</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 340" width="100%" role="img" aria-label="八个存量片区年客流量对比图">
+<text x="30" y="24" font-size="12" font-weight="700">万人次/年(最新完整年度)</text>
+<text x="30" y="40" font-size="10" fill="#666">口径不一:标注统计时段;张园为日均口径,不列入条形</text>
+<line x1="150" y1="52" x2="150" y2="300" stroke="#999"/>
+<!-- 十八梯 2311 -->
+<text x="142" y="72" font-size="11" text-anchor="end">重庆十八梯</text>
+<rect x="150" y="60" width="578" height="16" fill="#111"/>
+<text x="735" y="72" font-size="11" fill="#111" text-anchor="end">2311(2024)</text>
+<!-- 烟台山 1900 -->
+<text x="142" y="102" font-size="11" text-anchor="end">福州烟台山</text>
+<rect x="150" y="90" width="476" height="16" fill="#333"/>
+<text x="632" y="102" font-size="11" fill="#111">1900+(2025)</text>
+<!-- 东郊记忆 1800 -->
+<text x="142" y="132" font-size="11" text-anchor="end">成都东郊记忆</text>
+<rect x="150" y="120" width="451" height="16" fill="#555"/>
+<text x="607" y="132" font-size="11" fill="#111">1800+(2025)</text>
+<!-- 南头古城 1000 -->
+<text x="142" y="162" font-size="11" text-anchor="end">深圳南头古城</text>
+<rect x="150" y="150" width="250" height="16" fill="#777"/>
+<text x="406" y="162" font-size="11" fill="#111">1000+(年均)</text>
+<!-- 首钢园 839 上半年 -->
+<text x="142" y="192" font-size="11" text-anchor="end">北京首钢园</text>
+<rect x="150" y="180" width="210" height="16" fill="#999"/>
+<text x="366" y="192" font-size="11" fill="#111">839(2026 上半年)</text>
+<!-- 隆福寺 800 -->
+<text x="142" y="222" font-size="11" text-anchor="end">北京隆福寺</text>
+<rect x="150" y="210" width="200" height="16" fill="#aaa"/>
+<text x="356" y="222" font-size="11" fill="#111">≈800(2025)</text>
+<!-- 永庆坊 春节125 -->
+<text x="142" y="252" font-size="11" text-anchor="end">广州永庆坊</text>
+<rect x="150" y="240" width="31" height="16" fill="#ccc"/>
+<text x="187" y="252" font-size="11" fill="#111">125(2026 春节假期)</text>
+<!-- 张园 日均 -->
+<text x="142" y="282" font-size="11" text-anchor="end">上海张园</text>
+<rect x="150" y="270" width="20" height="16" fill="#e5e5e5" stroke="#999"/>
+<text x="176" y="282" font-size="11" fill="#111">日均约 5 万·高峰 9.2 万(未公布全年)</text>
+<line x1="150" y1="300" x2="740" y2="300" stroke="#111"/>
+<text x="150" y="316" font-size="9.5" fill="#888">0</text>
+<text x="400" y="316" font-size="9.5" fill="#888">1000</text>
+<text x="680" y="316" font-size="9.5" fill="#888">2000+</text>
+</svg>
+</div>
+<div class="fig-note">两个读数:一,存量街区客流普遍进入"千万人次"量级,与头部主题公园同档——"逛街"重新成为大宗消费行为;二,口径差异本身就是信息:公布日均的(张园)在意品牌调性,公布全年总量的(十八梯、烟台山)在意城市名片,只公布节假日峰值的(永庆坊)在意文旅排名。数据均为运营方或属地政府公开口径<sup class="ref">[30][32][34][35][36][37][38][39]</sup>。</div>
+</div>
+
+<!-- ==================== 附录 ==================== -->
+
+<div class="vol" id="appA">
+<div class="vol-no">附录 A</div>
+<h2>术语表</h2>
+<div class="vol-range">按拼音序 · 体例仿词典 · 只收现行通名与通行现象,不立新词</div>
+</div>
+
+<div class="lemma"><b>保税展示</b><span class="pos">n.</span>保税监管下的进口商品展销制度:展品暂不完税,售出才报关;张园将其引入文保建筑,形成"石库门里的跨境零售"(→§6.2)。</div>
+<div class="lemma"><b>城中村改造</b><span class="pos">n.</span>对城市建成区内集体土地上高密度聚落的更新;2023 年起中央部署在超大特大城市推进,拆除新建、整治提升、拆整结合三类并行(→§6.3 南头;卷三 §6.2)。</div>
+<div class="lemma"><b>大科学装置</b><span class="pos">n.</span>也称重大科技基础设施:为探索未知而建的大型研究装置(同步辐射光源、散裂中子源等),科学城的"锚"(→§3.1)。</div>
+<div class="lemma"><b>封关运行</b><span class="pos">n.</span>海关监管术语:合作区整体封闭、按"一线放开、二线管住"规则运转的状态;横琴 2024 年 3 月起实施(→§4.2)。</div>
+<div class="lemma"><b>风景名胜区与 4A/5A 景区</b><span class="pos">n.</span>两套评定体系:前者按《风景名胜区条例》划定为保护区域,后者为文旅部门对旅游区的质量等级;永庆坊属后者(→§6.3)。</div>
+<div class="lemma"><b>工业遗存</b><span class="pos">n.</span>停产后留存的厂房、设备与构筑物;2010 年代起成为更新类项目的最大载体库(→卷三 §6.2、本编第三、六编)。</div>
+<div class="lemma"><b>公园城市</b><span class="pos">n.</span>2018 年在成都兴隆湖畔提出的城市发展理念:把城市当作公园来营建,而非在城里建公园(→§5.3)。</div>
+<div class="lemma"><b>国家级新区</b><span class="pos">n.</span>国务院批复设立的承担重大改革发展任务的综合性功能区,1992 年浦东起共 19 个;与自贸区、高新区构成三大政策区序列(→卷二 §5.2)。</div>
+<div class="lemma"><b>航线/岸线贯通</b><span class="pos">n.</span>把分段占用的滨水岸线连成连续开放空间的工程,常配"漫步道+跑步道+骑行道"三道断面(→§1.1)。</div>
+<div class="lemma"><b>活化利用</b><span class="pos">n.</span>文物与历史建筑领域的通行方针:与"以用促保"并提,指通过赋予当代功能使保护对象获得持续维护的资金与理由(→§6.1、§6.4)。</div>
+<div class="lemma"><b>留改拆并举</b><span class="pos">n.</span>2021 年住建部文件确立的城市更新方针:保留利用提升优先,拆除新建为辅;"防止大拆大建"为其配套禁令(→§6.1)。</div>
+<div class="lemma"><b>历史文化街区</b><span class="pos">n.</span>《历史文化名城名镇名村保护条例》规定的保护层次之一:保存文物特别丰富、历史建筑集中成片、能够体现传统格局的区域;永庆坊、南头古城均在其中(→§6.3)。</div>
+<div class="lemma"><b>历史建筑</b><span class="pos">n.</span>市县政府确定公布的具有一定保护价值、能够反映历史风貌的建筑;区别于文物的法定保护,活化限制更松(→卷三 §4.1)。</div>
+<div class="lemma"><b>绿色建筑与海绵城市</b><span class="pos">n.</span>本卷未展开;新中心与滨水片区的标配技术底座,详见卷二 §5.4。</div>
+<div class="lemma"><b>漫步道三线断面</b><span class="pos">n.</span>滨水贯通的标准断面做法:贴水漫步道、抬高跑步道、再上骑行道平行布置;2017 年黄浦江贯通后成为通行配置(→图 1-1)。</div>
+<div class="lemma"><b>平移保护</b><span class="pos">n.</span>把整栋建筑托换到滑道上水平移动的工程技术;张园用于"先移开、修地下、再归位"的循环施工(→§6.2)。</div>
+<div class="lemma"><b>骑楼</b><span class="pos">n.</span>华南与闽地临街建筑形制:上层跨建人行道之上,底层形成连续柱廊;广州恩宁路为最完整遗存带之一(→§6.3、卷三 §1.3)。</div>
+<div class="lemma"><b>全面封关 / 分线管理</b><span class="pos">n.</span>见"封关运行";海南自贸港拟于 2025 年底前实现全岛封关运作(→§4.3)。</div>
+<div class="lemma"><b>石库门</b><span class="pos">n.</span>上海近代里弄住宅主流形制:江南民居基因+西方联排格局,以石料门框、乌漆大门为识别特征;张园为最大保存群落(→§6.2、卷三 §1.3)。</div>
+<div class="lemma"><b>疏解</b><span class="pos">n.</span>把过度集聚的首都功能与人口向域外转移的战略;雄安承接高校、医院、央企总部(→§5.2)。</div>
+<div class="lemma"><b>统租</b><span class="pos">n.</span>统租统管:改造主体整体承租城中村房屋,统一改造、运营后再出租;南头古城的主要技术手段(→§6.3)。</div>
+<div class="lemma"><b>微改造</b><span class="pos">n.</span>以修缮、整饬、功能置换为主,不改变建筑主体与街巷格局的更新方式;广州 2015 年政策确立,永庆坊为首例(→§6.3)。</div>
+<div class="lemma"><b>绣花功夫</b><span class="pos">n.</span>对精细更新方式的通行比喻,2018 年在永庆坊视察时与"城市留住记忆"并提,后进入中央文件语汇(→§6.1)。</div>
+<div class="lemma"><b>一线 / 二线</b><span class="pos">n.</span>合作区海关监管的两道边界:"一线"对境外(合作区与澳门、香港方向)基本放开,"二线"对内地设卡管理(→§4.1、图 4-1)。</div>
+<div class="lemma"><b>艺术区 / 创意园区</b><span class="pos">n.</span>以艺术展览、设计办公为主业态的更新园区(798 为原型);与"流量化街区"(东郊记忆型)的差别在业态密度与运营强度(→§6.3)。</div>
+<div class="lemma"><b>演艺经济</b><span class="pos">n.</span>以剧场、livehouse、音乐节为主力业态吸引客流的运营模式;隆福寺、东郊记忆均以此为"新芯"(→§6.3、§6.4)。</div>
+<div class="lemma"><b>遗产廊道</b><span class="pos">n.</span>把多点遗产串成线性展示带的做法;本卷"一江一河"岸线即工业遗产廊道化的最大样本(→§1.2、卷三 §4.4)。</div>
+<div class="lemma"><b>一江一河</b><span class="pos">n.</span>上海对黄浦江、苏州河的合称与官方工作语汇:"一江一河"沿岸贯通与功能提升自 2017 年起为市级重点工程(→§1.2、图 1-2)。</div>
+<div class="lemma"><b>总部基地</b><span class="pos">n.</span>为集聚企业总部整片预留、统一规划的商务区;深圳湾超总为旗舰样本,前滩、琶洲、交子、丽泽各有分工(→§2.1)。</div>
+<div class="lemma"><b>主理人品牌</b><span class="pos">n.</span>以创办者个人审美直接决定产品与空间的小型商业品牌;近年在存量街区占比成为衡量"非连锁度"的指标(→§6.3、§6.4)。</div>
+<div class="lemma"><b>综合保税区</b><span class="pos">n.</span>集保税区、出口加工区等功能于一身的海关特殊监管区域;临港、横琴等合作区的贸易功能底座(→§4.2、§4.3)。</div>
+<div class="lemma"><b>自由港 / 自由贸易港</b><span class="pos">n.</span>境外货物、资金自由进出的最高开放形态;海南自贸港对标香港、新加坡(→§4.3)。</div>
+
+<div class="vol" id="appB">
+<div class="vol-no">附录 B</div>
+<h2>参考来源</h2>
+<div class="vol-range">正文上标 [n] 对应下列条目 · 以公开制度文本、官方发布与主流媒体报道为纲 · 时间截至 2026 年 8 月</div>
+</div>
+
+<ol class="src">
+<li>上海市"一江一河"开发建设与黄浦江 45 公里贯通相关公开资料(上海市政府新闻发布、市住建委)——§1.1、§1.2 苏州河条目</li>
+<li>上海西岸(徐汇滨江)官方发布:西岸美术馆与蓬皮杜合作、油罐艺术中心、模速空间及人工智能企业集聚数据(徐汇区政府、西岸集团)——§1.2 西岸条目</li>
+<li>北京市朝阳区亮马河国际风情水岸改造公开资料(朝阳区政府、北京日报)——§1.3 亮马河条目</li>
+<li>广州白鹅潭大湾区艺术中心与聚龙湾片区公开资料(广东省政府、广州市政府)——§1.3 白鹅潭条目</li>
+<li>上海杨浦滨江"世界仅存最大滨江工业带"保护利用公开资料(杨浦区政府)——§1.2 杨浦条目</li>
+<li>上海北外滩规划与建设公开资料(虹口区政府、上海市规划资源局)——§1.2 北外滩条目</li>
+<li>苏州河两岸贯通与中心城水系更新公开资料(上海市住建委)——§1.2 苏州河条目</li>
+<li>上海世博文化公园建设开放公开资料(上海市政府、浦东新区)——§1.2 世博条目</li>
+<li>深圳湾超级总部基地公开资料:入驻企业名单、中央绿轴开放、总投资(深圳发布、深圳特区报、南山区政府)——§2.2 超总条目与档 2-1</li>
+<li>上海前滩国际商务区公开资料(浦东新区、陆家嘴集团)——§2.3 前滩条目</li>
+<li>广州琶洲人工智能与数字经济试验区公开资料(海珠区政府)——§2.3 琶洲条目</li>
+<li>成都交子公园金融商务区公开资料(成都高新区)——§2.3 交子条目</li>
+<li>北京丽泽金融商务区公开资料(丰台区政府)——§2.3 丽泽条目</li>
+<li>上海张江科学城公开资料:大科学装置、集成电路与生物医药产业数据(上海科创办、张江集团)——§3.2 张江条目</li>
+<li>武汉东湖高新区(光谷)公开资料(东湖高新区管委会)——§3.2 光谷条目</li>
+<li>北京怀柔科学城公开资料:五大科学装置进度(怀柔科学城管委会、中科院)——§3.3 怀柔条目与档 3-1</li>
+<li>东莞松山湖科学城与散裂中子源公开资料(东莞市政府、中科院高能物理所)——§3.3 松山湖条目</li>
+<li>合肥滨湖科学城与综合性国家科学中心公开资料(安徽省政府、合肥市)——§3.3 合肥条目</li>
+<li>雄安新区规划纲要与疏解进展公开资料(新华社、雄安新区管委会)——§5.2 雄安条目与档 5-1</li>
+<li>杭州第 19 届亚运会与钱江世纪城、奥体板块公开资料(杭州市政府)——§5.3 杭州条目</li>
+<li>合肥骆岗公园(原骆岗机场)与第十四届园博会公开资料(合肥市政府)——§5.3 骆岗条目</li>
+<li>四川天府新区与兴隆湖公开资料:"公园城市"首提地、独角兽岛、2025 世界运动会(四川天府新区管委会)——§5.3 天府条目</li>
+<li>济南新旧动能转换起步区公开资料:国务院批复、比亚迪基地、黄河体育中心(济南起步区管委会)——§5.3 济南条目</li>
+<li>横琴粤澳深度合作区公开资料:总体方案、封关运行、分线管理、EF 账户、澳门新街坊(合作区执委会、拱北海关、南方日报)——§4.2 横琴条目与档 4-1</li>
+<li>前海深港现代服务业合作区公开资料:扩区方案、深港合作数据(前海管理局)——§4.2 前海条目</li>
+<li>河套深港科技创新合作区公开资料:深圳园区发展规划(国务院 2023)、香港园区(河套发展署)——§4.2 河套条目</li>
+<li>上海临港新片区公开资料:总体方案、特斯拉超级工厂、洋山特殊综保区(临港新片区管委会)——§4.3 临港条目</li>
+<li>广州南沙公开资料:《南沙方案》、港澳青年创业数据(南沙区政府)——§4.3 南沙条目</li>
+<li>海南自由贸易港公开资料:总体方案、封关运作准备(海南自贸港官网、新华社)——§4.3 海南条目</li>
+<li>上海张园公开资料:静安区政府《50 个高能级品牌入驻,高峰客流 10 万,张园探索高端质感与街区亲近感新场景》(2026.2)等——西区运营、保税仓、平移归位、客流数据(§6.2 张园条目)</li>
+<li>张园东区首开区公开报道:2026 年 6 月 30 日开放、37 个首店品牌(青年报《张园:一座石库门的百年重生》、网易财经《从首发地标到城市街区,张园正在完成第二次生长》)——§6.2 张园条目</li>
+<li>首钢园公开资料:首钢集团官网及《再出发 向未来》(2026.6)——在园企业 1286 家、2026 上半年客流 839 万、科幻大会、电竞中心(§6.2 首钢条目)</li>
+<li>首钢园国际会展小镇公开资料:首钢集团(2026.8)——四高炉会展中心 14.46 万㎡ 建成、2026 服贸会(§6.2 首钢条目)</li>
+<li>隆福寺公开资料:北京市政府《隆福寺二期焕新开业》(2025.9.17)、新京报《隆福寺新生:从"顶流"再到"顶流"》——一期二期参数、2025 客流近 800 万、600 余场活动(§6.4 隆福寺条目)</li>
+<li>永庆坊公开资料:广州市荔湾区政府及媒体公开报道——微改造历程、非遗街区 13 家大师工作室、4A 景区、2026 春节客流 125.43 万(§6.3 永庆坊条目)</li>
+<li>东郊记忆公开资料:成都商报、新浪财经等公开报道——2024 年客流 1700 万、2025 年客流超 1800 万、年轻群体占比超八成、工业遗存清单(§6.3 东郊记忆条目)</li>
+<li>十八梯公开资料:重庆市政府《十八梯传统风貌区 A、B、C 区开街》(2021.9.30)、渝中区政府公开资料及媒体运营数据报道——2024 年客流 2311 万、销售额 4.8 亿、2026 国潮时装周(§6.3 十八梯条目)</li>
+<li>南头古城公开资料:深圳市住建局《南头古城保护与利用》专题、深圳市政府公开信息——296 栋改造、280+ 主理人品牌、年均访客超 1000 万、国家级旅游休闲街区(§6.3 南头条目)</li>
+<li>烟台山公开资料:福建省住建厅《福州烟台山:老建筑的"变形计"》(2026.3)、央视网、中新网福建——修缮 48 处保留建筑、2025 年客流超 1900 万、首店数据、二期范围(§6.4 烟台山条目)</li>
+<li>城市更新政策文件:中办国办《关于持续推进城市更新行动的意见》(2025.5);国务院《城市更新"十五五"规划》(2026.5);中央城市工作会议(2025.7)——§6.1、图 6-1</li>
+<li>全国城镇老旧小区改造数据:住建部历年发布——2019—2024 累计开工 28 万个小区、惠及 4800 万户约 1.2 亿人;2025 年新开工 2.71 万个、投资 1332 亿元(§6.1)</li>
+<li>住建部《关于在实施城市更新行动中防止大拆大建问题的通知》(建科〔2021〕63 号)——"留改拆并举、以保留利用提升为主"(§6.1)</li>
+<li>地方城市更新立法:《深圳经济特区城市更新条例》(2021.3 施行)、《上海市城市更新条例》(2021.9 施行)、《北京市城市更新条例》(2023.3 施行);截至 2026 年 4 月全国 18 省/市已立法(§6.1)</li>
+</ol>
+
+<div class="vol" id="appC">
+<div class="vol-no">附录 C</div>
+<h2>总年表</h2>
+<div class="vol-range">2016—2026:六类片区的生成事件 · 与政策线并行</div>
+</div>
+
+<table class="t">
+<tr><th style="width:96px">年份</th><th>事件</th><th style="width:80px">类别</th><th style="width:110px">参见</th></tr>
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅰ 地方试点 2016—2020</td></tr>
+<tr><td>2016.9</td><td>广州永庆坊一期开街,"微改造"首例;同年上海黄浦江两岸 45 公里贯通工程启动</td><td>存量/滨水</td><td>§6.3、§1.1</td></tr>
+<tr><td>2017.12</td><td>黄浦江核心段 45 公里岸线贯通开放,"三道"断面成为通行配置</td><td>滨水</td><td>§1.1</td></tr>
+<tr><td>2017.12</td><td>第七届深港城市\建筑双城双年展主展场设进南头古城,"城市共生"主题首次把城中村整体变为展场</td><td>存量</td><td>§6.3</td></tr>
+<tr><td>2018.2</td><td>"公园城市"理念在成都兴隆湖畔首次提出</td><td>新中心</td><td>§5.3</td></tr>
+<tr><td>2018.10</td><td>永庆坊二期启动;同月"绣花功夫""城市留住记忆"表述在永庆坊视察中提出</td><td>存量/政策语汇</td><td>§6.3</td></tr>
+<tr><td>2019.3</td><td>南头古城保护与利用项目正式启动,统租模式开始</td><td>存量</td><td>§6.3</td></tr>
+<tr><td>2019.8</td><td>北京隆福寺一期(隆福大厦、北里)开业</td><td>存量</td><td>§6.4</td></tr>
+<tr><td>2019.9</td><td>上海西岸美术馆开馆并与蓬皮杜中心启动五年合作;油罐艺术中心开放;张江、光谷进入"科学城"定名期</td><td>滨水/科学城</td><td>§1.2、§3.2</td></tr>
+<tr><td>2019</td><td>全国城镇老旧小区改造启动(当年试点,次年推广)</td><td>政策</td><td>§6.1</td></tr>
+<tr><td>2020.6</td><td>《海南自由贸易港建设总体方案》发布</td><td>制度区</td><td>§4.3</td></tr>
+<tr><td>2020.8.26</td><td>南头古城开街(深圳特区四十周年当日);深圳湾超总进入楼宇密集封顶期</td><td>存量/总部</td><td>§6.3、§2.2</td></tr>
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅱ 转折与密集期 2021—2023</td></tr>
+<tr><td>2021</td><td>城市更新行动写入"十四五"规划;住建部 63 号文防止大拆大建;深圳、上海城市更新条例施行</td><td>政策</td><td>§6.1、图 6-1</td></tr>
+<tr><td>2021.4</td><td>国务院批复济南新旧动能转换起步区实施方案</td><td>新中心</td><td>§5.3</td></tr>
+<tr><td>2021.9</td><td>《横琴粤澳深度合作区建设总体方案》《全面深化前海深港现代服务业合作区改革开放方案》同月发布;同月 30 日重庆十八梯开街</td><td>制度区/存量</td><td>§4.2、§6.3</td></tr>
+<tr><td>2021.10—2022.9</td><td>福州烟台山商业漫步街区一期开街、全面开业</td><td>存量</td><td>§6.4</td></tr>
+<tr><td>2021.11</td><td>上海张园西区开业</td><td>存量</td><td>§6.2</td></tr>
+<tr><td>2022.2</td><td>北京冬奥会:首钢园滑雪大跳台成为场馆,工业遗存第一次作为奥运竞赛场地</td><td>存量/事件</td><td>§6.2</td></tr>
+<tr><td>2022.11</td><td>《北京市城市更新条例》通过(2023.3 施行)</td><td>政策</td><td>§6.1</td></tr>
+<tr><td>2023.9</td><td>"模速空间"大模型生态社区在徐汇滨江揭牌;杭州亚运会开幕;合肥园博会在骆岗机场旧址开幕;《河套深港科技创新合作区深圳园区发展规划》印发</td><td>滨水/新中心/制度区</td><td>§1.2、§5.3、§4.2</td></tr>
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲ 全面铺开 2024—2026</td></tr>
+<tr><td>2024.3.1</td><td>横琴封关运行,"一线放开、二线管住"落地;同月《关于持续推进城市更新行动的意见》进入起草公开讨论</td><td>制度区/政策</td><td>§4.2</td></tr>
+<tr><td>2024.9.26</td><td>Gate M 西岸梦中心开业,徐汇滨江完成"文化+商业+AI"三层叠加</td><td>滨水</td><td>§1.2</td></tr>
+<tr><td>2024</td><td>存量街区客流进入千万量级:十八梯全年 2311 万人次;东郊记忆全年 1700 万人次</td><td>存量</td><td>图 6-2</td></tr>
+<tr><td>2025.5</td><td>中办国办印发《关于持续推进城市更新行动的意见》</td><td>政策</td><td>§6.1</td></tr>
+<tr><td>2025.7</td><td>中央城市工作会议举行(时隔十年);成都世界运动会在兴隆湖等地办赛</td><td>政策/新中心</td><td>§6.1、§5.3</td></tr>
+<tr><td>2025.9.17</td><td>北京隆福寺二期开业(东院、南坊、环游天地)</td><td>存量</td><td>§6.4</td></tr>
+<tr><td>2025</td><td>烟台山全年客流突破 1900 万人次;东郊记忆超 1800 万人次;张园"华严里"7500 吨建筑群平移归位;全国新开工改造老旧小区 2.71 万个</td><td>存量/政策</td><td>§6.2、§6.4、图 6-2</td></tr>
+<tr><td>2026.5</td><td>国务院印发《城市更新"十五五"规划》(2030/2035 两阶段目标);自然资源部、住建部发文支持城市更新</td><td>政策</td><td>§6.1</td></tr>
+<tr><td>2026.6.30</td><td>上海张园东区首开区开放,37 个首店品牌进驻</td><td>存量</td><td>§6.2</td></tr>
+<tr><td>2026.7.30</td><td>深圳湾超总中央绿轴向市民开放,超总从工地转街区</td><td>总部</td><td>§2.2</td></tr>
+<tr><td>2026.8.9</td><td>首钢园四高炉会展中心全部建成,2026 服贸会(9 月)全部投用;上半年首钢园客流 839 万人次、在园企业 1286 家</td><td>存量/会展</td><td>§6.2</td></tr>
+</table>
+
+<div class="vol" id="appD">
+<div class="vol-no">附录 D</div>
+<h2>图版与档案目录</h2>
+<div class="vol-range">本卷编号独立:图 n-n / 档 n-n 按编连续</div>
+</div>
+
+<table class="t">
+<tr><th style="width:110px">编号</th><th>标题</th><th style="width:110px">所在</th></tr>
+<tr><td><b>图 0-1</b></td><td>三十六片区类型 × 城市矩阵</td><td>总纲</td></tr>
+<tr><td><b>图 1-1</b></td><td>西岸岸线纵剖面:三层功能叠合</td><td>§1.2</td></tr>
+<tr><td><b>图 1-2</b></td><td>"一江一河"贯通体系</td><td>§1.2</td></tr>
+<tr><td><b>图 2-1</b></td><td>深超总:中央绿轴缝合楼与海</td><td>§2.2</td></tr>
+<tr><td><b>图 3-1</b></td><td>科学城的"三环"结构</td><td>§3.1</td></tr>
+<tr><td><b>图 4-1</b></td><td>横琴"分线管理"示意</td><td>§4.2</td></tr>
+<tr><td><b>图 4-2</b></td><td>制度合作区政策时序 2010—2025</td><td>§4.1</td></tr>
+<tr><td><b>图 5-1</b></td><td>五个新中心的触发器与生成模式</td><td>§5.1</td></tr>
+<tr><td><b>图 6-1</b></td><td>存量再生政策时序 2016—2026</td><td>§6.1</td></tr>
+<tr><td><b>图 6-2</b></td><td>八个存量片区年客流量对比</td><td>§6.4</td></tr>
+<tr><td><b>档 1-1</b></td><td>西岸三级跳:一条岸线的三次定位</td><td>§1.2</td></tr>
+<tr><td><b>档 2-1</b></td><td>深超总开发参数</td><td>§2.2</td></tr>
+<tr><td><b>档 3-1</b></td><td>怀柔科学城五大科学装置进度</td><td>§3.3</td></tr>
+<tr><td><b>档 4-1</b></td><td>横琴封关运行参数</td><td>§4.2</td></tr>
+<tr><td><b>档 4-2</b></td><td>六大制度合作区文件与参数</td><td>§4.1</td></tr>
+<tr><td><b>档 5-1</b></td><td>雄安首批疏解清单</td><td>§5.2</td></tr>
+<tr><td><b>档 6-1</b></td><td>八个存量再生片区参数对照</td><td>§6.2</td></tr>
+</table>
+
+<footer>
+  <p>本卷为体系性研究文本,不随行情与政策周期变化;涉及当代事件与数据均以官方发布与主流媒体报道为准(附录 B),时间截至 2026 年 8 月,不作行情判断、政策评价与预测,不作审美评价。图版均为示意,不按比例;客流量、企业数等运营数据为运营方或属地政府公开口径,不同片区统计时段与口径不一,已随文标注。</p>
+  <p style="margin-top:4px"><a href="index.html">专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a> · <a href="history.html">中国小区史</a> · <a href="planning.html">城市与区域</a> · <a href="landscape.html">城乡风貌</a> · <a href="region.html">区域志</a> · <a href="hotspot.html">热点片区</a></p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>
