@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国城市规划与区域发展 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-size:14px;line-height:1.8;color:#111;background:#fff}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1240px;margin:0 auto;padding:0 20px}
+nav.toc{width:216px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px}
+nav.toc .toc-title{font-weight:700;margin-bottom:10px;color:#666;letter-spacing:2px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc .vol-h{font-weight:700;color:#000;margin:10px 0 3px 8px;font-size:11px;letter-spacing:1px}
+nav.toc .sub{padding-left:18px;color:#666}
+main{flex:1;min-width:0;padding:28px 0 80px 40px;max-width:920px}
+header.top{border-bottom:3px double #111;padding-bottom:16px;margin-bottom:24px}
+header.top .kicker{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11px;color:#666;letter-spacing:3px;margin-bottom:6px}
+header.top h1{font-size:27px;font-weight:700;letter-spacing:1px}
+header.top .sub{color:#333;margin-top:8px;font-size:14px;font-style:italic}
+.topnav{display:flex;gap:18px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px;margin-top:12px;padding:8px 0;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{font-weight:700;border-bottom:2px solid #111}
+p{margin:9px 0}
+p.lead{font-size:15px;line-height:1.9}
+.howto{border:1px solid #111;margin:0 0 30px}
+.howto .hd{background:#111;color:#fff;padding:6px 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px}
+.howto .bd{padding:12px 16px;font-size:13px}
+.howto .bd b{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;background:#f0f0f0;border:1px solid #bbb;padding:0 6px;margin-right:6px;font-weight:600}
+.vol{margin:56px 0 8px;padding:14px 0 10px;border-top:3px solid #111;border-bottom:1px solid #111}
+.vol .vol-no{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:4px;color:#666}
+.vol h2{font-size:22px;font-weight:700;margin-top:2px}
+.vol .vol-range{font-size:13px;color:#555;font-style:italic;margin-top:2px}
+.sec{margin:36px 0 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h3{font-size:17px;font-weight:700;border-left:5px solid #111;padding-left:10px}
+.sec .sec-sub{font-size:12px;color:#777;margin-left:15px;margin-top:2px}
+h4{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:14.5px;font-weight:700;margin:24px 0 6px}
+.entry{border:1px solid #bbb;margin:20px 0}
+.entry-head{padding:10px 16px 8px;border-bottom:1px solid #e5e5e5}
+.entry-head .zh{font-size:21px;font-weight:700;letter-spacing:1px}
+.entry-head .en{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#666;margin-left:10px}
+.entry-head .meta{font-size:12px;color:#888;margin-top:2px}
+.entry-def{border-left:4px solid #111;background:#fafafa;padding:9px 14px;margin:10px 14px;font-style:italic;font-size:13.5px;color:#222}
+.entry-bd{padding:2px 16px 10px}
+.spec{border:1px solid #111;margin:14px 0}
+.spec .spec-hd{background:#111;color:#fff;padding:5px 12px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11.5px;letter-spacing:2px;display:flex;justify-content:space-between}
+.spec .spec-hd .no{color:#aaa}
+table.spec-t{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px}
+table.spec-t td{border-bottom:1px solid #e8e8e8;padding:5px 12px;vertical-align:top}
+table.spec-t td.k{width:118px;background:#f5f5f5;font-weight:600;border-right:1px solid #e8e8e8}
+table.spec-t tr:last-child td{border-bottom:none}
+.fig{border:1px solid #111;margin:18px 0;background:#fff}
+.fig .fig-hd{display:flex;justify-content:space-between;align-items:baseline;padding:6px 12px;border-bottom:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fig .fig-hd .no{font-size:11px;letter-spacing:2px;color:#666}
+.fig .fig-hd .t{font-size:13px;font-weight:700}
+.fig .fig-bd{padding:10px 12px 4px}
+.fig .fig-note{padding:6px 12px 9px;font-size:12px;color:#555;border-top:1px dashed #ddd;margin-top:6px;line-height:1.6}
+.fig svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.cr{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;color:#777;margin:8px 0}
+.cr a{color:#444}
+blockquote{border-left:3px solid #999;margin:12px 0;padding:7px 16px;color:#444;font-size:13.5px;background:#fafafa}
+blockquote cite{display:block;font-size:11.5px;color:#888;margin-top:4px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.5px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t th{background:#111;color:#fff;text-align:left;font-weight:600;border:1px solid #111;padding:5px 9px;white-space:nowrap}
+table.t td{border:1px solid #ccc;padding:5px 9px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f7f7}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:12.5px;color:#333}
+.dim{color:#666}
+.band{margin:16px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.band .band-t{font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;color:#333}
+.band .bar{display:flex;height:40px;border:1px solid #111}
+.band .seg{border-right:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;text-align:center;line-height:1.3;padding:0 4px}
+.band .seg:nth-child(odd){background:#efefef}
+.band .seg:nth-child(even){background:#dcdcdc}
+.band .seg:last-child{border-right:none}
+.band .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:#888;margin-top:2px}
+.stat-row{display:flex;gap:12px;margin:14px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;border:1px solid #111;padding:8px 12px}
+.stat .v{font-size:20px;font-weight:700}
+.stat .k{font-size:11.5px;color:#666;margin-top:2px}
+ol.src{font-size:12px;color:#444;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+ol.src li{margin:4px 0;word-break:break-all}
+.lemma{border-bottom:1px dotted #bbb;padding:7px 0;font-size:13px}
+.lemma b{font-size:14.5px}
+.lemma .pos{font-size:11.5px;color:#888;font-family:Georgia,serif;font-style:italic;margin:0 4px}
+sup.ref{font-size:10.5px;color:#999}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+@media (max-width:900px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">卷目</div>
+  <div class="vol-h">卷首</div>
+  <a href="#howto">凡例</a>
+  <a href="#gen">总纲 · 分期框架</a>
+  <div class="vol-h">第一编</div>
+  <a href="#v1">营国与里坊</a>
+  <a href="#s11" class="sub">§1.1 总论</a>
+  <a href="#s12" class="sub">§1.2 营国制度</a>
+  <a href="#s13" class="sub">§1.3 里坊制</a>
+  <a href="#s14" class="sub">§1.4 街巷制</a>
+  <a href="#s15" class="sub">§1.5 地方城市形制</a>
+  <div class="vol-h">第二编</div>
+  <a href="#v2">近代市政转型</a>
+  <a href="#s21" class="sub">§2.1 总论</a>
+  <a href="#s22" class="sub">§2.2 租界与市政制度</a>
+  <a href="#s23" class="sub">§2.3 首都计划</a>
+  <a href="#s24" class="sub">§2.4 市制与都市计划法</a>
+  <div class="vol-h">第三编</div>
+  <a href="#v3">计划经济规划</a>
+  <a href="#s31" class="sub">§3.1 总论</a>
+  <a href="#s32" class="sub">§3.2 苏联模式与 156 项</a>
+  <a href="#s33" class="sub">§3.3 规划的起落</a>
+  <a href="#s34" class="sub">§3.4 扩大街坊到小区</a>
+  <div class="vol-h">第四编</div>
+  <a href="#v4">恢复与土地革命</a>
+  <a href="#s41" class="sub">§4.1 总论</a>
+  <a href="#s42" class="sub">§4.2 规划法制化</a>
+  <a href="#s43" class="sub">§4.3 土地有偿使用与开发区</a>
+  <a href="#s44" class="sub">§4.4 千人指标</a>
+  <div class="vol-h">第五编</div>
+  <a href="#v5">城市化加速</a>
+  <a href="#s51" class="sub">§5.1 总论</a>
+  <a href="#s52" class="sub">§5.2 城乡规划法与控规</a>
+  <a href="#s53" class="sub">§5.3 新城新区</a>
+  <a href="#s54" class="sub">§5.4 城市群与主体功能区</a>
+  <a href="#s55" class="sub">§5.5 从小区到生活圈</a>
+  <div class="vol-h">第六编</div>
+  <a href="#v6">国土空间规划</a>
+  <a href="#s61" class="sub">§6.1 总论</a>
+  <a href="#s62" class="sub">§6.2 多规合一</a>
+  <a href="#s63" class="sub">§6.3 三区三线</a>
+  <a href="#s64" class="sub">§6.4 都市圈与区域格局</a>
+  <a href="#s65" class="sub">§6.5 存量时代</a>
+  <div class="vol-h">附录</div>
+  <a href="#appA">A · 术语表</a>
+  <a href="#appB">B · 参考来源</a>
+  <a href="#appC">C · 总年表</a>
+  <a href="#appD">D · 图版与档案目录</a>
+</nav>
+<main>
+
+<header class="top">
+  <div class="kicker">ENCYCLOPEDIA OF CHINESE RESIDENTIAL COMMUNITIES · 第二卷</div>
+  <h1>中国城市规划与区域发展</h1>
+  <div class="sub">从营国制度到国土空间规划:城市空间组织方式的制度演变——房子是被规划出来的,小区只是规划的最小落点</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+    <a href="planning.html" class="cur">城市与区域</a>
+  </div>
+</header>
+
+<!-- ==================== 凡例 ==================== -->
+<div class="howto" id="howto">
+  <div class="hd">凡例 · CONVENTIONS</div>
+  <div class="bd">
+    本卷为第二卷,与第一卷《中国居住建筑史》同一体例:以条目(entry)为基本单元,词条头、定义段(楷体)、技术档案(档 n-n)、图版(图 n-n)、参见(→)俱全。<b>编号独立</b>:本卷"图 1-1"指本卷第一编第一图,与第一卷编号互不相涉。<b>叙述纪律</b>:本卷只写制度事实与空间后果——某项制度是什么、何时确立、造出了什么样的城市形态;不写政策评价,不写绩效好坏,不写未来预测。涉及当代制度时,一律回到文本本身(法律、行政法规、技术标准、规划纲要)。<b>分期断代</b>:以规划制度的变革为界——谁有权规划城市(规划权)、依据什么规划(编制体系)、规划什么(空间层级)。凡引用来源处以<sup class="ref">[n]</sup>标注,对应附录B。与第一卷互见处以(→卷一 §n)标出。
+  </div>
+</div>
+
+<!-- ==================== 总纲 ==================== -->
+<div class="sec" id="gen"><h3>总纲:分期框架<span class="sec-sub">PERIODIZATION</span></h3></div>
+
+<p>第一卷回答"房子长什么样",本卷回答"城市怎么被组织起来"。中国城市的空间组织方式在两千余年里换了六种范式:营国制度、里坊制、街巷制是古代的三段;近代市政引入了"规划"这个词;1949 年后规划被纳入计划体系;1978 年后土地有偿使用重塑了规划的底层逻辑;2015 年后规划体系本身被重构为国土空间规划。分期依据是三项制度变量——<b>规划权归属</b>(礼制秩序、市政机关、计划部门、自然资源部门)、<b>编制依据</b>(礼典、法规、国民经济计划、国土空间规划纲要)、<b>规划对象</b>(王城、市、单个城市、城市与区域整体)。</p>
+
+<div class="band">
+<div class="band-t">分期带 CHRONOLOGICAL BAND</div>
+<div class="bar">
+  <div class="seg" style="width:17%">Ⅰ 营国与里坊<br>先秦—唐</div>
+  <div class="seg" style="width:10%">Ⅱ 街巷转型<br>宋—清</div>
+  <div class="seg" style="width:10%">Ⅲ 近代市政<br>1840—1949</div>
+  <div class="seg" style="width:17%">Ⅳ 计划经济规划<br>1949—1978</div>
+  <div class="seg" style="width:20%">Ⅴ 恢复与土地革命<br>1978—1998</div>
+  <div class="seg" style="width:13%">Ⅵ 城市化加速<br>1998—2015</div>
+  <div class="seg" style="width:13%">Ⅶ 国土空间规划<br>2015—2026</div>
+</div>
+<div class="ticks"><span>先秦</span><span>唐末</span><span>1840</span><span>1949</span><span>1978</span><span>1998</span><span>2015</span><span>2026</span></div>
+</div>
+
+<table class="t">
+<tr><th>分期</th><th>规划权归属</th><th>编制依据</th><th>规划对象</th><th>典型空间产物</th></tr>
+<tr><td><b>Ⅰ 营国与里坊</b><br>先秦—唐</td><td>王权与礼制秩序</td><td>《周礼·考工记》等礼典</td><td>王城 / 都城</td><td>里坊:围墙围出的居住单元</td></tr>
+<tr><td><b>Ⅱ 街巷转型</b><br>宋—清</td><td>王权与市镇管理机构</td><td>礼典惯例 + 商业事实</td><td>都城与工商城市</td><td>街巷:沿街设市、里坊墙倒塌</td></tr>
+<tr><td><b>Ⅲ 近代市政</b><br>1840—1949</td><td>租界当局 / 市政府</td><td>西方规划技术 + 章程法规</td><td>通商口岸城市</td><td>租界路网、《首都计划》功能分区</td></tr>
+<tr><td><b>Ⅳ 计划经济规划</b><br>1949—1978</td><td>国家计划部门</td><td>国民经济计划 + 苏联规范</td><td>工业项目所在城市</td><td>工人新村、单位大院(→卷一 第一编)</td></tr>
+<tr><td><b>Ⅴ 恢复与土地革命</b><br>1978—1998</td><td>建设部门</td><td>《城市规划法》(1990)</td><td>设市城市</td><td>开发区、土地出让、控规雏形</td></tr>
+<tr><td><b>Ⅵ 城市化加速</b><br>1998—2015</td><td>建设部门 + 发改系统</td><td>《城乡规划法》(2008)+ 主体功能区</td><td>城市、城市群</td><td>商品房小区、新城新区、三大城市群</td></tr>
+<tr><td><b>Ⅶ 国土空间规划</b><br>2015—2026</td><td>自然资源部门</td><td>国土空间规划体系"五级三类"</td><td>全域国土(城市、农业、生态)</td><td>三区三线、都市圈、城市更新</td></tr>
+</table>
+
+<div class="stat-row">
+<div class="stat"><div class="v">10.6%</div><div class="k">1949 年末城镇化率<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">17.9%</div><div class="k">1978 年末城镇化率<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">51.3%</div><div class="k">2011 年末,城镇人口首次过半<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">66.2%</div><div class="k">2023 年末城镇化率<sup class="ref">[1]</sup></div></div>
+</div>
+
+<div class="note">本卷主线可用一句话说尽:<b>居住单元的边界由谁划定,就是谁的时代。</b>坊墙由礼制划定,街巷由商业冲开,租界由章程划定,小区由计划划定,生活圈由标准划定——每换一次划定者,城市空间就重构一次。第一卷的"小区"在本卷中的位置:它只是这条长链上距今天最近的一环。</div>
+
+<!-- ============================================================ -->
+<!-- 第一编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v1">
+<div class="vol-no">第一编</div>
+<h2>营国与里坊</h2>
+<div class="vol-range">先秦 — 1840 · 礼制秩序下的空间纪律(覆盖分期Ⅰ、Ⅱ)</div>
+</div>
+
+<div class="sec" id="s11"><h3>§1.1 总论:空间即秩序<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>中国古代城市规划不是工程技术,而是<b>礼制的空间投影</b>。其出发点不是"人怎么住得舒服",而是"秩序如何在空间中呈现":尊卑、内外、朝野、市井各有其位。这一出发点决定了此后两千年城市空间的三项基本特征——轴线居中、城墙围合、居住单元被二次围合(里坊)。理解了"空间即秩序",才能理解为什么唐代的长安城会把上百万人口装进一百多个带围墙的坊里,也才能理解宋代坊墙倒塌时,那不只是一次城市形态变化,而是一次秩序观的松动<sup class="ref">[2]</sup>。</p>
+
+<p>本编四个条目按逻辑递进:营国制度给出<b>理想图式</b>,里坊制给出<b>实施单元</b>,街巷制给出图式失效后的<b>替代形态</b>,地方城市形制给出图式在首都之外的<b>降维版本</b>。全部内容服务于一个判断:中国古代城市从未有过"规划之外的生长"——哪怕商业最繁荣的宋东京,其街道密度与尺度仍受官府控制。</p>
+
+<!-- §1.2 营国制度 -->
+<div class="sec" id="s12"><h3>§1.2 营国制度<span class="sec-sub">IMPERIAL CITY SYSTEM · c.战国成文</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">营国制度</span><span class="en">Yingguo System</span>
+<div class="meta">出处:《周礼·考工记》"匠人营国"章 · 营国 = 营建国都</div></div>
+<div class="entry-def">以礼制等级为唯一坐标的王城建设制度:城市规模、道路宽度、门廛数量均按爵位等级递减,空间形式即政治秩序的成文表达。</div>
+<div class="entry-bd">
+
+<p>原始文本仅六十字:"匠人营国,方九里,旁三门。国中九经九纬,经涂九轨。左祖右社,面朝后市,市朝一夫。"<sup class="ref">[3]</sup>其中"左祖右社"规定宫殿左侧为太庙、右侧为社稷坛,"面朝后市"规定宫城面南、市场居北——宫(政权)居中,祖(血缘合法性)与社(国土合法性)分列,市(经济)被压到背面。功能分区在此第一次被明文化,而经济功能的位置安排本身就是秩序宣言。</p>
+
+<blockquote>"匠人营国,方九里,旁三门。国中九经九纬,经涂九轨。左祖右社,面朝后市,市朝一夫。"
+<cite>《周礼·考工记》· 战国齐人记述西周制度(学界通说)</cite></blockquote>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-1</span><span class="t">《考工记》王城图式(理想复原)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 500" width="100%" role="img" aria-label="考工记王城图式复原示意图">
+<rect x="60" y="40" width="640" height="420" fill="none" stroke="#111" stroke-width="2.5"/>
+<rect x="60" y="40" width="640" height="420" fill="#fafafa" stroke="none"/>
+<line x1="380" y1="40" x2="380" y2="460" stroke="#111" stroke-width="3"/>
+<line x1="140" y1="40" x2="140" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="220" y1="40" x2="220" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="300" y1="40" x2="300" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="460" y1="40" x2="460" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="540" y1="40" x2="540" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="620" y1="40" x2="620" y2="460" stroke="#111" stroke-width="1"/>
+<line x1="60" y1="250" x2="700" y2="250" stroke="#111" stroke-width="3"/>
+<line x1="60" y1="110" x2="700" y2="110" stroke="#111" stroke-width="1"/>
+<line x1="60" y1="180" x2="700" y2="180" stroke="#111" stroke-width="1"/>
+<line x1="60" y1="320" x2="700" y2="320" stroke="#111" stroke-width="1"/>
+<line x1="60" y1="390" x2="700" y2="390" stroke="#111" stroke-width="1"/>
+<rect x="300" y="180" width="160" height="140" fill="#e0e0e0" stroke="#111" stroke-width="2"/>
+<text x="380" y="245" text-anchor="middle" font-size="14" font-weight="700">宫城</text>
+<text x="380" y="266" text-anchor="middle" font-size="10.5" fill="#555">居中面南 · 政权</text>
+<rect x="180" y="195" width="95" height="70" fill="#fff" stroke="#111"/>
+<text x="227" y="226" text-anchor="middle" font-size="11.5" font-weight="700">太庙</text>
+<text x="227" y="244" text-anchor="middle" font-size="10" fill="#555">左祖</text>
+<rect x="485" y="195" width="95" height="70" fill="#fff" stroke="#111"/>
+<text x="532" y="226" text-anchor="middle" font-size="11.5" font-weight="700">社稷坛</text>
+<text x="532" y="244" text-anchor="middle" font-size="10" fill="#555">右社</text>
+<rect x="300" y="360" width="160" height="70" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+<text x="380" y="390" text-anchor="middle" font-size="11.5" font-weight="700">市</text>
+<text x="380" y="408" text-anchor="middle" font-size="10" fill="#555">后市 · 一夫之地</text>
+<rect x="358" y="462" width="44" height="30" fill="#fff" stroke="#111"/>
+<text x="380" y="475" text-anchor="middle" font-size="10">南三门</text>
+<rect x="358" y="12" width="44" height="28" fill="#fff" stroke="#111"/>
+<text x="380" y="30" text-anchor="middle" font-size="10">北三门</text>
+<rect x="24" y="228" width="36" height="44" fill="#fff" stroke="#111"/>
+<text x="42" y="254" text-anchor="middle" font-size="10" fill="#555" transform="rotate(-90 42 250)">西三门</text>
+<rect x="700" y="228" width="36" height="44" fill="#fff" stroke="#111"/>
+<text x="718" y="254" text-anchor="middle" font-size="10" fill="#555" transform="rotate(90 718 250)">东三门</text>
+<text x="80" y="480" font-size="10.5" fill="#777">注:纵横各九涂示意(图中简化为各六道),中轴经涂九轨最宽。坊里填充于网格之间(→图 1-2)。</text>
+</svg>
+</div>
+<div class="fig-note">图式包含后世规划的全部母题:<b>轴线</b>(中轴经涂)、<b>功能分区</b>(朝/市/祖/社)、<b>路网分级</b>(经涂九轨为主干)、<b>城门对称</b>(旁三门)。最接近完整实现的是元大都——七百多年后,刘秉忠仍按这套图式设计北京的前身<sup class="ref">[2]</sup>。一个战国文本能约束一座十三世纪的都城,是因为它不是技术方案,而是政治合法性的空间语法。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-1</span><span class="no">营国等级序列</span></div>
+<table class="spec-t">
+<tr><td class="k">制度文本</td><td>《周礼·考工记》(战国成文,记西周之制);等级差见于《左传》《逸周书》等佐证</td></tr>
+<tr><td class="k">王城</td><td>方九里,旁三门;经涂九轨(约 16—18 m)</td></tr>
+<tr><td class="k">诸侯城</td><td>按爵位递减:规模约王城之半至七成;经涂七轨、五轨</td></tr>
+<tr><td class="k">都 / 卿大夫邑</td><td>再次递减;"先王之制"以大小相维</td></tr>
+<tr><td class="k">规划权</td><td>唯天子可营国;诸侯筑城逾制即政治事件</td></tr>
+<tr><td class="k">现代意义</td><td>世界城市规划史上最早的成文等级规划制度之一;影响持续至明清北京</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §1.3 里坊制(网格的实际居住单元); §2.3 首都计划(轴线与功能分区的现代转世)</p>
+</div></div>
+
+<!-- §1.3 里坊制 -->
+<div class="sec" id="s13"><h3>§1.3 里坊制<span class="sec-sub">LI-FANG SYSTEM · 汉 — 唐末</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">里坊</span><span class="en">Li / Fang (Walled Ward)</span>
+<div class="meta">别名:闾里(汉)· 坊(隋唐)· 代表实例:唐长安一百〇八坊、北魏洛阳里坊</div></div>
+<div class="entry-def">以围墙与坊门封闭的居住管理单元:内部住宅不得直接临街开门,出入经由官守坊门,晨钟暮鼓定时启闭——中国版"居住区"的最早形态。</div>
+<div class="entry-bd">
+
+<p>里坊的"里"字本义即居住单位的计量:五家为邻,五邻为里。汉代长安有 160 个闾里,北魏洛阳里坊"方三百步",史载二百余坊<sup class="ref">[2]</sup>。至唐长安,制度达于极致:外郭城约 84 平方公里,划为一百〇八坊,每坊围墙合围、四门或二门,坊内十字街分四区,住宅面向坊内巷道开门。<b>临街设店是被禁止的</b>——交易集中于东西两市,两市每日中午击鼓三百下开市,日落前七刻击钲散市<sup class="ref">[4]</sup>。城市生活的全部时间纪律(宵禁)与空间纪律(坊墙)都服务于同一件事:人口的可见性与可管理性。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-2</span><span class="t">里坊制与街巷制:同一块地的两种组织方式</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 480" width="100%" role="img" aria-label="里坊制与街巷制对比示意图">
+<text x="185" y="28" text-anchor="middle" font-size="13" font-weight="700">里坊制(唐)</text>
+<text x="575" y="28" text-anchor="middle" font-size="13" font-weight="700">街巷制(宋以后)</text>
+<rect x="30" y="40" width="310" height="380" fill="#fafafa" stroke="#111" stroke-width="2"/>
+<line x1="30" y1="235" x2="340" y2="235" stroke="#111" stroke-width="2"/>
+<line x1="185" y1="40" x2="185" y2="420" stroke="#111" stroke-width="2"/>
+<rect x="60" y="70" width="110" height="120" fill="#efefef" stroke="#111"/>
+<rect x="60" y="70" width="110" height="120" fill="none" stroke="#111" stroke-width="2"/>
+<text x="115" y="122" text-anchor="middle" font-size="11.5">坊 墙</text>
+<text x="115" y="140" text-anchor="middle" font-size="10" fill="#555">住宅面向坊内巷</text>
+<rect x="60" y="275" width="110" height="110" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="115" y="322" text-anchor="middle" font-size="11.5">坊</text>
+<text x="115" y="340" text-anchor="middle" font-size="10" fill="#555">十字街分四区</text>
+<rect x="210" y="70" width="100" height="120" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="260" y="122" text-anchor="middle" font-size="11.5">坊</text>
+<rect x="210" y="275" width="100" height="110" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="260" y="322" text-anchor="middle" font-size="11.5">坊</text>
+<rect x="172" y="225" width="26" height="20" fill="#fff" stroke="#111"/>
+<text x="185" y="239" text-anchor="middle" font-size="9.5">坊门</text>
+<rect x="172" y="405" width="26" height="15" fill="none" stroke="none"/>
+<text x="185" y="440" text-anchor="middle" font-size="10.5" fill="#777">围墙 · 坊门 · 宵禁 · 临街禁商</text>
+<rect x="420" y="40" width="310" height="380" fill="#fafafa" stroke="#111" stroke-width="2"/>
+<line x1="420" y1="120" x2="730" y2="120" stroke="#111" stroke-width="1.5"/>
+<line x1="420" y1="200" x2="730" y2="200" stroke="#111" stroke-width="1.5"/>
+<line x1="420" y1="280" x2="730" y2="280" stroke="#111" stroke-width="1.5"/>
+<line x1="420" y1="360" x2="730" y2="360" stroke="#111" stroke-width="1.5"/>
+<line x1="490" y1="40" x2="490" y2="420" stroke="#111" stroke-width="1.5"/>
+<line x1="560" y1="40" x2="560" y2="420" stroke="#111" stroke-width="1.5"/>
+<line x1="630" y1="40" x2="630" y2="420" stroke="#111" stroke-width="1.5"/>
+<line x1="700" y1="40" x2="700" y2="420" stroke="#111" stroke-width="1.5"/>
+<g font-size="9.5" fill="#555">
+<text x="455" y="95">店</text><text x="525" y="95">店</text><text x="595" y="95">店</text><text x="665" y="95">店</text>
+<text x="455" y="175">店</text><text x="525" y="175">店</text><text x="595" y="175">店</text><text x="665" y="175">店</text>
+<text x="455" y="255">店</text><text x="525" y="255">店</text><text x="595" y="255">店</text><text x="665" y="255">店</text>
+<text x="455" y="335">店</text><text x="525" y="335">店</text><text x="595" y="335">店</text><text x="665" y="335">店</text>
+</g>
+<g font-size="9" fill="#888">
+<text x="455" y="150">宅</text><text x="525" y="150">宅</text><text x="595" y="150">宅</text><text x="665" y="150">宅</text>
+<text x="455" y="230">宅</text><text x="595" y="230">宅</text><text x="665" y="230">宅</text>
+<text x="455" y="310">宅</text><text x="525" y="310">宅</text><text x="665" y="310">宅</text>
+<text x="525" y="390">宅</text><text x="595" y="390">宅</text><text x="665" y="390">宅</text>
+</g>
+<text x="575" y="440" text-anchor="middle" font-size="10.5" fill="#777">临街开门 · 沿街设店 · 夜市出现</text>
+<text x="380" y="470" text-anchor="middle" font-size="11" fill="#111" font-weight="600">围墙的拆除 = 居住单元边界的第一次重新划定</text>
+</svg>
+</div>
+<div class="fig-note">对比的要害不在密度而在<b>边界的所有权</b>:里坊制下边界(坊墙)属于官府,住宅的公共界面被压缩到坊门;街巷制下边界退回到院墙,街道成为共享界面,商业随之占领街道。这一转变的全部技术前提只是"拆墙"——却使"住"与"商"从空间隔离走向空间混合,市镇商业文明由此起步<sup class="ref">[4]</sup>。二十世纪封闭小区重新筑墙(→卷一 §3.3),可视为这场中古争论的现代重演。</div>
+</div>
+
+<p>对数据视角而言,里坊的遗产是一条长线:<b>居住单元按网格编号管理</b>的做法从未中断——坊(唐)→铺(宋)→牌(元)→甲(明清保甲)→居委会网格(当代),变的只是单元名称与规模量级。今日小区在城市管理系统中的"网格化"编码,仍是这条线的延伸。</p>
+
+<p class="cr">→ 参见 §1.4 街巷制(坊墙的倒塌); 卷一 §3.3 封闭小区(围墙的现代回归)</p>
+</div></div>
+
+<!-- §1.4 街巷制 -->
+<div class="sec" id="s14"><h3>§1.4 街巷制<span class="sec-sub">STREET-AND-LANE SYSTEM · 宋 — 清</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">街巷制</span><span class="en">Jie-xiang System</span>
+<div class="meta">别名:街市制 · 坊市制崩溃后的形态 · 代表实例:北宋东京、明清江南市镇</div></div>
+<div class="entry-def">以开放街道为骨架、住宅与店铺沿街混置、以院墙而非坊墙划定居住边界的城市形态——坊墙倒塌是唐宋之际城市革命的空间标志。</div>
+<div class="entry-bd">
+
+<p>转变发生在唐末至北宋:藩镇割据与战乱使长安坊制随城市毁灭而失去载体;后周世宗柴荣营建汴梁时已面对"屋宇连接,街道狭隘"的商业现实,扩建诏书承认沿街展拓、临街开店的既成事实<sup class="ref">[2]</sup>。入宋,东京正式放弃坊墙与集中市制:临街设店、夜市至三更、早市五更又开——被里坊制压制的商业时间与商业界面同时释放。《清明上河图》所绘即此形态的成熟版本。</p>
+
+<p>街巷制的规划学后果有二。其一,<b>道路分级诞生</b>:州桥、御街之宽与巷曲之窄相差悬殊,路网从等网格变为分级树状;其二,<b>住区规划退化为地块规划</b>——官府不再规划"里"的内部,只管街巷走向与侵占诉讼。居住的组织权下移到宗族、行会与业主手里。这个"政府管街、民间管院"的双层结构,是宋以后至清代城市治理的基本盘,也是中国城市史上民间自治程度最高的形态。</p>
+
+<p class="cr">→ 参见 §1.5 地方城市形制; §2.2 租界(街道作为基础设施的重新发现)</p>
+</div></div>
+
+<!-- §1.5 地方城市形制 -->
+<div class="sec" id="s15"><h3>§1.5 地方城市形制<span class="sec-sub">PROVINCIAL CITY TYPES · 明清</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">地方城市形制</span><span class="en">Local City Forms</span>
+<div class="meta">类型:省城 · 府城 · 州县城 · 市镇 · 代表实例:西安(明代省城范式)、平遥(州县城标本)、盛泽镇(市镇)</div></div>
+<div class="entry-def">营国图式在首都之外的降维执行:行政等级决定城池规模与衙署配置,商业市镇则游离于城墙体系之外自发生长。</div>
+<div class="entry-bd">
+
+<p>明清地方城市是标准的<b>行政城市</b>:城墙周长、城门数量、衙署与学宫庙坛配置都对应府州县的行政等级,官署居中或居北,市场、庙市沿主要街道分布。城市规划即行政建制的空间转写,一座州城就是缩小版的省城,一座省城就是降格版的都城。</p>
+
+<p>真正的新事物在城墙之外:江南与运河沿线的<b>市镇</b>(朱家角、盛泽、佛山、汉口)因丝、棉、米、盐的跨区域贸易而繁荣,多数没有城墙或不以城墙为界。它们是中国最早由经济地理而非行政建制主导的城市形态——先有市,后有镇;先有码头,后有街。近代通商口岸开埠时的选址(沿江沿海),延续的正是这批市镇的区位逻辑<sup class="ref">[2]</sup>。</p>
+
+<p class="cr">→ 参见 §2.1 总论(下一编的起点:城墙时代如何结束)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第二编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v2">
+<div class="vol-no">第二编</div>
+<h2>近代市政转型</h2>
+<div class="vol-range">1840 — 1949 · "规划"概念的引入</div>
+</div>
+
+<div class="sec" id="s21"><h3>§2.1 总论:主权、租界与市政<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>近代给中国城市带来的不是新形态,而是<b>新制度载体</b>:市政机关、地产市场、市政工程条例。此前城市空间变迁的执行者是工部与地方官,此后是市政府、租界当局与地产公司。本编的关键线索有三:租界示范了"基础设施先于建筑"的市政逻辑;《首都计划》示范了现代规划技术在中国的首次全城应用;市制与《都市计划法》则把"规划"变成了法定行政行为。到 1949 年,"城市规划"作为一套制度词汇已经齐备——尽管只覆盖了少数通商口岸城市<sup class="ref">[5]</sup>。</p>
+
+<!-- §2.2 租界 -->
+<div class="sec" id="s22"><h3>§2.2 租界与市政制度<span class="sec-sub">CONCESSIONS &amp; MUNICIPALITY · 1845—1943</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">租界</span><span class="en">Foreign Concession / Settlement</span>
+<div class="meta">制度载体:土地章程 · 工部局(Municipal Council) · 代表实例:上海公共租界、法租界、汉口五国租界</div></div>
+<div class="entry-def">列强依据条约在通商口岸划定的自治市政区域:以永租制集中地产、以工部局征收捐税并供给市政工程,是中国土地上第一批按西方市政技术运转的城市空间。</div>
+<div class="entry-bd">
+
+<p>1845 年《上海土地章程》设英租界,1854 年工部局成立——名义上的道路码头委员会,实际上的市政府。工部局做了三件此后影响中国城市百年逻辑的事:<b>其一</b>,按规划先造路网再售地,土地增值收益归市政当局(土地金融的最早演示);<b>其二</b>,统一供给上水、下水、电力、电灯、警察——"市政"一词的实体化;<b>其三</b>,制定建筑规章(高度、结构、卫生),中国最早的建设管理法规即出于此<sup class="ref">[5]</sup>。</p>
+
+<p>租界的空间后果在对比中最清晰:同一座城市里,租界棋盘路网、行道树与煤气管,华界则街巷曲折、厕所与井混置。这种"一城两制"的视觉落差在清末民初被报刊反复放大,成为"市政改良运动"最有效的动员材料——中国第一代市政工程人才(留美土木工程师群体)几乎全部由这种落差催生。评价租界主权屈辱与市政示范这两面并存,不因后一面而稀释前一面,也不因前一面而否认后一面——这是读近代城市史的基本姿势。</p>
+
+<p class="cr">→ 参见 §2.4 市制(华界的制度回应); 卷一 §2.3(近代商品房的技术源头之一)</p>
+</div></div>
+
+<!-- §2.3 首都计划 -->
+<div class="sec" id="s23"><h3>§2.3 首都计划与大上海计划<span class="sec-sub">GREATER SHANGHAI &amp; NANJING PLANS · 1927—1937</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">首都计划</span><span class="en">Capital Plan of Nanjing</span>
+<div class="meta">编制:1928—1929,国民政府首都建设委员会 · 顾问:墨菲(H. K. Murphy)、古力治(E. P. Goodrich) · 同期同类:上海《大上海计划》(1929)</div></div>
+<div class="entry-def">中国第一部按现代规划技术编制的都城总体规划:以功能分区、路网系统、行政中枢布局为骨架,试图以民族形式包装现代市政。</div>
+<div class="entry-bd">
+
+<p>《首都计划》的内容结构已与现代总规无异:人口预测、土地分区(中央政治区、市行政区、工业区、住宅区)、道路系统(放射路与方格网并用)、公园林荫道、港口铁路。<b>中央政治区</b>设于紫金山南麓——将行政中枢整体迁出旧城,以新区承载新政权的空间象征(→图 2-1);中山大道贯通全城,成为南京今日骨架。建筑方针明文规定"中国固有之形式",行政建筑采大屋顶、市政设施用现代结构——"民族形式 + 现代功能"的路线在此第一次成文,此后在 1950 年代("民族形式、社会主义内容")与 1980 年代("形似与神似"之争)两度复现<sup class="ref">[6]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-1</span><span class="t">功能分区:近代规划的引入(南京 1929 示意)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 460" width="100%" role="img" aria-label="首都计划功能分区示意图">
+<rect x="30" y="30" width="700" height="400" fill="#fafafa" stroke="#111" stroke-width="2"/>
+<path d="M 560 30 L 700 30 L 700 200 L 560 200 Z" fill="#e8e8e8" stroke="#111" stroke-width="1.5"/>
+<text x="630" y="70" text-anchor="middle" font-size="12" font-weight="700">中央政治区</text>
+<text x="630" y="88" text-anchor="middle" font-size="10" fill="#555">紫金山南麓</text>
+<text x="630" y="103" text-anchor="middle" font-size="10" fill="#555">行政中枢外迁</text>
+<rect x="80" y="60" width="150" height="80" fill="#fff" stroke="#111"/>
+<text x="155" y="92" text-anchor="middle" font-size="11.5" font-weight="700">明故宫故址</text>
+<text x="155" y="110" text-anchor="middle" font-size="10" fill="#555">市行政区(预留)</text>
+<rect x="280" y="200" width="180" height="90" fill="#efefef" stroke="#111" stroke-dasharray="4 3"/>
+<text x="370" y="235" text-anchor="middle" font-size="11.5" font-weight="700">新街口</text>
+<text x="370" y="253" text-anchor="middle" font-size="10" fill="#555">商业中心区</text>
+<rect x="60" y="300" width="200" height="100" fill="#fff" stroke="#111"/>
+<text x="160" y="340" text-anchor="middle" font-size="11.5" font-weight="700">下关码头区</text>
+<text x="160" y="358" text-anchor="middle" font-size="10" fill="#555">港埠 + 铁路枢纽</text>
+<rect x="420" y="300" width="220" height="100" fill="#f0f0f0" stroke="#111"/>
+<text x="530" y="335" text-anchor="middle" font-size="11.5" font-weight="700">住宅区</text>
+<text x="530" y="353" text-anchor="middle" font-size="10" fill="#555">分甲乙丙丁等级配建</text>
+<line x1="60" y1="240" x2="700" y2="240" stroke="#111" stroke-width="2.5"/>
+<text x="370" y="232" text-anchor="middle" font-size="10.5" fill="#111" font-weight="600">中山大道(东西干道)</text>
+<line x1="370" y1="30" x2="370" y2="430" stroke="#111" stroke-width="2.5" stroke-dasharray="10 4"/>
+<text x="378" y="120" font-size="10.5" fill="#111" font-weight="600">子午线干道</text>
+<text x="60" y="455" font-size="10.5" fill="#777">注:图为分区关系示意,非复原平面。住宅区按职员、工人等收入等级分区配建——等级配建思想延续至单位房时期。</text>
+</svg>
+</div>
+<div class="fig-note">读图要点有三:<b>行政外迁</b>(不挤旧城,另起新区——与 1950 年"梁陈方案"同构,→§3.2);<b>等级住宅分区</b>(收入分级居住第一次进入中国规划文本);<b>干道先行</b>(中山大道 12 公里先行辟筑,带动沿线地价)。实施因 1937 年战争中断,但路网骨架存留至今——南京地铁与主干道仍在这套图式的延长线上<sup class="ref">[6]</sup>。</div>
+</div>
+
+<p>上海《大上海计划》(1929)与之同一逻辑:为抗衡租界,在江湾五角场另建新市中心,市政府、图书馆、博物馆、体育场成组建设,路网刻意以"中""华""民""国"等字命名干道。两案共同点:都以<b>新区建设回避旧城改造</b>——这一路径选择后来成为中国城市规划的默认动作(→§5.3 新城新区)。</p>
+
+<p class="cr">→ 参见 §3.2(行政外迁逻辑的第二次提出); §5.3(新区的当代谱系)</p>
+</div></div>
+
+<!-- §2.4 市制 -->
+<div class="sec" id="s24"><h3>§2.4 市制与《都市计划法》<span class="sec-sub">MUNICIPAL SYSTEM &amp; CITY PLANNING ACT · 1921—1939</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">市制</span><span class="en">Municipal System</span>
+<div class="meta">节点:1921 广州建市(中国第一)· 1928 特别市/市组织法 · 1939 《都市计划法》</div></div>
+<div class="entry-def">以"市"为独立行政与财政单元的现代政制:市政府、市财政、市警察、市工务并举,城市第一次成为法律上的自治治理主体。</div>
+<div class="entry-bd">
+
+<p>1921 年广州依《广州市暂行条例》正式建市,孙科任市长——市作为一级政区与治理单位自此在中国落地。此前"城"只是县衙驻地,财政与工程权在省与道;此后市政府设工务局,专管道路、桥梁、建筑与规划。1928 年国民政府颁布《特别市组织法》与《市组织法》,市制推至主要城市。</p>
+
+<p>1939 年《都市计划法》公布,中国第一部全国性城市规划法律。其要点:都市计划由市县政府拟定、上级核准;计划范围内建筑与土地使用受其约束。条文虽简,但完成了关键一步——<b>规划成为法定行为,不依赖任何个别人的意志</b>。因抗战与内战,该法基本未获实施机会,但它与 1990 年《城市规划法》之间隔着的,只是文本的重写而非概念的更新<sup class="ref">[5]</sup>。</p>
+
+<p class="cr">→ 参见 §4.2(法定规划的当代完成态); 附录C 年表 1939/1989 两行对照</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第三编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v3">
+<div class="vol-no">第三编</div>
+<h2>计划经济规划</h2>
+<div class="vol-range">1949 — 1978 · 规划服从计划</div>
+</div>
+
+<div class="sec" id="s31"><h3>§3.1 总论:从蓝图到计划附件<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>这一时期中国城市规划的本质变化是<b>从属关系</b>:规划不再是城市自身发展的纲领,而成为国民经济计划在空间上的落实文件——先定项目、后配城市,先有指标、后有图纸。苏联带来的不只是图式(对称、轴线、放射路),更是"城市规划 = 计划的继续与具体化"这一制度定位。它决定了此后近三十年中国城市的两个基本面:城市因工业项目而生(资源型城市、工业新区),住宅因生产单元而建(单位大院,→卷一 §1.3)。同期规划机构两度大起大落,是"规划随计划涨落"的直接后果<sup class="ref">[7]</sup>。</p>
+
+<!-- §3.2 苏联模式 -->
+<div class="sec" id="s32"><h3>§3.2 苏联模式与 156 项工程<span class="sec-sub">SOVIET MODEL &amp; 156 PROJECTS · 1950—1957</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">156 项工程</span><span class="en">156 Key Projects</span>
+<div class="meta">制度来源:一五计划(1953—1957)苏联援建 · 空间后果:兰州/洛阳/包头/富拉尔基等工业城市骨架</div></div>
+<div class="entry-def">以苏联援建重工业项目为锚点的全国工业空间布局:项目选址决定城市方位,城市总体规划为项目配套生活区,居住建设由企业按指标包办。</div>
+<div class="entry-bd">
+
+<p>1950 年前后苏联市政专家组来华,带来整套规划范式:远景总图、功能分区(工业区与居住区严格分离并由卫生防护带隔开)、按劳力平衡法推算人口。同期,"梁陈方案"(梁思成、陈占祥,1950)建议在北京西郊另建中央行政中心以整体保护旧城——与《首都计划》行政外迁思路同构——未被采纳;此后北京在旧城内改建,城墙渐次拆除,这一选择所引发的争论延续至今,成为中国规划史讨论密度最高的案例<sup class="ref">[7]</sup>。</p>
+
+<p>一五时期 156 项(实际施工 150 项)的选址逻辑决定了此后中国城市地图的增补部分:兰州(石化)、洛阳(涧西区,拖拉机与轴承)、包头(钢铁)、株洲/湘潭(机电)、富拉尔基(重型机器)。每项工程落地即诞生一个"厂区 + 生活区"组团,生活区按苏联居住区定额建设——多层住宅、公共食堂、俱乐部、子弟学校齐备。这就是单位大院的规划学出身:不是中国民间的发明,而是苏联工业城市"住宅—工厂成对布局"的本土化(→卷一 第一编)。</p>
+
+<p class="cr">→ 参见 §3.4(苏联定额如何变成"小区"); 卷一 §1.2 工人新村(1951 年中国化起点)</p>
+</div></div>
+
+<!-- §3.3 规划的起落 -->
+<div class="sec" id="s33"><h3>§3.3 规划机构的起落<span class="sec-sub">RISE &amp; FALL OF PLANNING · 1957—1978</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">规划起落</span><span class="en">Institutional Cycles</span>
+<div class="meta">节点:1957 批"四过"· 1960"三年不搞"· 1966—1972 机构瘫痪 · 1972 城建局恢复</div></div>
+<div class="entry-def">计划经济时期城市规划两次因经济收缩与政治运动而中止,又两次因城市问题倒逼而恢复——规划在中国从来不是技术自治领域,而是宏观政策的随动变量。</div>
+<div class="entry-bd">
+
+<p>第一次收缩在 1957 年:城市规划被批"四过"(规模过大、占地过多、求新过急、标准过高),各市规划指标压缩,部分已规划新区停建。第二次在 1960 年:全国计划会议宣布"三年不搞城市规划",规划机构裁撤,技术人员下放。1966 年后机构再度瘫痪,城市建设转入无序;1972 年国家建委城建局恢复建制,规划队伍开始重建,至 1978 年第三次全国城市工作会议提出"控制大城市规模、多搞小城市"方针,规划制度环境才重新稳定<sup class="ref">[7]</sup>。</p>
+
+<p>两次中断的遗产是长期的:1960 年代新工业区建设普遍没有生活配套("先生产后生活"的空间版,→卷一 §1.1),1970 年代城市住房欠账指数级积累——第一卷开篇那组数字(1978 年人均居住面积 3.6 ㎡、缺房户 47.5%)正是这二十年的账单。规划史与住宅史在此交汇:1980 年代小区建设的大规模展开,既是对住房欠账的偿还,也是对规划中断年代的制度补课。</p>
+
+<p class="cr">→ 参见 §4.1(恢复的起点); 卷一 §1.1(欠账的住宅面)</p>
+</div></div>
+
+<!-- §3.4 扩大街坊到小区 -->
+<div class="sec" id="s34"><h3>§3.4 从扩大街坊到小区<span class="sec-sub">FROM SUPERBLOCK TO XIAOQU · 1953—1964</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">小区</span><span class="en">Xiaoqu / Residential District</span>
+<div class="meta">传入链:苏联"扩大街坊"(расширенный квартал)→ 微区(микрорайон)→ 中国"小区"(1954 建工部定名)· 范式样本:北京百万庄(1953)</div></div>
+<div class="entry-def">以若干住宅组团 + 成套公共设施(小学、托幼、商店)构成的完整居住单元:设施配置按服务半径计算,住宅不再沿街排布而以日照间距定楼距——现代中国居住空间的基本粒子,本站全部分析的计量单位。</div>
+<div class="entry-bd">
+
+<p>"小区"一词的谱系值得完整交代:苏联 1950 年代以"扩大街坊"取代战前街坊,把居住单元扩大到可容纳一所小学与全套商业;此后进一步定型为"微区"(микрорайон),设施按服务半径分级配置。1953 年北京百万庄小区按邻里单位思想规划(十二个街坊以地支命名),1954 年建工部将这一范式正式定名"小区"<sup class="ref">[7]</sup>。与第一卷的叙述(→卷一 §1.6)拼合即得完整链条:<b>邻里单位(1929,美国)→ 扩大街坊(1950s,苏联)→ 小区(1954,中国)→ 生活圈(2018,中国)</b>——同一个居住单元概念四次转译,每次转译都绑定一次设施配置标准的改写。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-1</span><span class="t">居住单元谱系:从邻里单位到生活圈</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 380" width="100%" role="img" aria-label="居住单元谱系示意图">
+<rect x="30" y="120" width="150" height="180" fill="#f5f5f5" stroke="#111" stroke-width="2"/>
+<text x="105" y="150" text-anchor="middle" font-size="12" font-weight="700">邻里单位</text>
+<text x="105" y="170" text-anchor="middle" font-size="10" fill="#555">1929 · 佩里</text>
+<text x="105" y="188" text-anchor="middle" font-size="10" fill="#555">小学为中心</text>
+<text x="105" y="204" text-anchor="middle" font-size="10" fill="#555">边界避开干道</text>
+<text x="105" y="220" text-anchor="middle" font-size="10" fill="#555">约 5000 人</text>
+<rect x="215" y="120" width="150" height="180" fill="#f5f5f5" stroke="#111" stroke-width="2"/>
+<text x="290" y="150" text-anchor="middle" font-size="12" font-weight="700">扩大街坊</text>
+<text x="290" y="170" text-anchor="middle" font-size="10" fill="#555">1950s · 苏联</text>
+<text x="290" y="188" text-anchor="middle" font-size="10" fill="#555">围墙 + 组团内部</text>
+<text x="290" y="204" text-anchor="middle" font-size="10" fill="#555">公共设施成套</text>
+<rect x="400" y="120" width="150" height="180" fill="#efefef" stroke="#111" stroke-width="2.5"/>
+<text x="475" y="150" text-anchor="middle" font-size="12" font-weight="700">小 区</text>
+<text x="475" y="170" text-anchor="middle" font-size="10" fill="#555">1954 · 中国</text>
+<text x="475" y="188" text-anchor="middle" font-size="10" fill="#555">千人指标配套</text>
+<text x="475" y="204" text-anchor="middle" font-size="10" fill="#555">居住区—小区—组团</text>
+<text x="475" y="220" text-anchor="middle" font-size="10" fill="#555">三级结构</text>
+<rect x="585" y="120" width="150" height="180" fill="#f5f5f5" stroke="#111" stroke-width="2"/>
+<text x="660" y="150" text-anchor="middle" font-size="12" font-weight="700">生活圈</text>
+<text x="660" y="170" text-anchor="middle" font-size="10" fill="#555">2018 · GB 50180</text>
+<text x="660" y="188" text-anchor="middle" font-size="10" fill="#555">以步行时间划定</text>
+<text x="660" y="204" text-anchor="middle" font-size="10" fill="#555">15/10/5 分钟三级</text>
+<text x="660" y="220" text-anchor="middle" font-size="10" fill="#555">设施分级到点</text>
+<line x1="180" y1="210" x2="215" y2="210" stroke="#111" stroke-width="2"/>
+<line x1="365" y1="210" x2="400" y2="210" stroke="#111" stroke-width="2"/>
+<line x1="550" y1="210" x2="585" y2="210" stroke="#111" stroke-width="2"/>
+<polygon points="212,210 202,204 202,216" fill="#111"/>
+<polygon points="397,210 387,204 387,216" fill="#111"/>
+<polygon points="582,210 572,204 572,216" fill="#111"/>
+<text x="105" y="60" text-anchor="middle" font-size="11" fill="#555">单元边界由<b>社会理想</b>划定</text>
+<text x="290" y="60" text-anchor="middle" font-size="11" fill="#555">边界由<b>用地效率</b>划定</text>
+<text x="475" y="60" text-anchor="middle" font-size="11" fill="#555">边界由<b>指标体系</b>划定</text>
+<text x="660" y="60" text-anchor="middle" font-size="11" fill="#555">边界由<b>人的步行</b>划定</text>
+<line x1="105" y1="70" x2="105" y2="115" stroke="#999" stroke-dasharray="3 3"/>
+<line x1="290" y1="70" x2="290" y2="115" stroke="#999" stroke-dasharray="3 3"/>
+<line x1="475" y1="70" x2="475" y2="115" stroke="#999" stroke-dasharray="3 3"/>
+<line x1="660" y1="70" x2="660" y2="115" stroke="#999" stroke-dasharray="3 3"/>
+<text x="380" y="340" text-anchor="middle" font-size="11" fill="#111" font-weight="600">四次转译,一部设施配置标准史:小学半径 → 成套设施 → 千人指标 → 步行时间</text>
+<text x="380" y="362" text-anchor="middle" font-size="10.5" fill="#777">注:时间轴非等距。第四步(→§5.5)的特别之处在于划定者第一次变成了"步行的人"而非编制者。</text>
+</svg>
+</div>
+<div class="fig-note">谱系图把本卷与第一卷接通:第一卷讲"小区里的房子怎么变",本图讲"小区这个容器怎么来"。四段箭头同时也是城市认知的转移史——从理想社区、到生产单元、到统计口径、再到日常身体经验。本站 explorer 页按"小区"计数、age-price 页按竣工年份分层,全部建立在这个 1954 年定名的单元之上。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-1</span><span class="no">小区(苏联传入期参数,1950s—1960s)</span></div>
+<table class="spec-t">
+<tr><td class="k">制度来源</td><td>苏联微区范式;1954 年建工部定名;编制依据为一五计划基建程序</td></tr>
+<tr><td class="k">人口规模</td><td>一般 5000—15000 人(约 1000—3000 户),以一所小学的服务规模为上限基准</td></tr>
+<tr><td class="k">用地构成</td><td>住宅用地 + 配套(小学、托幼、粮油店、煤店、锅炉房)+ 集中绿地;不设商业街铺</td></tr>
+<tr><td class="k">布点原则</td><td>与工业项目生活区绑定;距厂步行或班车可达;避开水源下游与主导风向下风</td></tr>
+<tr><td class="k">楼栋布置</td><td>行列式为主,日照间距控制(北方 1.5—1.7 倍前排檐高);边缘临干道处布置服务建筑</td></tr>
+<tr><td class="k">边界形态</td><td>以道路或围墙明确圈定——"围墙小区"基因自源头即有</td></tr>
+<tr><td class="k">与今日小区差异</td><td>无物业、无业主产权、无车位配建概念(→卷一 §3.3 才补齐这三项)</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §4.4 千人指标(配套的制度化); §5.5 生活圈(最近的转译); 卷一 §1.6 百万庄</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第四编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v4">
+<div class="vol-no">第四编</div>
+<h2>恢复与土地革命</h2>
+<div class="vol-range">1978 — 1998 · 规划的法制化与土地的有偿化</div>
+</div>
+
+<div class="sec" id="s41"><h3>§4.1 总论:两条制度建设线<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1978 到 1998 年,中国的城市空间被两条制度线同时重写。<b>规划线</b>:从国务院条例(1984)到《城市规划法》(1990 施行),规划权、编制体系、"一书两证"许可制度全面法制化——城市建设的每一寸土地第一次都需要行政许可。<b>土地线</b>:1987 年深圳"土地第一拍"、1988 年宪法修正案、1990 年 55 号令,土地使用权从"不得出租"变为可出让、可转让、可抵押的商品——土地从生产资料变为资本品。两线在 1990 年代初合流:开发区圈地 + 土地出让金 + 规划许可,构成此后三十年中国城市空间生产的标准流程<sup class="ref">[8]</sup>。设市城市从 1978 年的 193 个增至 1990 年代末的 660 余个——这条曲线上每一个点都是两条制度线的合乘结果。</p>
+
+<!-- §4.2 法制化 -->
+<div class="sec" id="s42"><h3>§4.2 规划的法制化:条例、法与一书两证<span class="sec-sub">LEGALIZATION · 1984—1990</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">一书两证</span><span class="en">One Permit &amp; Two Certificates</span>
+<div class="meta">构成:建设项目选址意见书 · 建设用地规划许可证 · 建设工程规划许可证 · 制度载体:《城市规划条例》(1984)→《城市规划法》(1990 施行)</div></div>
+<div class="entry-def">以三项行政许可覆盖建设行为全流程的规划管理制度:选址定位置、用地许可定边界、工程许可定形态——未经许可的建设即违法建设,城市空间从"项目报批"转入"许可治理"。</div>
+<div class="entry-bd">
+
+<p>1984 年国务院《城市规划条例》是新中国第一部城市规划行政法规,建立总规与详规两级编制、三项许可的框架。1989 年 12 月《城市规划法》通过(1990 年 4 月 1 日施行),条例上升为法律,并写明两项原则:城市建设"严格控制大城市规模、合理发展中等城市和小城市"的方针;城市规划区内的全部建设活动纳入规划管理。2008 年该法为《城乡规划法》取代,一书两证扩展为"一书三证"(增加乡村建设规划许可证)<sup class="ref">[8]</sup>。</p>
+
+<p>对普通人而言,"一书两证"是规划权力的物理界面:一个楼盘从拿地到预售,每一步合规性都以这三证为凭。第一卷所述商品房小区的产权合法性链(出让合同 → 规划许可 → 预售许可 → 竣工备案 → 不动产登记)中,规划许可正是中间不可绕过的一环。理解了这一点,就理解了为什么"容积率"会成为业主维权的高频词——容积率写在建设用地规划许可证里,是政府与开发商之间最核心的一纸约定。</p>
+
+<p class="cr">→ 参见 §5.2 控规(指标的细化); §4.3 土地线(另一条平行制度建设)</p>
+</div></div>
+
+<!-- §4.3 土地有偿使用 -->
+<div class="sec" id="s43"><h3>§4.3 土地有偿使用与开发区<span class="sec-sub">LAND LEASE &amp; DEVELOPMENT ZONES · 1987—1994</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">土地有偿使用</span><span class="en">Land Use Rights Reform</span>
+<div class="meta">节点:1987 深圳土地第一拍 · 1988 宪法修正案 · 1990 国务院 55 号令 · 1992 邓小平南方谈话后开发区热 · 1994 分税制</div></div>
+<div class="entry-def">在土地公有制不变的前提下,将土地使用权从所有权中剥离并可出让、转让、抵押的制度革命:一次性收取的最高 70 年出让金,使土地成为中国城市空间生产的核心融资工具。</div>
+<div class="entry-bd">
+
+<p>1987 年 12 月 1 日,深圳会堂敲响"土地第一拍":H409-4 地块 8588 ㎡,以 525 万元成交,竞得者为深房公司——这块地后来建成的东晓花园,是中国第一个按商品化方式出让土地上建设的住宅小区之一<sup class="ref">[8]</sup>。1988 年宪法修正案删去"土地不得出租"条款,确认"土地的使用权可以依照法律的规定转让";1990 年国务院 55 号令《城镇国有土地使用权出让和转让暂行条例》给出完整操作规则:居住用地最高 70 年、工业 50 年、商业 40 年——今天不动产证书上"土地使用权期限"的数字即由此而来。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-1</span><span class="t">土地权利结构:所有权与使用权的分层(1990—)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 340" width="100%" role="img" aria-label="土地权利分层结构示意图">
+<rect x="60" y="30" width="640" height="90" fill="#e0e0e0" stroke="#111" stroke-width="2"/>
+<text x="380" y="65" text-anchor="middle" font-size="13.5" font-weight="700">土地所有权 —— 国家 / 农民集体</text>
+<text x="380" y="90" text-anchor="middle" font-size="11" fill="#555">不交易 · 不作价 · 1982 宪法确立城市土地国有</text>
+<rect x="60" y="150" width="300" height="90" fill="#f5f5f5" stroke="#111" stroke-width="2"/>
+<text x="210" y="185" text-anchor="middle" font-size="12.5" font-weight="700">土地使用权(出让)</text>
+<text x="210" y="210" text-anchor="middle" font-size="10.5" fill="#555">70 年(居住)· 可转让抵押</text>
+<text x="210" y="226" text-anchor="middle" font-size="10.5" fill="#555">对应:开发商拿地 → 卖房 → 业主分摊</text>
+<rect x="400" y="150" width="300" height="90" fill="#fff" stroke="#111" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="550" y="185" text-anchor="middle" font-size="12.5" font-weight="700">土地使用权(划拨)</text>
+<text x="550" y="210" text-anchor="middle" font-size="10.5" fill="#555">无偿无期限 · 不可直接入市</text>
+<text x="550" y="226" text-anchor="middle" font-size="10.5" fill="#555">对应:机关/学校/部分保障房用地</text>
+<line x1="210" y1="120" x2="210" y2="150" stroke="#111" stroke-width="2"/>
+<line x1="550" y1="120" x2="550" y2="150" stroke="#111" stroke-width="2" stroke-dasharray="4 3"/>
+<polygon points="210,147 204,137 216,137" fill="#111"/>
+<polygon points="550,147 544,137 556,137" fill="#999"/>
+<text x="380" y="285" text-anchor="middle" font-size="11.5" fill="#111" font-weight="600">"两权分离"是本站一切价格数据的地基:挂牌价交易的从来不是土地,而是剩余年限的使用权</text>
+<text x="380" y="308" text-anchor="middle" font-size="10.5" fill="#777">同一地段 1998 年与 2020 年拿地的两个小区,房龄相近而地价成本悬殊——数据侧必须读出这层(→专题一 §3)</text>
+</svg>
+</div>
+<div class="fig-note">图 4-1 解释了第一卷与专题一反复回到的一个口径:中国城市住宅的"房价"里,土地成本以 70 年使用权的贴现形式内嵌。分税制(1994)把土地出让金留作地方财政主力,此后"地方政府 — 土地储备 — 出让金 — 基础设施"的循环成为城市扩张的金融引擎——开发区与新城(→§5.3)都是这个循环的空间产物<sup class="ref">[8]</sup>。</div>
+</div>
+
+<p><b>开发区</b>是土地有偿使用的第一批试验田:1984 年首批 14 个国家级经济技术开发区(大连、天津、烟台、青岛、上海闵行、广州等)设立,以"七通一平"基础设施 + 优惠税率吸引外资;1992 年南方谈话后各地开发区呈爆发式增长,1993 年国务院开始清理整顿。开发区的规划学意义在于它绕开了旧城的一切产权与市政存量,在农田上直接按"一张白纸"规划——此后新城新区(→§5.3)不断复制这一"增量游戏"。</p>
+
+<p class="cr">→ 参见 §5.3 新城新区(增量游戏的谱系); 卷一 §2.4(土地制度与房改的合流点)</p>
+</div></div>
+
+<!-- §4.4 千人指标 -->
+<div class="sec" id="s44"><h3>§4.4 千人指标与居住区规范<span class="sec-sub">PER-1000-CAPITA STANDARDS · 1980—1994</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">千人指标</span><span class="en">Per-1000-Capita Standards</span>
+<div class="meta">载体:1980《城市规划定额指标暂行规定》→ GB 50180-93《城市居住区规划设计规范》(1994 施行)→ 2002 年版局部修订 → 2016 局部修订</div></div>
+<div class="entry-def">以"每千居民应拥有的各类公共服务设施建筑面积与用地面积"为核心的配套计算体系:小学、幼托、商业、医疗各按人口规模配额,使"配套"从经验判断变为算术题。</div>
+<div class="entry-bd">
+
+<p>1980 年国家建委《城市规划定额指标暂行规定》首次给出系统定额;1994 年施行的 GB 50180-93 将其规范法典化,并确立<b>居住区—小区—组团</b>三级结构:居住区 3—5 万人(中学、医院级配套)、小区 0.7—1.5 万人(小学、菜场级配套)、组团 0.1—0.3 万人(托幼、居委会级配套)<sup class="ref">[9]</sup>。配套的项目与规模随三级逐级加密,公共设施按"服务半径"逐级覆盖——每一个在 1994 至 2018 年间建成的小区,其幼儿园位置、楼间距、绿地率都出自这套规范。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-1</span><span class="no">居住区三级结构(GB 50180-93 口径)</span></div>
+<table class="spec-t">
+<tr><td class="k">层级</td><td>居住区</td><td>小区</td><td>组团</td></tr>
+<tr><td class="k">人口规模</td><td>30000—50000 人</td><td>7000—15000 人</td><td>1000—3000 人</td></tr>
+<tr><td class="k">户数</td><td>10000—16000 户</td><td>2000—4000 户</td><td>300—1000 户</td></tr>
+<tr><td class="k">核心配套</td><td>中学 · 医院 · 文化中心 · 百货</td><td>小学 · 菜市场 · 社区服务</td><td>托幼 · 居委会 · 小型商店</td></tr>
+<tr><td class="k">服务半径逻辑</td><td>公交与自行车尺度</td><td>小学步行尺度(≤500 m)</td><td>楼栋步行尺度(≤150 m)</td></tr>
+<tr><td class="k">对应时代建成区</td><td>1990s 各城市大型居住区(如上海康城前身模式)</td><td>1980s—2000s 大量小区</td><td>单位大院与早期新村残留结构</td></tr>
+<tr><td class="k">替代体系</td><td colspan="3">2018 年版以 15/10/5 分钟生活圈 + 居住街坊替代三级结构(→§5.5 · 档 5-2)</td></tr>
+</table></div>
+
+<p>千人指标的制度性格与里坊一脉相承:<b>居住单元的配套按人口算术配置,由标准而非市场决定</b>。它的功绩是让"配套"在全国范围内可复制、可检查;它的边界也在这里——按标准出生的设施,不会随人口结构变化自动调整。1990 年代建成的大批小区如今面对学龄人口骤减与老龄化并存,幼儿园转养老设施的案例即三级结构失配的直接产物(第一卷 §3.5 存量转型的规划面)。</p>
+
+<p class="cr">→ 参见 §5.5 生活圈(替代体系); 卷一 §3.6 规范沿革(住宅侧的并行文本)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第五编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v5">
+<div class="vol-no">第五编</div>
+<h2>城市化加速</h2>
+<div class="vol-range">1998 — 2015 · 城市群时代与控规天下</div>
+</div>
+
+<div class="sec" id="s51"><h3>§5.1 总论:规划对象升维<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1998 年住房商品化(→卷一 §3.1)之后,城市规划第一次要同时面对<b>三个尺度</b>的爆炸:单个城市内,控规把每一块地的开发条件写死;城市之间,新城新区在存量城市之外批量制造新增城市;城市之上,城市群与主体功能区第一次把"区域"作为规划对象。本编五节的递进即这个升维过程:控规(地块)—新城(城市)—城市群与主体功能区(区域)—生活圈(尺度回落到人)。城镇化率从 1998 年的 33.4% 走到 2015 年的 56.1%<sup class="ref">[1]</sup>——本编每一节都是这条曲线的一个切片。</p>
+
+<!-- §5.2 控规 -->
+<div class="sec" id="s52"><h3>§5.2 城乡规划法与控制性详细规划<span class="sec-sub">REGULATORY PLAN · 1991—2008</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">控制性详细规划</span><span class="en">Regulatory Detailed Plan ("控规")</span>
+<div class="meta">确立:1991《城市规划编制办法》· 2008《城乡规划法》赋予其法定效力 · 规划层级:总规(战略)→ 控规(地块控制)→ 修详规(方案)</div></div>
+<div class="entry-def">把城市土地切分为地块并对每块地给定"用地性质 + 强制指标"的法定图则:容积率、建筑密度、绿地率、建筑限高、配建设施——土地出让条件的全部来源,中国城市土地开发的游戏规则书。</div>
+<div class="entry-bd">
+
+<p>控规是土地有偿使用(→§4.3)的技术配套:土地要出让,就必须先回答"这块地能干什么、能建多少"。1991 年建设部《城市规划编制办法》设立控规编制层次;2008 年施行的《城乡规划法》完成关键一跃——<b>土地出让必须依据控规</b>,控规未覆盖之地不得出让,控规指标即出让合同的刚性条款<sup class="ref">[8]</sup>。同年《城市规划法》废止,城乡规划统筹入法:乡、村庄规划纳入同一体系,"一书两证"扩为"一书三证"。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 5-1</span><span class="no">控规核心控制指标(居住地块通例)</span></div>
+<table class="spec-t">
+<tr><td class="k">用地性质</td><td>R1(一类居住,低层低密度)→ R2(二类居住,多层/高层,最常见)→ R3(三类,需改造)——性质决定用途边界与兼容范围</td></tr>
+<tr><td class="k">容积率 FAR</td><td>多层小区 1.2—1.8 · 小高层 1.8—2.5 · 高层 2.5—3.5 · 超高层/更新地块更高;上限即出让合同刚性条款</td></tr>
+<tr><td class="k">建筑密度</td><td>住宅地块一般 ≤ 20%—30%——决定底层占地面积,与容积率联合决定楼栋层数组合</td></tr>
+<tr><td class="k">绿地率</td><td>新区一般 ≥ 30%(注意与"绿化率"口径差异:绿地率为规范用语)</td></tr>
+<tr><td class="k">建筑限高</td><td>与日照、航空、景观控制线联动;住宅常见 24 m / 60 m / 80 m / 100 m 档位</td></tr>
+<tr><td class="k">配建设施</td><td>按居住区分级配建(→档 4-1)或按生活圈(→档 5-2);养老、幼儿园、物业用房为常见强制项</td></tr>
+<tr><td class="k">数据侧读法</td><td>同区同年拿地的两个小区若容积率差一倍,挂牌价差异需先剔除供给结构再谈区位——控规是"为什么这块地是这个小区"的第一解释变量</td></tr>
+</table></div>
+
+<p>对数据使用者,控规还有一层含义:<b>小区的物理参数在拿地一刻已经冻结</b>。2005 年拿地、2008 年竣工的小区,其容积率和密度出自 2004 年的控规;同一城市 2015 年竣工的小区出自 2013 年的控规——两代控规对户型的松紧不同(→卷一 §5.6 面积段政策),age-price 页上两条年代曲线的落差里,有相当一部分是控规版本差。</p>
+
+<p class="cr">→ 参见 §4.2 一书两证(许可流程); 卷一 §5.7 公摊(计价与计容之别)</p>
+</div></div>
+
+<!-- §5.3 新城新区 -->
+<div class="sec" id="s53"><h3>§5.3 新城新区<span class="sec-sub">NEW TOWNS &amp; NEW DISTRICTS · 1990s—2015</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">新城新区</span><span class="en">New Town / New District</span>
+<div class="meta">谱系:开发区(1984)→ 国家级新区(1992 浦东起)→ 大学城/高铁新城(2000s)→ 国家级新区扩容(2010s:两江、西咸、雄安 2017)</div></div>
+<div class="entry-def">在存量城市建成区之外整体规划、整体出让、整体建设的新城市空间:政府先造基础设施与行政中心,再以土地出让滚动开发——增量时代中国城市扩张的标准形态。</div>
+<div class="entry-bd">
+
+<p>1992 年上海浦东设立国家级新区,是新城模式从开发区(生产型)走向综合新城(城市型)的分水岭。此后新区逻辑定型为三步:市级机关或大学城等公共机构先迁入锚定人气(沿《首都计划》行政外迁的老逻辑,→§2.3),地铁与快速路骨架跟进,商品住宅用地分批出让回笼基建投入。本站数据里大量"XX 新城""XX 新区"前缀的小区名,即这一开发模式的直接产物(→卷一 §4.3 命名体系)。</p>
+
+<p>新区的规划学特征是<b>超大尺度街区 + 一次性控规</b>:整片农田一次规划,路网间距常为 400—600 米(旧城多在 100—250 米),地块以数百亩计。这与本站数据侧直接相关——新区小区的楼栋数、总户数、占地面积普遍数倍于旧城改造地块,跨区比较小区均价时若不按供给规模加权,新区大盘会系统性拉平价格离散度。</p>
+
+<p class="cr">→ 参见 §4.3 开发区(前身); §6.5 存量时代(增量游戏的终结)</p>
+</div></div>
+
+<!-- §5.4 城市群 -->
+<div class="sec" id="s54"><h3>§5.4 城市群与主体功能区<span class="sec-sub">CITY CLUSTERS &amp; MAIN FUNCTIONAL ZONES · 2006—2015</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">城市群</span><span class="en">City Cluster / Agglomeration</span>
+<div class="meta">政策脉络:2006"十一五"首提 · 2010《全国主体功能区规划》· 2014《国家新型城镇化规划》· 2015 后以三大城市群为骨架(→§6.4)</div></div>
+<div class="entry-def">以一个或多个中心城市为核心、由通勤与产业联系紧密的相邻城市构成的高密度城市化地区——规划对象从单个城市升维到城市体系的空间表达。</div>
+<div class="entry-bd">
+
+<p>2006 年"十一五"规划纲要首次将城市群作为城镇化空间形态主体;2010 年国务院印发《全国主体功能区规划》,将国土按开发方式分为优化开发、重点开发、限制开发、禁止开发四类区域——这是中国第一次在<b>全域国土</b>尺度上做空间规划,城市规划从此有了国家层面的空间框架<sup class="ref">[10]</sup>。2014 年《国家新型城镇化规划(2014—2020 年)》明确以城市群为主体形态,提出"两横三纵"城镇化战略格局。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-1</span><span class="t">城镇化空间格局骨架:"两横三纵"示意</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 440" width="100%" role="img" aria-label="两横三纵城镇化战略格局示意图">
+<rect x="60" y="30" width="640" height="370" fill="#fafafa" stroke="#111" stroke-width="2"/>
+<text x="380" y="22" text-anchor="middle" font-size="11" fill="#666">(国土轮廓为抽象示意,不按真实地理边界)</text>
+<line x1="90" y1="120" x2="670" y2="120" stroke="#111" stroke-width="3"/>
+<text x="95" y="112" font-size="11" font-weight="700">陆桥通道(一横)</text>
+<line x1="90" y1="270" x2="670" y2="270" stroke="#111" stroke-width="3"/>
+<text x="95" y="262" font-size="11" font-weight="700">长江通道(一横)</text>
+<line x1="180" y1="45" x2="150" y2="385" stroke="#111" stroke-width="3"/>
+<text x="168" y="60" font-size="11" font-weight="700">沿海通道(一纵)</text>
+<line x1="400" y1="45" x2="370" y2="385" stroke="#111" stroke-width="3"/>
+<text x="405" y="70" font-size="11" font-weight="700">京哈京广通道(一纵)</text>
+<line x1="600" y1="45" x2="570" y2="385" stroke="#111" stroke-width="3"/>
+<text x="605" y="70" font-size="11" font-weight="700">包昆通道(一纵)</text>
+<g font-size="11" font-weight="700">
+<circle cx="150" cy="70" r="9" fill="#111"/><text x="165" y="74">京津冀</text>
+<circle cx="175" cy="255" r="7" fill="#111"/><text x="190" y="259">长三角</text>
+<circle cx="150" cy="345" r="7" fill="#111"/><text x="165" y="349">粤港澳</text>
+<circle cx="300" cy="270" r="5" fill="#666"/><text x="312" y="274">长江中游</text>
+<circle cx="270" cy="345" r="5" fill="#666"/><text x="282" y="349">成渝</text>
+<circle cx="120" cy="120" r="5" fill="#666"/><text x="132" y="124">山东半岛</text>
+<circle cx="215" cy="120" r="5" fill="#666"/><text x="227" y="124">中原</text>
+<circle cx="320" cy="120" r="5" fill="#666"/><text x="332" y="124">关中平原</text>
+<circle cx="130" cy="200" r="5" fill="#666"/><text x="142" y="204">太原</text>
+<circle cx="200" cy="200" r="5" fill="#666"/><text x="212" y="204">哈长</text>
+<circle cx="430" cy="120" r="5" fill="#666"/><text x="442" y="124">兰西</text>
+<circle cx="520" cy="120" r="5" fill="#666"/><text x="532" y="124">天山北坡</text>
+<circle cx="470" cy="345" r="5" fill="#666"/><text x="482" y="349">北部湾</text>
+<circle cx="570" cy="300" r="5" fill="#666"/><text x="582" y="304">黔中</text>
+<circle cx="590" cy="250" r="5" fill="#666"/><text x="602" y="254">滇中</text>
+</g>
+<text x="380" y="425" text-anchor="middle" font-size="10.5" fill="#777">实心大圆为三大城市群(优化开发区域),空心为中西部重点城市化地区。"两横三纵"出自《全国主体功能区规划》(2010)。</text>
+</svg>
+</div>
+<div class="fig-note">读图要点:城市群不是行政区的合并,而是<b>以通道为骨架的经济联系网</b>。本站数据侧的印证:同一城市群内相邻城市的小区均价梯度,比跨城市群同距离城市的梯度平缓得多——通勤圈与产业链把价格场"接通"了。这为跨城比较提供了一种自然分组:按城市群分组优于按省分组(省界经常切断城市群的连续价格场,如深莞、燕郊)。</div>
+</div>
+
+<p>主体功能区则给了城市群之外的国土一个位置:农产品主产区与重点生态功能区限制大规模高强度的城镇化开发——这直接预告了 2018 年后的"三区三线"(→§6.3):限制开发的思想,后来固化为永久基本农田与生态保护红线两条不可逾越的线。</p>
+
+<p class="cr">→ 参见 §6.3 三区三线(思想定型); §6.4 都市圈(城市群的内圈化)</p>
+</div></div>
+
+<!-- §5.5 生活圈 -->
+<div class="sec" id="s55"><h3>§5.5 从小区到生活圈<span class="sec-sub">FROM XIAOQU TO LIFECIRCLE · 2016—2018</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">生活圈</span><span class="en">15/10/5-Minute Life Circle</span>
+<div class="meta">载体:GB 50180-2018《城市居住区规划设计标准》(2018 年 12 月施行)· 同期政策:上海"15 分钟社区生活圈"行动导则(2016)</div></div>
+<div class="entry-def">以步行时间而非人口规模划定居住组织单元:十五分钟(约 5—10 万人)、十分钟(约 1.5—2.5 万人)、五分钟(约 0.5—1.2 万人)三级生活圈 + 居住街坊,取代 1993 年版"居住区—小区—组团"三级结构。</div>
+<div class="entry-bd">
+
+<p>GB 50180-2018 的修订是规范名称级的信号:由"规范"改称"标准",由"居住区规划设计"改为"居住区规划设计<b>标准</b>",核心变量从<b>人口</b>换成了<b>步行时间</b><sup class="ref">[9]</sup>。这不是术语更新,而是规划对象论的转向:千人指标回答"每千人需要多少设施",生活圈回答"人从家出发十五分钟能到什么"——前者以人口为分母,后者以身体为尺度。配套分级由"居住区级—小区级—组团级"改为"十五分钟圈级—十分钟圈级—五分钟圈级",居住街坊(200—400 米见方)成为最末端的物理单元。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 5-2</span><span class="no">生活圈分级(GB 50180-2018 口径)</span></div>
+<table class="spec-t">
+<tr><td class="k">分级</td><td>十五分钟生活圈</td><td>十分钟生活圈</td><td>五分钟生活圈</td><td>居住街坊</td></tr>
+<tr><td class="k">人口规模</td><td>50000—100000 人</td><td>15000—25000 人</td><td>5000—12000 人</td><td>1000—3000 人</td></tr>
+<tr><td class="k">尺度</td><td>步行约 800—1000 m</td><td>约 500 m</td><td>约 300 m</td><td>200—400 m 见方</td></tr>
+<tr><td class="k">典型设施</td><td>初中 · 医院 · 文化中心 · 公园</td><td>小学 · 商场 · 社区医院</td><td>幼儿园 · 老幼托 · 便民商业</td><td>物业 · 站点级商业</td></tr>
+<tr><td class="k">与前版对应</td><td>≈ 居住区</td><td>≈ 小区</td><td>≈ 组团</td><td>新增(承接地块尺度)</td></tr>
+<tr><td class="k">根本差异</td><td colspan="4">规模给的是"参照区间",真正刚性的是<b>步行时间覆盖</b>——旧版三级结构是规划师的算术,生活圈是居民的脚程</td></tr>
+</table></div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-2</span><span class="t">小区与生活圈:两种划定逻辑的叠合</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 430" width="100%" role="img" aria-label="小区与生活圈叠合示意图">
+<rect x="40" y="30" width="680" height="360" fill="#fafafa" stroke="#111" stroke-width="2"/>
+<circle cx="380" cy="210" r="160" fill="none" stroke="#111" stroke-width="2.5" stroke-dasharray="8 4"/>
+<circle cx="380" cy="210" r="100" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="380" cy="210" r="55" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="380" y="48" text-anchor="middle" font-size="11.5" font-weight="700" fill="#111">15 分钟生活圈(约 800—1000 m)</text>
+<text x="380" y="102" text-anchor="middle" font-size="10.5" fill="#555">10 分钟圈(约 500 m)</text>
+<text x="380" y="152" text-anchor="middle" font-size="10.5" fill="#777">5 分钟圈(约 300 m)</text>
+<g font-size="10.5">
+<rect x="120" y="170" width="90" height="60" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="165" y="196" text-anchor="middle" font-weight="700">A 小区</text>
+<text x="165" y="212" text-anchor="middle" fill="#555">围墙 + 物业</text>
+<rect x="240" y="90" width="80" height="55" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="280" y="114" text-anchor="middle" font-weight="700">B 小区</text>
+<text x="280" y="130" text-anchor="middle" fill="#555">2004 年建</text>
+<rect x="480" y="150" width="95" height="65" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="527" y="177" text-anchor="middle" font-weight="700">C 小区</text>
+<text x="527" y="193" text-anchor="middle" fill="#555">2016 年建</text>
+<rect x="440" y="290" width="80" height="55" fill="#efefef" stroke="#111" stroke-width="2"/>
+<text x="480" y="314" text-anchor="middle" font-weight="700">D 小区</text>
+<text x="480" y="330" text-anchor="middle" fill="#555">安置房</text>
+<rect x="250" y="300" width="75" height="50" fill="#fff" stroke="#111"/>
+<text x="287" y="322" text-anchor="middle" font-weight="700">小学</text>
+<text x="287" y="338" text-anchor="middle" fill="#555">(10 分钟圈级)</text>
+<rect x="150" y="300" width="60" height="45" fill="#fff" stroke="#111"/>
+<text x="180" y="322" text-anchor="middle" font-weight="700">幼托</text>
+<text x="180" y="338" text-anchor="middle" fill="#555">(5 分钟)</text>
+<circle cx="380" cy="210" r="5" fill="#111"/>
+<text x="392" y="206" font-size="10" font-weight="700">社区中心</text>
+</g>
+<text x="380" y="415" text-anchor="middle" font-size="10.5" fill="#777">注:生活圈(虚线圆)与小区(实线方块)互不重合——小区是产权与物业边界,生活圈是步行覆盖边界,两套网格叠在同一片城市上。</text>
+</svg>
+</div>
+<div class="fig-note">这张图解释了本站数据的一个基本张力:<b>小区是数据单元,生活圈是规划单元,两者互不重合。</b>一个五分钟生活圈的设施服务着若干个产权独立的小区;同一生活圈内 A 小区与 D 小区因供给类型不同(→卷一 §6.1 层谱)价差可达一倍——"配套"名义上共享,价格却各自表述。未来若做"配套可达性"分析,只能以小区质心向生活圈设施连点,而不能假设小区自带其名下配套。</div>
+</div>
+
+<p>生活圈亦是"存量时代"的规划语法:新区可以按三级结构整片配建,存量城区只能在既有小区之间"补设施、织网络"——以步行圈为尺度的干预,正是旧城微更新的操作单位(→§6.5)。</p>
+
+<p class="cr">→ 参见 §3.4 小区(被替代者); §6.5 存量时代(生活圈的应用场景); 卷一 §3.6 规范沿革</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第六编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v6">
+<div class="vol-no">第六编</div>
+<h2>国土空间规划</h2>
+<div class="vol-range">2015 — 2026 · 规划体系整体重构</div>
+</div>
+
+<div class="sec" id="s61"><h3>§6.1 总论:规划的统一与城市增长的终结<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>2015 年中央城市工作会议(距 1978 年第三次全国城市工作会议三十七年)之后,中国规划体系发生了一次<b>整体重构</b>:2018 年机构改革组建自然资源部,将住建部的城乡规划、发改委的主体功能区规划、国土部的土地利用规划合并为统一的国土空间规划体系——"多规合一"从技术口号变为行政现实。重构的实质是把"城市增长机器"的规划改为"全域国土治理"的规划:规划对象从建设空间扩展到农业与生态空间,规划目标从保障发展改为统筹发展、粮食与生态三重底线<sup class="ref">[11]</sup>。与本卷前五编的每一次转向一样,这次重构也源于一次根本性的制度判断——增量时代接近尾声,存量时代的规划需要另一套语法。</p>
+
+<!-- §6.2 多规合一 -->
+<div class="sec" id="s62"><h3>§6.2 多规合一与五级三类<span class="sec-sub">MULTI-PLAN INTEGRATION · 2018—2019</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">多规合一</span><span class="en">Multi-Plan Integration</span>
+<div class="meta">节点:2013 部分市县试点 · 2018 自然资源部组建 · 2019《关于建立国土空间规划体系并监督实施的若干意见》· 2022《全国国土空间规划纲要(2021—2035)》批复</div></div>
+<div class="entry-def">将原分属不同部门的主体功能区规划、土地利用规划、城乡规划、海洋功能区划等空间性规划统一为"五级三类"国土空间规划体系:一个部门、一张底图、一套指标、一套审批流程。</div>
+<div class="entry-bd">
+
+<p>重构前的问题被业内概括为"规划打架":发改部门的功能区划定一块生态用地,国土部门的土地利用规划可能划成基本农田,住建部门的城乡规划又可能将其划入城市增长边界——同一块地三本账。2018 年机构改革从<b>事权</b>上根除打架可能:所有空间规划职能并入自然资源部;2019 年中央文件确立"五级三类四体系"框架;2022 年《全国国土空间规划纲要(2021—2035)》获国务院批复,中国第一部覆盖全部国土的空间规划诞生<sup class="ref">[11]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-1</span><span class="t">国土空间规划体系:五级三类</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 400" width="100%" role="img" aria-label="五级三类国土空间规划体系示意图">
+<text x="380" y="30" text-anchor="middle" font-size="13" font-weight="700">纵向五级(事权分级)</text>
+<g font-size="11.5" font-weight="700" text-anchor="middle">
+<rect x="300" y="45" width="160" height="34" fill="#111"/><text x="380" y="66" fill="#fff">国家级纲要</text>
+<rect x="300" y="90" width="160" height="34" fill="#333"/><text x="380" y="111" fill="#fff">省级规划</text>
+<rect x="300" y="135" width="160" height="34" fill="#555"/><text x="380" y="156" fill="#fff">市级总体规划</text>
+<rect x="300" y="180" width="160" height="34" fill="#777"/><text x="380" y="201" fill="#fff">县级总体规划</text>
+<rect x="300" y="225" width="160" height="34" fill="#999"/><text x="380" y="246" fill="#fff">乡镇级规划</text>
+</g>
+<line x1="380" y1="79" x2="380" y2="90" stroke="#111" stroke-width="2"/>
+<line x1="380" y1="124" x2="380" y2="135" stroke="#111" stroke-width="2"/>
+<line x1="380" y1="169" x2="380" y2="180" stroke="#111" stroke-width="2"/>
+<line x1="380" y1="214" x2="380" y2="225" stroke="#111" stroke-width="2"/>
+<text x="150" y="150" font-size="10.5" fill="#666">战略与指标逐级传导</text>
+<text x="150" y="166" font-size="10.5" fill="#666">下级规划不得突破上级</text>
+<text x="610" y="150" font-size="10.5" fill="#666">五级均含"三区三线"</text>
+<text x="610" y="166" font-size="10.5" fill="#666">划定成果逐级汇总</text>
+<text x="380" y="300" text-anchor="middle" font-size="13" font-weight="700">横向三类(内容分工)</text>
+<g font-size="11.5" font-weight="700" text-anchor="middle">
+<rect x="120" y="315" width="160" height="44" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<text x="200" y="333">总体规划</text>
+<text x="200" y="350" font-size="9.5" fill="#555" font-weight="400">全域 · 战略 · 底线</text>
+<rect x="300" y="315" width="160" height="44" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<text x="380" y="333">详细规划</text>
+<text x="380" y="350" font-size="9.5" fill="#555" font-weight="400">城镇开发边界内=控规后身</text>
+<rect x="480" y="315" width="160" height="44" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<text x="560" y="333">专项规划</text>
+<text x="560" y="350" font-size="9.5" fill="#555" font-weight="400">交通/生态/文化等单领域</text>
+</g>
+<text x="380" y="385" text-anchor="middle" font-size="10.5" fill="#777">要点:市县及以上的总体规划吸收原"总规+土地规划+主体功能区";详细规划继承原控规——控规并未消失,只是换了母体。</text>
+</svg>
+</div>
+<div class="fig-note">对城市居民,这一重构最直观的影响是感知不到的——拿地、报建、拿证流程依旧走"详细规划"。真正的变化在后台:所有城市建设用地自此必须落在"城镇开发边界"内,而边界本身由上一级规划锁定。开发边界一旦划定,城市便有了"增长极限"的坐标——这是中国城市治理逻辑从增量转存量最硬的一条制度证据。</div>
+</div>
+
+<p class="cr">→ 参见 §5.2 控规(详细规划的前身); §6.3 三区三线(五级共同要划的三条线)</p>
+</div></div>
+
+<!-- §6.3 三区三线 -->
+<div class="sec" id="s63"><h3>§6.3 三区三线<span class="sec-sub">THREE ZONES &amp; THREE LINES · 2019—2022</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">三区三线</span><span class="en">Three Zones, Three Lines</span>
+<div class="meta">划定:2019 部署、试点推进 · 2022 全国划定成果批准启用 · 性质:国土空间规划的强制性核心内容</div></div>
+<div class="entry-def">将全域国土划分为生态、农业、城镇三类空间,并分别划定生态保护红线、永久基本农田、城镇开发边界三条控制线——空间用途的宪法条款,所有下位规划与项目审批不得突破。</div>
+<div class="entry-bd">
+
+<p>"三线"的效力来自其<b>刚性</b>:生态保护红线与永久基本农田一经划定原则上不得调整,占用须经国务院批准程序;城镇开发边界则给城市圈定了外扩上限。三条线合起来回答了国土空间规划的终极问题——哪里不能动(生态)、哪里种粮(农业)、哪里能长城市(城镇)。2022 年划定成果全国启用后,任何一个新小区立项的用地审查,首先都是对三条线的比对<sup class="ref">[11]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-2</span><span class="t">三区三线:全域国土的用途底线(示意)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 420" width="100%" role="img" aria-label="三区三线示意图">
+<rect x="40" y="30" width="680" height="340" fill="#f5f5f5" stroke="#111" stroke-width="2"/>
+<path d="M 40 30 L 720 30 L 720 370 L 40 370 Z" fill="none"/>
+<rect x="40" y="30" width="680" height="340" fill="#efefef" stroke="none"/>
+<path d="M 120 30 Q 200 120 160 220 Q 120 320 220 370 L 40 370 L 40 30 Z" fill="#e8e8e8" stroke="#111" stroke-width="2"/>
+<text x="100" y="200" font-size="11.5" font-weight="700" text-anchor="middle">生态空间</text>
+<text x="100" y="218" font-size="9.5" fill="#555" text-anchor="middle">生态保护红线(核心)</text>
+<path d="M 160 220 Q 240 260 300 300 Q 380 350 480 370 L 220 370 Q 200 320 160 220 Z" fill="#f0f0f0" stroke="#111" stroke-width="1.5" stroke-dasharray="6 3"/>
+<text x="330" y="330" font-size="11.5" font-weight="700" text-anchor="middle">农业空间</text>
+<text x="330" y="348" font-size="9.5" fill="#555" text-anchor="middle">永久基本农田</text>
+<rect x="420" y="80" width="230" height="180" fill="#fff" stroke="#111" stroke-width="2.5"/>
+<text x="535" y="120" font-size="12.5" font-weight="700" text-anchor="middle">城镇空间</text>
+<text x="535" y="140" font-size="10" fill="#555" text-anchor="middle">城镇开发边界(外框)</text>
+<g font-size="9.5" fill="#555">
+<rect x="445" y="160" width="60" height="45" fill="#efefef" stroke="#111"/><text x="475" y="186" text-anchor="middle">建成区</text>
+<rect x="520" y="160" width="60" height="45" fill="#fff" stroke="#111" stroke-dasharray="3 2"/><text x="550" y="186" text-anchor="middle">待建区</text>
+<rect x="445" y="215" width="135" height="35" fill="#f0f0f0" stroke="#111"/><text x="512" y="236" text-anchor="middle">开发区 · 新城</text>
+</g>
+<line x1="200" y1="30" x2="160" y2="370" stroke="#111" stroke-width="2.5"/>
+<line x1="300" y1="370" x2="480" y2="370" stroke="#111" stroke-width="2.5"/>
+<text x="65" y="395" font-size="10.5" fill="#111" font-weight="600">生态红线:占一补一,国务院级审批</text>
+<text x="300" y="395" font-size="10.5" fill="#111" font-weight="600">基本农田:粮食底线,不得随意占用</text>
+<text x="560" y="395" font-size="10.5" fill="#111" font-weight="600">开发边界:城市外扩的极限</text>
+<text x="380" y="415" text-anchor="middle" font-size="10" fill="#777">灰色深浅表示用途刚性强弱;图为逻辑示意,非真实地理。</text>
+</svg>
+</div>
+<div class="fig-note">三区三线是本卷全书的终点命题:从营国制度的"王城方九里"到城镇开发边界的"城市到此为止",两千五百年的中国规划史可以浓缩成一句话——<b>城市增长的边界从礼制等级决定,到计划指标决定,再到生态与粮食底线决定。</b>边界判据的三次更换,就是城市规划价值坐标的三次更换。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-1</span><span class="no">三线制度要点(2019—2022 体系)</span></div>
+<table class="spec-t">
+<tr><td class="k">生态保护红线</td><td>涵盖水源涵养、生物多样性维护、水土保持等生态功能极重要区域;原则上按禁止开发区域管理</td></tr>
+<tr><td class="k">永久基本农田</td><td>依据 2008 年概念(基本农田"永久"化)与耕地保护制度划定;任何建设占用须经法定程序并"占优补优"</td></tr>
+<tr><td class="k">城镇开发边界</td><td>城镇集中建设区的外缘线;新增城镇建设原则上不得越线——城市规模从"规划预期"变为"边界约束"</td></tr>
+<tr><td class="k">与旧体系衔接</td><td>原城市总体规划"建设用地规模"指标取消刚性,由开发边界统摄;原控规在边界内继续有效(→§6.2)</td></tr>
+<tr><td class="k">数据侧影响</td><td>2022 年后新城新区选址逻辑剧变:越线扩张不可行,增量供应收缩——存量房市与城市更新(→§6.5)的制度前提</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §5.4 主体功能区(思想源头); §6.5 存量时代(边界约束的后果)</p>
+</div></div>
+
+<!-- §6.4 都市圈 -->
+<div class="sec" id="s64"><h3>§6.4 都市圈与区域格局<span class="sec-sub">METROPOLITAN AREAS · 2019—2026</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">都市圈</span><span class="en">Metropolitan Area</span>
+<div class="meta">节点:2019 发改委《关于培育发展现代化都市圈的指导意见》· 2021 南京都市圈规划获批(首个国家级)· 2020 成渝双城经济圈 · 2019 粤港澳大湾区纲要</div></div>
+<div class="entry-def">以超大城市或辐射带动功能强的大城市为中心、以约一小时通勤圈为基本范围的城镇化空间形态——比城市群小一档、比城市大两档的规划单元,"区域协调"的最小操作尺度。</div>
+<div class="entry-bd">
+
+<p>都市圈与城市群的分工是量级问题:城市群(京津冀、长三角、粤港澳大湾区)是多中心城市网络的组合,都市圈是单一中心城市与外围的一体化。2019 年指导意见给出培育路径:轨道交通一小时通勤、公共服务共享、市场统一;2021 年 2 月南京都市圈发展规划成为第一个获国家发改委批复的都市圈规划(横跨苏皖),此后福州、成都、长株潭、西安、重庆都市圈规划相继获批<sup class="ref">[10]</sup>。同期三大城市群纲要(大湾区 2019、长三角一体化 2019、成渝双城 2020)构成区域格局的顶层骨架。</p>
+
+<p>都市圈对本站数据的含义是<b>价格场的横向接通</b>:通勤圈把中心城市房价向周边梯度传导,燕郊之于北京、昆山之于上海、佛山之于广州即典型样本。跨城比较时,同一都市圈内的"环中心梯度"比省级均值结构更有解释力——这正是专题一(→index.html §2)坚持用城市群/都市圈视角看价格的原因。</p>
+
+<p class="cr">→ 参见 §5.4 城市群(上层骨架); 图 5-1</p>
+</div></div>
+
+<!-- §6.5 存量时代 -->
+<div class="sec" id="s65"><h3>§6.5 存量时代:城市更新<span class="sec-sub">URBAN REGENERATION · 2015—2026</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">城市更新</span><span class="en">Urban Regeneration / Renewal</span>
+<div class="meta">脉络:2015 中央城市工作会议"城市修补、生态修复"· 2019"城市更新"入中央经济工作会议 · 2021"十四五"规划纲要专章 · 2025 中办国办《关于持续推进城市更新行动的意见》</div></div>
+<div class="entry-def">以存量空间为对象、以补设施与微改造为主要手段的城市建设模式转变:从大拆大建转为"留改拆"并举,与三区三线(→§6.3)共同构成增量时代落幕的制度双面。</div>
+<div class="entry-bd">
+
+<p>城市更新的制度要点可以归纳为三条:<b>对象存量</b>(老旧小区、城中村、旧厂区而非新征地);<b>手段微细</b>(第一卷档 3-2 所列基础类/完善类/提升类改造菜单);<b>资金多元</b>(财政、专项债、经营性收入平衡,而不再是土地出让滚动)。这与本卷第四、五编的"增量三部曲"(圈地—出让—扩张)构成完整对照:开发边界锁住外扩,城市更新接手内部——一外一内,存量时代的规划语法就此成型<sup class="ref">[11]</sup>。</p>
+
+<p>回望全书:第一编的城市在礼制网格里生长,第二编的市政在租界与法条中成形,第三编的规划随计划涨落,第四编的土地成为资本,第五编的城市群连点成网,第六编的国土被三条线终身定界。而"小区"——这个 1954 年定名、本站全部数据的计量单位——在第六编的终点上迎来新的角色:它不再是增长的产品,而成为更新的对象。第一卷讲它的建筑史,本卷讲它所在的制度史;两卷合起来,才是"小区"这个概念的全部。</p>
+
+<p class="cr">→ 参见 卷一 §3.5 存量转型(住宅侧的同一进程); 卷一 档 3-2(改造菜单); §6.3 三区三线(外锁)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 附录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appA">
+<div class="vol-no">附录 A</div>
+<h2>术语表</h2>
+<div class="vol-range">按拼音序 · 体例仿词典</div>
+</div>
+
+<div class="lemma"><b>城市更新</b><span class="pos">n.</span>以存量空间为对象的建设模式总称:老旧小区改造、城中村改造、旧厂区再利用;"留改拆"并举为其方针语(→§6.5)。</div>
+<div class="lemma"><b>城市群</b><span class="pos">n.</span>以中心城市为核心、由通勤与产业联系紧密的相邻城市构成的高密度城市化地区;全国主体功能规划确立的主要城镇化空间形态(→§5.4)。</div>
+<div class="lemma"><b>城镇体系规划</b><span class="pos">n.</span>对一个区域内城市规模等级、职能分工与空间组织的规划;区域尺度规划的前身形态。</div>
+<div class="lemma"><b>城镇开发边界</b><span class="pos">n.</span>三线之一:城镇集中建设区的外缘线,新增城镇建设原则上不得越线——城市规模的边界约束(→§6.3)。</div>
+<div class="lemma"><b>都市圈</b><span class="pos">n.</span>以大城市为中心、约一小时通勤圈为范围的城镇化空间形态;比城市群小一档的"区域协调"操作单元(→§6.4)。</div>
+<div class="lemma"><b>多规合一</b><span class="pos">n.</span>将主体功能区规划、土地利用规划、城乡规划等空间性规划统一为国土空间规划体系的改革;2018 年机构改革后成为制度现实(→§6.2)。</div>
+<div class="lemma"><b>街巷制</b><span class="pos">n.</span>以开放街道为骨架、住宅商铺沿街混置的城市形态;坊墙倒塌后(唐宋之际)至近代的基本格局(→§1.4)。</div>
+<div class="lemma"><b>控制性详细规划</b><span class="pos">n.</span>对每块建设用地给定性质与强制指标的法定图则,简称控规;土地出让条件的来源,现行体系中的"详细规划"(→§5.2)。</div>
+<div class="lemma"><b>扩大街坊</b><span class="pos">n.</span>苏联 1950 年代居住单元范式:扩大街坊尺度以容纳全套配套设施,经"微区"定型后传入中国成为"小区"(→§3.4)。</div>
+<div class="lemma"><b>雷德朋体系</b><span class="pos">n.</span>1928 年美国新泽西雷德朋社区确立的人车分流规划手法:步行路与车行路分离、分级,邻里单位思想的空间实现。</div>
+<div class="lemma"><b>里坊</b><span class="pos">n.</span>汉唐城市以围墙坊门封闭的居住管理单元:宵禁、禁临街设店,坊内十字街分四区(→§1.3)。</div>
+<div class="lemma"><b>梁陈方案</b><span class="pos">n.</span>1950 年梁思成、陈占祥《关于中华人民共和国中央人民政府行政中心区位置的建议》,主张北京行政中心西移以整体保护旧城;未被采纳(→§3.2)。</div>
+<div class="lemma"><b>两权分离</b><span class="pos">n.</span>土地所有权与使用权分离的制度安排:所有权国有/集体不变,使用权可出让转让——1988 年宪法修正案确认(→§4.3)。</div>
+<div class="lemma"><b>邻里单位</b><span class="pos">n.</span>1929 年佩里(C. A. Perry)提出的居住组织单元:以一所小学服务规模为上限、边界避开干道——"小区"概念的美国源头(→§3.4)。</div>
+<div class="lemma"><b>千人指标</b><span class="pos">n.</span>每千居民应拥有的公共服务设施建筑面积/用地面积指标;居住区配套的计算基准,GB 50180-93 法典化(→§4.4)。</div>
+<div class="lemma"><b>三区三线</b><span class="pos">n.</span>生态/农业/城镇三空间 + 生态保护红线/永久基本农田/城镇开发边界三控制线;国土空间规划的强制性核心(→§6.3)。</div>
+<div class="lemma"><b>生活圈</b><span class="pos">n.</span>按步行时间划定的居住组织单元:GB 50180-2018 确立十五/十/五分钟三级 + 居住街坊,取代居住区—小区—组团(→§5.5)。</div>
+<div class="lemma"><b>生态保护红线</b><span class="pos">n.</span>三线之一:生态功能极重要区域的最严格保护边界,占用须国务院级程序(→§6.3)。</div>
+<div class="lemma"><b>市制</b><span class="pos">n.</span>以"市"为独立行政与财政单元的现代政制;1921 年广州建市为始(→§2.4)。</div>
+<div class="lemma"><b>首都计划</b><span class="pos">n.</span>1928—1929 年南京编制的都城总体规划,中国第一部现代技术规划;功能分区与行政外迁的范式起点(→§2.3)。</div>
+<div class="lemma"><b>微区</b><span class="pos">n.</span>俄文 микрорайон 的对译,苏联居住规划基本单元;"小区"的直接前身(→§3.4)。</div>
+<div class="lemma"><b>五级三类</b><span class="pos">n.</span>国土空间规划体系结构:国家—省—市—县—乡镇五级,总体规划—详细规划—专项规划三类(→§6.2)。</div>
+<div class="lemma"><b>宵禁</b><span class="pos">n.</span>里坊制的时段纪律:日暮鼓声闭坊门、禁止夜行;坊墙倒塌后随之瓦解(→§1.3)。</div>
+<div class="lemma"><b>修建性详细规划</b><span class="pos">n.</span>对具体地块做建筑方案布局的详细规划层次,位于控规之下;现行体系并入详细规划。</div>
+<div class="lemma"><b>一书两证</b><span class="pos">n.</span>选址意见书、建设用地规划许可证、建设工程规划许可证;《城乡规划法》后扩为"一书三证"(→§4.2)。</div>
+<div class="lemma"><b>一书三证</b><span class="pos">n.</span>城乡规划法时代的许可体系:一书两证 + 乡村建设规划许可证(→§4.2)。</div>
+<div class="lemma"><b>永久基本农田</b><span class="pos">n.</span>三线之一:按最严格耕地保护要求划定、不得随意占用的农田;占用须"占优补优"的法定程序(→§6.3)。</div>
+<div class="lemma"><b>营国制度</b><span class="pos">n.</span>《周礼·考工记》所载王城建设制度:"匠人营国,方九里,旁三门……左祖右社,面朝后市"——礼制等级的空间表达(→§1.2)。</div>
+<div class="lemma"><b>招拍挂</b><span class="pos">n.</span>经营性用地招标、拍卖、挂牌出让制度的合称;2002 年起全面推行,地价市场化的标志。</div>
+<div class="lemma"><b>主体功能区</b><span class="pos">n.</span>按开发方式将国土分为优化/重点/限制/禁止开发四类区域的规划制度;2010 年《全国主体功能区规划》确立(→§5.4)。</div>
+<div class="lemma"><b>总规</b><span class="pos">n.</span>城市总体规划之简称:确定城市性质、规模、空间结构与用地布局的纲领性规划;2019 年后并入国土空间总体规划(→§6.2)。</div>
+<div class="lemma"><b>紫线绿线蓝线黄线</b><span class="pos">n.</span>历史文化保护(紫)、绿地(绿)、水体(蓝)、基础设施(黄)四类用地控制线;与三区三线共同构成"多线管控"体系。</div>
+
+<div class="vol" id="appB">
+<div class="vol-no">附录 B</div>
+<h2>参考来源</h2>
+<div class="vol-range">正文上标 [n] 对应下列条目 · 以制度文本与标准为纲</div>
+</div>
+
+<ol class="src">
+<li>国家统计局:历年《国民经济和社会发展统计公报》(城镇化率数据)</li>
+<li>贺业钜:《中国古代城市规划史》;董鉴泓:《中国城市建设史》——古代部分制度叙述参照</li>
+<li>《周礼·考工记》"匠人营国"章(战国成文)</li>
+<li>《唐六典》及两《唐书》地理志;加藤繁《唐代坊制》(坊市制度研究参照)</li>
+<li>《上海市土地章程》(1845)及工部局档案研究;张仲礼主编《近代上海城市研究》——租界与近代市政部分参照</li>
+<li>《首都计划》(国民政府首都建设委员会,1929);南京市规划建设陈列馆史料</li>
+<li>《当代中国的城市建设》(当代中国丛书);各版《中国城市规划史》通行叙述——一五时期与规划起落部分参照</li>
+<li>《中华人民共和国城市规划法》(1989);《中华人民共和国城乡规划法》(2007);国务院 55 号令《城镇国有土地使用权出让和转让暂行条例》(1990);深圳 1987 年土地拍卖公开报道</li>
+<li>GB 50180-93《城市居住区规划设计规范》(1994 施行,2002 年版局部修订);GB 50180-2018《城市居住区规划设计标准》(2018 施行)</li>
+<li>《全国主体功能区规划》(国发〔2010〕46 号);《国家新型城镇化规划(2014—2020 年)》;《关于培育发展现代化都市圈的指导意见》(发改规划〔2019〕328 号);南京/福州/成都等国家级都市圈发展规划批复文件(2021—2023)</li>
+<li>《中共中央 国务院关于建立国土空间规划体系并监督实施的若干意见》(2019);《全国国土空间规划纲要(2021—2035 年)》(2022 年国务院批复);中共中央办公厅、国务院办公厅《关于持续推进城市更新行动的意见》(2025)</li>
+</ol>
+
+<div class="vol" id="appC">
+<div class="vol-no">附录 C</div>
+<h2>总年表</h2>
+<div class="vol-range">制度、规划文本、空间事件三类合编</div>
+</div>
+
+<table class="t">
+<tr><th style="width:96px">年份</th><th>事件</th><th style="width:80px">类别</th><th style="width:110px">参见</th></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅰ 营国与里坊 先秦—唐</td></tr>
+<tr><td>战国</td><td>《周礼·考工记》成文,"匠人营国"确立营国制度理想图式</td><td>制度</td><td>§1.2 · 档 1-1</td></tr>
+<tr><td>汉</td><td>长安 160 闾里;闾里制成型</td><td>建造</td><td>§1.3</td></tr>
+<tr><td>北魏</td><td>洛阳里坊"方三百步",史载二百余坊;里坊规模定制</td><td>建造</td><td>§1.3</td></tr>
+<tr><td>582</td><td>宇文恺营隋大兴城(唐长安前身):轴线、坊里、市制的最大规模实践</td><td>建造</td><td>§1.3</td></tr>
+<tr><td>唐</td><td>长安一百〇八坊、东西两市;宵禁与坊市制度达于极致<sup class="ref">[4]</sup></td><td>建造</td><td>§1.3 · 图 1-2</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅱ 街巷转型 宋—清</td></tr>
+<tr><td>后周—北宋</td><td>东京(汴梁)坊墙倒塌、临街设店、夜市出现——里坊制瓦解<sup class="ref">[4]</sup></td><td>分水岭</td><td>§1.4 · 图 1-2</td></tr>
+<tr><td>1267</td><td>刘秉忠规划元大都:最接近《考工记》图式的都城实施</td><td>建造</td><td>§1.2</td></tr>
+<tr><td>明</td><td>省府州县城按行政等级定形制;江南市镇(朱家角、盛泽)在城墙体系外繁荣<sup class="ref">[2]</sup></td><td>建造</td><td>§1.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲ 近代市政 1840—1949</td></tr>
+<tr><td>1845</td><td>《上海土地章程》设英租界;1854 年工部局成立<sup class="ref">[5]</sup></td><td>制度</td><td>§2.2</td></tr>
+<tr><td>1921</td><td>广州依《广州市暂行条例》正式建市——中国市制之始</td><td>制度</td><td>§2.4</td></tr>
+<tr><td>1929</td><td>《首都计划》(南京)与《大上海计划》(上海)编制<sup class="ref">[6]</sup></td><td>规划文本</td><td>§2.3 · 图 2-1</td></tr>
+<tr><td>1939</td><td>国民政府公布《都市计划法》——第一部全国性城市规划法律</td><td>制度</td><td>§2.4</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅳ 计划经济规划 1949—1978</td></tr>
+<tr><td>1950</td><td>"梁陈方案"提出北京行政中心西移,未被采纳<sup class="ref">[7]</sup></td><td>规划事件</td><td>§3.2</td></tr>
+<tr><td>1953</td><td>北京百万庄小区按邻里单位思想规划;"小区"范式原点(→卷一 §1.6)</td><td>建造</td><td>§3.4</td></tr>
+<tr><td>1953—1957</td><td>一五计划 156 项工程布局;兰州、洛阳、包头等工业城市骨架成型<sup class="ref">[7]</sup></td><td>建造</td><td>§3.2</td></tr>
+<tr><td>1954</td><td>建工部正式定名"小区"——苏联微区范式的中国化落点</td><td>制度</td><td>§3.4 · 档 3-1</td></tr>
+<tr><td>1957</td><td>城市规划被批"四过",指标压缩</td><td>制度</td><td>§3.3</td></tr>
+<tr><td>1960</td><td>全国计划会议:"三年不搞城市规划"——规划第一次中断</td><td>制度</td><td>§3.3</td></tr>
+<tr><td>1972</td><td>国家建委城建局恢复建制,规划队伍重建</td><td>制度</td><td>§3.3</td></tr>
+<tr><td>1978</td><td>第三次全国城市工作会议:"控制大城市规模、多搞小城市"</td><td>制度</td><td>§3.3 · §4.1</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅴ 恢复与土地革命 1978—1998</td></tr>
+<tr><td>1980</td><td>《城市规划定额指标暂行规定》——千人指标体系化起点</td><td>规范</td><td>§4.4</td></tr>
+<tr><td>1984</td><td>国务院《城市规划条例》:新中国第一部规划行政法规;首批 14 个国家级经开区设立</td><td>制度</td><td>§4.2 · §4.3</td></tr>
+<tr><td>1987</td><td>深圳"土地第一拍"(12 月 1 日)<sup class="ref">[8]</sup></td><td>制度</td><td>§4.3 · 图 4-1</td></tr>
+<tr><td>1988</td><td>宪法修正案确认土地使用权可依法转让</td><td>制度</td><td>§4.3</td></tr>
+<tr><td>1989</td><td>《城市规划法》通过(1990 年 4 月 1 日施行);"一书两证"法定化</td><td>制度</td><td>§4.2</td></tr>
+<tr><td>1990</td><td>国务院 55 号令:土地出让 70 年制度成文</td><td>制度</td><td>§4.3</td></tr>
+<tr><td>1991</td><td>建设部《城市规划编制办法》确立控制性详细规划编制层次</td><td>规范</td><td>§5.2</td></tr>
+<tr><td>1992</td><td>邓小平南方谈话后开发区热;浦东国家级新区建设提速</td><td>建造</td><td>§4.3 · §5.3</td></tr>
+<tr><td>1994</td><td>分税制改革(土地财政制度前提);GB 50180-93 施行,居住区—小区—组团三级结构法典化<sup class="ref">[9]</sup></td><td>制度/规范</td><td>§4.3 · §4.4</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅵ 城市化加速 1998—2015</td></tr>
+<tr><td>1998</td><td>国发 23 号文住房商品化(→卷一 §3.1)——本编的需求引擎</td><td>制度</td><td>§5.1</td></tr>
+<tr><td>2002</td><td>经营性用地招拍挂全面推行</td><td>制度</td><td>§5.2</td></tr>
+<tr><td>2006</td><td>"十一五"规划纲要以城市群为城镇化主体形态;主体功能区概念入纲</td><td>规划文本</td><td>§5.4</td></tr>
+<tr><td>2007—2008</td><td>《城乡规划法》通过并施行:《城市规划法》废止;土地出让必须依据控规;一书三证</td><td>制度</td><td>§5.2</td></tr>
+<tr><td>2010</td><td>《全国主体功能区规划》印发:全域国土四类分区,"两横三纵"格局</td><td>规划文本</td><td>§5.4 · 图 5-1</td></tr>
+<tr><td>2013—2014</td><td>中央城镇化工作会议;《国家新型城镇化规划(2014—2020 年)》</td><td>规划文本</td><td>§5.4</td></tr>
+<tr><td>2015</td><td>中央城市工作会议(时隔三十七年):城市修补、生态修复</td><td>制度</td><td>§6.1 · §6.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅶ 国土空间规划 2015—2026</td></tr>
+<tr><td>2016</td><td>上海《15 分钟社区生活圈规划导则》——生活圈实践先声</td><td>规范/试点</td><td>§5.5</td></tr>
+<tr><td>2018</td><td>GB 50180-2018 施行:生活圈取代三级结构<sup class="ref">[9]</sup>;机构改革组建自然资源部</td><td>规范/制度</td><td>§5.5 · §6.2</td></tr>
+<tr><td>2019</td><td>《关于建立国土空间规划体系并监督实施的若干意见》:五级三类;都市圈指导意见;大湾区/长三角纲要<sup class="ref">[10][11]</sup></td><td>制度</td><td>§6.2 · §6.4</td></tr>
+<tr><td>2020</td><td>成渝地区双城经济圈建设提出</td><td>区域战略</td><td>§6.4</td></tr>
+<tr><td>2021</td><td>南京都市圈规划获批(首个国家级);"十四五"规划纲要部署城市更新行动</td><td>规划文本</td><td>§6.4 · §6.5</td></tr>
+<tr><td>2022</td><td>《全国国土空间规划纲要(2021—2035)》批复;三区三线划定成果全国启用<sup class="ref">[11]</sup></td><td>规划文本</td><td>§6.2 · §6.3</td></tr>
+<tr><td>2023</td><td>超大特大城市城中村改造部署;配售型保障房制度(→卷一 档 6-5)</td><td>制度</td><td>§6.5</td></tr>
+<tr><td>2025</td><td>中办国办《关于持续推进城市更新行动的意见》——存量时代的行动纲领<sup class="ref">[11]</sup></td><td>制度</td><td>§6.5</td></tr>
+<tr><td>2026</td><td>现状:增量扩张让位于存量更新与区域协调,规划权、编制依据、对象三变量处于新均衡</td><td>现状</td><td>§6.1</td></tr>
+</table>
+
+<div class="note">年表读法:看"规划文本"一栏的密度变化——1939 年一部法律、1990 年一部法律、2019 年一个体系。文本越密,说明空间治理的制度化越深;而每一次文本换代,十年后都会在城市形态上留下可测的痕迹(卷一 age-price 页的年代分层,即是住宅侧的证据)。</div>
+
+<!-- ============================================================ -->
+<!-- 附录 D 图版与档案目录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appD">
+<div class="vol-no">附录 D</div>
+<h2>图版与档案目录</h2>
+<div class="vol-range">图版 9 幅 · 技术档案 6 卷 · 编号规则见末注</div>
+</div>
+
+<p>本卷共收录<b>图版</b>(FIGURE,编号"图 n-n")9 幅、<b>技术档案</b>(SPECIFICATION,编号"档 n-n")6 卷。编号首数字对应所在编次,与本站第一卷《中国居住建筑史》编号体系<b>相互独立</b>——两卷互引时一律以"卷一 档 n-n""本卷 图 n-n"区分。图版均为黑白示意、不按比例;档案数值为制度通行区间与类型参数,个案以官方文本为准。</p>
+
+<h4 style="font-size:14px;margin:14px 0 6px">图版目录 LIST OF FIGURES</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th>图名</th><th style="width:70px">所在</th><th>读图要点</th></tr>
+<tr><td>图 1-1</td><td>《考工记》王城图式(理想复原)</td><td>§1.2</td><td>轴线、功能分区、路网分级、城门对称四大母题的制度源头</td></tr>
+<tr><td>图 1-2</td><td>里坊制与街巷制:同一块地的两种组织方式</td><td>§1.3</td><td>边界所有权的转移:坊墙(官)→院墙(民),街道成为商业界面</td></tr>
+<tr><td>图 2-1</td><td>功能分区:近代规划的引入(南京 1929 示意)</td><td>§2.3</td><td>行政外迁、等级住宅分区、干道先行——现代规划三件套首次全城应用</td></tr>
+<tr><td>图 3-1</td><td>居住单元谱系:从邻里单位到生活圈</td><td>§3.4</td><td>小区概念的四次转译:小学半径→成套设施→千人指标→步行时间</td></tr>
+<tr><td>图 4-1</td><td>土地权利结构:所有权与使用权的分层</td><td>§4.3</td><td>两权分离:房价交易的不是土地而是剩余年限使用权</td></tr>
+<tr><td>图 5-1</td><td>城镇化空间格局骨架:"两横三纵"示意</td><td>§5.4</td><td>以通道为骨架的城市群网络;数据侧按城市群分组优于按省分组的依据</td></tr>
+<tr><td>图 5-2</td><td>小区与生活圈:两种划定逻辑的叠合</td><td>§5.5</td><td>产权边界(小区)与步行边界(生活圈)互不重合——数据单元与规划单元的错位</td></tr>
+<tr><td>图 6-1</td><td>国土空间规划体系:五级三类</td><td>§6.2</td><td>多规合一后的规划金字塔;控规在"详细规划"中的存续</td></tr>
+<tr><td>图 6-2</td><td>三区三线:全域国土的用途底线(示意)</td><td>§6.3</td><td>城市增长边界的三次判据更换:礼制→计划→生态粮食底线</td></tr>
+</table>
+
+<h4 style="font-size:14px;margin:14px 0 6px">技术档案目录 LIST OF SPECIFICATIONS</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th>档案名</th><th style="width:70px">所在</th><th>档案要点</th></tr>
+<tr><td>档 1-1</td><td>营国等级序列</td><td>§1.2</td><td>王城—诸侯城—都邑的规模递减:等级制的空间参数化</td></tr>
+<tr><td>档 3-1</td><td>小区(苏联传入期参数)</td><td>§3.4</td><td>5000—15000 人、成套设施、行列式与围墙基因——本站计量单位的出生档案</td></tr>
+<tr><td>档 4-1</td><td>居住区三级结构(GB 50180-93)</td><td>§4.4</td><td>居住区 3—5 万/小区 0.7—1.5 万/组团 0.1—0.3 万人的配套分层</td></tr>
+<tr><td>档 5-1</td><td>控规核心控制指标</td><td>§5.2</td><td>用地性质、容积率、密度、绿地率、限高——地块开发条件的五要素</td></tr>
+<tr><td>档 5-2</td><td>生活圈分级(GB 50180-2018)</td><td>§5.5</td><td>15/10/5 分钟圈与居住街坊:以步行时间替代人口规模的分级表</td></tr>
+<tr><td>档 6-1</td><td>三线制度要点</td><td>§6.3</td><td>生态红线、永久基本农田、城镇开发边界的刚性与数据侧影响</td></tr>
+</table>
+
+<div class="note">两卷目录并读即得本站知识体系的完整骨架:第一卷 9 图 14 档讲<b>住宅类型</b>,本卷 8 图 6 档讲<b>空间制度</b>。交叉点有三处:小区(本卷档 3-1 = 卷一 §1.6)、生活圈(本卷档 5-2 ↔ 卷一 §3.6)、存量更新(本卷 §6.5 ↔ 卷一 §3.5)——三个交叉点即"房子—单元—城市"三个尺度的接口。</div>
+
+<footer>
+  <p>本卷为体系性研究文本,不随行情与政策周期变化;涉及当代制度均以公开法律、行政法规与技术标准文本为据,不作政策评价与预测。图版均为示意,不按比例;技术档案数值为类型通行区间,个案以官方发布文本为准。</p>
+  <p style="margin-top:4px"><a href="index.html">返回专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a> · <a href="history.html">中国小区史</a></p>
+</footer>
+
+</main>
+</div>
+
+<script>
+var secs = document.querySelectorAll('.vol, .sec');
+var links = document.querySelectorAll('nav.toc a');
+function upd(){
+  var y = window.scrollY + 120, cur = null;
+  secs.forEach(function(s){ if(s.offsetTop <= y) cur = s.id; });
+  links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur && !a.classList.contains('sub') || (a.classList.contains('sub') && a.getAttribute('href') === '#' + cur)); });
+}
+window.addEventListener('scroll', upd); upd();
+</script>
+</body>
+</html>
