@@ -1,5 +1,7 @@
 # 中国城市小区数据体系 · 专题一
 
+**在线站点**:https://wadesha.github.io/china-community-data/
+
 以"小区"为单元的中国城市住宅数据专题:先把数据世界里的每个概念说清楚(小区是什么、挂在哪里、价格和年份是什么数字),再做两个结构性分析视图。
 
 ## 页面结构
@@ -9,6 +11,7 @@
 | `index.html` | 专题概述:概念框架与字段字典(小区本体 / 行政区划 / 价格概念 / 竣工年份 / 住房类型 / 字段字典 / 口径局限),全部注明官方来源 |
 | `explorer.html` | 价格浏览器:省 → 城市 → 区县逐级下钻,区县级给出小区数、挂牌中位数、P25–P75、区内最高挂牌 |
 | `age-price.html` | 年份 × 价格:按竣工年份段(5 年)统计城市挂牌中位数,SVG 曲线 + 分位带 + 明细表 |
+| `history.html` | 中国居住建筑史(1949—2026):百科全书式六编四附录——单位居住体系、双轨过渡、商品房时代、专题研究、户型与平面演变、住房供给类型,含 9 幅图版与 14 卷技术档案 |
 | `data/communities.json` | 数据文件(当前为模拟数据,结构对齐真实抓取 schema) |
 | `tools/generate_sim_data.py` | 模拟数据生成脚本 |
 
@@ -51,14 +54,7 @@ python3 -m http.server 8000
 
 ## 发布(GitHub Pages)
 
-本目录可作为独立仓库根目录:
-
-```bash
-git init && git add -A && git commit -m "init: 专题一 · 概念框架 + 模拟数据演示"
-git remote add origin git@github.com:Wadesha/<repo>.git
-git push -u origin main
-# 仓库 Settings → Pages → Deploy from branch → main / root
-```
+已发布至 <https://wadesha.github.io/china-community-data/>(仓库 [Wadesha/china-community-data](https://github.com/Wadesha/china-community-data),Deploy from branch → `main` / root)。
 
 ## 口径与局限(摘录)
 
