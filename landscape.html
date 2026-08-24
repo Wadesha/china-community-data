@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国近现代城乡风貌 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-size:14px;line-height:1.8;color:#111;background:#fff}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1240px;margin:0 auto;padding:0 20px}
+nav.toc{width:216px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px}
+nav.toc .toc-title{font-weight:700;margin-bottom:10px;color:#666;letter-spacing:2px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc .vol-h{font-weight:700;color:#000;margin:10px 0 3px 8px;font-size:11px;letter-spacing:1px}
+nav.toc .sub{padding-left:18px;color:#666}
+main{flex:1;min-width:0;padding:28px 0 80px 40px;max-width:920px}
+header.top{border-bottom:3px double #111;padding-bottom:16px;margin-bottom:24px}
+header.top .kicker{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11px;color:#666;letter-spacing:3px;margin-bottom:6px}
+header.top h1{font-size:27px;font-weight:700;letter-spacing:1px}
+header.top .sub{color:#333;margin-top:8px;font-size:14px;font-style:italic}
+.topnav{display:flex;gap:18px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px;margin-top:12px;padding:8px 0;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{font-weight:700;border-bottom:2px solid #111}
+p{margin:9px 0}
+p.lead{font-size:15px;line-height:1.9}
+.howto{border:1px solid #111;margin:0 0 30px}
+.howto .hd{background:#111;color:#fff;padding:6px 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px}
+.howto .bd{padding:12px 16px;font-size:13px}
+.howto .bd b{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;background:#f0f0f0;border:1px solid #bbb;padding:0 6px;margin-right:6px;font-weight:600}
+.vol{margin:56px 0 8px;padding:14px 0 10px;border-top:3px solid #111;border-bottom:1px solid #111}
+.vol .vol-no{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:4px;color:#666}
+.vol h2{font-size:22px;font-weight:700;margin-top:2px}
+.vol .vol-range{font-size:13px;color:#555;font-style:italic;margin-top:2px}
+.sec{margin:36px 0 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h3{font-size:17px;font-weight:700;border-left:5px solid #111;padding-left:10px}
+.sec .sec-sub{font-size:12px;color:#777;margin-left:15px;margin-top:2px}
+h4{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:14.5px;font-weight:700;margin:24px 0 6px}
+.entry{border:1px solid #bbb;margin:20px 0}
+.entry-head{padding:10px 16px 8px;border-bottom:1px solid #e5e5e5}
+.entry-head .zh{font-size:21px;font-weight:700;letter-spacing:1px}
+.entry-head .en{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#666;margin-left:10px}
+.entry-head .meta{font-size:12px;color:#888;margin-top:2px}
+.entry-def{border-left:4px solid #111;background:#fafafa;padding:9px 14px;margin:10px 14px;font-style:italic;font-size:13.5px;color:#222}
+.entry-bd{padding:2px 16px 10px}
+.spec{border:1px solid #111;margin:14px 0}
+.spec .spec-hd{background:#111;color:#fff;padding:5px 12px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11.5px;letter-spacing:2px;display:flex;justify-content:space-between}
+.spec .spec-hd .no{color:#aaa}
+table.spec-t{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px}
+table.spec-t td{border-bottom:1px solid #e8e8e8;padding:5px 12px;vertical-align:top}
+table.spec-t td.k{width:118px;background:#f5f5f5;font-weight:600;border-right:1px solid #e8e8e8}
+table.spec-t tr:last-child td{border-bottom:none}
+.fig{border:1px solid #111;margin:18px 0;background:#fff}
+.fig .fig-hd{display:flex;justify-content:space-between;align-items:baseline;padding:6px 12px;border-bottom:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fig .fig-hd .no{font-size:11px;letter-spacing:2px;color:#666}
+.fig .fig-hd .t{font-size:13px;font-weight:700}
+.fig .fig-bd{padding:10px 12px 4px}
+.fig .fig-note{padding:6px 12px 9px;font-size:12px;color:#555;border-top:1px dashed #ddd;margin-top:6px;line-height:1.6}
+.fig svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.cr{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;color:#777;margin:8px 0}
+.cr a{color:#444}
+blockquote{border-left:3px solid #999;margin:12px 0;padding:7px 16px;color:#444;font-size:13.5px;background:#fafafa}
+blockquote cite{display:block;font-size:11.5px;color:#888;margin-top:4px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.5px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t th{background:#111;color:#fff;text-align:left;font-weight:600;border:1px solid #111;padding:5px 9px;white-space:nowrap}
+table.t td{border:1px solid #ccc;padding:5px 9px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f7f7}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:12.5px;color:#333}
+.dim{color:#666}
+.band{margin:16px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.band .band-t{font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;color:#333}
+.band .bar{display:flex;height:40px;border:1px solid #111}
+.band .seg{border-right:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;text-align:center;line-height:1.3;padding:0 4px}
+.band .seg:nth-child(odd){background:#efefef}
+.band .seg:nth-child(even){background:#dcdcdc}
+.band .seg:last-child{border-right:none}
+.band .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:#888;margin-top:2px}
+.stat-row{display:flex;gap:12px;margin:14px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;border:1px solid #111;padding:8px 12px}
+.stat .v{font-size:20px;font-weight:700}
+.stat .k{font-size:11.5px;color:#666;margin-top:2px}
+ol.src{font-size:12px;color:#444;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+ol.src li{margin:4px 0;word-break:break-all}
+.lemma{border-bottom:1px dotted #bbb;padding:7px 0;font-size:13px}
+.lemma b{font-size:14.5px}
+.lemma .pos{font-size:11.5px;color:#888;font-family:Georgia,serif;font-style:italic;margin:0 4px}
+sup.ref{font-size:10.5px;color:#999}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+@media (max-width:900px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">卷目</div>
+  <div class="vol-h">卷首</div>
+  <a href="#howto">凡例</a>
+  <a href="#gen">总纲 · 分期框架</a>
+  <div class="vol-h">第一编</div>
+  <a href="#v1">近代输入 1840—1949</a>
+  <a href="#s11" class="sub">§1.1 总论</a>
+  <a href="#s12" class="sub">§1.2 外廊式与租界风貌</a>
+  <a href="#s13" class="sub">§1.3 大马路与中山路</a>
+  <a href="#s14" class="sub">§1.4 铁路与工矿风貌</a>
+  <a href="#s15" class="sub">§1.5 近代乡村</a>
+  <div class="vol-h">第二编</div>
+  <a href="#v2">单位建造 1949—1978</a>
+  <a href="#s21" class="sub">§2.1 总论</a>
+  <a href="#s22" class="sub">§2.2 工人新村</a>
+  <a href="#s23" class="sub">§2.3 单位大院</a>
+  <a href="#s24" class="sub">§2.4 苏式公共建筑</a>
+  <a href="#s25" class="sub">§2.5 集体化乡村</a>
+  <div class="vol-h">第三编</div>
+  <a href="#v3">市场建造 1978—2012</a>
+  <a href="#s31" class="sub">§3.1 总论</a>
+  <a href="#s32" class="sub">§3.2 宽马路大广场</a>
+  <a href="#s33" class="sub">§3.3 商品房风格谱系</a>
+  <a href="#s34" class="sub">§3.4 旧城改造</a>
+  <a href="#s35" class="sub">§3.5 天际线与 CBD</a>
+  <a href="#s36" class="sub">§3.6 乡村工业化</a>
+  <div class="vol-h">第四编</div>
+  <a href="#v4">保护名录与管控 1982—2026</a>
+  <a href="#s41" class="sub">§4.1 总论</a>
+  <a href="#s42" class="sub">§4.2 历史文化名城</a>
+  <a href="#s43" class="sub">§4.3 街区·名镇·名村</a>
+  <a href="#s44" class="sub">§4.4 传统村落名录</a>
+  <a href="#s45" class="sub">§4.5 风貌管控工具</a>
+  <div class="vol-h">第五编</div>
+  <a href="#v5">当代乡村 2000—2026</a>
+  <a href="#s51" class="sub">§5.1 总论</a>
+  <a href="#s52" class="sub">§5.2 空心村</a>
+  <a href="#s53" class="sub">§5.3 新农房谱系</a>
+  <a href="#s54" class="sub">§5.4 建设运动</a>
+  <a href="#s55" class="sub">§5.5 传统村落活化</a>
+  <div class="vol-h">第六编</div>
+  <a href="#v6">当代城市与识别谱系</a>
+  <a href="#s61" class="sub">§6.1 总论:千城一面</a>
+  <a href="#s62" class="sub">§6.2 城中村</a>
+  <a href="#s63" class="sub">§6.3 城市更新</a>
+  <a href="#s64" class="sub">§6.4 风貌横切面</a>
+  <a href="#s65" class="sub">§6.5 年代鉴定指南</a>
+  <div class="vol-h">附录</div>
+  <a href="#appA">A · 术语表</a>
+  <a href="#appB">B · 参考来源</a>
+  <a href="#appC">C · 总年表</a>
+  <a href="#appD">D · 图版与档案目录</a>
+</nav>
+<main>
+
+<header class="top">
+  <div class="kicker">ENCYCLOPEDIA OF CHINESE RESIDENTIAL COMMUNITIES · 第三卷</div>
+  <h1>中国近现代城乡风貌</h1>
+  <div class="sub">从开埠口岸到和美乡村:一块地方为什么长成眼前这样——基线即 1840,不追溯古代;本卷回答"看到的是什么、为什么长这样、大概建于哪个年代"</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+    <a href="planning.html">城市与区域</a>
+    <a href="landscape.html" class="cur">城乡风貌</a>
+  </div>
+</header>
+
+<!-- ==================== 凡例 ==================== -->
+<div class="howto" id="howto">
+  <div class="hd">凡例 · CONVENTIONS</div>
+  <div class="bd">
+    本卷为第三卷,与前两卷同体例:以条目(entry)为基本单元,词条头、定义段(楷体)、技术档案(档 n-n)、图版(图 n-n)、参见(→)俱全,<b>编号独立</b>——本卷"图 1-1"指本卷第一编第一图,与前两卷互不相涉。三卷分工:第一卷讲<b>房子</b>(居住建筑本体),第二卷讲<b>制度</b>(规划体系),本卷讲<b>城乡的可见状态</b>(风貌)——建筑形式与材质、街巷格局、天际线、成片的外观。<b>起点即 1840</b>:本卷刻意不写古代。理由是一个事实判断:今天中国城乡风貌的物质存量几乎全部形成于 1840 年以后——城墙、里坊、衙署构成的前近代城市,绝大部分已在近代拆城与当代建设中被替换;更早的层只以"背景"身份出现,不单独成章。<b>叙述纪律</b>:只写形态事实与成因机制——某类风貌是什么、何时出现、由什么主体、用什么资金、按什么规则造成;不写审美评价——不说美丑,不写"破坏了古城",只写"拆除发生、形态消失"及其制度原因。<b>实用导向</b>:第六编与附录提供识别工具,看到一块风貌,能判断它是哪个时期、哪种机制的产物,大概建造于哪个年代。涉及当代制度一律回到文本本身;引用以<sup class="ref">[n]</sup>标注,对应附录 B;与前两卷互见处以(→卷一 §n)/(→卷二 §n)标出。
+  </div>
+</div>
+
+<!-- ==================== 总纲 ==================== -->
+<div class="sec" id="gen"><h3>总纲:风貌与分期框架<span class="sec-sub">PERIODIZATION</span></h3></div>
+
+<p>风貌不是"风格"。<b>风貌</b>指一个地方可被整体感知的外观特征:建筑形式与外饰材料、街巷的宽度与格局、天际线、围墙与界面、绿化与水系——成片的可见状态。单栋建筑有风格,风貌是"风格 × 资金 × 规则"在一片土地上的叠加结果。决定风貌的不是建筑师的一时趣味,而是三个变量:<b>谁在建造</b>(建造主体)、<b>用什么钱</b>(资金来源)、<b>按什么规则</b>(制度依据)。三个变量中任何一个换代,风貌就换代。</p>
+
+<p>1840 年以来,这三个变量一共整体换代四次。城乡双线并观——每一时期,城市与乡村的风貌是同一套制度的一体两面:</p>
+
+<div class="band">
+<div class="band-t">分期带 CHRONOLOGICAL BAND(宽度示意,非严格比例;Ⅳ 与 Ⅲ 在 2000—2012 并行)</div>
+<div class="bar">
+  <div class="seg" style="width:34%">Ⅰ 近代输入<br>1840—1949</div>
+  <div class="seg" style="width:18%">Ⅱ 单位建造<br>1949—1978</div>
+  <div class="seg" style="width:22%">Ⅲ 市场建造<br>1978—2012</div>
+  <div class="seg" style="width:26%">Ⅳ 风貌治理<br>2000—2026</div>
+</div>
+<div class="ticks"><span>1840</span><span>1949</span><span>1978</span><span>2000</span><span>2026</span></div>
+</div>
+
+<table class="t">
+<tr><th>分期</th><th>建造主体</th><th>资金来源</th><th>规则依据</th><th>城市典型产物</th><th>乡村典型产物</th></tr>
+<tr><td><b>Ⅰ 近代输入</b><br>1840—1949</td><td>租界当局 · 市政机关 · 富商侨商</td><td>贸易利润与地价</td><td>土地章程 · 建筑密度管制</td><td>租界街区、大马路、骑楼街</td><td>碉楼、圩寨、通商集市镇</td></tr>
+<tr><td><b>Ⅱ 单位建造</b><br>1949—1978</td><td>国家机关与企事业单位</td><td>计划拨款</td><td>苏联规范 · 节约方针</td><td>工人新村、单位大院、苏式公共建筑</td><td>公社礼堂、大队部、知青房</td></tr>
+<tr><td><b>Ⅲ 市场建造</b><br>1978—2012</td><td>开发商 · 镇政府 · 农户</td><td>土地出让 · 预售 · 打工收入</td><td>控规 · 日照间距 · 地方标准</td><td>开发区、CBD、欧陆风小区</td><td>瓷砖自建房、乡镇企业厂房</td></tr>
+<tr><td><b>Ⅳ 风貌治理</b><br>2000—2026</td><td>政府 · 开发商 · 村集体</td><td>财政 · 专项债 · 经营性收入</td><td>保护名录 · 风貌导则 · 更新政策</td><td>名城街区、城市更新、老旧小区改造</td><td>传统村落、美丽乡村、和美乡村</td></tr>
+</table>
+
+<div class="stat-row">
+<div class="stat"><div class="v">140+</div><div class="k">国家历史文化名城(1982 年首批 24 座起步,历批增补)<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">8155</div><div class="k">中国传统村落名录村庄(六批,2012—2023)<sup class="ref">[2]</sup></div></div>
+<div class="stat"><div class="v">1200+</div><div class="k">历史文化街区(各地划定的法定保护层)<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">6 万+</div><div class="k">已确定挂牌的历史建筑(未达文物的保护层)<sup class="ref">[1]</sup></div></div>
+</div>
+
+<div class="note">本卷主线一句话:<b>谁出钱盖房子,城乡就长谁的样子。</b>贸易的钱长出租界与骑楼,计划的钱长出新村与礼堂,土地的钱长出欧陆风与 CBD,财政的钱长出粉墙黛瓦与加装电梯。读懂钱流,就读懂了风貌——这也是为什么保护名录(第四编)要靠财政供养、乡村刷墙(第五编)是政策文件驱动的:风貌从来是制度的显影。</div>
+
+<!-- ============================================================ -->
+<!-- 第一编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v1">
+<div class="vol-no">第一编</div>
+<h2>近代输入</h2>
+<div class="vol-range">1840 — 1949 · 口岸的点状重写与乡村的延续</div>
+</div>
+
+<div class="sec" id="s11"><h3>§1.1 总论:基线与冲击<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1840 年之前的中国城乡风貌可以概括为一句话:<b>城墙—衙署—市街—民居的同心结构,木构与地方材料的无限地方化。</b>城墙围合城市,衙署居中,市街沿水陆码头自发形成,民居按各地匠作传统建造——徽州的粉墙黛瓦、闽粤的红砖燕尾、华北的青砖灰瓦、黄土高原的窑洞,同一制度下的地方变奏。这一层在本卷中只是背景。</p>
+
+<p>1840 年后的变化是<b>点状</b>的:条约口岸约三十余处(含自开商埠),占全国县城总数的比例很低,但每一点都发生"整体重写"——新的街道系统、新的建筑类型、新的建造主体。1880 至 1930 年代,口岸城市贡献了此后半个世纪中国城市的"现代"层:外滩、中山路、骑楼街、里弄。与此同时,占国土面积九成以上的乡村风貌几乎照旧——建造主体仍是农户与匠人,材料仍是土木砖瓦。这个"城市被外力重写、乡村靠内生微调"的不对称,一直延续到 1949 年,并在第二编被强制拉平<sup class="ref">[4]</sup>。</p>
+
+<p>本编四节按风貌的来源分:§1.2 租界与商埠的建筑类型(外来形式的落地),§1.3 华界的新马路(中国市政的模仿与追赶),§1.4 铁路与工矿(企业塑造的风貌,单位制的前身),§1.5 近代乡村(停滞与三处新变)。</p>
+
+<!-- §1.2 外廊式 -->
+<div class="sec" id="s12"><h3>§1.2 外廊式与租界风貌<span class="sec-sub">VERANDA STYLE &amp; CONCESSION TOWNSCAPE · 1840—1949</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">外廊式建筑</span><span class="en">Veranda Style</span>
+<div class="meta">别名:殖民地式(Colonial Style)· 传播路径:印度—东南亚—广州十三行—各通商口岸 · 变体:骑楼、石库门的立面母题来源</div></div>
+<div class="entry-def">以外廊(连续柱廊或券廊)为立面母题的近代建筑类型:底层架空或券柱环绕、层高四五米、深出檐,适应湿热气候与"商住合一"需求——近代中国城市风貌的第一层"新皮肤"。</div>
+<div class="entry-bd">
+
+<p>外廊式不是单一风格,而是一种<b>适应性构造</b>:它在印度与东南亚由殖民者发展成熟,经广州十三行商馆区传入中国,随后出现在几乎所有通商口岸。其风貌意义在于:这是中国城市第一次出现<b>成排的、类型化的、由图纸控制的外来建筑</b>——此前中国的建筑面貌由匠作传统决定,此后口岸的建筑面貌由章程、地价与类型图纸决定<sup class="ref">[3]</sup>。</p>
+
+<p>各口岸因租借国的不同,落地形态分化为四型:</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-1</span><span class="t">开埠城市风貌类型谱</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 420" width="100%" role="img" aria-label="开埠城市风貌类型谱示意图">
+<rect x="20" y="20" width="720" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="34" y="42" font-size="12.5" font-weight="700">A 混合租界型(上海、天津、汉口)</text>
+<text x="34" y="62" font-size="10.5" fill="#444">多国租界并立 → 各段街道风格不同,银行、洋行、百货沿江沿路排布</text>
+<text x="34" y="82" font-size="10.5" fill="#444">识别特征:一城之内"多国拼贴",转角塔楼与钟楼成为构图中心</text>
+<rect x="20" y="116" width="720" height="80" fill="#fff" stroke="#111"/>
+<text x="34" y="138" font-size="12.5" font-weight="700">B 单一殖民规划型(青岛、大连、哈尔滨)</text>
+<text x="34" y="158" font-size="10.5" fill="#444">德 / 俄 / 日一国整体规划 → 路网、广场、建筑风格统一完整</text>
+<text x="34" y="178" font-size="10.5" fill="#444">识别特征:欧洲城市图式(放射路、环形广场)整体移植,至今可辨</text>
+<rect x="20" y="212" width="720" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="34" y="234" font-size="12.5" font-weight="700">C 铁路附属地型(长春、沈阳、抚顺)</text>
+<text x="34" y="254" font-size="10.5" fill="#444">铁路公司为"业主"整体规划(满铁为代表) → 站前广场轴线城市</text>
+<text x="34" y="274" font-size="10.5" fill="#444">识别特征:以火车站为构图原点,行政建筑正对站前大道</text>
+<rect x="20" y="308" width="720" height="80" fill="#fff" stroke="#111"/>
+<text x="34" y="330" font-size="12.5" font-weight="700">D 自开商埠与骑楼市政型(济南、厦门、广州)</text>
+<text x="34" y="350" font-size="10.5" fill="#444">中国当局主导的"华界新市区" → 市政改良驱动的骑楼街、新马路</text>
+<text x="34" y="370" font-size="10.5" fill="#444">识别特征:街道由市政章程统一规定骑楼柱廊与立面高度</text>
+</svg>
+</div>
+<div class="fig-note">四型不是互斥标签,大城市常叠加(天津兼有 A 与 C)。类型差异的根源是<b>建造主体</b>:多国租界、单一殖民政府、铁路公司、中国市政机关——四种业主,四种风貌<sup class="ref">[4]</sup>。这四类业主在 1949 年后被一个主体(国家)整体替换,是第二编的起点。</div>
+</div>
+
+<p>两个最重要的中国化变体:<b>骑楼</b>——外廊与沿街商铺的合成,底层柱廊作人行道,二层以上住人;两广、闽南、海南由市政当局以章程推行(广州 1910 年代末起拆城筑路时成片建造),形成"上有住宅、下有商铺、廊下通行"的骑楼街,是中国传统"下店上宅"与外廊式的嫁接。<b>石库门里弄</b>——江南民居合院与联排住宅的合成:单开间或双开间进深住宅以山墙相接成排,排与排之间为弄,弄口设过街楼门框( hence"石库门");从早期老石库门(保留天井、厢房的三合院压缩版)到 1930 年代的新式里弄(矮墙、绿地、卫生设备),是上海城市肌理的主体,也是本站数据中"里/坊/弄"通名小区的历史源头<sup class="ref">[5]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-2</span><span class="t">骑楼街道横断面:下店上宅与廊下通行</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="骑楼街道横断面示意图">
+<rect x="40" y="60" width="120" height="160" fill="#f2f2f2" stroke="#111" stroke-width="1.5"/>
+<rect x="160" y="60" width="440" height="160" fill="none" stroke="#111"/>
+<line x1="160" y1="200" x2="600" y2="200" stroke="#111" stroke-width="2"/>
+<rect x="600" y="60" width="120" height="160" fill="#f2f2f2" stroke="#111" stroke-width="1.5"/>
+<text x="100" y="130" text-anchor="middle" font-size="10.5" fill="#444">后排住宅</text>
+<text x="100" y="146" text-anchor="middle" font-size="10.5" fill="#444">(仓库/作坊)</text>
+<line x1="190" y1="140" x2="570" y2="140" stroke="#111" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="190" y1="60" x2="570" y2="60" stroke="#111" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="380" y="88" text-anchor="middle" font-size="11.5" font-weight="700">二层以上:住宅</text>
+<text x="380" y="168" text-anchor="middle" font-size="11.5" font-weight="700">底层:商铺</text>
+<text x="380" y="188" text-anchor="middle" font-size="10" fill="#555">檐口高度由市政章程统一规定</text>
+<rect x="190" y="200" width="380" height="34" fill="#e8e8e8" stroke="#111"/>
+<text x="380" y="222" text-anchor="middle" font-size="11.5" font-weight="700">柱廊人行道(廊下通行,遮阳避雨)</text>
+<text x="380" y="262" text-anchor="middle" font-size="10.5" fill="#777">街道(车行)</text>
+<line x1="190" y1="140" x2="190" y2="200" stroke="#111"/>
+<line x1="570" y1="140" x2="570" y2="200" stroke="#111"/>
+<text x="205" y="160" font-size="10" fill="#555">柱廊净宽约 2.5—3.5 m</text>
+<text x="40" y="40" font-size="10.5" fill="#777">注:断面为通行构造示意,不按比例。</text>
+</svg>
+</div>
+<div class="fig-note">骑楼的制度本质是<b>风貌管控的前身</b>:市政章程规定柱廊宽度、檐口高度、立面开间,业主在统一框架内建造——1920 年代广州、厦门的骑楼街,与今天各地"街道整治"统一牌匾、统一立面,执行的是同一套逻辑(→§4.5)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-1</span><span class="no">近代商埠建筑类型参数</span></div>
+<table class="spec-t">
+<tr><td class="k">外廊式</td><td>2—3 层为主;层高 4—4.5 m;外廊进深 2—3 m;砖木结构,砖墙承重、木楼板、铁皮或机平瓦屋面</td></tr>
+<tr><td class="k">骑楼</td><td>柱廊净宽 2.5—3.5 m;檐口统一高度(各地章程 5.5—8 m 不等);进深 12—20 m,前店后仓上宅</td></tr>
+<tr><td class="k">石库门</td><td>单开间约 3.6—4.2 m、双开间约 6—7 m;进深 15—20 m;天井 + 客堂 + 厢房 + 亭子间 + 晒台序列;总弄宽 4—5 m、支弄宽 2.5—3 m</td></tr>
+<tr><td class="k">花园洋房</td><td>独立式住宅,1—3 层,设花园与围墙;业主为洋行买办、实业家、侨商——口岸城市的高价层</td></tr>
+<tr><td class="k">材料信号</td><td>机制红砖/青砖、水泥抹面、水刷石、进口花阶砖、铸铁栏杆——与本地传统建筑的土坯、手工砖形成年代与资金的可视差</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 卷二 §2.2 租界与市政制度(制度侧); §1.3 大马路(华界的回应); 卷一 §6.2 房改房(里弄的产权后续)</p>
+</div></div>
+
+<!-- §1.3 大马路 -->
+<div class="sec" id="s13"><h3>§1.3 大马路与中山路:华界的新面貌<span class="sec-sub">THE NEW AVENUES · 1910s—1930s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大马路</span><span class="en">Dama Road / The Great Avenue</span>
+<div class="meta">语源:上海旧城北门外干道俗称"大马路"(今南京东路)· 泛指近代华界仿租界开辟的新式马路</div></div>
+<div class="entry-def">近代中国市政改良的标志物:拆除城墙或填浜筑成的笔直碎石路/沥青路,配行道树、电杆、路灯与新式沿街建筑——传统城市向"马路城市"转型的空间证据。</div>
+<div class="entry-bd">
+
+<p>华界市政对租界的模仿集中在 1910 至 1930 年代,操作顺序高度一致:<b>先拆城墙,再筑马路,后兴建筑</b>。上海 1912—1914 年拆县城墙,城基上筑成中华路、民国路;杭州、广州、九江、芜湖等地相继拆城筑路。城墙从防御工事变为马路路基,是前近代城市结构被物理抹除的第一步——此后"古城风貌"的存废问题贯穿整个二十世纪(→§3.4、§4.2)<sup class="ref">[7]</sup>。</p>
+
+<p>马路命名构成一层全国性的近代记忆:<b>中山路</b>。1920 至 1930 年代,几乎每座城市都把最主要的干道命名为中山路(或国父路),辅之以民族路、民生路、民权路——纪念性命名系统覆盖了实际的路网,构成"一条中山路就是一部近代城市史"的命名地层,至今仍是中国城市最常见的干道名。</p>
+
+<p>沿路建筑的新构件:百货公司(上海南京路先施 1917、永安 1918,塔楼、橱窗、屋顶游乐场)、新式银行(石库门以外的"洋行立面")、电影院与饭店。到 1930 年代,主要城市的"精华风貌带"完成定型——这条带今天多被划为历史文化街区(→§4.3)。</p>
+
+<p class="cr">→ 参见 卷二 §2.3 首都计划(华界规划的最高版本); §4.3 历史文化街区(这条风貌带的当代身份)</p>
+</div></div>
+
+<!-- §1.4 满铁附属地 -->
+<div class="sec" id="s14"><h3>§1.4 铁路与工矿风貌:企业造城<span class="sec-sub">RAILWAY &amp; MINING TOWNSCAPES · 1898—1945</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">铁路附属地</span><span class="en">Railway Zone</span>
+<div class="meta">代表:南满铁路附属地(大连、长春、抚顺、鞍山)· 中东铁路(哈尔滨)· 胶济、正太沿线</div></div>
+<div class="entry-def">以铁路公司为单一业主、按图纸整体规划建造的城市片区:站前广场、放射路网、员工住宅分区、配套文教设施——中国最早"一个业主建一座城"的风貌单元,单位大院(→§2.3)的直系前身。</div>
+<div class="entry-bd">
+
+<p>1898 年后,中东铁路与南满铁路的运营范围事实上成为"企业领土":铁路公司绘制规划图、出让宅地、建设市政。大连由俄国按巴黎式放射广场规划起步、日本续建;长春(当时称"长春"/"新京")的站前轴线城市格局;哈尔滨的俄式街区——至今仍是这三市风貌的底层结构<sup class="ref">[4]</sup>。</p>
+
+<p>同一逻辑在工矿区运行:汉冶萍公司的大冶、萍乡,开滦的唐山,福公司的焦作——矿厂加包工棚屋、职员里弄,企业按等级给不同员工住不同房子。<b>以企业为单元组织全部生活空间</b>——这个模式在 1949 年后被继承为国家单位制,风貌基因从"公司城"直接传给"单位大院"。</p>
+
+<p class="cr">→ 参见 §2.3 单位大院(企业造城的国有化续篇); 卷一 §1.3(住宅侧)</p>
+</div></div>
+
+<!-- §1.5 近代乡村 -->
+<div class="sec" id="s15"><h3>§1.5 近代乡村:停滞与三处新变<span class="sec-sub">THE COUNTRYSIDE · 1840—1949</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">碉楼</span><span class="en">Diaolou (Watchtower Dwelling)</span>
+<div class="meta">代表:开平碉楼(现存 1833 座,2007 年列入世界遗产)· 分布:四邑侨乡、川西、藏区(形制不同)</div></div>
+<div class="entry-def">侨汇资金驱动的高层防御性民居:钢筋混凝土或砖砌塔楼,墙体厚、开窗小、设枪眼,顶部的西式山花与本土砌法并存——近代乡村风貌中"外来资金 × 本地安全需求"的合成品。</div>
+<div class="entry-bd">
+
+<p>近代乡村风貌的总判断是<b>延续大于变化</b>:建造主体仍是农户与匠人,材料仍是土木砖瓦,格局仍是聚族而居。但有三处可见的新变:</p>
+
+<p><b>其一,侨乡</b>。五口通商后粤闽劳工出洋,侨汇回流催生侨乡大宅——开平碉楼(防匪与居住合一,楼高四五层,楼身混凝土、楼顶却用西式穹顶山花)、闽南红砖大厝与"番仔楼"(南洋立面的两层洋楼)。资金来自海外,形式半中半洋,是乡村风貌中唯一成片的近代异质层<sup class="ref">[6]</sup>。<b>其二,圩寨</b>。晚清咸同兵燹后,华北平原普遍筑圩挖壕、村庄圈寨自保——聚落从开放型转为设防型,寨墙寨门至今在地名中留痕(××寨、××围)。<b>其三,通商近郊与铁路沿线集镇</b>。口岸与车站催生新的市镇层(朱家角、盛泽式江南市镇在近代继续繁荣,铁路沿线的石家庄、郑州、蚌埠则从村庄直接跨为城市——后者的老城风貌因此"起点即近代")。</p>
+
+<p>除此三处,乡村风貌的近代化要等到 1980 年代的建房潮(→§3.6)与 2000 年代的政策进场(→第五编)——乡村风貌与城市风貌的时间差,始终在半个世纪上下。</p>
+
+<p class="cr">→ 参见 §5.3 新农房谱系(乡村下一次整体换装); 卷二 §1.5 地方城市形制(市镇的古代背景)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第二编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v2">
+<div class="vol-no">第二编</div>
+<h2>单位建造</h2>
+<div class="vol-range">1949 — 1978 · 国家作为唯一建造者的风貌</div>
+</div>
+
+<div class="sec" id="s21"><h3>§2.1 总论:一元化的建造<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1949 年后的风貌变化可以用一句话概括:<b>建造主体从多元收归一元。</b>租界当局、市政机关、洋行、侨商、农户——全部退出;接手的是国家机关与企事业单位(城市)和人民公社(乡村)。资金从贸易、地价、侨汇切换为计划拨款;规则从章程与匠作切换为苏联规范与"勤俭建国"方针。</p>
+
+<p>一元化的风貌后果有三个:<b>形式来源集中</b>——全国城市建设同一套图纸与标准图集,地方差异被压缩;<b>材料短缺成为主导约束</b>——钢材水泥优先供给工业,民用建筑执行"低标准",砖混替代砖木、水泥抹面替代装修;<b>公共建筑获得空前权重</b>——礼堂、剧场、百货大楼占据每个城市的中心,而住宅按"先生产后生活"排序滞后。1949—1978 年城镇化率从 10.6% 缓慢升至 17.9%,城市风貌的实际变动范围有限,但<b>变动方向高度一致</b>:全国城市开始长得像同一座城市<sup class="ref">[7]</sup>。</p>
+
+<p>本编五节:工人新村与单位大院是居住风貌的两大单元(与卷一 §1.2/§1.3 同对象、风貌视角),苏式公共建筑是中心城市的仪式层,集体化乡村是农村的对应变体。</p>
+
+<!-- §2.2 工人新村 -->
+<div class="sec" id="s22"><h3>§2.2 工人新村:红砖、坡顶与行列式<span class="sec-sub">WORKERS' NEW VILLAGES · 1951—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">行列式</span><span class="en">Parallel Row Layout</span>
+<div class="meta">诞生语境:1950 年代苏联居住区规范 · 代表:上海曹杨新村(1951)等首批工人新村</div></div>
+<div class="entry-def">住宅按统一朝向平行成排布置的规划手法:日照、通风、施工效率最优,形体与朝向空间关系归零——二十世纪后半叶中国新建居住区的主导布局,一眼可辨的"计划风貌"。</div>
+<div class="entry-bd">
+
+<p>工人新村的风貌构成一整套可识别的构件清单:<b>机制红砖墙、机平瓦坡屋顶</b>(红色屋面是这一时期从空中俯瞰城市的主色);<b>行列式排布</b>(全部住宅朝南或南偏东,间距按日照计算);<b>煤烟囱与晒台</b>(每户厨房烟囱成列、屋面晒台成排);<b>宅间绿树与无围墙</b>——早期新村不设围挡,楼与楼之间的绿地是街道的一部分。这与后来商品房小区的"围墙—中心花园—门禁"构成鲜明对照(→卷一 §3.3)<sup class="ref">[7]</sup>。</p>
+
+<p>例外证明规律:上海曹杨新村(1951,首批)采用<b>弯曲道路 + 保留河道</b>的有机布局,今天被公认为规划佳作;它的"例外"恰恰说明行列式的正统地位——需要刻意用力才能偏离。本站数据中的"新村"通名小区(→专题概述 §1.4),即指向这一建设批次。</p>
+
+<p class="cr">→ 参见 卷一 §1.2 工人新村、档 1-1(住宅侧参数); §6.5 年代鉴定(红砖坡顶作为年代特征)</p>
+</div></div>
+
+<!-- §2.3 单位大院 -->
+<div class="sec" id="s23"><h3>§2.3 单位大院:围墙中的小社会<span class="sec-sub">DANWEI COMPOUND · c.1955—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">单位大院</span><span class="en">Danwei (Work-Unit) Compound</span>
+<div class="meta">前身:铁路附属地与工矿公司城(→§1.4)· 鼎盛:1950s—1980s · 变体:部委大院、高校校园、部队营区</div></div>
+<div class="entry-def">一个单位用围墙圈住其全部功能的土地单元:办公主楼、生产区、家属住宅、食堂、澡堂、幼儿园、医务室、礼堂一应俱全——风貌上表现为"一墙之隔两个城市":墙内绿荫、低层、安静;墙外街市、喧闹。</div>
+<div class="entry-bd">
+
+<p>大院的风貌单元由四层圈层构成,至今在老城地图上一眼可辨:</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-1</span><span class="t">单位大院功能圈层</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 380" width="100%" role="img" aria-label="单位大院功能圈层示意图">
+<rect x="60" y="30" width="640" height="330" fill="none" stroke="#111" stroke-width="2.5"/>
+<rect x="60" y="30" width="640" height="330" fill="#fafafa"/>
+<rect x="120" y="90" width="520" height="230" fill="#eee" stroke="#111"/>
+<rect x="190" y="150" width="380" height="140" fill="#ddd" stroke="#111"/>
+<rect x="260" y="205" width="240" height="80" fill="#ccc" stroke="#111"/>
+<rect x="330" y="18" width="100" height="26" fill="#fff" stroke="#111"/>
+<text x="380" y="36" text-anchor="middle" font-size="10.5">大门与门房</text>
+<line x1="380" y1="44" x2="380" y2="205" stroke="#111" stroke-width="2"/>
+<text x="380" y="70" text-anchor="middle" font-size="10.5" fill="#555">轴线甬道</text>
+<rect x="340" y="120" width="80" height="42" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<text x="380" y="138" text-anchor="middle" font-size="11" font-weight="700">办公主楼</text>
+<text x="380" y="153" text-anchor="middle" font-size="9.5" fill="#555">对称、台阶、旗杆</text>
+<text x="380" y="228" text-anchor="middle" font-size="11.5" font-weight="700">家属住宅区</text>
+<text x="380" y="246" text-anchor="middle" font-size="9.5" fill="#555">行列式多层(→§2.2)</text>
+<text x="380" y="292" text-anchor="middle" font-size="10.5" fill="#444">内圈:住宅 + 幼儿园 + 医务室 + 食堂</text>
+<text x="380" y="338" text-anchor="middle" font-size="10.5" fill="#444">中圈:生产 / 教学区 + 礼堂 + 操场</text>
+<text x="380" y="368" text-anchor="middle" font-size="10.5" fill="#444">外圈:围墙 + 沿街出租门面(1980s 后)</text>
+</svg>
+</div>
+<div class="fig-note">大院的圈层是权力与生活的同心圆:主楼居轴线端点,住宅在主楼之后,生产或教学区包在外圈。1998 年房改后家属区产权私有化(→卷一 §6.2),围墙大多保留——大院边界至今仍是城市治理(学区、物业、拆墙并院)的基本单元之一。</div>
+</div>
+
+<p>风貌上的三处遗产延续至今:<b>围墙文化</b>——此后一切中国居住区默认设墙,与欧美开放街区相反;<b>门头铭牌</b>——单位名与门楣字构成可读的身份标识;<b>院内古树</b>——半个世纪的树龄使老院落的绿化显著优于新小区,是年代鉴别的旁证。</p>
+
+<p class="cr">→ 参见 卷一 §1.3 单位大院与家属院(住宅侧); §1.4 铁路附属地(基因来源); §6.3 拆墙并院(当代处置)</p>
+</div></div>
+
+<!-- §2.4 苏式公共建筑 -->
+<div class="sec" id="s24"><h3>§2.4 苏式公共建筑与城市中心<span class="sec-sub">SOVIET-STYLE CIVIC ARCHITECTURE · 1950s—1960s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大屋顶</span><span class="en">Big Roof ("National Form")</span>
+<div class="meta">口号:"民族形式、社会主义内容" · 代表:北京友谊宾馆、地安门办公楼等 · 高潮:1959 年"十大建筑"</div></div>
+<div class="entry-def">在苏式体量与立面上叠加中国传统屋顶与檐口构件的做法:混凝土结构的对称大楼戴着琉璃瓦大屋顶——1950 年代中国公共建筑的官方样式,风貌上最"昂贵"的政治语言。</div>
+<div class="entry-bd">
+
+<p>公共建筑是这一时期城市风貌的中心课题。1950 年代初在"一边倒"语境下,公共建筑先照搬斯大林式(三段式立面、尖塔、雕塑装饰),随即被"民族形式、社会主义内容"方针校正——大屋顶成为官方认可的折中方案。1955 年"反浪费"运动后大屋顶被批判性收缩;1959 年建国十年"十大建筑"(人民大会堂、中国革命历史博物馆等)给出最终定式:<b>西式体量 + 民族化檐口与细部 + 超常尺度</b>,今天仍是北京核心区天安门广场四周的风貌主体<sup class="ref">[8]</sup>。</p>
+
+<p>城市中心随之重构:广场 + 轴线 + 会堂成为每个省会城市的标配构图(人民广场、工人文化宫、展览馆)。风貌的<b>仪式化</b>——城市中心从市场(庙会、市街)转为仪式空间(广场、检阅、集会)——是这一时期最深的空间改变<sup class="ref">[7]</sup>。</p>
+
+<p>同期另一支线:<b>三线建设</b>(1964—1980 年代初)。"靠山、分散、隐蔽"方针把大批工业项目迁入山区,形成山沟里的厂区风貌——不打城市牌子,只有厂区、家属区与"先生产后生活"的简易配套。今天这些三线厂址多数废弃或转产,成为工业遗产层(→§6.3)。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 2-1</span><span class="no">苏式公共建筑类型参数</span></div>
+<table class="spec-t">
+<tr><td class="k">大屋顶式</td><td>3—5 层;混凝土框架;琉璃瓦坡檐;对称立面 + 中央门廊;1953—1955 与 1958—1959 两波</td></tr>
+<tr><td class="k">斯大林式</td><td>三段式(基座/墙身/檐部)、尖塔收顶、外廊柱式;见于 1950—1953 年苏联援建项目(展览馆、宾馆)</td></tr>
+<tr><td class="k">十大建筑定式</td><td>体量西式、檐口平座斗拱化、柱廊加大、天然石材贴面;尺度远超常规民用建筑</td></tr>
+<tr><td class="k">三线厂区</td><td>依山就势分散布局;砖混厂房 + 干打垒/简易住宅;无城市配套,礼堂兼影院为唯一公共建筑</td></tr>
+<tr><td class="k">材料信号</td><td>水磨石地面、斩假石/水刷石外墙、木框钢窗、绿色墙裙——1970 年代前公共建筑的标配内饰层</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 卷二 §3.2 苏联模式与 156 项(制度侧); §6.5 年代鉴定(水刷石与钢窗作为年代特征)</p>
+</div></div>
+
+<!-- §2.5 集体化乡村 -->
+<div class="sec" id="s25"><h3>§2.5 集体化乡村:薄薄的一层公共建筑<span class="sec-sub">COLLECTIVIZED VILLAGE · 1958—1978</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">公社礼堂</span><span class="en">People's Commune Hall</span>
+<div class="meta">制度节点:1958 年人民公社化 · 空间序列:大队部—礼堂—供销社—卫生所—小学—晒场</div></div>
+<div class="entry-def">集体化时期乡村的仪式与集会建筑:清水砖墙、木桁架或混凝土屋架、山花上书年代口号——集体化在村庄风貌上留下的最高大、最可辨识的一栋。</div>
+<div class="entry-bd">
+
+<p>人民公社改变的是组织方式,而不是村庄格局:农户住宅基本照旧,聚落形态延续传统。<b>集体化层的物理载体是六七种公共建筑</b>:大队部(村委会前身)、公社礼堂(开会在内、放电影在内)、供销社(代销点)、卫生所、小学、知青房(外来人口宿舍),加上晒场与粮仓。它们体量大于民宅、材料更好(砖混 vs 土坯木构)、朝向村口主干——构成村庄新的"公共立面"<sup class="ref">[6]</sup>。</p>
+
+<p>今天去任一北方平原村庄,识别"集体化层"的口诀是:<b>找最高的那排老砖房</b>。礼堂与粮仓是年代地标,其口号标语、五角星山花是断代凭证(→§6.5)。这一层在 1980 年代后多数废弃或改作仓库,近年随传统村落普查重新进入保护视野(→§4.4)。</p>
+
+<p class="cr">→ 参见 卷二 §3.4 扩大街坊到小区(同期城市侧); §4.4 传统村落名录(集体化层的当代身份)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第三编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v3">
+<div class="vol-no">第三编</div>
+<h2>市场建造</h2>
+<div class="vol-range">1978 — 2012 · 土地资金驱动的风貌剧变</div>
+</div>
+
+<div class="sec" id="s31"><h3>§3.1 总论:速度成为美学<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1978 年后建造主体重新多元化,但结构与 1949 年前完全不同:城市里是<b>开发商</b>(以 1998 年房改为分水岭成为绝对主力),乡村是<b>镇政府</b>(乡镇企业)与<b>农户</b>(打工收入回流的建房潮)。资金从计划拨款切换为土地出让金、银行信贷与预售回款——资金第一次与"快"直接挂钩:卖得越快、盖得越快、挣得越多。1990 年代初"一年一个样、三年大变样"从上海口号变成全国实践;此后二十年,中国城市的老城更新率与新城扩张速度均无先例<sup class="ref">[7]</sup>。</p>
+
+<p>本编六节:开发区与新城是空间容器(§3.2),商品房风格谱系是居住风貌的主体(§3.3),旧城改造是老城的另一面(§3.4),天际线竞赛是垂直维度(§3.5),乡村工业化与建房潮是农村侧(§3.6)。</p>
+
+<!-- §3.2 宽马路大广场 -->
+<div class="sec" id="s32"><h3>§3.2 开发区:宽马路、大广场、玻璃盒子<span class="sec-sub">DEVELOPMENT ZONE TOWNSCAPE · 1984—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">宽马路大广场</span><span class="en">Wide Road, Grand Plaza</span>
+<div class="meta">制度节点:1984 年首批 14 个国家级经济技术开发区 · 蔓延:各地"自费开发区" · 收束:2015 年中央城市工作会议纠偏"贪大媚洋求怪"</div></div>
+<div class="entry-def">开发区式风貌的通行构件组合:双向八车道加宽隔离带的路网、超尺度行政广场、玻璃幕墙方盒子、成排速生杨与预留空地——"先有图后有厂"的分期建成景观。</div>
+<div class="entry-bd">
+
+<p>开发区的风貌不是设计出来的,是<b>融资节奏</b>造成的:土地先划大后切割,马路先修宽后两边填,招商快慢决定建成密度。于是产生中国独有的风貌时态——"半建成":宏大路网已就位、楼栋只填了路网的一角。这与第二编"建好一栋是一栋"的计划时态、第一编"沿街逐栋生长"的市场时态,构成三种可辨识的建成时间性<sup class="ref">[7]</sup>。</p>
+
+<p>构件清单:宽马路(红线 60—100 m,人行过街需天桥)、大广场(行政中心前的"市民广场",草坪加旗杆)、玻璃幕墙方盒子(标准厂房与办公楼共用一套立面语言)、速生杨(最便宜的绿化)。2015 年中央城市工作会议后,"贪大、媚洋、求怪"被点名,宽马路思潮政策性收束——但存量景观已经铺满新区(→卷二 §6.5)。</p>
+
+<p class="cr">→ 参见 卷二 §4.3 土地有偿使用与开发区(制度侧); §6.4 风貌横切面(新区段的识别特征)</p>
+</div></div>
+
+<!-- §3.3 商品房风格谱系 -->
+<div class="sec" id="s33"><h3>§3.3 商品房风格谱系:从方盒子到现代简约<span class="sec-sub">THE STYLE SEQUENCE OF COMMODITY HOUSING · 1980s—2010s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">欧陆风</span><span class="en">Euro-Stylism</span>
+<div class="meta">盛行:1990s—2000s · 构件:三段式立面、坡屋顶、罗马柱、拱窗、山花 · 平行流派:地中海/托斯卡纳(郊区大盘)、Art Deco(2000s 一线)、新中式(2000s 起)</div></div>
+<div class="entry-def">以欧洲古典建筑语汇为装饰母题的商品住宅风格:结构是标准混凝土楼栋,立面贴上柱式、线脚、山花——用"看起来贵"支撑溢价的营销驱动风格,覆盖了 1995—2010 年全国商品房的主力立面。</div>
+<div class="entry-bd">
+
+<p>商品房立面的风格换代,每一代都对应一次<b>产品与资金逻辑</b>的升级:</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-1</span><span class="t">商品房风格谱系时间轴</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 400" width="100%" role="img" aria-label="商品房风格谱系时间轴示意图">
+<line x1="60" y1="200" x2="720" y2="200" stroke="#111" stroke-width="2.5"/>
+<line x1="60" y1="60" x2="60" y2="340" stroke="#111" stroke-width="1"/>
+<text x="52" y="205" text-anchor="end" font-size="10.5" fill="#555">1980</text>
+<line x1="200" y1="60" x2="200" y2="340" stroke="#111" stroke-width="1"/>
+<text x="192" y="205" text-anchor="end" font-size="10.5" fill="#555">1995</text>
+<line x1="360" y1="60" x2="360" y2="340" stroke="#111" stroke-width="1"/>
+<text x="352" y="205" text-anchor="end" font-size="10.5" fill="#555">2003</text>
+<line x1="520" y1="60" x2="520" y2="340" stroke="#111" stroke-width="1"/>
+<text x="512" y="205" text-anchor="end" font-size="10.5" fill="#555">2012</text>
+<line x1="690" y1="60" x2="690" y2="340" stroke="#111" stroke-width="1"/>
+<text x="700" y="205" font-size="10.5" fill="#555">2020s</text>
+<rect x="62" y="90" width="136" height="42" fill="#f2f2f2" stroke="#111"/>
+<text x="130" y="108" text-anchor="middle" font-size="11.5" font-weight="700">方盒子</text>
+<text x="130" y="124" text-anchor="middle" font-size="9.5" fill="#555">预制外墙板/水泥抹面</text>
+<rect x="202" y="90" width="156" height="42" fill="#e3e3e3" stroke="#111"/>
+<text x="280" y="108" text-anchor="middle" font-size="11.5" font-weight="700">欧陆风</text>
+<text x="280" y="124" text-anchor="middle" font-size="9.5" fill="#555">面砖+柱式+坡屋顶</text>
+<rect x="362" y="90" width="156" height="42" fill="#f2f2f2" stroke="#111"/>
+<text x="440" y="108" text-anchor="middle" font-size="11.5" font-weight="700">Art Deco / 新中式</text>
+<text x="440" y="124" text-anchor="middle" font-size="9.5" fill="#555">涂料+基座石材</text>
+<rect x="522" y="90" width="166" height="42" fill="#e3e3e3" stroke="#111"/>
+<text x="605" y="108" text-anchor="middle" font-size="11.5" font-weight="700">现代简约</text>
+<text x="605" y="124" text-anchor="middle" font-size="9.5" fill="#555">真石漆/铝板+大阳台</text>
+<text x="380" y="52" text-anchor="middle" font-size="12" font-weight="700">住宅立面四代:营销定位与材料供应链的共同产物</text>
+<rect x="62" y="260" width="136" height="42" fill="#fff" stroke="#111"/>
+<text x="130" y="278" text-anchor="middle" font-size="10">户型逻辑:有厅即可</text>
+<text x="130" y="294" text-anchor="middle" font-size="9.5" fill="#555">(→卷一 §5.2)</text>
+<rect x="202" y="260" width="156" height="42" fill="#fff" stroke="#111"/>
+<text x="280" y="278" text-anchor="middle" font-size="10">大阳台、跃层、飘窗</text>
+<text x="280" y="294" text-anchor="middle" font-size="9.5" fill="#555">(→卷一 §5.3)</text>
+<rect x="362" y="260" width="156" height="42" fill="#fff" stroke="#111"/>
+<text x="440" y="278" text-anchor="middle" font-size="10">赠送面积、套房化</text>
+<text x="440" y="294" text-anchor="middle" font-size="9.5" fill="#555">(→卷一 §5.4)</text>
+<rect x="522" y="260" width="166" height="42" fill="#fff" stroke="#111"/>
+<text x="605" y="278" text-anchor="middle" font-size="10">大平层、横厅、落地窗</text>
+<text x="605" y="294" text-anchor="middle" font-size="9.5" fill="#555">(→卷一 §5.5)</text>
+<text x="380" y="330" text-anchor="middle" font-size="10.5" fill="#777">立面风格与户型演进同步换档——四代风格各自对应卷一的四个户型时代</text>
+<text x="380" y="378" text-anchor="middle" font-size="10.5" fill="#777">注:年代为通行区间,各城市有 3—5 年相位差;一线早于三四线。</text>
+</svg>
+</div>
+<div class="fig-note">风格代际的判定价值极高:一栋楼的立面直接给出竣工年代的上下限(误差约一个代际)。这正是第六编年代鉴定(→§6.5)的视觉基础——本站"竣工年份"字段缺失时,立面是最可靠的旁证。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-1</span><span class="no">商品房风格谱系参数</span></div>
+<table class="spec-t">
+<tr><td class="k">1980s 方盒子</td><td>6—7 层为主(无电梯门槛);预制大板或砖混;水泥抹面/水刷石;钢窗;体型朴素,阳台以预制栏板封</td></tr>
+<tr><td class="k">1990s 欧陆风</td><td>多层带电梯出现;面砖外墙(白/米黄);顶部退台+坡屋顶瓦;底层贴石材"基座";罗马柱阳台、拱形顶窗</td></tr>
+<tr><td class="k">2000s 中期</td><td>小高层/高层普及;涂料为主+石材基座;Art Deco 竖线条(一线)、新中式灰瓦白墙(文旅盘)、地中海拱廊(郊区大盘)并行</td></tr>
+<tr><td class="k">2010s 现代简约</td><td>高层、超高层;真石漆/铝板/玻璃栏板;大阳台、转角飘窗;顶部无装饰收头;彩色型材窗、2015 后断桥铝普及</td></tr>
+<tr><td class="k">通名信号</td><td>苑/园/村(1980s—90s)→ 花园/广场(1990s,受命名规范约束)→ 府/湾/公馆(2010s 品牌化)——通名与风格代际大体同步(→专题概述 §1.4)</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 卷一 §2.2 单元式住宅、§3.3 封闭式商品房小区(住宅侧); §6.5 年代鉴定指南(本谱系的实用化)</p>
+</div></div>
+
+<!-- §3.4 旧城改造 -->
+<div class="sec" id="s34"><h3>§3.4 旧城改造:大拆大建的二十年<span class="sec-sub">OLD TOWN REDEVELOPMENT · 1992—2010</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大拆大建</span><span class="en">Wholesale Demolition &amp; Redevelopment</span>
+<div class="meta">机制:土地批租(1988 宪法修正)+ 成片出让 + 货币安置 · 代表:上海 1992 年起"365 危棚简屋"改造、各城市 1990s 危改</div></div>
+<div class="entry-def">以整片街区为单位的拆除重建模式:开发商整体拿地、老城居民外迁安置、原址建高层住宅或商业——资金上"拆得越彻底、容积率越有利",风貌上老城被成片替换为新城。</div>
+<div class="entry-bd">
+
+<p>大拆大建的机制核心是<b>地价差</b>:老城位置好、现状密度"低"(指可售面积)、拆迁成本可通过容积率摊薄——拆除老房、竖起高楼在财务上几乎总是成立。上海自 1992 年起用八年完成 365 万平方米危棚简屋改造;北京 1990 年代的危改、各城市的"旧城改造"相继采用同一模式<sup class="ref">[7]</sup>。风貌后果是结构性的:<b>老城碎片化</b>——拆除后的老城剩下零散的保护建筑"孤岛",四周被高层环绕;里弄、胡同、骑楼街的存量在二十年里大幅收缩,直接触发了第四编的名录制度扩容。</p>
+
+<p>政策转向在 2015 年前后完成:中央城市工作会议(2015)提出"城市修补";2021 年住建部明确在城市更新中防止大拆大建(拆除比例与拆建比限制);2025 年中办国办《关于持续推进城市更新行动的意见》确立"留改拆"并举(→§6.3)。从"拆"到"留"的三十年,是中国风貌观念的完整摆动周期<sup class="ref">[10]</sup>。</p>
+
+<p class="cr">→ 参见 卷二 §6.5 存量时代(制度侧); §4.2 历史文化名城(对冲机制); §6.3 城市更新(后继模式)</p>
+</div></div>
+
+<!-- §3.5 天际线 -->
+<div class="sec" id="s35"><h3>§3.5 天际线与 CBD 竞赛<span class="sec-sub">SKYLINE &amp; CBD · 1985—2015</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">天际线</span><span class="en">Skyline</span>
+<div class="meta">节点:深圳国贸大厦"三天一层楼"(1985)· 上海金茂(1999)/环球金融中心(2008)/上海中心(2015)· 各省会 CBD 化(2000s)</div></div>
+<div class="entry-def">城市轮廓的垂直面:超高层建筑群构成的轮廓线——1990 年代起成为中国城市的"名片"竞赛对象,构图公式为"双塔+电视塔+会展中心"。</div>
+<div class="entry-bd">
+
+<p>天际线竞赛的风貌逻辑与开发区同源:<b>高度即广告</b>。超高层不是使用需求最优解,而是招商与城市营销的道具——第一高楼的名号在省际之间流转。深圳国贸大厦以"三天一层楼"成为 1980 年代的速度图腾;上海陆家嘴三塔(金茂 421 m、环球 492 m、上海中心 632 m)在十五年里三次刷新中国高度;2000 年代几乎所有省会都规划了自己的 CBD,塔楼+裙房+广场的构图全国复制。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-2</span><span class="t">城市天际线演变:五个断面</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="城市天际线演变示意图">
+<line x1="30" y1="250" x2="730" y2="250" stroke="#111" stroke-width="2"/>
+<text x="95" y="285" text-anchor="middle" font-size="11" font-weight="700">1900 租界</text>
+<rect x="60" y="212" width="18" height="38" fill="#ccc" stroke="#111"/>
+<rect x="84" y="200" width="14" height="50" fill="#ccc" stroke="#111"/>
+<rect x="104" y="218" width="20" height="32" fill="#ccc" stroke="#111"/>
+<rect x="84" y="188" width="8" height="12" fill="none" stroke="#111"/>
+<text x="95" y="180" text-anchor="middle" font-size="9" fill="#555">钟楼塔尖</text>
+<text x="95" y="168" text-anchor="middle" font-size="9.5" fill="#777">2—4 层为主</text>
+<text x="250" y="285" text-anchor="middle" font-size="11" font-weight="700">1958 单位城</text>
+<rect x="180" y="196" width="40" height="54" fill="#bbb" stroke="#111"/>
+<rect x="228" y="206" width="30" height="44" fill="#ccc" stroke="#111"/>
+<rect x="264" y="210" width="36" height="40" fill="#ccc" stroke="#111"/>
+<rect x="306" y="200" width="26" height="50" fill="#bbb" stroke="#111"/>
+<text x="250" y="180" text-anchor="middle" font-size="9.5" fill="#777">礼堂塔冠最高</text>
+<text x="405" y="285" text-anchor="middle" font-size="11" font-weight="700">1988 早期高层</text>
+<rect x="352" y="170" width="16" height="80" fill="#bbb" stroke="#111"/>
+<rect x="374" y="140" width="20" height="110" fill="#999" stroke="#111"/>
+<rect x="400" y="184" width="18" height="66" fill="#ccc" stroke="#111"/>
+<rect x="424" y="160" width="14" height="90" fill="#bbb" stroke="#111"/>
+<text x="405" y="128" text-anchor="middle" font-size="9.5" fill="#777">首批高层写字楼</text>
+<text x="570" y="285" text-anchor="middle" font-size="11" font-weight="700">2008 CBD</text>
+<rect x="500" y="120" width="18" height="130" fill="#999" stroke="#111"/>
+<rect x="524" y="90" width="22" height="160" fill="#777" stroke="#111"/>
+<rect x="552" y="130" width="16" height="120" fill="#999" stroke="#111"/>
+<rect x="574" y="150" width="20" height="100" fill="#bbb" stroke="#111"/>
+<rect x="600" y="110" width="14" height="140" fill="#888" stroke="#111"/>
+<text x="570" y="78" text-anchor="middle" font-size="9.5" fill="#777">超高层塔群</text>
+<text x="690" y="285" text-anchor="middle" font-size="11" font-weight="700">2020s 存量期</text>
+<rect x="640" y="126" width="16" height="124" fill="#999" stroke="#111"/>
+<rect x="662" y="100" width="18" height="150" fill="#777" stroke="#111"/>
+<rect x="686" y="140" width="16" height="110" fill="#999" stroke="#111"/>
+<rect x="708" y="155" width="14" height="95" fill="#bbb" stroke="#111"/>
+<line x1="640" y1="96" x2="722" y2="96" stroke="#111" stroke-dasharray="4 3"/>
+<text x="681" y="88" text-anchor="middle" font-size="9.5" fill="#777">高度封顶,横向加密</text>
+<text x="380" y="40" text-anchor="middle" font-size="12" font-weight="700">垂直竞赛的百年:从钟楼塔尖到超高层塔群,再到限高时代的横向加密</text>
+</svg>
+</div>
+<div class="fig-note">2020 年代的断面与前一个的区别不在高度而在<b>横向密度</b>:限高政策与空域管制之下,新增建设转入多层加密与存量更新(→§6.3),天际线进入平台期。</div>
+</div>
+
+<p class="cr">→ 参见 卷二 §5.3 新城新区(空间容器); §3.2 宽马路大广场(同源逻辑)</p>
+</div></div>
+
+<!-- §3.6 乡村工业化 -->
+<div class="sec" id="s36"><h3>§3.6 乡村工业化与建房潮:瓷砖房<span class="sec-sub">RURAL INDUSTRIALIZATION · 1984—2000s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">瓷砖房</span><span class="en">Tiled Farmhouse</span>
+<div class="meta">构件:白瓷砖外墙 + 蓝色/茶色玻璃 + 预制罗马柱 + 平屋顶 · 资金:打工收入与乡镇企业工资 · 通行期:1990s—2000s</div></div>
+<div class="entry-def">农户以务工收入自建的更新住宅:二层砖混平顶小楼,外墙通贴白瓷砖,正面嵌蓝色玻璃——全国乡村第一次"统一换装",与城市欧陆风同期同源的材料语言。</div>
+<div class="entry-bd">
+
+<p>乡村在 1980 年代同时发生两件事。<b>其一,乡镇企业进村</b>:"村村点火、户户冒烟"的工业层直接插进村庄——厂房、烟囱、仓库与民宅混布,苏南的村办厂、珠三角的"三来一补"厂区、温州的家庭作坊各成一型;1987 年乡镇企业产值首次超过农业总产值。<b>其二,建房潮</b>:土地承包释放的积累与随后外出务工的收入,驱动农户推倒土坯房、翻建砖瓦房再到瓷砖二层楼——1980 年代初的第一次建房潮以砖瓦平房为主,1990 年代的第二次以瓷砖楼房为主<sup class="ref">[9]</sup>。</p>
+
+<p>瓷砖房的全国一致性由<b>材料供应链</b>造成:全国统一规格的瓷砖、玻璃、预制柱构件流通到县乡建材市场,乡村工匠按同一套无图纸做法安装——这是"千村一面"的物质基础(→§6.1 千城一面的同源机制)。小城镇同步膨胀:建制镇数量从 1978 年的约 2000 个增至世纪之交的近 2 万个<sup class="ref">[9]</sup>,镇区风貌成为城乡过渡带——一条主街、两排瓷砖门面房、政府大院与农贸市场。</p>
+
+<p class="cr">→ 参见 §5.3 新农房谱系(瓷砖房的后两代); 卷二 §5.3 新城新区(同期城市侧)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第四编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v4">
+<div class="vol-no">第四编</div>
+<h2>保护名录与管控</h2>
+<div class="vol-range">1982 — 2026 · 风貌成为法定保护与管控对象</div>
+</div>
+
+<div class="sec" id="s41"><h3>§4.1 总论:从建设到管控<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>第三编的大拆大建进行到一半,制度开始反向生长。1982 年《文物保护法》公布同年,国务院公布首批 24 座国家历史文化名城——<b>风貌第一次成为法律意义上的保护客体</b>。此后四十年,保护体系沿两个方向扩容:向下(名城 → 街区 → 名镇名村 → 传统村落 → 历史建筑,名录层级越来越细)和向外(从"保护文物"到"管控新建"——高度、立面、色彩,风貌管控成为规划许可的常规内容)<sup class="ref">[1]</sup>。</p>
+
+<p>名录体系的逻辑可以概括为一句话:<b>把"值得留下的风貌"登记造册,再给册子里的东西配规则。</b>第五编、第六编将看到:乡村的美丽乡村建设(§5.4)与城市的城市更新(§6.3)都运行在这套名录的地基上。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-1</span><span class="t">保护名录体系层级</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 360" width="100%" role="img" aria-label="保护名录体系层级示意图">
+<rect x="250" y="20" width="260" height="44" fill="#111"/>
+<text x="380" y="40" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">历史文化名城(城)</text>
+<text x="380" y="56" text-anchor="middle" font-size="10" fill="#ccc">1982 首批 24 座 · 增补至今 140 余座</text>
+<rect x="60" y="100" width="200" height="44" fill="#eee" stroke="#111"/>
+<text x="160" y="120" text-anchor="middle" font-size="12" font-weight="700">历史文化街区(片)</text>
+<text x="160" y="136" text-anchor="middle" font-size="10" fill="#555">1200 余片 · 逐片划定边界</text>
+<rect x="280" y="100" width="200" height="44" fill="#eee" stroke="#111"/>
+<text x="380" y="120" text-anchor="middle" font-size="12" font-weight="700">名镇名村(点)</text>
+<text x="380" y="136" text-anchor="middle" font-size="10" fill="#555">中国历史文化名镇名村 799 个</text>
+<rect x="500" y="100" width="200" height="44" fill="#eee" stroke="#111"/>
+<text x="600" y="120" text-anchor="middle" font-size="12" font-weight="700">传统村落(村)</text>
+<text x="600" y="136" text-anchor="middle" font-size="10" fill="#555">名录六批 8155 个 · 侧重存量摸底</text>
+<rect x="180" y="180" width="400" height="44" fill="#f7f7f7" stroke="#111"/>
+<text x="380" y="200" text-anchor="middle" font-size="12" font-weight="700">历史建筑(单体,未达文物)</text>
+<text x="380" y="216" text-anchor="middle" font-size="10" fill="#555">已确定挂牌 6 万余处 · 市县公布</text>
+<rect x="180" y="260" width="400" height="44" fill="#fff" stroke="#111" stroke-dasharray="5 3"/>
+<text x="380" y="280" text-anchor="middle" font-size="12" font-weight="700">文物保护单位(另行体系,1982《文物保护法》)</text>
+<text x="380" y="296" text-anchor="middle" font-size="10" fill="#555">与风貌名录并行,常有交叉但法律依据不同</text>
+<line x1="380" y1="64" x2="380" y2="98" stroke="#111" stroke-width="1.5"/>
+<line x1="160" y1="144" x2="160" y2="258" stroke="#111" stroke-dasharray="3 3"/>
+<line x1="600" y1="144" x2="600" y2="258" stroke="#111" stroke-dasharray="3 3"/>
+<text x="380" y="340" text-anchor="middle" font-size="10.5" fill="#777">规模层级从"城"到"单体"逐级细化;数量为住建部/国家文物局历年公布累计口径<sup class="ref">[1]</sup><sup class="ref">[2]</sup></text>
+</svg>
+</div>
+<div class="fig-note">五层名录 + 平行的文保体系,构成"风貌"的法定登记册。名录身份直接改变一块地的命运:名城要编保护规划、街区限高限拆、传统村落可获中央财政补助——名录是风貌的产权化登记。</div>
+</div>
+
+<!-- §4.2 名城 -->
+<div class="sec" id="s42"><h3>§4.2 历史文化名城<span class="sec-sub">NATIONALLY FAMED HISTORIC CITY · 1982—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">历史文化名城</span><span class="en">Historic &amp; Cultural City</span>
+<div class="meta">批次:1982 年 24 座 · 1986 年 38 座 · 1994 年 37 座 · 此后增补 · 依据:《文物保护法》与《历史文化名城名镇名村保护条例》(2008)</div></div>
+<div class="entry-def">由国务院公布的、保存文物特别丰富且具有重大历史价值或革命纪念意义的城市称号——中国最早的风貌保护制度工具,以"整座城"为保护对象。</div>
+<div class="entry-bd">
+
+<p>名城制度的操作是"称号 + 义务":获评城市必须编制名城保护规划、划定保护区与建设控制地带、限制高度与拆除。两批集中公布(1982、1986)之后进入个案增补,至今 140 余座,覆盖从古都(北京、西安、南京)到开埠城市(上海、天津)、革命城市(延安、遵义)、风土城镇(阆中、丽江)的完整谱系<sup class="ref">[1]</sup>。</p>
+
+<p>名城的风貌史价值在于它<b>把"整城风貌"变成可诉讼的行政对象</b>:破坏街区可以问责到称号层面(建设部曾对个别城市通报批评)。名城也是名单政治的开始——此后名镇、名村、街区、传统村落逐一成名录,风貌保护从"个别建筑"逐级扩展到"整片土地"(→§4.3、§4.4)。</p>
+
+<p class="cr">→ 参见 卷二 §2.3 首都计划(部分名城的核心遗存层); §4.3 街区、§4.4 传统村落(名录下层)</p>
+</div></div>
+
+<!-- §4.3 街区名镇名村 -->
+<div class="sec" id="s43"><h3>§4.3 历史文化街区、名镇、名村与历史建筑<span class="sec-sub">HISTORIC DISTRICTS, TOWNS, VILLAGES &amp; BUILDINGS · 2003—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">历史文化街区</span><span class="en">Historic &amp; Cultural District</span>
+<div class="meta">认定标准:保存特别丰富的历史建筑、风貌格局完整、有一定规模 · 法规:《历史文化名城名镇名村保护条例》(2008)</div></div>
+<div class="entry-def">经省/市政府核定公布、划定保护边界的成片历史风貌区:以里弄、胡同、骑楼街、古镇街区为主,通常几十公顷以下——名城之内(或独立于名城)的法定保护单元。</div>
+<div class="entry-bd">
+
+<p>街区是名录体系里<b>最有风貌操作意义</b>的一层:名城太大,"保护整座城"容易空转;街区尺度恰好在"一条街坊一个规划"的操作范围内。街区保护规划直接规定:核心保护范围内新建建筑高度、体量、色彩与立面材质,拆除审批权限上收。全国已划定 1200 余片<sup class="ref">[1]</sup>。</p>
+
+<p>名镇名村(2003 年起公布,中国历史文化名镇名村累计 799 个)与历史建筑(市县公布、挂牌保护,6 万余处)把名录下沉到镇、村与单体——历史建筑是特意设计的一层:<b>够不上文物、但有风貌价值的建筑</b>,挂牌后未经批准不得拆除,是存量老房最广泛的护身符<sup class="ref">[1]</sup>。</p>
+
+<p class="cr">→ 参见 §3.4 大拆大建(名录扩张的动因); §1.3 大马路(多数街区的形成层)</p>
+</div></div>
+
+<!-- §4.4 传统村落 -->
+<div class="sec" id="s44"><h3>§4.4 传统村落名录:乡村的登记册<span class="sec-sub">TRADITIONAL VILLAGES LIST · 2012—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">传统村落</span><span class="en">Traditional Village (Listed)</span>
+<div class="meta">制度:2012 年住建部等四部门启动 · 六批共 8155 个(2012—2023)· 区别于名村:重摸底存量,轻示范评选</div></div>
+<div class="entry-def">村落物质形态和传统格局保留较完整、名录在册的村庄:认定要点在"看得见的旧貌"(传统建筑占比、格局、与山水的关系),而非名人名事——第一份全国性的乡村风貌登记册。</div>
+<div class="entry-bd">
+
+<p>传统村落名录与传统名村的分工:名村(§4.3)是"好中选好"的示范层,传统村落是<b>普查式摸底</b>——目的在于先知道有什么,再谈保不保。六批 8155 个,占全国行政村总数的比例不足 2%<sup class="ref">[2]</sup>。名录内村庄获得中央财政补助与保护发展规划编制要求;实际操作中"挂牌后空心化"是普遍难题——房子在册、人在城里,保护对象是空的(→§5.2、§5.5)。</p>
+
+<p>名录的断代逻辑与学界乡土建筑研究一脉相承<sup class="ref">[6]</sup>:入选村庄的主体风貌多形成于明清,但集体化层(礼堂、粮仓,→§2.5)同样计入"传统"——名录实际上登记的是 1840—1978 年的乡村物质层,与本卷的基线吻合。</p>
+
+<p class="cr">→ 参见 §5.5 传统村落活化(在册之后); §2.5 集体化乡村(名录包含的最近一层)</p>
+</div></div>
+
+<!-- §4.5 风貌管控 -->
+<div class="sec" id="s45"><h3>§4.5 风貌管控工具:图纸上的风貌<span class="sec-sub">TOWNSCAPE CONTROL TOOLKIT · 2000s—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">风貌管控</span><span class="en">Townscape Control</span>
+<div class="meta">工具族:高度分区 · 视线通廊 · 立面与材质管控 · 色彩导则 · 广告牌匾规范 · 古城限高(如北京旧城分区分级限高)</div></div>
+<div class="entry-def">通过规划条件与设计导则约束新建建筑外观的行政工具族:不改变产权、不占用资金,只在"许可"环节给风貌立规矩——骑楼章程(→§1.2)的现代制度化版本。</div>
+<div class="entry-bd">
+
+<p>管控工具按强度排序:<b>高度分区</b>(划定建筑限高的等高线,如北京旧城自故宫向外分级抬升的限高梯度)→<b>视线通廊</b>(在关键视点与地标之间画一条不可遮挡的视锥,塔楼必须让开)→<b>立面管控</b>(沿街建筑的材质、开窗、骑楼/檐廊的强制性退线)→<b>色彩导则</b>(规定城市主色调与禁用色)→<b>牌匾规范</b>(最末端也最常见的街道整治对象)。</p>
+
+<p>管控的争议集中在"末端工具"上:统一牌匾、统一立面涂料式的街道整治,因"一刀切"被反复讨论——但就制度谱系而言,它与 1920 年代骑楼章程执行的是同一逻辑:<b>以市政权威统一街道的可视层</b>。区别只在工具精度:章程只管柱廊与檐口,当代导则可以管到每个开间的门窗分割线。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-1</span><span class="no">保护名录与管控工具总览</span></div>
+<table class="spec-t">
+<tr><td class="k">名城</td><td>国务院公布;140 余座;义务:保护规划 + 整体格局管控</td></tr>
+<tr><td class="k">街区</td><td>省/市公布;1200 余片;义务:核心区限高限拆 + 立面协调</td></tr>
+<tr><td class="k">名镇名村</td><td>住建部/国家文物局公布;799 个;义务:保护规划 + 基础设施改善</td></tr>
+<tr><td class="k">传统村落</td><td>四部门名录;8155 个(六批);待遇:中央补助 + 发展规划</td></tr>
+<tr><td class="k">历史建筑</td><td>市县公布挂牌;6 万余处;义务:未经批准不得拆除/改动外观</td></tr>
+<tr><td class="k">管控工具</td><td>高度分区、视线通廊、立面材质、色彩导则、牌匾规范——作用于一切新建与翻建,不限于名录内</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §1.2 骑楼(管控的章程原型); 卷二 §5.2 控规(管控的规划载体); §6.4 风貌横切面(管控结果的读法)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第五编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v5">
+<div class="vol-no">第五编</div>
+<h2>当代乡村</h2>
+<div class="vol-range">2000 — 2026 · 空心化、新农房与政策进场</div>
+</div>
+
+<div class="sec" id="s51"><h3>§5.1 总论:三大进程同时<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>2000 年后的乡村同时经历三个进程,每个进程都在风貌上留下印记:<b>人口流出</b>(常住人口城镇化率 2023 年达 66.2%,而户籍口径低约十八个百分点——差值就是"人住在城、房留在乡"的群体<sup class="ref">[9]</sup>)造成空心村(§5.2);<b>住房更新</b>(打工收入与婚房竞争驱动)造成新农房换装(§5.3);<b>制度进场</b>(从新农村建设到和美乡村的政策序列)造成刷墙、广场与合村并居(§5.4)。三者叠加,乡村风貌的变动速度第一次超过城市——只是变动的方向不由市场决定,而由文件决定。</p>
+
+<!-- §5.2 空心村 -->
+<div class="sec" id="s52"><h3>§5.2 空心村:人走了,房新了<span class="sec-sub">HOLLOWED VILLAGES · 2000s—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">空心村</span><span class="en">Hollowed Village</span>
+<div class="meta">数据背景:2020 年七普乡村人口 5.10 亿,较 2010 年减少 1.64 亿<sup class="ref">[9]</sup>· 风貌并存:塌顶土坯房与崭新二层楼同院</div></div>
+<div class="entry-def">常住人口大量流出、住房却持续更新的村庄形态:人不在地理上,房仍在制度里——宅基地不可退出与返乡建房并存,造成"越空越建"的景观悖论。</div>
+<div class="entry-bd">
+
+<p>空心村的风貌识别度极高:<b>长期锁闭的院门、院内自生的树木、屋顶塌陷的老房</b>,与<b>外墙崭新、窗户崭新、常年无人</b>的二层楼并存于同一条巷子。类型上分三种:整体空心(偏远山区与资源枯竭区,整村人去)、季节空心(春节返乡型,腊月巷满、平时巷空)、边缘空心(自然村向中心村/镇集聚,老湾废弃)。</p>
+
+<p>"越空越建"的机制是制度性的:宅基地使用权无偿取得、无退出通道,弃用即损失;<b>返乡建房作为婚姻与地位的信号</b>在县域社会持续运转——房子是为"确认在村资格"而建,不是为居住而建<sup class="ref">[9]</sup>。这解释了为什么人口流出最猛的地方,往往是新农房最猛的地方(→§5.3)。城市侧的镜像即城中村(→§6.2):同样是"人房分离",乡村是房在人走,城中村是房在人来。</p>
+
+<p class="cr">→ 参见 §5.3 新农房谱系(资金去向); §6.2 城中村(城市镜像); §4.4 传统村落(空心化的保护难题)</p>
+</div></div>
+
+<!-- §5.3 新农房 -->
+<div class="sec" id="s53"><h3>§5.3 新农房谱系:四代更替<span class="sec-sub">THE NEW FARMHOUSE SEQUENCE · 1980s—2020s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">农民别墅</span><span class="en">Farmhouse Villa</span>
+<div class="meta">别名:小洋楼 · 建造方式:乡村工匠 + 邻村样板 / 短视频图样 · 管理节点:2022 年全国自建房安全专项整治</div></div>
+<div class="entry-def">农户自建更新住宅的统称:无建筑师、有工匠,图样来自邻村样板与社交平台——乡村风貌的真正"总规划师"是建材市场与婚房竞争。</div>
+<div class="entry-bd">
+
+<p>1980 年代以来新农房整体换了四代,每代都对应一次收入来源与建材供给的升级:</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-1</span><span class="t">新农房四代谱系</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="新农房四代谱系示意图">
+<text x="95" y="34" text-anchor="middle" font-size="12" font-weight="700">第一代 1980s</text>
+<text x="95" y="50" text-anchor="middle" font-size="9.5" fill="#555">砖瓦平房</text>
+<rect x="55" y="180" width="80" height="70" fill="#eee" stroke="#111"/>
+<polygon points="50,180 95,150 140,180" fill="#ddd" stroke="#111"/>
+<rect x="75" y="215" width="12" height="35" fill="#fff" stroke="#111"/>
+<rect x="103" y="200" width="14" height="14" fill="#fff" stroke="#111"/>
+<text x="95" y="278" text-anchor="middle" font-size="9.5" fill="#555">砖混/砖木 · 机制红瓦</text>
+<text x="95" y="293" text-anchor="middle" font-size="9.5" fill="#555">承包收入 · 翻建土坯房</text>
+<text x="285" y="34" text-anchor="middle" font-size="12" font-weight="700">第二代 1990s—2000s</text>
+<text x="285" y="50" text-anchor="middle" font-size="9.5" fill="#555">瓷砖二层</text>
+<rect x="245" y="160" width="80" height="90" fill="#f7f7f7" stroke="#111"/>
+<line x1="245" y1="205" x2="325" y2="205" stroke="#111"/>
+<rect x="255" y="218" width="14" height="32" fill="#fff" stroke="#111"/>
+<rect x="285" y="215" width="16" height="12" fill="#ccc" stroke="#111"/>
+<rect x="308" y="215" width="10" height="12" fill="#ccc" stroke="#111"/>
+<rect x="253" y="170" width="16" height="12" fill="#bbb" stroke="#111"/>
+<rect x="283" y="170" width="16" height="12" fill="#bbb" stroke="#111"/>
+<text x="285" y="278" text-anchor="middle" font-size="9.5" fill="#555">白瓷砖 + 蓝玻璃 + 罗马柱</text>
+<text x="285" y="293" text-anchor="middle" font-size="9.5" fill="#555">打工收入 · 平屋顶</text>
+<text x="475" y="34" text-anchor="middle" font-size="12" font-weight="700">第三代 2000s—2010s</text>
+<text x="475" y="50" text-anchor="middle" font-size="9.5" fill="#555">欧式三层</text>
+<rect x="430" y="140" width="90" height="110" fill="#f2f2f2" stroke="#111"/>
+<polygon points="425,140 475,115 525,140" fill="#ddd" stroke="#111"/>
+<line x1="430" y1="177" x2="520" y2="177" stroke="#111"/>
+<line x1="430" y1="214" x2="520" y2="214" stroke="#111"/>
+<rect x="442" y="150" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="470" y="150" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="498" y="150" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="442" y="188" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="470" y="188" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="498" y="188" width="14" height="12" fill="#fff" stroke="#111"/>
+<rect x="440" y="225" width="16" height="25" fill="#fff" stroke="#111"/>
+<rect x="485" y="225" width="18" height="14" fill="#ccc" stroke="#111"/>
+<text x="475" y="278" text-anchor="middle" font-size="9.5" fill="#555">坡屋顶回归 + 外墙漆</text>
+<text x="475" y="293" text-anchor="middle" font-size="9.5" fill="#555">包工头带回的图样</text>
+<text x="660" y="34" text-anchor="middle" font-size="12" font-weight="700">第四代 2020s</text>
+<text x="660" y="50" text-anchor="middle" font-size="9.5" fill="#555">统建与装配式</text>
+<rect x="615" y="150" width="90" height="100" fill="#eee" stroke="#111"/>
+<line x1="615" y1="190" x2="705" y2="190" stroke="#111"/>
+<rect x="627" y="200" width="14" height="50" fill="#fff" stroke="#111"/>
+<rect x="655" y="200" width="14" height="50" fill="#fff" stroke="#111"/>
+<rect x="683" y="200" width="14" height="50" fill="#fff" stroke="#111"/>
+<rect x="627" y="160" width="60" height="14" fill="#ddd" stroke="#111"/>
+<text x="660" y="278" text-anchor="middle" font-size="9.5" fill="#555">政府图集 / 装配式</text>
+<text x="660" y="293" text-anchor="middle" font-size="9.5" fill="#555">安全整治 + 试点引导</text>
+<text x="380" y="322" text-anchor="middle" font-size="10.5" fill="#777">四代并存的院子比比皆是——一户人家的院里常能同时看到四代房子(→§6.4 横切面方法的乡村版)</text>
+</svg>
+</div>
+<div class="fig-note">第四代的转向是制度性的:2022 年长沙自建房事故后,全国自建房安全专项整治把"无图施工"的默认状态改为"先审后建";多省免费推广农房设计图集与装配式试点——农户自建的自由度首次被制度收紧<sup class="ref">[11]</sup>。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 5-1</span><span class="no">新农房建造参数(通行区间)</span></div>
+<table class="spec-t">
+<tr><td class="k">一代(1980s)</td><td>1 层;砖混/砖木;建筑面积 60—100 m²;红机瓦坡顶;资金:承包/乡镇企业收入</td></tr>
+<tr><td class="k">二代(1990s—2000s)</td><td>2 层;砖混现浇;100—200 m²;白瓷砖外墙、茶蓝玻璃、预制柱、平屋顶;资金:务工收入</td></tr>
+<tr><td class="k">三代(2000s—2010s)</td><td>2—3 层;框架结构出现;200—350 m²;外墙漆/真石漆、坡屋顶回归、罗马柱简化;资金:包工/经商收入</td></tr>
+<tr><td class="k">四代(2020s)</td><td>2—3 层;框架/装配式;按图集建设,报批报建;统建社区为多层;资金:积蓄+补贴/统建安置</td></tr>
+<tr><td class="k">识别信号</td><td>瓦(机平瓦—无瓦—树脂瓦)、窗(木—塑钢—断桥铝)、柱(无—预制罗马柱—方柱贴砖)三线即可断代</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §3.6 瓷砖房(第二代详述); §5.2 空心村(为什么越空越建); §6.5 年代鉴定(城市侧的同法)</p>
+</div></div>
+
+<!-- §5.4 建设运动 -->
+<div class="sec" id="s54"><h3>§5.4 建设运动:从新农村到和美乡村<span class="sec-sub">RURAL CAMPAIGNS · 2005—2026</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">合村并居</span><span class="en">Village Merger &amp; Relocation</span>
+<div class="meta">政策序列:新农村建设(2005)—美丽乡村(2013)—人居环境三年行动(2018)—乡村振兴(2018/2021)—和美乡村(2022)· 争议节点:2020 年山东</div></div>
+<div class="entry-def">拆除自然村、合并迁入集中居住社区的村庄撤并做法:宅基换楼房、村庄换社区——单项操作对乡村风貌改变幅度最大的政策工具。</div>
+<div class="entry-bd">
+
+<p>二十年建设运动的政策序列是一条连续加码的线:2005 年"社会主义新农村"提出生产生活条件改善;2013 年"美丽乡村"加入面貌整治(立面刷新、环境绿化);2018 年农村人居环境整治三年行动落到厕所、垃圾、污水"三大革命";同年乡村振兴战略上升为国家战略,2021 年《乡村振兴促进法》施行;2022 年二十大提法更新为"宜居宜业和美乡村"<sup class="ref">[11]</sup>。<b>形态后果</b>是一套可辨识的"政策构件":统一刷白(或白墙灰瓦)的沿路立面、村口的村标石/牌坊、新建村委会与文化广场、管网与路灯入户——构件全国一致,原因是资金与验收标准全国一致。</p>
+
+<p>合村并居是这条线上的极端操作:整村拆除、居民迁入镇区统建社区,以宅基地置换楼房。2020 年山东部分地区在补偿与意愿程序尚不充分的情况下大规模推进,引发全国性讨论,当年即有纠偏要求——此后村庄撤并进入"严格规范、群众自愿"的约束框架<sup class="ref">[11]</sup>。本卷按纪律只记录事实:它是对乡村风貌影响最大的一种政策工具,其边界由中央文件划定。</p>
+
+<p class="cr">→ 参见 §4.4 传统村落(撤并与保护的对撞); §5.3 新农房四代(统建房的资金与规则来源)</p>
+</div></div>
+
+<!-- §5.5 活化 -->
+<div class="sec" id="s55"><h3>§5.5 传统村落活化:在册之后<span class="sec-sub">VILLAGE REGENERATION · 2015—</span></h3></div>
+
+<p>名录(→§4.4)解决"登记",不解决"生计"。在册村庄的当代出路高度集中于旅游化,其形态后果有三:<b>民宿化</b>——老宅按民宿标准改造,旧料新用(木梁保留、卫浴嵌入),风貌外壳保留、内部置换;<b>商铺化</b>——主街改为商业街,业态从为村民服务(供销社、理发店)换为为游客服务(奶茶、文创),街道界面(→§6.4)整体重写;<b>原住民外迁</b>——租金上涨把村民推到村外新村,历史建筑里的生活方式变成表演项目,学界称为"博物馆化"与"空心化的二次发生"<sup class="ref">[6]</sup>。</p>
+
+<p>平衡机制在制度层仍在试验:传统村落集中连片保护利用示范(中央财政支持整县推进)、"以用促保"的活态保护试点——把"冻结式保护"与"商业置换"之间的中间带作为政策目标。本卷不评判各种模式优劣,只记录现象结构:<b>在册村庄的风貌由补助资金与旅游市场共同定价</b>,这是第四编名录制度的必然延伸<sup class="ref">[2]</sup>。</p>
+
+<p class="cr">→ 参见 §4.4 传统村落名录(登记层); §5.2 空心村(活化的起点)</p>
+
+<!-- ============================================================ -->
+<!-- 第六编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v6">
+<div class="vol-no">第六编</div>
+<h2>当代城市与识别谱系</h2>
+<div class="vol-range">2000 — 2026 · 千城一面、城中村、城市更新与识别工具</div>
+</div>
+
+<div class="sec" id="s61"><h3>§6.1 总论:千城一面的机制<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">千城一面</span><span class="en">"A Thousand Cities, One Face"</span>
+<div class="meta">机制四因:规范统一 · 产品线复制 · 材料供应链 · 设计周期压缩 · 同源现象:千村一面(→§3.6)</div></div>
+<div class="entry-def">中国城市新区风貌高度趋同的通行表述——本卷视角下它不是审美失误,而是标准化工业体系在建筑业的显影:机制可述,评判不论。</div>
+<div class="entry-bd">
+
+<p>趋同的机制有四层,层层叠加:<b>规范统一</b>——日照间距、消防、绿地率等全国统一技术规范,直接决定楼栋的朝向、间距与排布;<b>产品线复制</b>——头部开发商把同一套产品系(同一立面、同一户型、同一示范区)在全国城市分级投放,风格成为 SKU;<b>材料供应链</b>——全国流通的涂料、面砖、门窗、栏杆构件,县城工地与一线城市用的是同一本图集;<b>设计周期</b>——快周转把方案设计压缩到数周,设计院只能调用库存标准做法<sup class="ref">[7]</sup>。</p>
+
+<p>地方对趋同的抵抗主要靠第四编的工具(限高、风貌导则、地方材料),效果分化明显:旅游城市与古城效果最显(风貌即卖点),普通新区几乎无效——<b>风貌管控的经济前提是风貌有价</b>。这一判断同样解释了千村一面(§3.6):当建造资金与构件供给全国同源,没有管制的地方必然同貌。</p>
+
+<p class="cr">→ 参见 §3.3 商品房风格谱系(趋同的立面层); §4.5 风貌管控(抵抗工具); §3.6 瓷砖房(乡村同源机制)</p>
+</div></div>
+
+<!-- §6.2 城中村 -->
+<div class="sec" id="s62"><h3>§6.2 城中村:另一套风貌系统<span class="sec-sub">URBAN VILLAGES · c.1990s—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">城中村</span><span class="en">Urban Village</span>
+<div class="meta">形成机制:征地"绕村"+宅基地自建出租 · 数据:深圳城中村提供的租赁住房约占全市租赁市场六至七成(调研口径)<sup class="ref">[12]</sup></div></div>
+<div class="entry-def">被城市建成区包围、保留集体土地权属与村社治理的宅基地高密度聚落:握手楼、窄巷、密招牌——与围墙小区并行运转的另一套城市风貌系统。</div>
+<div class="entry-bd">
+
+<p>城中村的成因是征地经济:城市扩张时征收农用地、<b>绕开宅基地</b>(拆迁成本高),村庄被留在建成区中央;村民在宅基地上自建 3—6 层楼房出租给流动人口,楼间距压缩到不足一米——<b>握手楼</b>、贴面楼、抬头只见"一线天"皆由此来。巷道宽 2—4 米的旧村肌理被完整保留,叠加高强度建造,构成全国城中村几乎相同的景观:底层小饭馆与招牌密网,楼上密集窗户与伸出晾衣杆<sup class="ref">[12]</sup>。</p>
+
+<p>它与本站数据的关系有两条:其一,城中村是租赁供给的巨大底层(深圳口径即六至七成),平台租赁挂牌的"农民房/公寓"多出于此;其二,其二手交易受限(宅基地房不得向本集体外转让,→专题概述 §5 小产权条目),故本站二手小区数据基本不覆盖城中村——<b>数据看得见围墙小区,看不见城中村</b>,这个盲区本身是土地制度的显影。</p>
+
+<p class="cr">→ 参见 §5.2 空心村(乡村镜像); §6.3 城市更新(城中村改造的当代处置); 专题概述 §5(产权类型)</p>
+</div></div>
+
+<!-- §6.3 城市更新 -->
+<div class="sec" id="s63"><h3>§6.3 城市更新与老旧小区:风貌被维护<span class="sec-sub">URBAN RENEWAL &amp; OLD ESTATES · 2015—2026</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">城市更新</span><span class="en">Urban Renewal</span>
+<div class="meta">政策:2015 城市修补—2021 防止大拆大建—2025 中办国办意见 · 数据:2019—2024 全国累计开工改造城镇老旧小区 25 万个以上(住建部口径)<sup class="ref">[10]</sup></div></div>
+<div class="entry-def">以存量为对象的建设模式在风貌层的操作:外立面翻新、加装电梯、拆墙并院、管线入地——风貌从"被替换"转为"被维护",这是 2015 年后中国城市风貌的基本状态。</div>
+<div class="entry-bd">
+
+<p>风貌层的操作清单高度标准化:<b>外立面翻新</b>(统一涂料或真石漆——与骑楼章程同构的"统一可视层",→§4.5);<b>加装电梯</b>(外挂井道贴附于原立面,是老楼最显眼的新构件);<b>拆墙并院</b>(相邻小院拆墙整合物业管理,单位大院遗产的当代重组);<b>管线入地与适老化</b>(空调机位统一格栅、地面重铺、加充电桩)。全部操作不改变结构,只更新表皮与设备——<b>老楼的"二次立面"由此产生</b>:真石漆之下可能是任何年代<sup class="ref">[10]</sup>。</p>
+
+<p>对本站数据的含义:模拟数据中的 1990 年代小区,在现实里多数已穿上 2020 年代的"新立面"——<b>竣工年份记录的是结构年龄,立面年龄可能年轻二十岁</b>。这也是年代鉴定(→§6.5)必须优先看窗框与楼梯间(不可翻新项)、最后看外墙(最易翻新项)的原因。</p>
+
+<p class="cr">→ 参见 卷一 §3.5 存量转型、档 3-2(改造菜单); 卷二 §6.5(制度侧); §6.5 年代鉴定(翻新干扰)</p>
+</div></div>
+
+<!-- §6.4 横切面 -->
+<div class="sec" id="s64"><h3>§6.4 城市风貌横切面:一条识别路线<span class="sec-sub">THE CROSS-SECTION METHOD</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">街道界面</span><span class="en">Street Interface</span>
+<div class="meta">界面四型:骑楼/檐廊(近代)— 围墙(单位/小区)— 底商玻璃(商品房沿街)— 绿化带(新区)</div></div>
+<div class="entry-def">沿街建筑面向街道的连续表面——风貌识别的首要依据:不看单栋建筑的风格,看整条街的界面类型,即可判定这段街道属于哪个建造时期。</div>
+<div class="entry-bd">
+
+<p>在任意一座大城市,从老城中心向新区走一条直线,会依次穿过六个风貌段——这条路线就是本卷全部内容的横切面:</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-1</span><span class="t">城市风貌横切面:六个段落</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 340" width="100%" role="img" aria-label="城市风貌横切面示意图">
+<rect x="20" y="60" width="118" height="180" fill="#f2f2f2" stroke="#111"/>
+<rect x="138" y="60" width="118" height="180" fill="#e8e8e8" stroke="#111"/>
+<rect x="256" y="60" width="118" height="180" fill="#f2f2f2" stroke="#111"/>
+<rect x="374" y="60" width="118" height="180" fill="#e8e8e8" stroke="#111"/>
+<rect x="492" y="60" width="118" height="180" fill="#f2f2f2" stroke="#111"/>
+<rect x="610" y="60" width="118" height="180" fill="#e8e8e8" stroke="#111"/>
+<rect x="34" y="150" width="16" height="50" fill="#ccc" stroke="#111"/>
+<rect x="56" y="128" width="20" height="72" fill="#bbb" stroke="#111"/>
+<rect x="82" y="142" width="18" height="58" fill="#ccc" stroke="#111"/>
+<rect x="106" y="132" width="22" height="68" fill="#bbb" stroke="#111"/>
+<text x="79" y="112" text-anchor="middle" font-size="9" fill="#555">2—4 层骑楼/洋房</text>
+<rect x="152" y="120" width="22" height="80" fill="#bbb" stroke="#111"/>
+<rect x="180" y="108" width="26" height="92" fill="#999" stroke="#111"/>
+<rect x="212" y="126" width="20" height="74" fill="#bbb" stroke="#111"/>
+<text x="179" y="98" text-anchor="middle" font-size="9" fill="#555">红砖坡顶行列式</text>
+<rect x="270" y="132" width="22" height="68" fill="#bbb" stroke="#111"/>
+<rect x="298" y="112" width="24" height="88" fill="#999" stroke="#111"/>
+<rect x="328" y="126" width="22" height="74" fill="#bbb" stroke="#111"/>
+<text x="313" y="102" text-anchor="middle" font-size="9" fill="#555">6 层方盒子+围墙</text>
+<rect x="388" y="100" width="18" height="100" fill="#999" stroke="#111"/>
+<rect x="412" y="78" width="20" height="122" fill="#777" stroke="#111"/>
+<rect x="438" y="112" width="18" height="88" fill="#999" stroke="#111"/>
+<rect x="462" y="90" width="16" height="110" fill="#888" stroke="#111"/>
+<text x="425" y="66" text-anchor="middle" font-size="9" fill="#555">高层+底商裙房</text>
+<rect x="506" y="110" width="14" height="90" fill="#999" stroke="#111"/>
+<rect x="526" y="88" width="16" height="112" fill="#888" stroke="#111"/>
+<rect x="548" y="96" width="12" height="104" fill="#999" stroke="#111"/>
+<rect x="566" y="104" width="16" height="96" fill="#aaa" stroke="#111"/>
+<rect x="590" y="112" width="12" height="88" fill="#999" stroke="#111"/>
+<text x="547" y="76" text-anchor="middle" font-size="9" fill="#555">大盘+中心花园</text>
+<rect x="624" y="70" width="18" height="130" fill="#777" stroke="#111"/>
+<rect x="648" y="54" width="22" height="146" fill="#555" stroke="#111"/>
+<rect x="676" y="80" width="18" height="120" fill="#888" stroke="#111"/>
+<rect x="700" y="64" width="16" height="136" fill="#999" stroke="#111"/>
+<text x="662" y="44" text-anchor="middle" font-size="9" fill="#555">超高层+宽马路</text>
+<text x="79" y="266" text-anchor="middle" font-size="11" font-weight="700">① 租界/老城</text>
+<text x="79" y="282" text-anchor="middle" font-size="9" fill="#555">1840—1949</text>
+<text x="79" y="297" text-anchor="middle" font-size="9" fill="#555">骑楼/檐廊界面</text>
+<text x="197" y="266" text-anchor="middle" font-size="11" font-weight="700">② 单位区</text>
+<text x="197" y="282" text-anchor="middle" font-size="9" fill="#555">1950s—1970s</text>
+<text x="197" y="297" text-anchor="middle" font-size="9" fill="#555">围墙+苏式主楼</text>
+<text x="315" y="266" text-anchor="middle" font-size="11" font-weight="700">③ 90 年代带</text>
+<text x="315" y="282" text-anchor="middle" font-size="9" fill="#555">1985—2000</text>
+<text x="315" y="297" text-anchor="middle" font-size="9" fill="#555">方盒子+铁门</text>
+<text x="433" y="266" text-anchor="middle" font-size="11" font-weight="700">④ 2000s 大盘</text>
+<text x="433" y="282" text-anchor="middle" font-size="9" fill="#555">2000—2010</text>
+<text x="433" y="297" text-anchor="middle" font-size="9" fill="#555">底商玻璃界面</text>
+<text x="551" y="266" text-anchor="middle" font-size="11" font-weight="700">⑤ 城中村</text>
+<text x="551" y="282" text-anchor="middle" font-size="9" fill="#555">1990s—2010s</text>
+<text x="551" y="297" text-anchor="middle" font-size="9" fill="#555">握手楼+窄巷</text>
+<text x="669" y="266" text-anchor="middle" font-size="11" font-weight="700">⑥ 新区 CBD</text>
+<text x="669" y="282" text-anchor="middle" font-size="9" fill="#555">2005—2026</text>
+<text x="669" y="297" text-anchor="middle" font-size="9" fill="#555">塔群+绿化带</text>
+<line x1="20" y1="240" x2="728" y2="240" stroke="#111" stroke-width="2"/>
+<text x="380" y="322" text-anchor="middle" font-size="10.5" fill="#777">顺序不绝对(城中村位置随绕村征地随机嵌入),但六段齐全——每段的界面类型与楼层节奏即断代证据</text>
+</svg>
+</div>
+<div class="fig-note">横切面方法的要领:<b>用街道界面断代,用楼栋密度断机制</b>。界面是市政/规则的产物(骑楼章程、围墙文化、底商配建、退线绿化),密度是资金与时间的产物——两把尺子并用,任何城市都可读。</div>
+</div>
+
+<p class="cr">→ 参见 §1.2—§3.5(六段各自的成因); §6.5 年代鉴定(落到单栋); 卷二 §5.3 新城新区(第⑥段的制度)</p>
+</div></div>
+
+<!-- §6.5 年代鉴定 -->
+<div class="sec" id="s65"><h3>§6.5 年代鉴定指南:五个维度夹逼年代<span class="sec-sub">BUILDING AGE DETECTION</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">年代鉴定</span><span class="en">Building Age Detection</span>
+<div class="meta">五维:窗材 · 阳台栏杆 · 外饰面 · 单元入口 · 楼道内饰 · 与本站"竣工年份"字段互补(缺失率 30—50%)</div></div>
+<div class="entry-def">以建筑外观特征判定建造年代的方法:五个维度各自给出年代区间,交叉夹逼即得年代——窗框与楼梯间最难翻新、最可信,外墙最易翻新、最不可信。</div>
+<div class="entry-bd">
+
+<p>五个维度的可信度排序是有讲究的:<b>窗框型材</b>(木窗—钢窗—塑钢—彩色铝—断桥铝)与<b>楼梯间</b>(水磨石—水泥—瓷砖)几乎不会被整栋翻新,是最硬的证据;<b>阳台栏杆</b>(预制水泥栏板—铁艺—塑钢封闭—玻璃栏板)半硬;<b>外饰面</b>(清水砖—水泥抹面—水刷石—面砖—涂料—真石漆—铝板)最软——一轮城市更新就能给它换装(→§6.3)。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-2</span><span class="t">年代识别卡:四个典型立面</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="年代识别卡示意图">
+<text x="95" y="30" text-anchor="middle" font-size="12" font-weight="700">1950s—1960s</text>
+<rect x="45" y="60" width="100" height="130" fill="#f7e9e9" stroke="#111"/>
+<polygon points="40,60 95,32 150,60" fill="#ddd" stroke="#111"/>
+<rect x="58" y="78" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="88" y="78" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="118" y="78" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="58" y="112" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="88" y="112" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="118" y="112" width="14" height="18" fill="#fff" stroke="#111"/>
+<rect x="70" y="150" width="50" height="40" fill="#fff" stroke="#111"/>
+<line x1="95" y1="150" x2="95" y2="190" stroke="#111"/>
+<text x="95" y="215" text-anchor="middle" font-size="9.5" fill="#555">清水红砖 + 木窗 + 坡顶</text>
+<text x="95" y="230" text-anchor="middle" font-size="9.5" fill="#555">入口无门厅,楼梯水磨石</text>
+<text x="285" y="30" text-anchor="middle" font-size="12" font-weight="700">1980s</text>
+<rect x="235" y="50" width="100" height="140" fill="#efefef" stroke="#111"/>
+<line x1="235" y1="98" x2="335" y2="98" stroke="#111"/>
+<rect x="248" y="64" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="272" y="64" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="296" y="64" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="248" y="108" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="272" y="108" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="296" y="108" width="12" height="16" fill="#fff" stroke="#111"/>
+<rect x="243" y="134" width="42" height="14" fill="#ccc" stroke="#111"/>
+<rect x="292" y="134" width="42" height="14" fill="#ccc" stroke="#111"/>
+<text x="285" y="162" text-anchor="middle" font-size="9.5" fill="#555">预制栏板阳台(下层)</text>
+<rect x="270" y="176" width="30" height="14" fill="#fff" stroke="#111"/>
+<text x="285" y="215" text-anchor="middle" font-size="9.5" fill="#555">水泥抹面 + 钢窗 + 挑阳台</text>
+<text x="285" y="230" text-anchor="middle" font-size="9.5" fill="#555">单元铁门,水泥楼梯</text>
+<text x="475" y="30" text-anchor="middle" font-size="12" font-weight="700">1990s</text>
+<rect x="425" y="44" width="100" height="146" fill="#f7f4ea" stroke="#111"/>
+<polygon points="420,44 475,24 530,44" fill="#ddd" stroke="#111"/>
+<line x1="425" y1="92" x2="525" y2="92" stroke="#111"/>
+<rect x="438" y="58" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="463" y="58" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="488" y="58" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="438" y="102" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="463" y="102" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="488" y="102" width="13" height="16" fill="#fff" stroke="#111"/>
+<rect x="433" y="128" width="44" height="16" fill="#e5e0d0" stroke="#111"/>
+<rect x="487" y="128" width="30" height="16" fill="#e5e0d0" stroke="#111"/>
+<rect x="462" y="158" width="30" height="32" fill="#fff" stroke="#111"/>
+<text x="475" y="215" text-anchor="middle" font-size="9.5" fill="#555">面砖 + 塑钢窗 + 坡顶退台</text>
+<text x="475" y="230" text-anchor="middle" font-size="9.5" fill="#555">罗马柱阳台,楼宇对讲门</text>
+<text x="665" y="30" text-anchor="middle" font-size="12" font-weight="700">2010s—2020s</text>
+<rect x="612" y="40" width="106" height="150" fill="#f2f2f2" stroke="#111"/>
+<line x1="612" y1="90" x2="718" y2="90" stroke="#111"/>
+<line x1="612" y1="140" x2="718" y2="140" stroke="#111"/>
+<rect x="624" y="54" width="26" height="28" fill="#fff" stroke="#111"/>
+<rect x="660" y="54" width="26" height="28" fill="#fff" stroke="#111"/>
+<rect x="696" y="54" width="14" height="28" fill="#fff" stroke="#111"/>
+<rect x="622" y="100" width="30" height="34" fill="#fff" stroke="#111"/>
+<rect x="662" y="100" width="30" height="34" fill="#fff" stroke="#111"/>
+<rect x="622" y="150" width="30" height="34" fill="#fff" stroke="#111"/>
+<rect x="662" y="150" width="30" height="34" fill="#fff" stroke="#111"/>
+<text x="665" y="215" text-anchor="middle" font-size="9.5" fill="#555">真石漆 + 断桥铝 + 大阳台</text>
+<text x="665" y="230" text-anchor="middle" font-size="9.5" fill="#555">玻璃栏板,门禁人脸识别</text>
+<line x1="20" y1="252" x2="740" y2="252" stroke="#111" stroke-width="1.5"/>
+<text x="380" y="278" text-anchor="middle" font-size="10.5" fill="#555">窗:木→钢→塑钢→断桥铝 · 栏杆:水泥栏板→铁艺→塑钢封闭→玻璃 · 饰面:砖→抹面→面砖→真石漆</text>
+<text x="380" y="298" text-anchor="middle" font-size="10.5" fill="#555">入口:无门→铁门→对讲→门禁→人脸 · 楼道:水磨石→水泥→瓷砖</text>
+<text x="380" y="322" text-anchor="middle" font-size="10.5" fill="#777">注:立面为特征示意,不按比例;外饰面可被翻新覆盖,窗与楼道优先采信(→§6.3)。</text>
+</svg>
+</div>
+<div class="fig-note">本图与档 6-1 合用即成工具:先看窗框定十年段,再用栏杆与入口收窄到五年段,最后用饰面验证——若饰面与窗框矛盾,说明翻新过,以窗框为准。城市更新给老楼穿新衣(§6.3),但很少换全楼的窗和楼梯。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-1</span><span class="no">年代鉴定特征总表(城市住宅)</span></div>
+<table class="spec-t">
+<tr><td class="k">1930s 前</td><td>木窗、清水砖/青砖、石库门里弄或洋房、楼梯木/水磨石;多已挂牌(→§4.3 历史建筑)</td></tr>
+<tr><td class="k">1950s</td><td>木窗、清水红砖、坡顶机平瓦、行列式、入口无门厅;水磨石楼梯</td></tr>
+<tr><td class="k">1970s</td><td>钢窗、水泥抹面/水刷石、预制栏板阳台、单元铁门;筒子楼走廊公共厨卫(→卷一 §1.4)</td></tr>
+<tr><td class="k">1980s</td><td>钢窗→早期塑钢、水泥抹面、挑阳台预制栏板、水泥楼梯;6—7 层无电梯为主</td></tr>
+<tr><td class="k">1990s</td><td>塑钢窗、白/黄面砖、坡屋顶退台、罗马柱、楼宇对讲;小高层与电梯普及</td></tr>
+<tr><td class="k">2000s</td><td>彩色铝合金窗、涂料+石材基座、Art Deco/新中式并行、封闭阳台塑钢;高层为主</td></tr>
+<tr><td class="k">2010s</td><td>断桥铝、真石漆/铝板、玻璃栏板大阳台、刷卡门禁;超高层与横厅大平层</td></tr>
+<tr><td class="k">2020s</td><td>断桥铝+三玻、金属漆/大面玻璃、全封阳台交付趋势、人脸识别+电动车禁入电梯标识;更新改造的新立面叠加于各代(→§6.3)</td></tr>
+<tr><td class="k">翻新干扰</td><td>真石漆外立面可覆盖任何年代;判断翻新楼:看窗框与楼梯间(硬证据),看架空层与单元门改造痕迹(更新菜单,→卷一 档 3-2)</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 专题概述 §4(竣工年份字段的口径); §3.3 风格谱系(立面的制度成因); 档 3-1(参数详表)</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 附录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appA">
+<div class="vol-no">附录 A</div>
+<h2>术语表</h2>
+<div class="vol-range">按拼音序 · 体例仿词典</div>
+</div>
+
+<div class="lemma"><b>城市更新</b><span class="pos">n.</span>以存量空间为对象的建设模式在风貌层的操作:立面翻新、加装电梯、拆墙并院;"留改拆"并举(→§6.3;卷二 §6.5 为制度侧)。</div>
+<div class="lemma"><b>城中村</b><span class="pos">n.</span>城市建成区内保留集体土地权属的宅基地高密度聚落:握手楼、窄巷、密招牌,与围墙小区并行运转的风貌系统(→§6.2)。</div>
+<div class="lemma"><b>传统村落</b><span class="pos">n.</span>住建部等四部门名录在册的旧貌完整村庄,六批共 8155 个,侧重存量摸底而非示范评选(→§4.4)。</div>
+<div class="lemma"><b>瓷砖房</b><span class="pos">n.</span>1990 年代农户自建更新住宅:白瓷砖外墙+蓝玻璃+预制罗马柱,全国乡村第一次统一换装(→§3.6)。</div>
+<div class="lemma"><b>大拆大建</b><span class="pos">n.</span>以整片街区为单位的拆除重建模式(1992—2010 前后),地价差驱动;2021 年后被拆除比例与拆建比限制(→§3.4)。</div>
+<div class="lemma"><b>大马路</b><span class="pos">n.</span>近代华界仿租界开辟的新式马路;亦泛指当代超宽路网(→§1.3、§3.2)。</div>
+<div class="lemma"><b>大屋顶</b><span class="pos">n.</span>苏式体量叠加琉璃瓦坡檐的 1950 年代官方样式,"民族形式、社会主义内容"的空间表达(→§2.4)。</div>
+<div class="lemma"><b>碉楼</b><span class="pos">n.</span>侨乡防御性高层民居,开平现存 1833 座(2007 年世界遗产),侨汇资金与本地安全需求的合成品(→§1.5)。</div>
+<div class="lemma"><b>风貌管控</b><span class="pos">n.</span>以高度分区、视线通廊、立面与色彩导则约束建筑外观的行政工具族(→§4.5)。</div>
+<div class="lemma"><b>风貌区</b><span class="pos">n.</span>经划定并施行管控的成片风貌地段,历史文化街区为其法定形态(→§4.3)。</div>
+<div class="lemma"><b>合村并居</b><span class="pos">n.</span>拆除自然村、合并迁入集中居住社区的村庄撤并做法;2020 年后处于"严格规范、群众自愿"约束下(→§5.4)。</div>
+<div class="lemma"><b>街道界面</b><span class="pos">n.</span>沿街建筑面向街道的连续表面:骑楼廊、围墙、底商玻璃、绿化带——横切面识别的首要依据(→§6.4)。</div>
+<div class="lemma"><b>历史建筑</b><span class="pos">n.</span>市县公布挂牌、未达文物保护级别的保护建筑,存量老房最广泛的护身符(→§4.3)。</div>
+<div class="lemma"><b>历史文化街区</b><span class="pos">n.</span>省/市政府核定公布的成片历史风貌区,核心区限高限拆,全国已划定 1200 余片(→§4.3)。</div>
+<div class="lemma"><b>历史文化名城</b><span class="pos">n.</span>国务院公布的风貌保护城市称号,1982 年首批 24 座,现累计 140 余座(→§4.2)。</div>
+<div class="lemma"><b>名镇名村</b><span class="pos">n.</span>住建部、国家文物局联合公布的中国历史文化名镇名村,累计 799 个(→§4.3)。</div>
+<div class="lemma"><b>农民别墅</b><span class="pos">n.</span>农户自建更新住宅统称,四代更替:砖瓦平房—瓷砖二层—欧式三层—统建/装配式(→§5.3)。</div>
+<div class="lemma"><b>欧陆风</b><span class="pos">n.</span>以欧洲古典语汇为装饰母题的商品住宅风格,1990s—2000s 全国主力立面(→§3.3)。</div>
+<div class="lemma"><b>千城一面</b><span class="pos">n.</span>新区风貌高度趋同的通行表述;标准化工业体系的结果,机制可述(→§6.1)。</div>
+<div class="lemma"><b>骑楼</b><span class="pos">n.</span>下店上宅、廊下通行的近代商住建筑,由市政章程统一规定柱廊与檐口(→§1.2)。</div>
+<div class="lemma"><b>三线建设</b><span class="pos">n.</span>1964—1980 年代初工业内迁的山地厂区建设,"靠山、分散、隐蔽"方针的风貌遗存(→§2.4)。</div>
+<div class="lemma"><b>石库门</b><span class="pos">n.</span>江南合院压缩进联排的上海里弄住宅,单双开间、弄网肌理(→§1.2)。</div>
+<div class="lemma"><b>视线通廊</b><span class="pos">n.</span>视点与地标之间不可遮挡的视锥管控线,风貌管控工具之一(→§4.5)。</div>
+<div class="lemma"><b>天际线</b><span class="pos">n.</span>城市垂直轮廓线,1990 年代起的"名片"竞赛对象,现处限高后的平台期(→§3.5)。</div>
+<div class="lemma"><b>外廊式</b><span class="pos">n.</span>以连续柱廊/券廊为立面母题的近代建筑类型,中国城市第一层"新皮肤"(→§1.2)。</div>
+<div class="lemma"><b>圩寨</b><span class="pos">n.</span>晚清咸同兵燹后华北平原筑圩挖壕形成的设防型聚落,寨墙寨门至今留于地名(→§1.5)。</div>
+<div class="lemma"><b>握手楼</b><span class="pos">n.</span>楼间距不足一米的城中村自建楼俗称,"一线天"景观的成因(→§6.2)。</div>
+<div class="lemma"><b>乡镇企业</b><span class="pos">n.</span>村镇集体与个体工业统称(1984 年起),"村村点火、户户冒烟"的乡村工业风貌层(→§3.6)。</div>
+<div class="lemma"><b>新农村建设</b><span class="pos">n.</span>2005 年起的建设政策序列起点,经美丽乡村、人居环境整治至和美乡村(→§5.4)。</div>
+<div class="lemma"><b>行列式</b><span class="pos">n.</span>住宅按统一朝向平行成排的布局手法,1950 年代至今的主导规划语言(→§2.2)。</div>
+<div class="lemma"><b>真石漆</b><span class="pos">n.</span>仿石材纹理的外墙涂料,2010 年代主力饰面,也是翻新工程覆盖年代信号的材料(→§6.5)。</div>
+<div class="lemma"><b>中山路</b><span class="pos">n.</span>1920—1930 年代全国通行的纪念性干道命名,近代城市风貌带的载体(→§1.3)。</div>
+
+<div class="vol" id="appB">
+<div class="vol-no">附录 B</div>
+<h2>参考来源</h2>
+<div class="vol-range">正文上标 [n] 对应下列条目 · 以制度文本与研究成果为纲</div>
+</div>
+
+<ol class="src">
+<li>国务院及住建部、国家文物局:国家历史文化名城历批公布文件与增补公告;《历史文化名城名镇名村保护条例》(2008);住建部历史文化街区、历史建筑确定工作历次公布数据</li>
+<li>住建部、文化部(现文旅部)、财政部、国家文物局等:中国传统村落名录六批公布名单(2012—2023)及保护发展相关政策文件</li>
+<li>《上海土地章程》(1845)及近代租界档案研究;罗兹·墨菲《上海——现代中国的钥匙》——租界风貌与口岸城市部分参照</li>
+<li>汪坦主编《中国近代建筑总览》各卷;赖德霖《中国近代建筑史研究》——开埠城市类型与铁路附属地部分参照</li>
+<li>上海里弄与外廊式建筑研究成果(《上海里弄住宅》及相关测绘调查)——石库门、骑楼部分参照</li>
+<li>陈志华乡土建筑研究与《中华遗产·乡土建筑》系列;陆元鼎《中国民居建筑》——乡村风貌、侨乡碉楼与传统村落部分参照</li>
+<li>《当代中国的城市建设》(当代中国丛书);董鉴泓《中国城市建设史》——华界市政、单位时期与市场时期通行叙述参照</li>
+<li>建筑科学研究院等《建国十年建筑》资料;1959 年"十大建筑"公开文献——苏式公共建筑部分参照</li>
+<li>国家统计局:历次人口普查与《国民经济和社会发展统计公报》;住建部《城市建设统计年鉴》《村镇建设统计年鉴》——城镇化率、建制镇数量、农房建设数据</li>
+<li>中共中央办公厅、国务院办公厅《关于持续推进城市更新行动的意见》(2025);住建部关于在实施城市更新行动中防止大拆大建问题的通知(2021)及历年城镇老旧小区改造统计数据</li>
+<li>《乡村振兴战略规划(2018—2022 年)》;《农村人居环境整治三年行动方案》(2018);《中华人民共和国乡村振兴促进法》(2021);历年中央一号文件(2005—2025)——乡村建设运动部分参照</li>
+<li>深圳市规划国土部门与高校关于深圳城中村的综合调查研究——城中村规模与租赁占比数据参照</li>
+</ol>
+
+<div class="vol" id="appC">
+<div class="vol-no">附录 C</div>
+<h2>总年表</h2>
+<div class="vol-range">制度、风貌事件、名录三类合编</div>
+</div>
+
+<table class="t">
+<tr><th style="width:96px">年份</th><th>事件</th><th style="width:80px">类别</th><th style="width:110px">参见</th></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅰ 近代输入 1840—1949</td></tr>
+<tr><td>1842</td><td>《南京条约》五口通商;口岸风貌重写的起点</td><td>制度</td><td>§1.1</td></tr>
+<tr><td>1845</td><td>上海《土地章程》设英租界——外廊式与里弄的制度前提</td><td>制度</td><td>§1.2</td></tr>
+<tr><td>1898</td><td>青岛德占、大连俄租、中东铁路开工——单一殖民规划型的起点</td><td>建造</td><td>图 1-1</td></tr>
+<tr><td>1912</td><td>上海拆县城墙筑中华路、民国路;拆城筑路模式扩散</td><td>建造</td><td>§1.3</td></tr>
+<tr><td>1917</td><td>先施公司落成(次年永安);南京路百货风貌带成形</td><td>建造</td><td>§1.3</td></tr>
+<tr><td>1920s</td><td>广州等市拆城筑路,骑楼街按章程成片建设</td><td>制度</td><td>§1.2 · 图 1-2</td></tr>
+<tr><td>1929</td><td>《首都计划》《大上海计划》编制(→卷二 §2.3)</td><td>规划文本</td><td>§1.3</td></tr>
+<tr><td>1920s—30s</td><td>开平碉楼建造盛期;侨乡村貌异质层成形</td><td>建造</td><td>§1.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅱ 单位建造 1949—1978</td></tr>
+<tr><td>1951</td><td>上海曹杨新村开工——首批工人新村与行列式正统确立</td><td>建造</td><td>§2.2</td></tr>
+<tr><td>1953</td><td>北京百万庄小区建成(→卷一 §1.6)</td><td>建造</td><td>§2.3</td></tr>
+<tr><td>1958</td><td>人民公社化;礼堂、大队部构成村庄公共建筑层</td><td>制度</td><td>§2.5</td></tr>
+<tr><td>1959</td><td>"十大建筑"落成;天安门广场扩建完成</td><td>建造</td><td>§2.4</td></tr>
+<tr><td>1964</td><td>三线建设开始,"靠山、分散、隐蔽"的山地厂区风貌</td><td>制度</td><td>§2.4</td></tr>
+<tr><td>1976</td><td>唐山地震;震后整体重建成为单位建造的极限案例</td><td>建造</td><td>§2.1</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲ 市场建造 1978—2012</td></tr>
+<tr><td>1984</td><td>首批 14 个国家级经济技术开发区设立——宽马路大广场的起点</td><td>制度</td><td>§3.2</td></tr>
+<tr><td>1985</td><td>深圳国贸大厦"三天一层楼",速度成为图腾</td><td>建造</td><td>§3.5</td></tr>
+<tr><td>1988</td><td>宪法修正:土地使用权可依法转让——大拆大建的财务前提</td><td>制度</td><td>§3.4</td></tr>
+<tr><td>1992</td><td>上海"365 危棚简屋"改造启动;全国旧城改造模式化</td><td>建造</td><td>§3.4</td></tr>
+<tr><td>1990s</td><td>欧陆风盛行;全国乡村第二次建房潮(瓷砖房)</td><td>建造</td><td>§3.3 · §3.6</td></tr>
+<tr><td>1998</td><td>住房制度改革(→卷一 §2.4);开发商成为建造主体</td><td>制度</td><td>§3.1</td></tr>
+<tr><td>2000s</td><td>各省会 CBD 化;Art Deco、新中式并行;建制镇近 2 万个</td><td>建造</td><td>§3.5 · §3.6</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅳ 风貌治理 1982—2026(与Ⅲ并行)</td></tr>
+<tr><td>1982</td><td>首批国家历史文化名城 24 座公布;《文物保护法》施行</td><td>制度</td><td>§4.2</td></tr>
+<tr><td>1986 / 1994</td><td>名城第二批 38 座、第三批 37 座</td><td>名录</td><td>§4.2</td></tr>
+<tr><td>2003</td><td>首批中国历史文化名镇名村公布</td><td>名录</td><td>§4.3</td></tr>
+<tr><td>2005</td><td>"社会主义新农村"提出,乡村建设政策序列起点</td><td>制度</td><td>§5.4</td></tr>
+<tr><td>2008</td><td>《历史文化名城名镇名村保护条例》施行;汶川震后重建</td><td>制度</td><td>§4.3</td></tr>
+<tr><td>2012</td><td>传统村落名录启动(首批);后续六批共 8155 个</td><td>名录</td><td>§4.4</td></tr>
+<tr><td>2013</td><td>"美丽乡村"建设;中央城镇化工作会议提出"记得住乡愁"</td><td>制度</td><td>§5.4</td></tr>
+<tr><td>2015</td><td>中央城市工作会议:城市修补、生态修复,纠偏"贪大媚洋求怪"</td><td>制度</td><td>§3.2 · §6.3</td></tr>
+<tr><td>2018</td><td>乡村振兴战略规划;农村人居环境整治三年行动(厕所革命)</td><td>制度</td><td>§5.4</td></tr>
+<tr><td>2020</td><td>山东合村并居引发讨论并纠偏;七普乡村人口 5.10 亿(十年减 1.64 亿)</td><td>制度</td><td>§5.4 · §5.2</td></tr>
+<tr><td>2021</td><td>《乡村振兴促进法》;住建部通知在城市更新中防止大拆大建</td><td>制度</td><td>§3.4 · §6.3</td></tr>
+<tr><td>2022</td><td>"和美乡村"提出;全国自建房安全专项整治(长沙事故后)</td><td>制度</td><td>§5.3 · §5.4</td></tr>
+<tr><td>2025</td><td>中办国办《关于持续推进城市更新行动的意见》:"留改拆"并举定型</td><td>制度</td><td>§6.3</td></tr>
+</table>
+
+<div class="vol" id="appD">
+<div class="vol-no">附录 D</div>
+<h2>图版与档案目录</h2>
+<div class="vol-range">图 9 幅 · 档 6 卷 · 编号独立于前两卷</div>
+</div>
+
+<h4>图版目录</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th style="width:210px">题名</th><th style="width:70px">所在</th><th>一句话</th></tr>
+<tr><td>图 1-1</td><td>开埠城市风貌类型谱</td><td>§1.2</td><td>四种口岸业主,四型风貌;识别特征与代表城市</td></tr>
+<tr><td>图 1-2</td><td>骑楼街道横断面</td><td>§1.2</td><td>下店上宅、廊下通行;檐口高度由章程统一的构造逻辑</td></tr>
+<tr><td>图 2-1</td><td>单位大院功能圈层</td><td>§2.3</td><td>围墙之内的权力与生活同心圆;大院遗产的三处延续</td></tr>
+<tr><td>图 3-1</td><td>商品房风格谱系时间轴</td><td>§3.3</td><td>立面四代与户型四代同步换档;通名信号</td></tr>
+<tr><td>图 3-2</td><td>城市天际线演变</td><td>§3.5</td><td>1900—2020s 五个断面:垂直竞赛到横向加密</td></tr>
+<tr><td>图 4-1</td><td>保护名录体系层级</td><td>§4.1</td><td>名城—街区—名镇名村—传统村落—历史建筑五层登记册</td></tr>
+<tr><td>图 5-1</td><td>新农房四代谱系</td><td>§5.3</td><td>砖瓦平房—瓷砖二层—欧式三层—统建装配式</td></tr>
+<tr><td>图 6-1</td><td>城市风貌横切面</td><td>§6.4</td><td>一条路线穿过六段建造时期;界面断代、密度断机制</td></tr>
+<tr><td>图 6-2</td><td>年代识别卡(四个立面)</td><td>§6.5</td><td>窗/栏杆/饰面/入口四维并读,夹逼年代</td></tr>
+</table>
+
+<h4>档案目录</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th style="width:210px">题名</th><th style="width:70px">所在</th><th>一句话</th></tr>
+<tr><td>档 1-1</td><td>近代商埠建筑类型参数</td><td>§1.2</td><td>外廊式/骑楼/石库门/花园洋房的通行区间</td></tr>
+<tr><td>档 2-1</td><td>苏式公共建筑类型参数</td><td>§2.4</td><td>大屋顶/斯大林式/十大建筑定式/三线厂区</td></tr>
+<tr><td>档 3-1</td><td>商品房风格谱系参数</td><td>§3.3</td><td>四代立面的层数、材料、构件与通名信号</td></tr>
+<tr><td>档 4-1</td><td>保护名录与管控工具总览</td><td>§4.5</td><td>五层名录数量、义务与管控工具族</td></tr>
+<tr><td>档 5-1</td><td>新农房建造参数</td><td>§5.3</td><td>四代农房的结构、面积、资金与断代三线</td></tr>
+<tr><td>档 6-1</td><td>年代鉴定特征总表</td><td>§6.5</td><td>1930s—2020s 城市住宅五维特征;翻新干扰的处理</td></tr>
+</table>
+
+<div class="note">三卷目录并读即得本站知识体系的完整骨架:卷一 9 图 14 档讲<b>住宅类型</b>,卷二 9 图 6 档讲<b>空间制度</b>,本卷 9 图 6 档讲<b>城乡可见状态</b>。三卷交叉点:商品房立面(本卷图 3-1 ↔ 卷一 §3.3)、存量更新(本卷 §6.3 ↔ 卷一 §3.5 ↔ 卷二 §6.5)、小区识别(本卷档 6-1 ↔ 专题概述 §4 竣工年份字段)——三个交叉点即"房子—制度—外观"三个视角在"小区"上的汇合。</div>
+
+<footer>
+  <p>本卷为体系性研究文本,不随行情与政策周期变化;涉及当代制度均以公开法律、法规、政策文件与权威研究文本为据,不作政策评价与预测,不作审美评价。图版均为示意,不按比例;技术档案数值为类型通行区间,个案以官方发布文本为准。</p>
+  <p style="margin-top:4px"><a href="index.html">返回专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a> · <a href="history.html">中国小区史</a> · <a href="planning.html">城市与区域</a></p>
+</footer>
+
+</main>
+</div>
+
+<script>
+var secs = document.querySelectorAll('.vol, .sec');
+var links = document.querySelectorAll('nav.toc a');
+function upd(){
+  var y = window.scrollY + 120, cur = null;
+  secs.forEach(function(s){ if(s.offsetTop <= y) cur = s.id; });
+  links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur && !a.classList.contains('sub') || (a.classList.contains('sub') && a.getAttribute('href') === '#' + cur)); });
+}
+window.addEventListener('scroll', upd); upd();
+</script>
+</body>
+</html>
