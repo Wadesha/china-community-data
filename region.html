@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国区域志 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-size:14px;line-height:1.8;color:#111;background:#fff}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1240px;margin:0 auto;padding:0 20px}
+nav.toc{width:216px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px}
+nav.toc .toc-title{font-weight:700;margin-bottom:10px;color:#666;letter-spacing:2px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc .vol-h{font-weight:700;color:#000;margin:10px 0 3px 8px;font-size:11px;letter-spacing:1px}
+nav.toc .sub{padding-left:18px;color:#666}
+main{flex:1;min-width:0;padding:28px 0 80px 40px;max-width:920px}
+header.top{border-bottom:3px double #111;padding-bottom:16px;margin-bottom:24px}
+header.top .kicker{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11px;color:#666;letter-spacing:3px;margin-bottom:6px}
+header.top h1{font-size:27px;font-weight:700;letter-spacing:1px}
+header.top .sub{color:#333;margin-top:8px;font-size:14px;font-style:italic}
+.topnav{display:flex;gap:18px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px;margin-top:12px;padding:8px 0;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{font-weight:700;border-bottom:2px solid #111}
+p{margin:9px 0}
+p.lead{font-size:15px;line-height:1.9}
+.howto{border:1px solid #111;margin:0 0 30px}
+.howto .hd{background:#111;color:#fff;padding:6px 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px}
+.howto .bd{padding:12px 16px;font-size:13px}
+.howto .bd b{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;background:#f0f0f0;border:1px solid #bbb;padding:0 6px;margin-right:6px;font-weight:600}
+.vol{margin:56px 0 8px;padding:14px 0 10px;border-top:3px solid #111;border-bottom:1px solid #111}
+.vol .vol-no{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:4px;color:#666}
+.vol h2{font-size:22px;font-weight:700;margin-top:2px}
+.vol .vol-range{font-size:13px;color:#555;font-style:italic;margin-top:2px}
+.sec{margin:36px 0 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h3{font-size:17px;font-weight:700;border-left:5px solid #111;padding-left:10px}
+.sec .sec-sub{font-size:12px;color:#777;margin-left:15px;margin-top:2px}
+h4{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:14.5px;font-weight:700;margin:24px 0 6px}
+.entry{border:1px solid #bbb;margin:20px 0}
+.entry-head{padding:10px 16px 8px;border-bottom:1px solid #e5e5e5}
+.entry-head .zh{font-size:21px;font-weight:700;letter-spacing:1px}
+.entry-head .en{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#666;margin-left:10px}
+.entry-head .meta{font-size:12px;color:#888;margin-top:2px}
+.entry-def{border-left:4px solid #111;background:#fafafa;padding:9px 14px;margin:10px 14px;font-style:italic;font-size:13.5px;color:#222}
+.entry-bd{padding:2px 16px 10px}
+.spec{border:1px solid #111;margin:14px 0}
+.spec .spec-hd{background:#111;color:#fff;padding:5px 12px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11.5px;letter-spacing:2px;display:flex;justify-content:space-between}
+.spec .spec-hd .no{color:#aaa}
+table.spec-t{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px}
+table.spec-t td{border-bottom:1px solid #e8e8e8;padding:5px 12px;vertical-align:top}
+table.spec-t td.k{width:118px;background:#f5f5f5;font-weight:600;border-right:1px solid #e8e8e8}
+table.spec-t tr:last-child td{border-bottom:none}
+.fig{border:1px solid #111;margin:18px 0;background:#fff}
+.fig .fig-hd{display:flex;justify-content:space-between;align-items:baseline;padding:6px 12px;border-bottom:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fig .fig-hd .no{font-size:11px;letter-spacing:2px;color:#666}
+.fig .fig-hd .t{font-size:13px;font-weight:700}
+.fig .fig-bd{padding:10px 12px 4px}
+.fig .fig-note{padding:6px 12px 9px;font-size:12px;color:#555;border-top:1px dashed #ddd;margin-top:6px;line-height:1.6}
+.fig svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.cr{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;color:#777;margin:8px 0}
+.cr a{color:#444}
+blockquote{border-left:3px solid #999;margin:12px 0;padding:7px 16px;color:#444;font-size:13.5px;background:#fafafa}
+blockquote cite{display:block;font-size:11.5px;color:#888;margin-top:4px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.5px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t th{background:#111;color:#fff;text-align:left;font-weight:600;border:1px solid #111;padding:5px 9px;white-space:nowrap}
+table.t td{border:1px solid #ccc;padding:5px 9px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f7f7}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:12.5px;color:#333}
+.dim{color:#666}
+.band{margin:16px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.band .band-t{font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;color:#333}
+.band .bar{display:flex;height:40px;border:1px solid #111}
+.band .seg{border-right:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;text-align:center;line-height:1.3;padding:0 4px}
+.band .seg:nth-child(odd){background:#efefef}
+.band .seg:nth-child(even){background:#dcdcdc}
+.band .seg:last-child{border-right:none}
+.band .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:#888;margin-top:2px}
+.stat-row{display:flex;gap:12px;margin:14px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;border:1px solid #111;padding:8px 12px}
+.stat .v{font-size:20px;font-weight:700}
+.stat .k{font-size:11.5px;color:#666;margin-top:2px}
+ol.src{font-size:12px;color:#444;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+ol.src li{margin:4px 0;word-break:break-all}
+.lemma{border-bottom:1px dotted #bbb;padding:7px 0;font-size:13px}
+.lemma b{font-size:14.5px}
+.lemma .pos{font-size:11.5px;color:#888;font-family:Georgia,serif;font-style:italic;margin:0 4px}
+sup.ref{font-size:10.5px;color:#999}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+@media (max-width:900px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">卷目</div>
+  <div class="vol-h">卷首</div>
+  <a href="#howto">凡例</a>
+  <a href="#gen">总纲 · 六大区与城市层级</a>
+  <div class="vol-h">第一编</div>
+  <a href="#v1">华北 · 京津冀晋蒙</a>
+  <a href="#s11" class="sub">§1.1 北京 · 天津</a>
+  <a href="#s12" class="sub">§1.2 省会与重镇</a>
+  <a href="#s13" class="sub">§1.3 地级市实录</a>
+  <a href="#s14" class="sub">§1.4 县城实录</a>
+  <a href="#s15" class="sub">§1.5 乡村实录</a>
+  <div class="vol-h">第二编</div>
+  <a href="#v2">东北 · 辽吉黑</a>
+  <a href="#s21" class="sub">§2.1 沈阳 · 大连 · 长春 · 哈尔滨</a>
+  <a href="#s22" class="sub">§2.2 资源城与边城</a>
+  <a href="#s23" class="sub">§2.3 工人村存量</a>
+  <a href="#s24" class="sub">§2.4 县城与垦区林区</a>
+  <a href="#s25" class="sub">§2.5 乡村实录</a>
+  <div class="vol-h">第三编</div>
+  <a href="#v3">华东 · 沪苏浙皖闽赣鲁</a>
+  <a href="#s31" class="sub">§3.1 上海实录</a>
+  <a href="#s32" class="sub">§3.2 省会实录</a>
+  <a href="#s33" class="sub">§3.3 计划单列市</a>
+  <a href="#s34" class="sub">§3.4 地级市与县域</a>
+  <a href="#s35" class="sub">§3.5 乡村实录</a>
+  <div class="vol-h">第四编</div>
+  <a href="#v4">中南 · 豫鄂湘粤桂琼</a>
+  <a href="#s41" class="sub">§4.1 武汉实录</a>
+  <a href="#s42" class="sub">§4.2 中部省会</a>
+  <a href="#s43" class="sub">§4.3 广州 · 深圳</a>
+  <a href="#s44" class="sub">§4.4 珠三角镇域</a>
+  <a href="#s45" class="sub">§4.5 广西与海南</a>
+  <a href="#s46" class="sub">§4.6 县城与乡村</a>
+  <div class="vol-h">第五编</div>
+  <a href="#v5">西南 · 渝川云贵藏</a>
+  <a href="#s51" class="sub">§5.1 成都实录</a>
+  <a href="#s52" class="sub">§5.2 重庆实录</a>
+  <a href="#s53" class="sub">§5.3 省会实录</a>
+  <a href="#s54" class="sub">§5.4 地级市与县城</a>
+  <a href="#s55" class="sub">§5.5 乡村实录</a>
+  <div class="vol-h">第六编</div>
+  <a href="#v6">西北 · 陕甘宁青新</a>
+  <a href="#s61" class="sub">§6.1 西安实录</a>
+  <a href="#s62" class="sub">§6.2 省会与首府</a>
+  <a href="#s63" class="sub">§6.3 新城与能源</a>
+  <a href="#s64" class="sub">§6.4 县城实录</a>
+  <a href="#s65" class="sub">§6.5 乡村实录</a>
+  <div class="vol-h">附录</div>
+  <a href="#appA">A · 术语表</a>
+  <a href="#appB">B · 参考来源</a>
+  <a href="#appC">C · 总年表</a>
+  <a href="#appD">D · 图版与档案目录</a>
+</nav>
+<main>
+
+<header class="top">
+  <div class="kicker">ENCYCLOPEDIA OF CHINESE RESIDENTIAL COMMUNITIES · 第四卷</div>
+  <h1>中国区域志</h1>
+  <div class="sub">六大区 · 逐地实录:每座城市的当下格局、标志片区与来路——先写看到的样子,再解释为什么长这样;只用现行通名与真实地名,不立新说</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+    <a href="planning.html">城市与区域</a>
+    <a href="landscape.html">城乡风貌</a>
+    <a href="region.html" class="cur">区域志</a>
+  </div>
+</header>
+
+<!-- ==================== 凡例 ==================== -->
+<div class="howto" id="howto">
+  <div class="hd">凡例 · CONVENTIONS</div>
+  <div class="bd">
+    本卷为第四卷,与前三卷同体例:条目、定义段(楷体)、技术档案(档 n-n)、图版(图 n-n)、参见(→)俱全,<b>编号独立</b>。四卷分工:第一卷讲<b>房子</b>,第二卷讲<b>规划制度</b>,第三卷讲<b>风貌断代</b>,本卷讲<b>具体的地方</b>——六大区、每个省、每类城市,逐地实录当下的格局与片区。<b>实录纪律</b>:先现象后成因——每个条目第一段写"到了这里能看到什么"(街道、楼群、片区、地标),第二段起解释"它怎么来的"(哪年、什么决定、什么资金)。<b>通名纪律</b>:本卷不立任何新概念、新名词,全部使用现行通名(高新区、经开区、国家级新区、政务新区、县城、城中村)与真实地名;所写现象以"在同类城市普遍可见"为收录标准,个别特例不单独立目,仅在作为通行现象的代表时点名。<b>覆盖纪律</b>:内地 31 个省级政区全部覆盖(港澳台不属本站数据与体例范围,不设条目),每个省会/首府单独成条,各地级市以"区域实录表"逐省列出,每区另取代表县城与乡村通则。涉及当代建制与批文一律以公开文件为准,引用以<sup class="ref">[n]</sup>标注,对应附录 B;与前卷互见处以(→卷一/卷二/卷三 §n)标出。
+  </div>
+</div>
+
+<!-- ==================== 总纲 ==================== -->
+<div class="sec" id="gen"><h3>总纲:六大区与城市层级<span class="sec-sub">FRAMEWORK</span></h3></div>
+
+<p>本卷的骨架是两套现行分区,不是本卷的发明。<b>六大地理分区</b>(华北、东北、华东、中南、西南、西北)源自 1949—1954 年存在过的大行政区制度,至今仍内嵌在长途电话区号里:021 上海、024 沈阳、027 武汉、028 成都、029 西安分别配置给华东、东北、中南、西南、西北的大区中心<sup class="ref">[10]</sup>。<b>城市层级</b>(直辖市—省会—地级市—县城)则是现行行政区划的行政层级。两套骨架一横一纵,本卷六编即六大区,每编之内自上而下:直辖市与省会 → 地级市 → 县城 → 乡村。</p>
+
+<div class="stat-row">
+<div class="stat"><div class="v">6 大区 · 31 省级</div><div class="k">传统地理分区与省级政区数(港澳台不计)<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">290+</div><div class="k">地级政区(以地级市为主,另含州、盟、地区)<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">2800+</div><div class="k">县级政区(市辖区、县级市、县、自治县、旗)<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">3.8 万+</div><div class="k">乡级政区(镇、乡、街道)——乡村实录的颗粒度<sup class="ref">[1]</sup></div></div>
+</div>
+
+<p>逐地实录之前,先交代一个在各编反复出现的<b>通行时序</b>——它不是理论,而是各地城市都能对上的建设顺序(成因详见各编与卷二、卷三):</p>
+
+<table class="t">
+<tr><th>城市层级</th><th>第一步(1980s 前)</th><th>第二步(1985—2000)</th><th>第三步(2000—2012)</th><th>第四步(2012— )</th></tr>
+<tr><td><b>县城</b></td><td>老十字街:县政府、县医院、县一中、汽车站</td><td>商业街改造、马路拓宽、城郊开发区起步</td><td>政务新区:行政中心 + 广场 + 高层住区</td><td>高铁片区、商业综合体进驻、棚改与老旧小区改造</td></tr>
+<tr><td><b>地级市</b></td><td>老城 + 工矿区/单位区</td><td>经开区/高新区设区(多在城郊)</td><td>跨河跨江或政务文化新区</td><td>高铁新城、城市更新</td></tr>
+<tr><td><b>省会</b></td><td>老城 + 一五工业区</td><td>开发区 + 环线起步</td><td>高新/经开成熟,大学城、CBD 成形</td><td>国家级新区或城市新区(部分城市)</td></tr>
+<tr><td><b>直辖市/一线</b></td><td>租界/里弄 + 单位区</td><td>开发区(闵行、蛇口、南山)</td><td>CBD(陆家嘴、珠江新城、福田)</td><td>副中心/新城(五个新城、前海、临港)</td></tr>
+</table>
+
+<div class="note">这张表的作用是"对号入座":无论走到哪座城市,先认出它走到了第几步,再按本卷对应编节查实录。同一层级的时序全国高度一致,原因是制度全国统一——开发区政策(1984 年起)<sup class="ref">[4]</sup>、土地出让制度(1988 年起)、住房商品化(1998 年)、高铁网络(2008 年起)都是全国开关,开关一开,各城同步换挡。区域差别不在时序,在每一步的<b>体量与形态</b>——这正是以下六编逐地实录的内容。</div>
+
+<!-- ============================================================ -->
+<!-- 第一编 华北 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v1">
+<div class="vol-no">第一编</div>
+<h2>华北 · 京津冀晋蒙</h2>
+<div class="vol-range">北京 · 天津 · 石家庄 · 太原 · 呼和浩特 · 包头 —— 环路与大院的首都圈、一五工业城、平原县城腹地</div>
+</div>
+
+<div class="sec" id="s11"><h3>§1.1 北京 · 天津<span class="sec-sub">BEIJING &amp; TIANJIN</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">北京</span><span class="en">Beijing</span>
+<div class="meta">直辖市 · 华北区中心(区号 010)· 城区结构:二环老城—五六环住区—环京通勤带</div></div>
+<div class="entry-def">环路 + 大院 + 超大居住区三层叠加的首都城市:二环内是故宫、胡同与部委大院,三到五环是 1980—2000 年代单位房与商品房,五环外是回龙观、天通苑这样的巨型睡城,东南亦庄是开发区,东郊通州 2015 年后升为行政副中心。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从二环里出来一路向外,界面像年轮:二环内的胡同与单位大院(灰墙、门岗、苏式办公楼),三、四环 1980—1990 年代的红砖与面砖住宅楼(→卷三 档 6-1),四、五环 2000 年代的高层小区,再往外是回龙观、天通苑——各自住着数十万人的超大型居住区,早高峰向城内涌、晚高峰向外泄。中关村的写字楼群、望京的塔楼群、亦庄的厂房与研发楼、金融街的玻璃幕墙,各占一个方位。2019 年大兴机场启用后,城南又多了一个由机场带动的新组团。</p>
+<p><b>怎么来的。</b>环路结构 1990 年代起逐环外推(二环沿护城河与老城基,五环 2003 年通车、六环 2000 年代末成环);大院是 1950 年代单位制的遗产(→卷一 §1.3、卷三 §2.3),围墙内办公、住宅、食堂、学校一应俱全,今天部委与高校大院仍保持这一形态;回龙观、天通苑是 1998 年房改后的经济适用房集中建设区,体量因此远超普通小区;亦庄即北京经开区,1992 年设区、1994 年升国家级<sup class="ref">[4]</sup>;通州行政副中心 2015 年获批,市级机关 2019 年起东迁办公。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-1</span><span class="no">北京城市结构档案</span></div>
+<table class="spec-t">
+<tr><td class="k">二环内</td><td>老城:故宫、胡同、四合院区与部委大院;限高与风貌管控最严(→卷三 §4.5)</td></tr>
+<tr><td class="k">三—四环</td><td>1980—2000 年代建成区主体:单位家属院与早期商品房并存,沿长安街与中轴线布公共建筑</td></tr>
+<tr><td class="k">五—六环</td><td>超大型居住区带(回龙观、天通苑、常营等)+ 亦庄经开区(1992)+ 中关村科学城北扩</td></tr>
+<tr><td class="k">远郊组团</td><td>通州行政副中心(2015 年批,市级机关 2019 年起迁入);大兴机场临空区(2019 年通航)</td></tr>
+<tr><td class="k">通勤带</td><td>燕郊、大厂、香河等环京县市:房价与公交都随北京波动,是"跨省通勤"现象的代表地</td></tr>
+</table></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">天津</span><span class="en">Tianjin</span>
+<div class="meta">直辖市 · 海河下游港口城 · 结构:老城厢—九国租界—滨海新区</div></div>
+<div class="entry-def">一条海河串起三个时代的天津:上游老城厢与鼓楼,中段五大道、意式风情区的近代租界洋房群(全国租界建筑存量最大的城市之一),下游 45 公里外的滨海新区——港口、石化与于家堡高楼组成的第二城区。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>天津的城市名片是"洋楼":五大道两千余座近代花园住宅连片成街,红瓦坡顶、砖墙各异;解放北路是原英租界银行街,立面一律石造庄重。老城厢在 2000 年代大拆后只剩鼓楼商业街区。海河两岸 2000 年代后插入了津塔、津湾广场等高层。向东 45 公里是滨海新区:天津港的集装箱岸线、大港石化区、开发区的厂房,以及响螺湾、于家堡两片写字楼群。市区与滨海之间的空隙是塘沽老镇与盐碱地。</p>
+<p><b>怎么来的。</b>1860 年开埠后英、法、美等九国租界沿海河两岸展开,各国各自市政建设,留下成片洋房(→卷三 §1.2);2006 年滨海新区升为国家级新区、纳入国家战略<sup class="ref">[2]</sup>,于家堡、响螺湾按"新城 CBD"标准建设,后期部分楼宇空置,2010 年代后随自贸区(2015 年挂牌)逐步消化。天津因此是全国少见的"双城"直辖市——主城与滨海各成体系。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-1</span><span class="t">京津冀城镇格局示意</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="京津冀城镇格局示意图">
+<rect x="30" y="40" width="230" height="220" fill="#f5f5f5" stroke="#111"/>
+<text x="44" y="66" font-size="13" font-weight="700">北京</text>
+<text x="44" y="88" font-size="10.5" fill="#444">二环老城 + 环路年轮 + 通州副中心</text>
+<text x="44" y="106" font-size="10.5" fill="#444">大院存量全国最厚(部委/高校)</text>
+<circle cx="145" cy="150" r="14" fill="#111"/>
+<circle cx="145" cy="150" r="26" fill="none" stroke="#111" stroke-dasharray="4 3"/>
+<circle cx="145" cy="150" r="38" fill="none" stroke="#999" stroke-dasharray="2 3"/>
+<text x="150" y="154" font-size="9" fill="#fff">老城</text>
+<text x="185" y="132" font-size="9.5" fill="#555">环路逐环外推</text>
+<line x1="196" y1="140" x2="172" y2="148" stroke="#555"/>
+<rect x="330" y="70" width="200" height="160" fill="#f5f5f5" stroke="#111"/>
+<text x="344" y="96" font-size="13" font-weight="700">天津</text>
+<text x="344" y="118" font-size="10.5" fill="#444">海河串老城—租界—滨海</text>
+<text x="344" y="136" font-size="10.5" fill="#444">五大道洋房群为租界存量之最</text>
+<rect x="470" y="150" width="50" height="66" fill="#ddd" stroke="#111"/>
+<text x="495" y="188" font-size="10" text-anchor="middle">滨海</text>
+<text x="495" y="202" font-size="8.5" text-anchor="middle" fill="#444">45km</text>
+<line x1="445" y1="150" x2="470" y2="170" stroke="#111" stroke-dasharray="4 3"/>
+<rect x="330" y="230" width="140" height="26" fill="none" stroke="#111" stroke-dasharray="3 3"/>
+<text x="400" y="247" font-size="10" text-anchor="middle">雄安新区(2017)</text>
+<line x1="260" y1="120" x2="330" y2="120" stroke="#111" stroke-width="2"/>
+<text x="295" y="112" font-size="9.5" text-anchor="middle" fill="#444">京津走廊</text>
+<rect x="30" y="230" width="180" height="26" fill="none" stroke="#111" stroke-dasharray="3 3"/>
+<text x="120" y="247" font-size="10" text-anchor="middle">廊坊及环京通勤带</text>
+<line x1="200" y1="225" x2="260" y2="150" stroke="#999" stroke-dasharray="2 3"/>
+<text x="620" y="60" font-size="10" fill="#666">读法:</text>
+<text x="620" y="80" font-size="10" fill="#666">双核走廊 + 南翼雄安</text>
+<text x="620" y="98" font-size="10" fill="#666">环京县市承接溢出居住</text>
+<text x="620" y="116" font-size="10" fill="#666">构成华北区城市骨架</text>
+</svg>
+</div>
+<div class="fig-note">京津冀是华北区的双核:京津之间铁路 30 分钟直达,走廊上排布武清、廊坊等节点城;2017 年雄安新区设立后,保定境内的雄县、容城、安新成为承接非首都功能的第三极<sup class="ref">[2]</sup>。环京通勤带(燕郊等)的存在说明首都就业半径已跨出省界。</div>
+</div>
+
+<div class="sec" id="s12"><h3>§1.2 省会与重镇:石家庄 · 太原 · 呼和浩特 · 包头<span class="sec-sub">PROVINCIAL CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">石家庄</span><span class="en">Shijiazhuang</span>
+<div class="meta">河北省会 · 华北平原与太行山交界 · 类型:火车拉来的城市</div></div>
+<div class="entry-def">1902 年前只是滹沱河畔的村庄,因京汉、正太两条铁路在此交汇成为华北最大铁路枢纽之一,再成为省会——城市格局以火车站为原点向东南展开,中山路为横轴,没有老城城墙。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老京汉铁路线以西是 1900—1930 年代形成的街区(正太饭店、大石桥一带),铁路以东是 1950 年代后成片的机关、纺织厂宿舍区;城市主干道中山路串起解放广场、老百货与省博物院;1990 年代开发的槐底、2000 年后的正定新区在老城外围。城市边缘可见华北制药等一五时期大厂的厂区与家属区连片。正定古城在滹沱河北岸,与主城隔河相望,是近年古城修复的代表。</p>
+<p><b>怎么来的。</b>铁路设站带来货栈、转运业与人口,1925 年设市,1968 年河北省会由保定迁来,行政资源叠加铁路资源,城市在平原上摊开成长——"火车拉来的城市"在全国有一串(郑州、哈尔滨、株洲、怀化等,→附录 A),石家庄是其中爬得最高的一个:从村庄到省会不足百年。正定新区 2009 年后启动,是华北省会"跨河建新城"的通行做法。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">太原</span><span class="en">Taiyuan</span>
+<div class="meta">山西省会 · 汾河谷地 · 类型:能源省会 + 古城修复城</div></div>
+<div class="entry-def">汾河纵贯的带状省会:河东迎泽、杏花岭是老城与单位区,河西万柏林、晋源有重工业与古城,汾河两岸 2000 年后以长风文化商务区、晋阳湖片区更新;外围是山西煤铁产业的县域群。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>迎泽大街是城市横轴,省级行政与老牌宾馆沿街排布;亲贤街—长风街一带是 2000 年代商业中心。汾河景区 1990 年代末起治理成贯穿市区的带状绿地,两岸高楼 2010 年代后成排。晋源区有明太原县城的修复街区与晋祠。西南方向太钢、太重的老厂区仍占大片土地。榆次(晋中市区)已与太原建成区连片,构成"太榆同城"的现实。</p>
+<p><b>怎么来的。</b>太原是"一五"时期重点建设城市之一,西北峪口一带布置了重型机械、钢铁等厂区,苏式家属区随厂而建<sup class="ref">[13]</sup>;1990 年代能源经济支撑城市东扩;长风商务区 2008 年前后启动,是省会"政务文化新区"的山西版本。山西全省的城市层极扁:太原之外,地级市多为工矿或行政型(见 §1.3),县城则普遍经历煤价周期带动的建设潮。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">呼和浩特 与 包头</span><span class="en">Hohhot &amp; Baotou</span>
+<div class="meta">内蒙古首府与第一工业城 · 类型:首府行政城 / 一五规划城</div></div>
+<div class="entry-def">呼和浩特以首府行政、乳业与蒙元文化景观为主调;包头则是"一五"时期用一张规划图建起来的工业城——昆区、青山区两个全新城区围绕包钢与军工企业展开,大街平直、街坊规整,是计划经济规划的直接存证。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>呼和浩特:旧城(玉泉区)有大召等召庙群与蒙汉混合的旧街;中山路为商业主轴;金桥、如意等新区是行政办公与住宅;城市天际线平淡,乳业企业园区在城郊。包头:钢铁大街宽逾百米,笔直指向包钢厂区;昆区、青山区是 1950 年代统一建设的居住街坊,红砖或抹面住宅楼围合大院,林荫道整齐;东河区是 1950 年代前的老包头。三片城区之间仍有空地,是新城分片建设的痕迹。</p>
+<p><b>怎么来的。</b>包头是苏联专家参与规划、按"生产区—居住区"分片配套的典范新城,包钢 1954 年动工,城市与工厂同步生长——这在全国只有攀枝花、大庆等少数计划城可比(→§2.2)。呼和浩特则先有归化城、绥远城两座老城,1954 年成为自治区首府后以行政建设为主。内蒙古的地级市带(鄂尔多斯、乌海等)后文 §1.3 述。</p>
+</div>
+</div>
+
+<div class="sec" id="s13"><h3>§1.3 地级市实录:唐山 · 大同 · 保定与雄安 · 鄂尔多斯<span class="sec-sub">PREFECTURE CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">唐山</span><span class="en">Tangshan</span>
+<div class="meta">河北地级市 · 京津唐工业带 · 类型:震后重建城</div></div>
+<div class="entry-def">1976 年大地震后整体重建的城市:市中心为 1980 年代统一重建的方格路网与开滦矿区家属区,曹妃甸 2003 年后成为沿海重化工业新区,城市重心随之向海。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>主城路网横平竖直,建筑龄整齐地分为震后 1980 年代砖混、1990 年代面砖、2000 年代后高层三段;开滦煤矿的井架、唐钢的厂区在城市边缘;南湖是采煤塌陷区改成的中央公园(2010 年代完成)。往南 80 公里的曹妃甸是吹填造地的港口工业新城,与主城之间是大片盐田与滩涂。</p>
+<p><b>怎么来的。</b>唐山因煤而起(开滦 1878 年),是北方工业源头之一;1976 年地震夷平全城,1979 年起按规划重建,是我国最大规模的一次城市整体重建;曹妃甸 2003 年启动围海造地,先后布局钢铁、石化项目,是"向海要地"型工业新区的代表。震后重建使唐山的建筑年代谱系与一般城市错位——城里几乎找不到 1976 年以前的房子。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大同</span><span class="en">Datong</span>
+<div class="meta">山西地级市 · 类型:古城修复 + 御东新区双城</div></div>
+<div class="entry-def">2008 年起大规模修复城墙与历史街区的北方煤都:老城内四面城墙合围、四牌楼与代王府一带按传统样式重建,御河以东另建御东新区,政府、学校、医院整体东迁。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城内是大片仿传统样式的街区和被修缮的辽金寺庙(华严寺、善化寺);城墙完整可环行。御东新区则是另一座城:宽马路、政务中心、体育场馆与成片高层住宅。口泉沟、云冈沟等煤矿带在城西,保留矿工家属区的原貌。云冈石窟在武周山麓,是城市最重的文化地标。</p>
+<p><b>怎么来的。</b>大同是"一五"煤都,矿城一体;2008—2013 年间实施"古城修复 + 新区建设"并举的城市改造,机关东迁御东,老城腾给旅游。这一"古城复原"路线后来在山西多城出现(太原明县城、忻州古城等),成为资源型城市转型的通行选项——成与败的争论属于效果评价,本卷只记形态:城墙合围的传统街区和全新的政务新区,今天同时是大同的主景。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">保定 与 雄安</span><span class="en">Baoding &amp; Xiong'an</span>
+<div class="meta">河北地级市与国家级新区 · 类型:老省会 / 新区建设现场</div></div>
+<div class="entry-def">保定是失而复得的"老省会"(直隶总督署、莲池书院的旧城),雄安则是 2017 年设立的国家级新区——雄县、容城、安新三县境内,塔吊、市政管廊与成片新栽树林构成全国最大的在建城区之一。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>保定老城以直隶总督署、古莲花池为中心,周边是普通华北地级市格局;保定以东的白洋淀周边,能看到起步区(容城东侧)成排的新建写字楼、市政管廊展示区,以及大面积植树形成的"千年秀林"。县城与村庄大部分尚未动,新区建设以"先地下、后地上"的顺序推进。</p>
+<p><b>怎么来的。</b>保定在清至民国是直隶/河北的政治中心,省会地位几度让与天津、石家庄;雄安新区 2017 年 4 月设立,定位承接北京非首都功能疏解<sup class="ref">[2]</sup>,是 19 个国家级新区中最特殊的一个——不搞房地产开发先行,以基础设施、绿化与公共建筑起步。央企子公司、高校分部陆续注册迁入,新城形态仍在生成中。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">鄂尔多斯(康巴什)</span><span class="en">Ordos / Kangbashi</span>
+<div class="meta">内蒙古地级市 · 能源财政新城 · 类型:先建城后聚人</div></div>
+<div class="entry-def">煤田财政支撑下一次性建起的新城康巴什:超宽的成吉思汗广场轴、大剧院与图书馆等大型公共建筑、成片住宅——2004 年规划建设,前期入住率极低,2010 年代后人口逐步回填。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>康巴什的尺度超出一般新区想象:广场、雕塑、人工湖、四车道起步的方格路网,公共建筑体量普遍偏大;与老城东胜之间是缓坡草地。晚间住宅亮灯率的上升,是近年最直观的变化。周边旗县(准格尔旗等)同样有能源财政建起的宽马路县城。</p>
+<p><b>怎么来的。</b>2000 年代煤价上行,鄂尔多斯的地方财政在全国地级市中居于前列,2004 年起在荒滩上新建康巴什新区,配套先行、住宅集中供应;2008 年后曾因入住率低被广泛讨论。这一案例的普遍意义在于:能源财政 + 土地新城的组合在能源城市反复出现(神木、榆林等同型),快慢与人口节奏是唯一变量。本卷不评价成败,只记建成形态与时间线。</p>
+</div>
+</div>
+
+<h4>华北地级市实录表(逐省)</h4>
+<table class="t">
+<tr><th style="width:60px">省区</th><th>城市与当下格局(全部地级市)</th></tr>
+<tr><td><b>河北</b></td><td>石家庄(§1.2);唐山(震后重建+曹妃甸);秦皇岛(港口旅游城,北戴河带);邯郸(老工业+赵都文旅);邢台、衡水(平原农业市,城区紧凑);保定(§1.3);张家口(冬奥带动崇礼雪场组团);承德(避暑山庄外八庙,旅游主导);沧州(渤海化工+中心城区与渤海新区双点);廊坊(京津走廊,北三县为环京通勤带)</td></tr>
+<tr><td><b>山西</b></td><td>太原(§1.2);大同(§1.3);阳泉、长治、晋城(煤铁城市,矿区家属区+新区并存);朔州(平朔露天矿带动);忻州(古城修复旅游城);吕梁(山区市,离石主城+各县分散);临汾、运城(晋南盆地农业市,汾渭带城市);晋中(太榆同城,榆次老城+高校区)</td></tr>
+<tr><td><b>内蒙古</b></td><td>呼和浩特、包头(§1.2);鄂尔多斯(§1.3);乌海(乌达、海勃湾、海南三片矿区城);赤峰、通辽(东蒙农业牧业中心,城区规整);呼伦贝尔(海拉尔为中心,市域极大城极小);巴彦淖尔(河套灌区中心临河);乌兰察布(集宁,进京门户);二连浩特、满洲里(口岸城市,俄式景观批量建造)</td></tr>
+</table>
+
+<div class="sec" id="s14"><h3>§1.4 县城实录:华北平原的"标准县城"<span class="sec-sub">COUNTY SEATS</span></h3></div>
+
+<p class="lead">华北平原县城是全国最"标准"的县城形态:地形平坦、县城即全县唯一中心、建设时序整齐,把它认清,全国大半县城都能对上。</p>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">华北平原县城(通则)</span><span class="en">The North-China Plain County Seat</span>
+<div class="meta">适用于冀中南、鲁西、豫东北及皖北、苏北平原各县 · 代表:正定、赵县、清河、曹县等数百座</div></div>
+<div class="entry-def">老十字街(县政府、县医院、县一中、老汽车站)居中,1980—1990 年代商业街环绕,2000 年代政务新区向一侧跳出(行政中心+广场+高层住宅),外围开发区与高铁站片区再添一圈——平原县城的"三环结构"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>县城中心仍是几十年不变的十字街体系:县政府大院、县医院、县一中、老汽车站各占一角,新华书店与老百货残存其间。环城路外,政务新区的标配是:宽马路、行政服务中心大楼、市民广场、四五个高层住宅楼盘、一所新迁的中学、一座商业综合体(万达或本地品牌)。再往外,开发区是标准化厂房与物流园。高铁站在城外数公里,站前新区多为半建成状态。县城边缘能看到大量 2000 年代自建二层沿街房,底层店铺、上层住人。</p>
+<p><b>怎么来的。</b>老十字街是清末民国县城的原型(衙署居中、四门十字);单位时代各单位沿街圈地;1994 年分税制后土地出让成为县城主要建设资金,政务新区"跳出老城、平地起楼"是通行选择——行政中心搬迁带动地价,土地款再投入新区,这一循环(→卷二 §5.4)决定了县城的形态节奏。商业综合体下沉到县城发生在 2015 年前后;高铁新区则随 2010 年代高铁县县通的大干线上马。人口流出县的新区常供过于求,"成熟一座新城"以十年计。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-2</span><span class="t">华北平原县城标准格局</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 400" width="100%" role="img" aria-label="华北平原县城标准格局示意图">
+<rect x="30" y="30" width="700" height="340" fill="#fff" stroke="#111"/>
+<text x="46" y="52" font-size="12" font-weight="700">县境(平原,县城居中)</text>
+<rect x="120" y="120" width="180" height="140" fill="#f2f2f2" stroke="#111"/>
+<text x="210" y="140" font-size="12" font-weight="700" text-anchor="middle">老十字街</text>
+<rect x="150" y="150" width="50" height="24" fill="#111"/><text x="175" y="166" font-size="9" fill="#fff" text-anchor="middle">县政府</text>
+<rect x="220" y="150" width="50" height="24" fill="#ddd" stroke="#555"/><text x="245" y="166" font-size="9" text-anchor="middle">县医院</text>
+<rect x="150" y="185" width="50" height="24" fill="#ddd" stroke="#555"/><text x="175" y="201" font-size="9" text-anchor="middle">县一中</text>
+<rect x="220" y="185" width="50" height="24" fill="#ddd" stroke="#555"/><text x="245" y="201" font-size="9" text-anchor="middle">汽车站</text>
+<text x="210" y="232" font-size="9.5" fill="#444" text-anchor="middle">1980—90s 商业街环</text>
+<rect x="340" y="110" width="200" height="150" fill="#fff" stroke="#111" stroke-dasharray="6 3"/>
+<text x="440" y="132" font-size="12" font-weight="700" text-anchor="middle">政务新区(2000s)</text>
+<rect x="362" y="146" width="60" height="24" fill="#111"/><text x="392" y="162" font-size="9" fill="#fff" text-anchor="middle">行政中心</text>
+<rect x="438" y="146" width="40" height="24" fill="#efefef" stroke="#555"/><text x="458" y="162" font-size="9" text-anchor="middle">广场</text>
+<rect x="362" y="180" width="116" height="20" fill="#efefef" stroke="#555"/><text x="420" y="194" font-size="9" text-anchor="middle">高层住宅楼盘 ×4—5</text>
+<rect x="362" y="208" width="56" height="20" fill="#efefef" stroke="#555"/><text x="390" y="222" font-size="9" text-anchor="middle">新中学</text>
+<rect x="428" y="208" width="56" height="20" fill="#efefef" stroke="#555"/><text x="456" y="222" font-size="9" text-anchor="middle">综合体</text>
+<text x="440" y="248" font-size="9.5" fill="#444" text-anchor="middle">宽马路 + 环城路外跳</text>
+<rect x="580" y="120" width="120" height="90" fill="#fff" stroke="#111"/>
+<text x="640" y="140" font-size="11" font-weight="700" text-anchor="middle">开发区</text>
+<text x="640" y="158" font-size="9.5" fill="#444" text-anchor="middle">标准厂房</text>
+<text x="640" y="174" font-size="9.5" fill="#444" text-anchor="middle">物流园</text>
+<text x="640" y="190" font-size="9.5" fill="#444" text-anchor="middle">(城郊,靠国道)</text>
+<rect x="560" y="250" width="140" height="60" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+<text x="630" y="270" font-size="11" font-weight="700" text-anchor="middle">高铁片区</text>
+<text x="630" y="288" font-size="9.5" fill="#444" text-anchor="middle">站前广场 + 半成</text>
+<text x="630" y="302" font-size="9.5" fill="#444" text-anchor="middle">状态商务楼</text>
+<line x1="60" y1="300" x2="700" y2="300" stroke="#555" stroke-width="2"/>
+<text x="80" y="294" font-size="9.5" fill="#444">国道/省道(县城第一代发展轴)</text>
+<line x1="300" y1="60" x2="300" y2="340" stroke="#999" stroke-dasharray="5 4"/>
+<text x="310" y="72" font-size="9.5" fill="#666">老城—新区发展走廊</text>
+<text x="46" y="330" font-size="10" fill="#666">读法:老城不动、新区外跳、开发区靠路、高铁站再外一圈——四层结构对应四个建设批次。</text>
+</svg>
+</div>
+<div class="fig-note">本图为数百座华北(及全国)平原县城的抽象:老十字街建于 1950 年代前,商业街环为 1980—1990 年代,政务新区为 2000—2010 年代,高铁片区为 2010 年代后。县城人口多在 5—15 万,行政、教育、医疗三类设施决定其全部等级。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-2</span><span class="no">华北平原县城标准格局档案</span></div>
+<table class="spec-t">
+<tr><td class="k">老十字街</td><td>街宽 12—20 m;县政府居中或占丁字口,医院、一中、汽车站在 500 m 半径内;沿街为 1980—90 年代二三层商住楼</td></tr>
+<tr><td class="k">政务新区</td><td>距老城 1—3 km;行政中心大楼 8—12 层 + 市民广场(1—3 万 ㎡)+ 高层住宅 4—6 个楼盘;主路宽 40—60 m</td></tr>
+<tr><td class="k">开发区</td><td>城郊沿国道;标准厂房 + 电商物流园为主,招商强度决定空置率;部分县"开发区"仅挂牌子</td></tr>
+<tr><td class="k">高铁片区</td><td>距老城 3—10 km;站房 + 站前广场 + 1—2 条站前路;商务楼宇多为半入驻;公交/出租接驳为实际功能主体</td></tr>
+<tr><td class="k">县城建成区</td><td>普遍 10—25 ㎞²;一届政府一代新区,老城商业街与新综合体并存,夜市/集市按农历日轮转(北方集市传统)</td></tr>
+</table></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">平遥 与 正定</span><span class="en">Pingyao &amp; Zhengding</span>
+<div class="meta">山西晋中 / 河北石家庄 · 类型:城墙完整的历史县城</div></div>
+<div class="entry-def">两座城墙完整的北方县城:平遥是明清县城整体保存的世界遗产,城内票号院落、城外双林镇国二寺;正定是滹沱河北岸的府城格局,四塔与隆兴寺环城,近年按古城标准修复沿街立面。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>平遥城墙四面合围、街巷仍按"衙署—市楼—文庙武庙"的县城原型排列,城内几乎无现代高楼,旅游商业与居民生活混布;正定城内则以隆兴寺为最,南城门修复后成为石家庄方向的周末目的地,城内新建筑按灰砖坡顶导则控制(→卷三 §4.5)。</p>
+<p><b>怎么来的。</b>北方县城城墙大多毁于 1950—1970 年代拆城取砖(→卷三 §1.3),平遥因 1980 年代初规划界呼吁与资金短缺幸运留全,1986 年入第二批国家历史文化名城、1997 年入世界遗产名录<sup class="ref">[1]</sup>,此后"整城保护"成为其县城经济主业;正定的修复是 2010 年代北方古城修复潮的省会近郊样本。两城代表县城的另一个类型学分支:普通县走"新区外跳",名城县走"老城内控"。</p>
+</div>
+</div>
+
+<div class="sec" id="s15"><h3>§1.5 乡村实录:平原村、窑洞院、牧区定居点<span class="sec-sub">VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">华北平原村庄(通则)</span><span class="en">The North-China Plain Village</span>
+<div class="meta">适用于冀鲁豫皖苏平原 · 代表:数以万计</div></div>
+<div class="entry-def">棋盘格宅基地 + 红砖平房/二层 + 围墙院落的均质村庄:街道横平竖直,屋顶可见太阳能热水器与蓝色彩钢加建,村口牌坊、小卖部、村委广场(含篮球场与健身器材)是三件标配。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从国道拐进村,先是村名牌坊;主街两侧是 1980—2000 年代红砖房,外墙或水泥抹面或裸砖,院里种枣树杨树;屋顶上太阳能热水器一排,雨棚与储物间用蓝彩钢板(→卷三 §5.3)。村委大院有广场、旗杆、篮球架与健身器械。村外是大田,小麦玉米两熟。空心化明显的村,老房塌陷、杂草齐腰,新盖房集中在村边。</p>
+<p><b>怎么来的。</b>平原村庄的棋盘格局多为 1960—1970 年代统一规划的宅基地排布;房屋四代更替与全国同步(砖瓦平房—瓷砖二层—欧式三层—统建房,→卷三 §5.3);彩钢与太阳能是 2000 年代后的两个全国性增项。空心村(→卷三 §5.2)在华北平原典型——人均耕地少、外出打工半径大,村庄实际居住人口常不足户籍一半。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">山西窑洞院与内蒙古牧区定居点</span><span class="en">Shanxi Yaodong &amp; Mongolian Settlements</span>
+<div class="meta">晋西吕梁 / 锡林郭勒等牧区 · 类型:地方民居存量 / 定居工程</div></div>
+<div class="entry-def">黄土沟壑区的靠崖窑洞与砖拱窑院仍成片存量,多数废弃、少数翻新做民宿;牧区则是定居点化——砖房院落、棚圈、饲草料地取代游动毡房,蒙古包主要保留在旅游营地。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>吕梁临县一带:沟崖上一层废弃窑口,村顶新盖砖房;平陆地窨院(下沉式窑院)零星保留。锡林郭勒:定居点由砖房、蓝色棚圈、风井式水塔和成捆草料构成,嘎查(村)委会带文化站;那达慕会场与旅游点的蒙古包是景观化的存在。</p>
+<p><b>怎么来的。</b>窑洞是黄土区数千年的生土居住方式,1980 年代后弃用加速,现存量集中在晋陕黄河两岸与陇东(→§6.5);牧区定居化是 1980 年代草畜双承包与 2000 年代生态移民工程的合成结果,游牧半径缩短为定居饲养,居住形态随之从毡房变为砖院。</p>
+</div>
+</div>
+
+<div class="note">第一编小结(现象在前,机制在后):华北区的普遍形态由三股力量塑成——<b>首都与直辖市</b>(北京环路大院、天津双城)、<b>一五工业与铁路</b>(包头、石家庄、唐山)、<b>平原农业县财政</b>(标准县城与空心村)。看华北,先认"离北京多远、离铁路多近、县里有没有矿",格局大致即定。</div>
+
+<!-- ============================================================ -->
+<!-- 第二编 东北 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v2">
+<div class="vol-no">第二编</div>
+<h2>东北 · 辽吉黑</h2>
+<div class="vol-range">沈阳 · 大连 · 长春 · 哈尔滨 —— 单位大院与工人村存量最厚的地区,广场城、汽车城、冰城与资源收缩县并存</div>
+</div>
+
+<div class="sec" id="s21"><h3>§2.1 沈阳 · 大连 · 长春 · 哈尔滨<span class="sec-sub">THE FOUR CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">沈阳</span><span class="en">Shenyang</span>
+<div class="meta">辽宁省会 · 东北大区中心(区号 024)· 结构:盛京方城—铁路附属地—铁西工业区—金廊新区</div></div>
+<div class="entry-def">四层城市:故宫周围的盛京方城与环城路,太原街、中山广场一带的日俄铁路附属地街坊,铁路以西成片的苏式工人村与厂房(铁西),以及 2000 年代沿青年大街竖起的"金廊"CBD。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老方城内是故宫、张氏帅府与正阳街一带的清代格局;中山广场周边一圈 1900—1940 年代公共建筑(原横滨正金银行等),放射路从这里展开。铁西区:卫工街、保工街一带是 1950 年代红砖工人村街坊与老厂房,部分厂房改为工业博物馆、文创园;2002 年后工厂"东搬西建"迁往经开区张士,原址开发为住宅与商场。青年大街"金廊"两侧是全市最新的高层与商场群。浑南新区有省博物馆、科技馆组成的文化建筑群与全运村片区。</p>
+<p><b>怎么来的。</b>沈阳是清末陪都、民国奉系中枢、伪满与一五时期的机械工业中心,四代建设层层叠加;铁西工人村 1952 年始建,是全国最早成片的工人住宅区之一(→卷三 §2.2);2002 年铁西区与经开区合署、工厂整体搬迁,是全国老工业区"退二进三"的代表案例;浑南新区承接 2013 年全运会建设。沈阳城市之大(建成区全国前列)直接来自一五时期 6 项重点工程与后续军工体系的堆积。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大连</span><span class="en">Dalian</span>
+<div class="meta">辽宁 · 计划单列市 · 结构:中山广场放射—南山旧宅—星海湾—开发区群</div></div>
+<div class="entry-def">以圆形广场为母题的滨海城市:中山广场十街放射(1899 年俄规划定型),南山一带成片和风洋馆,星海湾会展—滨海路—森林动物园构成旅游带,主城外有开发区、金石滩等多个组团。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>中山广场一圈 1900—1930 年代银行建筑围合,道路呈十向放射——这是全国仅存的大规模圆形广场放射系统之一;友好广场、二七广场等依次排开,"广场"是大连街道组织的原点。南山老街是日据时期独立住宅区。星海广场为亚洲最大广场之一(1990 年代填海而建),会展中心、贝壳博物馆立其间。东港是 2010 年代填海新区。往北 30 公里是大连开发区(1984 年首批国家级经开区<sup class="ref">[4]</sup>)与金州新城。</p>
+<p><b>怎么来的。</b>大连 1899 年由俄国按"达里尼"规划整体新建(欧洲式放射广场+林荫大街),日据时期延续并完成,殖民地规划城市的完整样本(→卷三 §1.2);建国后为港口工业重镇;1984 年开发区选址金州马桥子,开启"先开发区、后新市区"的扩张;星海广场、东港是 1990—2010 年代填海造城的延续。广场城市形态因此贯穿三个时代。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">长春</span><span class="en">Changchun</span>
+<div class="meta">吉林省会 · 结构:人民大街轴线—一汽厂区—净月—高新北湖</div></div>
+<div class="entry-def">一条人民大街从火车站直贯南部新城 20 余公里,是全国最长的城市轴线之一;西南是 1953 年起的一汽厂区与家属区(汽车城的实体),东南净月潭是森林保护区边缘的文旅组团。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>人民大街宽阔笔直,沿线串起人民广场(圆形广场)、省市政府、文化广场与雕塑公园;老城区(南关、朝阳)是伪满时期"新京"规划的方格+对角路网,新民大街一列伪满"八大部"建筑保存完整。西南一汽片区:厂房、汽车研究所、成片 1950 年代红砖家属区(东风大街"大屋檐"苏式街坊是代表)。南部新城(2000 年代后)高楼沿轴生长;净月高新区在潭边林间。</p>
+<p><b>怎么来的。</b>长春 1932—1945 年作为伪满"首都"按规划整体建设,路网骨架沿用至今;1953 年一汽奠基,城市获得"汽车城"身份,苏式街坊随厂配套(与包头、洛阳涧西同型,→§1.2、§4.2);2000 年代后南部新城沿人民大街南延。一座城记着两段规划史:殖民规划与一五工业,各自留下今天仍在使用的骨架。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">哈尔滨</span><span class="en">Harbin</span>
+<div class="meta">黑龙江省会 · 结构:道里道外—南岗—群力哈西—松北</div></div>
+<div class="entry-def">中东铁路催生的城市:道里中央大街面包石路与俄式立面、索菲亚教堂穹顶、道外中华巴洛克商住街,南岗是行政与高校区,松花江北岸的松北、西部的群力与哈西是三片 2000 年代后新区。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>中央大街两侧文艺复兴、新艺术运动立面连绵 1.4 公里,路面是 1920 年代方块花岗岩("面包石");街端是防洪纪念塔与松花江畔,冬天江面即冰场。索菲亚教堂为拜占庭式砖构,是城市名片。道外区是华人商号自建的"中华巴洛克"街区(立面西式、院落中式)。南岗有 1900—1950 年代俄式花园住宅与秋林公司。群力、哈西是新区高层群,哈西以高铁站为核心;松北有太阳岛、大剧院与冰雪大世界场地。</p>
+<p><b>怎么来的。</b>1898 年中东铁路开工,哈尔滨作为铁路枢纽由俄国人规划建设,"东方莫斯科"式的教堂、洋行、住宅成片生长(→卷三 §1.4);1950 年代为机电工业重镇("三大动力"厂区在南岗边缘);冰雪旅游是 1985 年冰灯游园会以来的城市名片,2010 年代后随高铁与网络传播放大。老城的异质立面是铁路附属地风貌在全国最完整的存量。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-1</span><span class="t">东北四城结构谱</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="东北四城结构谱示意图">
+<rect x="25" y="25" width="170" height="270" fill="#f5f5f5" stroke="#111"/>
+<text x="110" y="47" font-size="13" font-weight="700" text-anchor="middle">沈阳</text>
+<text x="110" y="68" font-size="10" fill="#444" text-anchor="middle">方城(盛京)</text>
+<rect x="60" y="78" width="100" height="30" fill="#ddd" stroke="#555"/><text x="110" y="97" font-size="9.5" text-anchor="middle">铁路附属地街坊</text>
+<rect x="60" y="116" width="100" height="52" fill="#bbb" stroke="#555"/><text x="110" y="136" font-size="9.5" text-anchor="middle">铁西工人村</text><text x="110" y="150" font-size="9.5" text-anchor="middle">+ 厂区(1950s)</text>
+<rect x="60" y="176" width="100" height="40" fill="#fff" stroke="#111" stroke-dasharray="4 3"/><text x="110" y="194" font-size="9.5" text-anchor="middle">金廊 CBD(2000s)</text>
+<rect x="60" y="224" width="100" height="40" fill="#fff" stroke="#111" stroke-dasharray="4 3"/><text x="110" y="242" font-size="9.5" text-anchor="middle">浑南新区</text><text x="110" y="256" font-size="9.5" text-anchor="middle">(全运/文化建筑群)</text>
+<text x="110" y="286" font-size="9" fill="#666" text-anchor="middle">四层叠加 · 老工业最厚</text>
+<rect x="210" y="25" width="170" height="270" fill="#f5f5f5" stroke="#111"/>
+<text x="295" y="47" font-size="13" font-weight="700" text-anchor="middle">大连</text>
+<circle cx="295" cy="110" r="34" fill="none" stroke="#111"/>
+<circle cx="295" cy="110" r="6" fill="#111"/>
+<text x="295" y="80" font-size="9.5" text-anchor="middle">中山广场(十街放射)</text>
+<line x1="295" y1="144" x2="240" y2="180" stroke="#555"/><line x1="295" y1="144" x2="350" y2="180" stroke="#555"/>
+<text x="245" y="196" font-size="9.5" text-anchor="middle">南山旧宅</text>
+<text x="345" y="196" font-size="9.5" text-anchor="middle">星海湾</text>
+<rect x="240" y="210" width="110" height="34" fill="#fff" stroke="#111" stroke-dasharray="4 3"/><text x="295" y="231" font-size="9.5" text-anchor="middle">开发区(1984)+东港</text>
+<text x="295" y="272" font-size="9" fill="#666" text-anchor="middle">广场母题 · 填海外拓</text>
+<rect x="395" y="25" width="170" height="270" fill="#f5f5f5" stroke="#111"/>
+<text x="480" y="47" font-size="13" font-weight="700" text-anchor="middle">长春</text>
+<line x1="480" y1="62" x2="480" y2="255" stroke="#111" stroke-width="2"/>
+<text x="492" y="72" font-size="9.5">人民大街轴线 20+ km</text>
+<circle cx="480" cy="100" r="13" fill="#ddd" stroke="#555"/><text x="480" y="104" font-size="8.5" text-anchor="middle">广场</text>
+<rect x="410" y="140" width="60" height="34" fill="#bbb" stroke="#555"/><text x="440" y="155" font-size="9" text-anchor="middle">伪满</text><text x="440" y="168" font-size="9" text-anchor="middle">八大部</text>
+<rect x="490" y="140" width="66" height="34" fill="#bbb" stroke="#555"/><text x="523" y="155" font-size="9" text-anchor="middle">一汽厂区</text><text x="523" y="168" font-size="9" text-anchor="middle">+家属区</text>
+<text x="480" y="212" font-size="9.5" text-anchor="middle">南部新城沿轴南延</text>
+<text x="480" y="286" font-size="9" fill="#666" text-anchor="middle">轴线城市 · 汽车城</text>
+<rect x="580" y="25" width="170" height="270" fill="#f5f5f5" stroke="#111"/>
+<text x="665" y="47" font-size="13" font-weight="700" text-anchor="middle">哈尔滨</text>
+<rect x="600" y="66" width="62" height="40" fill="#ddd" stroke="#555"/><text x="631" y="82" font-size="9" text-anchor="middle">道里</text><text x="631" y="96" font-size="9" text-anchor="middle">中央大街</text>
+<rect x="670" y="66" width="62" height="40" fill="#ddd" stroke="#555"/><text x="671" y="82" font-size="9" text-anchor="middle">道外</text><text x="671" y="96" font-size="9" text-anchor="middle">中华巴洛克</text>
+<rect x="635" y="118" width="62" height="30" fill="#ddd" stroke="#555"/><text x="666" y="137" font-size="9" text-anchor="middle">南岗(行政)</text>
+<line x1="665" y1="158" x2="665" y2="170" stroke="#555"/>
+<text x="665" y="182" font-size="9.5" text-anchor="middle">松花江</text>
+<rect x="600" y="192" width="62" height="30" fill="#fff" stroke="#111" stroke-dasharray="4 3"/><text x="631" y="211" font-size="9" text-anchor="middle">松北/太阳岛</text>
+<rect x="670" y="192" width="62" height="30" fill="#fff" stroke="#111" stroke-dasharray="4 3"/><text x="701" y="211" font-size="9" text-anchor="middle">群力·哈西</text>
+<text x="665" y="286" font-size="9" fill="#666" text-anchor="middle">铁路城市 · 跨江发展</text>
+</svg>
+</div>
+<div class="fig-note">四城结构各异,存量却同类:每一城都保留着成片 1950 年代单位街坊(沈阳铁西、长春一汽、哈尔滨动力之乡、大连老港周边),这是东北城市区别于关内同规模城市的最大特征——单位制建成环境(→卷一 §1.3)在东北最厚,更新也最慢。</div>
+</div>
+
+<div class="sec" id="s22"><h3>§2.2 资源城与边城:鞍山 · 大庆 · 延吉<span class="sec-sub">RESOURCE &amp; BORDER CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">鞍山 与 大庆</span><span class="en">Anshan &amp; Daqing</span>
+<div class="meta">辽宁 / 黑龙江 · 类型:钢铁城 / 油城——资源型城市的两种原型</div></div>
+<div class="entry-def">鞍山围绕鞍钢生长,矿区、厂区、工人村把城市压在山与矿之间;大庆则没有中心老城——从萨尔图到让胡路,各矿区居民点沿公路散布 140 公里油区,是"先生产、后生活"的分散型资源城。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>鞍山:千山脚下的城区被鞍钢厂区分隔,立山、铁东、铁西以铁路为界;大孤山露天铁矿的螺旋矿坑在城郊。大庆:让胡路、萨尔图、龙凤等片区沿世纪大道串联,油田"磕头机"散布在住宅区与湿地之间;城区各片规模相近、功能雷同,每片都有油田二级单位大院。盘锦(辽河油田)、鸡西鹤岗双鸭山七台河(煤城)同型:矿区间隔、各自成镇。</p>
+<p><b>怎么来的。</b>鞍山 1918 年建厂起"矿城一体";大庆 1959 年发现油田、1979 年建市,居民点按"厂矿(采油厂)—生活区"布局展开,与包头、攀枝花同为计划经济资源城的标本。资源城市的共同命运线:资源价格决定建设节奏,资源枯竭决定收缩节奏——鹤岗、鸡西等煤城 2010 年代后出现人口与房价双低,是全国"收缩城市"讨论的原型<sup class="ref">[13]</sup>;大庆则随油田稳产维持慢增长。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">延吉</span><span class="en">Yanji</span>
+<div class="meta">吉林延边朝鲜族自治州首府 · 类型:边境自治州城</div></div>
+<div class="entry-def">双语牌匾的边城:布尔哈通河穿城,街头朝鲜文与汉字并行,餐饮街区密集;城区紧凑(建成区 40 余平方公里),外围乡镇多空心中老年化。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>主干道两侧招牌一律双语,烤肉馆、冷面馆密度极高;河边是 2000 年代后建的高层住区;城郊帽儿山为森林公园。往东 30 余公里是珲春口岸(中俄朝交界方向),往南 10 公里即龙井市——延边各县市间距之密,全国少有(历史上朝鲜族垦区密集开发的结果)。</p>
+<p><b>怎么来的。</b>清末民初朝鲜族迁入开发水田,聚落沿河谷密集分布;1952 年成立自治州,延吉为首府。人口大量赴韩、赴沿海务工后,州内各县普遍空心化,延吉作为州域中心持续集中。边城风貌在东北沿边一线连续:黑河(对俄)、绥芬河(对俄)、丹东(对朝)、满洲里(对俄,→§1.3),共同点是口岸贸易+双语景观+比内地同规模城市更旧更慢的建设节奏。</p>
+</div>
+</div>
+
+<div class="sec" id="s23"><h3>§2.3 工人村存量:东北城市的最大公约数<span class="sec-sub">WORKERS' VILLAGES</span></h3></div>
+
+<p class="lead">从任何一座东北城市的主城下来,十分钟内必能走进一片红砖或抹面的多层街坊:三至五层行列式住宅、集中供暖锅炉房旧址、大院门与自行车棚——这是"工人村",东北建成环境的底色,也是全国旧改名单的常客。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-2</span><span class="t">工人村街坊平面(苏式原型)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="工人村街坊平面示意图">
+<rect x="30" y="30" width="440" height="270" fill="#fff" stroke="#111"/>
+<text x="250" y="52" font-size="12.5" font-weight="700" text-anchor="middle">街坊(约 400 m × 300 m,周边城市道路围合)</text>
+<rect x="60" y="70" width="110" height="26" fill="#ddd" stroke="#555"/><text x="115" y="87" font-size="9" text-anchor="middle">住宅(行列式 3 层)</text>
+<rect x="60" y="104" width="110" height="26" fill="#ddd" stroke="#555"/><text x="115" y="121" font-size="9" text-anchor="middle">住宅(行列式)</text>
+<rect x="60" y="138" width="110" height="26" fill="#ddd" stroke="#555"/><text x="115" y="155" font-size="9" text-anchor="middle">住宅(行列式)</text>
+<rect x="200" y="70" width="110" height="26" fill="#ddd" stroke="#555"/><text x="255" y="87" font-size="9" text-anchor="middle">住宅(行列式)</text>
+<rect x="200" y="104" width="110" height="26" fill="#ddd" stroke="#555"/><text x="255" y="121" font-size="9" text-anchor="middle">住宅(行列式)</text>
+<rect x="200" y="138" width="110" height="26" fill="#ddd" stroke="#555"/><text x="255" y="155" font-size="9" text-anchor="middle">住宅(行列式)</text>
+<rect x="90" y="185" width="90" height="34" fill="#bbb" stroke="#555"/><text x="135" y="201" font-size="9" text-anchor="middle">小学/幼儿园</text><text x="135" y="214" font-size="9" text-anchor="middle">(街坊中心)</text>
+<rect x="220" y="185" width="90" height="34" fill="#bbb" stroke="#555"/><text x="265" y="201" font-size="9" text-anchor="middle">食堂→商店</text><text x="265" y="214" font-size="9" text-anchor="middle">(沿主入口)</text>
+<rect x="90" y="238" width="90" height="30" fill="#eee" stroke="#555"/><text x="135" y="257" font-size="9" text-anchor="middle">锅炉房/浴池</text>
+<rect x="220" y="238" width="90" height="30" fill="#eee" stroke="#555"/><text x="265" y="257" font-size="9" text-anchor="middle">煤棚/自行车棚</text>
+<rect x="350" y="70" width="100" height="80" fill="#fafafa" stroke="#555"/>
+<text x="400" y="90" font-size="9.5" text-anchor="middle">街坊绿地</text>
+<text x="400" y="106" font-size="9" text-anchor="middle">(杨树+晒衣绳)</text>
+<text x="400" y="122" font-size="9" text-anchor="middle">落叶松行道树</text>
+<text x="400" y="138" font-size="9" text-anchor="middle">围合感来源</text>
+<rect x="350" y="170" width="100" height="98" fill="#fff" stroke="#111"/>
+<text x="400" y="188" font-size="9.5" font-weight="700" text-anchor="middle">识别要点</text>
+<text x="400" y="204" font-size="8.5" text-anchor="middle">木/钢窗三层红砖</text>
+<text x="400" y="218" font-size="8.5" text-anchor="middle">坡顶机平瓦</text>
+<text x="400" y="232" font-size="8.5" text-anchor="middle">单元无门厅</text>
+<text x="400" y="246" font-size="8.5" text-anchor="middle">集中供热管道</text>
+<text x="400" y="260" font-size="8.5" text-anchor="middle">楼层 3—5 层无电梯</text>
+<text x="500" y="60" font-size="10" fill="#666">变体:</text>
+<text x="500" y="80" font-size="10" fill="#666">1950s 苏式原型(沈阳铁西、长春一汽)</text>
+<text x="500" y="100" font-size="10" fill="#666">1960—70s 简化版(楼更瘦、阳台预制栏板)</text>
+<text x="500" y="120" font-size="10" fill="#666">1980s 单位续建(面砖、点式楼)</text>
+<text x="500" y="140" font-size="10" fill="#666">改造后:外墙保温+彩色涂料重涂</text>
+<text x="500" y="160" font-size="10" fill="#666">——看窗框与楼梯间即知原建年代</text>
+<text x="500" y="185" font-size="10" fill="#666">现状:</text>
+<text x="500" y="205" font-size="10" fill="#666">多数已列入老旧小区改造名单</text>
+<text x="500" y="225" font-size="10" fill="#666">(管网、保温、加装电梯,→卷三 §6.3)</text>
+</svg>
+</div>
+<div class="fig-note">工人村街坊 1950 年代由苏联街坊模式定型:住宅行列式满铺、公建居中、服务设施沿边,步行半径 300 米内解决生活。今天东北老城的大半住宅存量仍在这一形态内,只是树已长高、窗已换塑钢(原貌鉴定看楼梯间水磨石与单元铁门,→卷三 档 6-1)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 2-1</span><span class="no">东北工人村档案</span></div>
+<table class="spec-t">
+<tr><td class="k">始建</td><td>1952 沈阳铁西工人村(全国最早成片);长春一汽、哈尔滨亚麻厂等随一五项目铺开</td></tr>
+<tr><td class="k">街坊</td><td>边长 300—450 m;住宅 3—5 层行列式,层高 2.9—3.2 m;间距按日照(东北纬度严寒,间距系数大,楼间空地宽)</td></tr>
+<tr><td class="k">配套</td><td>厂—村一体:锅炉房、澡堂、食堂、子弟学校、俱乐部、医院均在大院体系内(单位制,→卷一 §1.3)</td></tr>
+<tr><td class="k">今日</td><td>住客老龄化、原单位住户子女外流;2019 年后大规模纳入老旧小区改造(保温、管网、适老化、加装电梯)</td></tr>
+<tr><td class="k">代表地</td><td>沈阳铁西工人村建筑群(已列保护)、长春东风大街大屋檐街坊、哈尔滨量具刃具厂家属区</td></tr>
+</table></div>
+
+<div class="sec" id="s24"><h3>§2.4 县城与垦区林区:另一种县城,另一种城镇<span class="sec-sub">COUNTY &amp; RECLAMATION TOWNS</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">东北县城(通则)与农垦城镇</span><span class="en">Northeast County Seats &amp; Bingtuan-style Towns</span>
+<div class="meta">黑龙江农垦(建三江等)/ 大兴安岭林区 / 各普通县</div></div>
+<div class="entry-def">东北县城与华北同构但更旧更慢:老十字街保留更多 1980 年代风貌,新区体量更小;真正特殊的是体制性城镇——农场局、林业局驻地按单位模式整建,农场场部与连队居民点构成第二套城镇体系。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>普通县城(如吉林农安、黑龙江宾县):十字街、老国营商店立面、2010 年代才出现的综合体,骑楼当然没有,但有旱冰场与二人转剧场这类东北县城配置。农垦城镇(建三江管理局驻地):棋盘路网、农场机关大楼、统一的职工住宅区,四周是一望无际的水田,收割季运粮车排队;林区城镇(伊春各局址、加格达奇):板夹泥与红砖平房存量、贮木场、防火瞭望塔,采伐停止后以营林与旅游为主。</p>
+<p><b>怎么来的。</b>黑龙江农垦总局(北大荒)1947 年起开发,140 余个农场按"局—场—队"三级布点,居住形态完全是单位制的复制;大小兴安岭林区 1950 年代开发,森工局即城镇。2010 年代"农场企业化、林区停伐"改革后,这套城镇体系并入地方行政,但形态原样留存——它是计划经济在最北边疆的完整铸型,全国仅东北成片存在(与新疆兵团并观,→§6.5)。</p>
+</div>
+</div>
+
+<h4>东北地级市实录表(逐省)</h4>
+<table class="t">
+<tr><th style="width:60px">省</th><th>城市与当下格局(全部地级市/州/地区)</th></tr>
+<tr><td><b>辽宁</b></td><td>沈阳、大连(§2.1);鞍山(§2.2 钢城);抚顺、本溪(煤铁老城,矿区+高密老城);辽阳、铁岭(沈辽边界农业市);锦州(辽西中心,老城+滨海开发区);营口(营口老港+鲅鱼圈新区双点);盘锦(辽河油田,苇海稻田);阜新(资源枯竭转型代表,风电液压件);朝阳、葫芦岛(辽西走廊带,绥中古长城滨海);丹东(对朝口岸,鸭绿江景观带)</td></tr>
+<tr><td><b>吉林</b></td><td>长春(§2.1);吉林市(松花江城,化工+雾凇,船厂老街);四平、辽源(中部农业市,紧凑);通化、白山(长白山西麓,医药与山货集散);松原(油田+查干湖);白城(科尔沁沙地东缘农牧市);延边州(延吉 §2.2,州内各县市密集空心化)</td></tr>
+<tr><td><b>黑龙江</b></td><td>哈尔滨(§2.1);齐齐哈尔(重工业老城+扎龙湿地);牡丹江(东南门户,镜泊湖);佳木斯(三江平原中心,农垦总部所在);大庆(§2.2 油城);鸡西、鹤岗、双鸭山、七台河(四大煤城,收缩最典型,鹤岗因低房价成为全国收缩城市符号);绥化(农业市);黑河(对俄口岸);大兴安岭地区(加格达奇,林区)</td></tr>
+</table>
+
+<div class="sec" id="s25"><h3>§2.5 乡村实录:屯、集中居住与朝鲜族村<span class="sec-sub">VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">东北村庄(通则)</span><span class="en">The Northeast Village</span>
+<div class="meta">黑吉辽农区 · 通称:屯/屯子</div></div>
+<div class="entry-def">大间距、少而大的村庄:一屯几十户到几百户,房舍沿一两条主街排开,院落半亩起步、围栏圈地,房前屋后种菜;屯与屯之间是大块连片农田,机耕道笔直。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>进屯先过晒场(打谷场)与机井房;主街两侧砖平房或带门斗的二层,几乎家家有火炕烟囱;院里停农机、码柴垛,栏内养牛。2000 年代后新建房多为塑钢窗、彩钢顶的"欧式"农房(→卷三 §5.3)。朝鲜族村(延边、梅河口一带):集中建设的小区式村落——楼房或联排平房整齐划一,是 1990 年代朝鲜族村庄整体改造的产物,与汉族自然屯的松散形态一望即别。</p>
+<p><b>怎么来的。</b>东北村庄稀疏是垦殖史的结果:清末民闯关东与 1950 年代机械化开荒按土地规模设点,村距以耕地半径为准;人均耕地多,宅院自然宽大。朝鲜族村的集中改造源于其劳动力大量外流韩国与沿海,1990 年代整村重建一步到位。今日东北乡村的普遍现象是人口流失——屯里常住多为老人,学校撤并后孩子进城读书,村小原址改作村委会或闲置。</p>
+</div>
+</div>
+
+<div class="note">第二编小结:东北城市的识别钥匙是<b>单位制存量</b>——工人村、大院、厂区铁路专用线构成主城底盘;乡村的钥匙是<b>垦殖史</b>——大屯间距、农场连队、林区局址。资源(钢、油、煤、木)决定城市的兴起节奏,资源枯竭与人口南流决定今天的收缩节奏;2010 年代后的东北城市更新,很大程度上就是工人村改造(→卷三 §6.3)的同义反复。</div>
+
+<!-- ============================================================ -->
+<!-- 第三编 华东 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v3">
+<div class="vol-no">第三编</div>
+<h2>华东 · 沪苏浙皖闽赣鲁</h2>
+<div class="vol-range">上海 · 南京 · 苏州 · 杭州 · 合肥 · 青岛 —— 全国城市层最密的地区:租界存量、园区经济、县域经济与古城保护的原发地</div>
+</div>
+
+<div class="sec" id="s31"><h3>§3.1 上海实录<span class="sec-sub">SHANGHAI</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">上海</span><span class="en">Shanghai</span>
+<div class="meta">直辖市 · 华东大区中心(区号 021)· 结构:里弄—外滩—陆家嘴—张江—五个新城</div></div>
+<div class="entry-def">一条东西轴读懂上海:外滩—南京路的近代层,陆家嘴的天际线层,世纪大道尽端张江的园区层,再往外是嘉定、青浦、松江、奉贤、南汇五个新城——租界城市、CBD 城市、园区城市、多中心城市四代形态在全国最完整的并置。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>浦西:外滩一列 1920—1930 年代银行大楼,往南是老城厢(豫园一带残留的清末街巷),中间静安、徐汇、虹口、杨浦是大片里弄与老公房交织的居住海(→卷三 §1.2);原租界的梧桐街道与新天地、田子坊等改造街区相邻。浦东:陆家嘴三件套(金茂、环球、上海中心)与世纪大道;花木是行政文化区;再向东 20 公里是张江——生物医药实验室、集成电路厂区、商品房社区与地铁终点站交织的"科学城"。五个新城各自成点:嘉定(汽车)、松江(大学城)、青浦(华为练秋湖方向)、奉贤、南汇(临港方向)。</p>
+<p><b>张江细看。</b>张江高科技园区 1992 年建园,位于内环与外环之间<sup class="ref">[4]</sup>;1999 年上海实施"聚焦张江"战略,集成电路与生物医药两大产业定向集聚<sup class="ref">[11]</sup>。今天的形态:龙东大道—祖冲之路一带是实验室与厂房组团,地铁 2 号线沿线是张江高科站、金科路站串起的写字楼群,周边是数个大型居住社区(香楠、玉兰香苑等动迁房与商品房混合)。它不是 CBD——楼不高、路宽、绿多,实验楼与变电站、危险品库相邻;也不是大学城——复旦、交大在此设研究院但主校区在别处。全国 "高新区"的标准形态大体即此:产业园区+居住配套+地铁站,三类功能平铺。</p>
+<p><b>怎么来的。</b>1845 年英租界设立、此后百年租界扩张形成浦西格局(→卷三 §1.2);1990 年浦东开发开放,陆家嘴按金融区规划建成;1992 年张江建园、1999 年聚焦战略,2011 年升格张江国家自主创新示范区核心园;"五个新城"2021 年写入上海规划纲要,是超大城市从单核到多中心的现行一步<sup class="ref">[11]</sup>。上海因此把全国城市的"四代形态"同屏保存:走进任何一段,都像走进对应年代的中国城市标准像。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-1</span><span class="t">上海东西轴结构剖面(外滩 → 临港)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="上海东西轴结构剖面示意图">
+<line x1="30" y1="240" x2="730" y2="240" stroke="#111" stroke-width="2"/>
+<text x="46" y="262" font-size="9.5" fill="#444">黄浦江</text>
+<rect x="90" y="150" width="60" height="90" fill="#ddd" stroke="#555"/><text x="120" y="140" font-size="10" text-anchor="middle">老城厢</text><text x="120" y="152" font-size="8.5" fill="#444" text-anchor="middle">豫园</text>
+<rect x="160" y="110" width="90" height="130" fill="#bbb" stroke="#555"/><text x="205" y="100" font-size="10" text-anchor="middle">外滩建筑群</text><text x="205" y="112" font-size="8.5" fill="#444" text-anchor="middle">1920—30s</text>
+<rect x="260" y="120" width="110" height="120" fill="#ddd" stroke="#555"/><text x="315" y="110" font-size="10" text-anchor="middle">里弄与老公房</text><text x="315" y="122" font-size="8.5" fill="#444" text-anchor="middle">静安/徐汇/杨浦</text>
+<rect x="380" y="60" width="80" height="180" fill="#111"/><text x="420" y="52" font-size="10" text-anchor="middle">陆家嘴</text><text x="420" y="64" font-size="8.5" fill="#fff" text-anchor="middle">三件套</text>
+<rect x="470" y="130" width="90" height="110" fill="#efefef" stroke="#555"/><text x="515" y="120" font-size="10" text-anchor="middle">花木</text><text x="515" y="132" font-size="8.5" fill="#444" text-anchor="middle">行政文化区</text>
+<rect x="570" y="140" width="110" height="100" fill="#fff" stroke="#111" stroke-dasharray="5 3"/><text x="625" y="130" font-size="10" text-anchor="middle">张江科学城</text><text x="625" y="142" font-size="8.5" fill="#444" text-anchor="middle">实验室+厂区+社区</text>
+<rect x="690" y="160" width="40" height="80" fill="#fff" stroke="#111" stroke-dasharray="3 3"/><text x="710" y="152" font-size="9" text-anchor="middle">川沙/</text><text x="710" y="164" font-size="9" text-anchor="middle">临港向</text>
+<line x1="380" y1="240" x2="380" y2="255" stroke="#111"/>
+<text x="380" y="270" font-size="9.5" fill="#444" text-anchor="middle">黄浦江(1990 年前止步于此)</text>
+<line x1="30" y1="285" x2="730" y2="285" stroke="#999" stroke-dasharray="3 3"/>
+<text x="46" y="280" font-size="9" fill="#666">东进时序:老城(1840s 前)→ 外滩(1920s)→ 里弄圈层(1930s)→ 陆家嘴(1990s)→ 张江(2000s)→ 新城(2020s)</text>
+<text x="46" y="26" font-size="10" fill="#666">读法:从左到右即从旧到新;楼高与路宽同步增长,功能从商住混合走向园区单一。</text>
+</svg>
+</div>
+<div class="fig-note">上海的东西轴是全国城市发展时序的"全息胶片":每一段对应一代全国通行形态(里弄时代、CBD 时代、园区时代、新城时代)。张江段刻意画"矮"——园区城市不比高度,比路网密度与实验室数量。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-1</span><span class="no">长三角园区档案(上海张江 / 苏州工业园)</span></div>
+<table class="spec-t">
+<tr><td class="k">张江</td><td>1992 年建园,1999 年"聚焦张江",2011 年国家自主创新示范区;产业:集成电路、生物医药、人工智能;形态:研发楼 6—10 层 + 厂区 + 大型居住社区,地铁 2/13 号线贯通<sup class="ref">[4][11]</sup></td></tr>
+<tr><td class="k">苏州工业园</td><td>1994 年中新两国合作共建,金鸡湖两岸:西岸 CBD(东方之门)、东岸科文中心与住宅群;形态上"园区即新城",是开发区升级为综合性城区的原型</td></tr>
+<tr><td class="k">通行形态</td><td>路网 400—600 m 方格;产业用地占一半以上;配 1—2 个地铁/快速公交走廊;管委会体制(准政府),商品房与人才公寓并行</td></tr>
+<tr><td class="k">全国分布</td><td>国家级经开区 219 家、高新区 169 家(2018 目录口径),各省会与地级市几乎每城一个<sup class="ref">[3]</sup></td></tr>
+<tr><td class="k">识别口诀</td><td>楼矮路宽绿多、地名带"大道/路"编号、公交站名以企业命名——园区城市的三个体征</td></tr>
+</table></div>
+
+<div class="sec" id="s32"><h3>§3.2 省会实录:南京 · 杭州 · 合肥<span class="sec-sub">PROVINCIAL CAPITALS</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">南京</span><span class="en">Nanjing</span>
+<div class="meta">江苏省会 · 结构:明城墙内老城—河西新城—江北新区</div></div>
+<div class="entry-def">民国首都规划的存留城市:中山大道轴线与两侧法国梧桐至今是城市主骨架,城墙内老城(新街口、夫子庙)与城墙外新区分层;河西是 2000 年代 CBD,江北新区 2015 年获批国家级。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>中山陵—中山门—新街口—鼓楼—下关一线的林荫大道是南京的脊梁,两侧梧桐合抱(1928 年为迎奉孙中山灵榇而植);颐和路公馆区是成片民国别墅;明城墙 35 公里遗存可环行大半,城墙根下的老小区与城墙共生。新街口"中华第一商圈"四角高楼对峙;夫子庙—老门东是秦淮风貌带。河西:奥体、江苏大剧院、金融城沿江排布。江北新区有研创园与老浦口火车站(民国津浦线终端)。</p>
+<p><b>怎么来的。</b>1929 年《首都计划》确立了中山大道、林荫道与功能分区(→卷二 §2.3、卷三 §1.3),梧桐骨架沿用至今;2005 年十运会带动河西开发,2015 年江北新区获批国家级新区<sup class="ref">[2]</sup>。南京是"民国层保存最完整的省会",也是六朝、明朝、民国三代都城格局同存的城市——但今天街道上最直观的,仍是那排梧桐。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">杭州</span><span class="en">Hangzhou</span>
+<div class="meta">浙江省会 · 结构:西湖老城—钱江新城—滨江—未来科技城</div></div>
+<div class="entry-def">被西湖锁定形状的城市:湖东老城保持低层,城市向东跨钱塘江发展——钱江新城(CBD)、滨江(高新)、钱塘(制造)、未来科技城(科创)四片新城,亚运 2023 年又添莲花碗场馆带。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>西湖东岸湖滨路是老城商业中心,建筑高度严格向湖递减;南山路、北山街是民国别墅与茶馆带。钱江新城:市民中心、大剧院与"日月同辉"造型建筑在钱塘江边一字排开,对岸是滨江高新区的写字楼群(网易、大华等)。再往西,未来科技城围绕阿里巴巴西溪园区成片生长。运河边拱宸桥、小河直街是老工业区改造住区。城市外围,千岛湖方向的青山绿水即"县域景区带"。</p>
+<p><b>怎么来的。</b>西湖自 2002 年免费开放并连续整治,环湖形成公共绿地;城市重心 2000 年后东移跨江,钱江新城 2000 年代成形;滨江高新区是杭州高新区(1991 年国家级)的滨江区部分;未来科技城 2010 年代随电商产业成势。杭州的普遍启示:一个省级旅游名湖决定城市形态(限高、环湖、跨江),同类还有济南大明湖、福州西湖的缩小版。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">合肥</span><span class="en">Hefei</span>
+<div class="meta">安徽省会 · 结构:老城三孝口—政务区—滨湖新区—高新经开</div></div>
+<div class="entry-def">2000 年代后扩张最快的省会之一:环城河内小老城,西南政务区(行政+奥体),南滨湖新区(省政务中心+金融后台),西高新(科大系产业)——"科教城"从口号变成城市的实际产业底盘。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>环城公园(老城墙基)围着一圈小老城,长江中路串三孝口;政务区天鹅湖畔是政务大楼、大剧院与高层住宅;滨湖新区沿巢湖北岸展开,省行政中心 2016 年迁入;西边高新区聚集科大讯飞、量子实验室等"科大系"机构。科学岛(董铺水库中的研究基地)是城市最安静的一角。地铁 1—3 号线串联这些组团。</p>
+<p><b>怎么来的。</b>合肥 1952 年成为省会,起点是一座小县城;中科大 1970 年南迁合肥奠定科教底色;2002 年起政务文化新区、2006 年滨湖新区先后启动,是"政务区+滨湖"这一组省会新区模板的合肥版本;2010 年代入长三角城市群规划后扩张提速。合肥说明了省会的通行成长逻辑:行政搬迁定新城方向,科教存量定产业方向。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">福州 · 济南 · 南昌</span><span class="en">Fuzhou · Jinan · Nanchang</span>
+<div class="meta">华东其余省会 · 一句话实录</div></div>
+<div class="entry-def">福州:三坊七巷老城+东江滨+滨海新城(长乐方向),榕树与骑楼残段并存;济南:大明湖—趵突泉老城限高,经十路九十公里东西轴,城市跨黄河北拓;南昌:八一广场老城+赣江两岸,红谷滩是 2000 年代新城,九龙湖承接省级行政。</div>
+<div class="entry-bd">
+<p><b>细看。</b>福州三坊七巷是南方省会保存最完整的里坊街区,2000 年代整体修复;济 南"泉城特色风貌带"要求千佛山—大明湖视线通廊内控高,故老城天际线平缓、CBD(奥体、CBD 轴线)西移;南昌红谷滩从滩涂变为 CBD 用了十五年,是中部省会"一江两岸"的先行样本。三城共性:老城因山水或文物受限,新区沿江/沿湖另起。</p>
+</div>
+</div>
+
+<div class="sec" id="s33"><h3>§3.3 计划单列市:青岛 · 宁波 · 厦门<span class="sec-sub">SEPARATELY PLANNED CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">青岛</span><span class="en">Qingdao</span>
+<div class="meta">山东 · 计划单列市 · 结构:德占老城—八大关—东部新区—西海岸</div></div>
+<div class="entry-def">"红瓦绿树、碧海蓝天"的德占规划城市:火车站—栈桥—总督府一线的石造红瓦建筑群与起伏街道,东侧八大关是花园洋房区;1990 年代后东部香港中路 CBD 兴起,2014 年西海岸新区获批国家级、跨海隧道与大桥把城市摊到胶州湾两岸。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城区街道随山势起伏,蒙莎红顶、花岗石基座的德式公共建筑(总督府、基督教堂)与后来的里院(青岛版商住合院)并存;八大关十条路各自种植一种行道树,洋房花园连片。东部香港中路高层群是 1990 年代后的新青岛;西海岸(原胶南、黄岛)是新区+影视城(东方影都)+港口。崂山在东郊,石老人海水浴场沿岸是旅游界面。</p>
+<p><b>怎么来的。</b>德国 1897—1914 年按规划建城,留下整体风貌(→卷三 §1.2);1994 年市政府东迁带动东部 CBD——全国"市政府东迁带动新城"的第一批;2014 年西海岸新区获批<sup class="ref">[2]</sup>。青岛的形态密码是海湾:城市沿胶州湾与黄海岸线逐段展开,每一段对应一个时代。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">宁波 与 厦门</span><span class="en">Ningbo &amp; Xiamen</span>
+<div class="meta">浙江/福建 · 计划单列市</div></div>
+<div class="entry-def">宁波:三江口老城(天一阁、老外滩)+ 东部新城 + 杭州湾新区,港口制造业底盘;厦门:本岛骑楼老街(中山路)+ 环岛路 + 集美学村嘉庚建筑 + 跨海发展的岛外四区,全国最具旅游界面的计划单列市。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>宁波老外滩比上海外滩早二十年开埠,现存教堂、商铺一列;东部新城是 2000 年代标准政务文化新区;杭州湾新区(慈溪方向)是滩涂上的汽车产业城。厦门:中山路骑楼街仍营业,鹭江道对望鼓浪屿(全岛历史风貌,1900—1930 年代领事馆与洋楼);环岛路串起会展与会展北 CBD;集美学村的红砖嘉庚楼群(陈嘉庚兴学,中式屋顶+西式躯体);岛外海沧、集美、同安、翔安四区跨海连片,翔安有新机场在建。</p>
+<p><b>怎么来的。</b>宁波 1844 年开埠、1980 年代港口复兴,城市沿甬江与北仑港两轴展开;厦门 1980 年设经济特区(首批四个之一)<sup class="ref">[4]</sup>,先本岛后岛外,跨岛发展 2002 年后提速。两城共同点:港口+侨乡双资源,老城小而完整,新城大而分散。</p>
+</div>
+</div>
+
+<div class="sec" id="s34"><h3>§3.4 地级市与县域:苏州与"百强县"走廊<span class="sec-sub">SUZHOU &amp; COUNTY ECONOMY</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">苏州</span><span class="en">Suzhou</span>
+<div class="meta">江苏地级市(经济总量全国前十)· 结构:护城河内古城—园区—高新区—吴中吴江</div></div>
+<div class="entry-def">"古城整体保护 + 新区外围展开"的教科书:14.2 平方公里古城内限高限开发,平江路、山塘街水巷格局保存;东边苏州工业园区(金鸡湖 CBD),西边高新区(狮山),南吴江太湖新城——古城不动,四面生长。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>古城内:双塔、平江路水陆并行街道、耦园网师园等园林嵌在民居中,建筑基本黑白灰低层;城墙遗址环城,护城河游船通行。园区:金鸡湖西岸东方之门与 CBD 楼群、东岸诚品与科文中心,路网方正如棋盘,完全另一座城。高新区狮山商圈、吴中太湖新城依次是 2000/2010 年代作品。昆山方向,高铁 20 分钟,连成一条城市带。</p>
+<p><b>怎么来的。</b>1986 年版总规即确立"古城保护、新区另建"方针,是全国最早整体保护古城的城市之一<sup class="ref">[11]</sup>;1994 年中新合作园区落地东郊;此后高新区、吴中、相城、吴江逐向展开。苏州因此成为"新旧分离"模式的全国样板——与"新旧叠置"的北京、"新旧拼贴"的天津并列为三种古城处置路线(→卷三 §4.2)。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">苏南浙北县域(昆山 · 江阴 · 慈溪 · 义乌)</span><span class="en">The Sunan-Zhebei County Belt</span>
+<div class="meta">江苏苏州/无锡代管、浙江宁波/金华代管县级市 · 全国百强县最密走廊</div></div>
+<div class="entry-def">县城体量超过多数地级市的"县域城市带":昆山以开发区起家、建成区与上海苏州缝合;江阴以沿江制造业与上市公司著称;慈溪靠家电块状经济;义乌靠小商品市场——四条路,同一现象:县域即城市。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>昆山:人民路老城之外,长江路两侧是台资电子厂,花桥对接上海地铁 11 号线,城市界面与地级市无异;江阴:长江边码头与钢厂,城区高楼沿江排布,华西村的塔群与别墅在东郊;慈溪:杭州湾滩涂上的家电产业区,新城河两岸 2010 年代住区;义乌:国际商贸城 640 余亩的市场建筑群是城市绝对中心,福田市场区写字楼、跨境电商园区环布,阿拉伯餐厅与外语招牌在县城界面里毫无违和。</p>
+<p><b>怎么来的。</b>昆山 1985 年自费办开发区、1992 年升国家级,是"自费开发区"鼻祖;江阴 1980 年代乡镇企业转制为上市公司集群;义乌 1982 年从湖清门第一代市场起步,经历五代市场升级<sup class="ref">[12]</sup>。县域经济的形态后果:县城建成区 30—80 平方公里、城区人口 50—100 万,公共建筑(体育馆、图书馆、三甲医院分院)按地级市标准配置——"县"的行政级别,"市"的城市实体,这是华东区别于全国的最硬一条。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-2</span><span class="t">苏南县域结构(昆山模式)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 320" width="100%" role="img" aria-label="苏南县域结构示意图">
+<rect x="30" y="30" width="700" height="260" fill="#fff" stroke="#111"/>
+<text x="46" y="52" font-size="12" font-weight="700">县域(昆山)</text>
+<rect x="200" y="120" width="150" height="110" fill="#f2f2f2" stroke="#111"/>
+<text x="275" y="140" font-size="11" font-weight="700" text-anchor="middle">老县城</text>
+<text x="275" y="158" font-size="9" fill="#444" text-anchor="middle">人民路十字街</text>
+<text x="275" y="174" font-size="9" fill="#444" text-anchor="middle">1980s 商业中心</text>
+<rect x="390" y="100" width="180" height="150" fill="#fff" stroke="#111"/>
+<text x="480" y="120" font-size="11" font-weight="700" text-anchor="middle">开发区(1985 自费起步)</text>
+<rect x="405" y="132" width="70" height="24" fill="#ddd" stroke="#555"/><text x="440" y="148" font-size="9" text-anchor="middle">台资电子厂</text>
+<rect x="485" y="132" width="70" height="24" fill="#ddd" stroke="#555"/><text x="520" y="148" font-size="9" text-anchor="middle">标准厂房</text>
+<rect x="405" y="166" width="70" height="24" fill="#efefef" stroke="#555"/><text x="440" y="182" font-size="9" text-anchor="middle">高层住区</text>
+<rect x="485" y="166" width="70" height="24" fill="#efefef" stroke="#555"/><text x="520" y="182" font-size="9" text-anchor="middle">人才公寓</text>
+<rect x="405" y="200" width="150" height="24" fill="#fafafa" stroke="#555"/><text x="480" y="216" font-size="9" text-anchor="middle">市级标配:体育中心/图书馆/三甲分院</text>
+<rect x="60" y="90" width="110" height="70" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+<text x="115" y="110" font-size="10" font-weight="700" text-anchor="middle">花桥</text>
+<text x="115" y="126" font-size="8.5" fill="#444" text-anchor="middle">对接上海 11 号线</text>
+<text x="115" y="140" font-size="8.5" fill="#444" text-anchor="middle">沪苏边界缝合带</text>
+<rect x="600" y="90" width="110" height="70" fill="#fff" stroke="#111" stroke-dasharray="4 3"/>
+<text x="655" y="110" font-size="10" font-weight="700" text-anchor="middle">各镇</text>
+<text x="655" y="126" font-size="8.5" fill="#444" text-anchor="middle">"一镇一品"</text>
+<text x="655" y="140" font-size="8.5" fill="#444" text-anchor="middle">镇级工业区+商住</text>
+<line x1="60" y1="230" x2="700" y2="230" stroke="#555" stroke-width="2"/>
+<text x="380" y="224" font-size="9.5" fill="#444" text-anchor="middle">沪宁走廊(国道+高速+京沪高铁,县域第一发展轴)</text>
+<text x="46" y="272" font-size="10" fill="#666">读法:县域=老县城+开发区+强镇+走廊缝合;建成区 30—80 ㎞²,县级行政、地级实体。</text>
+</svg>
+</div>
+<div class="fig-note">昆山模式的核心不是"有钱",而是结构:开发区从自费工业区长成城市新区,镇各自形成专业产业(模具、传感器等),县域通过轨道交通与大城市缝合。江阴、张家港、常熟、慈溪、诸暨同构;义乌是市场型变体(市场即中心,工厂在外围乡镇)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-2</span><span class="no">苏南浙北县域档案</span></div>
+<table class="spec-t">
+<tr><td class="k">建成区</td><td>30—80 ㎞²(昆山约 70,义乌约 55);城区常住人口 50—120 万</td></tr>
+<tr><td class="k">标配</td><td>县一中(often 省重点)、三甲分院、体育中心、图书馆、国际学校、综合体 2+;高铁站基本都有</td></tr>
+<tr><td class="k">产业型</td><td>昆山(台资电子)/江阴(沿江制造+资本)/慈溪(家电块状)/义乌(市场)/张家港(港口冶金)</td></tr>
+<tr><td class="k">居住形态</td><td>2000 年代多层+2010 年代高层混合;城中村与安置社区并存;房价与地级市比肩</td></tr>
+<tr><td class="k">与普通县城之别</td><td>普通县城以行政带动,百强县以产业带动——形态差别在开发区密度与镇区规模,不在老城</td></tr>
+</table></div>
+
+<h4>华东地级市实录表(逐省)</h4>
+<table class="t">
+<tr><th style="width:60px">省</th><th>城市与当下格局(全部地级市)</th></tr>
+<tr><td><b>江苏</b></td><td>南京、苏州(§3.2、§3.4);无锡(太湖新城+物联网产业,蠡湖界面);常州(老城+环球港,新能源产业 2020s 发力);镇江(沿江山地小城,西津渡);扬州(古城瘦西湖限高,东关街);泰州(医药城);南通(建筑之乡,沪苏通跨江,通州湾填海);盐城(滩涂风电集群,韩资园区);淮安(运河都,周恩来故里);宿迁(电商名城,骆马湖);徐州(老工业转型,地铁,淮海经济区中心);连云港(陇海起点港城,自贸片区)</td></tr>
+<tr><td><b>浙江</b></td><td>杭州、宁波(§3.2、§3.3);温州(民营发源地,瓯江两岸,1980 年代自建房立面谱系完整);嘉兴(南湖,乌镇会展驱动文旅);湖州(绿水青山理念发源地安吉,莫干山民宿带);绍兴(古城+柯桥轻纺城);金华(义乌市场、横店影视城在东阳);衢州(南孔古城,化工);舟山(群岛市,自贸港区,渔港风貌);台州(民营制造,吉利起点);丽水(山水生态市,梯田古村)</td></tr>
+<tr><td><b>安徽</b></td><td>合肥(§3.2);芜湖(奇瑞汽车城,长江港);马鞍山(钢城,宁马同城);铜陵(铜冶炼);安庆(老省会,振风塔);黄山市(徽州文化,屯溪老街,宏村西递辖内);滁州(南京都市圈,家电制造);阜阳(人口大市,劳务输出枢纽);亳州(药都);宿州、六安、池州、宣城(皖北皖西皖南农业生态市);淮南、淮北(两淮煤城);蚌埠(京沪枢纽,玻璃工业)</td></tr>
+<tr><td><b>福建</b></td><td>福州、厦门(§3.2、§3.3);泉州(民营鞋服之都,晋江石狮强县市,宋元海丝遗迹);漳州(古城+片仔癀,东山岛);莆田(鞋服制造,湄洲岛);三明(沙县小吃原乡,工业内迁史);南平(武夷山,茶产业);龙岩(客家祖地,古田会议址,土楼带西缘);宁德(锂电产业带动,霞浦滩涂摄影地)</td></tr>
+<tr><td><b>江西</b></td><td>南昌(§3.2);九江(长江港,庐山门户);景德镇(瓷都,陶溪川工业改造);萍乡(安源工运史);新余(钢城,光伏起伏);鹰潭(铜产业,龙虎山);赣州(客家围屋,稀土,脐橙,省域副中心);吉安(井冈山门户);宜春、抚州(农业生态市);上饶(三清山,婺源乡村带,光伏制造)</td></tr>
+<tr><td><b>山东</b></td><td>济南、青岛(§3.2、§3.3);淄博(石化陶瓷老城,2023 年文旅热点);枣庄(煤城转型,台儿庄古城重建);东营(胜利油田,黄河口);烟台(海岸城,苹果与葡萄酒,长岛);潍坊(风筝都,寿光蔬菜);济宁(孔孟故里曲阜邹城);泰安(泰山脚下);威海(最整洁海滨城,韩企集聚);日照(港口+万平口);临沂(北方最大商贸物流城,沂蒙山区);德州、聊城、滨州、菏泽(鲁西北平原农业市,曹县汉服与木制品出圈)</td></tr>
+</table>
+
+<div class="sec" id="s35"><h3>§3.5 乡村实录:水乡村、山村与滨海渔村<span class="sec-sub">VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">江南水乡村(通则)</span><span class="en">The Jiangnan Water Village</span>
+<div class="meta">苏南浙北杭嘉湖平原 · 代表:周庄、同里、乌镇、西塘及无数未旅游化村庄</div></div>
+<div class="entry-def">沿河而建的村庄:民居夹河两岸,石桥相连,埠头洗衣,白墙黛瓦或瓷砖自建混布;旅游化的古镇将其冻结在清末民初,未旅游化的村庄则按全国农房四代谱系正常翻新(→卷三 §5.3)。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>古镇(周庄、乌镇):河街平行、桥宅相连,商铺沿河皮展开;乌镇西栅是整体产权收购后统一改造的样板。普通村庄:1980—1990 年代瓷砖二层沿河而建,河埠仍在使用;水网田块小,桑基鱼塘残存在湖州方向;村口香樟、河埠石阶、洗衣妇人构成水乡日常。拆迁安置社区(苏南普遍):多层+小高层统一建设,村内河塘被填或保留为景观。</p>
+<p><b>怎么来的。</b>水乡村形态由圩田农业决定:宅沿河、田在圩、船作路;1990 年代后陆路取代水路,新建房转向沿公路排布,"沿河村"变"沿路村";旅游古镇化是 1990 年代(周庄 1989 年起)遗产经济的结果(→卷三 §5.5)。今日苏南乡村的实际形态主流已是安置社区+工业厂房,水乡界面集中保存在古镇景区内。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">浙闽山村与滨海渔村</span><span class="en">Mountain &amp; Fishing Villages</span>
+<div class="meta">浙西南/闽西北 / 闽浙海岸</div></div>
+<div class="entry-def">山村的石墙木构与层层梯田(松阳、景宁一带保留成片);闽西南客家土楼群(永定、南靖)是家族聚居的巨型夯土环楼;滨海渔村则是石屋渔港——象山、霞浦、平潭石头厝顺坡而叠。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>松阳古村:黄泥墙+木构+夯土晒场嵌在梯田里,民宿化改造近年密集;永定土楼:承启楼等环形夯土巨宅,四层环廊、祖堂居中,一楼家族百间;平潭石头厝:花岗石墙压瓦石,海雾里连片灰色村落;霞浦东壁滩涂摄影点已成产业。山村的普遍近况:常住多为老人,梯田部分抛荒或流转,民宿与写生经济是新的建房资金来源。</p>
+<p><b>怎么来的。</b>土楼是明清客家族群防御聚居的产物(2008 年列入世界遗产,→卷三 §4.4);石厝是沿海台风区就地取材的必然;它们的当代命运同款:先是空心化,继而因风貌完整被文旅资本整体租用——"空心村→旅游村"是全国传统村落的通行剧本(→卷三 §5.5),华东因为消费市场近,剧本上演得最密。</p>
+</div>
+</div>
+
+<div class="note">第三编小结:华东的城市识别钥匙是<b>层级密度</b>——省会、单列市、地级市、强县、强镇五级都有完整实体,县比西部的市还大;乡村钥匙是<b>水系与市场</b>——沿河村变沿路村、古镇冻结、山村民宿化。张江、苏州园区、昆山开发区、义乌市场是四张"通行形态"的原产地:全国的高新区、园区新城、县域开发区、商贸城,都是这四张模板的复制。</div>
+
+<!-- ============================================================ -->
+<!-- 第四编 中南 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v4">
+<div class="vol-no">第四编</div>
+<h2>中南 · 豫鄂湘粤桂琼</h2>
+<div class="vol-range">武汉 · 郑州 · 长沙 · 广州 · 深圳 · 南宁 —— 人口最密的大区:铁路枢纽城、码头商埠城、特区城、专业镇城与自贸港,全国城市类型的一半原型在此</div>
+</div>
+
+<div class="sec" id="s41"><h3>§4.1 武汉实录:三镇与光谷<span class="sec-sub">WUHAN</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">武汉</span><span class="en">Wuhan</span>
+<div class="meta">湖北省会 · 中南大区中心(区号 027)· 结构:武昌—汉口—汉阳三镇 + 光谷</div></div>
+<div class="entry-def">长江与汉江交汇处由三个城市拼成的省会:汉口是码头商埠,汉阳是工业老区,武昌是文教省府;1990 年代起,第三环线外又长出第四块——光谷。今天去武汉,实际上是去四座城。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>汉口:沿江大道一带银行大楼(近代租界,江汉关钟楼为标志),背后是中山大道商业街与老里份(武汉版里弄);汉正街批发市场仍在;西北侧是 1990 年代起的建设大道金融带。汉阳:龟山、晴川阁,汉阳造艺术区(旧厂房改造)。武昌:黄鹤楼—户部巷—长江大桥一线是游客界面;东湖 33 平方公里是中国最大城中湖,环湖是武大、华科等高校与省府驻地;司门口、中南路是老商业。跨江:长江大桥(1957)与二桥、隧道、地铁把三镇缝在一起,两江四岸的江滩公园是市民日常。再往东南 15 公里,关山一带,就是光谷。</p>
+<p><b>光谷细看。</b>东湖新技术开发区 1988 年创建,1991 年成为首批国家级高新区之一<sup class="ref">[3][4]</sup>;2001 年获批国家光电子产业基地,"武汉·中国光谷"由此得名。眼下的形态分三段:西段是关山老区——光谷广场大转盘(鲁巷)周围,光谷步行街(1350 米,欧洲风情街立面)、光谷国际广场、地铁 2 号线终点站组连成商业中心,周边是华中科技大学与光电实验室;中段沿关山大道、光谷大道两侧排研发楼与厂区(长飞光纤、烽火通信),地铁 2 号线南延线 2019 年通到佛祖岭;东段是 2010 年代新建的光谷中心城——高新大道两侧政府机关、会展中心、科技馆与大片新住区(绿地光谷中心城等),有轨电车 T1、T2 线 2018 年通车,小米武汉总部、华为研究所、长江存储(国家存储器基地,2016 年动工)在这一带。高新区托管范围从起步的 24 平方公里扩到 500 余平方公里,把江夏、洪山部分街道整体划入——"开发区比城区大"在全国通行(张江之外更极端的版本)。</p>
+<p><b>怎么来的。</b>汉口 1861 年开埠,租界与码头奠定商业城格局(→卷三 §1.2);1889—1907 年张之洞督鄂,汉阳铁厂、枪炮厂开启工业城,武昌兴学堂;1957 年长江大桥通车,三镇第一次陆路相连;1991 年高新区获批,选址武昌郊外的关山——离城 15 公里的菜地;2000 年代光电子产业集聚、"光谷"品牌确立,开发区管委会行使政府职能,区域连续四次扩容;2017 年武汉获批建设国家中心城市<sup class="ref">[9]</sup>。光谷的形态逻辑与张江一致(产业+居住+地铁站平铺),差别在尺度:光谷是一整座 50 万人口的新城,张江是一个 20 万人的园区。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-1</span><span class="t">武汉三镇与光谷结构</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="武汉三镇与光谷结构示意图">
+<rect x="30" y="30" width="700" height="270" fill="#fff" stroke="#111"/>
+<path d="M 60 60 L 700 60 L 660 200 L 120 240 Z" fill="#eee" stroke="none"/>
+<path d="M 250 40 C 300 140 340 220 420 300" fill="none" stroke="#111" stroke-width="5"/>
+<text x="205" y="52" font-size="11" font-weight="700">汉 江</text>
+<path d="M 60 160 C 200 130 420 190 700 170" fill="none" stroke="#111" stroke-width="6"/>
+<text x="60" y="146" font-size="12" font-weight="700">长 江</text>
+<rect x="90" y="80" width="120" height="55" fill="#fff" stroke="#111"/>
+<text x="150" y="100" font-size="11" font-weight="700" text-anchor="middle">汉口</text>
+<text x="150" y="114" font-size="8.5" fill="#444" text-anchor="middle">码头商埠 1861 开埠</text>
+<text x="150" y="126" font-size="8.5" fill="#444" text-anchor="middle">租界银行楼+里份</text>
+<rect x="95" y="185" width="110" height="50" fill="#fff" stroke="#111"/>
+<text x="150" y="203" font-size="11" font-weight="700" text-anchor="middle">汉阳</text>
+<text x="150" y="217" font-size="8.5" fill="#444" text-anchor="middle">工业老区 1890 起</text>
+<text x="150" y="229" font-size="8.5" fill="#444" text-anchor="middle">铁厂旧址+艺术区</text>
+<rect x="330" y="70" width="130" height="60" fill="#fff" stroke="#111"/>
+<text x="395" y="90" font-size="11" font-weight="700" text-anchor="middle">武昌</text>
+<text x="395" y="104" font-size="8.5" fill="#444" text-anchor="middle">文教省府</text>
+<text x="395" y="116" font-size="8.5" fill="#444" text-anchor="middle">东湖+高校群</text>
+<rect x="480" y="190" width="200" height="85" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<text x="580" y="210" font-size="11" font-weight="700" text-anchor="middle">光谷(东湖高新区 1988)</text>
+<rect x="495" y="220" width="55" height="24" fill="#ddd" stroke="#555"/><text x="522" y="236" font-size="8.5" text-anchor="middle">关山老区</text>
+<rect x="557" y="220" width="55" height="24" fill="#ddd" stroke="#555"/><text x="584" y="236" font-size="8.5" text-anchor="middle">关山大道</text>
+<rect x="619" y="220" width="50" height="24" fill="#ddd" stroke="#555"/><text x="644" y="236" font-size="8.5" text-anchor="middle">中心城</text>
+<text x="580" y="262" font-size="8.5" fill="#444" text-anchor="middle">光电子产业+高校+新城,托管 500+㎞²</text>
+<line x1="395" y1="130" x2="560" y2="190" stroke="#555" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="470" y="168" font-size="8.5" fill="#444">往东南 15 ㎞</text>
+<line x1="215" y1="120" x2="325" y2="110" stroke="#111" stroke-width="3"/>
+<text x="268" y="102" font-size="9" fill="#444">长江大桥 1957</text>
+<text x="46" y="288" font-size="10" fill="#666">读法:两江切出三镇,1957 年大桥缝合,1990 年代高新区跨到武昌东南郊——每一步都顺着水与路的骨架。</text>
+</svg>
+</div>
+<div class="fig-note">三镇结构的全国意义:多数城市只有一个"老城",武汉有三个,所以它的新区不止一个方向——北面长江新区、东南光谷、西南经开区沌口(汽车城)同时生长。两江交汇的地图形状,决定了武汉人报方位先报"在汉口还是武昌"。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-1</span><span class="no">光谷档案(东湖新技术开发区)</span></div>
+<table class="spec-t">
+<tr><td class="k">建制</td><td>1988 年创建,1991 年首批国家级高新区<sup class="ref">[3]</sup>;2001 年国家光电子产业基地("中国光谷");管委会行使一级政府职能,四轮扩容至 500+㎞²</td></tr>
+<tr><td class="k">产业</td><td>光通信(长飞、烽火)、存储芯片(长江存储,2016 动工)、激光、生物医药;高校供给:华中科大、武大相邻,大学生存量全国前三的城市底盘</td></tr>
+<tr><td class="k">形态</td><td>西段关山商业区(光谷广场转盘+步行街)→ 中段关山/光谷大道产业带 → 东段光谷中心城(行政+会展+住区);地铁 2 号线、有轨电车 T1/T2、高新大道三层交通骨架</td></tr>
+<tr><td class="k">居住</td><td>佛祖岭、藏龙岛一带为大型还建社区与商品房混合;关山老区城中村(关西小区等)尚未清零——高新区与城中村相邻是通行现象</td></tr>
+<tr><td class="k">对照</td><td>张江(上海):1992 年,研发 6—10 层楼为主,规模一园区;光谷:1991 年,产城一体,规模一新城;两者即"高新区"的两个尺度档位</td></tr>
+</table></div>
+
+<div class="sec" id="s42"><h3>§4.2 中部省会:郑州 · 长沙 · 南宁<span class="sec-sub">CENTRAL CAPITALS</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">郑州</span><span class="en">Zhengzhou</span>
+<div class="meta">河南省会 · 结构:二七老城—郑东新区—北龙湖—航空港区</div></div>
+<div class="entry-def">火车拉来的省会(→§1.2 同款逻辑):京汉、陇海两条铁路 1904 年在郑州交叉,城市围绕二七塔生长;2000 年后在老城东侧平地起一座郑东新区,再往外是航空港区——全国"铁路城市长成航空城市"的代表。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:二七广场与纪念塔周围是百货商圈,德化街步行街、火车站批发市场群(服装、小商品)至今繁忙。郑东新区:如意湖一圈 CBD 写字楼(千玺广场俗称"大玉米"),环形步行桥、郑州国际会展中心、河南艺术中心三件公共建筑沿湖布置;龙湖是环形的(挖出的人工湖),环湖是金融岛低密度楼宇与豪宅区;龙子湖一圈是十几所高校新校区。往东南 30 公里,新郑机场周边是航空港区:富士康厂区与配套住区、口岸物流仓库,地铁城郊线直达。京广、徐兰等高铁线在此交汇成"米"字形。</p>
+<p><b>怎么来的。</b>1904 年车站带动货栈业,郑州取代开封、洛阳成为河南中心;1954 年省会自开封迁郑;郑东新区 2000 年国际征集规划、2003 年开工,是 2000 年代省会"平地起新城"的早期样本,初期曾被议论空置,2010 年代填满;航空港区 2013 年获批,是首个国家级航空港经济综合实验区<sup class="ref">[8]</sup>;2017 年郑州获批建设国家中心城市<sup class="ref">[9]</sup>。郑州的通行启示:平原省会没有山水约束,新区可以完全按理想图式画——所以它成为"环湖 CBD+环形路网"这一套省会新区的原型地之一。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">长沙</span><span class="en">Changsha</span>
+<div class="meta">湖南省会 · 结构:五一广场老城—湘江西岸大学城—梅溪湖—马栏山</div></div>
+<div class="entry-def">一条湘江穿城,东岸老城与商业,西岸岳麓山与大学城;2010 年代城市沿江西侧向南推到梅溪湖,向北推到马栏山——文教与文娱两台发动机轮流拉动的新一线省会。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>东岸:五一广场—黄兴路步行街—坡子街是商业核心,太平街、潮宗街是老麻石街巷存留;橘子洲在江心,岳麓山在西岸相对。西岸:岳麓书院、中南大学、湖南大学、湖南师大沿麓山南路连成大学城,湘江新区管委会一带是滨江新城;再南,梅溪湖是环人工湖的新城,梅溪湖大剧院(流线造型)与 CBD 楼群、高层住区环湖排布。城北马栏山视频文创产业园是旧厂区(湖南广电周边)转型的园区,湖南卫视系带动文创公司集聚。街面上,茶饮、文食品牌排队的现象全国知名——消费城市是长沙当下最直观的界面。</p>
+<p><b>怎么来的。</b>长沙老城在 1938 年文夕大火中焚毁大半,重建后老街存量少,商业中心始终在五一广场原址;2000 年代跨江发展,2015 年湘江新区获批国家级新区(中部首个)<sup class="ref">[2]</sup>;马栏山 2017 年挂牌。长沙的另一通行特征是住宅限价严格、房价长期低于同档城市,商品房以本地消费为主——"低房价省会"的形成机制是制度,不是地理。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">南宁</span><span class="en">Nanning</span>
+<div class="meta">广西首府 · 结构:朝阳老城—民族大道—东盟商务区—五象新区</div></div>
+<div class="entry-def">绿城:民族大道两侧大王椰与扁桃树覆盖整座城;老城朝阳广场小而密,东面东盟商务区,南面跨邕江是五象新区——一座按"再造一个南宁"目标建设的全省资源集中投放的新城。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>朝阳路—中山路一带是老城商业与夜市街;民族大道是东西主轴,沿线广西人民会堂、博物馆、科技馆、会展中心一字排开;青秀山在东南角,山脚是东盟商务区的高层楼宇群(每栋挂一个东盟国家名)。跨过邕江往南,五象新区路网方正,市图书馆、广西艺术中心、体育中心、总部基地写字楼沿五象大道铺开,新住区大片成色崭新;地铁 1—5 号线已联网。城市满目皆绿——行道树三层高,是全国"绿城"称号的实体。</p>
+<p><b>怎么来的。</b>1958 年广西壮族自治区成立定首府于南宁;2004 年中国—东盟博览会永久落户,民族大道与会展中心按此升级;五象新区 2006 年启动、2010 年代成形,自治区党委政府 2017 年迁入五象(区、市两级行政中心双双南移);近年"强首府"战略继续加码。南宁是"首府集中度极高"的省区样本:广西的铁路、会展、金融资源几乎全部压在南宁,柳州桂林各守工业与旅游,分工清晰(→§4.5)。</p>
+</div>
+</div>
+
+<div class="sec" id="s43"><h3>§4.3 广州 · 深圳<span class="sec-sub">GUANGZHOU &amp; SHENZHEN</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">广州</span><span class="en">Guangzhou</span>
+<div class="meta">广东省会 · 一线城市 · 结构:西关东山老城—天河 CBD—琶洲—南沙</div></div>
+<div class="entry-def">千年商都的分层:荔湾越秀的骑楼与西关大屋是最老一层,天河珠江新城是 1990 年代起的 CBD 层,琶洲是 2010 年代的互联网层,南沙是自贸港层——四层在广州同时营业。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:上下九、恩宁路的骑楼街,永庆坊是老街改造样本;沙面岛是成片近代租界洋楼;东山口是新河浦一带红砖洋楼(民国侨寓);陈家祠是宗祠建筑代表。天河:珠江新城是识别广州当代的标准像——东西双塔、大剧院、省博物馆、图书馆沿中轴花城大道排开,地下是新中轴隧道与花城汇商场;珠江新城以西是体育西路商圈(天河路三大综合体),以北是广州东站与中信广场。琶洲:广交会展馆(每年两届全国性事件)周边,腾讯、阿里、唯品会等互联网总部楼群 2015 年后成排竖起。黄埔区:科学城与中新知识城。南端南沙:自贸片区、港务码头、香港科技大学(广州)。白鹅潭到猎德的珠江两岸,夜游船与江景高层住区并行。</p>
+<p><b>怎么来的。</b>广州 1757 年一口通商起即为外贸枢纽,近代十三行与沙面租界继之(→卷三 §1.2);1957 年广交会创办并延续至今;1993 年珠江新城启动规划,2000 年代建设、2010 年亚运会前后成熟(广州塔同年落成);琶洲互联网集聚区 2015 年起供地;南沙 2012 年获批国家级新区、2015 年广东自贸区南沙片区挂牌<sup class="ref">[2][5]</sup>;2019 年《粤港澳大湾区发展规划纲要》把广州定位为区域核心引擎之一<sup class="ref">[5]</sup>。广州的通行启示:千年商都的布局每一步都跟着贸易形态走——行商在荔湾、会展在海珠、总部在天河、港口在南沙。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">深圳</span><span class="en">Shenzhen</span>
+<div class="meta">广东 · 经济特区 · 一线城市 · 结构:罗湖—福田—南山科技园—前海—龙岗</div></div>
+<div class="entry-def">从宝安县城到超大城市的四十年:罗湖的国贸与东门是最早的特区层,福田是行政金融层,南山是科技层,前海是深港合作层;夹在中间的,是约三分之一建成面积的城中村。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>罗湖:京基一百与国贸大厦(1985 年"三天一层楼"原址)、东门老街人流;向西福田:市民中心(大屋顶造型)、莲花山、平安金融中心(599 米)与会展中心构成行政 CBD;华强北的电子档口街是硬件创业的界面。南山:深圳湾沿线人才公园与总部楼宇(腾讯滨海大厦等),科技园片区写字楼密度全国前列,粤海街道因 2019 年中美贸易摩擦中聚集的多家科技公司被公众知晓——"一个街道等于一座产业城"。前海:桂湾一带玻璃幕墙群从滩涂上竖起,深港青年梦工场、法院、自贸大厦。东部:龙岗大运中心、华为总部所在的坂田。贯穿全市:岗厦、白石洲、大冲等城中村——握手楼、窄巷、底商餐馆,大冲已整体改造为华润城(万象天地),白石洲 2019 年启动签约——"城中村—旧改—综合体"是深圳城市更新的通行三步(→卷三 §6.2)。</p>
+<p><b>怎么来的。</b>1979 年撤宝安县设深圳市,1980 年设经济特区(首批四个之一),蛇口工业区 1979 年"开山炮"先行<sup class="ref">[4]</sup>;1990 年代福田中心区规划确立行政 CBD;1996 年高新区设立带动南山;2010 年前海深港现代服务业合作区启动、2015 年前海蛇口自贸片区挂牌<sup class="ref">[5]</sup>;特区线("二线关")2010 年正式撤销,关内外一体化。深圳的两个通行样本价值:一是"特区—开发区—城市"的演化路径(从政策区长成完整城市,全国高新区学习的母本);二是城中村与新区的共生——低成本居住供给与高端产业并置,全国一二线城市通行,深圳体量最大。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 4-2</span><span class="no">一线城市 CBD 档案(广州珠江新城 / 深圳福田)</span></div>
+<table class="spec-t">
+<tr><td class="k">珠江新城</td><td>1993 规划、2003 年核心区调整后全速建设;占地约 6.5 ㎞²;标志:东塔(530m)、西塔(440m)、广州塔对望;配套:花城大道中轴、地下空间、四大文化建筑</td></tr>
+<tr><td class="k">福田</td><td>市民中心 2004 年启用,平安金融中心 2017 年建成(599m);中轴线北至莲花山、南抵会展中心,是全国"行政+金融共轴"的 CBD 样本</td></tr>
+<tr><td class="k">通行要素</td><td>中轴广场+双塔地标+文化建筑四件套+地铁三线交汇+江景/山景对景——2000 年代省会 CBD 的标准配置,与省级政务新区同图异构</td></tr>
+<tr><td class="k">写字楼外溢</td><td>广州外溢琶洲(互联网)、金融城;深圳外溢后海、前海——CBD 不是一址,是一条带</td></tr>
+<tr><td class="k">识别口诀</td><td>看见"玻璃幕墙群+中轴绿地+文化场馆三件套",即到 2000 年代以后的 CBD 层</td></tr>
+</table></div>
+
+<div class="sec" id="s44"><h3>§4.4 珠三角镇域:东莞与佛山<span class="sec-sub">TOWN-BASED DELTA</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">东莞</span><span class="en">Dongguan</span>
+<div class="meta">广东地级市 · 不设区的"直筒子市" · 下辖 32 个镇街</div></div>
+<div class="entry-def">一座由三十多个镇组成的城市:没有县、没有区,每个镇自成产业小城——虎门服装、长安电子、厚街家具、大朗毛织;城市建成区沿 107 国道与广深铁路连绵几十公里,与广州深圳在地图上无界线。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>虎门:服装批发市场群(富民商场一带)与高铁虎门站;长安:OPPO、vivo 总部厂区与模具厂;厚街:家具大道与展馆;大朗:毛织市场;各镇都有"镇中心广场—镇标—商贸城"的三件套。跨镇的松山湖是 2001 年设立的高新区(生态与研发导向),华为终端 2018 年前后整体迁入,欧洲小镇风格园区成为网红。滨海湾新区(长安虎门沿海)在填海新建。整体印象:整座城市像一条连续的"厂+店+宿舍"长廊,田野在 1990 年代被厂房填满,近年"工改工"拆除旧厂房更新。</p>
+<p><b>怎么来的。</b>1985 年撤县设市、1988 年升地级市,行政上不设区、市直管镇;1978 年全国第一家"三来一补"企业(太平手袋厂)在虎门落地,此后镇村两级集体土地直接招商,厂房与出租屋跟着订单生长;2008 年金融危机后低端环节外迁,松山湖、滨海湾两级新区承接升级。东莞是"镇域即城市"的全国孤本:镇级财政与规划权完整,所以产业按镇分工——它与苏南县域(→§3.4)同属"基层单元很强"的长三角/珠三角通行结构,差别在层级:苏南强在县,珠三角强在镇。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">佛山 · 中山 · 珠海</span><span class="en">Foshan · Zhongshan · Zhuhai</span>
+<div class="meta">广东地级市 · 珠三角西岸</div></div>
+<div class="entry-def">佛山:五个区组成的"拼合市",顺德家电、南海铝材、石湾陶瓷各守一业,北滘镇一镇出了美的、格兰仕两家世界级家电厂;中山:又一个直筒子市,古镇灯饰、小榄五金按镇分工;珠海:特区中最安静的一座,情侣路海岸与大学、横琴对澳合作是两张牌。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>佛山:禅城老城有祖庙与岭南天地(历史街区改造),千灯湖是广东金融高新区的湖面界面;顺德区府所在地大良有老城食街,北滘是美的总部大楼与和美术馆、博智林机器人谷——"镇级城市配套按地级市标准"在此极端化;南海叠滘的龙舟漂移是村一级的传统活动。中山:孙文西路骑楼步行街、岐江桥,古镇镇全世界灯饰档口连片。珠海:情侣路沿海 28 公里串起野狸岛(日月贝大剧院)、渔女像;横琴口岸与澳门一水之隔,琴澳深度合作区的高层群正在长高;西区金湾是机场与航空产业园。深中通道 2024 年通车,中山与深圳半小时相连。</p>
+<p><b>怎么来的。</b>佛山 2002 年区划调整(佛山辖禅城、顺德、南海、高明、三水),顺德、南海连续多年居全国百强区前列,是"强区弱市"结构的通行样本;中山 1988 年升地级市直管镇街;珠海 1980 年设特区(首批四城中最小),2015 年横琴自贸片区挂牌、2021 年横琴粤澳深度合作区方案发布<sup class="ref">[5]</sup>。珠三角西岸的通行逻辑:没有超大城市核,靠专业镇集群+特区政策生长;深中通道、深珠通道规划把"东岸研发、西岸制造"的分工缝成一体。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 4-2</span><span class="t">珠三角专业镇结构(东莞模式)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 320" width="100%" role="img" aria-label="珠三角专业镇结构示意图">
+<rect x="30" y="30" width="700" height="260" fill="#fff" stroke="#111"/>
+<text x="46" y="52" font-size="12" font-weight="700">镇域即城市(东莞)</text>
+<line x1="60" y1="130" x2="700" y2="130" stroke="#111" stroke-width="4"/>
+<text x="380" y="122" font-size="9.5" fill="#444" text-anchor="middle">广深走廊(107 国道 + 广深铁路 + 莞深高速)</text>
+<rect x="70" y="150" width="140" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="140" y="170" font-size="11" font-weight="700" text-anchor="middle">虎门镇</text>
+<text x="140" y="186" font-size="8.5" fill="#444" text-anchor="middle">服装批发市场群</text>
+<text x="140" y="198" font-size="8.5" fill="#444" text-anchor="middle">高铁站+滨海湾新区</text>
+<rect x="240" y="150" width="140" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="310" y="170" font-size="11" font-weight="700" text-anchor="middle">长安镇</text>
+<text x="310" y="186" font-size="8.5" fill="#444" text-anchor="middle">OPPO vivo 厂区</text>
+<text x="310" y="198" font-size="8.5" fill="#444" text-anchor="middle">模具/电子配套</text>
+<rect x="410" y="150" width="140" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="480" y="170" font-size="11" font-weight="700" text-anchor="middle">松山湖(园区)</text>
+<text x="480" y="186" font-size="8.5" fill="#444" text-anchor="middle">2001 高新区</text>
+<text x="480" y="198" font-size="8.5" fill="#444" text-anchor="middle">华为终端 2018 迁入</text>
+<rect x="580" y="150" width="120" height="80" fill="#f2f2f2" stroke="#111"/>
+<text x="640" y="170" font-size="11" font-weight="700" text-anchor="middle">各镇</text>
+<text x="640" y="186" font-size="8.5" fill="#444" text-anchor="middle">厚街家具/大朗毛织</text>
+<text x="640" y="198" font-size="8.5" fill="#444" text-anchor="middle">镇中心广场+商贸城</text>
+<text x="70" y="76" font-size="10">广州</text>
+<line x1="95" y1="72" x2="665" y2="72" stroke="#999" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="670" y="76" font-size="10">深圳</text>
+<text x="46" y="262" font-size="10" fill="#666">读法:市不管区、区不存在,32 个镇街各自是"产业小城";走廊铁路把镇串成连续建成区,城市地图上广深莞几乎无缝。</text>
+</svg>
+</div>
+<div class="fig-note">东莞结构与昆山结构(→图 3-2)对照:同是"强基层单元",昆山是"县强、镇专业、走廊缝合",东莞是"市直管、镇自成、连绵成带"。二者加上佛山的"市拼合、区强",构成珠三角与长三角基层单元的三种排布——理解了这三种,就看懂了中国发达地区城市地图上"县、区、镇"字样的真实分量。</div>
+</div>
+
+<div class="sec" id="s45"><h3>§4.5 广西与海南:柳州 · 桂林 · 海口 · 三亚<span class="sec-sub">GUANGXI &amp; HAINAN</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">柳州 与 桂林</span><span class="en">Liuzhou &amp; Guilin</span>
+<div class="meta">广西地级市 · 一工业一旅游</div></div>
+<div class="entry-def">柳州:被喀斯特山峰围住的工业城,柳钢、五菱的厂区与柳江河道构成城市底盘,近年螺蛳粉产业园把小吃做成了第二产业;桂林:旅游功能压倒一切的城市,老城建筑高度严格控制,只为不挡漓江与峰林的天际线。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>柳州:柳江把城区绕成 U 形,沿江步道与蟠龙山瀑布是市民界面;河西工业区厂区连片,五菱生产基地的物流车队日夜进出;城中村与单位大院并存;街巷里螺蛳粉店密度全国第一,袋装螺蛳粉产业园在西郊。桂林:两江四湖环城水系、象鼻山、东西巷历史街区;老城几乎没有高楼,新区的临桂一带是市政府与CBD(2013 年市府迁临桂新区);阳朔在西面 60 公里,遇龙河边是另一重旅游界面。</p>
+<p><b>怎么来的。</b>柳州是"三线建设"布局的工业城(→卷三 §2.4),1960 年代柳钢、柳工等布点于喀斯特谷地中的铁路枢纽;2020 年前后柳州因螺蛳粉产业链被广泛认知——老工业城市把地方食品做成百亿产业的通行尝试。桂林 1973 年对外开放为旅游城市,"桂林山水甲天下"的景观约束从 1980 年代起即写入城市规划(老城限高),是"风景优先于开发"的全国早期样本;临桂新区是"旅游城也要一座政务新区"的地方版本。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">海口 与 三亚</span><span class="en">Haikou &amp; Sanya</span>
+<div class="meta">海南 · 省会与旅游城市</div></div>
+<div class="entry-def">海口:骑楼老街与常年温热的省会,自贸港政策落地后江东新区起步;三亚:几乎没有工业的纯旅游城市,海岸线按"湾区"分段开发,冬季候鸟人口与游客叠加是城市人口的基本节律。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>海口:得胜沙、中山路的骑楼老街(南洋风格,侨商建造);国贸、世贸一带是 1990 年代地产潮留下的商圈;西海岸有国际会展中心与新行政中心;江东新区在主城东南、美兰机场以南,是 2018 年后按自贸港功能规划的新区,起步区塔吊成排。三亚:三亚湾、大东海、亚龙湾、海棠湾自西向东分段,各湾一线海景酒店与公寓;海棠湾有免税城(亚洲体量最大的单体免税商业之一);老城天涯区、解放路一带是本地生活的街市;崖州湾科技城在南端,是深海科研与南繁育种的园区。冬季东北口音与本地海南话同街并行,是"候鸟人口"的直观数据。</p>
+<p><b>怎么来的。</b>海南 1988 年建省办经济特区,1990 年代初经历地产过热与泡沫破裂("烂尾楼"一代);2010 年国际旅游岛政策、2018 年自贸区、2020 年《海南自由贸易港建设总体方案》发布<sup class="ref">[6]</sup>——政策强度逐级抬高,城市形态随之一轮轮更新:骑楼(侨商)—烂尾楼(地产潮)—湾区酒店(旅游岛)—自贸新城(自贸港)四层同存。三亚的湾区开发与候鸟人口是通行现象:北海、烟台、西双版纳都在同一条"旅居地产"轨道上,海南体量最大、季节性最强。</p>
+</div>
+</div>
+
+<div class="sec" id="s46"><h3>§4.6 县城与乡村实录<span class="sec-sub">COUNTIES &amp; VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">中部与岭南县城</span><span class="en">County Seats of Central South</span>
+<div class="meta">代表:湖南浏阳 · 湖北仙桃(省直辖县级市)· 广东普宁 · 河南兰考</div></div>
+<div class="entry-def">中南县城两条谱系:平原农业型(河南、湖北北部)与华北平原县城同构(→§1.4);丘陵产业型(湘赣、粤东)县城靠一县一业长大,浏阳的花炮、仙桃的无纺布、普宁的服装纺织,都是"县城—产业—人口"自循环的样本。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>浏阳:浏阳河穿城,老城河东南路一带密集商铺,花炮产业分布在大瑶等乡镇,城区新行政中心与长浏高速、蒙华铁路货场带动城北新区。仙桃:不设区的地级市荆州市与武汉市之间的县级市(省直辖),城区沿汉江排开,无纺布卫材企业围着城区布局。普宁:粤东人口大县(县级市),服装批发市场群与中药材市场是城市绝对中心,城市密度向潮汕式"高自建房+商住楼"形态看齐。兰考:平原农业县标准格局之上,近年县城南部产业区(家居制造)与泡桐林带的生态界面叠加。</p>
+<p><b>怎么来的。</b>中部县城的通行成长线:1980 年代乡镇企业起步(或引进)→ 1990 年代专业市场落地 → 2000 年代县城政务新区扩容 → 2010 年代高铁设站与否决定荣枯。省直辖县级市(仙桃、潜江、天门)是"县级行政、省管计划"的特殊序列,与济源、义乌等一起构成全国县级政区的少数变体(→§1.4、§3.4)。广东县城的特殊处在"县弱镇强":珠三角的县早在 1980—90 年代撤县设区,今天的县集中在粤东西北,普遍人口输出。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">岭南村 · 湘赣村 · 黎苗村</span><span class="en">Villages of Central South</span>
+<div class="meta">广东 · 湖南/江西 · 海南</div></div>
+<div class="entry-def">岭南村:祠堂—水塘—榕树的三件套至今是村口的通行配置,广府镬耳墙、客家围龙屋、潮汕"下山虎"宅院按方言区分布;湘赣村:丘陵里的堂屋聚落,近年"自建房+小洋楼"翻新与空心化并行;海南村:椰林间的火山石老宅与骑楼式新村部并存。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>广府村(广州周边、佛山):村口半月塘对着祠堂,榕树与旗杆石立在塘边,巷道按梳式布局垂直于水面;城中村形态(握手楼)是同一宗族结构在城里的高密度翻版(→卷三 §6.2)。客家村(梅州、赣南、闽西):围龙屋半圆环抱禾坪与水塘,赣南还有方形围屋;潮汕村:多进"下山虎""四点金"宅院,村庙与祠堂密度极高。湘赣村:红砖或瓷砖二层楼沿丘间谷地排布,堂屋朝南,门前水塘;江西的"宅改"(宅基地改革试点)村庄有整村重新规划的痕迹。海南村:文昌、琼海的火山石老屋(蜂窝石砌墙)、椰林、侨批回建的新屋;五指山腹地黎村的船型屋仅存于文化展示点,现实中的黎村已是砖房+村广场的通行配置。</p>
+<p><b>怎么来的。</b>岭南村的三件套是宗族社会的空间秩序:祠堂(祭祖议事)—水塘(风水与消防)—榕树(公共活动),这一结构在城市化的村里依然完好,是"城中村为什么有祠堂"的答案(→卷三 §6.2);围龙屋与赣南围屋是迁徙族群的防御聚居(→卷三 §4.4);湘赣村落在人口输出大县普遍空心化,春节返乡人流是村庄使用率的波峰。海南侨乡老宅的"华侨出资、本地建造"是侨乡村落的通行谱系,与开平碉楼同一资金逻辑(→卷三 §1.5)。</p>
+</div>
+</div>
+
+<h4>中南地级市实录表(逐省)</h4>
+<table class="t">
+<tr><th style="width:60px">省</th><th>城市与当下格局(全部地级政区)</th></tr>
+<tr><td><b>河南</b></td><td>郑州(§4.2);开封(老省会,宋都古城,鼓楼夜市);洛阳(涧西苏联援建工业区+洛龙新区+隋唐城遗址,中原城市群副中心);平顶山(煤);安阳(殷墟,钢城);鹤壁(煤城迁建);新乡(电池、振动机械);焦作(云台山,太极);濮阳(中原油田);许昌(假发之都,鄢陵花木);漯河(双汇食品);三门峡(黄河水库城);商丘(交通枢纽);信阳(毛尖,豫南水乡);周口(人口大市,胡辣汤);驻马店(农业,嵖岈山);南阳(副中心,南水北调渠首);济源(省直辖县级市,小浪底)</td></tr>
+<tr><td><b>湖北</b></td><td>武汉(§4.1);黄石(矿冶,华新水泥旧址);十堰(东风车城,武当山门户);宜昌(三峡工程城市,水电,副中心);襄阳(古城+汽车,副中心);鄂州(花湖机场,货运枢纽);荆门(化工,长寿之乡);孝感(临武汉);荆州(古城墙,江汉平原中心);黄冈(教育,大别山);咸宁(温泉,楠竹);随州(专汽,曾侯乙编钟);恩施州(喀斯特,土家);仙桃、潜江、天门(省直辖县级市)</td></tr>
+<tr><td><b>湖南</b></td><td>长沙(§4.2);株洲(火车拉来的工业城,电力机车);湘潭(韶山,湘钢);衡阳(湘南中心);邵阳(人口输出);岳阳(洞庭湖口,副中心,城陵矶港);常德(米粉,桃花源);张家界(武陵源,纯旅游城市);益阳(黑茶);郴州(承接大湾区产业转移);永州(潇水);怀化(湘黔铁路枢纽,火车拉来);娄底(钢铁,曾国藩故里);湘西州(凤凰古城)</td></tr>
+<tr><td><b>广东</b></td><td>广州、深圳、东莞、佛山、中山、珠海(§4.3、§4.4);汕头(特区+侨乡,1860 开埠,老城骑楼存量大);韶关(粤北门户,老工业);湛江(海湾城市,钢铁石化);肇庆(端州古城,鼎湖山);江门(侨都,开平碉楼辖区);茂名(石化,荔枝);惠州(电子,大亚湾);梅州(客家之都);汕尾(深汕合作区旁);河源(万绿湖水源);阳江(刀具,海陵岛);清远(长隆,温泉);潮州(广济桥,古城保存最完整的潮州府城);揭阳(潮汕机场,玉都);云浮(石材)</td></tr>
+<tr><td><b>广西</b></td><td>南宁(§4.2);柳州、桂林(§4.5);梧州(骑楼城,粤语发源之一);北海(银滩,1984 首批开放);防城港(边贸口岸);钦州(自贸片区,西部陆海新通道出海港);贵港(内河港);玉林(民营,中医药,荔枝);百色(芒果,红色老区);贺州(长寿市);河池(有色金属,刘三姐);来宾(新兴糖城);崇左(中越边境,甘蔗)</td></tr>
+<tr><td><b>海南</b></td><td>海口、三亚(§4.5);三沙(地级市,西沙群岛驻地,城市形态最小);儋州(地级,洋浦港自贸港先行区);琼海(博鳌);文昌(航天发射场);万宁(冲浪);东方(化工港);五指山、乐东、澄迈、临高等省直辖县(按县自治县体制,老城经济开发区在澄迈)</td></tr>
+</table>
+
+<div class="note">第四编小结:中南的识别钥匙是<b>类型密度</b>——铁路枢纽城(郑州、株洲、怀化)、码头商埠城(汉口、梧州)、特区城(深圳、珠海、汕头、海南)、专业镇城(东莞、佛山、中山)、旅游城(桂林、张家界、三亚)、工业三线城(柳州、十堰)在同一个大区里全齐。光谷与张江同框出现,说明"高新区"这个通名从沿海复制到内陆的路径:模板一致,尺度随省情放大。</div>
+
+<!-- ============================================================ -->
+<!-- 第五编 西南 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v5">
+<div class="vol-no">第五编</div>
+<h2>西南 · 渝川云贵藏</h2>
+<div class="vol-range">成都 · 重庆 · 贵阳 · 昆明 · 拉萨 —— 山地大区:环+轴生长的城市、三线工业的存量、水库移民的新城与雪山河谷间的县城</div>
+</div>
+
+<div class="sec" id="s51"><h3>§5.1 成都实录:环、轴与天府新区<span class="sec-sub">CHENGDU</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">成都</span><span class="en">Chengdu</span>
+<div class="meta">四川省会 · 西南大区中心(区号 028)· 结构:两江环抱老城—人民南路—天府大道—天府新区—东部新区</div></div>
+<div class="entry-def">平原上按环生长的城市:老城被锦江(府南河)环抱,一环到绕城高速层层外推;一条南北主轴从天府广场直插城南 30 公里到兴隆湖——天府大道沿线的金融城、软件园、科学城,是 2000 年代以来成都的全部新增叙事;2017 年后城市翻过龙泉山,向东再造一个东部新区。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:天府广场(四川科技馆与毛主席像),背后人民公园的茶馆、宽窄巷子(少城遗存)、文殊院、大慈寺;春熙路—太古里是商业中心(太古里是寺庙街区更新的全国样本);九眼桥、锦江夜景廊道。城南:一环外先是川大、华西坝;人民南路延伸段两侧,桐梓林(1990 年代外销房片区)、金融城(交子大道双塔与金融城商务区)、成都高新区的软件园(天府软件园 2005 年起,腾讯成都、字节等园区楼群连片);环球中心(2013 年开业,单体建筑体量全球前列,内含人工沙滩)是城南的显眼坐标。再往南过绕城,就是天府新区:西部国际博览城、兴隆湖(2014 年成湖)环湖的科学城写字楼、天府公园、麓湖一带的高端住区;地铁 1 号线一路向南 30 余公里。翻过龙泉山(2017 年"东进"战略),东部新区在建:天府国际机场 2021 年投运(双机场城市,全国仅京沪蓉),简州、空港两座新城塔吊林立。</p>
+<p><b>天府新区细看。</b>天府新区是四川天府新区(2014 年 10 月获批国家级,继浦东之后第 11 个<sup class="ref">[2]</sup>),地跨成都、眉山两市,成都直管区在双流以南。眼下的实体:天府大道南延线两侧是总部经济带(中交、中建等央企西南总部大楼);秦皇寺商务区在规划中拔起超高层;兴隆湖是环湖科研带——中科院成都分院、天府兴隆湖实验室沿湖排布,湖畔书店与咖啡馆是周末人流;麓湖、麓山国际是低密度高端住区(湖区+艺展+社区商业的组合,近年被大量研究和模仿);西博城每年承办西博会等展会。公共服务:天府新区创办的天府七中、华西医院天府院区等按新区标准配置。它与光谷(→§4.1)、张江(→§3.1)一样是"管委会体制+成片新增"的高新区变体,差别在天府新区多了一层"国家级新区"身份——行政级别更高、面积更大(成都直管区即 500 余平方公里),功能更像一座新城而非园区。</p>
+<p><b>怎么来的。</b>成都自秦筑城起城址未移,两江环抱格局延续两千余年;1990 年代"府南河综合整治"把护城河改造为环城公园带(1998 年联合国人居奖);1996 年版总规确立城市向南、向东,人民南路南延线 1997 年通车,高新区(1991 年首批国家级)沿轴线布点;2000 年代软件园带动城南崛起;2014 年天府新区获批国家级<sup class="ref">[2]</sup>;2017 年"东进、南拓、西控、北改、中优"十字方针确定跨山发展,2020 年东部新区获批;2021 年成渝地区双城经济圈上升为国家战略<sup class="ref">[7]</sup>。成都的通行启示:平原城市没有地形约束时,主轴+环路是最省力的生长方式——北京如此,成都也如此,差别只在成都在 2010 年代把主轴一口气拉到了 30 公里外。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-1</span><span class="t">成都南向剖面(天府广场 → 兴隆湖)</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 330" width="100%" role="img" aria-label="成都南向结构剖面示意图">
+<rect x="30" y="30" width="700" height="260" fill="#fff" stroke="#111"/>
+<rect x="60" y="90" width="90" height="120" fill="#f2f2f2" stroke="#111"/>
+<text x="105" y="112" font-size="11" font-weight="700" text-anchor="middle">老城</text>
+<text x="105" y="128" font-size="8.5" fill="#444" text-anchor="middle">天府广场</text>
+<text x="105" y="140" font-size="8.5" fill="#444" text-anchor="middle">两江环抱</text>
+<text x="105" y="152" font-size="8.5" fill="#444" text-anchor="middle">春熙路太古里</text>
+<rect x="170" y="90" width="95" height="120" fill="#fff" stroke="#111"/>
+<text x="217" y="112" font-size="11" font-weight="700" text-anchor="middle">华西坝</text>
+<text x="217" y="128" font-size="8.5" fill="#444" text-anchor="middle">川大·使馆区</text>
+<text x="217" y="140" font-size="8.5" fill="#444" text-anchor="middle">桐梓林住区</text>
+<rect x="285" y="90" width="110" height="120" fill="#fff" stroke="#111"/>
+<text x="340" y="112" font-size="11" font-weight="700" text-anchor="middle">金融城</text>
+<text x="340" y="128" font-size="8.5" fill="#444" text-anchor="middle">交子大道双塔</text>
+<text x="340" y="140" font-size="8.5" fill="#444" text-anchor="middle">高新区(1991)</text>
+<text x="340" y="152" font-size="8.5" fill="#444" text-anchor="middle">天府软件园</text>
+<rect x="415" y="90" width="120" height="120" fill="#fff" stroke="#111"/>
+<text x="475" y="112" font-size="11" font-weight="700" text-anchor="middle">天府新区</text>
+<rect x="425" y="122" width="48" height="22" fill="#ddd" stroke="#555"/><text x="449" y="137" font-size="8" text-anchor="middle">总部带</text>
+<rect x="477" y="122" width="48" height="22" fill="#ddd" stroke="#555"/><text x="501" y="137" font-size="8" text-anchor="middle">西博城</text>
+<rect x="425" y="150" width="100" height="22" fill="#efefef" stroke="#555"/><text x="475" y="165" font-size="8" text-anchor="middle">麓湖住区</text>
+<text x="475" y="192" font-size="8.5" fill="#444" text-anchor="middle">2014 国家级新区</text>
+<rect x="555" y="90" width="120" height="120" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<text x="615" y="112" font-size="11" font-weight="700" text-anchor="middle">兴隆湖科学城</text>
+<text x="615" y="128" font-size="8.5" fill="#444" text-anchor="middle">中科院成都分院</text>
+<text x="615" y="140" font-size="8.5" fill="#444" text-anchor="middle">环湖实验室+书店</text>
+<line x1="60" y1="240" x2="675" y2="240" stroke="#111" stroke-width="3"/>
+<text x="368" y="232" font-size="9.5" fill="#444" text-anchor="middle">天府大道——南北主轴,地铁 1 号线并行,老城到兴隆湖约 30 ㎞</text>
+<text x="46" y="272" font-size="10" fill="#666">读法:从天府广场向南,每 5 公里换一个年代——1950s 华西坝、1990s 桐梓林、2000s 金融城、2010s 天府新区、2015 后科学城;轴线即年轮。</text>
+</svg>
+</div>
+<div class="fig-note">成都的南轴与上海的东西轴(→图 3-1)是同一种"时间剖面":沿主轴走一遍,等于把城市 70 年的建设史走一遍。差别在上海是四代形态(里弄—CBD—园区—新城)横向并置,成都是五代城区纵向递进——这解释了为什么全国新区长得很像:大家都在同一条主轴的末端,用的是同一批设计院与同一套规范。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 5-1</span><span class="no">天府新区档案(与光谷 / 张江对照)</span></div>
+<table class="spec-t">
+<tr><td class="k">建制</td><td>2014 年 10 月国务院批复设立国家级新区(第 11 个)<sup class="ref">[2]</sup>,跨成都眉山两市;成都直管区 + 高新区南园区 + 双流部分,管委会体制</td></tr>
+<tr><td class="k">功能</td><td>总部经济(央企西南总部带)、会展(西博城)、科学城(兴隆湖,中科院系)、公园城市首提地(2018)——"公园城市"概念即在天府新区提出</td></tr>
+<tr><td class="k">形态</td><td>天府大道南延线主轴 25㎞+;兴隆湖环湖科研带;麓湖低密度水城住区;地铁 1/6/18 号线延伸</td></tr>
+<tr><td class="k">三区对照</td><td>张江(1992):园区,一产业主导;光谷(1988/1991):产城新城,托管 500+㎞²;天府新区(2014):国家级新区,新城+行政区双身份——三者即"政策区"的三个档位,全国通行模板的三个源头</td></tr>
+<tr><td class="k">识别口诀</td><td>路名带"天府/科学城"、楼群带湖、湖边带书店与实验室——2015 年后国家级新区的通行界面</td></tr>
+</table></div>
+
+<div class="sec" id="s52"><h3>§5.2 重庆实录:山城与两江新区<span class="sec-sub">CHONGQING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">重庆</span><span class="en">Chongqing</span>
+<div class="meta">直辖市 · 结构:渝中半岛—江北—南岸—大学城—两江新区—万州涪陵</div></div>
+<div class="entry-def">山即城、城即山:道路随等高线盘绕,一楼与三十楼可能同一条街;两江(长江、嘉陵江)切出渝中半岛,桥梁与隧道把组团缝合;1997 年直辖、2010 年两江新区获批后,城市从"半岛"长成了"城市群"。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>渝中半岛:解放碑商圈(步行街与摩天楼群)、朝天门(两江交汇,来福士"横向摩天楼"横跨其上)、十八梯与山城巷(步道改造)、洪崖洞(吊脚楼意象的商业体,夜间人流全国知名)。对岸:江北嘴 CBD(大剧院、教堂与金融楼宇)与南岸弹子石、南山一棵树观景台(看夜景的界面)。城市肌理:黄桷坪老工业区(四川美院旧址与涂鸦街)、沙坪坝(三峡广场与老科教区,磁器口古镇在西郊)、观音桥(江北商业中心)。向西:大学城(虎溪,十余所高校)与西永微电园(笔电制造,惠普等);再西是科学城(2019 年挂牌)。向北:两江新区照母山片区(数字经济产业园、互联网公司楼宇)、礼嘉智慧公园、中央公园(江北机场旁的新城中心);悦来会展城。立体交通:跨江大桥 30 余座("桥都"),长江索道(现在是景点),两江游轮,轨道 2 号线单轨穿楼(李子坝)是城市形态的著名注脚。远城:涪陵、万州各是渝西渝东的区域中心,城市自成一体。</p>
+<p><b>怎么来的。</b>重庆 1891 年开埠,1929 年建市,抗战时期陪都(工业与机关内迁,第一次人口大膨胀);1964 年起三线建设在此布点重工业(→卷三 §2.4);1983 年计划单列、1997 年恢复直辖(第三次直辖,范围扩大到原川东,三峡移民 100 余万人的行政安排是背景之一);2010 年两江新区获批,是内陆首个国家级新区<sup class="ref">[2]</sup>;2021 年成渝双城经济圈规划纲要发布<sup class="ref">[7]</sup>。重庆形态的三条通行启示:一是地形决定基础设施——桥、隧、轨道的密度全国最高,"8D 城市"是等高线的产物;二是组团式布局是山地城市通例(贵阳、兰州同理),每个组团自带中心;三是公租房体量全国最大(2010 年起大规模建设)——山地城市的住房供给政策与形态后果。</p>
+</div>
+</div>
+
+<div class="sec" id="s53"><h3>§5.3 省会实录:贵阳 · 昆明 · 拉萨<span class="sec-sub">PROVINCIAL CAPITALS</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">贵阳</span><span class="en">Guiyang</span>
+<div class="meta">贵州省会 · 结构:老城(喷水池)—观山湖区—贵安新区</div></div>
+<div class="entry-def">山间坝子上的省会:老城挤在群山之间,2000 年后在西北角的观山湖区另起一座新城;大数据产业(2015 年起)把数据中心建到了山洞与凉爽气候里——贵州的"数字经济"是气候与电价的产物,不是大学与海港的产物。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:喷水池、大十字一带的商业街,文昌阁、甲秀楼是老地标,黔灵山公园(黔灵猴)在城市北缘。观山湖区:市级行政中心 2000 年代迁入,奥体中心、国际会议中心、金融城沿宽阔道路排开,是标准的新城界面;花果园在两区之间——超大盘住区(单楼盘数十栋塔楼、容纳数十万人,公寓、商场、办公一体),是全国"超大盘"现象的极端样本。贵安新区:2014 年获批国家级<sup class="ref">[2]</sup>,华为、腾讯、苹果的数据中心群落在松柏山水库一带,山体与湖泊间的低密度园区。青岩古镇在南郊。</p>
+<p><b>怎么来的。</b>贵阳长期受困于"地无三里平",坝子小、城市伸展不开;2000 年金阳新区(今观山湖)启动,行政中心搬迁带动;2012 年贵安新区规划建设、2014 年获批;2015 年贵州获批全国首个国家级大数据综合试验区,数据中心因气候凉爽(自然制冷)、电力充足(水电煤电)与地质稳定而集聚。贵阳说明山地省会的通行路径:老城不动、新城外跳(与石家庄、合肥同理),叠加一个"气候资源产业化"的当代章节。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">昆明</span><span class="en">Kunming</span>
+<div class="meta">云南省会 · 结构:翠湖老城—滇池北岸—呈贡新区</div></div>
+<div class="entry-def">春城:海拔 1900 米,四季恒温;城市沿滇池北岸展开,南屏街金马碧鸡坊是老城中心;2010 年代行政中心与十所高校整体迁往东南 25 公里的呈贡,一座大学城+政务新区就这样平地长出。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:翠湖(红嘴鸥冬季聚集)、云南大学老校区(会泽院)、南屏步行街、金马碧鸡坊;西南联大旧址在师大一二一校区(近代教育内迁的地标,→卷三 §2.3)。滇池北岸:海埂大坝、民族村、西山龙门;沿湖与草海的湿地公园是滇池治理的成果界面。呈贡:市级行政中心、云大等高校新校区、地铁 1 号线(2013 年通),白天教学区人流、晚间新区安静的节奏差仍是常态;昆明南站(高铁)在呈贡南端。北郊长水机场(2012 年转场),规模居全国前列。街面:鲜花饼、过桥米线、东南亚商品——面向南亚东南亚门户的商贸界面。</p>
+<p><b>怎么来的。</b>昆明 1910 年滇越铁路通车后成为法属印支与中国西南的转运枢纽;抗战时西南联大迁驻、工厂内迁;1999 年世界园艺博览会让城市界面整体升级(世博园片区);2003 年呈贡新区规划启动、2011 年市级行政中心正式南迁;2010 年代滇池流域治理与"现代新昆明"战略并行。昆明与南宁同为面向东南亚的区域中心,差别在昆明多了高原湖泊约束——城市只能在滇池北岸与东岸带状展开。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">拉萨</span><span class="en">Lhasa</span>
+<div class="meta">西藏首府 · 结构:布达拉宫—八廓老城—柳梧新区—东嘎</div></div>
+<div class="entry-def">河谷之城:布达拉宫立在红山上,八廓街围着大昭寺转经;老城建筑限高(不得遮挡布宫),新城在拉萨河南岸与河谷西端展开——援建力量与旅游经济塑造的城市。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>八廓街:转经道两侧藏式石木商铺,朝圣者与游客同流;大昭寺门前常年有磕长头者;老城巷道里是传统藏式院落(石墙、阿嘎土屋顶、彩绘门楣)。布达拉宫广场(城市礼仪空间)与药王山(五十元人民币背面图案取景处)。河南岸柳梧新区:拉萨火车站(2006 年青藏铁路终点)、高层住区与市级行政功能;西端东嘎、堆龙德庆一带是新兴住区与产业园区。北京路、江苏路、北京大道——道路名记录了对口援建省市;城市周边:色拉寺、哲蚌寺在北山根,拉鲁湿地是全国最大的城市湿地之一。</p>
+<p><b>怎么来的。</b>拉萨老城围绕大昭寺(七世纪始建)生长,布达拉宫(十七世纪重建)在城西北红山;1951 年后城市沿河谷扩展,1959 年民主改革、1965 年自治区成立;1994 年布达拉宫列入世界遗产<sup class="ref">[1]</sup>;2006 年青藏铁路通车带动柳梧新区;2011 年拉林铁路方向、川藏铁路建设继续把拉萨接入全国路网。西藏城市的通行力量:国家投资的基础设施+对口援建的公共建筑+旅游与边贸经济,三股合力决定形态;老城高度管控(布宫视廊)是全国遗产城市通行的做法(→卷三 §4.5)。</p>
+</div>
+</div>
+
+<div class="sec" id="s54"><h3>§5.4 地级市与县城:山地城市的通行格局<span class="sec-sub">PREFECTURES &amp; COUNTIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">西南地级市通则</span><span class="en">Prefecture Cities of the Southwest</span>
+<div class="meta">代表:绵阳 · 遵义 · 曲靖 · 六盘水 · 西昌</div></div>
+<div class="entry-def">西南地级市的通行格局是"一江一坝一城":城市挤在河谷或山间坝子里,建成区沿河带状或组团展开,新区削山填谷;三线时期布点的工业(绵阳的电子、六盘水的煤、攀枝花的钢)决定了一批城市的产业底色。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>绵阳:涪江与安昌江交汇,长虹厂区与科技城(2000 年挂牌)是城市名片,九院(中国工程物理研究院)与科学新城在城郊;老城涪城路一带,新区园艺山、金家林层层上坡。遵义:湘江穿城,遵义会议会址与红军街是历史界面,茅台镇在仁怀(白酒产业园区即一座城)。六盘水:三个县城拼成的地级市(六枝、盘州、水城),"中国凉都",城市沿山脊与谷地分层展开。攀枝花:金沙江峡谷两岸的钢城,工厂、居住区与铁路沿江排布,日照充足、芒果满城。西昌(凉山州府):邛海边湿地与卫星发射基地(城北)并置。共性:城市投影面积小、垂直方向上楼群密;削山造地的新区(如贵阳、遵义、兰州新区同类)是西南城市 2010 年代扩容的通行手法。</p>
+<p><b>怎么来的。</b>1964—1980 年三线建设在西南布点了攀枝花(钢)、六盘水(煤)、绵阳(电子)、达州(军工)等工业点,"靠山、分散、隐蔽"选址决定了这些城市今天的谷地形态(→卷三 §2.4);1990 年代后西部大开发(2000 年起)补上了交通与市政;2010 年代山地城市普遍削山填谷扩容(重庆、贵阳、延安的"上山建城"同类)。西南地级市与东部的差别不在楼(楼同样新同样高),在腹地——山区可建设用地少,城市骨架被地形锁死。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">西南县城</span><span class="en">County Seats</span>
+<div class="meta">代表:阆中(川)· 丽江古城(滇,县级市)· 恩施(鄂西南对照)· 库区搬迁县城(云阳、丰都)</div></div>
+<div class="entry-def">西南县城三种:河谷带状县城(大多数)、整体搬迁县城(水库、灾害)、古城型县城(阆中、丽江、巍山)——第三种因旅游而"老城内控、新区外跳",与前两种的"全域翻新"形成对照。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>普通河谷县城(如川东、黔北诸县):一条河、一条主街、一座桥,建筑沿等高线爬坡,新城区在下游平地,山坡上是老自建房;县城天际线的"最高点"常是 2010 年代的电梯楼或山顶观景亭。搬迁县城:云阳新县城(三峡库区 1990 年代整体后靠搬迁,新城按新规划一次性建成,街道横平竖直);云南东川、甘肃东乡(滑坡灾害搬迁)同款。古城型:阆中(嘉陵江三面绕城,张飞庙、贡院,古城内低层木构保存,新城在江对岸);丽江古城(大研古镇四方街,纳西民居,1997 年世界遗产<sup class="ref">[1]</sup>)——古城即县城经济本体。</p>
+<p><b>怎么来的。</b>三峡工程(1994—2009)移民 130 余万,湖北重庆十余座县城整体搬迁或后靠,是 20 世纪末最大规模的一次性新城建设,新县城的规划形态(方格路网+成排住宅+滨江景观带)成为全国县城的通行模板;灾害搬迁县城(东乡县城 2011 年整体搬迁)沿用同一套快速建设逻辑。古城型县城的"内控外跳"是遗产经济的通行策略(→卷三 §4.2):平遥、阆中、丽江同一剧本。西南县城的总账:县城是人口流动的"第一站",山区农村人口先到县城买房,再决定是否外出——县城房价与"县中"(县中学)质量,是西南县城社会的两个硬指标。</p>
+</div>
+</div>
+
+<h4>西南地级市实录表(逐省区)</h4>
+<table class="t">
+<tr><th style="width:60px">省</th><th>城市与当下格局(全部地级政区)</th></tr>
+<tr><td><b>四川</b></td><td>成都(§5.1);自贡(盐都,恐龙,灯会);攀枝花(钢城,阳光康养);泸州(酒城,长江港);德阳(重装:东方电机、二重);绵阳(科技城,长虹);广元(蜀道,女皇故里);遂宁(观音文化);内江(甜城,川南枢纽);乐山(大佛,峨眉);南充(绸都,川东北中心);眉山(三苏故里);宜宾(五粮液,动力电池新产业,万里长江第一城);广安(小平故里);达州(川东门户,天然气);雅安(熊猫故乡,茶);巴中(红军,山地);资阳(车城,临空);阿坝州(九寨黄龙,汶川映秀);甘孜州(康定,稻城亚丁);凉山州(西昌卫星城,彝族聚居)</td></tr>
+<tr><td><b>云南</b></td><td>昆明(§5.3);曲靖(珠江源,爨文化);玉溪(烟草,抚仙湖);保山(腾冲火山热海在其辖内);昭通(乌蒙山,人口输出);丽江(古城旅游,玉龙雪山);普洱(茶);临沧(佤文化,坚果);楚雄州(彝族自治州,恐龙谷);红河州(建水古城,锡都个旧,河口口岸);文山州(三七,普者黑);西双版纳州(景洪,告庄夜市,雨林);大理州(苍山洱海,古城双廊);德宏州(瑞丽边贸,玉石);怒江州(峡谷,怒江美丽公路);迪庆州(香格里拉,梅里雪山)</td></tr>
+<tr><td><b>贵州</b></td><td>贵阳(§5.3);六盘水(凉都,煤);遵义(会议会址,茅台,副中心);安顺(黄果树,屯堡村落);毕节(人口大市,生态试验区);铜仁(梵净山);黔西南州(兴义,万峰林);黔东南州(凯里,千户苗寨肇兴侗寨,传统村落最密的州);黔南州(都匀毛尖,中国天眼在其辖内平塘)</td></tr>
+<tr><td><b>西藏</b></td><td>拉萨(§5.3);日喀则(后藏中心,珠峰大本营在其辖内);昌都(康区枢纽);林芝(桃花,雅鲁藏布);山南(藏文化发源,雍布拉康);那曲(羌塘草原,高原牧区);阿里地区(冈仁波齐,神山圣湖)</td></tr>
+</table>
+
+<div class="sec" id="s55"><h3>§5.5 乡村实录:林盘、坝子与高原村落<span class="sec-sub">VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">川西林盘</span><span class="en">The Linpan of Western Sichuan</span>
+<div class="meta">成都平原 · 竹木环抱的农家院落散布在稻田中</div></div>
+<div class="entry-def">成都平原的村庄不是"聚成一团",而是以一户或几户为一个林盘:竹木环抱院落,院外即田,林盘之间是灌溉渠与机耕道——都江堰水利系统决定的空间秩序,全国仅此一处的大田景观。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>从空中看成都平原:绿色的圆斑(竹林)均匀撒在格子稻田里,每个圆斑即一个林盘;院坝内是川西民居(木构穿斗、青瓦、竹编墙),鸡犬与柴垛在竹荫下;灌溉渠(从都江堰分出的干支斗农毛渠)在林盘间穿行。近年的变化:部分林盘改造为民宿或"精品林盘"(崇州、大邑一带),青瓦换成了玻璃与夯土的当代版本;集中居住的农民新村在乡镇边成排出现,与老林盘并存。</p>
+<p><b>怎么来的。</b>都江堰(公元前 256 年)自流灌溉体系使成都平原无须筑坝打井,农户散居在自家田边即可取水耕作——聚村而居的必要性消失,散居的林盘延续两千余年;竹林的经济功能(竹器、笋、薪柴)与防风遮荫功能使"林"成为"盘"的标配。林盘是理解成都"田园城市"叙事与今天"公园城市"实践的原点(→§5.1):官方规划语言里的"蓝绿交织",在这片平原上本来就有千年实体。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">云贵山村与藏区村落</span><span class="en">Mountain &amp; Highland Villages</span>
+<div class="meta">喀斯特山区 / 横断山区 / 青藏高原</div></div>
+<div class="entry-def">云贵:喀斯特山间的村寨贴着坝子(山间平地)与梯田,石板房、吊脚楼、鼓楼按族群分布;藏区:河谷农区的石砌碉房与高山牧区的冬季定居点并存——地理与族群共同写出的村庄谱系。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>苗岭与武陵山:苗寨吊脚楼沿坡而上(西江千户苗寨是规模最大的展示版),侗寨以鼓楼与风雨桥为中心(肇兴);喀斯特石山区(安顺、镇宁一带)用石板做墙瓦的"石板房"村落;哈尼梯田(红河元阳)是村寨—水系—梯田三位一体的系统(2013 年世界遗产<sup class="ref">[1]</sup>)。横断山:丹巴碉楼藏寨(石砌高碉与藏房)、丙中洛与怒江峡谷村落挂在江边坡地上。藏区农区(拉萨河谷、山南):石木碉房(白墙、藏窗、经幡),村口玛尼堆与转经筒;高山牧区(那曲、甘南):定居点(2010 年代游牧民定居工程建成的砖房村)与夏季牧场帐篷并存。共通的近况:青壮年外出,村庄空心与旅游化并行——西江、肇兴、丹巴已整体旅游化,普通村庄则按农房四代谱系翻新(→卷三 §5.3)。</p>
+<p><b>怎么来的。</b>云贵的族群聚居格局是历史迁徙的结果,吊脚楼与鼓楼对应山地与杉木资源(→卷三 §4.4 传统村落条);梯田系统是山地民族在陡坡上的水利发明;藏区碉房是高原气候与夯土石砌技术的合成,牧区定居点是当代草原政策的产物。它们的当代命运与全国传统村落一致:空心化与遗产化两条路(→卷三 §5.5),西南因村落数量多、风貌完整,是"传统村落名录"占比最高的区域。</p>
+</div>
+</div>
+
+<div class="note">第五编小结:西南的识别钥匙是<b>地形代行规划</b>——环+轴(成都)、组团+桥梁(重庆)、坝子+削山(贵阳)、河谷+限高(拉萨),每座城市的第一规划师都是山与水;县城层面,三峡搬迁一次性造出十余座标准新县城,是全国县城模板的一次集中投产。天府新区与两江新区说明:2010 年代政策区的重心西移,"新区"这一通名的复制从沿海走到内陆。</div>
+
+<!-- ============================================================ -->
+<!-- 第六编 西北 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v6">
+<div class="vol-no">第六编</div>
+<h2>西北 · 陕甘宁青新</h2>
+<div class="vol-range">西安 · 兰州 · 银川 · 西宁 · 乌鲁木齐 —— 处处是古都与陆港:周秦汉唐的城址、绿洲与河谷里的省城、能源新城与兵团城市,中国城市最早的层与最新的层同框</div>
+</div>
+
+<div class="sec" id="s61"><h3>§6.1 西安实录:古城与高新区<span class="sec-sub">XI'AN</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">西安</span><span class="en">Xi'an</span>
+<div class="meta">陕西省会 · 西北大区中心(区号 029)· 结构:明城墙老城—高新区—经开区—曲江—浐灞—西咸新区</div></div>
+<div class="entry-def">唐长安城址上的现代城市:13.7 公里明城墙围住老城,钟楼居中、四条大街向外;城墙外,高新区(西南)、经开区(北)、曲江(东南)、浐灞(东北)、西咸新区(西)五个新区各占一个方向——古城不动,五区环绕,是"新区围绕古城"格局的全国最完整样本。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:城墙(可骑行一圈)、钟楼鼓楼、回民街(北院门一带的清真寺与小吃街)、碑林、永宁门(南门)的礼仪广场;四条大街(东、西、南、北)从钟楼放射,大街背后是老单位院与老旧小区。东南:大雁塔与曲江新区——大雁塔北广场(音乐喷泉)、大唐不夜城步行街(仿唐建筑群,夜间人流全国知名)、大唐芙蓉园、曲江池遗址公园,是"遗址上造文旅城"的全国样本;小雁塔与西安博物馆在南郊。西南:高新区——唐延路(路中央是唐城墙遗址绿化带)两侧写字楼一路向南,锦业路是 CBD 主体(都市之门、绿地中心等),软件新城与华为研究所、三星半导体厂区在西侧绕城外;都市之门一带即"高新区中心"。北:经开区——2011 年市行政中心北迁至张家堡,市政府、图书馆、高铁西安北站(亚洲站台规模前列)串成南北轴线;再北是草滩、泾渭新区。东北:浐灞生态区(河流治理起步,现以会展、领事馆区、世博园为主体);国际港务区在中欧班列"长安号"的集装箱场上生长。西:西咸新区(→§6.3)。秦岭在城南 30 公里,环山旅游路串起各峪口;城内大学:交大、西工大等老校区在城墙附近,长安区大学城(西南 20 公里)聚集了数十万学生。</p>
+<p><b>高新区细看。</b>西安高新区 1991 年 3 月获批,是首批 26 个国家级高新区之一<sup class="ref">[3][9]</sup>。眼下的形态分三层:第一层是 1990 年代的电子城起步区(光德路、科技路一带,电子元器件市场与早期写字楼);第二层是 2000 年代的唐延路—锦业路 CBD(银行、保险、律所总部楼群,地铁 3、6 号线穿过),喜来登与都市之门是地标;第三层是 2010 年代后跨过绕城高速的软件新城与丝路科学城——华为西安研究所(万人规模)、三星西安半导体(2012 年开工,一期投资百亿美元级,是外资在华单体制造业投资的大项目之一)、比亚迪电子等沿西太路铺开,再往南是梁家滩、秦渡一带的生态与新住区。产业构成:半导体、电子信息、汽车(比亚迪)、生物医药、光子——与光谷(光电子)、张江(集成电路+生物医药)同构,各领一两个主导产业。高新区经济总量约占全市四分之一,是"开发区长成城市"的又一例(户籍人口与住宅、学校、医院俱全,管委会行使社会管理职能)。</p>
+<p><b>怎么来的。</b>周丰镐、秦咸阳、汉长安、唐长安(当时世界最大城市之一)层层叠压在今天城区地下,明城墙(1370 年代建)围合的是唐长安皇城基址;1927 年设市,1950 年代"一五"时期被列为重点建设城市(纺织城、电工城在东郊西郊布点,苏式家属区随厂而建,→卷三 §2.3);1991 年高新区获批(西南郊起步)、1993 年经开区设立;2003 年曲江新区转型文旅;2011 年行政中心北迁;2014 年西咸新区获批国家级<sup class="ref">[2]</sup>;2018 年西安获批建设国家中心城市<sup class="ref">[9]</sup>。西安的通行启示:古都的城市扩张别无选择——地下是遗址(汉长安城遗址至今未开发,作为遗址公园保持),只能"外围环布新区";北京、南京、洛阳同理,这是遗产大城的通行格局。</p>
+</div>
+</div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 6-1</span><span class="t">西安"古城+五区"格局</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 340" width="100%" role="img" aria-label="西安古城与五个新区格局示意图">
+<rect x="30" y="30" width="700" height="280" fill="#fff" stroke="#111"/>
+<rect x="310" y="130" width="140" height="100" fill="#eee" stroke="#111" stroke-width="2"/>
+<text x="380" y="165" font-size="12" font-weight="700" text-anchor="middle">明城墙老城</text>
+<text x="380" y="182" font-size="8.5" fill="#444" text-anchor="middle">钟楼居中·四条大街放射</text>
+<text x="380" y="195" font-size="8.5" fill="#444" text-anchor="middle">回坊·碑林·大雁塔(南郊)</text>
+<rect x="150" y="230" width="170" height="60" fill="#fff" stroke="#111"/>
+<text x="235" y="250" font-size="11" font-weight="700" text-anchor="middle">高新区(西南,1991)</text>
+<text x="235" y="265" font-size="8.5" fill="#444" text-anchor="middle">唐延路—锦业路 CBD</text>
+<text x="235" y="277" font-size="8.5" fill="#444" text-anchor="middle">软件新城·三星·华为</text>
+<rect x="330" y="40" width="150" height="60" fill="#fff" stroke="#111"/>
+<text x="405" y="60" font-size="11" font-weight="700" text-anchor="middle">经开区(北)</text>
+<text x="405" y="75" font-size="8.5" fill="#444" text-anchor="middle">市行政中心 2011 北迁</text>
+<text x="405" y="87" font-size="8.5" fill="#444" text-anchor="middle">高铁西安北站</text>
+<rect x="490" y="160" width="170" height="60" fill="#fff" stroke="#111"/>
+<text x="575" y="180" font-size="11" font-weight="700" text-anchor="middle">曲江新区(东南)</text>
+<text x="575" y="195" font-size="8.5" fill="#444" text-anchor="middle">大雁塔·大唐不夜城</text>
+<text x="575" y="207" font-size="8.5" fill="#444" text-anchor="middle">遗址文旅城</text>
+<rect x="490" y="70" width="150" height="55" fill="#fff" stroke="#111"/>
+<text x="565" y="90" font-size="11" font-weight="700" text-anchor="middle">浐灞+港务区(东北)</text>
+<text x="565" y="105" font-size="8.5" fill="#444" text-anchor="middle">生态区·会展·中欧班列</text>
+<rect x="90" y="90" width="160" height="70" fill="#fff" stroke="#111" stroke-dasharray="5 3"/>
+<text x="170" y="110" font-size="11" font-weight="700" text-anchor="middle">西咸新区(西,2014)</text>
+<text x="170" y="125" font-size="8.5" fill="#444" text-anchor="middle">沣东沣西·昆明池重现</text>
+<text x="170" y="137" font-size="8.5" fill="#444" text-anchor="middle">创新港(交大新校区)</text>
+<text x="380" y="290" font-size="9.5" fill="#444" text-anchor="middle">南 30 ㎞:秦岭北麓(环山路与峪口)</text>
+<text x="46" y="298" font-size="10" fill="#666">读法:古城(遗址不可动)居中,五个方向各落一个新区——方向即年代:西南(1991)最早,西(2014)最新。</text>
+</svg>
+</div>
+<div class="fig-note">西安格局与北京(环路)、成都(主轴)、武汉(三镇)是四种古城生长方式:西安是"环布"。地下遗址密度决定了老城内不能高强度开发——城墙内至今以多层与老旧小区为主,这本身就是断代证据(→卷三 §6.3:老城低层区多为 1980 年代前建成)。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-1</span><span class="no">西安高新区档案(全国高新区四例对照)</span></div>
+<table class="spec-t">
+<tr><td class="k">建制</td><td>1991 年 3 月首批国家级高新区<sup class="ref">[3]</sup>;三次扩容,托管雁塔、长安、鄠邑部分街道,面积 100+㎞²,管委会行使一级政府职能</td></tr>
+<tr><td class="k">产业</td><td>电子信息(华为研究所、中兴)、半导体(三星 2012 起三期)、汽车(比亚迪)、光子、生物医药;高校供给:西安交大、西电、西工大等,工科毕业生存量全国前列</td></tr>
+<tr><td class="k">形态</td><td>科技路起步区→唐延路(唐城墙遗址绿带为轴)→锦业路 CBD→软件新城/丝路科学城(绕城外);地铁 3/6 号线,有轨电车试验线</td></tr>
+<tr><td class="k">四例对照</td><td>张江(1992,研发园区型)/ 光谷(1988-91,产城新城型)/ 西安高新(1991,古城环布型)/ 成都高新(1991,主轴沿线型)——同一政策(国家级高新区)在四种城市基底上长出的四个形态;主导产业各一(集成电路/光电子/半导体+汽车/软件)</td></tr>
+<tr><td class="k">识别口诀</td><td>写字楼以 6—20 层为多、路名带"科技/软件/丝路"、公交站以企业命名、围墙里是研究所——高新区通行界面,西安高新区与张江几乎可以互换街景</td></tr>
+</table></div>
+
+<div class="sec" id="s62"><h3>§6.2 省会与首府:兰州 · 银川 · 西宁 · 乌鲁木齐<span class="sec-sub">CAPITALS OF THE NORTHWEST</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">兰州</span><span class="en">Lanzhou</span>
+<div class="meta">甘肃省会 · 结构:黄河河谷带状城市(东西约 40 公里)+ 兰州新区</div></div>
+<div class="entry-def">黄河从城中穿过、南北两山夹峙的带状城市:主城沿河谷东西铺开 40 公里,几乎无南北纵深;中山桥(1909,黄河上第一座永久桥)是城市原点;2012 年在秦王川设兰州新区——老城挤不下,新区干脆放到 70 公里外。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>主城:中山桥与白塔山、黄河母亲雕塑、水车博览园沿河排开;黄河风情线是市民界面;张掖路步行街是老城商业;五泉山、皋兰山在南山上俯瞰全城;河谷两侧山坡上是密集的楼群(个别地段削山造地)。东端:东岗与榆中方向的和平镇等卧城;西端:西固区(兰州石化,炼化城);中段的城关、七里河是行政与商业。兰州新区(秦王川):中川机场旁的平地新城,2012 年获批国家级<sup class="ref">[2]</sup>,方格路网、产业园区与安置住区一次性铺开,与老城之间隔着黄土丘陵。轨道交通 1 号线(2019)沿东西轴贯通。</p>
+<p><b>怎么来的。</b>兰州自古是渡口与枢纽(黄河渡、丝路驿);"一五"时期兰州被列为重点工业城市,西固布置炼油化工(1950 年代"共和国石化长子"),铁路枢纽(陇海、兰新、包兰交汇)叠加,城市在河谷里向东挤;1990 年代河谷容量见顶;2012 年第五个国家级新区落地秦王川,是"远距离跳跃式新区"的通行样本(与贵安、滇中同类)。兰州的形态启示:河谷城市的带状格局全国通行(天水、宝鸡、安康、汉中同构),瓶颈只能在几何上突破。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">银川 · 西宁</span><span class="en">Yinchuan &amp; Xining</span>
+<div class="meta">宁夏首府 / 青海省会</div></div>
+<div class="entry-def">银川:贺兰山下"塞上湖城",阅海湾 CBD 与宁东能源基地一城一翼;西宁:湟水谷地的高原枢纽,海湖新区撑起了当代界面,东关清真大寺一带是最老的层——两座省城都不大,却是各自省区的绝对中心。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>银川:老城兴庆区(鼓楼、南门楼、承天寺塔)、凤凰碑;城北金凤区阅海湾中央商务区与花博园湿地界面;城西西夏区是大学城与葡萄酒庄方向(贺兰山东麓酒庄带);东南约 40 公里是宁东能源化工基地(国家级,煤化工园区自成一城)。城内湖泊湿地多,"七十二连湖"的历史名称对应今天的水系公园。西宁:中心广场—大十字一带是老城,东关清真大寺(西北四大清真寺之一)与其周边街巷是最老的层;城西海湖新区(2010 年代成形)是行政、体育、商业的新界面;湟水河与南北山夹出带状城区,与兰州同构;南川河、麒麟湾公园是日常界面。城外:塔尔寺(湟中,藏传佛教格鲁派创始人宗喀巴诞生地)是宗教旅游界面。</p>
+<p><b>怎么来的。</b>银川平原自秦汉引黄河灌溉(秦渠汉渠),西夏建都于此(西夏陵 2025 年列入世界遗产<sup class="ref">[1]</sup>);当代城市是自治区首府(1958 年),宁东基地是 2003 年起的能源战略布局。西宁自古是湟中谷地枢纽("西陲安宁"得名),1950 年代起为青藏门户(青藏铁路起点之一),人口自 2000 年代快速集聚(青海省内人口向省会流动,集中度高)。两城的共同点:省内首位度极高,基础设施与商业配套全省最好,年轻人口向省会集中——这是西北省区的通行状态(拉萨、兰州同理)。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">乌鲁木齐</span><span class="en">Ürümqi</span>
+<div class="meta">新疆首府 · 结构:天山区老城—经开区(高铁)—会展片区—高新区(新市区)</div></div>
+<div class="entry-def">亚洲大陆地理中心附近的首府:天山北坡、乌鲁木齐河冲积扇上的城市;红山塔是老城标志,二道桥国际大巴扎是最热闹的民族商贸界面,高铁片区与会展片区是 2010 年代的新界面。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>老城:红山公园(城市原点)、人民广场、南门一带;二道桥—国际大巴扎(2003 年建成,伊斯兰风格穹顶市场群,维吾尔语与烤馕香气构成街面);大巴扎周边的维吾尔族民居街巷与馕坑。新区:高铁片区(经开区,2010 年代成形)是 CBD+交通枢纽界面;会展片区(红光山会展中心一带)是新区居住+会展界面;新市区(高新区,1992 年获批)在北京路沿线。城郊:水磨沟公园、南山西白杨沟;北郊准噶尔盆地方向是甘泉堡工业区。地铁 1 号线(2018 年通,南北向)。</p>
+<p><b>怎么来的。</b>乌鲁木齐 1763 年筑城(迪化),1884 年新疆建省定为首府;1950 年代起工业与铁路(兰新线 1962 年通)带动城市北扩;1992 年高新区、1994 年经开区相继获批;2010 年代高铁、会展两大片区集中建设;近年陆港区(中欧班列集结中心)续接了枢纽功能。乌鲁木齐的城市语言与全国省会同款(新区+高铁站+CBD),叠加的是民族商贸界面与大陆性气候(冬季雪盖)——"全国化界面+地方性街面"的并置,是边疆首府城市的通行结构(拉萨、南宁同理)。</p>
+</div>
+</div>
+
+<div class="sec" id="s63"><h3>§6.3 新城与能源:西咸 · 宁东 · 榆林 · 克拉玛依<span class="sec-sub">NEW TOWNS &amp; ENERGY CITIES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">西咸新区</span><span class="en">Xixian New Area</span>
+<div class="meta">陕西 · 2014 年获批国家级(第七个)<sup class="ref">[2]</sup>· 西安咸阳之间</div></div>
+<div class="entry-def">在西安与咸阳两城之间的空白带上规划的新区:沣东、沣西、秦汉、空港、泾河五个新城组团,昆明池(2017 年重挖)与中国西部科技创新港(2019,交大新校区)是两个标志物——"缝合两城"型国家级新区的唯一样本。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>沣东:昆明池遗址公园(汉武帝昆明池故地,重挖为大型水面)与镐京-阿房宫遗址带,周边是新建住区与绿地;沣西:中国西部科技创新港(西安交大新校区,巨构建筑群+科研院所)、西咸新区管委会;秦汉:秦汉新城(秦咸阳宫遗址带,兰池大道);空港:咸阳机场旁的临空经济区;泾河:泾河新城产业区。整体:大遗址(周丰镐、秦咸阳宫、汉长安城西缘)与新城区块相间,路网开阔、塔吊与新楼成片。</p>
+<p><b>怎么来的。</b>西咸一体化自 2002 年提出,2011 年西咸新区管委会成立,2014 年获批国家级<sup class="ref">[2]</sup>;五个组团各设管委会,采取"平台公司+新城"开发模式。它的通行意义:国家级新区不都是"郊区造城",西咸是"双城之间缝合"型——同类逻辑还有兰州新区(远跳型)、天府新区(主轴延伸型)、贵安新区(双城之间型,贵阳安顺之间),四种布局即全国 19 个国家级新区的全部基本型。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">能源城市:榆林 · 克拉玛依 · 宁东</span><span class="en">Energy Cities</span>
+<div class="meta">陕北 / 准噶尔盆地 / 宁夏东部</div></div>
+<div class="entry-def">资源城市的西北版本:榆林在毛乌素沙地边缘靠煤油气长成 I 型大城市,克拉玛依是 1958 年为石油平地而建的规划新城,宁东是国家级能源化工基地(园区即城市)——资源价格决定建设节奏的规律在此最直观。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>榆林:老城(榆林卫城,明清边墙要塞,六楼骑街格局)与新区(高新区沙河一带的高层住区、市政广场)并置,城外是煤矿与天然气田;城市界面的扩张速度肉眼可见(2010 年代的"陕北科威特"叙事)。克拉玛依:1958 年建市,街道横平竖直,城市绿化率极高(戈壁上的"沙漠美人",引水工程供水),黑油山(石油自溢泡)与一号井是石油工业纪念地;独山子(奎屯方向)是炼化副城。宁东(银川灵武):煤化工园区连片,管廊、冷却塔、职工生活基地组成"基地型城市";与之同类的还有鄂尔多斯(→§1.3)、库尔勒(南疆石油+香梨之城)。</p>
+<p><b>怎么来的。</b>榆林因神府煤田(1980 年代勘探)与长庆油气而兴,是"资源型城市"的当代版本(与大庆同构,→§2.2);克拉玛依 1955 年发现油田、1958 年设市,是新中国第一批"先规划后建设"的工业城市之一;宁东基地 2003 年启动,是国家能源战略布局。能源城市的通行形态:厂区(或矿区)+基地生活区+新城 CBD 三段式;通行风险:资源价格周期决定财政,城市建设随之起落(鄂尔多斯、榆林都经历过)——全国 69 座资源枯竭城市(2008—2012 三批公布)已给出前车之鉴<sup class="ref">[13]</sup>。</p>
+</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-2</span><span class="no">西北政策区与能源基地档案</span></div>
+<table class="spec-t">
+<tr><td class="k">国家级新区</td><td>西北 2 个:兰州新区(2012,远跳型)、西咸新区(2014,缝合型)<sup class="ref">[2]</sup>;加西南(两江、贵安、天府)与全国共 19 个(含雄安)</td></tr>
+<tr><td class="k">高新区经开区</td><td>西安高新(1991 首批)、兰州、乌鲁木齐、宝鸡等均有国家级开发区;几乎每座地级市另设省级园区——"无园不成市"在全国通行<sup class="ref">[3]</sup></td></tr>
+<tr><td class="k">能源基地</td><td>宁东(煤化工)、榆林(煤油气)、克拉玛依(石油)、库尔勒(油气)、准东(煤)——"西气东输""西电东送"的供给侧节点</td></tr>
+<tr><td class="k">兵团城市</td><td>新疆生产建设兵团直辖县级市:石河子(1976 设市,军垦规划城鼻祖)、阿拉尔、图木舒克、五家渠等十余座,"师市合一"体制——全国独一份的城市序列</td></tr>
+<tr><td class="k">识别口诀</td><td>能源城:管廊+冷却塔+统一职工住区;兵团城:棋盘路网+广场+军垦博物馆;新区:大轴线+新楼+塔吊——三种"平地新城"在西北同框</td></tr>
+</table></div>
+
+<div class="sec" id="s64"><h3>§6.4 县城实录:绿洲、黄土与河谷<span class="sec-sub">COUNTY SEATS</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">西北县城</span><span class="en">County Seats of the Northwest</span>
+<div class="meta">代表:敦煌(甘)· 韩城(陕)· 各绿洲县城(新)· 湟水河谷县城(青)</div></div>
+<div class="entry-def">西北县城三种基底:黄土高原县城(川道里的一线城)、绿洲县城(沙漠戈壁间的水草点)、河谷县城(祁连山、湟水间的窄条城)——县城小而功能全,高铁与旅游决定其中少数的荣枯。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>敦煌(县级市):沙州老城+鸣沙山月牙泉(城南 5 公里)+莫高窟(城东南 25 公里),市区党河风情线、夜市与民宿构成旅游县城的标准界面。韩城(县级市,国家历史文化名城):古城(金城大街、文庙、党家村在郊)保存完整,新城在原上另建——古城型县城的西北样本。绿洲县城(南疆):和田、莎车、伽师等,白杨林带与渠系围着的县城,巴扎日(集市)是城市节律,街道界面以当地语言与馕坑、烤肉摊为主。黄土县城(陇东、陕北):如会宁、志丹,县城沿川道一线展开,山坡上窑洞残存、川道里是砖混新楼;部分县城整体搬迁或上塬。湟水河谷县城(青海):平安、乐都(海东市驻地),峡窄城长,兰青铁路与高速并行穿城。</p>
+<p><b>怎么来的。</b>绿洲县城继承了两千年的屯田与驿传体系(汉西域都护府以来的屯城序列);黄土县城多是明清堡寨基础上扩容;敦煌 1979 年对外旅游开放后由农区县城转为旅游城,莫高窟(1987 年世界遗产<sup class="ref">[1]</sup>)是城市经济的本体;韩城 1986 年列入国家历史文化名城。西北县城的当代变量:一是高铁(兰新高铁、银西高铁设站与否),二是易地搬迁扶贫(2001—2020 年,全国易地扶贫搬迁 960 余万人,西北是主要迁出区)——大量山庄窝铺撤并,人口向县城与中心镇集中,这是西北县城近年扩建的主要动力。</p>
+</div>
+</div>
+
+<h4>西北地级市实录表(逐省区)</h4>
+<table class="t">
+<tr><th style="width:60px">省</th><th>城市与当下格局(全部地级政区)</th></tr>
+<tr><td><b>陕西</b></td><td>西安(§6.1);铜川(煤城转型,药王故里);宝鸡(秦岭北麓工业城,青铜器之乡);咸阳(古都,纺织电子,与西咸新区相接);渭南(华山门户);延安(革命旧址群,削山建新城);汉中(汉江盆地,油菜花);榆林(§6.3);安康(瀛湖,南水北调水源区);商洛(秦岭南麓)</td></tr>
+<tr><td><b>甘肃</b></td><td>兰州(§6.2);嘉峪关(1965 年为酒钢设市,戈壁规划城);金昌(镍都);白银(铜城,资源枯竭转型);天水(伏羲庙,麦积山);武威(凉州,铜奔马出土地);张掖(丹霞,河西走廊绿洲城);平凉(崆峒山);酒泉(卫星发射中心在其辖区,风电基地);庆阳(长庆油田,董志塬);定西(马铃薯);陇南(秦巴山地);临夏州(临夏,民族贸易);甘南州(合作,拉卜楞寺在夏河)</td></tr>
+<tr><td><b>青海</b></td><td>西宁(§6.2);海东(湟水谷地,互助、民和等县;青稞酒);海北州(原子城纪念馆在金银滩);黄南州(热贡艺术,同仁);海南州(共和,塔拉滩光伏海);果洛州(玛沁,黄河源头区域);玉树州(玉树,2010 年震后重建城);海西州(格尔木为青藏铁路枢纽,盐湖与察尔汗,茫崖翡翠湖)</td></tr>
+<tr><td><b>宁夏</b></td><td>银川(§6.2);石嘴山(煤城转型,沙湖);吴忠(黄河金岸,回族商贸);固原(六盘山,曾为最贫困地区之一);中卫(沙坡头,云数据中心)</td></tr>
+<tr><td><b>新疆</b></td><td>乌鲁木齐(§6.2);克拉玛依(§6.3);吐鲁番(火焰山,葡萄沟,坎儿井);哈密(东天山门户,风电);昌吉州(乌鲁木齐北郊,农业制造);博尔塔拉州(阿拉山口口岸);巴音郭楞州(库尔勒,南疆最大城市,若羌红枣);阿克苏(温宿大峡谷,棉区);喀什(喀什古城 5A,老城改造全国样本,经济特区开发区);和田(玉都,地毯);伊犁州(伊宁六星街,霍尔果斯口岸,薰衣草);塔城(巴克图口岸);阿勒泰(喀纳斯,雪都);直辖县级市:石河子、阿拉尔、图木舒克、五家渠、北屯、铁门关、双河、可克达拉、昆玉、胡杨河、新星、白杨(兵团城市,与自治区地州市并列报列)</td></tr>
+</table>
+
+<div class="sec" id="s65"><h3>§6.5 乡村实录:窑洞、关中村与绿洲村落<span class="sec-sub">VILLAGES</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">黄土高原窑洞与关中村</span><span class="en">Loess Cave Dwellings &amp; Guanzhong Villages</span>
+<div class="meta">陕北 · 陇东 / 关中平原</div></div>
+<div class="entry-def">黄土高原的村庄以窑洞为标志:靠崖式(沿崖挖券)、下沉式(地坑院,平地挖方院再券窑)两种,废弃与旅游化并行;关中平原的村则是"房子半边盖"的单坡厦房沿村巷排布——两种干燥气候的民居策略。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>陕北(延安、榆林):川道里砖窑(箍窑,砖砌窑洞)与窑洞混合村,山坡上废弃的土窑洞群常见;姜氏庄园、米脂杨家沟等窑洞大院是精品。陇东(庆阳、平凉):地坑院村落(先挖方形下沉院,四面券窑),"进村不见房,闻声不见人"的景象;庆阳已将地坑院窑洞群改造为民宿与文化园。关中:合院式村庄,厦房单坡屋顶朝院内排水("肥水不流外人田"的物化),袁家村(礼泉)是关中民俗旅游村的最知名样本——一座村即一座主题商业街市。近况:退耕还林(1999 年起)后山坡窑洞加速废弃,村民迁入川道或县城;窑洞民宿(延安方向)是遗产利用的新路径。</p>
+<p><b>怎么来的。</b>黄土的直立性与干燥气候使窑洞成为最省料的民居(冬暖夏凉),通行数千年;1990 年代后生活改善,砖房替代窑洞,2000 年代窑洞普遍废弃;关中厦房是同样的气候与农耕逻辑(单坡、内向)。袁家村 1970 年代起步、2007 年转型民俗旅游,是"村庄公司化"的通行样本(与浙江鲁家村、陕西马嵬驿同列研究案例)。黄土高原村庄的总账:生态政策(退耕)与城镇化(搬迁)叠加,村庄数量收缩、剩余村庄旅游化——与全国乡村命运同曲线,只是西北的坡度更陡。</p>
+</div>
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">绿洲村落与牧区定居点</span><span class="en">Oasis &amp; Pastoral Settlements</span>
+<div class="meta">河西走廊 · 天山南北 · 青藏高原东北缘</div></div>
+<div class="entry-def">绿洲村:白杨林带、渠系、葡萄架与晾房组成的村,农田即果园;牧区定居点:草原上的砖房村(定居工程建成)+夏季牧场的毡房——干旱区与高原区的两种村庄常态。</div>
+<div class="entry-bd">
+<p><b>能看到什么。</b>河西绿洲(张掖、武威、酒泉):雪山融水渠系先于村庄存在,村里白杨夹道、玉米与葵花田包围院落,土坯房与砖房混布;戈壁边缘的风沙口有草方格与防风林带。新疆绿洲(吐鲁番、喀什、和田):高台民居(喀什老城边缘的生土建筑群,层层叠在崖上)、吐鲁番的葡萄晾房(镂空砖砌晾制葡萄干,公路边连片)、桑树与馕坑;庭院里葡萄架覆盖大半院子,夏季全家在架下起居。牧区:新疆阿勒泰、伊犁的哈萨克族定居兴牧工程新村(砖房+棚圈+草料库),夏牧场毡房仍季节性使用;青海海南州塔拉滩的光伏板下是生态恢复的草地与牧民的羊群("光伏羊"),是能源基地与牧区并置的新景象。</p>
+<p><b>怎么来的。</b>绿洲村落继承清代以来的屯垦与坎儿井体系(吐鲁番坎儿井是人工地下渠道,与长城、大运河并称古代三大工程的说法通行);喀什老城 2010 年前后实施危旧房改造(原址重建、保持街巷肌理),是老城改造的全国样本之一;牧民定居工程(2008 年起新疆,2010 年代青海、甘肃)把游牧转为"定居+季节性转场"。干旱区村庄的通行逻辑:水在先,村在后——渠系、林带、院落、田的顺序即村庄的建设顺序;这与东部"路在先,村在后"完全相反,是读西北乡村地图的第一要点。</p>
+</div>
+</div>
+
+<div class="note">第六编小结:西北的识别钥匙是<b>基底古老、界面最新</b>——周秦汉唐的城址、丝路绿洲的村落是基底,高新区、国家级新区、能源基地是界面,两者之间几乎没有"近代层"(租界、里弄在此缺席,→卷三 §1 编首说明);县城与乡村服从水与生态两条硬约束(绿洲靠渠、黄土靠退耕)。至此六编收束:六大区各有一把钥匙(华北·层级、东北·存量、华东·密度、中南·类型、西南·地形、西北·基底),合起来即一张全国城市识别总图。</div>
+
+<!-- ============================================================ -->
+<!-- 附录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appA">
+<div class="vol-no">附录 A</div>
+<h2>术语表</h2>
+<div class="vol-range">按拼音序 · 体例仿词典 · 只收现行通名与通行现象,不立新词</div>
+</div>
+
+<div class="lemma"><b>百强县</b><span class="pos">n.</span>对经济总量居前的县(县级市)的通行称谓(县域经济研究机构历年发布);"县级行政、地级实体"的通行载体(→§3.4、§4.6)。</div>
+<div class="lemma"><b>兵团城市</b><span class="pos">n.</span>新疆生产建设兵团直辖的县级市(石河子、阿拉尔等十余座),"师市合一"体制;军垦规划城的当代序列(→§6.3、档 6-2)。</div>
+<div class="lemma"><b>城市更新</b><span class="pos">n.</span>以存量空间为对象的建设模式:旧改、工改工、老旧小区改造、城中村改造(→§4.3 深圳三步;卷三 §6.3)。</div>
+<div class="lemma"><b>城市群</b><span class="pos">n.</span>国家规划文件中的城市密集区称谓(京津冀、长三角、珠三角/大湾区、成渝、长江中游、中原等),城市分工的规划载体(→§1.1、§4.3、§5.1)。</div>
+<div class="lemma"><b>城中村</b><span class="pos">n.</span>城市建成区内保留集体土地权属的高密度聚落;深圳、广州体量最大,与新区、CBD并置运转(→§4.3、§4.6;卷三 §6.2)。</div>
+<div class="lemma"><b>大行政区</b><span class="pos">n.</span>1949—1954 年的省级之上政区(华北、东北、华东、中南、西南、西北),现行电话区号与地理分区称谓的历史来源(→总纲)。</div>
+<div class="lemma"><b>大学城</b><span class="pos">n.</span>多所高校集中迁建的城区(广州大学城、重庆大学城、昆明呈贡、西安长安区等),2000 年代省会扩容的通行一章(→§5.2、§5.3、§6.1)。</div>
+<div class="lemma"><b>都市圈</b><span class="pos">n.</span>以大城市为中心、通勤联系为标准的规划圈层(南京、武汉、成都、重庆都市圈等;"环京通勤带"为其实例,→§1.1)。</div>
+<div class="lemma"><b>副中心</b><span class="pos">n.</span>城市内部(北京城市副中心)或省域(襄阳宜昌、洛阳、岳阳、遵义等"省域副中心")的第二中心称谓——两类同名,注意分清。</div>
+<div class="lemma"><b>高铁新城</b><span class="pos">n.</span>依托高铁站建设的城区;县城层面"设站与否决定荣枯"是通行规律(→§1.4、§4.6、§6.4)。</div>
+<div class="lemma"><b>高新区</b><span class="pos">n.</span>国家级/省级高新技术产业开发区的通称;1988—1991 年首批起步,张江、光谷、西安高新、成都高新为四个形态原型(→档 3-1、档 4-1、档 6-1)。</div>
+<div class="lemma"><b>管委会体制</b><span class="pos">n.</span>开发区与新区普遍采用的管理体制:管委会作为派出机关行使一级政府职能,是"政策区"运转的制度核心(→档 4-1、§5.1)。</div>
+<div class="lemma"><b>国家中心城市</b><span class="pos">n.</span>城镇体系规划中的最高层级城市定位,已批复北京、天津、上海、广州、重庆、成都、武汉、郑州、西安九座(→§4.1、§4.2、§6.1)<sup class="ref">[9]</sup>。</div>
+<div class="lemma"><b>国家级新区</b><span class="pos">n.</span>国务院批复的综合功能区,1992 浦东起共 19 个;主轴延伸型(天府)、远跳型(兰州)、缝合型(西咸、贵安)、双城带动型(两江)等布局(→档 5-1、§6.3)。</div>
+<div class="lemma"><b>候鸟人口</b><span class="pos">n.</span>季节性迁居人口(海南冬季、云贵夏季避暑);"旅居地产"的需求侧(→§4.5)。</div>
+<div class="lemma"><b>计划单列市</b><span class="pos">n.</span>收支直接与中央挂钩的城市:深圳、大连、青岛、宁波、厦门五座,均为经济强市(→§3.3、§4.3、§4.4)。</div>
+<div class="lemma"><b>建成区</b><span class="pos">n.</span>实际已开发建设、市政设施基本具备的连片区域;本卷"城市有多大"一律指建成区而非行政辖区(→§3.4 县域建成区数据)。</div>
+<div class="lemma"><b>经济特区</b><span class="pos">n.</span>1980 年设立的政策区:深圳、珠海、汕头、厦门(及 1988 海南岛);"特区—开发区—城市"演化路径的起点(→§4.3、§4.5)。</div>
+<div class="lemma"><b>经开区</b><span class="pos">n.</span>国家级/省级经济技术开发区的通称;1984 年首批 14 个沿海经开区起步(大连开发区等),与高新区并立的政策区双轨(→§2.1、档 3-1)。</div>
+<div class="lemma"><b>老城</b><span class="pos">n.</span>1949 年前形成、城墙或护城河范围以内的建成区;本卷每编均从老城写起,是城市结构的"原点层"(→各编 §n.1)。</div>
+<div class="lemma"><b>历史文化名城</b><span class="pos">n.</span>国务院公布的风貌保护城市称号(1982 年首批 24 座);平遥、阆中、韩城、丽江等名城的"老城内控、新区外跳"策略(→§1.4、§5.4、§6.4;卷三 §4.2)。</div>
+<div class="lemma"><b>省直辖县级市</b><span class="pos">n.</span>由省直接管辖、不属地级市的县级政区:济源、仙桃、潜江、天门等;行政序列的少数变体(→§4.6)。</div>
+<div class="lemma"><b>省域副中心</b><span class="pos">n.</span>省规划文件中确定的第二增长极城市(洛阳、襄阳、宜昌、岳阳、遵义、绵阳等),资源仅次于省会(→§4.6 实录表)。</div>
+<div class="lemma"><b>收缩城市</b><span class="pos">n.</span>人口持续流出的城市;资源枯竭型城市(鹤岗、鸡西等)为其典型(→§2.2;卷三 §6.5)。</div>
+<div class="lemma"><b>县城</b><span class="pos">n.</span>县人民政府驻地建成区;"十字街—政务新区—高铁片区"的通行成长线,本卷每编设县城实录一节(→§1.4、§4.6、§5.4、§6.4)。</div>
+<div class="lemma"><b>县级市</b><span class="pos">n.</span>行政级别为县级的城市建制(多由地级市代管);昆山、义乌等已长成"县级行政、地级实体"(→§3.4)。</div>
+<div class="lemma"><b>直筒子市</b><span class="pos">n.</span>不设区县、市直管镇街的地级市:东莞、中山、嘉峪关、儋州等;镇域即城市的行政基础(→§4.4)。</div>
+<div class="lemma"><b>中轴线</b><span class="pos">n.</span>城市南北(或东西)主轴:北京中轴线、成都天府大道、郑州郑东新区轴等;读懂城市生长方向的钥匙(→图 5-1)。</div>
+<div class="lemma"><b>专业镇</b><span class="pos">n.</span>一镇一业的镇域经济体(虎门服装、古镇灯饰、北滘家电等);"镇域即城市"的产业底盘(→§4.4、图 4-2)。</div>
+<div class="lemma"><b>政务新区</b><span class="pos">n.</span>以行政中心搬迁带动的新区(合肥政务区、五象、呈贡、金阳等);2000 年代县城与省会的通行一章(→§1.4、§4.2、§5.3)。</div>
+<div class="lemma"><b>自贸试验区</b><span class="pos">n.</span>2013 年上海起步的开放政策区,现 22 个(含海南自贸港);南沙、前海、横琴、钦州港等为城市界面最新的一层(→§4.3、§4.5)。</div>
+<div class="lemma"><b>资源型城市</b><span class="pos">n.</span>以矿产、能源开采为主导产业的城市;大庆、攀枝花、克拉玛依、榆林等,资源价格决定建设节奏(→§2.2、§6.3;档 6-2)。</div>
+
+<div class="vol" id="appB">
+<div class="vol-no">附录 B</div>
+<h2>参考来源</h2>
+<div class="vol-range">正文上标 [n] 对应下列条目 · 以公开制度文本与统计资料为纲</div>
+</div>
+
+<ol class="src">
+<li>民政部:历年《中华人民共和国行政区划简册》与行政区划统计公告;国务院关于国家历史文化名城历批公布文件;联合国教科文组织世界遗产名录(平遥、丽江、布达拉宫、莫高窟、红河哈尼梯田、西夏陵等中国项目)——政区数据与遗产名录部分</li>
+<li>国务院关于设立国家级新区的批复文件(1992 浦东新区—2017 雄安新区,共 19 个)汇编——滨海新区、江北、西海岸、两江、贵安、天府、兰州、西咸、湘江、南沙等条目</li>
+<li>国家发展改革委等六部门《中国开发区审核公告目录(2018 年版)》——国家级经开区 219 家、高新区 169 家及各开发区设立批次部分</li>
+<li>全国人大及其常委会、国务院关于设立经济特区(1980)、开放沿海城市(1984)与经济技术开发区的一系列公开文件——深圳、珠海、厦门、海南、大连开发区等条目</li>
+<li>中共中央、国务院《粤港澳大湾区发展规划纲要》(2019);《中国(广东)自由贸易试验区总体方案》(2015)——广州、深圳、珠三角镇域条目</li>
+<li>中共中央、国务院《关于支持海南全面深化改革开放的指导意见》(2018);《海南自由贸易港建设总体方案》(2020)——海口、三亚条目</li>
+<li>中共中央、国务院《成渝地区双城经济圈建设规划纲要》(2021);《长江三角洲区域一体化发展规划纲要》(2019)——成都、重庆与区域战略条目</li>
+<li>《促进中部地区崛起规划》(2009)及长江中游城市群、中原城市群发展规划;国务院关于郑州航空港经济综合实验区的批复(2013)——武汉、郑州、长沙条目</li>
+<li>国家发展改革委、住房城乡建设部关于支持武汉、郑州、西安建设国家中心城市的复函与相关规划(2016—2018)——国家中心城市条目</li>
+<li>1949—1954 年大行政区制度史料;原邮电部及现行长途电话区号配置公开资料——六大区划分与区号证据</li>
+<li>《上海市城市总体规划(2017—2035 年)》;张江国家自主创新示范区与"聚焦张江"战略相关公开文件——张江、五个新城条目</li>
+<li>义乌中国小商品城发展史公开资料;全国县域经济与百强县研究历年公开成果——县域经济条目</li>
+<li>国务院三批资源枯竭城市名单(2008、2009、2011,共 69 座);收缩城市研究文献(龙瀛等)——资源型城市与收缩城市条目</li>
+</ol>
+
+<div class="vol" id="appC">
+<div class="vol-no">附录 C</div>
+<h2>总年表</h2>
+<div class="vol-range">区域格局视角:城市成长的制度与建造事件(古代仅取与今日形态直接相关者)</div>
+</div>
+
+<table class="t">
+<tr><th style="width:96px">年份</th><th>事件</th><th style="width:80px">类别</th><th style="width:110px">参见</th></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅰ 近代定型 1840—1949</td></tr>
+<tr><td>1842—1861</td><td>五口通商及后续开口:上海(1843)、汉口(1861)等口岸开埠,商埠界面成为沿海沿江城市第一层新区</td><td>制度</td><td>§3.1、§4.1</td></tr>
+<tr><td>1897—1905</td><td>青岛德占、大连俄租、哈尔滨中东铁路——单一殖民规划型城市;京汉、陇海等干线开工,郑州、石家庄、株洲、怀化因铁路设站起步</td><td>建造</td><td>§3.3、§4.2、§4.6</td></tr>
+<tr><td>1909</td><td>兰州中山桥建成(黄河第一座永久桥);此前张之洞督鄂(1889—1907)奠定武汉三镇分工</td><td>建造</td><td>§6.2、§4.1</td></tr>
+<tr><td>1929</td><td>《首都计划》(南京)、《大上海计划》编制;大连广场放射系统成形期——近代规划的三大样本</td><td>规划文本</td><td>§3.2</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅱ 计划经济 1949—1978</td></tr>
+<tr><td>1953—1957</td><td>"一五"156 项工程布局:太原、西安、兰州、洛阳(涧西)、武汉(青山)等布点,苏式工业区+家属区定型</td><td>制度</td><td>§1.2、§6.1</td></tr>
+<tr><td>1955—1958</td><td>克拉玛依油田发现(1955)、设市(1958);石河子军垦城起步——资源城与兵团城两类新城的起点</td><td>建造</td><td>§6.3</td></tr>
+<tr><td>1957</td><td>武汉长江大桥通车,三镇陆路相连;此后重庆、南京等跨江城市陆续缝合</td><td>建造</td><td>§4.1</td></tr>
+<tr><td>1964—1980</td><td>三线建设:"靠山、分散、隐蔽"布点攀枝花、六盘水、绵阳、柳州、达州等,山地工业城定型</td><td>制度</td><td>§5.4、§4.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲ 政策区时代 1980—2000</td></tr>
+<tr><td>1980—1981</td><td>深圳、珠海、汕头、厦门经济特区设立——"政策区"作为城市发动机的开始</td><td>制度</td><td>§4.3</td></tr>
+<tr><td>1984—1985</td><td>14 个沿海经开区设立(大连等);昆山自费开发区起步;东莞"三来一补"第一厂落地</td><td>制度</td><td>§2.1、§3.4、§4.4</td></tr>
+<tr><td>1988—1991</td><td>海南建省办特区;东湖(武汉)、成都、西安等首批国家级高新区获批;张江建园(1992)</td><td>制度</td><td>§4.1、§5.1、§6.1</td></tr>
+<tr><td>1992</td><td>浦东新区设立(首个国家级新区);南方谈话后开发区热全国铺开</td><td>制度</td><td>§3.1</td></tr>
+<tr><td>1994</td><td>苏州工业园区中新合作起步;分税制改革,土地财政的城市建设逻辑形成</td><td>制度</td><td>§3.1</td></tr>
+<tr><td>1997—1999</td><td>重庆恢复直辖(三峡移民背景);退耕还林启动(1999)——黄土高原村庄收缩的政策起点</td><td>政区</td><td>§5.2、§6.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">IV 新区与高铁 2000—2012</td></tr>
+<tr><td>2000—2001</td><td>西部大开发启动;松山湖高新区设立;广州珠江新城加速</td><td>制度</td><td>§4.4、§4.3</td></tr>
+<tr><td>2003—2005</td><td>郑东新区开工;三亚湾区开发;昆山开发区模式成熟(百强县首现)</td><td>建造</td><td>§4.2、§4.5</td></tr>
+<tr><td>2008—2010</td><td>高铁时代开启(京津城际 2008);两江新区(2010)获批——内陆首个国家级新区</td><td>制度</td><td>§5.2</td></tr>
+<tr><td>2011—2014</td><td>舟山、兰州、南沙、西咸、贵安、天府、西海岸等国家级新区密集获批(2011—2014);西安行政中心北迁(2011)</td><td>制度</td><td>§5.1、§6.1、§6.3</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">V 双城与都市圈 2015—2026</td></tr>
+<tr><td>2015—2017</td><td>自贸区扩围(粤、闽、津及后批);合肥滨湖、五象等新城成熟;国家中心城市批复(成都、武汉、郑州,2016—2017);雄安新区设立(2017);成都"东进"跨山</td><td>制度</td><td>§1.1、§4.2、§5.1</td></tr>
+<tr><td>2019—2020</td><td>《粤港澳大湾区发展规划纲要》;海南自贸港总体方案;贵阳大数据产业成型;深中通道建设(2024 通车)</td><td>制度</td><td>§4.3、§4.5</td></tr>
+<tr><td>2021—2026</td><td>成渝双城经济圈纲要发布;天府机场投运(2021);城市更新行动全面铺开;中欧班列(西安、乌鲁木齐集结中心)重塑陆港城市</td><td>制度</td><td>§5.1、§6.1</td></tr>
+</table>
+
+<div class="vol" id="appD">
+<div class="vol-no">附录 D</div>
+<h2>图版与档案目录</h2>
+<div class="vol-range">本卷编号独立:图 n-n / 档 n-n 按编连续</div>
+</div>
+
+<table class="t">
+<tr><th style="width:110px">编号</th><th>标题</th><th style="width:110px">所在</th></tr>
+<tr><td><b>图 1-1</b></td><td>京津冀城镇格局示意</td><td>§1.1</td></tr>
+<tr><td><b>图 1-2</b></td><td>华北平原县城标准格局</td><td>§1.4</td></tr>
+<tr><td><b>图 2-1</b></td><td>东北四城结构谱</td><td>§2.1</td></tr>
+<tr><td><b>图 2-2</b></td><td>工人村街坊平面(苏式原型)</td><td>§2.3</td></tr>
+<tr><td><b>图 3-1</b></td><td>上海东西轴结构剖面(外滩 → 临港)</td><td>§3.1</td></tr>
+<tr><td><b>图 3-2</b></td><td>苏南县域结构(昆山模式)</td><td>§3.4</td></tr>
+<tr><td><b>图 4-1</b></td><td>武汉三镇与光谷结构</td><td>§4.1</td></tr>
+<tr><td><b>图 4-2</b></td><td>珠三角专业镇结构(东莞模式)</td><td>§4.4</td></tr>
+<tr><td><b>图 5-1</b></td><td>成都南向剖面(天府广场 → 兴隆湖)</td><td>§5.1</td></tr>
+<tr><td><b>图 6-1</b></td><td>西安"古城+五区"格局</td><td>§6.1</td></tr>
+<tr><td><b>档 1-1</b></td><td>北京城市结构档案</td><td>§1.1</td></tr>
+<tr><td><b>档 1-2</b></td><td>华北平原县城标准格局档案</td><td>§1.4</td></tr>
+<tr><td><b>档 2-1</b></td><td>东北工人村档案</td><td>§2.3</td></tr>
+<tr><td><b>档 3-1</b></td><td>长三角园区档案(上海张江 / 苏州工业园)</td><td>§3.1</td></tr>
+<tr><td><b>档 3-2</b></td><td>苏南浙北县域档案</td><td>§3.4</td></tr>
+<tr><td><b>档 4-1</b></td><td>光谷档案(东湖新技术开发区)</td><td>§4.1</td></tr>
+<tr><td><b>档 4-2</b></td><td>一线城市 CBD 档案(广州珠江新城 / 深圳福田)</td><td>§4.3</td></tr>
+<tr><td><b>档 5-1</b></td><td>天府新区档案(与光谷 / 张江对照)</td><td>§5.1</td></tr>
+<tr><td><b>档 6-1</b></td><td>西安高新区档案(全国高新区四例对照)</td><td>§6.1</td></tr>
+<tr><td><b>档 6-2</b></td><td>西北政策区与能源基地档案</td><td>§6.3</td></tr>
+</table>
+
+<div class="note">本卷四条主线收束:张江(§3.1)—光谷(§4.1)—天府(§5.1)—西安高新(§6.1)四份档案合读,即"政策区"如何从沿海园区长成内陆新城的完整链条;华北县城(§1.4)—苏南县域(§3.4)—中南县城(§4.6)—西南搬迁县城(§5.4)—西北绿洲县城(§6.4)五段实录合读,即全国县城的全部基本型。逐省实录表合计覆盖内地 31 省级政区的全部地级政区——"每个城区挨个介绍"的承诺在此兑现;县城与乡村以代表+通则覆盖,其谱系详见卷三第五、六编。</div>
+
+<footer>
+  <p>本卷为体系性研究文本,不随行情与政策周期变化;涉及当代建制与批文均以公开文件为准(附录 B),不作政策评价与预测,不作审美评价。图版均为示意,不按比例;技术档案数值为类型通行区间,个案以官方发布文本为准。</p>
+  <p style="margin-top:4px"><a href="index.html">返回专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a> · <a href="history.html">中国小区史</a> · <a href="planning.html">城市与区域</a> · <a href="landscape.html">城乡风貌</a></p>
+</footer>
+
+<!-- END -->
+</main>
+</div>
+
+<script>
+var secs = document.querySelectorAll('.vol, .sec');
+var links = document.querySelectorAll('nav.toc a');
+function upd(){
+  var y = window.scrollY + 120, cur = null;
+  secs.forEach(function(s){ if(s.offsetTop <= y) cur = s.id; });
+  links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur && !a.classList.contains('sub') || (a.classList.contains('sub') && a.getAttribute('href') === '#' + cur)); });
+}
+window.addEventListener('scroll', upd); upd();
+</script>
+</body>
+</html>
