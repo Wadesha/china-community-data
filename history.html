@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国居住建筑史 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,"Songti SC","STSong","SimSun",serif;font-size:14px;line-height:1.8;color:#111;background:#fff}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1240px;margin:0 auto;padding:0 20px}
+nav.toc{width:216px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px}
+nav.toc .toc-title{font-weight:700;margin-bottom:10px;color:#666;letter-spacing:2px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc .vol-h{font-weight:700;color:#000;margin:10px 0 3px 8px;font-size:11px;letter-spacing:1px}
+nav.toc .sub{padding-left:18px;color:#666}
+main{flex:1;min-width:0;padding:28px 0 80px 40px;max-width:920px}
+header.top{border-bottom:3px double #111;padding-bottom:16px;margin-bottom:24px}
+header.top .kicker{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11px;color:#666;letter-spacing:3px;margin-bottom:6px}
+header.top h1{font-size:27px;font-weight:700;letter-spacing:1px}
+header.top .sub{color:#333;margin-top:8px;font-size:14px;font-style:italic}
+.topnav{display:flex;gap:18px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px;margin-top:12px;padding:8px 0;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{font-weight:700;border-bottom:2px solid #111}
+p{margin:9px 0}
+p.lead{font-size:15px;line-height:1.9}
+.howto{border:1px solid #111;margin:0 0 30px}
+.howto .hd{background:#111;color:#fff;padding:6px 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px}
+.howto .bd{padding:12px 16px;font-size:13px}
+.howto .bd b{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;background:#f0f0f0;border:1px solid #bbb;padding:0 6px;margin-right:6px;font-weight:600}
+.vol{margin:56px 0 8px;padding:14px 0 10px;border-top:3px solid #111;border-bottom:1px solid #111}
+.vol .vol-no{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;letter-spacing:4px;color:#666}
+.vol h2{font-size:22px;font-weight:700;margin-top:2px}
+.vol .vol-range{font-size:13px;color:#555;font-style:italic;margin-top:2px}
+.sec{margin:36px 0 14px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h3{font-size:17px;font-weight:700;border-left:5px solid #111;padding-left:10px}
+.sec .sec-sub{font-size:12px;color:#777;margin-left:15px;margin-top:2px}
+h4{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:14.5px;font-weight:700;margin:24px 0 6px}
+.entry{border:1px solid #bbb;margin:20px 0}
+.entry-head{padding:10px 16px 8px;border-bottom:1px solid #e5e5e5}
+.entry-head .zh{font-size:21px;font-weight:700;letter-spacing:1px}
+.entry-head .en{font-family:Georgia,serif;font-style:italic;font-size:13px;color:#666;margin-left:10px}
+.entry-head .meta{font-size:12px;color:#888;margin-top:2px}
+.entry-def{border-left:4px solid #111;background:#fafafa;padding:9px 14px;margin:10px 14px;font-style:italic;font-size:13.5px;color:#222}
+.entry-bd{padding:2px 16px 10px}
+.spec{border:1px solid #111;margin:14px 0}
+.spec .spec-hd{background:#111;color:#fff;padding:5px 12px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:11.5px;letter-spacing:2px;display:flex;justify-content:space-between}
+.spec .spec-hd .no{color:#aaa}
+table.spec-t{width:100%;border-collapse:collapse;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12.5px}
+table.spec-t td{border-bottom:1px solid #e8e8e8;padding:5px 12px;vertical-align:top}
+table.spec-t td.k{width:118px;background:#f5f5f5;font-weight:600;border-right:1px solid #e8e8e8}
+table.spec-t tr:last-child td{border-bottom:none}
+.fig{border:1px solid #111;margin:18px 0;background:#fff}
+.fig .fig-hd{display:flex;justify-content:space-between;align-items:baseline;padding:6px 12px;border-bottom:1px solid #ddd;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.fig .fig-hd .no{font-size:11px;letter-spacing:2px;color:#666}
+.fig .fig-hd .t{font-size:13px;font-weight:700}
+.fig .fig-bd{padding:10px 12px 4px}
+.fig .fig-note{padding:6px 12px 9px;font-size:12px;color:#555;border-top:1px dashed #ddd;margin-top:6px;line-height:1.6}
+.fig svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.cr{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:12px;color:#777;margin:8px 0}
+.cr a{color:#444}
+blockquote{border-left:3px solid #999;margin:12px 0;padding:7px 16px;color:#444;font-size:13.5px;background:#fafafa}
+blockquote cite{display:block;font-size:11.5px;color:#888;margin-top:4px;font-style:normal;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:12.5px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+table.t th{background:#111;color:#fff;text-align:left;font-weight:600;border:1px solid #111;padding:5px 9px;white-space:nowrap}
+table.t td{border:1px solid #ccc;padding:5px 9px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f7f7}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:12.5px;color:#333}
+.dim{color:#666}
+.band{margin:16px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.band .band-t{font-size:12px;font-weight:700;letter-spacing:2px;margin-bottom:6px;color:#333}
+.band .bar{display:flex;height:40px;border:1px solid #111}
+.band .seg{border-right:1px solid #111;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;text-align:center;line-height:1.3;padding:0 4px}
+.band .seg:nth-child(odd){background:#efefef}
+.band .seg:nth-child(even){background:#dcdcdc}
+.band .seg:last-child{border-right:none}
+.band .ticks{display:flex;justify-content:space-between;font-size:10.5px;color:#888;margin-top:2px}
+.stat-row{display:flex;gap:12px;margin:14px 0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;flex-wrap:wrap}
+.stat{flex:1;min-width:150px;border:1px solid #111;padding:8px 12px}
+.stat .v{font-size:20px;font-weight:700}
+.stat .k{font-size:11.5px;color:#666;margin-top:2px}
+ol.src{font-size:12px;color:#444;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+ol.src li{margin:4px 0;word-break:break-all}
+.lemma{border-bottom:1px dotted #bbb;padding:7px 0;font-size:13px}
+.lemma b{font-size:14.5px}
+.lemma .pos{font-size:11.5px;color:#888;font-family:Georgia,serif;font-style:italic;margin:0 4px}
+sup.ref{font-size:10.5px;color:#999}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+@media (max-width:900px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">卷目</div>
+  <div class="vol-h">卷首</div>
+  <a href="#howto">凡例</a>
+  <a href="#gen">总纲 · 分期框架</a>
+  <div class="vol-h">第一编</div>
+  <a href="#v1">单位居住体系</a>
+  <a href="#s11" class="sub">§1.1 总论</a>
+  <a href="#s12" class="sub">§1.2 工人新村</a>
+  <a href="#s13" class="sub">§1.3 单位大院</a>
+  <a href="#s14" class="sub">§1.4 筒子楼</a>
+  <a href="#s15" class="sub">§1.5 排子房</a>
+  <a href="#s16" class="sub">§1.6 样板工程</a>
+  <a href="#s17" class="sub">§1.7 建造体系</a>
+  <a href="#s18" class="sub">§1.8 分配制度</a>
+  <a href="#s19" class="sub">§1.9 居住认知</a>
+  <div class="vol-h">第二编</div>
+  <a href="#v2">双轨过渡</a>
+  <a href="#s21" class="sub">§2.1 总论</a>
+  <a href="#s22" class="sub">§2.2 单元式住宅</a>
+  <a href="#s23" class="sub">§2.3 商品房试点</a>
+  <a href="#s24" class="sub">§2.4 制度变迁</a>
+  <a href="#s25" class="sub">§2.5 大事年表</a>
+  <a href="#s26" class="sub">§2.6 认知转变</a>
+  <div class="vol-h">第三编</div>
+  <a href="#v3">商品房时代</a>
+  <a href="#s31" class="sub">§3.1 总论</a>
+  <a href="#s32" class="sub">§3.2 黄金十年</a>
+  <a href="#s33" class="sub">§3.3 封闭小区</a>
+  <a href="#s34" class="sub">§3.4 高周转</a>
+  <a href="#s35" class="sub">§3.5 存量转型</a>
+  <a href="#s36" class="sub">§3.6 规划标准</a>
+  <div class="vol-h">第四编</div>
+  <a href="#v4">专题研究</a>
+  <a href="#s41" class="sub">§4.1 代际认知</a>
+  <a href="#s42" class="sub">§4.2 邻里形态</a>
+  <a href="#s43" class="sub">§4.3 命名体系</a>
+  <a href="#s44" class="sub">§4.4 物业制度</a>
+  <a href="#s45" class="sub">§4.5 文化根源</a>
+  <div class="vol-h">第五编</div>
+  <a href="#v5">户型与平面演变</a>
+  <a href="#s51" class="sub">§5.1 总论</a>
+  <a href="#s52" class="sub">§5.2 方厅时代</a>
+  <a href="#s53" class="sub">§5.3 两居室</a>
+  <a href="#s54" class="sub">§5.4 三居两厅两卫</a>
+  <a href="#s55" class="sub">§5.5 大平层与功能细分</a>
+  <a href="#s56" class="sub">§5.6 面积与规范沿革</a>
+  <a href="#s57" class="sub">§5.7 公摊与得房率</a>
+  <div class="vol-h">第六编</div>
+  <a href="#v6">住房供给类型</a>
+  <a href="#s61" class="sub">§6.1 供给层谱</a>
+  <a href="#s62" class="sub">§6.2 房改房</a>
+  <a href="#s63" class="sub">§6.3 经济适用房</a>
+  <a href="#s64" class="sub">§6.4 普通商品房</a>
+  <a href="#s65" class="sub">§6.5 限价房/限竞房</a>
+  <a href="#s66" class="sub">§6.6 共有产权房</a>
+  <a href="#s67" class="sub">§6.7 保障性租赁住房</a>
+  <a href="#s68" class="sub">§6.8 安置房</a>
+  <div class="vol-h">附录</div>
+  <a href="#appA">A · 术语表</a>
+  <a href="#appB">B · 参考来源</a>
+  <a href="#appC">C · 总年表</a>
+  <a href="#appD">D · 图版与档案目录</a>
+</nav>
+<main>
+
+<header class="top">
+  <div class="kicker">ENCYCLOPEDIA OF CHINESE RESIDENTIAL COMMUNITIES · 第一卷</div>
+  <h1>中国居住建筑史</h1>
+  <div class="sub">1949—2026:单位大院、筒子楼、单元房与商品房小区的建筑、制度与社会构成</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html" class="cur">中国小区史</a>
+  </div>
+</header>
+
+<!-- ==================== 凡例 ==================== -->
+<div class="howto" id="howto">
+  <div class="hd">凡例 · CONVENTIONS</div>
+  <div class="bd">
+    本卷以条目（entry）为基本单元组织。各条目依下列体例撰写：<b>词条头</b>术语、外文对照及别名；<b>定义段</b>以楷体标出；<b>技术档案</b>（档 n-n）为建筑类型的工程参数表,体例仿《建筑设计资料集》,所列数值为该类型通行区间,非单案数值；<b>图版</b>（图 n-n）为黑白示意,不按比例；<b>参见</b>（→）给出相关条目。分期断代采用"制度断代":以住房制度变革而非政权更迭为界。凡引用公开来源处以<sup class="ref">[n]</sup>标注,对应附录B。本卷不收录行情数据——价格随月失效,制度与建筑形态的演变不会。
+  </div>
+</div>
+
+<!-- ==================== 总纲 ==================== -->
+<div class="sec" id="gen"><h3>总纲:分期框架<span class="sec-sub">PERIODIZATION</span></h3></div>
+
+<p>本卷将 1949—2026 年中国城市居住建筑史划分为三期。划分依据不是建筑风格的更替,而是<b>建造主体、资金渠道与分配方式</b>这三项制度变量的组合方式——同一时期内可以并存多种建筑形态,但制度组合只有一种。</p>
+
+<div class="band">
+<div class="band-t">分期带 CHRONOLOGICAL BAND</div>
+<div class="bar">
+  <div class="seg" style="width:29%">Ⅰ 单位居住体系<br>1949—1978</div>
+  <div class="seg" style="width:20%">Ⅱ 双轨过渡<br>1978—1998</div>
+  <div class="seg" style="width:20%">Ⅲa 黄金十年<br>1998—2008</div>
+  <div class="seg" style="width:16%">Ⅲb 高周转<br>2008—2016</div>
+  <div class="seg" style="width:15%">Ⅲc 存量转型<br>2016—2026</div>
+</div>
+<div class="ticks"><span>1949</span><span>1978</span><span>1998</span><span>2008</span><span>2016</span><span>2026</span></div>
+</div>
+
+<table class="t">
+<tr><th>分期</th><th>建造主体</th><th>资金渠道</th><th>分配方式</th><th>典型建筑</th><th>产权形态</th></tr>
+<tr><td><b>Ⅰ 单位居住体系</b><br>1949—1978</td><td>国家与企事业单位</td><td>政府基建拨款为主（1959—1976 年占公房资金 97%<sup class="ref">[2]</sup>）</td><td>实物福利分配,按工龄、职级、家庭人口排队</td><td>工人新村、单位大院、筒子楼、排子房</td><td>公有,个人仅持有居住资格</td></tr>
+<tr><td><b>Ⅱ 双轨过渡</b><br>1978—1998</td><td>单位统建 + 早期开发商</td><td>拨款、单位自筹、外资合作并存</td><td>福利分房与商品销售并行（1994 年确立双轨<sup class="ref">[22]</sup>）</td><td>单元式住宅、试点商品房小区</td><td>公房 + 部分私有产权</td></tr>
+<tr><td><b>Ⅲa 黄金十年</b><br>1998—2008</td><td>房地产开发企业</td><td>开发贷 + 预售回款</td><td>市场化购买（1998 年 23 号文终止实物分配<sup class="ref">[23]</sup>）</td><td>封闭式商品房小区、板式/塔式楼栋</td><td>私有产权 + 70 年土地使用权</td></tr>
+<tr><td><b>Ⅲb 高周转</b><br>2008—2016</td><td>大型开发企业（高杠杆）</td><td>预售制驱动的资金循环</td><td>刚需、改善、投资需求分层</td><td>超高层、精装修、郊区大盘</td><td>同上,金融属性强化</td></tr>
+<tr><td><b>Ⅲc 存量转型</b><br>2016—2026</td><td>政府主导更新 + 多元供给</td><td>财政资金、专项债、社会资本</td><td>租购并举,保障分层</td><td>老旧小区改造、保租房、共有产权房</td><td>私有 + 保障 + 租赁并存</td></tr>
+</table>
+
+<div class="stat-row">
+<div class="stat"><div class="v">3.6 ㎡</div><div class="k">1978 年城镇人均居住面积<sup class="ref">[5]</sup></div></div>
+<div class="stat"><div class="v">47.5%</div><div class="k">1978 年缺房户占城市总户数比例<sup class="ref">[10]</sup></div></div>
+<div class="stat"><div class="v">9.8%</div><div class="k">1953—1978 住房投资占基建总投资<sup class="ref">[1]</sup></div></div>
+<div class="stat"><div class="v">1998</div><div class="k">福利分房终止之年（国发 23 号文）<sup class="ref">[23]</sup></div></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 第一编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v1">
+<div class="vol-no">第一编</div>
+<h2>单位居住体系</h2>
+<div class="vol-range">1949 — 1978 · 计划经济时期</div>
+</div>
+
+<div class="sec" id="s11"><h3>§1.1 总论:先生产,后生活<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1949 年后,城市住房未走商品化道路,而是被纳入国家基本建设计划,成为单位向职工提供的实物福利。其制度前提有三:其一,住房建设资金列入国家基建投资,1953—1978 年间占基建总投资的比例长期低于 10%（9.8%）<sup class="ref">[1]</sup>;其二,住房产权归国家与单位公有,个人只持有低租金下的居住资格;其三,分配以单位为唯一通道,标准为工龄、职级、家庭人口与政治表现<sup class="ref">[5]</sup>。</p>
+
+<p>这一制度组合决定了建筑形态的全部特征:资金稀缺导致标准压低（→档1-1）,分配稀缺导致居住拥挤（1970 年代北京一户十口人住 20 ㎡ 平房为常态<sup class="ref">[5]</sup>）,单位通道导致居住空间与生产空间绑定（→§1.3）。学界将这一格局概括为"单位制"社会:单位不但是雇佣者,也是住房、医疗、教育、养老的总体供给者<sup class="ref">[13]</sup>。</p>
+
+<p>至 1978 年,全国城镇缺房户 869 万户,占城市总户数 47.5%<sup class="ref">[10]</sup>;住房供给不足在此前二十年间始终是严重社会问题<sup class="ref">[5]</sup>。单位居住体系保障了基本居住权的普遍覆盖,同时以低标准、低流动为代价——这两项代价正是第二编改革的起点。</p>
+
+<!-- §1.2 工人新村 -->
+<div class="sec" id="s12"><h3>§1.2 工人新村<span class="sec-sub">WORKERS' NEW VILLAGE · c.1951—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">工人新村</span><span class="en">Workers' New Village</span>
+<div class="meta">别名:工人住宅区 · 产业工人聚居区 · 代表实例:上海曹杨新村（1951）</div></div>
+<div class="entry-def">以产业工人为定向安置对象、由政府统一投资与规划建造的成片公共住宅区,是中国最早按"居住区"尺度组织的新建居住形态,承担居住改善与社会主义城市空间改造的双重功能。</div>
+<div class="entry-bd">
+
+<p>上海曹杨新村为该类型原点:1951 年动工,主要供纺织工人居住。其集体宿舍式特征显著——72 户共用一个水龙头,居民排队取水<sup class="ref">[2]</sup>。新村多选址于城市边缘,统一投资、统一建造、统一分配、统一管理,将工人从棚户区与旧式里弄整体迁入公共住宅体系<sup class="ref">[2]</sup>。</p>
+
+<p>资金结构可证其福利属性:1950—1958 年,城市公房建设资金中 75.6% 来自政府;1959—1976 年,该比例升至 97%<sup class="ref">[2]</sup>。新村布局受苏联"扩大街坊"（микрорайон 前身）影响,后期设计者亦承认这一渊源<sup class="ref">[4]</sup>。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-1</span><span class="no">工人新村（初期）</span></div>
+<table class="spec-t">
+<tr><td class="k">结构体系</td><td>砖混:240 mm 实心黏土砖承重墙 + 预应力混凝土圆孔板楼盖</td></tr>
+<tr><td class="k">层数 / 层高</td><td>2—3 层 / 3.0—3.2 m（受经济条件限制,无电梯）</td></tr>
+<tr><td class="k">户型构成</td><td>一至二居室成套或准成套,独用或合用厨房,厕所多合用</td></tr>
+<tr><td class="k">户均面积</td><td>约 20—30 ㎡ 建筑面积（曹杨新村初期户型更小）</td></tr>
+<tr><td class="k">给排水</td><td>集中给水点,合用水龙头（曹杨初期 72 户/龙头<sup class="ref">[2]</sup>）;排水为合流明沟或简易管网</td></tr>
+<tr><td class="k">总平面</td><td>行列式排列,日照间距按北方 1:1.5、南方 1:1.0—1.2 控制;宅间绿化简易</td></tr>
+<tr><td class="k">配套设施</td><td>新村商店、小学、诊疗所——"配套"概念由此发端</td></tr>
+</table></div>
+<p class="cr">→ 参见 §1.3 单位大院（生产生活绑定形态）； §1.6 百万庄（成套化更高标准样本）</p>
+</div></div>
+
+<!-- §1.3 单位大院 -->
+<div class="sec" id="s13"><h3>§1.3 单位大院与家属院<span class="sec-sub">DANWEI COMPOUND · c.1955—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">单位大院</span><span class="en">Danwei Compound</span>
+<div class="meta">别名:家属院 · 职工生活区 · 代表实例:郑州国棉三厂苏式家属院、鞍钢家属区、北京和平里部委区</div></div>
+<div class="entry-def">由单一单位（工厂、机关、高校、科研院所）统一建设与管理、生产区与生活区在空间上连续的封闭性大院,居住权与单位成员资格互为条件。</div>
+<div class="entry-bd">
+
+<p>单位大院是"厂居合一"的空间产物:1950 年代后期至 1970 年代,国有企业在城市边缘或工业区集中建设家属院。郑州西郊沿建设路布局国棉一至六厂、二砂、郑煤机等企业,并配套大规模职工家属院<sup class="ref">[3]</sup>;鞍山鞍钢家属区围绕厂区建设,由厂方直接管理。</p>
+
+<p>大院的边界经历了从开放到封闭的过程:1950 年代不少大院并无围墙,1960 年代起围墙渐增<sup class="ref">[4]</sup>。围墙的意义不止于防卫,更在于<b>资源边界</b>——锅炉房、澡堂、子弟学校、医务室、俱乐部均以围墙为服务半径。北京和平里（1953 年煤炭工业部、地质部率先迁入<sup class="ref">[7]</sup>）呈现部委版形态:灰色砖楼、传达室、幼儿园、小卖部、理发室、职工食堂俱在院墙之内。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-1</span><span class="t">单位大院功能构成（典型制造业企业）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 440" width="100%" role="img" aria-label="单位大院功能构成示意图">
+<rect x="20" y="20" width="720" height="380" fill="none" stroke="#111" stroke-width="2.5"/>
+<rect x="40" y="40" width="330" height="160" fill="#e8e8e8" stroke="#111"/>
+<text x="205" y="105" text-anchor="middle" font-size="14" font-weight="700">生产区</text>
+<text x="205" y="128" text-anchor="middle" font-size="11" fill="#555">厂房 · 仓库</text>
+<text x="205" y="145" text-anchor="middle" font-size="11" fill="#555">（职工上班于此）</text>
+<rect x="400" y="40" width="160" height="70" fill="#fff" stroke="#111"/>
+<text x="480" y="72" text-anchor="middle" font-size="12" font-weight="700">厂部办公</text>
+<text x="480" y="90" text-anchor="middle" font-size="10.5" fill="#555">厂前区</text>
+<rect x="580" y="40" width="140" height="70" fill="#fff" stroke="#111"/>
+<text x="650" y="72" text-anchor="middle" font-size="12" font-weight="700">食堂</text>
+<text x="650" y="90" text-anchor="middle" font-size="10.5" fill="#555">＋粮站 · 小卖部</text>
+<rect x="400" y="130" width="160" height="70" fill="#fff" stroke="#111"/>
+<text x="480" y="160" text-anchor="middle" font-size="12" font-weight="700">锅炉房 · 澡堂</text>
+<text x="480" y="178" text-anchor="middle" font-size="10.5" fill="#555">集中供暖源头</text>
+<rect x="580" y="130" width="140" height="70" fill="#fff" stroke="#111"/>
+<text x="650" y="160" text-anchor="middle" font-size="12" font-weight="700">子弟学校</text>
+<text x="650" y="178" text-anchor="middle" font-size="10.5" fill="#555">＋幼儿园</text>
+<rect x="40" y="230" width="680" height="150" fill="#f5f5f5" stroke="#111"/>
+<text x="80" y="258" font-size="13" font-weight="700">家属院（职工居住区）</text>
+<rect x="60" y="275" width="180" height="80" fill="#fff" stroke="#111"/>
+<text x="150" y="312" text-anchor="middle" font-size="11">家属楼 3—4 层</text>
+<text x="150" y="330" text-anchor="middle" font-size="10" fill="#555">筒子楼 / 单元楼</text>
+<rect x="260" y="275" width="180" height="80" fill="#fff" stroke="#111"/>
+<text x="350" y="312" text-anchor="middle" font-size="11">家属楼</text>
+<text x="350" y="330" text-anchor="middle" font-size="10" fill="#555">按职级分楼</text>
+<rect x="460" y="275" width="120" height="80" fill="#fff" stroke="#111"/>
+<text x="520" y="308" text-anchor="middle" font-size="11">俱乐部 · 电影院</text>
+<text x="520" y="326" text-anchor="middle" font-size="10" fill="#555">职工文娱</text>
+<rect x="600" y="275" width="100" height="80" fill="#fff" stroke="#111"/>
+<text x="650" y="308" text-anchor="middle" font-size="11">医务室</text>
+<text x="650" y="326" text-anchor="middle" font-size="10" fill="#555">＋卫生所</text>
+<line x1="330" y1="200" x2="330" y2="230" stroke="#111" stroke-width="1.5"/>
+<line x1="700" y1="110" x2="700" y2="130" stroke="#111" stroke-width="1.5"/>
+<rect x="20" y="412" width="720" height="0" fill="none"/>
+<text x="30" y="426" font-size="10.5" fill="#777">注:围墙为资源边界——院墙之内,生（产）老病死皆由单位供给。</text>
+</svg>
+</div>
+<div class="fig-note">大院的实质是"小而全"的社会单元:生产、居住、餐饮、教育、医疗、文娱在同一产权主体下闭环运转。邻里关系建立在业缘之上——白天同厂上班,晚间同院居住,厂长与工人可能同楼,楼栋位置本身即是单位内部的等级图示<sup class="ref">[7]</sup>。</div>
+</div>
+
+<p class="cr">→ 参见 §4.2 邻里形态（业缘邻里的解体）； §1.7 建造体系</p>
+</div></div>
+
+<!-- §1.4 筒子楼 -->
+<div class="sec" id="s14"><h3>§1.4 筒子楼<span class="sec-sub">CORRIDOR-STYLE HOUSING · c.1950—1980s</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">筒子楼</span><span class="en">Tongzilou</span>
+<div class="meta">别名:内廊式集体住宅 · 俗称"兵营式住宅" · 民间讹称"赫鲁晓夫楼"（实指苏联廉价板式住宅,与筒子楼构造不同）</div></div>
+<div class="entry-def">以一条贯通内廊组织交通、走廊两侧布列居住单间、厨卫设施按层集中共用的低标准职工住宅,是计划经济时期数量最大的城市居住建筑类型。</div>
+<div class="entry-bd">
+
+<p>得名于形:长走廊两端通风,状若长筒。每一居住单元为不带独立厨卫的<b>单间</b>,寝居合一;炉灶设于走廊,水房与厕所按层设置。其来源有三类:为职工宿舍而新建者;由前苏联援建时期苏式办公用房、专家用房改建者;由学生宿舍、机关用房转用者<sup class="ref">[8]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 1-2</span><span class="t">筒子楼标准层平面（内廊双侧布房式,示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 400" width="100%" role="img" aria-label="筒子楼标准层平面示意图">
+<rect x="60" y="40" width="640" height="300" fill="#fff" stroke="#111" stroke-width="2.5"/>
+<rect x="60" y="175" width="640" height="30" fill="#dcdcdc" stroke="#111"/>
+<text x="380" y="195" text-anchor="middle" font-size="11.5" font-weight="700">共用内廊 净宽 1.4—1.8 m</text>
+<g stroke="#111" fill="#fff">
+<rect x="60" y="40" width="100" height="135"/><rect x="160" y="40" width="100" height="135"/><rect x="260" y="40" width="100" height="135"/><rect x="360" y="40" width="100" height="135"/><rect x="460" y="40" width="100" height="135"/><rect x="560" y="40" width="100" height="135"/><rect x="660" y="40" width="40" height="135"/>
+<rect x="60" y="205" width="100" height="135"/><rect x="160" y="205" width="100" height="135"/><rect x="260" y="205" width="100" height="135"/><rect x="360" y="205" width="100" height="135"/><rect x="460" y="205" width="100" height="135"/><rect x="560" y="205" width="100" height="135"/><rect x="660" y="205" width="40" height="135"/>
+</g>
+<g font-size="10.5" fill="#444" text-anchor="middle">
+<text x="110" y="100">单间</text><text x="110" y="115" font-size="9.5">14—18㎡</text>
+<text x="210" y="100">单间</text><text x="210" y="115" font-size="9.5">14—18㎡</text>
+<text x="310" y="100">单间</text><text x="310" y="115" font-size="9.5">14—18㎡</text>
+<text x="410" y="100">单间</text><text x="410" y="115" font-size="9.5">14—18㎡</text>
+<text x="510" y="100">单间</text><text x="510" y="115" font-size="9.5">14—18㎡</text>
+<text x="610" y="100">单间</text><text x="610" y="115" font-size="9.5">14—18㎡</text>
+<text x="680" y="100" font-size="9.5">水</text><text x="680" y="112" font-size="9.5">房</text>
+<text x="110" y="270">单间</text><text x="110" y="285" font-size="9.5">14—18㎡</text>
+<text x="210" y="270">单间</text><text x="210" y="285" font-size="9.5">14—18㎡</text>
+<text x="310" y="270">单间</text><text x="310" y="285" font-size="9.5">14—18㎡</text>
+<text x="410" y="270">单间</text><text x="410" y="285" font-size="9.5">14—18㎡</text>
+<text x="510" y="270">单间</text><text x="510" y="285" font-size="9.5">14—18㎡</text>
+<text x="610" y="270">单间</text><text x="610" y="285" font-size="9.5">14—18㎡</text>
+<text x="680" y="270" font-size="9.5">厕</text><text x="680" y="282" font-size="9.5">所</text>
+</g>
+<g stroke="#888" stroke-width="1.4">
+<line x1="125" y1="175" x2="125" y2="205"/><line x1="325" y1="175" x2="325" y2="205"/><line x1="525" y1="175" x2="525" y2="205"/>
+</g>
+<rect x="180" y="178" width="26" height="8" fill="#999" stroke="#666"/>
+<rect x="420" y="178" width="30" height="8" fill="#999" stroke="#666"/>
+<rect x="205" y="196" width="22" height="8" fill="#fff" stroke="#666"/>
+<g font-size="10" fill="#777">
+<text x="212" y="175" text-anchor="end">煤炉（占道）</text>
+<text x="455" y="175" text-anchor="end">碗柜（占道）</text>
+<text x="233" y="205">杂物</text>
+</g>
+<g stroke="#555" stroke-width="1">
+<line x1="60" y1="360" x2="160" y2="360"/><line x1="60" y1="355" x2="60" y2="365"/><line x1="160" y1="355" x2="160" y2="365"/>
+<line x1="60" y1="375" x2="700" y2="375"/><line x1="60" y1="370" x2="60" y2="380"/><line x1="700" y1="370" x2="700" y2="380"/>
+</g>
+<text x="110" y="358" text-anchor="middle" font-size="10.5" fill="#555">开间 3.0—3.6 m</text>
+<text x="380" y="373" text-anchor="middle" font-size="10.5" fill="#555">总长约 40—60 m</text>
+<text x="682" y="380" text-anchor="end" font-size="10" fill="#777">尽端:水房 / 厕所（按层集中）</text>
+</svg>
+</div>
+<div class="fig-note">走廊是事实上的公共起居室:做饭、堆煤、储物、交往皆在此发生。灶位即各户的"厨房"——不到 2 ㎡ 的棚位,人立于露天炒菜,雨天一手打伞一手掌勺<sup class="ref">[5]</sup>。门洞（灰）为单间入口,虚线为穿越性动线。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-2</span><span class="no">筒子楼</span></div>
+<table class="spec-t">
+<tr><td class="k">结构体系</td><td>砖混:240 mm（北方 370 mm）实心黏土砖承重横墙 + 预应力混凝土圆孔板（YKB）楼盖,现浇或少筋混凝土楼梯</td></tr>
+<tr><td class="k">层数 / 层高</td><td>3—4 层（部分 5 层）/ 2.8—3.2 m,无电梯</td></tr>
+<tr><td class="k">平面形式</td><td>内廊式:单侧布房（外廊式变体）或双侧布房;走廊净宽 1.4—1.8 m</td></tr>
+<tr><td class="k">基本单元</td><td>单间:开间 3.0—3.6 m × 进深 4.2—5.4 m,使用面积 14—20 ㎡,寝居合一</td></tr>
+<tr><td class="k">厨卫配置</td><td>无独用厨卫。炉灶设于走廊（占道）;盥洗、厕浴按层集中于尽端水房</td></tr>
+<tr><td class="k">水暖电</td><td>集中水房给水;北方集中供暖或火炉;照明线路明敷</td></tr>
+<tr><td class="k">声光环境</td><td>北向房间终日无直射阳光;走廊兼作排烟通道;隔声依赖 240 砖墙（约 50 dB 计权隔声量,单值）</td></tr>
+<tr><td class="k">单位造价</td><td>同类住宅中最低,为该类型得以大量建造的原因</td></tr>
+</table></div>
+
+<blockquote>"做饭都在走廊上支个煤气灶,一到饭点,整栋楼都知道你家今天炒了什么菜。"<cite>——北京居民回忆<sup class="ref">[5]</sup></cite></blockquote>
+
+<p>筒子楼的空间伦理是双面的:隐私被压缩到单间之内,互助则延伸到整层——谁家做多了饭端给隔壁,谁家孩子小邻居代看,修水修电楼内总能找到懂行者。这一集体生活经验构成 50 后、60 后的核心居住记忆（→§4.1）。</p>
+<p class="cr">→ 参见 §2.2 单元式住宅（取代筒子楼的成套形态）； 附录A"内廊式""圆孔板"词条</p>
+</div></div>
+
+<!-- §1.5 排子房 -->
+<div class="sec" id="s15"><h3>§1.5 排子房与低标准自建住房<span class="sec-sub">ROW HOUSING &amp; SELF-BUILT</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">排子房</span><span class="en">Row Housing</span>
+<div class="meta">别名:兵营式住房 · 成排平房 · 同类:干打垒、竹筋捆绑房、厂房改宿舍（三线建设区与工矿城市常见）</div></div>
+<div class="entry-def">成行成排、坐北朝南布置的单层兵营式住房,户内无独立给排水,是低于筒子楼标准的兜底居住形态。</div>
+<div class="entry-bd">
+<p>排子房多见于 1950—1970 年代工业新城与矿区,东北与三线建设地区尤多<sup class="ref">[6]</sup>。"干打垒"（夯土墙）版本用于气候严酷、工期极短的建设场景。其建筑特征:单层、木屋架或砖拱屋盖、户内一到两间、公用旱厕与集中水点。在居住序列中,它位于最底层——从棚户迁入排子房已是改善,从排子房迁入筒子楼或单元楼则是身份跃迁。</p>
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-3</span><span class="no">排子房</span></div>
+<table class="spec-t">
+<tr><td class="k">结构体系</td><td>240 砖墙或夯土（干打垒）/ 土坯墙;木檩条 + 苇箔泥背或机瓦屋面</td></tr>
+<tr><td class="k">层数</td><td>单层,檐高 2.6—2.8 m</td></tr>
+<tr><td class="k">户内构成</td><td>1—2 间,15—25 ㎡;火炕（北方）兼作床与采暖面</td></tr>
+<tr><td class="k">设备</td><td>无上下水;旱厕按排集中;照明单回路</td></tr>
+<tr><td class="k">布局</td><td>行列式,排距以满足通行与晾晒为度,无日照间距计算</td></tr>
+</table></div>
+<p class="cr">→ 参见 §3.5 存量转型（此类住房至今构成部分城市危旧房与棚改对象）</p>
+</div></div>
+
+<!-- §1.6 样板工程 -->
+<div class="sec" id="s16"><h3>§1.6 样板工程:百万庄<span class="sec-sub">BAIWANZHUANG, BEIJING · 1953</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">百万庄小区</span><span class="en">Baiwanzhuang Housing Estate</span>
+<div class="meta">北京 · 1953 年动工 · 主持设计:张开济 · 称"首都第一住宅区"</div></div>
+<div class="entry-def">新中国成立后第一个按邻里单位理论整体规划的成片住宅区,首次将"居住区—组团"组织方式、配套公建与命名系统引入中国实践。</div>
+<div class="entry-bd">
+<p>占地 21.09 公顷,户均建筑面积约 22 ㎡<sup class="ref">[2]</sup>。规划同时借鉴苏联"扩大街坊"与美国学者佩里（Clarence Perry）的"邻里单位"（Neighborhood Unit）理论;以十二地支（子丑寅卯……）为各区命名,是中国住宅区系统性命名之始。布局为行列式,住宅朝向统一,公共设施置于街区几何中心。</p>
+<div class="spec"><div class="spec-hd"><span>技术档案 档 1-4</span><span class="no">百万庄小区</span></div>
+<table class="spec-t">
+<tr><td class="k">规模</td><td>21.09 公顷;多层砖混住宅群</td></tr>
+<tr><td class="k">规划理论</td><td>邻里单位 + 苏联扩大街坊;区—组两级结构</td></tr>
+<tr><td class="k">住宅类型</td><td>2—3 层砖混;户均建筑面积约 22 ㎡<sup class="ref">[2]</sup></td></tr>
+<tr><td class="k">布局</td><td>行列式;建筑朝向一致;中心绿地与公建</td></tr>
+<tr><td class="k">命名系统</td><td>十二地支分区——"小区命名"作为规划工具首次出现（→§4.3）</td></tr>
+</table></div>
+<p class="cr">→ 参见 §3.6 规划标准沿革（从邻里单位到生活圈的理论谱系）</p>
+</div></div>
+
+<!-- §1.7 建造体系 -->
+<div class="sec" id="s17"><h3>§1.7 建造体系与技术谱系<span class="sec-sub">CONSTRUCTION SYSTEMS</span></h3></div>
+
+<p>计划经济时期的住宅建造服从"低造价、标准化、快速建造"三原则。全国通行一套以标准图集为核心的建造体系:各部、各省编制住宅标准设计（如北京 80 住 1 系列之前身及各省通用图）,施工现场按图集成批复制。这一体系的技术谱系如下表。</p>
+
+<table class="t">
+<tr><th>体系</th><th>构造与工艺</th><th>适用层数</th><th>年代与应用</th><th>得失</th></tr>
+<tr><td><b>砖混 + 预制圆孔板</b></td><td>240/370 实心黏土砖承重墙,预应力混凝土圆孔板（YKB）楼盖,现浇楼梯与圈梁</td><td>≤6 层</td><td>1950s—1980s 全国通行,数量最大</td><td>取材易、造价低;抗震与保温性能一般,黏土砖耗地</td></tr>
+<tr><td><b>装配式大板</b></td><td>内外墙板、楼板全部工厂预制,现场焊接拼装</td><td>多层—高层</td><td>1960s 引入,1970s 在北京、西安、沈阳、南宁等地推广</td><td>施工快、冬施适应好;板缝渗漏与抗震疑虑限制了推广（唐山地震后争议加大）</td></tr>
+<tr><td><b>大模板现浇</b></td><td>工具式大模板现场浇筑混凝土内墙,外墙砌砖（内浇外砌）或挂预制板（内浇外板）</td><td>高层可适用</td><td>1976—1978 年北京前三门大街工程首次成批用于 10—16 层高层住宅</td><td>整体性好、速度快——中国高层住宅施工体系由此定型</td></tr>
+<tr><td><b>升板 / 滑模</b></td><td>地面叠浇楼板整体提升 / 模板沿墙滑升连续浇捣</td><td>多层 / 高层</td><td>1970s 零星工程应用</td><td>节省模板;用于住宅较少,多用于仓筒建筑</td></tr>
+</table>
+
+<div class="note">1976 年唐山大地震是技术转折点:震区及全国既有砖混住宅随后普遍进行抗震加固（外加构造柱、圈梁、钢拉杆）,1980 年代起的住宅设计抗震设防成为强制项,直接推动了圈梁—构造柱体系在砖混住宅中的标准化。</div>
+
+<!-- §1.8 分配制度 -->
+<div class="sec" id="s18"><h3>§1.8 分配制度与居住水平<span class="sec-sub">ALLOCATION SYSTEM</span></h3></div>
+
+<p>分配规则的实际运作:单位成立分房小组,依工龄、职级、职称、家庭人口、政治表现综合打分,按序分房;房源来自单位基建计划,节奏由国家年度投资决定<sup class="ref">[5]</sup>。分房因而同时是行政程序与人情事件——"送礼的、递条子的,甚至拿菜刀威胁的……房管科的门槛都被踩破了"<sup class="ref">[5]</sup>。</p>
+
+<table class="t">
+<tr><th>指标</th><th>数值</th><th>口径与来源</th></tr>
+<tr><td>人均居住面积（1978）</td><td>3.6 ㎡</td><td>城镇居民口径<sup class="ref">[5]</sup></td></tr>
+<tr><td>人均住宅建筑面积（1978）</td><td>6.7 ㎡</td><td>另一统计口径<sup class="ref">[9]</sup>（与 3.6 ㎡ 差异源于"居住面积/建筑面积"定义不同）</td></tr>
+<tr><td>缺房户（1978）</td><td>869 万户 / 47.5%</td><td>占城市总户数<sup class="ref">[10]</sup></td></tr>
+<tr><td>住房投资占基建总投资</td><td>9.8%（1953—1978）</td><td>长期低于 10%<sup class="ref">[1]</sup></td></tr>
+<tr><td>公房资金中政府占比</td><td>75.6%（1950—58）→ 97%（1959—76）</td><td>上海案例<sup class="ref">[2]</sup></td></tr>
+<tr><td>住房自有率（1978）</td><td>不足 5%</td><td>估算值<sup class="ref">[1]</sup></td></tr>
+</table>
+
+<!-- §1.9 认知 -->
+<div class="sec" id="s19"><h3>§1.9 居住认知:房子作为单位身份<span class="sec-sub">MENTALITÉ</span></h3></div>
+
+<p>此期"房子"一词的所指与今日根本不同:它不是资产——不可买卖、不可抵押、不可继承处置;而是<b>身份的可视化</b>。楼栋位置、楼层、朝向、面积即单位内部的等级图示:和平里的宿舍楼号与职务挂钩<sup class="ref">[7]</sup>。"等国家建房、靠组织分房、要单位给房"是被动的常态心理<sup class="ref">[5]</sup>;对职工而言,"离了单位,房子几乎无从指望"<sup class="ref">[3]</sup>。住房的不可流动性同时锁定了劳动力:调离单位即失去住房资格,反向抑制了人员流动。→ 详见 §4.1（50 后/60 后条）。</p>
+
+<!-- ============================================================ -->
+<!-- 第二编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v2">
+<div class="vol-no">第二编</div>
+<h2>双轨过渡</h2>
+<div class="vol-range">1978 — 1998 · 改革开放与住房商品化过渡期</div>
+</div>
+
+<div class="sec" id="s21"><h3>§2.1 总论:并行的两条轨道<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>本编二十年的制度特征是<b>双轨并行</b>:一轨延续单位福利分房,一轨自零起步探索商品化。轨道切换不是一次事件,而是一串试点——出售公房（1982,四城）→ 提租补贴（1986,四市）→ 土地有偿使用（1987—1990）→ 双轨供给体系（1994）→ 终止实物分配（1998）。每一环都留下建筑与空间证据:本编两则核心条目——单元式住宅（福利轨的顶点）与试点商品房小区（商品轨的起点）——即两条轨道各自的建筑载体。</p>
+
+<div class="stat-row">
+<div class="stat"><div class="v">6.36 ㎡</div><div class="k">1985 年底全国城镇人均居住面积（首次房屋普查）<sup class="ref">[4]</sup></div></div>
+<div class="stat"><div class="v">17.78 ㎡</div><div class="k">1997 年城镇人均住房建筑面积<sup class="ref">[5]</sup></div></div>
+<div class="stat"><div class="v">1985</div><div class="k">首笔职工购房抵押贷款<sup class="ref">[24]</sup></div></div>
+<div class="stat"><div class="v">1:3+2/3</div><div class="k">1982 年补贴售房"三三制"个人/单位出资比<sup class="ref">[18]</sup></div></div>
+</div>
+
+<!-- §2.2 单元式住宅 -->
+<div class="sec" id="s22"><h3>§2.2 单元式住宅<span class="sec-sub">APARTMENT UNIT HOUSING · c.1980—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">单元式住宅</span><span class="en">Unit Apartment</span>
+<div class="meta">别名:单元楼 · 成套住宅 · 制度语汇:"单元式成套住宅"（南通 1979 年起统一执行<sup class="ref">[12]</sup>）</div></div>
+<div class="entry-def">以楼梯间（单元）组织户数、每户独门独户且独用厨房厕所的多层住宅,是"成套住宅"概念的空间实现,也是福利分房制度标准形态的终点形态。</div>
+<div class="entry-bd">
+
+<p>从筒子楼到单元楼的跃迁,是这一时期普通家庭最切身的居住革命:共用厨卫的集体平面被"一梯两户、独厨独卫"的成套平面取代。1979 年起,南通等地规定新建住宅统一为单元式成套住宅,实行"六统一"——统一规划、设计、资金材料、征地拆迁、施工、分配<sup class="ref">[12]</sup>;1980—1988 年全国房改准备阶段,单元房成为新建住宅的强制形态<sup class="ref">[11]</sup>。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 2-1</span><span class="t">单元式住宅标准层平面（一梯两户,示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 420" width="100%" role="img" aria-label="单元式住宅标准层平面示意图">
+<rect x="60" y="40" width="640" height="330" fill="#fff" stroke="#111" stroke-width="2.5"/>
+<rect x="345" y="40" width="70" height="330" fill="#e8e8e8" stroke="#111"/>
+<text x="380" y="75" text-anchor="middle" font-size="11" font-weight="700">楼梯间</text>
+<g stroke="#555" stroke-width="1.2">
+<line x1="352" y1="90" x2="352" y2="130"/><line x1="357" y1="90" x2="357" y2="130"/><line x1="362" y1="90" x2="362" y2="130"/><line x1="367" y1="90" x2="367" y2="130"/><line x1="372" y1="90" x2="372" y2="130"/><line x1="377" y1="90" x2="377" y2="130"/><line x1="382" y1="90" x2="382" y2="130"/><line x1="387" y1="90" x2="387" y2="130"/><line x1="392" y1="90" x2="392" y2="130"/><line x1="397" y1="90" x2="397" y2="130"/><line x1="402" y1="90" x2="402" y2="130"/><line x1="407" y1="90" x2="407" y2="130"/>
+<line x1="352" y1="260" x2="352" y2="300"/><line x1="357" y1="260" x2="357" y2="300"/><line x1="362" y1="260" x2="362" y2="300"/><line x1="367" y1="260" x2="367" y2="300"/><line x1="372" y1="260" x2="372" y2="300"/><line x1="377" y1="260" x2="377" y2="300"/><line x1="382" y1="260" x2="382" y2="300"/><line x1="387" y1="260" x2="387" y2="300"/><line x1="392" y1="260" x2="392" y2="300"/><line x1="397" y1="260" x2="397" y2="300"/><line x1="402" y1="260" x2="402" y2="300"/><line x1="407" y1="260" x2="407" y2="300"/>
+<line x1="352" y1="130" x2="407" y2="130"/><line x1="352" y1="260" x2="407" y2="260"/>
+<line x1="380" y1="130" x2="380" y2="90"/><line x1="380" y1="260" x2="380" y2="300"/>
+</g>
+<text x="380" y="205" text-anchor="middle" font-size="10" fill="#666">双跑楼梯</text>
+<text x="380" y="220" text-anchor="middle" font-size="10" fill="#666">一梯两户</text>
+<rect x="60" y="40" width="285" height="330" fill="none" stroke="#111"/>
+<rect x="345" y="40" width="0" height="0"/>
+<rect x="415" y="40" width="285" height="330" fill="none" stroke="#111"/>
+<line x1="60" y1="200" x2="345" y2="200" stroke="#111"/>
+<line x1="415" y1="200" x2="700" y2="200" stroke="#111"/>
+<line x1="210" y1="200" x2="210" y2="370" stroke="#111" stroke-width="0"/>
+<line x1="555" y1="200" x2="555" y2="370" stroke="#111" stroke-width="0"/>
+<line x1="200" y1="40" x2="200" y2="200" stroke="#111"/>
+<line x1="545" y1="40" x2="545" y2="200" stroke="#111"/>
+<line x1="200" y1="130" x2="345" y2="130" stroke="#111"/>
+<line x1="415" y1="130" x2="545" y2="130" stroke="#111"/>
+<line x1="200" y1="130" x2="200" y2="40" stroke="#111"/>
+<line x1="545" y1="130" x2="545" y2="40" stroke="#111"/>
+<line x1="200" y1="280" x2="345" y2="280" stroke="#111"/>
+<line x1="415" y1="280" x2="545" y2="280" stroke="#111"/>
+<line x1="545" y1="280" x2="545" y2="370" stroke="#111"/>
+<line x1="200" y1="280" x2="200" y2="370" stroke="#111"/>
+<g font-size="11.5" fill="#222" text-anchor="middle">
+<text x="130" y="90">主卧</text><text x="130" y="106" font-size="9.5" fill="#777">南向 12—14㎡</text>
+<text x="272" y="90">次卧</text><text x="272" y="106" font-size="9.5" fill="#777">8—10㎡</text>
+<text x="475" y="90">主卧</text><text x="475" y="106" font-size="9.5" fill="#777">南向</text>
+<text x="622" y="90">次卧</text><text x="622" y="106" font-size="9.5" fill="#777">8—10㎡</text>
+<text x="130" y="240">起居厅</text><text x="130" y="256" font-size="9.5" fill="#777">1980s 中后期出现</text>
+<text x="272" y="240">阳台</text><text x="272" y="256" font-size="9.5" fill="#777">南向</text>
+<text x="475" y="240">起居厅</text>
+<text x="622" y="240">阳台</text>
+<text x="130" y="320">独用厨房</text><text x="130" y="336" font-size="9.5" fill="#777">3.5—5㎡ · 北向</text>
+<text x="272" y="320">独用卫生间</text><text x="272" y="336" font-size="9.5" fill="#777">2.5—3㎡ · 通风窗</text>
+<text x="475" y="320">独用厨房</text>
+<text x="622" y="320">独用卫生间</text>
+</g>
+<g stroke="#888" stroke-width="1.4">
+<line x1="300" y1="175" x2="345" y2="175"/><line x1="415" y1="175" x2="460" y2="175"/>
+<line x1="130" y1="195" x2="130" y2="205"/><line x1="475" y1="195" x2="475" y2="205"/>
+</g>
+<text x="322" y="168" font-size="9.5" fill="#777">入户门</text>
+<text x="438" y="168" font-size="9.5" fill="#777">入户门</text>
+<text x="710" y="60" font-size="10.5" fill="#777">北</text>
+<text x="710" y="375" font-size="10.5" fill="#777">南（主采光面）</text>
+</svg>
+</div>
+<div class="fig-note">与图 1-2 对照即见革命所在:走廊消失了,户门之内自成体系——"以前几十户人抢一个水龙头,现在一户就有四个水龙头"<sup class="ref">[13]</sup>。1980 年代中后期,厅从过道升格为独立房间,三居室户型成熟。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 2-1</span><span class="no">单元式住宅（1980s）</span></div>
+<table class="spec-t">
+<tr><td class="k">结构体系</td><td>砖混为主（横墙承重 + 圈梁构造柱）;大城市出现大模板、框剪高层版本</td></tr>
+<tr><td class="k">层数 / 层高</td><td>5—6 层为主 / 层高自 3.0 m 压至 2.7—2.8 m（节地节能政策结果）</td></tr>
+<tr><td class="k">单元构成</td><td>一梯两户（标准）、一梯三户（节地变体）;北京等市配套标准图集（80 住 1 系列）</td></tr>
+<tr><td class="k">户型面积</td><td>一居室 38—45 ㎡;二居室 50—60 ㎡;三居室 65—75 ㎡（建筑面积）</td></tr>
+<tr><td class="k">厨卫标准</td><td>独用厨房 ≥3.5—5 ㎡、独用卫生间 ≥2.5 ㎡（GBJ 96-86《住宅建筑设计规范》量级）</td></tr>
+<tr><td class="k">设备标准</td><td>独用水表电表;给排水入户;北方集中供暖</td></tr>
+<tr><td class="k">成套率</td><td>以"成套住宅"（独门独户 + 独厨独卫）统计——该指标至今仍为住房统计口径</td></tr>
+</table></div>
+<p class="cr">→ 参见 §1.4 筒子楼（被取代形态）； 附录A"成套住宅""一梯两户"词条</p>
+</div></div>
+
+<!-- §2.3 商品房试点 -->
+<div class="sec" id="s23"><h3>§2.3 早期商品房试点<span class="sec-sub">PILOT COMMERCIAL HOUSING · 1980—1989</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">试点商品房小区</span><span class="en">Pilot Commercial Estates</span>
+<div class="meta">代表实例:深圳东湖丽苑（1980）· 广州东湖新村（1980）· 深圳东晓花园（1987—88）</div></div>
+<div class="entry-def">以有偿出让或合作方式获得土地、以市场销售为目的建造的最早一批住宅区,购买者以境外人士与单位为主,商品轨的空间起点。</div>
+<div class="entry-bd">
+
+<table class="t">
+<tr><th>项目</th><th>年份</th><th>操作方式</th><th>价格与客群</th><th>制度意义</th></tr>
+<tr><td><b>深圳东湖丽苑</b></td><td>1980</td><td>深圳出地、港商出资合作开发<sup class="ref">[13][25]</sup></td><td>约 2730 元/㎡,港人为主,附购房入户名额<sup class="ref">[12]</sup></td><td>竣工时成立中国第一家物业管理公司<sup class="ref">[14]</sup></td></tr>
+<tr><td><b>广州东湖新村</b></td><td>1980</td><td>引进外资解决住宅短缺<sup class="ref">[15]</sup></td><td>约 700 元/㎡,面向国企而非个人<sup class="ref">[15]</sup></td><td>外资合作建房模式起点</td></tr>
+<tr><td><b>深圳东晓花园</b></td><td>1987—88</td><td>"中国第一拍"土地:525 万元竞得 8588 ㎡<sup class="ref">[17]</sup></td><td>1600 元/㎡,108 套不到一小时售罄<sup class="ref">[17]</sup></td><td>土地有偿使用的完整闭环</td></tr>
+<tr><td><b>北京首次公开售房</b></td><td>1989.2.15</td><td>公开出售商品房<sup class="ref">[16]</sup></td><td>—</td><td>首都层面的商品化标志事件</td></tr>
+</table>
+
+<p>三案共同点:商品轨不始于普通市民——港人、国企、有外汇支付能力者才是最早的"购房者"。真正的市民化购买,要到 1998 年之后。</p>
+<p class="cr">→ 参见 §2.4 制度变迁（土地制度三项事件链）</p>
+</div></div>
+
+<!-- §2.4 制度变迁 -->
+<div class="sec" id="s24"><h3>§2.4 制度变迁:土地与房屋的法律重构<span class="sec-sub">LEGAL RESTRUCTURING</span></h3></div>
+
+<p>商品轨需要三块法律基石——可交易的土地、可交易的房屋、可负债的个人——1987 至 1998 年间逐一到位:</p>
+
+<table class="t">
+<tr><th>年份</th><th>事件</th><th>奠定内容</th></tr>
+<tr><td>1987.12.1</td><td>深圳土地公开拍卖（"中国第一拍"）<sup class="ref">[17]</sup></td><td>土地从无偿划拨转向有偿出让</td></tr>
+<tr><td>1988.4</td><td>宪法修正案:"土地的使用权可以依照法律的规定转让"<sup class="ref">[20]</sup></td><td>土地商品化的宪法基础</td></tr>
+<tr><td>1990.5</td><td>国务院 55 号令《城镇国有土地使用权出让和转让暂行条例》<sup class="ref">[21]</sup></td><td>出让制度化;住宅用地最高年限 70 年</td></tr>
+<tr><td>1985 / 1991</td><td>首笔按揭贷款 / 工建行房地产信贷部<sup class="ref">[24][28]</sup></td><td>个人负债购房的金融工具</td></tr>
+<tr><td>1994.7</td><td>《关于深化城镇住房制度改革的决定》<sup class="ref">[22]</sup></td><td>经济适用房 + 商品房双轨供给体系</td></tr>
+<tr><td>1998.7.3</td><td>国发 23 号文<sup class="ref">[23]</sup></td><td>停止住房实物分配,实行货币化——福利分房终结</td></tr>
+</table>
+
+<!-- §2.5 大事年表 -->
+<div class="sec" id="s25"><h3>§2.5 大事年表<span class="sec-sub">CHRONOLOGY 1978—1998</span></h3></div>
+
+<table class="t">
+<tr><th style="width:90px">年份</th><th>事件</th><th style="width:200px">性质</th></tr>
+<tr><td>1978</td><td>改革开放启动;城镇人均居住面积 3.6 ㎡<sup class="ref">[5]</sup></td><td>背景</td></tr>
+<tr><td>1980</td><td>邓小平提出个人可以购房建房<sup class="ref">[26]</sup>;深圳、广州试点商品房开工</td><td>思想破冰</td></tr>
+<tr><td>1982</td><td>常州、郑州、沙市、四平试行补贴出售公房（"三三制"）<sup class="ref">[18]</sup></td><td>售房试点</td></tr>
+<tr><td>1986</td><td>烟台、蚌埠、常州、沈阳试点提租补贴<sup class="ref">[19]</sup></td><td>租金改革试点</td></tr>
+<tr><td>1987—88</td><td>深圳"第一拍";东晓花园售罄<sup class="ref">[17]</sup></td><td>土地制度改革</td></tr>
+<tr><td>1989</td><td>北京首次公开出售商品房<sup class="ref">[16]</sup></td><td>商品化标志事件</td></tr>
+<tr><td>1990</td><td>55 号令,70 年土地使用权确立<sup class="ref">[21]</sup></td><td>产权制度奠基</td></tr>
+<tr><td>1994</td><td>双轨供给体系确立<sup class="ref">[22]</sup></td><td>制度定型</td></tr>
+<tr><td>1998</td><td>23 号文,停止实物分配<sup class="ref">[23]</sup></td><td>分水岭</td></tr>
+</table>
+
+<!-- §2.6 认知 -->
+<div class="sec" id="s26"><h3>§2.6 认知转变:二十年的迟疑<span class="sec-sub">MENTALITÉ</span></h3></div>
+
+<blockquote>"我觉得买商品房,光是每个月的利息就要几百甚至上千元,当时我们住的房子每个月的房租才十几元,所以我就怀疑商品房这样搞到底对不对?"<cite>——作家叶永烈,1991 年<sup class="ref">[13]</sup>（1994 年他以 9000 元买下自住房,完成观念转身）</cite></blockquote>
+
+<p>观念滞后于制度约二十年。1980 年顶层已提出个人购房<sup class="ref">[26]</sup>,但至 1990 年代中期,普通职工仍在福利逻辑与商品逻辑之间摇摆。完成说服的不是理论,而是单元房的身体经验——独厨独卫、一户四龙头<sup class="ref">[13]</sup>。→ 详见 §4.1（70 后条）。</p>
+
+<!-- ============================================================ -->
+<!-- 第三编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v3">
+<div class="vol-no">第三编</div>
+<h2>商品房时代</h2>
+<div class="vol-range">1998 — 2026 · 黄金十年 → 高周转 → 存量转型</div>
+</div>
+
+<div class="sec" id="s31"><h3>§3.1 总论:三种住房,三套逻辑<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>1998 年 23 号文之后,建造主体从单位全面移交至开发企业<sup class="ref">[23]</sup>。本编按政策周期三分:Ⅲa（1998—2008）确立封闭小区形态;Ⅲb（2008—2016）以预售制驱动高周转,产品转向超高层与大盘;Ⅲc（2016—2026）增量转存量,进入"房住不炒"与租购并举。三期叠加的背景变量是城镇化率——1998 年约 33.4%,2016 年 57.35%,2018 年 59.6%——人口进城的速度决定住房建设的速度,直至高位平台期到来。</p>
+
+<!-- §3.2 黄金十年 -->
+<div class="sec" id="s32"><h3>§3.2 黄金十年(1998—2008)<span class="sec-sub">THE GOLDEN DECADE</span></h3></div>
+
+<p><b>空间:</b>建设主战场在城市中心区、单位大院周边与城区边缘;2003 年后土地招拍挂全面推行,城市扩张、土地开发与住房建设深度绑定。<b>资金:</b>开发贷 + 预售回款。<b>对象:</b>房改房换购的职工、经适房面向的中低收入家庭、市场化购房者。<b>背景:</b>亚洲金融危机后启动内需;城镇化加速。<b>产品:</b>1998—2008 年间中国城市住宅的平均形态由多层砖混转为高层剪力墙——这是本卷全部分期中最大的一次<b>结构体系切换</b>（砖混 ≤6 层 → 剪力墙可至 33 层）。</p>
+
+<div class="stat-row">
+<div class="stat"><div class="v">33.4%→59.6%</div><div class="k">城镇化率 1998→2018</div></div>
+<div class="stat"><div class="v">-91.5% / -85%</div><div class="k">北京试点封闭小区自行车案 / 刑事案降幅<sup class="ref">[27]</sup></div></div>
+<div class="stat"><div class="v">2003</div><div class="k">土地招拍挂全面推行</div></div>
+</div>
+
+<!-- §3.3 封闭小区 -->
+<div class="sec" id="s33"><h3>§3.3 封闭式商品房小区<span class="sec-sub">GATED COMMUNITY · c.1998—</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">封闭式小区</span><span class="en">Gated Community</span>
+<div class="meta">别名:物业小区 · 商品房社区 · 与单位大院的血缘:同为围墙形态,边界逻辑相反（见下）</div></div>
+<div class="entry-def">以连续围墙界定用地边界、出入口设门禁管理、内部道路绿地由业主共有并委托物业服务企业维护的商品住宅区,1998 年后中国城市新建住宅的默认形态。</div>
+<div class="entry-bd">
+
+<p>封闭小区并非规划法规的强制要求,而是三股力量合流的产物:<b>其一</b>,"谁开发、谁配套"模式使道路、绿地、休闲设施成本内化到房价,业主以公摊与物业费支付共有部分,封闭管理成为防"搭便车"的产权技术<sup class="ref">[27]</sup>;<b>其二</b>,治安需求——1996 年《人民公安》刊文《封闭小区好》,北京试点数据为自行车案件下降 91.5%、刑事案件下降 85%<sup class="ref">[27]</sup>;<b>其三</b>,市场化物业管理的复制（→§4.4）。与单位大院对照,血缘与反差同样清晰:同样有围墙,大院的墙内是<b>单位</b>的资源,商品房的墙内是<b>业主</b>的共有产权;大院靠行政隶属运转,小区靠合同与规约运转。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-1</span><span class="t">封闭式商品房小区总平面要素（示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 500" width="100%" role="img" aria-label="封闭式商品房小区总平面示意图">
+<rect x="30" y="30" width="700" height="420" fill="none" stroke="#111" stroke-width="3"/>
+<rect x="30" y="30" width="700" height="420" fill="#fcfcfc" stroke="none"/>
+<rect x="60" y="60" width="640" height="360" fill="none" stroke="#999" stroke-width="1.2" stroke-dasharray="6,4"/>
+<g stroke="#111" stroke-width="2" fill="#e2e2e2">
+<rect x="80" y="90" width="90" height="30"/>
+<rect x="80" y="200" width="90" height="30"/>
+</g>
+<g font-size="10.5" fill="#333" text-anchor="middle">
+<text x="125" y="150">板式 11F</text><text x="125" y="164" fill="#888" font-size="9.5">剪力墙 · 一梯两户</text>
+<text x="125" y="255">板式 11F</text><text x="125" y="269" fill="#888" font-size="9.5">11 层电梯配置经济分界</text>
+</g>
+<g stroke="#111" stroke-width="2" fill="#d4d4d4">
+<rect x="200" y="80" width="56" height="56"/><rect x="200" y="170" width="56" height="56"/>
+<rect x="200" y="270" width="56" height="56"/><rect x="200" y="360" width="56" height="56"/>
+</g>
+<g font-size="10.5" fill="#333" text-anchor="middle">
+<text x="228" y="122">塔式 33F</text><text x="228" y="155" fill="#888" font-size="9.5">2梯4户</text>
+<text x="228" y="212">塔式 33F</text><text x="228" y="302">塔式 33F</text>
+<text x="228" y="392">塔式 33F</text><text x="228" y="406" fill="#888" font-size="9.5">≈99 m 消防分界以下</text>
+</g>
+<ellipse cx="480" cy="230" rx="150" ry="120" fill="#ececec" stroke="#777" stroke-width="1.5" stroke-dasharray="3,3"/>
+<text x="480" y="220" text-anchor="middle" font-size="12" font-weight="700">中心集中绿地</text>
+<text x="480" y="238" text-anchor="middle" font-size="9.5" fill="#666">绿地率 ≥30% · 宅间绿地计入</text>
+<text x="480" y="252" text-anchor="middle" font-size="9.5" fill="#666">原点为规划构图惯例</text>
+<g stroke="#111" stroke-width="1.8" fill="#fff">
+<rect x="640" y="80" width="70" height="40"/><rect x="640" y="150" width="70" height="40"/>
+</g>
+<text x="675" y="98" text-anchor="middle" font-size="10.5">会所 / 幼儿园</text>
+<text x="675" y="112" text-anchor="middle" font-size="9" fill="#888">组团级配套</text>
+<text x="675" y="168" text-anchor="middle" font-size="10.5">物业用房</text>
+<text x="675" y="182" text-anchor="middle" font-size="9" fill="#888">《物业管理条例》要求</text>
+<g stroke="#111" stroke-width="0" fill="#bbb">
+<rect x="655" y="360" width="40" height="18"/>
+</g>
+<text x="675" y="372" text-anchor="middle" font-size="9.5" fill="#444">地下车库坡道</text>
+<path d="M 100 470 L 700 470" stroke="#111" stroke-width="2" fill="none"/>
+<path d="M 300 470 L 300 30 M 520 470 L 520 30" stroke="#bbb" stroke-width="1.2" fill="none" stroke-dasharray="8,5"/>
+<path d="M 100 470 L 100 30 M 700 470 L 700 30" stroke="#bbb" stroke-width="1.2" fill="none" stroke-dasharray="8,5"/>
+<text x="215" y="486" font-size="10" fill="#777" text-anchor="middle">城市道路</text>
+<text x="410" y="486" font-size="10" fill="#777" text-anchor="middle">城市道路</text>
+<text x="610" y="486" font-size="10" fill="#777" text-anchor="middle">城市道路</text>
+<g stroke="#111" stroke-width="2.5">
+<line x1="300" y1="470" x2="300" y2="450"/><line x1="300" y1="450" x2="330" y2="450"/>
+<line x1="520" y1="30" x2="520" y2="50"/><line x1="520" y1="50" x2="490" y2="50"/>
+</g>
+<text x="345" y="453" font-size="9.5" fill="#444">车行出入口（门禁）</text>
+<text x="475" y="44" font-size="9.5" fill="#444">人行出入口（门禁）</text>
+<text x="360" y="330" text-anchor="middle" font-size="9.5" fill="#666">环路（内部道路,业主共有）</text>
+<ellipse cx="360" cy="330" rx="120" ry="55" fill="none" stroke="#777" stroke-width="1.2" stroke-dasharray="2,3"/>
+<text x="42" y="48" font-size="10.5" fill="#777">围墙（连续）</text>
+</svg>
+</div>
+<div class="fig-note">总平面要素自外向内:城市道路 → 围墙与门禁 → 环路 → 住宅楼栋（板式/塔式混布）→ 中心绿地。会所与物业用房临出入口布置是通行做法;地下车库坡道直连城市道路。本图亦即"小区"作为物业区域与规划单元双重身份的空间表达——与专题概述页 §1 的三重身份框架互证。</div>
+</div>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-1</span><span class="no">商品房楼栋（1998—2008）</span></div>
+<table class="spec-t">
+<tr><td class="k">结构体系</td><td>钢筋混凝土剪力墙（小开间→短肢剪力墙,户内可灵活分隔）;框架-剪力墙用于底部带商业的综合楼</td></tr>
+<tr><td class="k">层数分档</td><td>7 层以上设电梯;11 层一部电梯的经济上限;12 层以上每单元 ≥2 台电梯;33 层（≈99 m）为超 100 m 消防分界之下的常见封顶档</td></tr>
+<tr><td class="k">层高</td><td>2.8—2.9 m（毛坯交房为主,精装修 2000s 后期扩展）</td></tr>
+<tr><td class="k">楼栋形式</td><td>板式（一梯两户,南北通透,得房率高）/ 塔式（2 梯 4—8 户,节地,部分户型采光通风受限）/ 蝶形（塔式改良）</td></tr>
+<tr><td class="k">得房率</td><td>多层 85—90% · 小高层 80—85% · 高层塔式 70—78%（公摊面积制度的直接后果）</td></tr>
+<tr><td class="k">总图指标</td><td>容积率按城市与区位约 1.5—3.5;绿地率 ≥30%;日照执行大寒日/冬至日标准,间距系数北方约 1.5</td></tr>
+<tr><td class="k">交付标准</td><td>预售制（→§3.4）;毛坯 + 预留管线;维修基金与前期物业服务合同随交付启动</td></tr>
+</table></div>
+<p class="cr">→ 参见 §1.3 单位大院（围墙形态的前身）； §4.4 物业制度（围墙之内的治理）</p>
+</div></div>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 3-2</span><span class="t">行列式布局与日照间距（示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 760 300" width="100%" role="img" aria-label="行列式布局与日照间距示意图">
+<g stroke="#111" stroke-width="2" fill="#e2e2e2">
+<rect x="80" y="50" width="340" height="46"/>
+<rect x="80" y="150" width="340" height="46"/>
+<rect x="80" y="250" width="340" height="46"/>
+</g>
+<g font-size="11" fill="#333" text-anchor="middle">
+<text x="250" y="78">第 1 排 板式住宅（南向）</text>
+<text x="250" y="178">第 2 排</text>
+<text x="250" y="278">第 3 排</text>
+</g>
+<g stroke="#555" stroke-width="1.1">
+<line x1="470" y1="96" x2="470" y2="150"/><line x1="465" y1="96" x2="475" y2="96"/><line x1="465" y1="150" x2="475" y2="150"/>
+<line x1="490" y1="50" x2="490" y2="96"/><line x1="485" y1="50" x2="495" y2="50"/><line x1="485" y1="96" x2="495" y2="96"/>
+</g>
+<text x="480" y="128" font-size="11" fill="#444" text-anchor="middle" transform="rotate(90 480 128)">间距 D</text>
+<text x="508" y="76" font-size="11" fill="#444" transform="rotate(90 508 76)">前排遮挡高度 H</text>
+<text x="545" y="110" font-size="11.5" fill="#222">D ≈ (1.2—1.7) H</text>
+<text x="545" y="128" font-size="10" fill="#777">北方取高值,南方取低值;</text>
+<text x="545" y="142" font-size="10" fill="#777">按大寒日/冬至日日照时数校核</text>
+<text x="545" y="156" font-size="10" fill="#777">行列式为 1949 年以来通行布局</text>
+<text x="545" y="170" font-size="10" fill="#777">（自百万庄至今,见档 1-4）</text>
+</svg>
+</div>
+<div class="fig-note">行列式（板楼正南北成排）是 1953 年百万庄至今最持久的总平面范式——规划思潮数变（扩大街坊→小区→组团→生活圈）,而正南朝向 + 日照间距的物理约束未变。塔式楼栋则常以点群式布局绕开连续阴影带。</div>
+</div>
+
+<!-- §3.4 高周转 -->
+<div class="sec" id="s34"><h3>§3.4 高周转时代(2008—2016)<span class="sec-sub">HIGH-TURNOVER ERA</span></h3></div>
+
+<p><b>资金循环:</b>拿地 → "四证"融资 → 开工 → 预售 → 回款 → 再拿地。预售制允许期房提前回款,高杠杆、高负债、高周转由此成立。<b>空间:</b>郊区大盘与新城——合生创展京津新城占地约 2.5 万亩、投入超 200 亿元<sup class="ref">[28]</sup>;2007 年天津"星耀五洲"以 62.9 亿元拍得 4000 亩土地<sup class="ref">[28]</sup>。<b>产品:</b>超高层、精装修、大型社区;大盘试图在郊区再造完整城市功能。<b>政策:</b>2008 年"四万亿"后房地产与土地财政深度联动;2015 年前后去库存,棚改货币化把需求释放到三四线城市与县城。<b>终点:</b>2016 年底中央经济工作会议提出"房子是用来住的、不是用来炒的"。</p>
+
+<blockquote>"2009 年前后,北京四环五环房价从单价 9600 元一路拉到 1.8 万元。"<cite>——该时期市场叙事的代表性案例<sup class="ref">[29]</sup></cite></blockquote>
+
+<p>房价上涨期间,住房完成了从居住品到投资品的心理转换（→§4.1,70 后/80 后条）;学区房由局部现象变为大中城市购房决策的核心变量——"能不能住"之外,新增"有没有学位、能不能保值、能不能给下一代更好起点"三问。</p>
+
+<!-- §3.5 存量转型 -->
+<div class="sec" id="s35"><h3>§3.5 存量转型(2016—2026)<span class="sec-sub">STOCK RENOVATION ERA</span></h3></div>
+
+<p>2016 年后供求关系发生实质变化:城镇化进入高位平台,人口红利消退,三四线城市面临库存与人口双重压力。建设重心从增量开发转向存量更新——本编的建筑主角从"新小区"变为"老小区"。</p>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">城镇老旧小区改造</span><span class="en">Urban Old Community Renovation</span>
+<div class="meta">政策依据:国办 2020 年指导意见<sup class="ref">[31]</sup> · 对象:2000 年底前建成、失养失修失管严重的住宅区 · 目标:"十四五"期末基本完成改造任务</div></div>
+<div class="entry-def">以保留既有建筑为前提、按基础类/完善类/提升类三类菜单实施的存量住区"微更新"制度,与棚改的大拆大建构成对照。</div>
+<div class="entry-bd">
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 3-2</span><span class="no">老旧小区改造项清单（2020 口径）</span></div>
+<table class="spec-t">
+<tr><td class="k">基础类</td><td>水电气路等市政配套、建筑物本体安全（屋面防水、外立面、楼梯间）、消防设施——应改尽改</td></tr>
+<tr><td class="k">完善类</td><td>加装电梯、停车设施、无障碍与适老化改造、绿化与照明——业主参与决策</td></tr>
+<tr><td class="k">提升类</td><td>社区养老、托育、助餐、便民市场等公共服务设施——市场化引入</td></tr>
+<tr><td class="k">与棚改之别</td><td>棚改:拆迁重建、货币化安置,推倒重来;旧改:保留建筑、存量提升、各方出资分担</td></tr>
+<tr><td class="k">规模</td><td>2020 年新开工 3.9 万个小区、涉及居民近 700 万户<sup class="ref">[31]</sup></td></tr>
+</table></div>
+
+<p>改造对象即本卷第一、二编的建筑:1980—2000 年间的单元式住宅小区正处于设备寿命与人口老龄化叠加期——加装电梯因此成为最具象征意义的改造项:建筑是旧制度建的,居民是长寿时代住的。</p>
+
+<p>同期新体系并行生长:<b>共有产权房</b>（政府与购房人按份共有,北京、上海等地推进）、<b>限竞房</b>（限房价、竞地价）、<b>保障性租赁住房</b>（2021 年国办意见:70 ㎡以下小户型为主、低于同地段市场租金,面向新市民与青年人<sup class="ref">[30]</sup>）。2021 年底中央经济工作会议提出"探索新的发展模式",租购并举成为总框架<sup class="ref">[30]</sup>。</p>
+<p class="cr">→ 参见 §1.5 排子房（更早的存量对象）; §4.1（90 后/00 后条:租购并举下的一代）</p>
+</div></div>
+
+<!-- §3.6 规划标准 -->
+<div class="sec" id="s36"><h3>§3.6 规划标准沿革:从小区到生活圈<span class="sec-sub">PLANNING STANDARDS</span></h3></div>
+
+<table class="t">
+<tr><th>标准</th><th>分级体系</th><th>要点</th></tr>
+<tr><td><b>邻里单位</b>（佩里,1929,理论输入）</td><td>以小学服务半径组织邻里</td><td>百万庄规划的理论来源（→档 1-4）</td></tr>
+<tr><td><b>苏联扩大街坊</b>（1950s 输入）</td><td>街坊级</td><td>曹杨新村等第一批新村布局依据<sup class="ref">[4]</sup></td></tr>
+<tr><td><b>居住区—小区—组团</b>三级（GBJ 137-90 / GB 50180-93、2002）</td><td>居住区 3—5 万人 · 小区 0.7—1.5 万人 · 组团 0.1—0.3 万人</td><td>"小区"由日常词汇升格为法定规划层级——日常语言中的"小区"即源于此</td></tr>
+<tr><td><b>生活圈</b>（GB 50180-2018）</td><td>十五分钟生活圈（5—10 万人）· 十分钟 · 五分钟 · 居住街坊</td><td>尺度单位从"人口规模"改为"步行时间";配套按圈层配置</td></tr>
+</table>
+
+<div class="note">值得注意的谱系反转:1990 年标准中的"小区"是规划科技术语,先于民众使用;2018 年标准废弃了"小区"层级,改用"居住街坊"——而日常语言中的"小区"反而愈发普及。法规词汇与民间词汇从此分岔:今日说"小区",通常指一个物业管理区域（→专题概述页 §1.1 三重身份）。</div>
+
+<!-- ============================================================ -->
+<!-- 第四编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v4">
+<div class="vol-no">第四编</div>
+<h2>专题研究</h2>
+<div class="vol-range">代际 · 邻里 · 命名 · 物业 · 文化</div>
+</div>
+
+<!-- §4.1 代际 -->
+<div class="sec" id="s41"><h3>§4.1 代际居住认知<span class="sec-sub">GENERATIONAL MENTALITÉ</span></h3></div>
+
+<p>同一个人对"房子"的理解,由其成年期所处制度环境定型<sup class="ref">[34]</sup>。本节以四代人为分析单元,每代给出一则"认知词条"与一则样本。</p>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">50后 / 60后</span><span class="en">Cohort 1950s–60s</span>
+<div class="meta">制度环境:单位居住体系全程（→第一编） · 关键词:分房、调房、等</div></div>
+<div class="entry-def">以"单位分配"为居住获取方式的唯一认知框架的一代;住房经验动词是"分"与"调",而非"买"。</div>
+<div class="entry-bd">
+<p>样本:温先生,50 后——"许多年前单位分房时,排队等、托人情,拼命与单位领导、分房小组负责人搞好关系,大家就为争个所谓的中套房,面积其实也没现在的那种单身公寓大。"退休时的总结是:"我这辈子公家给我调换过 6 次房。"<sup class="ref">[8]</sup> "公家调换"是此代居住史的核心动词。1998 年制度终结时此代已近退休,多数经房改房首次获得完全产权——"公家分的"变成"自己的",但认知底色仍是福利逻辑。</p>
+</div></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">70后</span><span class="en">Cohort 1970s</span>
+<div class="meta">制度环境:双轨过渡 + 房改红利（→第二编、§3.2） · 关键词:赶上了</div></div>
+<div class="entry-def">同时携带福利记忆与资产经验的一代;"买房致富"信仰的原始形成群体。</div>
+<div class="entry-bd">
+<p>样本:洪湖幺叔——1998 年因单位表彰先进分得 50 余㎡ 福利房,一个月后 23 号文出台;此后在电视上看到上海"申江名园"从 6000 元/㎡ 涨到 1.3 万元,"第一次意识到房子不仅用来住,也和财富联系在一起";2009 年卖旧房借款购入 120 ㎡（总价 15 万元）;2012 年按揭再购 122 ㎡（当地房价已破 3300 元/㎡）<sup class="ref">[33]</sup>。此代买房集中于 1992—2012 年——房改启动、价格低位,随后享受二十年增值红利<sup class="ref">[35]</sup>。世纪心态可用一句戏仿概括:"曾经有一套便宜的房子放在我面前,我没有珍惜。"<sup class="ref">[32]</sup></p>
+</div></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">80后</span><span class="en">Cohort 1980s</span>
+<div class="meta">制度环境:商品房全程 + 学区制度绑定 · 关键词:刚需、房奴、学区</div></div>
+<div class="entry-def">"住房刚需"概念的核心承载代;居住决策被婚姻与教育两大外部制度牵引。</div>
+<div class="entry-bd">
+<p>样本数据:2009 年前后一项 2429 人调查显示,74.2% 的受访者称身边"80 后"夫妻经常因房子问题吵架<sup class="ref">[36]</sup>。"房奴"一词在此代语境中诞生<sup class="ref">[37]</sup>。样本:某 80 后 2000 年前后购首套,2020 年孩子将上学,以 450 万元卖出首套（15 年增值约 350 万元）置换主城区学区房<sup class="ref">[38]</sup>——此代焦虑不止"买不起",更在"不够好":面积、地段、学区、配套的四重升级压力。</p>
+</div></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">90后 / 00后</span><span class="en">Cohort 1990s–2000s</span>
+<div class="meta">制度环境:房住不炒 + 租购并举（→§3.5） · 关键词:只租不买、流动性</div></div>
+<div class="entry-def">进入社会即面对高位分化市场的一代;首次将"租一辈子"纳入可行集合。</div>
+<div class="entry-bd">
+<p>样本:澎湃调查显示一线城市不少 90 后表示"如果有房子能让我稳定地租一辈子,又何必买房呢?"<sup class="ref">[39]</sup> 决策变量从"上车"改为算账:三十年房贷 vs 生活品质、"不敢辞职、不敢生病"的机会成本<sup class="ref">[40]</sup>。00 后另有一重空间社会学标签——"第一批在完全原子化环境里长大的中国人":商品房小区讲边界、家长讲安全,童年被移入卧室、培训班与屏幕<sup class="ref">[41]</sup>（→§4.2）。</p>
+</div></div>
+
+<table class="t">
+<tr><th>代际</th><th>居住获取动词</th><th>房子是什么</th><th>制度遭遇</th></tr>
+<tr><td>50/60 后</td><td>分、调、等</td><td>单位身份的空间形式</td><td>福利分房全程 + 末期房改</td></tr>
+<tr><td>70 后</td><td>买（低位）</td><td>财富跃迁的门票</td><td>房改红利 + 商品化全程</td></tr>
+<tr><td>80 后</td><td>贷、换</td><td>婚姻与教育的入场券</td><td>市场化全程 + 高位接盘</td></tr>
+<tr><td>90/00 后</td><td>租（观望）</td><td>可计算的生活成本项</td><td>房住不炒 + 租购并举</td></tr>
+</table>
+
+<!-- §4.2 邻里 -->
+<div class="sec" id="s42"><h3>§4.2 邻里形态:从熟人社会到陌生人社会<span class="sec-sub">NEIGHBORHOOD MORPHOLOGY</span></h3></div>
+
+<table class="t">
+<tr><th>维度</th><th>单位大院 / 筒子楼（→§1.3—1.4）</th><th>商品房小区（→§3.3）</th></tr>
+<tr><td>邻里基础</td><td>业缘:同事即邻居</td><td>产权:陌生人共处一墙</td></tr>
+<tr><td>空间形态</td><td>平面展开,门户开放</td><td>垂直堆叠,门禁分隔</td></tr>
+<tr><td>互助网络</td><td>带孩子、搭把手、情绪缓冲</td><td>合同化:物业按约履职</td></tr>
+<tr><td>越界成本</td><td>极低（大门常开<sup class="ref">[42]</sup>）</td><td>极高（门禁、监控、规约）</td></tr>
+</table>
+
+<p>转变的社会后果被概括为"蜂窝化"居住<sup class="ref">[43]</sup>与"原子化青年"<sup class="ref">[41]</sup>:情感支持体系没有随物理居住条件的改善同步建立——孩子受委屈时,楼下邻居阿姨的劝解被替换为房间里的独处。第四编 §4.1 中 00 后的孤独与此直接相关:两代之间,消失的不只是走廊,还有走廊里的人。</p>
+
+<!-- §4.3 命名 -->
+<div class="sec" id="s43"><h3>§4.3 命名体系:一部微缩史<span class="sec-sub">NOMENCLATURE</span></h3></div>
+
+<p>楼盘名是住房制度最灵敏的表层指标——制度变,命名法随之变。依贝壳楼盘字典 17 万份数据<sup class="ref">[44]</sup>整理:</p>
+
+<table class="t">
+<tr><th>时期</th><th>主导命名法</th><th>样本</th><th>制度对应</th></tr>
+<tr><td>1970s 前</td><td>街道地名</td><td>和平街、垂杨柳、西街</td><td>住房无商品属性,名字只须指位</td></tr>
+<tr><td>1980s</td><td>花园 / 家园</td><td>各类"花园"</td><td>商品化起步,居住审美需求初现</td></tr>
+<tr><td>1990s—2012</td><td>吉祥字 + 想象地理</td><td>锦绣、观澜、彼岸、半岛、星空</td><td>扩张期:案名负责"向外眺望"<sup class="ref">[45]</sup></td></tr>
+<tr><td>2013 后</td><td>古风身份词</td><td>府、公馆、邸、阙、湾</td><td>存量博弈:案名负责"向内确权"<sup class="ref">[45]</sup></td></tr>
+<tr><td>2018 后</td><td>规范清理</td><td>整治"大、洋、怪、重"<sup class="ref">[46]</sup></td><td>行政力量入场命名系统</td></tr>
+</table>
+
+<p>后缀亦构成定位词法:"园/苑"多刚需与安置,"府/庭/庄"指轻奢豪宅,"院/馆/湾"对应高端或临水<sup class="ref">[45]</sup>——命名即圈层筛选:案名不再写给所有人,而是通过"专属感"过滤客群。而这一切的起点是百万庄的十二地支（→档 1-4）:命名作为规划工具,1953 年已出现。</p>
+
+<!-- §4.4 物业 -->
+<div class="sec" id="s44"><h3>§4.4 物业管理制度沿革<span class="sec-sub">PROPERTY MANAGEMENT</span></h3></div>
+
+<table class="t">
+<tr><th>年份</th><th>事件</th><th>制度意义</th></tr>
+<tr><td>1981</td><td>深圳市物业管理公司成立<sup class="ref">[47]</sup></td><td>香港模式引入;房产管理由行政福利转向专业有偿服务</td></tr>
+<tr><td>1994</td><td>建设部《城市新建住宅小区管理办法》<sup class="ref">[47]</sup></td><td>首部物业规章:新建小区推行物业管理</td></tr>
+<tr><td>1996 / 2003 / 2014</td><td>收费办法三级演进<sup class="ref">[48]</sup></td><td>政府定价 → 指导价与市场调节并行 → 非保障房收费放开</td></tr>
+<tr><td>2003</td><td>国务院《物业管理条例》<sup class="ref">[47]</sup></td><td>业主、业委会、物业服务企业三方关系的法律框架</td></tr>
+</table>
+
+<p>物业是小区的"操作系统":单位大院中由行政隶属承担的维护、安保、秩序功能,商品房小区改由合同购买。物业费争议、业委会选举、物业服务合同纠纷,皆是这套系统在日常运转中的摩擦声——单位制下无此问题,因为那时根本没有"业主"。</p>
+
+<!-- §4.5 文化 -->
+<div class="sec" id="s45"><h3>§4.5 文化根源:为什么非要拥有<span class="sec-sub">CULTURAL ROOTS</span></h3></div>
+
+<p>居住自有偏好不能完全由价格解释。文化解释的核心命题:儒家文化以"家"为组织核心,而维系"家"的物质载体是有私有产权的住宅——"没有住宅,就没有家",故可倾其所有购房;台湾地区谚语"有土斯有财"即此心理的口头形式<sup class="ref">[36]</sup>。对照物是欧美:住房主要价值为"居住",租购无本质身份差异;最豪华建筑是教堂而非"家"的场所<sup class="ref">[36]</sup>。</p>
+
+<p>由此可解释两个"反常"数字:其一,房价收入比——欧美经验 10 倍以上即视为严重泡沫,2009 年京沪已超 15 倍而市场持续运转,因为中国的实际支付单位不是小两口,而是"六个钱包":双方父母凑首付、子女付月供、不足再补——家庭收入的边界可无限外扩<sup class="ref">[36][49]</sup>;其二,自有率——美国 2005 年购房最盛时自有率 69%,超三成人口终身无自有住房且不构成身份焦虑<sup class="ref">[36]</sup>,此在中国语境下难以想象。</p>
+
+<p>"租购并举"政策与这一文化结构之间的张力,是第三编Ⅲc阶段最深的变量:制度可以一夜改变（1998 年即如此）,文化的转身却需要一代人——恰是 §4.1 中正在"只租不买"的那一代。</p>
+
+<!-- ============================================================ -->
+<!-- 第五编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v5">
+<div class="vol-no">第五编</div>
+<h2>户型与平面演变</h2>
+<div class="vol-range">1979 — 2026 · 从方厅到大平层</div>
+</div>
+
+<div class="sec" id="s51"><h3>§5.1 总论:平面是家庭生活的图纸<span class="sec-sub">GENERAL SURVEY</span></h3></div>
+
+<p>如果把一栋楼纵剖,墙体的位置就是一部家庭生活脚本:哪间房朝南、谁能拥有独用的马桶、吃饭的地方有没有窗、客人进门第一眼看见什么——每一道隔墙都是一次关于"家是什么"的裁决。本编追踪 1979 年成套住宅普及以来<b>套内平面</b>的四次范式转移:方厅时代（厅是扩宽的走道）→ 大厅小卧（厅升格为户型主角）→ 两厅两卫（待客与自用分流）→ 功能细分（大平层与"主卧小家化"）。</p>
+
+<p>驱动转移的三个变量:其一,<b>规范下限</b>——国家每十年上修一次"一套住宅最低该有什么"（→§5.6）;其二,<b>家庭结构</b>——城镇平均家庭户规模从 1990 年的 3.96 人降至 2020 年的 2.62 人<sup class="ref">[50]</sup>,房间数增加而每间住的人减少;其三,<b>支付能力与生活方式</b>——电视给了客厅理由,洗衣机给了阳台理由,外卖与洗碗机正在修改厨房的理由。面积本身也在扩容:城镇人均住房建筑面积从 1978 年 6.7 ㎡ 增至 1998 年约 18.7 ㎡,2019 年达 39.8 ㎡<sup class="ref">[10]</sup>——四十余年间翻了近六倍。</p>
+
+<table class="t">
+<tr><th>代际</th><th>通行户型词</th><th>建筑面积</th><th>厅</th><th>卫</th><th>关键词</th></tr>
+<tr><td>1980s</td><td>一室户 / 二室户</td><td>38—58 ㎡</td><td>方厅（暗厅）</td><td>独用 1</td><td>成套、独厨独卫</td></tr>
+<tr><td>1990s</td><td>两室一厅 / 两室两厅</td><td>55—85 ㎡</td><td>明厅带阳台</td><td>1</td><td>大厅小卧、南北通透</td></tr>
+<tr><td>2000s</td><td>两居 / 三居两厅两卫</td><td>90—140 ㎡</td><td>两厅（客/餐分离）</td><td>2</td><td>动静分区、主卧套房</td></tr>
+<tr><td>2010s</td><td>紧凑三居 → 大平层</td><td>89—200+ ㎡</td><td>横厅、餐客一体</td><td>2—3</td><td>赠送面积、功能细分</td></tr>
+<tr><td>2020s</td><td>四居 / "好房子"</td><td>120—144 ㎡ 主流</td><td>方厅重生（LDK）</td><td>2—3</td><td>层高 3 m、得房率、全生命周期</td></tr>
+</table>
+
+<div class="stat-row">
+<div class="stat"><div class="v">2.62 人</div><div class="k">2020 年城镇平均家庭户规模（1990 年 3.96 人）<sup class="ref">[50]</sup></div></div>
+<div class="stat"><div class="v">6.7 → 39.8 ㎡</div><div class="k">城镇人均住房建筑面积 1978 → 2019<sup class="ref">[10]</sup></div></div>
+<div class="stat"><div class="v">90 / 70</div><div class="k">2006 年套型面积管制政策（→§5.6）<sup class="ref">[52]</sup></div></div>
+<div class="stat"><div class="v">2.8 → 3.0 m</div><div class="k">住宅层高规范下限,2025 年上修（→§5.6）<sup class="ref">[62]</sup></div></div>
+</div>
+
+<!-- §5.2 方厅 -->
+<div class="sec" id="s52"><h3>§5.2 方厅时代<span class="sec-sub">THE FANGTING ERA · c.1979—1990</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">方厅</span><span class="en">Fangting</span>
+<div class="meta">别名:过厅 · 门厅 · 小厅（东北习称"方厅",因平面近方形） · 对应规范术语:起居室（厅）前身</div></div>
+<div class="entry-def">1980 年代成套住宅中由过道扩大而成的多功能半独立空间,通常 4—7 ㎡、无直接采光,兼作餐厅、过道、储物与待客,是"厅"进入中国住宅的第一种形态。</div>
+<div class="entry-bd">
+
+<p>GBJ 96-86 的房间组成里,"过厅"尚是交通面积,不设采光面积硬性要求<sup class="ref">[51]</sup>——方厅正是这一规范空间的民间实现。它的典型场景:一张折叠圆桌撑开是一家人饭桌,收起是过道;墙角立着自行车,冬天堆白菜;来客坐床沿,因为厅里没有沙发位。厅的面积小到无法"起居",却完成了关键的观念启蒙:<b>睡觉之外,家里还可以有一个不属于任何一张床的房间。</b></p>
+
+<p>方厅的谱系解释了它的形状:它不是被"设计"出来的,而是从筒子楼的内廊（→图 1-2）与单元房的过道（→图 2-1）压缩而来——公共走廊退入户内,就成了厅。1980 年代后期各地标准图集改版,"厅"开始有窗、有固定餐桌位;GB 50096-1999 首次要求起居室（厅）使用面积不小于 12 ㎡ 且应直接采光<sup class="ref">[51]</sup>——规范一落地,暗方厅即失去新建市场,退入存量。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-1</span><span class="t">方厅时代两居室平面（1980s 中期 · 建筑面积约 56 ㎡ · 示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 780 560" width="100%" role="img" aria-label="方厅时代两居室户型平面示意图">
+<g stroke="#888" stroke-width="1">
+<line x1="130" y1="46" x2="620" y2="46"/><line x1="130" y1="40" x2="130" y2="52"/><line x1="620" y1="40" x2="620" y2="52"/>
+<line x1="104" y1="70" x2="104" y2="470"/><line x1="98" y1="70" x2="110" y2="70"/><line x1="98" y1="470" x2="110" y2="470"/>
+</g>
+<text x="375" y="40" font-size="10.5" fill="#666" text-anchor="middle">总开间 ≈ 9.6 m</text>
+<text x="92" y="275" font-size="10.5" fill="#666" text-anchor="middle" transform="rotate(-90 92 275)">总进深 ≈ 8.7 m</text>
+<rect x="70" y="200" width="60" height="120" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<g stroke="#aaa" stroke-width="1">
+<line x1="78" y1="214" x2="122" y2="240"/><line x1="78" y1="230" x2="122" y2="256"/><line x1="78" y1="246" x2="122" y2="272"/><line x1="78" y1="262" x2="122" y2="288"/><line x1="78" y1="278" x2="122" y2="304"/><line x1="78" y1="294" x2="122" y2="316"/>
+</g>
+<text x="100" y="338" font-size="10" fill="#555" text-anchor="middle">楼梯间</text>
+<text x="100" y="352" font-size="9" fill="#999" text-anchor="middle">一梯两户</text>
+<rect x="130" y="70" width="490" height="400" fill="#fff" stroke="#111" stroke-width="3"/>
+<g stroke="#111" stroke-width="1.6">
+<line x1="300" y1="70" x2="300" y2="180"/>
+<line x1="420" y1="70" x2="420" y2="470"/>
+<line x1="130" y1="180" x2="420" y2="180"/>
+<line x1="130" y1="320" x2="620" y2="320"/>
+</g>
+<rect x="420" y="320" width="200" height="150" fill="#f7f7f7" stroke="#111" stroke-width="1.6" stroke-dasharray="7,4"/>
+<g fill="#e9e9e9" stroke="#999" stroke-width="1">
+<rect x="175" y="365" width="110" height="80" rx="3"/>
+<rect x="470" y="105" width="100" height="70" rx="3"/>
+<rect x="230" y="215" width="60" height="55"/>
+<rect x="140" y="85" width="14" height="80"/>
+<rect x="340" y="85" width="12" height="26"/>
+</g>
+<line x1="175" y1="392" x2="285" y2="392" stroke="#999" stroke-width="1"/>
+<line x1="470" y1="128" x2="570" y2="128" stroke="#999" stroke-width="1"/>
+<g font-size="11.5" fill="#222" text-anchor="middle">
+<text x="215" y="112">厨房</text><text x="215" y="127" font-size="9.5" fill="#777">4.2 ㎡ · 北向</text>
+<text x="360" y="112">卫生间</text><text x="360" y="127" font-size="9.5" fill="#777">2.8 ㎡ · 暗卫</text>
+<text x="520" y="170">次卧</text><text x="520" y="185" font-size="9.5" fill="#777">9.8 ㎡ · 北向</text>
+<text x="275" y="245" font-weight="700">方 厅</text><text x="275" y="262" font-size="9.5" fill="#777">6.2 ㎡ · 无直接采光</text>
+<text x="275" y="300" font-size="9.5" fill="#999">折叠桌 · 自行车 · 过道</text>
+<text x="275" y="440">主卧</text><text x="275" y="455" font-size="9.5" fill="#777">13.5 ㎡ · 南向</text>
+<text x="520" y="440">阳台</text><text x="520" y="455" font-size="9.5" fill="#777">4.0 ㎡ · 南向</text>
+</g>
+<g stroke="#555" stroke-width="1.3" fill="none">
+<path d="M 130 240 L 172 240 A 42 42 0 0 1 172 324" />
+<path d="M 200 180 L 200 214 A 34 34 0 0 0 234 180" transform="rotate(180 200 197)"/>
+<path d="M 340 180 L 340 214 A 34 34 0 0 0 374 180" transform="rotate(180 340 197)"/>
+<path d="M 200 320 L 200 286 A 34 34 0 0 0 166 320"/>
+<path d="M 420 236 L 386 236 A 34 34 0 0 0 420 270"/>
+<path d="M 420 386 L 386 386 A 34 34 0 0 0 420 420"/>
+</g>
+<text x="152" y="228" font-size="9.5" fill="#777">入户门</text>
+<g stroke="#666" stroke-width="0.9">
+<line x1="420" y1="470" x2="450" y2="500" stroke-dasharray="3,3"/>
+<line x1="460" y1="470" x2="490" y2="500" stroke-dasharray="3,3"/>
+</g>
+<g font-size="10" fill="#444">
+<text x="636" y="100">暗卫:无外窗,靠排气道通风——</text>
+<text x="636" y="113">"成套"的最低配置（→档 2-1）</text>
+<line x1="632" y1="118" x2="392" y2="112" stroke="#999" stroke-width="0.8"/>
+<text x="636" y="255">方厅 = 扩宽的走道:</text>
+<text x="636" y="268">吃饭、过人、放自行车——</text>
+<text x="636" y="281">"厅"的第一种形态</text>
+<line x1="632" y1="286" x2="424" y2="262" stroke="#999" stroke-width="0.8"/>
+<text x="636" y="395">主卧常住一家三口:</text>
+<text x="636" y="408">床 + 书桌 + 缝纫机</text>
+<line x1="632" y1="413" x2="420" y2="405" stroke="#999" stroke-width="0.8"/>
+</g>
+<g transform="translate(716,58)">
+<line x1="0" y1="16" x2="0" y2="-6" stroke="#111" stroke-width="1.6"/>
+<path d="M 0 -13 L -5 -3 L 5 -3 Z" fill="#111"/>
+<text y="30" text-anchor="middle" font-size="11">北</text>
+</g>
+</svg>
+</div>
+<div class="fig-note">读图要点:入户门直接开向方厅——方厅是全屋唯一的交通枢纽;两间卧室一南一北,主卧承担睡眠、学习、待客三重功能;卫生间为暗卫,这是它与 1990 年代户型的分水岭。折叠桌与自行车不是调侃,而是该户型的标准家具清单。建筑面积约 56 ㎡,砖混多层,得房率约 86%（→§5.7）。</div>
+</div>
+
+<p class="cr">→ 参见 §1.4 筒子楼（方厅的前身是内廊）; §5.6（暗厅的规范终结）; 附录A"方厅"词条</p>
+</div></div>
+
+<!-- §5.3 两居 -->
+<div class="sec" id="s53"><h3>§5.3 两居室:国民户型<span class="sec-sub">THE TWO-BEDROOM · c.1990—2010</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">两居室</span><span class="en">Two-Bedroom Unit</span>
+<div class="meta">俗称:两居 · 两室一厅 / 两室两厅 · 中国商品房史上产量最大的户型类型</div></div>
+<div class="entry-def">两间卧室加起居厅（或客、餐两厅）、独厨独卫的标准成套户型,建筑面积 55—90 ㎡,1990 至 2010 年代新盘供应与二手成交的主力规格,"一家三口"居住脚本的默认载体。</div>
+<div class="entry-bd">
+
+<p>两居的定型过程即"大厅小卧"的确立:卧室缩小到睡眠所需,厅拿到南向与阳台。明厅、明卫、南北通透——三个词构成 1990 年代售楼话语的全部技术含量,也是板式住宅（→档 3-1）一梯两户平面的直接产物。独生子女一代在此户型中获得自己的房间:北卧从储物间变成儿童房,是中国住宅史上第一次为"一个孩子"设计房间。</p>
+
+<p>2006 年 90/70 政策（国办发〔2006〕37 号:新建商品住房 90 ㎡ 以下套型占比须达 70%<sup class="ref">[52]</sup>）把两居推上政策宝座,同时催生了它的极限变体:<b>紧凑三居</b>——89 ㎡ 塞进三间卧室。"89"不是吉利数,而是各地容积率奖励与计容规则下的临界值:阳台按一半面积计入容积率、飘窗与设备平台不计容、入户花园一度全赠送——"偷面积"成为 2010 年代户型设计的第一显学,直至各地计容规则相继收紧<sup class="ref">[65]</sup>（→§5.7）。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-2</span><span class="t">大厅小卧两居平面（1990s · 建筑面积约 72 ㎡ · 示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 780 560" width="100%" role="img" aria-label="大厅小卧两居室户型平面示意图">
+<g stroke="#888" stroke-width="1">
+<line x1="130" y1="46" x2="640" y2="46"/><line x1="130" y1="40" x2="130" y2="52"/><line x1="640" y1="40" x2="640" y2="52"/>
+<line x1="104" y1="70" x2="104" y2="470"/><line x1="98" y1="70" x2="110" y2="70"/><line x1="98" y1="470" x2="110" y2="470"/>
+</g>
+<text x="385" y="40" font-size="10.5" fill="#666" text-anchor="middle">总开间 ≈ 11.0 m</text>
+<text x="92" y="275" font-size="10.5" fill="#666" text-anchor="middle" transform="rotate(-90 92 275)">总进深 ≈ 8.6 m</text>
+<rect x="70" y="190" width="60" height="130" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<g stroke="#aaa" stroke-width="1">
+<line x1="78" y1="204" x2="122" y2="230"/><line x1="78" y1="220" x2="122" y2="246"/><line x1="78" y1="236" x2="122" y2="262"/><line x1="78" y1="252" x2="122" y2="278"/><line x1="78" y1="268" x2="122" y2="294"/><line x1="78" y1="284" x2="122" y2="310"/>
+</g>
+<text x="100" y="342" font-size="10" fill="#555" text-anchor="middle">楼梯间</text>
+<rect x="130" y="70" width="510" height="400" fill="#fff" stroke="#111" stroke-width="3"/>
+<g stroke="#111" stroke-width="1.6">
+<line x1="330" y1="70" x2="330" y2="190"/>
+<line x1="450" y1="70" x2="450" y2="260"/>
+<line x1="130" y1="190" x2="450" y2="190"/>
+<line x1="230" y1="190" x2="230" y2="320"/>
+<line x1="400" y1="190" x2="400" y2="470"/>
+<line x1="450" y1="260" x2="640" y2="260"/>
+<line x1="130" y1="320" x2="400" y2="320"/>
+</g>
+<rect x="130" y="470" width="270" height="40" fill="#f7f7f7" stroke="#111" stroke-width="1.6" stroke-dasharray="7,4"/>
+<g fill="#e9e9e9" stroke="#999" stroke-width="1">
+<rect x="150" y="95" width="13" height="80"/>
+<rect x="345" y="95" width="14" height="60"/>
+<rect x="480" y="120" width="110" height="80" rx="3"/>
+<rect x="240" y="215" width="70" height="46"/>
+<rect x="160" y="350" width="110" height="85" rx="3"/>
+<rect x="200" y="352" width="16" height="30"/>
+<rect x="290" y="352" width="16" height="30"/>
+<rect x="450" y="360" width="120" height="85" rx="3"/>
+</g>
+<line x1="480" y1="160" x2="590" y2="160" stroke="#999" stroke-width="1"/>
+<line x1="160" y1="392" x2="270" y2="392" stroke="#999" stroke-width="1"/>
+<line x1="450" y1="402" x2="570" y2="402" stroke="#999" stroke-width="1"/>
+<g font-size="11.5" fill="#222" text-anchor="middle">
+<text x="230" y="112">厨房</text><text x="230" y="127" font-size="9.5" fill="#777">5.5 ㎡ · 北向</text>
+<text x="390" y="112">卫生间</text><text x="390" y="127" font-size="9.5" fill="#777">3.8 ㎡ · 明卫</text>
+<text x="545" y="105">次卧</text><text x="545" y="120" font-size="9.5" fill="#777">10.2 ㎡ · 北向</text>
+<text x="545" y="300" font-size="10.5">过道</text>
+<text x="315" y="245">餐厅</text><text x="315" y="260" font-size="9.5" fill="#777">6.8 ㎡</text>
+<text x="180" y="245" font-size="10.5">门厅</text>
+<text x="265" y="390" font-weight="700">客 厅</text><text x="265" y="406" font-size="9.5" fill="#777">16.5 ㎡ · 南向</text>
+<text x="265" y="455" font-size="9.5" fill="#999">电视墙 + 沙发对位</text>
+<text x="520" y="390">主卧</text><text x="520" y="406" font-size="9.5" fill="#777">13.2 ㎡ · 南向</text>
+<text x="265" y="494" font-size="10">南阳台（客厅外）</text>
+</g>
+<g stroke="#555" stroke-width="1.3" fill="none">
+<path d="M 130 230 L 172 230 A 42 42 0 0 1 172 314"/>
+<path d="M 280 190 L 280 224 A 34 34 0 0 0 314 190" transform="rotate(180 280 207)"/>
+<path d="M 360 190 L 360 224 A 34 34 0 0 0 394 190" transform="rotate(180 360 207)"/>
+<path d="M 230 262 L 264 262 A 34 34 0 0 1 230 296"/>
+<path d="M 300 320 L 300 354 A 34 34 0 0 1 334 320" transform="rotate(180 300 337)"/>
+<path d="M 530 260 L 530 294 A 34 34 0 0 1 564 260" transform="rotate(180 530 277)"/>
+<path d="M 560 320 L 560 354 A 34 34 0 0 1 594 320" transform="rotate(180 560 337)"/>
+<path d="M 400 400 L 366 400 A 34 34 0 0 0 400 434"/>
+<path d="M 265 470 L 299 470 A 34 34 0 0 0 265 504"/>
+</g>
+<text x="150" y="218" font-size="9.5" fill="#777">入户门</text>
+<g font-size="10" fill="#444">
+<text x="648" y="100">明卫:北窗通风,如厕</text>
+<text x="648" y="113">不再靠排气道</text>
+<line x1="644" y1="118" x2="470" y2="110" stroke="#999" stroke-width="0.8"/>
+<text x="648" y="330">次卧=儿童房:独生子女</text>
+<text x="648" y="343">一代第一次拥有</text>
+<text x="648" y="356">"自己的房间"</text>
+<line x1="644" y1="361" x2="642" y2="330" stroke="#999" stroke-width="0.8"/>
+<text x="648" y="430">主卧退回纯睡眠:</text>
+<text x="648" y="443">书桌移进儿童房</text>
+<line x1="644" y1="448" x2="642" y2="410" stroke="#999" stroke-width="0.8"/>
+</g>
+<g font-size="10" fill="#444">
+<text x="140" y="535">"大厅小卧":厅拿到南向、阳台与电视墙——</text>
+<text x="140" y="548">方厅时代的一切都小,唯独睡眠的房间大;此后二十年,关系倒转。</text>
+</g>
+<g transform="translate(736,58)">
+<line x1="0" y1="16" x2="0" y2="-6" stroke="#111" stroke-width="1.6"/>
+<path d="M 0 -13 L -5 -3 L 5 -3 Z" fill="#111"/>
+<text y="30" text-anchor="middle" font-size="11">北</text>
+</g>
+</svg>
+</div>
+<div class="fig-note">与图 5-1 对照,变化集中在三点:厅获得南向与阳台并升格为"客厅";餐厅独立（两厅雏形）;卫生间开窗。平面逻辑从"走廊的延伸"变为"以厅为中心组织房间"——这是中国户型史上唯一一次空间权力的和平转移:主卧让出中心位,客厅登基。</div>
+</div>
+
+<p class="cr">→ 参见 §5.2（前形态）; §6.4（两居与普通商品房的供应主流）; 附录A"两厅""偷面积"词条</p>
+</div></div>
+
+<!-- §5.4 三居两厅两卫 -->
+<div class="sec" id="s54"><h3>§5.4 三居两厅两卫:改善的语法<span class="sec-sub">THREE-BEDROOM · c.2000—2015</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">三居两厅两卫</span><span class="en">Three-Bedroom, Two-Living, Two-Bath</span>
+<div class="meta">俗称:三居 · 改善型标准配置 · 2000 年代确立,至今仍是"换房"的默认目标</div></div>
+<div class="entry-def">三间卧室、客厅与餐厅分设、两套卫生间的成套户型,建筑面积 110—140 ㎡,以"动静分区、干湿分离、主卧套房"三项平面技术将家庭内部的公共性与私密性在空间上制度化。</div>
+<div class="entry-bd">
+
+<p>两卫是这套语法的关键增量。第二卫生间在中国户型中出现得比第二间卧室晚得多——它回应的不是人口增加,而是<b>错峰</b>:早高峰的如厕与洗漱冲突、客用与自用的卫生冲突、以及"婆婆能不能用主卧的厕所"这类代际边界问题。干湿分离（洗漱台外置、淋浴独立）随后成为 2000 年代卫生间的标准动作——住宅设计教科书意义上的"三分离"由日本输入,经开发商广告语压缩成"干湿分离"四字。</p>
+
+<p>三项平面技术的制度化:<b>动静分区</b>——客厅、餐厅、厨房归"动区",卧室、书房归"静区",以一条走道划界,客人视线被墙体制止;<b>玄关</b>——门厅自 1990 年代末成为独立空间,换鞋、避视、收纳三位一体,入户不再直视客厅;<b>主卧套房</b>——主卧并入衣帽间与主卫,形成"卧室+衣帽间+独卫"的自治单元,夫妻核心家庭的空间宣言。"主人"一词由此有了建筑学含义。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-3</span><span class="t">三居两厅两卫平面（2000s · 建筑面积约 132 ㎡ · 示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 780 620" width="100%" role="img" aria-label="三居两厅两卫户型平面示意图">
+<g stroke="#888" stroke-width="1">
+<line x1="100" y1="46" x2="700" y2="46"/><line x1="100" y1="40" x2="100" y2="52"/><line x1="700" y1="40" x2="700" y2="52"/>
+<line x1="76" y1="70" x2="76" y2="540"/><line x1="70" y1="70" x2="82" y2="70"/><line x1="70" y1="540" x2="82" y2="540"/>
+</g>
+<text x="400" y="40" font-size="10.5" fill="#666" text-anchor="middle">总开间 ≈ 11.8 m</text>
+<text x="64" y="305" font-size="10.5" fill="#666" text-anchor="middle" transform="rotate(-90 64 305)">总进深 ≈ 9.2 m</text>
+<rect x="30" y="230" width="70" height="130" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<g stroke="#aaa" stroke-width="1">
+<line x1="40" y1="244" x2="90" y2="272"/><line x1="40" y1="260" x2="90" y2="288"/><line x1="40" y1="276" x2="90" y2="304"/><line x1="40" y1="292" x2="90" y2="320"/><line x1="40" y1="308" x2="90" y2="336"/><line x1="40" y1="324" x2="90" y2="350"/>
+</g>
+<text x="65" y="380" font-size="10" fill="#555" text-anchor="middle">电梯厅</text>
+<text x="65" y="393" font-size="9" fill="#999" text-anchor="middle">高层核心筒</text>
+<rect x="100" y="70" width="600" height="470" fill="#fff" stroke="#111" stroke-width="3"/>
+<g stroke="#111" stroke-width="1.6">
+<line x1="200" y1="70" x2="200" y2="360"/>
+<line x1="360" y1="70" x2="360" y2="220"/>
+<line x1="460" y1="70" x2="460" y2="220"/>
+<line x1="100" y1="220" x2="700" y2="220"/>
+<line x1="380" y1="220" x2="380" y2="540"/>
+<line x1="460" y1="220" x2="460" y2="360"/>
+<line x1="100" y1="360" x2="700" y2="360"/>
+<line x1="370" y1="360" x2="370" y2="540"/>
+<line x1="490" y1="360" x2="490" y2="540"/>
+</g>
+<rect x="100" y="70" width="100" height="30" fill="#f7f7f7" stroke="#111" stroke-width="1.4" stroke-dasharray="7,4"/>
+<g fill="#e9e9e9" stroke="#999" stroke-width="1">
+<rect x="130" y="100" width="13" height="90"/>
+<rect x="370" y="95" width="14" height="60"/>
+<rect x="240" y="95" width="30" height="45"/>
+<rect x="510" y="110" width="105" height="80" rx="3"/>
+<rect x="150" y="250" width="80" height="60"/>
+<rect x="150" y="390" width="120" height="90" rx="3"/>
+<rect x="190" y="392" width="16" height="30"/>
+<rect x="290" y="392" width="16" height="30"/>
+<rect x="540" y="400" width="110" height="85" rx="3"/>
+<rect x="640" y="420" width="40" height="70"/>
+<rect x="480" y="240" width="70" height="45"/>
+</g>
+<line x1="510" y1="150" x2="615" y2="150" stroke="#999" stroke-width="1"/>
+<line x1="150" y1="435" x2="270" y2="435" stroke="#999" stroke-width="1"/>
+<line x1="540" y1="442" x2="650" y2="442" stroke="#999" stroke-width="1"/>
+<g font-size="11.5" fill="#222" text-anchor="middle">
+<text x="150" y="112">厨房</text><text x="150" y="127" font-size="9.5" fill="#777">6.0 ㎡ · 北向</text>
+<text x="100" y="96" font-size="9" fill="#888">北生活阳台</text>
+<text x="410" y="112">公卫</text><text x="410" y="127" font-size="9.5" fill="#777">4.2 ㎡ · 明卫</text>
+<text x="580" y="105">次卧 A</text><text x="580" y="120" font-size="9.5" fill="#777">10.5 ㎡ · 北向</text>
+<text x="150" y="240" font-size="10.5">玄关</text><text x="150" y="330" font-size="9.5" fill="#999">鞋柜 · 避视</text>
+<text x="290" y="270">餐厅</text><text x="290" y="285" font-size="9.5" fill="#777">9.5 ㎡ · 邻厨房</text>
+<text x="420" y="270">走道</text><text x="420" y="285" font-size="9.5" fill="#999">动静分界线</text>
+<text x="530" y="270">主卫</text><text x="530" y="285" font-size="9.5" fill="#777">4.5 ㎡</text>
+<text x="650" y="270" font-size="10.5">衣帽间</text>
+<text x="240" y="450">客 厅</text><text x="240" y="466" font-size="9.5" fill="#777">19.5 ㎡ · 南向 · 面宽 4.2 m</text>
+<text x="430" y="450" font-size="10.5">次卧 B</text><text x="430" y="465" font-size="9.5" fill="#777">8.8 ㎡</text>
+<text x="600" y="450" font-weight="700">主 卧</text><text x="600" y="466" font-size="9.5" fill="#777">15.8 ㎡ · 南向</text>
+</g>
+<rect x="100" y="540" width="270" height="38" fill="#f7f7f7" stroke="#111" stroke-width="1.4" stroke-dasharray="7,4"/>
+<text x="235" y="563" font-size="10" text-anchor="middle">南阳台（客厅外 · 观景）</text>
+<g stroke="#555" stroke-width="1.3" fill="none">
+<path d="M 100 270 L 142 270 A 42 42 0 0 1 142 354"/>
+<path d="M 260 220 L 260 186 A 34 34 0 0 1 294 220" transform="rotate(180 260 203)"/>
+<path d="M 410 220 L 410 186 A 34 34 0 0 1 444 220" transform="rotate(180 410 203)"/>
+<path d="M 560 220 L 560 186 A 34 34 0 0 1 594 220" transform="rotate(180 560 203)"/>
+<path d="M 200 220 L 200 254 A 34 34 0 0 1 234 220" transform="rotate(180 200 237)"/>
+<path d="M 460 280 L 494 280 A 34 34 0 0 1 460 314"/>
+<path d="M 460 310 L 460 344 A 34 34 0 0 1 494 310" transform="rotate(180 460 327)"/>
+<path d="M 460 250 L 460 284 A 34 34 0 0 0 426 250"/>
+<path d="M 420 360 L 420 394 A 34 34 0 0 0 386 360"/>
+<path d="M 280 360 L 280 394 A 34 34 0 0 1 314 360" transform="rotate(180 280 377)"/>
+<path d="M 240 540 L 274 540 A 34 34 0 0 0 240 574"/>
+<path d="M 600 360 L 600 394 A 34 34 0 0 1 634 360" transform="rotate(180 600 377)"/>
+<path d="M 490 400 L 524 400 A 34 34 0 0 1 490 434"/>
+</g>
+<text x="120" y="256" font-size="9.5" fill="#777">入户门</text>
+<g font-size="10" fill="#444">
+<text x="700" y="130" text-anchor="end"></text>
+<text x="620" y="592">玄关→走道→静区:客人止步于走道——"动静分区"即视线纪律。</text>
+</g>
+<g transform="translate(748,58)">
+<line x1="0" y1="16" x2="0" y2="-6" stroke="#111" stroke-width="1.6"/>
+<path d="M 0 -13 L -5 -3 L 5 -3 Z" fill="#111"/>
+<text y="30" text-anchor="middle" font-size="11">北</text>
+</g>
+</svg>
+</div>
+<div class="fig-note">三项制度技术在图中可逐一验证:①玄关（入户不直视客厅）;②走道作为动静分界（卧室门全部开向走道而非客厅）;③主卧套房（主卧—衣帽间—主卫成组,主卫双向开门:朝走道供客用应急,朝主卧供主人独享——此为 2000 年代高端户型的炫耀性细节）。两梯两户或一梯两户小高层,得房率约 80%。</div>
+</div>
+
+<p class="cr">→ 参见 §5.5（套房逻辑的极端化）; §4.1（80 后:三居是"够好"的物质标准）; 附录A"动静分区""主卧套房"词条</p>
+</div></div>
+
+<!-- §5.5 大平层 -->
+<div class="sec" id="s55"><h3>§5.5 大平层与功能细分<span class="sec-sub">LARGE FLATS · c.2012—2026</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">大平层</span><span class="en">Large Single-Level Flat</span>
+<div class="meta">别名:平墅 · 空中别墅 · 单层建筑面积 160—400 ㎡ · 2010 年代由别墅需求"扁平化"而来</div></div>
+<div class="entry-def">以单层大面积、双电梯核心筒、横厅与多套房为特征的高层或小高层平层户型,其设计逻辑不是房间更多,而是功能更细——把别墅的纵向分层压平为同一层的功能分区。</div>
+<div class="entry-bd">
+
+<p>大平层的关键词全是动词的细分:<b>中西厨分离</b>——中厨封闭爆炒,西厨开放社交,厨房一分为二,烹饪从家务升格为表演;<b>主卧小家化</b>——睡眠、衣帽、独卫、书房四件套齐备,夫妻核心家庭在住宅内部再筑一"宅";<b>双套房</b>——次卧也带独卫,为"两代同住、不同卫"的边界礼貌预留空间;<b>独立家政间</b>——洗烘设备与杂物离开卫生间与厨房,家务有了专属车间;<b>横厅</b>——面宽 6—9 m,客厅与餐厅横向连续,朝向资源向公共空间极限倾斜。</p>
+
+<p>与面积扩容并行的是反向运动:2020 年代小户型发生"功能平权"——60—90 ㎡ 产品开始标配玄关收纳、干湿分离卫生间、家政位与全屋收纳墙,大平层发明的功能件被下放到刚需盘。同一时期,LDK（Living-Dining-Kitchen 一体化）概念回流,方厅以"开放式餐厨客"的名义复活——四十年间,中国户型从"没有厅"走到"全是厅"。</p>
+
+<div class="fig"><div class="fig-hd"><span class="no">图 5-4</span><span class="t">大平层平面（2010s—2020s · 建筑面积约 200 ㎡ · 示意）</span></div>
+<div class="fig-bd">
+<svg viewBox="0 0 780 640" width="100%" role="img" aria-label="大平层户型平面示意图">
+<g stroke="#888" stroke-width="1">
+<line x1="110" y1="46" x2="710" y2="46"/><line x1="110" y1="40" x2="110" y2="52"/><line x1="710" y1="40" x2="710" y2="52"/>
+<line x1="86" y1="80" x2="86" y2="560"/><line x1="80" y1="80" x2="92" y2="80"/><line x1="80" y1="560" x2="92" y2="560"/>
+</g>
+<text x="410" y="40" font-size="10.5" fill="#666" text-anchor="middle">总开间 ≈ 15.0 m</text>
+<text x="74" y="320" font-size="10.5" fill="#666" text-anchor="middle" transform="rotate(-90 74 320)">总进深 ≈ 12.0 m</text>
+<rect x="30" y="80" width="80" height="140" fill="#f0f0f0" stroke="#111" stroke-width="2"/>
+<g stroke="#aaa" stroke-width="1">
+<line x1="40" y1="94" x2="100" y2="120"/><line x1="40" y1="110" x2="100" y2="136"/><line x1="40" y1="126" x2="100" y2="152"/><line x1="40" y1="142" x2="100" y2="168"/><line x1="40" y1="158" x2="100" y2="184"/><line x1="40" y1="174" x2="100" y2="200"/>
+</g>
+<text x="70" y="242" font-size="10" fill="#555" text-anchor="middle">双电梯核心筒</text>
+<text x="70" y="255" font-size="9" fill="#999" text-anchor="middle">两梯两户</text>
+<rect x="110" y="80" width="600" height="480" fill="#fff" stroke="#111" stroke-width="3"/>
+<g stroke="#111" stroke-width="1.6">
+<line x1="230" y1="80" x2="230" y2="210"/>
+<line x1="380" y1="80" x2="380" y2="210"/>
+<line x1="500" y1="80" x2="500" y2="210"/>
+<line x1="620" y1="80" x2="620" y2="210"/>
+<line x1="110" y1="210" x2="710" y2="210"/>
+<line x1="190" y1="210" x2="190" y2="350"/>
+<line x1="310" y1="210" x2="310" y2="350"/>
+<line x1="510" y1="210" x2="510" y2="350"/>
+<line x1="110" y1="350" x2="710" y2="350"/>
+<line x1="330" y1="350" x2="330" y2="560"/>
+<line x1="450" y1="350" x2="450" y2="560"/>
+</g>
+<line x1="510" y1="210" x2="710" y2="210" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+<line x1="510" y1="210" x2="510" y2="350" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+<rect x="240" y="80" width="130" height="26" fill="#f7f7f7" stroke="#111" stroke-width="1.4" stroke-dasharray="7,4"/>
+<rect x="110" y="560" width="600" height="36" fill="#f7f7f7" stroke="#111" stroke-width="1.4" stroke-dasharray="7,4"/>
+<line x1="450" y1="560" x2="450" y2="596" stroke="#999" stroke-width="1"/>
+<g fill="#e9e9e9" stroke="#999" stroke-width="1">
+<rect x="250" y="110" width="13" height="85"/>
+<rect x="400" y="110" width="110" height="75" rx="3"/>
+<rect x="530" y="120" width="80" height="60" rx="3"/>
+<rect x="645" y="95" width="14" height="55"/>
+<rect x="660" y="160" width="40" height="40"/>
+<rect x="200" y="230" width="14" height="95"/>
+<rect x="340" y="240" width="120" height="80" rx="3"/>
+<rect x="530" y="240" width="150" height="60" rx="3"/>
+<rect x="560" y="320" width="90" height="26"/>
+<rect x="140" y="400" width="130" height="95" rx="3"/>
+<rect x="180" y="402" width="16" height="30"/>
+<rect x="290" y="402" width="16" height="30"/>
+<rect x="360" y="420" width="70" height="100" rx="3"/>
+<rect x="480" y="420" width="180" height="95" rx="3"/>
+<rect x="490" y="430" width="70" height="26"/>
+</g>
+<line x1="400" y1="147" x2="510" y2="147" stroke="#999" stroke-width="1"/>
+<line x1="140" y1="447" x2="270" y2="447" stroke="#999" stroke-width="1"/>
+<line x1="480" y1="467" x2="660" y2="467" stroke="#999" stroke-width="1"/>
+<line x1="360" y1="470" x2="430" y2="470" stroke="#999" stroke-width="1"/>
+<g font-size="11.5" fill="#222" text-anchor="middle">
+<text x="170" y="130">玄关</text><text x="170" y="145" font-size="9.5" fill="#777">双动线</text>
+<text x="295" y="130">中厨</text><text x="295" y="145" font-size="9.5" fill="#777">封闭 · 爆炒</text>
+<text x="305" y="96" font-size="9" fill="#888">北生活阳台</text>
+<text x="435" y="120">次卧 A</text><text x="435" y="135" font-size="9.5" fill="#777">11.5 ㎡ · 北向</text>
+<text x="555" y="105">书房（开放）</text><text x="555" y="200" font-size="9.5" fill="#999"></text>
+<text x="665" y="115" font-size="10">公卫</text>
+<text x="150" y="250" font-size="10">过道</text>
+<text x="250" y="240">主卫</text><text x="250" y="255" font-size="9.5" fill="#777">双台盆</text>
+<text x="400" y="240">餐厅</text><text x="400" y="255" font-size="9.5" fill="#777">8 人长桌 · 10 ㎡</text>
+<text x="600" y="240">西厨 · 岛台</text><text x="600" y="255" font-size="9.5" fill="#777">开放 · 社交 · 家政位</text>
+<text x="220" y="470">主 卧</text><text x="220" y="486" font-size="9.5" fill="#777">22 ㎡ · 南向</text>
+<text x="220" y="540" font-size="9.5" fill="#999">睡眠区 · 不设电视墙</text>
+<text x="390" y="400" font-size="10.5">次卧 B</text><text x="390" y="416" font-size="9.5" fill="#777">10.8 ㎡ · 套房</text>
+<text x="580" y="400" font-weight="700">横 厅</text><text x="580" y="416" font-size="9.5" fill="#777">26 ㎡ · 面宽 6.5 m</text>
+<text x="580" y="500" font-size="9.5" fill="#999">餐客横向连续 · LDK</text>
+<text x="410" y="582" font-size="10">南向双阳台 / 空中花园（连通主卧与横厅）</text>
+</g>
+<rect x="270" y="350" width="60" height="80" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="300" y="395" font-size="9.5" fill="#777" text-anchor="middle">衣帽间</text>
+<g stroke="#555" stroke-width="1.3" fill="none">
+<path d="M 110 130 L 152 130 A 42 42 0 0 1 152 214"/>
+<path d="M 230 160 L 230 194 A 34 34 0 0 0 196 160"/>
+<path d="M 230 120 L 264 120 A 34 34 0 0 0 230 154"/>
+<path d="M 150 210 L 150 244 A 34 34 0 0 1 184 210" transform="rotate(180 150 227)"/>
+<path d="M 190 300 L 190 334 A 34 34 0 0 0 156 300"/>
+<path d="M 310 300 L 310 334 A 34 34 0 0 0 276 300"/>
+<path d="M 250 350 L 250 316 A 34 34 0 0 1 284 350" transform="rotate(180 250 333)"/>
+<path d="M 450 350 L 450 384 A 34 34 0 0 0 416 350"/>
+<path d="M 390 350 L 390 384 A 34 34 0 0 1 424 350" transform="rotate(180 390 367)"/>
+<path d="M 610 350 L 610 384 A 34 34 0 0 0 576 350"/>
+<path d="M 230 460 L 196 460 A 34 34 0 0 0 230 494"/>
+<path d="M 330 470 L 364 470 A 34 34 0 0 1 330 504"/>
+<path d="M 560 560 L 560 526 A 34 34 0 0 0 526 560"/>
+</g>
+<text x="126" y="118" font-size="9.5" fill="#777">入户门</text>
+<g font-size="10" fill="#444">
+<text x="620" y="120"></text>
+<text x="716" y="150" font-size="9.5">中西厨:</text>
+<text x="716" y="163" font-size="9.5">一厨两制——</text>
+<text x="716" y="176" font-size="9.5">封闭炒菜 +</text>
+<text x="716" y="189" font-size="9.5">开放社交</text>
+<text x="716" y="430" font-size="9.5">主卧小家化:</text>
+<text x="716" y="443" font-size="9.5">睡眠+衣帽+独卫</text>
+<text x="716" y="456" font-size="9.5">——宅中之宅</text>
+</g>
+<g transform="translate(752,58)">
+<line x1="0" y1="16" x2="0" y2="-6" stroke="#111" stroke-width="1.6"/>
+<path d="M 0 -13 L -5 -3 L 5 -3 Z" fill="#111"/>
+<text y="30" text-anchor="middle" font-size="11">北</text>
+</g>
+</svg>
+</div>
+<div class="fig-note">与图 5-3 对照可见量变到质变:卧室数量仅增加半间（书房为开放位）,但每一间卧室都更"自治"（次卧 B 亦为套房）;厨房分裂为二;走道缩短到最小（双动线玄关直接分发人流）。南向资源几乎全部让渡给横厅——"睡觉的房间"最终退居采光序列第二位,与图 5-1 恰成镜像。两梯两户高层,得房率约 75%（→§5.7）。</div>
+</div>
+
+<p class="cr">→ 参见 §3.4（大平层的产品背景:高周转时代的顶配线）; §5.7（得房率与核心筒）; 附录A"大平层""横厅"词条</p>
+</div></div>
+
+<!-- §5.6 规范沿革 -->
+<div class="sec" id="s56"><h3>§5.6 面积与规范沿革<span class="sec-sub">REGULATORY HISTORY</span></h3></div>
+
+<p>户型演变的一半动力来自规范。中国住宅规范四十年最富戏剧性的变化是<b>层高的语义反转</b>:GBJ 96-86 规定住宅层高"不应高于 2.80 m"——那是节约投资的年代,层高是被压制的对象;GB 55038-2025 将其改为"不应低于 3.00 m"——同样的数字,从天花板变成地板<sup class="ref">[51][62]</sup>。同一根 2.8 m 的线,四十年间从"不许超过"变成"不许不到",这条线之下是一部居住标准的政治经济学。</p>
+
+<table class="t">
+<tr><th>规范</th><th>年份</th><th>关键规定</th><th>户型后果</th></tr>
+<tr><td><b>GBJ 96-86</b>《住宅建筑设计规范》</td><td>1986</td><td>层高不应高于 2.8 m;过厅列入房间组成;成套标准（独厨独卫）</td><td>方厅获得规范身份;低标准年代的技术底盘</td></tr>
+<tr><td><b>GB 50096-1999</b>《住宅设计规范》</td><td>1999</td><td>起居室（厅）≥12 ㎡ 且应直接采光;卧室、厨卫最低面积列表化</td><td>暗方厅退出新建市场;“明厅明卫”成为合规刚需</td></tr>
+<tr><td><b>GB 50096-2011</b>《住宅设计规范》</td><td>2012</td><td>层高宜为 2.8 m;七层及以上或入户层距室外地面超 16 m 须设电梯;隔声、无障碍要求加密</td><td>多层电梯化起点;老年社会进入规范语言</td></tr>
+<tr><td><b>GB 55031-2022</b>《民用建筑通用规范》</td><td>2023 施行</td><td>建筑面积按外墙外表面（含保温）水平投影计算</td><td>公摊口径整体上移,得房率"显性下降"（→§5.7）<sup class="ref">[59]</sup></td></tr>
+<tr><td><b>GB 55038-2025</b>《住宅项目规范》</td><td>2025 施行</td><td>层高不低于 3.0 m;四层及以上设电梯;隔声指标提高</td><td>"好房子"的规范支点:强条全面加码<sup class="ref">[62]</sup></td></tr>
+</table>
+
+<p>面积管制的另一条线是<b>政策性面积段</b>:1998 年经适房控制面积、2005 年"国八条"抑制大户型信贷、2006 年 90/70 政策（90 ㎡ 以下套型占比 70%）<sup class="ref">[52]</sup>、各地契税优惠以 90/144 ㎡ 为档、2024 年前后多城取消"普通/非普通住宅"划分——每一档都精确塑造了那一时期开发商画图的手。144 ㎡ 这条线尤其长寿:契税、土地增值税、信贷政策的分组线在此汇集多年,以至 144—145 ㎡ 成为规划师们心照不宣的"禁区面积"。</p>
+
+<div class="note">规范设定的是"下限文明":国家对"一套住宅最低该有什么"的回答。1986 年的答案是独厨独卫;1999 年的答案是 12 ㎡ 的明厅;2025 年的答案是 3 m 层高、四层电梯与更厚的隔声墙。下限每上移一次,昨日的主流产品就变成明日的存量改造对象（→§3.5）——规范的历程与老旧小区的名单大体是同一张时间表。</div>
+
+<!-- §5.7 公摊 -->
+<div class="sec" id="s57"><h3>§5.7 公摊与得房率<span class="sec-sub">SHARED AREA & EFFICIENCY</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">公摊面积</span><span class="en">Shared / Apportioned Area</span>
+<div class="meta">全称:应分摊的共有建筑面积 · 制度依据:GB/T 17986-2000《房产测量规范》 · 镜像指标:得房率</div></div>
+<div class="entry-def">整栋楼内为多户共同服务的建筑面积——楼梯间、电梯井、门厅、设备间、外墙（按规则计入）等——按各户套内建筑面积比例分摊入户的部分;中国内地商品房以"含公摊的建筑面积"作为默认计价与登记口径。</div>
+<div class="entry-bd">
+
+<p>公摊是理解中国房价数字的第一道技术闸门:同一套挂牌单价,多层砖混与超高层塔楼之间隔着近二十个百分点的得房率差。通行区间:多层 85—90%、小高层 80—85%、高层 75—80%、超高层塔楼约 70%、商住公寓可低至 60% 上下（→档 3-1）。核心筒越豪华（双电梯、大堂、避难层）,公摊越大——为"气派"支付的不只是造价,还有永久性的面积税。</p>
+
+<table class="t">
+<tr><th>楼栋类型</th><th>典型层数</th><th>核心筒配置</th><th>得房率</th><th>对应年代主流</th></tr>
+<tr><td>多层砖混</td><td>4—6</td><td>一部楼梯</td><td>85—90%</td><td>1980s—1990s（→档 2-1）</td></tr>
+<tr><td>小高层板式</td><td>7—11</td><td>一梯一电梯</td><td>80—85%</td><td>2000s</td></tr>
+<tr><td>高层板式</td><td>12—18</td><td>两梯（电梯+楼梯）</td><td>78—82%</td><td>2000s—2010s</td></tr>
+<tr><td>高层塔式</td><td>25—33</td><td>两梯四至八户 + 设备层</td><td>70—78%</td><td>2008—2016（→§3.4）</td></tr>
+<tr><td>超高层 / 商住</td><td>33+</td><td>多梯 + 避难层 + 大堂</td><td>60—72%</td><td>2010s 地标盘</td></tr>
+</table>
+
+<p>公摊的三次公共争论构成其制度小史:其一,2002 年起重庆独树一帜,以套内建筑面积作为商品房计价口径<sup class="ref">[60]</sup>——同一国家、两套房价语言;其二,2019 年住建部《住宅项目规范（征求意见稿）》写入"住宅建筑应以套内使用面积进行交易",舆论视为公摊制终结的信号,但该条款未进入正式文本<sup class="ref">[61]</sup>;其三,GB 55031-2022 施行后外墙全部计入建筑面积<sup class="ref">[59]</sup>,得房率被动收缩,各地随即修订计容规则回应——阳台、飘窗、设备平台的赠送上限放宽,"高得房率""得房率 100%"成为 2024 年前后新盘的核心卖点,部分城市出现两层通高空中花园（"第四代住宅"）的计容豁免<sup class="ref">[65]</sup>。公摊之争并未终结,而是转入产品端的军备竞赛。</p>
+
+<p>对本站数据口径的意义:挂牌价一律为建筑面积单价,而"同样的单价"背后是不同的得房率——1980 年代房改房与 2010 年代超高层之间,名义价差的一部分是<b>面积口径税</b>。年代×价格曲线（age-price.html）中老房的地段韧性,有一部分正是 85% 得房率在支付。</p>
+
+<p class="cr">→ 参见 §5.6（GB 55031 的计算规则）; 档 3-1（得房率与楼栋形式）; 专题概述页 §4（价格口径）</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 第六编 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="v6">
+<div class="vol-no">第六编</div>
+<h2>住房供给类型</h2>
+<div class="vol-range">1994 — 2026 · 从单一商品房到多元供给</div>
+</div>
+
+<div class="sec" id="s61"><h3>§6.1 供给层谱:一个市场,七种房子<span class="sec-sub">THE SUPPLY SPECTRUM</span></h3></div>
+
+<p>"商品房"是 1998 年后中国住房的默认词,但供给从来不是单轨。每一种供给类型都是四个制度变量的组合:<b>土地取得方式</b>（出让/划拨）、<b>价格形成机制</b>（市场定价/政府限价/成本加成）、<b>产权结构</b>（完全产权/按份共有/租赁使用权）、<b>准入对象</b>（不设限/中低收入/被征收人/无房新市民）。四个变量取值不同,就得到七种在售或曾售的房子——它们常常共用一条街、一堵墙甚至一个楼盘名,却在法律上是不动产的不同物种。</p>
+
+<div class="band">
+<div class="band-t">供给层谱 SUPPLY SPECTRUM · 市场端 → 保障端</div>
+<div class="bar">
+  <div class="seg" style="width:16%">普通商品房<br>完全产权 · 市场价</div>
+  <div class="seg" style="width:14%">限价房 / 限竞房<br>完全产权 · 限首售价</div>
+  <div class="seg" style="width:14%">共有产权房<br>按份共有 · 折让价</div>
+  <div class="seg" style="width:14%">经济适用房<br>有限产权 · 成本价</div>
+  <div class="seg" style="width:14%">安置房<br>实物补偿 · 折价</div>
+  <div class="seg" style="width:14%">保租房 / 公租房<br>只租不售</div>
+  <div class="seg" style="width:14%">房改房<br>存量转私 · 制度遗产</div>
+</div>
+<div class="ticks"><span>市场定价</span><span>价格管制</span><span>产权分割</span><span>去商品化</span></div>
+</div>
+
+<table class="t">
+<tr><th>类型</th><th>土地</th><th>定价机制</th><th>产权</th><th>对象</th><th>上市限制</th><th>→</th></tr>
+<tr><td><b>普通商品房</b></td><td>出让</td><td>市场</td><td>完全产权 + 70 年使用权</td><td>不设限</td><td>无（税费另计）</td><td>§6.4</td></tr>
+<tr><td><b>限价房 / 限竞房</b></td><td>出让（附加条件）</td><td>限房价、竞地价</td><td>完全产权</td><td>本地刚需优先</td><td>5 年内不得转让</td><td>§6.5</td></tr>
+<tr><td><b>共有产权房</b></td><td>出让（政府让利）</td><td>按份额折让</td><td>政府与个人按份共有</td><td>符合条件无房家庭</td><td>封闭流转 / 代持机构回购</td><td>§6.6</td></tr>
+<tr><td><b>经济适用房</b></td><td>划拨</td><td>成本加成（利润 ≤3%）</td><td>有限产权</td><td>中低收入</td><td>上市补缴土地收益</td><td>§6.3</td></tr>
+<tr><td><b>安置房</b></td><td>划拨或出让</td><td>征收补偿对价</td><td>完全或有限（因城而异）</td><td>被征收人</td><td>视产权与地方规则</td><td>§6.8</td></tr>
+<tr><td><b>保租房 / 公租房</b></td><td>多渠道（含集体土地）</td><td>低于市场租金</td><td>租赁使用权</td><td>新市民/青年/低收入</td><td>不可售</td><td>§6.7</td></tr>
+<tr><td><b>房改房</b></td><td>（原划拨）</td><td>成本价/标准价购得</td><td>完全产权（补缴后可流通）</td><td>原公房承租职工</td><td>补缴土地收益后上市</td><td>§6.2</td></tr>
+</table>
+
+<div class="note">本编的写作动机与本站直接相关:同一份小区挂牌数据里,七类房源同场出现。"同地段、同年代、同面积、不同价"的相当部分,不是楼龄与品质差异,而是<b>产权类型的制度折价</b>——读懂层谱,才读得懂价格数据里的离散点。每类供给以下列八项技术档案字段记录:政策依据 / 产生—高峰 / 土地取得 / 供应对象 / 价格形成 / 产权结构 / 上市与退出 / 在价格数据中的表现。</div>
+
+<!-- §6.2 房改房 -->
+<div class="sec" id="s62"><h3>§6.2 房改房:制度遗产的私有化<span class="sec-sub">SOLD PUBLIC HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">房改房</span><span class="en">Housing-Reform Housing</span>
+<div class="meta">学名:已购公有住房 · 俗称:房改房 · 特殊亚型:央产房、军产房、校产房</div></div>
+<div class="entry-def">职工按房改政策以成本价或标准价购得的原公有住房,1994—2000 年代初大规模由公转私,是中国二手房市场最早的存量来源——第一、二编的全部建筑几乎都经由此制度转入私人名下。</div>
+<div class="entry-bd">
+
+<p>1994 年《国务院关于深化城镇住房制度改革的决定》确立公房出售<sup class="ref">[22]</sup>,1998 年 23 号文划断实物分配<sup class="ref">[23]</sup>——此后数年,数以千万套公房以远低于市场价的价格（成本价通常仅为当时商品房价的数分之一）售予承租职工。这一夜之间的产权转移是中国规模最大的财产分配事件之一:第一、二编的工人新村、单位大院、筒子楼与单元楼,绝大多数就此成为"房改房小区"。1999 年建设部令第 69 号允许已购公房上市出售,补缴土地收益后进入流通<sup class="ref">[55]</sup>;北京央产房 2003 年放开上市后,核心区存量全面激活。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-1</span><span class="no">房改房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>国发〔1994〕43 号<sup class="ref">[22]</sup>;国发〔1998〕23 号<sup class="ref">[23]</sup>;建设部令第 69 号（1999,上市规则）<sup class="ref">[55]</sup></td></tr>
+<tr><td class="k">产生—高峰</td><td>1994 起售,1998—2003 年为转私高峰</td></tr>
+<tr><td class="k">土地取得</td><td>原划拨用地,产权转私时地价隐含于购房成本价</td></tr>
+<tr><td class="k">供应对象</td><td>原公房承租职工（单位在职/退休）</td></tr>
+<tr><td class="k">价格形成</td><td>成本价/标准价（一次性买断,含工龄折扣）;成本价通常仅为市场价一至三成</td></tr>
+<tr><td class="k">产权结构</td><td>成本价购得为完全产权;标准价购得为部分产权（后可补差价转完全）</td></tr>
+<tr><td class="k">上市与退出</td><td>补缴土地收益后可上市;央产、军产、校产房另有单位审批门槛</td></tr>
+<tr><td class="k">数据表现</td><td>核心区老小区主力存量:面积小（40—70 ㎡）、得房率高（85%+）、物业费极低、总价低于同地段商品房——同小区同年代房源之间的价差常源于此</td></tr>
+</table></div>
+
+<p>识别特征已高度程式化:楼龄 25 年以上、多层无电梯、户型为一居或小两居、挂牌描述中"单位宿舍""原产权单位××"。它是本站价格数据中"老房地段韧性"的主要载体,也是"同价位下得房率最高"的一类（→§5.7）。</p>
+<p class="cr">→ 参见 §1.8 分配制度（其前身）; §5.7（高得房率的存量样本）; 附录A"房改房"词条</p>
+</div></div>
+
+<!-- §6.3 经适房 -->
+<div class="sec" id="s63"><h3>§6.3 经济适用房:被审计的福利<span class="sec-sub">AFFORDABLE HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">经济适用房</span><span class="en">Economically Affordable Housing</span>
+<div class="meta">简称:经适房 · 1998 年 23 号文中曾列为主供应渠道 · 后期并入共有产权体系或退出</div></div>
+<div class="entry-def">以行政划拨土地、免收土地出让金、限定利润率向中低收入家庭出售的政策性住房,产权受上市限制——中国第一种成体系的"限价限利商品房",也是争议最集中的一种。</div>
+<div class="entry-bd">
+
+<p>经适房的三次制度定位:1994 年双轨体系中的"社会性供给"<sup class="ref">[22]</sup>;1998 年 23 号文中"以经济适用房为主"的供应主体<sup class="ref">[23]</sup>;2003 年 18 号文将其调整为"适度"后,重心转向完全商品房<sup class="ref">[53]</sup>。2004 与 2007 年两版《经济适用住房管理办法》逐步收紧:单套以 60 ㎡ 左右为主、限定利润率 3%、购买资格审核<sup class="ref">[54]</sup>。争议伴随全程——开豪车住经适房、郑州"六连号"摇号作弊、超标大户型——公共福利与私人产权的边界始终未能划清。2010 年代起各地陆续停建,存量经适房或补缴土地收益后流入二手房市场,或并入共有产权体系（上海路径）<sup class="ref">[56]</sup>。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-2</span><span class="no">经济适用房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>国发〔1998〕23 号<sup class="ref">[23]</sup>;建住房〔2004〕77 号;建住房〔2007〕258 号<sup class="ref">[54]</sup></td></tr>
+<tr><td class="k">产生—高峰</td><td>1995 年安居工程先声;1998—2008 年为建设高峰</td></tr>
+<tr><td class="k">土地取得</td><td>行政划拨,免收土地出让金</td></tr>
+<tr><td class="k">供应对象</td><td>中低收入住房困难家庭（收入线由地方划定,执行宽严不一）</td></tr>
+<tr><td class="k">价格形成</td><td>保本微利:开发成本 + 利润率 ≤3%</td></tr>
+<tr><td class="k">产权结构</td><td>有限产权:购房人拥有,上市受限</td></tr>
+<tr><td class="k">上市与退出</td><td>一般满 5 年,补缴土地收益等价款后可上市;部分城市由政府回购</td></tr>
+<tr><td class="k">数据表现</td><td>与商品房同盘混建或独立小区;二手挂牌常与商品房无异,名称与产权瑕疵（上市税费、买家资格审查）造成的折价约一成上下——同小区价差的重要来源</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §6.6（其产权逻辑的继任者）; §2.4（双轨确立）; 附录A"经济适用房"词条</p>
+</div></div>
+
+<!-- §6.4 普通商品房 -->
+<div class="sec" id="s64"><h3>§6.4 普通商品房:默认项的诞生<span class="sec-sub">ORDINARY COMMERCIAL HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">普通商品房</span><span class="en">Ordinary Commercial Housing</span>
+<div class="meta">词源:契税与信贷政策中"普通住宅"标准 · 2024 年前多城以 90/144 ㎡、容积率 1.0 划线</div></div>
+<div class="entry-def">以出让土地取得、市场定价、完全产权向不特定购买人出售的住房;"普通"与"非普通"之别是税费概念而非建筑概念——2024 年前后主要城市陆续取消该划分,词义正在归零。</div>
+<div class="entry-bd">
+
+<p>普通商品房的全部制度内容都写在第三编:预售制、70 年使用权、封闭小区、公摊计价。此处仅补一笔税费政治经济学:契税（1%—3% 分档）、增值税免征年限（"满五唯一"）、曾经的普通/非普通住宅线（面积 144 ㎡、容积率 1.0、价格标准三重划线）——"满五唯一"四个字浓缩了 2011 年后所有二手房谈判的开场白。2024 年 11 月起,北上广深相继取消普通住宅与非普通住宅标准,实行多年的"非普线"退出历史<sup class="ref">[63]</sup>,144 ㎡"禁区面积"（→§5.6）就此作废。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-3</span><span class="no">普通商品房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>国发〔1998〕23 号<sup class="ref">[23]</sup>;《城市房地产管理法》体系;地方限购限贷政策叠加</td></tr>
+<tr><td class="k">产生—高峰</td><td>1998 年全面开闸;2003—2013、2016—2021 两轮高峰</td></tr>
+<tr><td class="k">土地取得</td><td>招标、拍卖、挂牌出让（2004 年"8·31"后全面招拍挂）</td></tr>
+<tr><td class="k">供应对象</td><td>不设限（限购城市以户籍/社保/套数设闸）</td></tr>
+<tr><td class="k">价格形成</td><td>市场定价;预售制下一二手价格互动（→§3.4）</td></tr>
+<tr><td class="k">产权结构</td><td>完全产权 + 70 年土地使用权（期满自动续期,《民法典》第 359 条）</td></tr>
+<tr><td class="k">上市与退出</td><td>自由流通;税费按持有年限与套数分档（"满二""满五唯一"）</td></tr>
+<tr><td class="k">数据表现</td><td>本站数据的基准组:挂牌价的"市场价"即以它定义;其他六类均以与它的价差计量</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §3.1—§3.4（其全部制度与产品史）; §5.6（144 ㎡ 税费线）; 附录A"满五唯一"词条</p>
+</div></div>
+
+<!-- §6.5 限价房 -->
+<div class="sec" id="s65"><h3>§6.5 限价房与限竞房:给市场价装上限速器<span class="sec-sub">PRICE-CAPPED HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">限竞房</span><span class="en">Price-Capped Competitive-Land Housing</span>
+<div class="meta">前身:两限房（限套型、限房价,2007 前后） · 北京 2016—2021 年为制度主实验场</div></div>
+<div class="entry-def">政府在土地出让环节预设销售限价、开发商竞地价取得的商品住房——产权完全,被限制的只是"第一次卖价";是价格管制嵌入土地财政的最直接实验。</div>
+<div class="entry-bd">
+
+<p>两代限价:2006—2008 年"两限房"（广州、北京、天津等地,定向中等收入夹心层）;2016 年起北京"限房价、竞地价"地块成为主流供应,2018—2019 年限竞房一度占据北京新房成交半壁江山<sup class="ref">[63]</sup>。限价与市场价的价差制造了著名的套利景观:一二手倒挂之下,杭州等地出现中签率不足百分之一的"万人摇号"红盘<sup class="ref">[64]</sup>——限价房把售楼处变成了彩票站。其退出同样由价差决定:2021 年后市场价向限价收敛,倒挂消失,限价出让自然退场。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-4</span><span class="no">限价房 / 限竞房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>国办发〔2006〕37 号（两限房背景<sup class="ref">[52]</sup>）;北京 2008 年限价房管理办法;2016 年起"限房价、竞地价"出让规则</td></tr>
+<tr><td class="k">产生—高峰</td><td>两限房 2007—2010;限竞房 2017—2021（北京）</td></tr>
+<tr><td class="k">土地取得</td><td>出让,附加限价条款（竞地价或竞自持）</td></tr>
+<tr><td class="k">供应对象</td><td>本地无房家庭优先（两限房设收入线;限竞房多不设）</td></tr>
+<tr><td class="k">价格形成</td><td>土地出让时锁定销售均价与最高价,售价不得突破</td></tr>
+<tr><td class="k">产权结构</td><td>完全产权（与商品房无异）</td></tr>
+<tr><td class="k">上市与退出</td><td>北京限竞房:取得房产证后 5 年内不得转让</td></tr>
+<tr><td class="k">数据表现</td><td>同小区新房限价、二手市价的"双轨价":2018—2021 年新房网签价系统性低于同地段二手挂牌价——数据口径声明中必须标注的倒挂期</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §3.5（其政策周期）; §6.6（倒挂消失后的转共有产权通道）; 附录A"限竞房"词条</p>
+</div></div>
+
+<!-- §6.6 共有产权 -->
+<div class="sec" id="s66"><h3>§6.6 共有产权房:把房价拆成股份<span class="sec-sub">SHARED-OWNERSHIP HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">共有产权房</span><span class="en">Shared-Ownership Housing</span>
+<div class="meta">2014 年六城试点 · 北京 2017 年办法为范本 · 2023 年"配售型保障房"为其强化版</div></div>
+<div class="entry-def">政府与购房人按份共有产权、购房人按份额支付房价的保障性产权住房——用"只买得起的那一半"替代"买不起的整套",把经适房的暗补改为明股。</div>
+<div class="entry-bd">
+
+<p>共有产权针对经适房的全部病灶:产权按份明示（个人份额多为 50%—80%）,政府份额由代持机构持有,增值收益与退出均按份额清算,套利空间被制度性封死。北京 2017 年办法为运行范本:单套以中小户型为主、五年内不得转让、转让时要么转给符合条件家庭、要么由代持机构按市场价回购份额<sup class="ref">[57]</sup>。2023 年国发 14 号文提出"配售型保障房"——保本微利配售、封闭管理、不得变相商品化<sup class="ref">[56]</sup>,共有产权的封闭流转逻辑被推到更彻底的位置:保障房与商品房市场之间的防火墙,由"补差价"升级为"不出圈"。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-5</span><span class="no">共有产权房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>2014 年住建部六城试点（北京、上海、深圳、成都等）<sup class="ref">[56]</sup>;北京 2017 年暂行办法<sup class="ref">[57]</sup>;国发〔2023〕14 号（配售型）<sup class="ref">[56]</sup></td></tr>
+<tr><td class="k">产生—高峰</td><td>地方试验 2007 年起（淮安等）;全国性推进 2017—2026 持续</td></tr>
+<tr><td class="k">土地取得</td><td>出让（政府让渡地价折为份额）或划拨</td></tr>
+<tr><td class="k">供应对象</td><td>符合条件的无房家庭（本地户籍/人才定向配售）</td></tr>
+<tr><td class="k">价格形成</td><td>按份额定价:个人支付份额价 = 同地段市场价 × 个人份额</td></tr>
+<tr><td class="k">产权结构</td><td>按份共有:个人 50%—80%,其余政府代持</td></tr>
+<tr><td class="k">上市与退出</td><td>封闭流转:限定向符合条件家庭转让或代持机构回购;不得转为完全商品产权</td></tr>
+<tr><td class="k">数据表现</td><td>封闭流转使其极少进入公开挂牌——对二手市场价格扰动小,但对"上车盘"供应结构影响大;数据中主要体现为缺失而非价格</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §6.3（被其替代的经适房逻辑）; §3.5（租购并举框架）; 附录A"共有产权房"词条</p>
+</div></div>
+
+<!-- §6.7 保租房 -->
+<div class="sec" id="s67"><h3>§6.7 保障性租赁住房:只租不售的一层<span class="sec-sub">AFFORDABLE RENTAL HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">保障性租赁住房</span><span class="en">Government-Supported Rental Housing</span>
+<div class="meta">简称:保租房 · 政策依据:国办发〔2021〕22 号<sup class="ref">[30]</sup> · 与公租房并行的租赁保障双轨</div></div>
+<div class="entry-def">面向无房新市民与青年人、不设收入线、以不超过 70 ㎡ 小户型为主、租金低于同地段市场水平、只租不售的保障性住房——中国住房保障体系中第一次为"流动人口"而非"困难户籍人口"设计的层级。</div>
+<div class="entry-bd">
+
+<p>保租房与公租房的分野是对象哲学的分野:公租房（2010 年建制<sup class="ref">[58]</sup>）面向低收入户籍困难家庭,设收入线、轮候制;保租房面向新市民,不设收入线、市场化运营——承认"租"可以是一种体面的长期状态,而不只是买不起之前的过渡。土地来源五渠道（集体经营性建设用地、企事业单位自有土地、产业园区配套用地、存量闲置房屋、新供国有土地）,其中集体土地建房是土地制度的历史性开口:农村集体第一次可以直接向城市供房。运营端已金融化:2022 年首批保障性租赁住房 REITs 上市<sup class="ref">[58]</sup>,租金流成为可交易的证券——租赁住房由此获得了商品房早已享有的资本通道。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-6</span><span class="no">保障性租赁住房 / 公租房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>国办发〔2021〕22 号<sup class="ref">[30]</sup>;公租房:建保〔2010〕87 号<sup class="ref">[58]</sup></td></tr>
+<tr><td class="k">产生—高峰</td><td>公租房 2010—2015;保租房 2021 年起持续扩容（"十四五"筹集 870 万套间目标）</td></tr>
+<tr><td class="k">土地取得</td><td>五渠道:集体经营性建设用地 / 企事业自有地 / 产业园配套地 / 存量房屋 / 新供国有地</td></tr>
+<tr><td class="k">供应对象</td><td>保租房:无房新市民、青年人,不设收入线;公租房:低收入户籍困难家庭,设收入线</td></tr>
+<tr><td class="k">价格形成</td><td>租金低于同地段同品质市场租金;公租房按标准租金或补贴</td></tr>
+<tr><td class="k">产权结构</td><td>租赁使用权;运营主体持有产权</td></tr>
+<tr><td class="k">上市与退出</td><td>不可售;REITs 退出为资产层退出,与租户无关</td></tr>
+<tr><td class="k">数据表现</td><td>不进入二手房挂牌体系——本站价格数据对其完全"失明";它体现为租金分层与租赁供应结构,是价格数据口径之外的平行宇宙</td></tr>
+</table></div>
+
+<p class="cr">→ 参见 §4.1（90 后/00 后:保租房的目标租客）; §3.5（租购并举）; 附录A"保租房"词条</p>
+</div></div>
+
+<!-- §6.8 安置房 -->
+<div class="sec" id="s68"><h3>§6.8 安置房:拆迁的另一半<span class="sec-sub">RESettLEMENT HOUSING</span></h3></div>
+
+<div class="entry">
+<div class="entry-head"><span class="zh">安置房</span><span class="en">Resettlement Housing</span>
+<div class="meta">俗称:回迁房 · 征收安置房 · 棚改时代的体量主角</div></div>
+<div class="entry-def">因土地征收或房屋拆迁、以实物补偿方式向被征收人提供的住房;产权分完全产权（商品房性质）与有限产权（经适房性质）两型,是供给层谱中体量最大、数据中最难与商品房区分的一类。</div>
+<div class="entry-bd">
+
+<p>安置房的制度起点是《城市房屋拆迁管理条例》体系下的实物安置;体量巅峰由棚改制造——2013 年国发 25 号文启动加速<sup class="ref">[58]</sup>,2015—2017 年三年改造 1800 万套、2018—2020 年再改造 1500 万套,其中相当比例为实物安置。两种空间形态并存:<b>原址回迁</b>——商品房与回迁房同盘混建,同一小区内以装修标准、楼栋位置、车位配比划出隐形边界;<b>异地集中安置</b>——城郊大盘式回迁区,自住率低、出租率高、物业费低、商业配套滞后。命名高度程式化:"××家园""××新苑""××新村"——第四编 §4.3 的命名法在此失效:安置房的名字不需要想象地理,只需要指认归宿。</p>
+
+<div class="spec"><div class="spec-hd"><span>技术档案 档 6-7</span><span class="no">安置房</span></div>
+<table class="spec-t">
+<tr><td class="k">政策依据</td><td>征收补偿条例体系;国发〔2013〕25 号（棚改加速<sup class="ref">[58]</sup>）;地方安置政策</td></tr>
+<tr><td class="k">产生—高峰</td><td>拆迁实物安置贯穿 1990s—2026;棚改高峰 2015—2020</td></tr>
+<tr><td class="k">土地取得</td><td>划拨（经适房性质）或出让（商品房性质）——同批次安置房可能两型并存</td></tr>
+<tr><td class="k">供应对象</td><td>被征收人（按原房面积、人口、宅基地权属折算）</td></tr>
+<tr><td class="k">价格形成</td><td>非市场对价:征收补偿的实物形态;其"成本"是政治谈判而非供需</td></tr>
+<tr><td class="k">产权结构</td><td>完全产权或有限产权（因城市、批次而异）</td></tr>
+<tr><td class="k">上市与退出</td><td>有限产权型上市须补缴土地收益;完全产权型等同商品房</td></tr>
+<tr><td class="k">数据表现</td><td>同地段挂牌价低于商品房一至三成（各地差异大）;物业费低、房龄新但折旧快;是价格数据中"同地段同年代不同价"的最大单一解释变量</td></tr>
+</table></div>
+
+<p>对数据分析者而言,安置房是层谱中最重要的幽灵:它不叫安置房,叫"××家园";它有产权证,能在二手房平台正常挂牌;它拉低所在区县的挂牌中位数——如果不加识别,安置房占比高的区县会被误读为"价格洼地"。这正是本站数据口径说明必须单列此条的原因。</p>
+<p class="cr">→ 参见 §3.5（棚改与旧改的分野）; §4.3（命名的制度指纹）; 附录A"安置房"词条</p>
+</div></div>
+
+<!-- ============================================================ -->
+<!-- 附录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appA">
+<div class="vol-no">附录 A</div>
+<h2>术语表</h2>
+<div class="vol-range">按拼音序 · 体例仿词典</div>
+</div>
+
+<div class="lemma"><b>安置房</b><span class="pos">n.</span>征收补偿中以产权调换方式交付被拆迁人的实物住房,俗称回迁房;多见"××家园""××新城"专名,上市年限与补缴规则依地方规定（→档 6-7）。</div>
+<div class="lemma"><b>保租房</b><span class="pos">n.</span>保障性租赁住房之简称。面向新市民与青年人、以不超过 70 ㎡ 小户型为主的租赁型保障房,只租不售、不限户籍收入（→档 6-6）。</div>
+<div class="lemma"><b>板式住宅</b><span class="pos">n.</span>进深小、面宽大的条形楼栋,一梯两户、南北通风采光,多层至小高层为主。与塔式相对。</div>
+<div class="lemma"><b>成套住宅</b><span class="pos">n.</span>独门独户且独用厨房、卫生间的住宅单元。住房统计中"成套率"的计数单元（→档 2-1）。</div>
+<div class="lemma"><b>得房率</b><span class="pos">n.</span>套内建筑面积 ÷ 建筑面积。多层约 85—90%,高层塔式可低至 70% 上下;公摊面积制度的镜像指标。</div>
+<div class="lemma"><b>大板建筑</b><span class="pos">n.</span>内外墙与楼板全部工厂预制、现场拼装的装配式住宅体系,1970 年代多城推广,板缝问题限制其普及（→§1.7）。</div>
+<div class="lemma"><b>大模板</b><span class="pos">n.</span>工具式大模板现浇混凝土墙体的施工体系,1976—78 年北京前三门工程首用于成批高层住宅。</div>
+<div class="lemma"><b>大平层</b><span class="pos">n.</span>单层铺开 144—300 ㎡ 的平层大宅,以横厅、套房化卧室、电梯入户为配置惯例,高周转时代的顶配产品线（→图 5-4）。</div>
+<div class="lemma"><b>动静分区</b><span class="pos">n.</span>户型平面组织原则:起居、餐厨等动区与卧室静区各自成团、以走廊或厅缓冲;1990 年代后期成为户型评价通用语（→§5.4）。</div>
+<div class="lemma"><b>单位大院</b><span class="pos">n.</span>→§1.3 词条。</div>
+<div class="lemma"><b>房改房</b><span class="pos">n.</span>职工按房改政策购买的原公有住房。1998 年前后大规模转私,构成今日二手房市场的重要存量。</div>
+<div class="lemma"><b>方厅</b><span class="pos">n.</span>1980 年代过渡型厅:方形、约 4—6 ㎡、常间接采光,兼作过道与餐厅——厅与过道尚未分家的化石形态（→图 5-1）。</div>
+<div class="lemma"><b>公摊面积</b><span class="pos">n.</span>楼栋内共有部位（楼梯、电梯井、外墙一半等）按比例分摊入各户建筑面积的部分。中国内地住宅计价制度特征。</div>
+<div class="lemma"><b>共用内廊</b><span class="pos">n.</span>筒子楼的交通与生活复合走廊,净宽 1.4—1.8 m,兼作排烟、储物、交往空间（→图 1-2）。</div>
+<div class="lemma"><b>共有产权房</b><span class="pos">n.</span>政府与购房人按份共有产权的配售型保障房:购房人支付部分价款取得部分产权,转让时由代持机构回购份额或按规则流转（→档 6-5）。</div>
+<div class="lemma"><b>横厅</b><span class="pos">n.</span>起居厅开间大于进深、横向展开并直接面向景观面的布置;2000 年代后期随大面宽板式楼流行（→图 5-4）。</div>
+<div class="lemma"><b>经济适用房</b><span class="pos">n.</span>划拨土地、限定利润与购买资格的政策性住房,1998 年制度设计中的供应主体,2003 年后边缘化（→档 6-2）。</div>
+<div class="lemma"><b>两厅</b><span class="pos">n.</span>起居厅与餐厅分设的厅配置;"大厅小卧"时期（1990 年代中期起）主流户型的计数标签（→图 5-2）。</div>
+<div class="lemma"><b>满五唯一</b><span class="pos">n.</span>二手房交易税费用语:取得产权满五年且为家庭唯一住房,免征个人所得税——房改房与商品房税费待遇的分界线之一。</div>
+<div class="lemma"><b>内廊式</b><span class="pos">n.</span>以中部内廊组织双侧住户的楼栋类型;筒子楼的空间原型,当代酒店式公寓为其商业转世（→图 1-2）。</div>
+<div class="lemma"><b>旧改 / 老旧小区改造</b><span class="pos">n.</span>→§3.5 词条。与棚改相对:保留建筑、微更新。</div>
+<div class="lemma"><b>容积率</b><span class="pos">n.</span>地上总建筑面积 ÷ 用地面积。1998 年后城市住宅小区通行 1.5—3.5,大盘与新城可更低。</div>
+<div class="lemma"><b>生活圈</b><span class="pos">n.</span>GB 50180-2018 确立的规划分级单位,按步行时间（十五/十/五分钟）而非人口规模划定（→§3.6）。</div>
+<div class="lemma"><b>塔式住宅</b><span class="pos">n.</span>面宽进深相近的竖向楼栋,2 梯 4—8 户,节地但部分户型通风受限;33 层（≈99 m）为常见经济封顶档。</div>
+<div class="lemma"><b>偷面积</b><span class="pos">n.</span>利用阳台、飘窗、设备平台等不计容或半计容部位扩大实际可用面积的设计手法;随计容规则的收紧与放宽呈周期性兴衰（→§5.7）。</div>
+<div class="lemma"><b>筒子楼</b><span class="pos">n.</span>→§1.4 词条。</div>
+<div class="lemma"><b>限竞房</b><span class="pos">n.</span>"限房价、竞地价"地块上所建商品房:售价上限与转让限制写入土地出让合同（→档 6-4）。</div>
+<div class="lemma"><b>一梯两户</b><span class="pos">n.</span>一个楼梯（电梯）单元服务两户的标准单元构成,板式住宅的默认平面逻辑（→图 2-1）。</div>
+<div class="lemma"><b>预售制</b><span class="pos">n.</span>取得预售许可后出售期房的制度,高周转模式的资金枢纽（→§3.4）。</div>
+<div class="lemma"><b>圆孔板 / YKB</b><span class="pos">n.</span>预应力混凝土空心楼板,1950—80 年代砖混住宅的标准楼盖构件。</div>
+<div class="lemma"><b>主卧套房</b><span class="pos">n.</span>主卧室附独立卫生间（可加衣帽间）的配置,2000 年代起三居以上户型的默认项（→图 5-3）。</div>
+<div class="lemma"><b>总平面</b><span class="pos">n.</span>表达楼栋、道路、绿地、出入口等全部基地要素的图纸;本卷图 3-1 即小区总平面的要素抽象。</div>
+
+<div class="vol" id="appB">
+<div class="vol-no">附录 B</div>
+<h2>参考来源</h2>
+<div class="vol-range">正文上标 [n] 对应下列条目</div>
+</div>
+
+<ol class="src">
+<li>搜狐:《从筒子楼到空中庭院:中国住宅四代演进之路》</li>
+<li>澎湃新闻:《上海工人新村:一种社会主义城市的空间样本》</li>
+<li>头条:《郑州小区开发史》</li>
+<li>中国网:《中国封闭小区的由来》</li>
+<li>央视网:《从筒子楼到别墅:中国人住房的60年变迁》</li>
+<li>网易新闻:《50年代生活记忆:纯真时代的衣食住行》</li>
+<li>头条:《北京—和平里:新中国行政文化区的诞生与演进》</li>
+<li>全国哲学社会科学工作办公室:《中国"社会代"引领价值观代际更迭》</li>
+<li>中国改革网:《中国住房制度的历史演进与社会效应》</li>
+<li>中国经济网:《住房40年从蜗居到适局:从人均6.7平米到超38平米》</li>
+<li>人民网:《政策演进 住房制度体系再优化》</li>
+<li>南通日报:《从筒子楼到单元房》</li>
+<li>上海金融与法律研究院:《城市化进程下,一个"居者有其屋"的梦想》</li>
+<li>新浪财经:《1980-1998年:商品房萌芽》</li>
+<li>南方网:《广东70年人居变迁史》</li>
+<li>中国经济网:《1989:商品房让住房步入商品化新纪元》</li>
+<li>中新网:《1987当事人当时事:"土地第一拍"推动宪法修改》</li>
+<li>中国政策科学研究会:《艰难启动与初步成效:新中国城镇住房制度的改革》</li>
+<li>中国经济周刊:房改试点报道</li>
+<li>头条:《房地产大法将修订,70年土地使用权将改变?》</li>
+<li>百科词条:宅地撞限（55 号令）</li>
+<li>中国政府网:《国务院关于深化城镇住房制度改革的决定》(1994)</li>
+<li>中国政府网:国发〔1998〕23 号文</li>
+<li>道客巴巴:《房地产发展历程》</li>
+<li>QQ阅读:《深圳重大改革创新史略(1979—2015)》</li>
+<li>网易:《胡德平:我国住宅商品化是如何从八十年代起步的?》</li>
+<li>《人民公安》:《封闭小区好》(1996)</li>
+<li>媒体公开报道:京津新城、星耀五洲大盘案例</li>
+<li>媒体公开报道:2009年北京房价走势</li>
+<li>国务院办公厅:《关于加快发展保障性租赁住房的意见》(2021)</li>
+<li>国务院办公厅:《关于全面推进城镇老旧小区改造工作的指导意见》(2020)</li>
+<li>天津日报:《置业年代秀 五代人的买房心路》</li>
+<li>《民生周刊》:《按揭人生》</li>
+<li>全国哲学社会科学工作办公室:代际价值观研究</li>
+<li>网络公开讨论:70后时代红利</li>
+<li>中国新闻网/尹中立:《专家:住房制度 要考虑本国文化传统》</li>
+<li>土巴兔等:《别让自己成为房奴 专家支招"80后"买房》</li>
+<li>浙江在线:《演员严屹宽晒24年前买的第一套房,勾起人们的首套房记忆》</li>
+<li>澎湃新闻/新华视点:《"90后"置业观调查:流行"只租不买",长租公寓是首选》</li>
+<li>媒体公开报道:《年轻人为什么不买房了?》</li>
+<li>头条号:《为什么这代年轻人更孤独了?商品房全面普及,00后成了原子化一代》</li>
+<li>《民生周刊》:《敲门——浅谈城市新居民社区邻里关系及文化重建》</li>
+<li>豆丁网:《邻里关系重构与文化嵌入》</li>
+<li>澎湃新闻:《中国的楼盘喜欢怎样取名?| 17万份数据里的房产变迁史》</li>
+<li>微博@春巷序:《原来小区是这样命名的》</li>
+<li>澎湃新闻:《图解|各地需要改名的楼盘,全是因为"大洋怪重"吗?》</li>
+<li>头条号:《从"建管不分"到"社区兜底"》</li>
+<li>头条号:《物业费迷思》</li>
+<li>网络公开讨论:家庭购房出资模式</li>
+<li>国家统计局:历次全国人口普查公报（城镇家庭户规模,1990 年 3.96 人 → 2020 年 2.62 人）</li>
+<li>GB 50096-1999《住宅设计规范》;GB 55038-2025《住宅项目规范》（起居室面积与层高条款）</li>
+<li>国务院办公厅:《关于调整住房供应结构稳定住房价格的意见》（国办发〔2006〕37 号,"90/70"政策）</li>
+<li>国务院:《关于促进房地产市场持续健康发展的通知》（国发〔2003〕18 号）</li>
+<li>建设部等七部门:《经济适用住房管理办法》（建住房〔2004〕77 号;建住房〔2007〕258 号）</li>
+<li>建设部令第 69 号:《已购公有住房和经济适用住房上市出售管理暂行办法》（1999）</li>
+<li>住建部:共有产权住房试点（2014,北京、上海、深圳、成都等六城）;上海共有产权保障房制度文件;国务院:《关于规划建设保障性住房的指导意见》（国发〔2023〕14 号）</li>
+<li>北京市住建委:《北京市共有产权住房管理暂行办法》（京建法〔2017〕16 号）</li>
+<li>国务院:《关于加快棚户区改造工作的意见》（国发〔2013〕25 号）;住建部等:《关于加快发展公共租赁住房的指导意见》（建保〔2010〕87 号）;首批保障性租赁住房 REITs 上市公告（2022）</li>
+<li>GB 55031-2022《民用建筑通用规范》（建筑面积计算规则）及行业解读</li>
+<li>重庆市商品房以套内建筑面积计价的政策沿革（2002 年起）与媒体报道</li>
+<li>住建部:《住宅项目规范（征求意见稿）》（2019,"以套内使用面积进行交易"条款）及媒体讨论</li>
+<li>GB 55038-2025《住宅项目规范》（2025 年 5 月 1 日施行）</li>
+<li>媒体公开报道:北京"限房价、竞地价"供地规则（2016—2021）;2024 年 11 月北上广深取消普通住宅与非普通住宅标准</li>
+<li>媒体公开报道:杭州等地新房"万人摇号"与一二手价格倒挂（2018—2021）</li>
+<li>行业公开讨论:赠送面积、计容规则修订与"第四代住宅"（2019—2025）</li>
+</ol>
+
+<!-- ============================================================ -->
+<!-- 附录 C 总年表 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appC">
+<div class="vol-no">附录 C</div>
+<h2>总年表</h2>
+<div class="vol-range">1949 — 2026 · 制度、建造、规范三类事件合编</div>
+</div>
+
+<p>年表收录三类事件:<b>制度</b>（土地、产权、分配、保障的政策节点）、<b>建造</b>（类型、技术、代表工程）、<b>规范</b>（设计规范的订立与修订）。取舍标准与总纲一致——以制度断代,不以政权更迭或市场行情为界;行情性事件（某年某城房价涨跌）一概不收。同一年份制度先行、建筑滞后者,以制度年份入表。事件考订与展开见"参见"栏所指章节。</p>
+
+<table class="t">
+<tr><th style="width:96px">年份</th><th>事件</th><th style="width:80px">类别</th><th style="width:120px">参见</th></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅰ 单位居住体系 1949—1978</td></tr>
+<tr><td>1949</td><td>城市房产接收与公有化;住房紧缺作为初始状态被制度固定下来</td><td>制度</td><td>§1.1</td></tr>
+<tr><td>1951</td><td>上海曹杨新村动工——工人新村类型的原点</td><td>建造</td><td>§1.2 · 档 1-1</td></tr>
+<tr><td>1953</td><td>北京百万庄小区:邻里单位规划+十二地支命名,中国"小区"的范式原点</td><td>建造</td><td>§1.6 · 档 1-4</td></tr>
+<tr><td>1950s</td><td>苏联"扩大街坊"输入;单位大院成为城市生产—生活复合单元<sup class="ref">[4]</sup></td><td>建造</td><td>§1.3 · 图 1-1</td></tr>
+<tr><td>1958—1976</td><td>低标准时期:筒子楼、排子房大规模建设;住房投资占基建总投资仅 9.8%<sup class="ref">[1]</sup></td><td>建造</td><td>§1.4 · §1.5</td></tr>
+<tr><td>1976—1978</td><td>北京前三门大街工程:大模板体系首次成批用于 10—16 层高层住宅</td><td>技术</td><td>§1.7</td></tr>
+<tr><td>1978</td><td>城镇人均居住面积 3.6 ㎡<sup class="ref">[5]</sup>,缺房户占城市总户数 47.5%<sup class="ref">[10]</sup>——改革前的存量欠账</td><td>背景</td><td>§2.1</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅱ 双轨过渡 1978—1998</td></tr>
+<tr><td>1980</td><td>邓小平提出个人可以买房建房<sup class="ref">[26]</sup>;深圳东湖丽苑、广州东湖新村开工——商品房试点元年</td><td>制度/建造</td><td>§2.3</td></tr>
+<tr><td>1982</td><td>常州、郑州、沙市、四平试行补贴出售公房（"三三制"）<sup class="ref">[18]</sup></td><td>试点</td><td>§2.5</td></tr>
+<tr><td>1986</td><td>烟台、蚌埠、常州、沈阳试点提租补贴<sup class="ref">[19]</sup>;首部《住宅建筑设计规范》GBJ 96-86 发布,方厅获得规范身份</td><td>试点/规范</td><td>§2.5 · §5.6</td></tr>
+<tr><td>1987</td><td>深圳"土地第一拍"——土地有偿使用破冰<sup class="ref">[17]</sup></td><td>制度</td><td>§2.5</td></tr>
+<tr><td>1988</td><td>宪法修正案确认土地使用权可以依法转让</td><td>制度</td><td>§2.4</td></tr>
+<tr><td>1989</td><td>北京首次公开出售商品房<sup class="ref">[16]</sup></td><td>标志事件</td><td>§2.5</td></tr>
+<tr><td>1990</td><td>55 号令:城镇国有土地使用权出让制度确立,70 年期限成文<sup class="ref">[21]</sup></td><td>制度</td><td>§2.4</td></tr>
+<tr><td>1994</td><td>国发 43 号《决定》:双轨供给体系确立,公房可售<sup class="ref">[22]</sup></td><td>制度</td><td>§2.4</td></tr>
+<tr><td>1995</td><td>安居工程启动——经济适用房的制度先声</td><td>制度</td><td>档 6-2</td></tr>
+<tr><td>1998</td><td>国发 23 号:停止住房实物分配——福利分房制度终结,Ⅲ 期开始<sup class="ref">[23]</sup></td><td>分水岭</td><td>§3.1</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲa 黄金十年 1998—2008</td></tr>
+<tr><td>1998—2003</td><td>房改售房高峰:数以千万套公房转私,构成今日二手房市场的第一存量来源</td><td>制度</td><td>档 6-1</td></tr>
+<tr><td>1999</td><td>建设部令第 69 号:已购公房上市出售<sup class="ref">[55]</sup>;GB 50096-1999 要求起居室不小于 12 ㎡ 且直接采光——暗方厅退出新建市场<sup class="ref">[51]</sup></td><td>制度/规范</td><td>档 6-1 · §5.6</td></tr>
+<tr><td>2002</td><td>经营性用地招拍挂制度施行;重庆率先以套内建筑面积作为商品房计价口径<sup class="ref">[60]</sup></td><td>土地/口径</td><td>§5.7</td></tr>
+<tr><td>2003</td><td>国发 18 号:房地产成为支柱产业,经适房由"主体"调整为"适度"<sup class="ref">[53]</sup></td><td>制度</td><td>档 6-2</td></tr>
+<tr><td>2004</td><td>"8·31"大限:经营性用地全面招拍挂;《经济适用住房管理办法》（建住房〔2004〕77 号）<sup class="ref">[54]</sup></td><td>土地/制度</td><td>档 6-2 · 档 6-3</td></tr>
+<tr><td>2005</td><td>"国八条":抑制大户型信贷——政策性面积段开始塑造户型</td><td>调控</td><td>§5.6</td></tr>
+<tr><td>2006</td><td>90/70 政策:新建商品住房 90 ㎡ 以下套型占比须达 70%<sup class="ref">[52]</sup></td><td>调控</td><td>§5.6</td></tr>
+<tr><td>2007</td><td>《物权法》通过;国发 24 号确立低收入家庭住房保障框架;《经济适用住房管理办法》（建住房〔2007〕258 号）<sup class="ref">[54]</sup></td><td>制度</td><td>§3.5 · 档 6-2</td></tr>
+<tr><td>2008</td><td>国际金融危机;"四万亿"之后房地产与土地财政深度联动,高周转时代启幕</td><td>背景</td><td>§3.4</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲb 高周转 2008—2016</td></tr>
+<tr><td>2010</td><td>"国十条"限购启幕;建保〔2010〕87 号:公租房体系建立<sup class="ref">[58]</sup></td><td>调控/保障</td><td>档 6-6</td></tr>
+<tr><td>2011</td><td>限购扩围至主要城市;保障性安居工程年度开工目标升至千万套级</td><td>调控/保障</td><td>§3.5</td></tr>
+<tr><td>2012</td><td>GB 50096-2011 施行:入户层距室外地面超 16 m 须设电梯——多层电梯化起点</td><td>规范</td><td>§5.6</td></tr>
+<tr><td>2013</td><td>国发 25 号:棚户区改造加速——安置房体量巅峰的制度引擎<sup class="ref">[58]</sup></td><td>保障</td><td>档 6-7</td></tr>
+<tr><td>2014</td><td>共有产权房六城试点（北京、上海、深圳、成都等）<sup class="ref">[56]</sup>;限购限贷政策转向宽松</td><td>保障/调控</td><td>档 6-5</td></tr>
+<tr><td>2015</td><td>棚改货币化安置推广+去库存:需求与房价预期向三四线城市与县城传导</td><td>保障</td><td>§3.4</td></tr>
+<tr><td>2016</td><td>"房子是用来住的、不是用来炒的"首提;热点城市调控重启——Ⅲc 存量转型开始</td><td>分水岭</td><td>§3.5</td></tr>
+
+<tr><td colspan="4" style="background:#111;color:#fff;font-weight:600;letter-spacing:1px">Ⅲc 存量转型 2016—2026</td></tr>
+<tr><td>2017</td><td>《北京市共有产权住房管理暂行办法》<sup class="ref">[57]</sup>;十九大确立"租购并举"</td><td>保障</td><td>档 6-5</td></tr>
+<tr><td>2016—2021</td><td>"限房价、竞地价"地块成为热点城市主流供应;2018—2019 年限竞房一度占北京新房成交半壁江山<sup class="ref">[63]</sup></td><td>产品</td><td>档 6-4</td></tr>
+<tr><td>2018—2021</td><td>一二手价格倒挂之下的"万人摇号"——限价制度制造的套利景观<sup class="ref">[64]</sup></td><td>现象</td><td>档 6-4</td></tr>
+<tr><td>2019</td><td>《住宅项目规范（征求意见稿）》写入"以套内使用面积进行交易",引发全国公摊大讨论——该条款最终未进入正式文本<sup class="ref">[61]</sup></td><td>规范</td><td>§5.7</td></tr>
+<tr><td>2020</td><td>国办指导意见:全面推进城镇老旧小区改造<sup class="ref">[31]</sup>;"三道红线"终结高杠杆扩张</td><td>制度</td><td>§3.5 · 档 3-2</td></tr>
+<tr><td>2021</td><td>国办 22 号:保障性租赁住房体系建立<sup class="ref">[30]</sup>;"两集中"供地</td><td>保障</td><td>档 6-6</td></tr>
+<tr><td>2022</td><td>首批保障性租赁住房 REITs 上市<sup class="ref">[58]</sup>;保交楼专项借款出台</td><td>金融</td><td>档 6-6</td></tr>
+<tr><td>2023</td><td>国发 14 号:配售型保障房（保本微利、封闭管理）<sup class="ref">[56]</sup>;超大特大城市城中村改造启动</td><td>保障</td><td>档 6-5 · 档 6-7</td></tr>
+<tr><td>2024</td><td>北上广深取消"普通/非普通住宅"标准,144 ㎡ 非普线退出<sup class="ref">[63]</sup>;多地放宽计容规则,"高得房率""第四代住宅"成为新盘卖点<sup class="ref">[65]</sup></td><td>规范/产品</td><td>§5.6 · §5.7</td></tr>
+<tr><td>2025</td><td>GB 55038-2025《住宅项目规范》施行:层高不低于 3.0 m、四层及以上设电梯<sup class="ref">[62]</sup>;"好房子"写入政府工作报告</td><td>规范</td><td>§5.6</td></tr>
+<tr><td>2026</td><td>增量时代收官:老旧小区改造、城市更新与"七种房子"多元供给并行成为常态</td><td>现状</td><td>§3.5 · §6.1</td></tr>
+</table>
+
+<div class="note">年表的读法:同一栏内"制度"事件决定"建造"事件能发生什么,"规范"事件决定"建造"事件长什么样——1998 年的 23 号文制造了 2000 年代的板楼,1986 年的 GBJ 96-86 制造了方厅,2025 年的 GB 55038 将制造下一代的层高。反向链条同样成立:2020 年的旧改意见处理的是 1980 年代的建筑存量。政策与房子之间隔着五到十年,年表即证据。</div>
+
+<!-- ============================================================ -->
+<!-- 附录 D 图版与档案目录 -->
+<!-- ============================================================ -->
+
+<div class="vol" id="appD">
+<div class="vol-no">附录 D</div>
+<h2>图版与档案目录</h2>
+<div class="vol-range">图版 9 幅 · 技术档案 14 卷 · 编号规则见末注</div>
+</div>
+
+<p>本卷共收录<b>图版</b>（FIGURE,编号"图 n-n"）9 幅、<b>技术档案</b>（SPECIFICATION,编号"档 n-n"）14 卷。编号首数字对应所在编次:图 1-n、档 1-n 属第一编,依此类推。第四编为叙事性研究（代际认知、邻里、命名、物业、文化）,不设图版与档案。图版均为黑白示意、不按比例;档案数值为类型通行区间,非单案数值。</p>
+
+<h4 style="font-size:14px;margin:14px 0 6px">图版目录 LIST OF FIGURES</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th>图名</th><th style="width:70px">所在</th><th>读图要点</th></tr>
+<tr><td>图 1-1</td><td>单位大院功能构成（典型制造业企业）</td><td>§1.3</td><td>生产区与生活区的要素分解:厂区、家属区、后勤设施的围合关系</td></tr>
+<tr><td>图 1-2</td><td>筒子楼标准层平面（内廊双侧布房式）</td><td>§1.4</td><td>共用内廊与合用厨卫的平面证据:走廊作为交通与生活的复合空间</td></tr>
+<tr><td>图 2-1</td><td>单元式住宅标准层平面（一梯两户）</td><td>§2.2</td><td>成套住宅的最小空间单元:楼梯间组织、独厨独卫的成套标准</td></tr>
+<tr><td>图 3-1</td><td>封闭式商品房小区总平面要素</td><td>§3.3</td><td>围合、门禁、中心绿地与楼栋等级的要素抽象</td></tr>
+<tr><td>图 3-2</td><td>行列式布局与日照间距</td><td>§3.3</td><td>自百万庄延续至今的总平面范式:正南北朝向与间距的几何学</td></tr>
+<tr><td>图 5-1</td><td>方厅时代两居室平面（1980s 中期 · 约 56 ㎡）</td><td>§5.2</td><td>过渡形态:入户门直接开向方厅,厅即全屋交通枢纽</td></tr>
+<tr><td>图 5-2</td><td>大厅小卧两居平面（1990s · 约 72 ㎡）</td><td>§5.3</td><td>"明厅明卫"的合规起点:起居厅获得采光窗与独立身份</td></tr>
+<tr><td>图 5-3</td><td>三居两厅两卫平面（2000s · 约 132 ㎡）</td><td>§5.4</td><td>改善语法的确立:动静分区、主卧套房、双卫分离</td></tr>
+<tr><td>图 5-4</td><td>大平层平面（2010s—2020s · 约 200 ㎡）</td><td>§5.5</td><td>功能细分到极致:横厅、套房化卧室与家政动线</td></tr>
+</table>
+
+<h4 style="font-size:14px;margin:14px 0 6px">技术档案目录 LIST OF SPECIFICATIONS</h4>
+<table class="t">
+<tr><th style="width:70px">编号</th><th>档案名</th><th style="width:70px">所在</th><th>档案要点</th></tr>
+<tr><td>档 1-1</td><td>工人新村（初期）</td><td>§1.2</td><td>类型起点（1951 曹杨新村）:集体宿舍式布局、户均 20—30 ㎡</td></tr>
+<tr><td>档 1-2</td><td>筒子楼</td><td>§1.4</td><td>低标准时期主力形态:内廊双侧布房、合用厨卫、无成套概念</td></tr>
+<tr><td>档 1-3</td><td>排子房</td><td>§1.5</td><td>最低标准:单层行列排布、无独立厨卫、土地几乎零成本</td></tr>
+<tr><td>档 1-4</td><td>百万庄小区</td><td>§1.6</td><td>1953 规划范式样本:邻里单位、十二地支命名、行列式布局源头</td></tr>
+<tr><td>档 2-1</td><td>单元式住宅（1980s）</td><td>§2.2</td><td>成套住宅的标准层:一梯两户、砖混+圆孔板、层高 2.8 m</td></tr>
+<tr><td>档 3-1</td><td>商品房楼栋（1998—2008）</td><td>§3.3</td><td>板式与塔式的分野:核心筒配置与得房率区间</td></tr>
+<tr><td>档 3-2</td><td>老旧小区改造项清单（2020 口径）</td><td>§3.5</td><td>基础类/完善类/提升类三类菜单:存量时代的工程语言</td></tr>
+<tr><td>档 6-1</td><td>房改房</td><td>§6.2</td><td>公房转私的制度遗产:成本价购买、高得房率、上市补缴规则</td></tr>
+<tr><td>档 6-2</td><td>经济适用房</td><td>§6.3</td><td>划拨土地、限定利润与购买资格:被审计的福利</td></tr>
+<tr><td>档 6-3</td><td>普通商品房</td><td>§6.4</td><td>默认项:出让土地、市场定价、预售制与"满五唯一"</td></tr>
+<tr><td>档 6-4</td><td>限价房 / 限竞房</td><td>§6.5</td><td>限房价、竞地价:给市场价装上限速器及其套利后果</td></tr>
+<tr><td>档 6-5</td><td>共有产权房</td><td>§6.6</td><td>按份共有的配售型保障:政府与购房人的股份制住房</td></tr>
+<tr><td>档 6-6</td><td>保障性租赁住房 / 公租房</td><td>§6.7</td><td>只租不售:公租房（2010）与保租房（2021）两代体系</td></tr>
+<tr><td>档 6-7</td><td>安置房</td><td>§6.8</td><td>征收实物补偿:拆迁条例体系与棚改制造的体量巅峰</td></tr>
+</table>
+
+<div class="note">目录亦是一份<b>索引</b>:按编号查正文,或按正文查编号皆可。四幅户型图（图 5-1—5-4）建议按时间顺序连读——56 ㎡ 到 200 ㎡ 的面积扩张中,不变的元素只有那间不断改名的"厅":方厅→起居室→客厅→横厅。名称史即观念史。</div>
+
+<footer>
+  <p>本卷为体系性研究文本,不随行情变化。图版均为示意,不按比例;技术档案数值为类型通行区间,具体工程以个案设计文件为准。</p>
+  <p style="margin-top:4px"><a href="index.html">返回专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a></p>
+</footer>
+
+</main>
+</div>
+
+<script>
+var secs = document.querySelectorAll('.vol, .sec');
+var links = document.querySelectorAll('nav.toc a');
+function upd(){
+  var y = window.scrollY + 120, cur = null;
+  secs.forEach(function(s){ if(s.offsetTop <= y) cur = s.id; });
+  links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur && !a.classList.contains('sub') || (a.classList.contains('sub') && a.getAttribute('href') === '#' + cur)); });
+}
+window.addEventListener('scroll', upd); upd();
+</script>
+</body>
+</html>

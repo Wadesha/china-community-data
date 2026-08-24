@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国城市小区数据体系 · 专题概述</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.75;color:#111;background:#fff}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#555}
+.layout{display:flex;max-width:1200px;margin:0 auto;padding:0 20px}
+nav.toc{width:200px;flex-shrink:0;position:sticky;top:0;align-self:flex-start;max-height:100vh;overflow-y:auto;padding:28px 12px 40px 0;border-right:1px solid #e5e5e5;font-size:12.5px}
+nav.toc .toc-title{font-weight:600;margin-bottom:10px;color:#666;letter-spacing:1px}
+nav.toc a{display:block;text-decoration:none;color:#444;padding:3px 8px;border-left:2px solid transparent}
+nav.toc a:hover{color:#000;border-left-color:#999;background:#fafafa}
+nav.toc a.on{color:#000;border-left-color:#111;font-weight:600;background:#f5f5f5}
+main{flex:1;min-width:0;padding:28px 0 80px 36px;max-width:900px}
+header.top{border-bottom:2px solid #111;padding-bottom:18px;margin-bottom:26px}
+header.top .kicker{font-size:12px;color:#666;letter-spacing:2px;margin-bottom:6px}
+header.top h1{font-size:26px;font-weight:700;letter-spacing:0.5px}
+header.top .sub{color:#444;margin-top:8px;font-size:14.5px}
+.topnav{display:flex;gap:18px;font-size:13px;margin-top:14px;padding:8px 0;border-top:1px solid #e5e5e5}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.banner{border:1px solid #111;padding:10px 14px;font-size:13px;margin-bottom:30px;background:#f7f7f7}
+.banner b{font-weight:700}
+h2{font-size:19px;font-weight:700;margin:44px 0 14px;padding-top:10px;border-top:1px solid #ddd}
+h2 .no{color:#888;font-weight:400;margin-right:8px;font-size:15px}
+h3{font-size:15px;font-weight:700;margin:26px 0 8px}
+h3 .no{color:#999;font-weight:400;margin-right:6px;font-size:13px}
+p{margin:8px 0}
+p.lead{font-size:15px;color:#222}
+table.t{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+table.t th{background:#f2f2f2;text-align:left;font-weight:600;border:1px solid #ddd;padding:6px 10px;white-space:nowrap}
+table.t td{border:1px solid #ddd;padding:6px 10px;vertical-align:top}
+table.t td.num,table.t th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:3px 0}
+.ref{font-size:11px;color:#999;vertical-align:super;text-decoration:none;margin-left:1px}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:12px 0;font-size:13px;color:#333}
+.dim{color:#666}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:0;border:1px solid #ddd;margin:12px 0;font-size:13px}
+.kv>div{padding:6px 10px;border-bottom:1px solid #eee}
+.kv>div:nth-last-child(-n+2){border-bottom:none}
+.kv .k{background:#f7f7f7;font-weight:600;border-right:1px solid #eee}
+.chains{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#f7f7f7;border:1px dashed #bbb;padding:10px 14px;margin:10px 0;overflow-x:auto;white-space:nowrap}
+ol.src{font-size:12.5px;color:#444}
+ol.src li{margin:4px 0;word-break:break-all}
+footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5px;color:#777}
+@media (max-width:860px){nav.toc{display:none}main{padding-left:0}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="toc-title">目录</div>
+  <a href="#s0">0 · 这个专题在看什么</a>
+  <a href="#s1">1 · 小区:它是什么</a>
+  <a href="#s1-1">1.1 三重身份</a>
+  <a href="#s1-2">1.2 楼盘→小区→栋→户</a>
+  <a href="#s1-3">1.3 规模体系</a>
+  <a href="#s1-4">1.4 命名体系</a>
+  <a href="#s2">2 · 空间:它挂在哪里</a>
+  <a href="#s2-1">2.1 行政区划四级</a>
+  <a href="#s2-2">2.2 特殊层级</a>
+  <a href="#s2-3">2.3 商圈:市场发明的层</a>
+  <a href="#s2-4">2.4 完整归属链</a>
+  <a href="#s3">3 · 价格:这个数字是什么</a>
+  <a href="#s3-1">3.1 前置:土地制度</a>
+  <a href="#s3-2">3.2 七种价格</a>
+  <a href="#s3-3">3.3 本数据的口径</a>
+  <a href="#s3-4">3.4 交易流程中的价格</a>
+  <a href="#s4">4 · 年份:竣工年份是什么</a>
+  <a href="#s5">5 · 房子:小区里都是什么房</a>
+  <a href="#s6">6 · 字段字典</a>
+  <a href="#s7">7 · 两个分析视图</a>
+  <a href="#s8">8 · 口径与局限</a>
+  <a href="#s9">9 · 来源</a>
+</nav>
+<main>
+<header class="top">
+  <div class="kicker">CHINA RESIDENTIAL COMMUNITY DATA · 专题一</div>
+  <h1>中国城市小区数据体系</h1>
+  <div class="sub">小区、区县、商圈、挂牌价、竣工年份——先把这个数据世界里的每个东西说清楚,再谈别的。</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器(省→市→区县)</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+  </div>
+</header>
+
+<div class="banner"><b>当前状态:模拟数据阶段。</b>本页为概念框架,不随行情变化;数据浏览器与分析页当前填充的是结构对齐的模拟数据,真实数据补充后直接替换,框架不变。</div>
+
+<!-- ============================================================ -->
+<h2 id="s0"><span class="no">0</span>这个专题在看什么</h2>
+
+<p class="lead">手里有一份小区清单:每行是一个小区,带着城市、区县、商圈、竣工年份、挂牌均价这些字段。这份清单看起来很简单,但每个字段背后都连着一套制度——规划体系、物业管理制度、不动产登记制度、行政区划制度、土地产权制度、交易监管制度。</p>
+
+<p>这个专题不回答"现在房价多少""涨了还是跌了"——行情数字每个月都会失效,记录它意义有限。它回答的是一组不会过时的问题:</p>
+<ul>
+  <li><b>小区到底是什么?</b>它和楼盘、楼栋、户是什么关系?边界由谁划定?(§1)</li>
+  <li><b>小区挂在哪里?</b>省市县乡四级区划是什么?商圈为什么不是行政区划?(§2)</li>
+  <li><b>挂牌均价是什么数字?</b>它和成交价、网签价、评估价差在哪,怎么来的?(§3)</li>
+  <li><b>竣工年份是什么?</b>它和预售、交付怎么区分,和产权年限什么关系?(§4)</li>
+  <li><b>小区里都是什么房?</b>商品房、房改房、安置房、共有产权房……哪些会出现在这份清单里?(§5)</li>
+  <li><b>每个字段怎么读?</b>字段字典与口径边界。(§6)</li>
+</ul>
+
+<p>先把体系立起来,任何一批数据(今天的、明年的、任何城市的)进来,都知道往哪个格子里放、按什么规则汇总、哪些结论能下、哪些不能。</p>
+
+<!-- ============================================================ -->
+<h2 id="s1"><span class="no">1</span>小区:它是什么</h2>
+
+<p>"小区"是个日常词,没有一部法律直接定义它。它实际上由三套制度共同塑造:规划制度给出<b>空间形态</b>,物业管理制度给出<b>管理边界</b>,不动产登记制度给出<b>权属单元</b>。房产平台上的"小区",是挂牌房源按名称和位置聚合出来的服务单元,最接近三者的交集。</p>
+
+<h3 id="s1-1"><span class="no">1.1</span>三重身份</h3>
+
+<table class="t">
+<tr><th style="width:90px">身份</th><th style="width:210px">依据</th><th>边界怎么定</th><th style="width:250px">在数据里的体现</th></tr>
+<tr><td><b>规划单元</b></td><td>《城市居住区规划设计标准》GB 50180-2018<sup><a class="ref" href="#src-1">[1]</a></sup></td><td>按步行距离与人口规模划定生活圈层级</td><td>决定小区的"正常规模"参照系(见 1.3)</td></tr>
+<tr><td><b>物业区域</b></td><td>《物业管理条例》及各省物业条例<sup><a class="ref" href="#src-3">[3]</a></sup></td><td>以建设用地规划许可证红线图为基础,结合共用设施划定;一本许可证原则上一个区域<sup><a class="ref" href="#src-4">[4]</a></sup></td><td>房产平台的小区边界≈物业区域:同一物业区域共用一套挂牌均价口径</td></tr>
+<tr><td><b>登记单元</b></td><td>《不动产登记暂行条例实施细则》<sup><a class="ref" href="#src-5">[5]</a></sup></td><td>登记以"不动产单元"为基本单位——权属界线封闭且具有独立使用价值的空间;成套住房以<b>套</b>为单元<sup><a class="ref" href="#src-6">[6]</a></sup></td><td>小区<b>不是</b>登记单元。登记链条是:宗地→幢→套,小区只是这些单元的空间聚类</td></tr>
+</table>
+
+<p class="dim">一句话:规划管"该长多大",物业管"谁提供服务",登记管"谁拥有哪一套"。平台的小区清单,是以物业区域为主体、聚合其下所有"套"的挂牌行为形成的。</p>
+
+<h3 id="s1-2"><span class="no">1.2</span>楼盘 → 小区 → 栋 → 户</h3>
+
+<p>这四个词经常混用,但口径不同:<b>楼盘/项目</b>是开发商的开发口径(一块或几块出让宗地上的投资计划);<b>小区</b>是建成后的管理与生活单元;<b>栋</b>是建筑单体;<b>户/套</b>是权属与交易单元。四者不是一一对应:</p>
+
+<table class="t">
+<tr><th style="width:280px">情形</th><th>说明</th></tr>
+<tr><td>一个项目 → 一个小区</td><td>最常见的整盘开发:统一规划、统一验收、一个物业区域</td></tr>
+<tr><td>一个项目 → 多个小区</td><td>大盘分期开发,各期之间被道路、河道分割,或配套设施可独立分割时,可分别划定物业区域<sup><a class="ref" href="#src-3">[3]</a></sup>;分期开发可<b>分期验收</b><sup><a class="ref" href="#src-7">[7]</a></sup>,故同一大盘各"小区"竣工年份不同</td></tr>
+<tr><td>多个项目 → 一个小区</td><td>相邻不同主体开发的地块,若按整体规划设计范围划定为一个物业管理区域,则统一管理<sup><a class="ref" href="#src-4">[4]</a></sup>,平台可能合并展示</td></tr>
+<tr><td>一个小区 → 多块宗地</td><td>分期出让、分区拿地的常见结果;登记时按宗地分别办理</td></tr>
+</table>
+
+<div class="note">数据解读要点:同名"小区"在平台侧的边界以平台聚合规则为准,与规划、登记口径可能存在出入;大盘分期会使"一个小区"的竣工年份、价格跨度都很大。</div>
+
+<h3 id="s1-3"><span class="no">1.3</span>规模体系</h3>
+
+<p>GB 50180-2018 按步行尺度给出四级生活圈层级,居住街坊是最小单元<sup><a class="ref" href="#src-1">[1]</a></sup><sup><a class="ref" href="#src-2">[2]</a></sup>:</p>
+
+<table class="t">
+<tr><th>规划层级</th><th class="num">步行距离</th><th class="num">人口</th><th class="num">住宅套数</th><th>与"小区"的对应</th></tr>
+<tr><td>十五分钟生活圈居住区</td><td class="num">800–1000 m</td><td class="num">5–10 万人</td><td class="num">1.7–3.2 万套</td><td>约等于一个街道办事处的辖区量级,含多个小区</td></tr>
+<tr><td>十分钟生活圈居住区</td><td class="num">500 m</td><td class="num">1.5–2.5 万人</td><td class="num">5000–8000 套</td><td>多个小区组成</td></tr>
+<tr><td>五分钟生活圈居住区</td><td class="num">300 m</td><td class="num">0.5–1.2 万人</td><td class="num">1500–4000 套</td><td>约 3–4 个居住街坊组成</td></tr>
+<tr><td><b>居住街坊</b></td><td class="num">—</td><td class="num">1000–3000 人</td><td class="num">300–1000 套</td><td><b>最接近单个普通小区</b>(用地 2–4 公顷)</td></tr>
+</table>
+
+<p>超出这个量级的"超级大盘"没有规划对应物,是市场化开发的产物。几个媒体与政府报道口径的例子<sup><a class="ref" href="#src-27">[27]</a></sup><sup><a class="ref" href="#src-28">[28]</a></sup>:</p>
+<table class="t">
+<tr><th>小区</th><th>规模(报道口径,注意不同来源数字有出入)</th></tr>
+<tr><td>贵阳花果园</td><td>占地约 10 km²、总建筑面积约 1830 万 m²、常住人口近 40 万,内部再分 26 个区</td></tr>
+<tr><td>北京天通苑</td><td>占地约 8 km²、600 余栋、住户规模存在"约 6.9 万户"与"约 15 万户"两种统计口径</td></tr>
+<tr><td>上海康城</td><td>286 栋、规划约 1.25 万户、居住人口近 4 万</td></tr>
+</table>
+<p class="dim">规模字段没有全国统一口径(规划户数/登记户数/社区治理口径/平台房源口径数字各不相同),引用任何"户数"都必须先问口径。</p>
+
+<h3 id="s1-4"><span class="no">1.4</span>命名体系</h3>
+
+<p>小区名不是随便起的。《地名管理条例》规定地名由<b>专名 + 通名</b>构成<sup><a class="ref" href="#src-9">[9]</a></sup>,各地对住宅区通名有明确规范:</p>
+
+<table class="t">
+<tr><th style="width:120px">规范来源</th><th>要点</th></tr>
+<tr><td>上海<sup><a class="ref" href="#src-10">[10]</a></sup></td><td>居住区可用"城""家园"等;居住建筑可用园、苑、村、寓、庭、墅、舍、庐、居、邸、轩、筑、庄、阁、里、坊、院等;<b>"花园/花苑"要求绿地率 50% 以上</b>;"别墅/墅"须符合别墅建设条件</td></tr>
+<tr><td>武汉<sup><a class="ref" href="#src-11">[11]</a></sup></td><td>通名须符合实体规模与性质;<b>禁用</b>"宇宙、世界、环球、万国、全国、中华、中央"等夸大词;不得以帝王称谓、官衔作专名</td></tr>
+<tr><td>九江<sup><a class="ref" href="#src-12">[12]</a></sup></td><td>"中心"须用地 2 万 m² 以上或建面 10 万 m² 以上;"广场"须用地 1 万 m² 以上且含 3000 m² 以上室外公共活动场地</td></tr>
+</table>
+
+<p>通名的传统语义与营销惯用理解(非全部由条例规定,属经验层):</p>
+<table class="t">
+<tr><th style="width:70px">通名</th><th>传统含义 / 常见语境</th><th style="width:70px">通名</th><th>传统含义 / 常见语境</th></tr>
+<tr><td>苑 / 园</td><td>种植花草之地 → 普通住宅小区</td><td>府</td><td>官署、贵族宅邸 → 偏改善定位</td></tr>
+<tr><td>城</td><td>围合区域 → 大型社区</td><td>湾</td><td>水流弯曲处 → 滨水项目</td></tr>
+<tr><td>里</td><td>古代居民聚居处 → 邻里社区</td><td>庄</td><td>村庄、庄园 → 低密度、别墅类</td></tr>
+<tr><td>庭 / 轩 / 阁</td><td>庭院 / 长廊小屋 / 架空建筑 → 雅致、观景类</td><td>华庭 / 公馆</td><td>华丽庭院 / 官邸 → 高端定位</td></tr>
+<tr><td>家属院 / 宿舍</td><td>单位制时期的职工住房 → 老小区标志,通常房改房</td><td>新村</td><td>上世纪集中建设批次 → 房龄线索</td></tr>
+</table>
+
+<div class="note">数据解读要点:小区名是可结构化的信号——"家属院/宿舍/新村"指向 1998 年房改前的单位房,"品牌+府/湾/云筑"指向近年商品房开发,"花园/广场/中心"受命名规范约束可反推规模门槛。这是从名称字段提取信息的体系依据。</div>
+
+<!-- ============================================================ -->
+<h2 id="s2"><span class="no">2</span>空间:它挂在哪里</h2>
+
+<h3 id="s2-1"><span class="no">2.1</span>行政区划四级</h3>
+
+<p>数据里的城市、区县字段挂在民政部行政区划体系上<sup><a class="ref" href="#src-13">[13]</a></sup><sup><a class="ref" href="#src-14">[14]</a></sup><sup><a class="ref" href="#src-15">[15]</a></sup><sup><a class="ref" href="#src-16">[16]</a></sup>:</p>
+
+<table class="t">
+<tr><th style="width:80px">层级</th><th>类型</th><th class="num" style="width:90px">数量</th><th>说明</th></tr>
+<tr><td><b>省级</b></td><td>23 省 / 5 自治区 / 4 直辖市 / 2 特别行政区</td><td class="num">34</td><td>直辖市是省级单位,其"区"是县级</td></tr>
+<tr><td><b>地级</b></td><td>293 地级市 / 30 自治州 / 7 地区 / 3 盟</td><td class="num">333</td><td>盟是内蒙古特有的地级单位</td></tr>
+<tr><td><b>县级</b></td><td>976 市辖区 / 397 县级市 / 1301 县 / 117 自治县 / 49 旗 / 3 自治旗 / 1 特区 / 1 林区</td><td class="num">2845–2847</td><td>旗是内蒙古特有的县级单位;特区(贵州六枝)、林区(湖北神农架)为全国唯二特殊建制</td></tr>
+<tr><td><b>乡级</b></td><td>9148 街道 / 21554 镇 / 6910 乡 / 955 民族乡 / 153 苏木 / 1 民族苏木</td><td class="num">38700+</td><td>街道是区县政府的派出机关;苏木是内蒙古的乡级单位</td></tr>
+</table>
+
+<p class="dim">数据中 District 字段出现的"区/县/市/旗"后缀,正是县级单位的类型标记;不带后缀的简称(如"浦东""龙子湖")需要映射回标准区划名。</p>
+
+<h3 id="s2-2"><span class="no">2.2</span>特殊层级</h3>
+
+<table class="t">
+<tr><th style="width:150px">类型</th><th>名单 / 规则</th><th style="width:300px">对数据的意义</th></tr>
+<tr><td>直辖市</td><td>北京、上海、天津、重庆(省级)</td><td>其下辖区即县级,无"地级市"一层;数据中直辖市=城市字段的最高层级</td></tr>
+<tr><td>副省级城市</td><td>15 个:沈阳、大连、长春、哈尔滨、南京、杭州、青岛、济南、宁波、厦门、武汉、成都、西安、广州、深圳</td><td>行政级别高于普通地级市,但区划层级仍是地级;经济能级常与价格分层相关</td></tr>
+<tr><td>计划单列市</td><td>深圳、大连、青岛、宁波、厦门</td><td>财政单列的非省会副省级城市</td></tr>
+<tr><td>省直辖县级市</td><td>河南济源;湖北仙桃、天门、潜江;新疆兵团城市(石河子、阿拉尔、图木舒克等);海南全省县级单位省直辖</td><td><b>没有地级市中间层</b>,平台站点常独立建站——数据中济源、阿拉尔、石河子等单独出现即源于此</td></tr>
+<tr><td>直筒子市</td><td>东莞、中山、嘉峪关、儋州等不设县级区划的地级市</td><td>District 字段实际是镇/街道级(如东莞的"虎门""长安"),聚合时须与普通区县区分</td></tr>
+</table>
+
+<h3 id="s2-3"><span class="no">2.3</span>商圈:市场发明的层</h3>
+
+<p>数据里的 Sub-district(商圈/板块)字段<b>不是行政区划</b>。它是房产平台和行业机构按商业资源、交通、居住形态、市场热度划出的市场概念:</p>
+<ul>
+  <li>一个商圈可能覆盖一个街道,也可能跨多个街道甚至跨区;同一城市不同平台的划分互不一致(如广州板块,克而瑞划 62 个,另一数据源划 83 个)<sup><a class="ref" href="#src-15">[15]</a></sup>;</li>
+  <li>常见切分逻辑:学区片(以学校服务范围)、地铁节点(以站点)、商业中心(以综合体)、规划概念区;</li>
+  <li>数据中出现的"XX周边"(如"广州周边""珠海周边")是平台的外围聚合入口,连行政区划都不是,只能作弱参照。</li>
+</ul>
+<div class="note">数据解读要点:区县字段可以做严格的空间聚合(有民政部代码),商圈字段只能做同平台内部的相对比较,跨平台不可比。</div>
+
+<h3 id="s2-4"><span class="no">2.4</span>完整归属链</h3>
+
+<p>一个小区从产权到治理的完整空间归属(以西安市新城区陕汽万寿小区为例<sup><a class="ref" href="#src-18">[18]</a></sup>):</p>
+
+<div class="chains">省(陕西) → 地级市(西安) → 区县(新城区) → 街道(胡家庙街道,区县政府派出机关) → 社区居委会(陕汽社区,基层群众自治组织<sup><a class="ref" href="#src-17">[17]</a></sup>) → 小区(陕汽万寿小区) → 栋 → 套</div>
+
+<p>注意三个主体不是上下级,是分工:<b>物业服务企业</b>管小区内部设施与环境;<b>社区居委会</b>管居民自治与公共服务;<b>街道办事处</b>统筹辖区治理。数据里的小区只精确到"区县 + 商圈 + 道路"一级,街道与社区层信息需要地址解析才能还原。</p>
+
+<!-- ============================================================ -->
+<h2 id="s3"><span class="no">3</span>价格:这个数字是什么</h2>
+
+<h3 id="s3-1"><span class="no">3.1</span>前置:土地制度</h3>
+
+<p>中国城市住宅的价格体系建立在一项土地制度上:<b>城市土地国有,有偿、有限期使用</b>。《城市房地产管理法》第三条确立了这一制度<sup><a class="ref" href="#src-19">[19]</a></sup>;住宅用地出让年限一般为 70 年,自出让日起算。《民法典》第 359 条规定住宅建设用地使用权期满<b>自动续期</b>,续期费用缴纳办法依法律、行政法规办理——即续期本身确定,费用规则尚未最终落地<sup><a class="ref" href="#src-20">[20]</a></sup>。</p>
+
+<p>由此区分两个经常被混淆的概念:<b>房龄</b>=当前年份 − 竣工年份,衡量建筑物新旧;<b>土地剩余年限</b>=70 −(当前年份 − 出让年份),衡量权利期限。出让通常早于竣工,所以同一年竣工的房子,剩余年限可以不同。二者都影响评估与贷款,但机制不同。</p>
+
+<h3 id="s3-2"><span class="no">3.2</span>七种价格</h3>
+
+<p>一宗二手房交易从头到尾会产生一串"价格",定义各不相同<sup><a class="ref" href="#src-23">[23]</a></sup><sup><a class="ref" href="#src-24">[24]</a></sup>:</p>
+
+<table class="t">
+<tr><th style="width:110px">价格</th><th style="width:170px">谁定的</th><th>是什么 / 什么场景</th></tr>
+<tr><td><b>挂牌价</b></td><td>卖方(经中介发布)</td><td>业主委托出售的报价,是卖方要约的起点,通常高于最终成交</td></tr>
+<tr><td><b>成交价</b></td><td>买卖双方协商</td><td>实际支付的合同价格,反映真实交易</td></tr>
+<tr><td><b>网签价</b></td><td>交易双方在房管部门系统备案填写</td><td>网签合同上的价格,用于官方备案、贷款审批与税费核定;可能与实际成交价不同</td></tr>
+<tr><td><b>评估价</b></td><td>银行委托的第三方评估机构</td><td>银行核定贷款额度的依据,通常偏保守;受房龄、户型、楼层、朝向、物业、地段影响</td></tr>
+<tr><td><b>指导价 / 核验价</b></td><td>地方政府部门</td><td>交易管理与价格核验的基准;网签价明显低于基准的,按基准核定税费</td></tr>
+<tr><td><b>计税价</b></td><td>税务部门</td><td>过户缴税时的计税基础,取网签价与计税评估价符合规则者</td></tr>
+<tr><td><b>挂牌均价</b></td><td>房产平台计算</td><td><b>本数据的字段</b>:小区内在售房源挂牌价的平均值,卖方报价的均值,不是任何一笔交易的价格</td></tr>
+</table>
+
+<h3 id="s3-3"><span class="no">3.3</span>本数据的口径</h3>
+
+<div class="kv">
+  <div class="k">字段</div><div>Price(k) —— 小区挂牌均价(元/m²)</div>
+  <div class="k">计算方式</div><div>平台收录的该小区<b>在售房源挂牌价</b>的平均</div>
+  <div class="k">性质</div><div>卖方报价,非成交价;有效前提是该小区有在售房源</div>
+  <div class="k">缺失形态</div><div>"暂无均价" —— 无在售挂牌房源或平台未计算,是缺失值而非 0</div>
+  <div class="k">更新</div><div>随挂牌房源增删与调价变化,每次抓取是一个时间快照</div>
+</div>
+
+<p>两条统计纪律:<b>其一</b>,房价分布右偏、极值多,聚合时中位数比均值稳健,本专题一律用中位数;<b>其二</b>,挂牌价与成交价之间的差距没有固定比例,随城市、户型、挂牌时长变化,所以本专题只做挂牌体系内部的比较,不推断成交水平。</p>
+
+<h3 id="s3-4"><span class="no">3.4</span>交易流程中的价格</h3>
+
+<table class="t">
+<tr><th style="width:110px">环节</th><th>产生什么</th></tr>
+<tr><td>挂牌 → 带看 → 议价</td><td>挂牌价(起点)→ 意向成交价</td></tr>
+<tr><td>定金 → 签约</td><td>合同价格;定金锁定交易与违约责任</td></tr>
+<tr><td>网签</td><td>网签价(备案口径)</td></tr>
+<tr><td>资金监管</td><td>购房款进入监管账户,保障"钱房两空"风险<sup><a class="ref" href="#src-25">[25]</a></sup></td></tr>
+<tr><td>贷款审批</td><td>评估价 + 贷款成数 → 实际可贷额度</td></tr>
+<tr><td>过户缴税</td><td>计税价(税费基础)</td></tr>
+<tr><td>交房</td><td>成交价最终实现</td></tr>
+</table>
+<p class="dim">可见"价格"在流程中是一个不断被修正的序列:挂牌价是第一个数,成交价是最后一个数,中间还有网签、评估、计税三个口径。平台数据停在第一个数。</p>
+
+<!-- ============================================================ -->
+<h2 id="s4"><span class="no">4</span>年份:竣工年份是什么</h2>
+
+<h3 id="s4-1"><span class="no">4.1</span>三个时间点:预售 / 竣工 / 交付</h3>
+
+<table class="t">
+<tr><th style="width:90px">时间点</th><th>是什么</th><th>判断依据</th></tr>
+<tr><td><b>预售</b></td><td>房子还没建好,取得预售许可后先卖</td><td>预售许可证、购房合同(最早)</td></tr>
+<tr><td><b>竣工</b></td><td>建设工程竣工验收合格;建设单位须在竣工验收合格之日起 15 日内向建设主管部门备案<sup><a class="ref" href="#src-8">[8]</a></sup></td><td>竣工验收合格之日(<b>本字段口径</b>,非备案完成日)</td></tr>
+<tr><td><b>交付</b></td><td>房屋移交给购房人;未完成竣工验收备案,购房人有权拒收</td><td>交付通知与交接手续(通常在竣工之后)</td></tr>
+</table>
+
+<h3 id="s4-2"><span class="no">4.2</span>分期与"小区竣工年份"</h3>
+<p>群体开发项目实行分期开发的,可以分期验收<sup><a class="ref" href="#src-7">[7]</a></sup>。因此平台标注的"竣工年份"可能是首期、末期或最近一期的竣工时间——<b>没有全国统一口径</b>。大盘的数据里同小区各期差出十几年的情况是正常的,年份字段只能读到"该小区建成于哪个年代"的粒度。</p>
+
+<h3 id="s4-3"><span class="no">4.3</span>房龄的金融含义(惯例,非法律)</h3>
+<ul>
+  <li>银行对房龄与贷款年限的组合有内部风控口径(如"房龄 + 贷款年限 ≤ 30/40 年"等说法),<b>属各银行惯例而非法律规定</b>,城市与产品之间不同;</li>
+  <li>老房子评估价偏低的机制:房龄折旧 + 处置难度(接盘群体小、变现周期长)→ 银行保守评估,不是法定打折;</li>
+  <li>1998 年房改是重要的结构性分界:此前以单位房(房改房)为主,此后商品房成为主体——年份字段因此同时携带"建筑年代"与"住房制度阶段"双重信息。</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="s5"><span class="no">5</span>房子:小区里都是什么房</h2>
+
+<p>同一张小区清单里,混着产权性质完全不同的房子<sup><a class="ref" href="#src-21">[21]</a></sup><sup><a class="ref" href="#src-22">[22]</a></sup>:</p>
+
+<table class="t">
+<tr><th style="width:110px">类型</th><th>产权特征</th><th>交易限制</th><th style="width:110px">会否出现在小区库</th></tr>
+<tr><td>商品房</td><td>出让土地,完整产权</td><td>无特殊限制</td><td>会(主体)</td></tr>
+<tr><td>房改房 / 已购公房</td><td>划拨土地,职工按成本价/标准价购买</td><td>上市通常需补缴土地出让金;标准价购房属部分产权</td><td>会(老小区主体,如各类家属院)</td></tr>
+<tr><td>央产房</td><td>中央单位已购公房(房改房特殊类)</td><td>需原产权单位/住房资金中心审核上市</td><td>会</td></tr>
+<tr><td>经济适用房</td><td>政策优惠、限定面积与售价</td><td>如广州:签合同满 5 年且取得权证方可申请上市</td><td>会</td></tr>
+<tr><td>限价商品房</td><td>市场化商品住房,权属证书注明"限价"</td><td>购房资格与转让受政策约束</td><td>会</td></tr>
+<tr><td>共有产权房</td><td>政府与购房人按份共有</td><td>如北京:取证未满 5 年不得转让(可由代持机构回购),满 5 年可按市场价转让份额</td><td>会</td></tr>
+<tr><td>安置房 / 回迁房</td><td>拆迁补偿形成,产权视安置协议而定</td><td>视登记性质与当地补缴规则</td><td>会</td></tr>
+<tr><td>人才住房</td><td>面向特定群体的政策性住房</td><td>持有年限、转让对象、政府回购等限制</td><td>会</td></tr>
+<tr><td>自建房</td><td>多为集体土地上自建</td><td>能否登记与交易视土地性质与历史审批</td><td>部分</td></tr>
+<tr><td>小产权房</td><td>集体土地,无国家颁发的产权证书,合同不备案</td><td>产权不受完整法律保护</td><td>不应出现;出现即高风险条目</td></tr>
+<tr><td>军产房</td><td>军队系统管理房产</td><td>多按军队内部程序办理,难以地方过户</td><td>边缘出现</td></tr>
+</table>
+
+<div class="note">数据解读要点:清单只告诉我们"这是一个挂牌聚合单元",<b>不告诉我们房子的产权类型</b>。老小区大概率混着房改房与少量回迁房,新小区以商品房为主,但这只能作为概率判断。名字里的"家属院/宿舍"是房改房最可靠的文本信号(见 1.4)。</div>
+
+<!-- ============================================================ -->
+<h2 id="s6"><span class="no">6</span>字段字典</h2>
+
+<p>当前 schema 共 13 个字段,逐一定义与解读边界:</p>
+
+<table class="t">
+<tr><th style="width:150px">字段</th><th>是什么</th><th>解读注意</th></tr>
+<tr><td>City 城市</td><td>房产平台城市站点的归属城市</td><td>≠严格行政区划:县级市可能独立建站;省直辖县级市无上级地级市;需另行建立城市→省映射</td></tr>
+<tr><td>Name (a) 小区名</td><td>平台收录的小区名称</td><td>专名+通名结构(见 1.4);同城市重名小区需以区县/道路消歧</td></tr>
+<tr><td>Year Built (b) 竣工年份</td><td>竣工验收合格年份</td><td>约 30–50% 缺失;分期开发下口径不一(见 4.2);缺失即缺失,不推算</td></tr>
+<tr><td>District (c) 区县</td><td>小区所属县级区划(市辖区/县/县级市/旗)</td><td>可映射民政部区划代码做严格聚合;少数为"N/A"或简称</td></tr>
+<tr><td>Sub-district (d) 商圈</td><td>平台划分的商圈/板块</td><td>市场概念,非行政区划,跨平台不可比(见 2.3)</td></tr>
+<tr><td>Road (e) 道路</td><td>门牌道路地址</td><td>定位精度最高的人类可读字段;含"XX路N号"结构</td></tr>
+<tr><td>Nearby (f) 配套标签</td><td>地铁线路、配套特征等标签</td><td>平台生成,覆盖不全,只能作弱信号</td></tr>
+<tr><td>Second-hand (h) 二手挂牌量</td><td>该小区在售二手房源数</td><td>平台收录口径,反映供给侧活跃度,非成交</td></tr>
+<tr><td>Rent (i) 租房挂牌量</td><td>该小区在租房源数<sup><a class="ref" href="#src-26">[26]</a></sup></td><td>同上,租赁供给口径</td></tr>
+<tr><td>Price (k) 挂牌均价</td><td>在售房源挂牌价平均(元/m²)</td><td>卖方报价口径(见 3.3);"暂无均价"=缺失,不是 0</td></tr>
+<tr><td>Price Change (l) 价格变动</td><td>平台计算的近期价格变动率</td><td>口径不透明,仅作参考</td></tr>
+<tr><td>Fetch Date (m) 抓取日期</td><td>该行数据的采集时间</td><td><b>每行都带时间戳</b>,混合批次必须按快照区分</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="s7"><span class="no">7</span>两个分析视图</h2>
+
+<p>框架立好后,专题一先落两个不依赖行情解读的结构性视图:</p>
+
+<table class="t">
+<tr><th style="width:220px"><a href="explorer.html">价格浏览器:省 → 市 → 区县</a></th><td>逐级下钻:省 → 城市 → 区县,每级给出小区数、挂牌中位数、分位区间。层级即第 2 节的行政区划体系;所有城市→省的映射、区县→类型(市辖区/县/县级市)的标记都在这里体现。</td></tr>
+<tr><th><a href="age-price.html">年份 × 价格:城市级曲线</a></th><td>按竣工年份分段(每 5 年)统计各城市挂牌中位数,观察"建成年代 → 报价水平"的结构关系。只统计有竣工年份的小区,缺失不插补;核心区老房的韧性(见 1.1/4.3)会在一线城市的曲线里显形。</td></tr>
+</table>
+
+<p class="dim">两个视图当前均填充模拟数据(结构、字段、缺失形态对齐真实抓取),真实数据接入后无需改版。</p>
+
+<!-- ============================================================ -->
+<h2 id="s8"><span class="no">8</span>口径与局限</h2>
+
+<table class="t">
+<tr><th style="width:230px">局限</th><th>处理方式</th></tr>
+<tr><td>挂牌价 ≠ 成交价</td><td>只做挂牌体系内部比较,不推断成交水平(见 3.3)</td></tr>
+<tr><td>样本为站点头部样本</td><td>多数城市采集的是平台默认排序前若干页,偏向活跃小区;统计结果代表"平台可见样本",不推及全市存量</td></tr>
+<tr><td>多批次时间快照混合</td><td>按 Fetch Date 分快照,聚合时注明;不同快照之间不做趋势推断</td></tr>
+<tr><td>覆盖缺口</td><td>部分城市因采集故障缺失或不足,发布时如实标注覆盖情况,不填补</td></tr>
+<tr><td>城市归属错误风险</td><td>历史批次存在城市错标,清洗规则:去导航垃圾行、以平台 URL 域名校验城市、同城同指纹去重</td></tr>
+<tr><td>年份缺失与口径不一</td><td>缺失即缺失,不插补;大盘分期导致的年份跨度如实保留</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="s9"><span class="no">9</span>来源</h2>
+
+<ol class="src">
+<li id="src-1">住建部《城市居住区规划设计标准》GB 50180-2018 — https://www.awhouse.art/gb50180-2018</li>
+<li id="src-2">GB 50180-2018 第3章基本规定及条文说明 — https://gf.cabr-fire.com/m/article-28022.htm</li>
+<li id="src-3">贵州省《物业管理区域划分办法》黔府办发〔2025〕15号 — https://www.guizhou.gov.cn/zwgk/zcfg/szfwj/qfbf/202509/t20250911_88604215.html</li>
+<li id="src-4">《安徽省物业管理条例》(2026年施行) — https://sft.ah.gov.cn/zhzx/mtbd/58087051.html</li>
+<li id="src-5">《不动产登记暂行条例实施细则》不动产单元释义(中国政府网) — https://www.gov.cn/gongbao/2024/issue_11506/202408/content_6966482.html</li>
+<li id="src-6">《北京市不动产登记工作规范》 — https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/zcwj/gfxwj/202406/t20240605_3704790.html</li>
+<li id="src-7">《城市房地产开发经营管理条例》(分期开发分期验收) — https://www.gov.cn/gongbao/content/2011/content_1860859.htm</li>
+<li id="src-8">《房屋建筑和市政基础设施工程竣工验收备案管理办法》 — https://www.gov.cn/zhengce/2022-01/25/content_5712060.htm</li>
+<li id="src-9">《地名管理条例》第九条(民政部) — https://www.mca.gov.cn/gdnps/mobile/content.jsp?id=116051</li>
+<li id="src-10">上海一网通办:居住区、居住建筑命名规则 — https://zwdt.sh.gov.cn/govPortals/bsfw/item/29be1362-d447-493d-bb6a-a4a9ef5e6559</li>
+<li id="src-11">《武汉市新建住宅区、楼宇名称管理规范》 — https://www.wuhan.gov.cn/gwfbpt/sbm/szfbzhfwglj_79512/202607/t20260702_2816049.shtml</li>
+<li id="src-12">九江市《关于进一步规范市城区住宅区、楼宇命(更)名管理的通知》 — http://zjj.jiujiang.gov.cn/zwgk_208/jc/sjwj/202209/P020231221524267295579.pdf</li>
+<li id="src-13">中国政府网·国情(34个省级行政区) — https://www.gov.cn/guoqing/index.htm</li>
+<li id="src-14">民政部《行政区划代码管理办法》 — https://www.gov.cn/gongbao/2025/issue_12226/202508/content_7036972.html</li>
+<li id="src-15">区划地名网·中国行政区划统计(2025/2026) — https://www.xzqh.org/show/china/2026/2026.html</li>
+<li id="src-16">民政部2025年四季度民政统计数据 — https://www.mca.gov.cn/mzsj/xzqh/2025/202504tjsj.htm</li>
+<li id="src-17">《中华人民共和国城市居民委员会组织法》 — http://paper.people.com.cn/rmrb/pad/content/202602/27/content_30142533.html</li>
+<li id="src-18">西安市新城区政府·胡家庙街道陕汽社区 — http://www.xincheng.gov.cn/ztzl/bmzqfwzl/sqxx/hjmjd/1.html</li>
+<li id="src-19">《城市房地产管理法》第三条(中国人大网) — http://www.npc.gov.cn/zgrdw/npc/lfzt/rlyw/2019-01/03/content_2070160.htm</li>
+<li id="src-20">《民法典》第359条(最高人民法院公报) — http://gongbao.court.gov.cn/Details/dfe439fb9450f0525bd7e7b50a6242.html</li>
+<li id="src-21">广州市政务服务网·经济适用住房上市交易 — https://www.gdzwfw.gov.cn/portal/v2/guide/11440100007482612P3442114281001</li>
+<li id="src-22">北京本地宝·共有产权房上市交易管理 — https://m.bj.bendibao.com/zffw/gycqf/</li>
+<li id="src-23">房天下·挂牌价/网签价/指导价/评估价区别 — http://m.fang.com/zhishi/xf/qg_1045628.html</li>
+<li id="src-24">华龙网·网签价、成交价、评估价如何理解 — https://news.cqnews.net/1/detail/1196106760039452672/h5/content_1196106760039452672.html</li>
+<li id="src-25">嘉兴市住建局·二手房资金监管流程 — http://zhfg.jsj.jiaxing.gov.cn:8013/guid/WebXqFyAction_toGuideZjjgbllc.jspx</li>
+<li id="src-26">上海市住房租赁公共服务平台 — https://zfzl.fgj.sh.gov.cn/#nav_canvas</li>
+<li id="src-27">贵阳市南明区政府·花果园片区(规模口径) — https://www.nanming.gov.cn/nmxw/nmxw/202509/t20250927_88657027.html</li>
+<li id="src-28">中共中央社会工作部·上海康城社区治理 — https://www.zyshgzb.gov.cn/n1/2025/0812/c460744-40540673.html</li>
+</ol>
+
+<footer>
+  专题一 · 中国城市小区数据体系 — 概念框架与数据字典。<br>
+  数据说明:价格浏览器与年份分析页当前为模拟数据演示,结构对齐真实抓取 schema;真实数据接入后自动适用本页全部口径定义。
+</footer>
+</main>
+</div>
+<script>
+// TOC 高亮
+const links=[...document.querySelectorAll('nav.toc a')];
+const secs=[...document.querySelectorAll('h2[id],h3[id]')];
+window.addEventListener('scroll',()=>{
+  let cur=null;
+  for(const s of secs){if(s.getBoundingClientRect().top<120)cur=s.id}
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+</script>
+</body>
+</html>

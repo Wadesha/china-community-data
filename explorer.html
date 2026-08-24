@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>价格浏览器 · 省市区县下钻 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.7;color:#111;background:#fff}
+a{color:#111}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 60px}
+header{border-bottom:2px solid #111;padding:22px 0 14px;margin-bottom:18px}
+header .kicker{font-size:12px;color:#666;letter-spacing:2px}
+header h1{font-size:22px;font-weight:700;margin-top:2px}
+.topnav{display:flex;gap:16px;font-size:13px;margin-top:10px}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{border-bottom:2px solid #111;font-weight:600}
+.crumb{font-size:13px;color:#666;margin-bottom:14px}
+.crumb b{color:#111;font-weight:600}
+.crumb a{text-decoration:none;border-bottom:1px solid #bbb}
+.crumb .sep{margin:0 6px;color:#aaa}
+.banner{border:1px solid #111;background:#f7f7f7;padding:8px 14px;font-size:12.5px;margin-bottom:18px}
+.cols{display:flex;gap:14px;align-items:flex-start}
+.list{border:1px solid #ddd;min-width:190px}
+.list .hd{background:#f2f2f2;padding:7px 12px;font-size:12.5px;font-weight:600;border-bottom:1px solid #ddd;letter-spacing:1px}
+.list .items{max-height:560px;overflow-y:auto}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 12px;border-bottom:1px solid #f0f0f0;cursor:pointer;font-size:13px}
+.item:hover{background:#f7f7f7}
+.item.on{background:#111;color:#fff}
+.item.on .m{color:#ccc}
+.item .m{font-size:11.5px;color:#888;font-variant-numeric:tabular-nums;white-space:nowrap}
+.panel{flex:1;min-width:0}
+h2.pt{font-size:16px;font-weight:700;margin-bottom:4px}
+p.psub{font-size:12.5px;color:#666;margin-bottom:14px}
+table.t{border-collapse:collapse;width:100%;font-size:13px}
+table.t th{background:#f2f2f2;border:1px solid #ddd;padding:6px 10px;text-align:left;font-weight:600;white-space:nowrap}
+table.t td{border:1px solid #ddd;padding:6px 10px;vertical-align:middle}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:11px;background:#e8e8e8;position:relative;min-width:120px}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:#555;display:block}
+.dim{color:#888;font-size:12px}
+.tag{display:inline-block;font-size:11px;color:#666;border:1px solid #ccc;padding:0 5px;margin-left:6px;white-space:nowrap}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:16px 0;font-size:12.5px;color:#444}
+.hint{color:#999;font-size:13px;padding:40px 20px;text-align:center;border:1px dashed #ccc}
+@media(max-width:820px){.cols{flex-direction:column}.list{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">CHINA RESIDENTIAL COMMUNITY DATA · 专题一 · 视图一</div>
+  <h1>价格浏览器:省 → 市 → 区县</h1>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html" class="cur">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+  </div>
+</header>
+<div class="banner">模拟数据演示:数值为模拟生成,不代表任何真实小区;层级结构与真实数据对齐(省→城市→区县→小区)。聚合一律用挂牌中位数。</div>
+
+<div class="crumb" id="crumb"><b>全国</b> — 选择左侧省份开始下钻</div>
+
+<div class="cols">
+  <div class="list" id="colProv">
+    <div class="hd">省级单位</div>
+    <div class="items" id="provItems"></div>
+  </div>
+  <div class="list" id="colCity" style="display:none">
+    <div class="hd">城市 <span class="dim" id="cityHdSub"></span></div>
+    <div class="items" id="cityItems"></div>
+  </div>
+  <div class="panel" id="panel">
+    <div class="hint">从左侧选择省份 → 城市,查看区县级统计<br><span class="dim">层级依据:行政区划体系(市辖区/县/县级市/旗等县级单位);城市站点口径见概述 §2</span></div>
+  </div>
+</div>
+
+<div class="note">
+口径说明:(1) 中位数为挂牌均价的中位数,挂牌价≠成交价;(2) P25/P75 为样本四分位,反映区内价差;(3) 区县类型标记依据行政区划:核心区/主城/近郊等为演示用相对标记,县级市(代管)、县、街道/镇为区划类型;(4) "暂无均价"类缺失不计入统计。
+</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let DATA=null,sel={prov:null,city:null};
+
+function median(a){if(!a.length)return null;const s=[...a].sort((x,y)=>x-y);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2}
+function quant(a,q){if(!a.length)return null;const s=[...a].sort((x,y)=>x-y);return s[Math.min(s.length-1,Math.floor(q*s.length))]}
+function fmt(n){return n==null?'—':Math.round(n).toLocaleString('zh-CN')}
+
+function citiesOf(p){return p.cities}
+function districtsOf(c){return c.districts}
+function stats(comms){const ps=comms.map(c=>c.price);return{n:comms.length,med:median(ps),p25:quant(ps,.25),p75:quant(ps,.75)}}
+
+function renderCrumb(){
+  const c=$('crumb');
+  let h='<b>全国</b>';
+  if(sel.prov){h+='<span class="sep">›</span><a href="javascript:void(0)" onclick="pickProv(null)">'+sel.prov.name+'</a>'}
+  if(sel.city){h+='<span class="sep">›</span><b>'+sel.city.name+'</b>'}
+  c.innerHTML=h;
+}
+
+function renderProvList(){
+  const box=$('provItems');
+  box.innerHTML=DATA.provinces.map((p,i)=>{
+    let n=0;p.cities.forEach(c=>c.districts.forEach(d=>n+=d.communities.length));
+    return `<div class="item${sel.prov===p?' on':''}" onclick="pickProv(DATA.provinces[${i}])"><span>${p.name}</span><span class="m">${n} 小区</span></div>`;
+  }).join('');
+}
+
+function pickProv(p){
+  sel.prov=p;sel.city=null;
+  $('colCity').style.display=p?'block':'none';
+  renderCrumb();renderProvList();
+  if(!p){$('panel').innerHTML='<div class="hint">从左侧选择省份</div>';return}
+  renderCityList();
+  $('panel').innerHTML='<div class="hint">'+p.name+(p.type?' · '+p.type:'')+' — 继续选择城市</div>';
+}
+
+function renderCityList(){
+  const p=sel.prov,box=$('cityItems');
+  let all=0;p.cities.forEach(c=>c.districts.forEach(d=>all+=d.communities.length));
+  $('cityHdSub').textContent='共'+all+'小区';
+  box.innerHTML=p.cities.map((c,i)=>{
+    let n=0;c.districts.forEach(d=>n+=d.communities.length);
+    const ps=[];c.districts.forEach(d=>d.communities.forEach(x=>ps.push(x.price)));
+    return `<div class="item${sel.city===c?' on':''}" onclick="pickCity(${i})"><span>${c.name}</span><span class="m">${n}·${fmt(median(ps))}</span></div>`;
+  }).join('');
+}
+
+function pickCity(i){
+  sel.city=sel.prov.cities[i];
+  renderCrumb();renderCityList();
+  renderDistrictPanel();
+}
+
+function renderDistrictPanel(){
+  const c=sel.city;
+  const rows=c.districts.map(d=>{
+    const s=stats(d.communities);
+    const top=d.communities.reduce((a,b)=>b.price>a.price?b:a);
+    return {...s,name:d.name,kind:d.kind_cn,top};
+  }).sort((a,b)=>b.med-a.med);
+  const maxMed=Math.max(...rows.map(r=>r.med));
+  let cityPS=[];c.districts.forEach(d=>d.communities.forEach(x=>cityPS.push(x.price)));
+  const cityStat={n:cityPS.length,med:median(cityPS),p25:quant(cityPS,.25),p75:quant(cityPS,.75)};
+  let h=`<h2 class="pt">${c.name}<span class="tag">${c.tier}</span></h2>
+  <p class="psub">小区 ${cityStat.n} 个 · 挂牌中位数 ${fmt(cityStat.med)} 元/m² · P25–P75 ${fmt(cityStat.p25)}–${fmt(cityStat.p75)}</p>
+  <table class="t"><tr><th>区县</th><th>类型</th><th class="num">小区数</th><th class="num">中位数</th><th>中位数相对位置</th><th class="num">P25</th><th class="num">P75</th><th class="num">区内最高挂牌</th></tr>`;
+  rows.forEach(r=>{
+    const w=Math.round(r.med/maxMed*100);
+    h+=`<tr><td>${r.name}</td><td>${r.kind}</td><td class="num">${r.n}</td><td class="num"><b>${fmt(r.med)}</b></td>
+    <td><div class="bar"><i style="width:${w}%"></i></div></td>
+    <td class="num">${fmt(r.p25)}</td><td class="num">${fmt(r.p75)}</td><td class="num">${fmt(r.top.price)} <span class="dim">${r.top.name}</span></td></tr>`;
+  });
+  h+='</table>';
+  h+='<p class="dim" style="margin-top:8px">排序:按挂牌中位数降序。条形为该区县中位数相对本市最高区县的比例。</p>';
+  $('panel').innerHTML=h;
+}
+
+fetch('data/communities.json').then(r=>r.json()).then(d=>{
+  DATA=d;
+  renderProvList();
+}).catch(e=>{
+  $('crumb').innerHTML='<b>数据加载失败</b> — 本地预览请用 <code>python3 -m http.server</code> 在 site 目录启动后访问';
+});
+</script>
+</body>
+</html>

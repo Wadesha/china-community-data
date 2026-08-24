@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年份 × 价格 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.7;color:#111;background:#fff}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+header{border-bottom:2px solid #111;padding:22px 0 14px;margin-bottom:18px}
+header .kicker{font-size:12px;color:#666;letter-spacing:2px}
+header h1{font-size:22px;font-weight:700;margin-top:2px}
+.topnav{display:flex;gap:16px;font-size:13px;margin-top:10px}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{border-bottom:2px solid #111;font-weight:600}
+.banner{border:1px solid #111;background:#f7f7f7;padding:8px 14px;font-size:12.5px;margin-bottom:18px}
+.ctrl{display:flex;gap:14px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.ctrl label{font-size:13px;color:#555}
+select{font-family:inherit;font-size:13px;padding:5px 8px;border:1px solid #bbb;background:#fff}
+h2.pt{font-size:16px;font-weight:700;margin:6px 0 2px}
+p.psub{font-size:12.5px;color:#666;margin-bottom:12px}
+.chartbox{border:1px solid #ddd;padding:14px;margin-bottom:18px;overflow-x:auto}
+svg text{font-family:inherit}
+table.t{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px}
+table.t th{background:#f2f2f2;border:1px solid #ddd;padding:6px 10px;text-align:left;font-weight:600;white-space:nowrap}
+table.t td{border:1px solid #ddd;padding:6px 10px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dim{color:#888;font-size:12px}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:16px 0;font-size:12.5px;color:#444}
+.hint{color:#999;font-size:13px;padding:40px 20px;text-align:center;border:1px dashed #ccc}
+.legend{font-size:12px;color:#555;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">CHINA RESIDENTIAL COMMUNITY DATA · 专题一 · 视图二</div>
+  <h1>年份 × 价格:建成年代与挂牌水平</h1>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html" class="cur">年份 × 价格</a>
+    <a href="history.html">中国小区史</a>
+  </div>
+</header>
+<div class="banner">模拟数据演示:数值为模拟生成。视图只统计<b>有竣工年份</b>的小区,缺失不插补(真实数据约 30–50% 缺年份);聚合一律用挂牌中位数。</div>
+
+<div class="ctrl">
+  <label>城市</label>
+  <select id="citySel"></select>
+  <span class="dim" id="cityMeta"></span>
+</div>
+
+<div id="content"><div class="hint">加载中…</div></div>
+
+<div class="note">
+口径说明:(1) 横轴为竣工年份分段(每 5 年),依据"竣工验收合格年份"字段,分期大盘口径不一(见概述 §4.2);(2) 纵轴为该年份段内小区挂牌均价的中位数;(3) 样本数过少的年份段(n&lt;5)以浅色弱化,解读时须谨慎;(4) 曲线形态反映三重机制:建筑折旧、产品代际(配套/户型/物业)、以及核心区老房的地段韧性(见概述 §1、§4)。挂牌价≠成交价。
+</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let DATA=null;
+
+function median(a){if(!a.length)return null;const s=[...a].sort((x,y)=>x-y);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2}
+function quant(a,q){if(!a.length)return null;const s=[...a].sort((x,y)=>x-y);return s[Math.min(s.length-1,Math.floor(q*s.length))]}
+function fmt(n){return n==null?'—':Math.round(n).toLocaleString('zh-CN')}
+
+function cityList(){
+  const arr=[];
+  DATA.provinces.forEach(p=>p.cities.forEach(c=>arr.push({p:p.name,c:c})));
+  return arr;
+}
+
+function binsOf(city){
+  const m=new Map();
+  city.districts.forEach(d=>d.communities.forEach(x=>{
+    if(x.year==null)return;
+    const b=Math.floor(x.year/5)*5;
+    if(!m.has(b))m.set(b,[]);
+    m.get(b).push(x.price);
+  }));
+  return [...m.entries()].sort((a,b)=>a[0]-b[0]).map(([b,ps])=>({
+    b,lo:b,hi:b+4,n:ps.length,med:median(ps),p25:quant(ps,.25),p75:quant(ps,.75),mean:ps.reduce((s,v)=>s+v,0)/ps.length
+  }));
+}
+
+function render(){
+  const ci=+$('citySel').value;
+  const all=cityList();
+  const {p,c}=all[ci];
+  const bins=binsOf(c);
+  let total=0,withY=0;
+  c.districts.forEach(d=>d.communities.forEach(x=>{total++;if(x.year!=null)withY++}));
+  $('cityMeta').textContent=`${p} · ${c.tier} · 小区 ${total} 个,有竣工年份 ${withY} 个(${Math.round(withY/total*100)}%)`;
+
+  if(!bins.length){$('content').innerHTML='<div class="hint">该城市无带竣工年份的样本</div>';return}
+
+  const W=880,H=340,L=70,R=16,T=20,B=52;
+  const x0=Math.min(...bins.map(b=>b.lo)),x1=Math.max(...bins.map(b=>b.hi));
+  const yMax=Math.max(...bins.map(b=>b.p75))*1.05;
+  const X=v=>L+(v-x0)/(x1-x0+4)*(W-L-R);
+  const Y=v=>H-B-(v/yMax)*(H-T-B);
+
+  let svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:720px">`;
+  // 网格与y轴
+  const ySteps=5;
+  for(let i=0;i<=ySteps;i++){
+    const v=yMax/ySteps*i,y=Y(v);
+    svg+=`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#e8e8e8"/>`;
+    svg+=`<text x="${L-6}" y="${y+4}" text-anchor="end" font-size="11" fill="#888">${fmt(v/1000)}k</text>`;
+  }
+  // x轴
+  bins.forEach(b=>{
+    const x=(X(b.lo)+X(b.hi))/2;
+    svg+=`<line x1="${x}" y1="${H-B}" x2="${x}" y2="${H-B+4}" stroke="#999"/>`;
+    svg+=`<text x="${x}" y="${H-B+16}" text-anchor="middle" font-size="11" fill="#666">${b.lo}–${String(b.hi).slice(2)}</text>`;
+    svg+=`<text x="${x}" y="${H-B+29}" text-anchor="middle" font-size="10" fill="#aaa">n=${b.n}</text>`;
+  });
+  svg+=`<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#111"/>`;
+  svg+=`<line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#111"/>`;
+
+  // P25-P75 带
+  bins.forEach(b=>{
+    const x1=X(b.lo)+2,x2=X(b.hi)-2;
+    svg+=`<rect x="${x1}" y="${Y(b.p75)}" width="${Math.max(2,x2-x1)}" height="${Math.max(0,Y(b.p25)-Y(b.p75))}" fill="#e2e2e2"/>`;
+  });
+  // 中位线
+  let path='';
+  bins.forEach((b,i)=>{
+    const x=(X(b.lo)+X(b.hi))/2,y=Y(b.med);
+    path+=(i?'L':'M')+x+' '+y+' ';
+  });
+  svg+=`<path d="${path}" fill="none" stroke="#111" stroke-width="1.8"/>`;
+  bins.forEach(b=>{
+    const x=(X(b.lo)+X(b.hi))/2,y=Y(b.med);
+    const weak=b.n<5;
+    svg+=`<circle cx="${x}" cy="${y}" r="${weak?2.5:3.5}" fill="${weak?'#fff':'#111'}" stroke="#111" stroke-width="1.2"><title>${b.lo}–${b.hi}:中位 ${fmt(b.med)} 元/m²,样本 ${b.n}</title></circle>`;
+  });
+  svg+='</svg>';
+
+  let h=`<h2 class="pt">${c.name} · 挂牌中位数 × 竣工年份段</h2>
+  <p class="psub">灰带为 P25–P75 分位区间;空心点为样本数不足 5 的年份段</p>
+  <div class="chartbox">${svg}</div>
+  <table class="t"><tr><th>年份段</th><th class="num">样本数</th><th class="num">中位数</th><th class="num">P25</th><th class="num">P75</th><th class="num">均值</th></tr>`;
+  bins.slice().reverse().forEach(b=>{
+    h+=`<tr><td>${b.lo}–${b.hi}${b.n<5?' <span class="dim">(样本少)</span>':''}</td><td class="num">${b.n}</td><td class="num"><b>${fmt(b.med)}</b></td><td class="num">${fmt(b.p25)}</td><td class="num">${fmt(b.p75)}</td><td class="num">${fmt(b.mean)}</td></tr>`;
+  });
+  h+='</table>';
+  $('content').innerHTML=h;
+}
+
+fetch('data/communities.json').then(r=>r.json()).then(d=>{
+  DATA=d;
+  const all=cityList();
+  $('citySel').innerHTML=all.map((x,i)=>`<option value="${i}">${x.c.name}(${x.p})</option>`).join('');
+  const def=all.findIndex(x=>x.c.name==='上海');
+  $('citySel').value=def>=0?def:0;
+  $('citySel').onchange=render;
+  render();
+}).catch(()=>{
+  $('content').innerHTML='<div class="hint">数据加载失败 — 本地预览请在 site 目录运行 <code>python3 -m http.server</code> 后访问</div>';
+});
+</script>
+</body>
+</html>
