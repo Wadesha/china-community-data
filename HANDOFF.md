@@ -32,12 +32,16 @@ claw/anjuke/
     ├── index.html                     # 专题概述:概念框架+字段字典(28项官方来源)
     ├── explorer.html                  # 价格浏览器:省→市→区县下钻(读 communities.json)
     ├── age-price.html                 # 年份×价格:竣工年份段×挂牌中位数曲线(同上)
+    ├── map.html                       # 地图·灰度:零依赖内嵌SVG省级边界(260KB),中位数六档分位灰阶,点击列省内城市(同上)
+    ├── map-echarts.html               # 地图·彩色:自托管ECharts默认渐变,线性映射,点击下钻至省内(直辖市区县/省地市)
     ├── history.html                   # 《中国居住建筑史》第一卷:六编四附录(177KB,独立无依赖)
     ├── planning.html                  # 《中国城市规划与区域发展》第二卷:六编四附录(122KB,同体例,先秦—2026)
     ├── landscape.html                 # 《中国近现代城乡风貌》第三卷:六编四附录(125KB,同体例,1840—2026,含识别工具)
     ├── region.html                    # 《中国区域志》第四卷:六编四附录(208KB,同体例,六大区逐地实录,31 省全部地级政区逐省列表)
     ├── hotspot.html                   # 《中国城市热点片区》第五卷:六编四附录(189KB,同体例,2016—2026 被反复谈论的 36 个片区,每条三段式:能看到什么→近几年发生了什么→怎么来的)
     ├── data/communities.json          # ★ 站点数据文件(当前模拟,结构对齐真实 schema)
+    ├── data/geo/                      # ★ 地图边界GeoJSON:china.json(35要素含九段线)+ 10省下边界(110000/310000/320000/330000/370000/410000/420000/440000/510000/610000),阿里DataV GeoAtlas
+    ├── assets/echarts.min.js          # 自托管ECharts 5.6(约1MB),map-echarts.html唯一依赖
     ├── tools/generate_sim_data.py     # 模拟数据生成器(seed=20260824 可复现)
     └── README.md                      # 仓库门面(首行即站点链接)
 ```
@@ -72,12 +76,14 @@ Price Change (l), Fetch Date (m)
 
 ### 3.1 架构决策(勿推翻)
 
-- **零依赖纯静态**:无框架、无构建步骤、无 node_modules。七个 HTML + 一个 JSON,`python3 -m http.server` 即可本地预览。
+- **零依赖纯静态**:无框架、无构建步骤、无 node_modules。十个 HTML + 数据 JSON + 边界 GeoJSON + 自托管 ECharts,`python3 -m http.server` 即可本地预览。
+- **两个地图页的分工**:map.html 零依赖——省级边界为内嵌 SVG 路径(Douglas-Peucker 简化后直接写进 HTML),灰阶按有数据省份的中位数六档分位分档;map-echarts.html 依赖 assets/echarts.min.js(自托管,无 CDN),色带为 ECharts 内置默认渐变(未指定 inRange 即取主题 gradientColor:浅黄→深红),线性映射 min—max,支持 roam 缩放平移与点击下钻(直辖市区县级、省地市级,口径按"地理要素与城市/区县名命中数多者"自动判定)。两页同源同口径,都读 data/communities.json。
+- **data/geo/ 的 adcode 约定**:china.json 35 要素 = 34 政区 + 九段线(properties.adchar='JD',页面侧命名为"九段线(示意)"以便 tooltip 区分,不参与填色);省级下钻文件按 adcode 命名(110000.json 即北京)。**新省份接入数据时需补对应 geo 文件**,否则该省可着色但不可下钻。
 - **history.html / planning.html / landscape.html / region.html / hotspot.html 完全自包含**:不读 JSON、无外部资源,单文件可独立打开。planning.html、landscape.html、region.html、hotspot.html 与 history.html 同体例(条目/定义段/技术档案/图版/参见),但**编号独立**——五卷的"图 n-n""档 n-n"互不相涉,校验脚本按文件分开跑。
-- 数据页面(explorer/age-price)启动时 `fetch('data/communities.json')`,注意:本地直接双击打开会因 file:// 协议 CORS 失败,**必须起 http 服务**。
-- 设计约束:**只用黑白灰、无图标、紧凑布局**(用户明确要求,见 §8)。
+- 数据页面(explorer/age-price/map/map-echarts)启动时 `fetch('data/communities.json')`,注意:本地直接双击打开会因 file:// 协议 CORS 失败,**必须起 http 服务**。
+- 设计约束:**只用黑白灰、无图标、紧凑布局**(用户明确要求,见 §8)。地图彩色页是用户明确批准的唯一例外——地图本身用 ECharts 默认彩色色带,页面外壳仍黑白灰。
 
-### 3.2 站点 JSON schema(explorer/age-price 的消费格式)
+### 3.2 站点 JSON schema(explorer/age-price/map/map-echarts 的消费格式)
 
 ```json
 {
@@ -116,9 +122,9 @@ Price Change (l), Fetch Date (m)
 2. `Year Built (b)` 空/非 4 位数字 → `year: null`;
 3. District/Sub-district 两个粒度都有:当前 schema 只用 `District (c)`(区县级),Sub-district(商圈/街道)可进 `biz` 字段;
 4. 城市归属以爬虫批次 fetch 日期 + 待补清单 §1 排查结果双重校验;
-5. 生成后跑一遍三个页面人工抽查(错标 bug 的教训)。
+5. 生成后跑一遍四个数据页面人工抽查(错标 bug 的教训);新省份出现时同步补 data/geo/<adcode>.json。
 
-数据量大时注意:全量 37 万小区的 JSON 会很大,GitHub Pages 单文件建议 <10MB。可按省拆分或先做城市级聚合(站点两个视图其实只需要区县级聚合 + 明细,评估后再定)。
+数据量大时注意:全量 37 万小区的 JSON 会很大,GitHub Pages 单文件建议 <10MB。可按省拆分或先做城市级聚合(站点四个数据视图只需要区县级聚合 + 明细,评估后再定)。
 
 ## 4. 百科卷:体例与编号系统(history.html / planning.html / landscape.html / region.html / hotspot.html)
 
@@ -211,11 +217,13 @@ git push        # 凭据走 macOS 钥匙串(osxkeychain),无需配置
 | 本地双击 HTML 白屏 | file:// 下 fetch JSON 被 CORS 拦,`python3 -m http.server 8000` 起服务访问 |
 | OneDrive 大文件写入截断 | 见 §2.3,/tmp 中转 |
 
-## 7. 当前进度快照(2026-08-24)
+## 7. 当前进度快照(2026-08-25)
 
 - [x] 数据爬取 38.1 万行/333 城(真实,有缺口)
 - [x] 错标五城清除(合肥/宿州/常州/烟台/青岛 → 0 数据,待重抓)
-- [x] 站点八页面完成,模拟数据(10 省/32 城/3798 小区)
+- [x] 站点十页面完成,模拟数据(10 省/32 城/184 区县/3798 小区)
+- [x] map.html 完成(2026-08-25):视图三·灰度地图,内嵌 SVG 省级边界(Douglas-Peucker 简化,tolerance 0.01,260KB),六档分位灰阶,九段线独立样式,悬停 tooltip + 点击侧栏列省内城市
+- [x] map-echarts.html 完成(2026-08-25):视图四·彩色地图,自托管 ECharts 5.6,内置默认渐变线性映射,roam 缩放平移,点击下钻(直辖市区县级/省地市级,命中数判定口径),排行表随视图切换;聚合与下钻匹配逻辑经 jsc 全量测试通过(10 省着色、直辖市下钻区县、省下钻地市、济源/仙桃等省直辖县级市正确匹配)
 - [x] history.html 全卷完成:六编 + 术语表32条 + 来源65条 + 总年表44事 + 图版档案目录
 - [x] planning.html 全卷完成(2026-08-24):六编(营国与里坊/近代市政转型/计划经济规划/恢复与土地革命/城市化加速/国土空间规划)+ 22 条目 + 图版9 + 档案6 + 术语32 + 来源11 + 总年表;六页 topnav 互链、index §8 三卷导览
 - [x] landscape.html 全卷完成(2026-08-24):六编(近代输入/单位建造/市场建造/保护名录与管控/当代乡村/当代城市与识别谱系)+ 图版9 + 档案6 + 术语32 + 来源12 + 总年表;起点即 1840 不写古代,第六编与附录为识别工具(年代鉴定五维法、街道剖面法、乡村四代谱系)
@@ -244,7 +252,7 @@ git push        # 凭据走 macOS 钥匙串(osxkeychain),无需配置
 | 任务 | 步骤 |
 |---|---|
 | 补抓某城市 | 排查城市归属 bug → 跑 `anjuke_scraper_pw6.py`(先 update_cookie) → 数据追加主 CSV → 更新待补清单 |
-| 真实数据上线 | 写 csv_to_json.py(§3.3)→ 替换 communities.json → meta.simulated=false → 三页抽查 → commit+push |
+| 真实数据上线 | 写 csv_to_json.py(§3.3)→ 替换 communities.json → meta.simulated=false → 四个数据页抽查 → commit+push |
 | 新增词条/图版/档案 | 按 §4.1 编号 → 附录 A/C/D 同步 → 跑三个校验 → push |
-| 新页面 | 复制任一现有页的 header/topnav 结构 → topnav 七页互链同步更新 → README 表格补行 |
+| 新页面 | 复制任一现有页的 header/topnav 结构 → topnav 十页互链同步更新 → README 表格补行 |
 | 改聚合口径 | **不要改**。中位数+不插补是写进口径说明的约定,改了须同步三处口径文本 |

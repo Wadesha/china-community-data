@@ -73,7 +73,7 @@ footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5
   <a href="#s4">4 · 年份:竣工年份是什么</a>
   <a href="#s5">5 · 房子:小区里都是什么房</a>
   <a href="#s6">6 · 字段字典</a>
-  <a href="#s7">7 · 两个分析视图</a>
+  <a href="#s7">7 · 四个分析视图</a>
   <a href="#s8">8 · 延伸:五部百科卷</a>
   <a href="#s9">9 · 口径与局限</a>
   <a href="#s10">10 · 来源</a>
@@ -87,6 +87,8 @@ footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5
     <a href="index.html">专题概述</a>
     <a href="explorer.html">价格浏览器(省→市→区县)</a>
     <a href="age-price.html">年份 × 价格</a>
+    <a href="map.html">地图 · 灰度</a>
+    <a href="map-echarts.html">地图 · 彩色</a>
     <a href="history.html">中国小区史</a>
     <a href="planning.html">城市与区域</a>
     <a href="landscape.html">城乡风貌</a>
@@ -350,16 +352,18 @@ footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5
 </table>
 
 <!-- ============================================================ -->
-<h2 id="s7"><span class="no">7</span>两个分析视图</h2>
+<h2 id="s7"><span class="no">7</span>四个分析视图</h2>
 
-<p>框架立好后,专题一先落两个不依赖行情解读的结构性视图:</p>
+<p>框架立好后,专题一先落四个不依赖行情解读的结构性视图——两个列表式(逐级下钻、年份分段),两个地图式(灰度、彩色):</p>
 
 <table class="t">
 <tr><th style="width:220px"><a href="explorer.html">价格浏览器:省 → 市 → 区县</a></th><td>逐级下钻:省 → 城市 → 区县,每级给出小区数、挂牌中位数、分位区间。层级即第 2 节的行政区划体系;所有城市→省的映射、区县→类型(市辖区/县/县级市)的标记都在这里体现。</td></tr>
 <tr><th><a href="age-price.html">年份 × 价格:城市级曲线</a></th><td>按竣工年份分段(每 5 年)统计各城市挂牌中位数,观察"建成年代 → 报价水平"的结构关系。只统计有竣工年份的小区,缺失不插补;核心区老房的韧性(见 1.1/4.3)会在一线城市的曲线里显形。</td></tr>
+<tr><th><a href="map.html">地图 · 灰度:省级中位数铺在国土上</a></th><td>零依赖的内嵌 SVG 边界,把各省样本小区的挂牌中位数按六档分位灰阶直接填色——深浅即高低,白色即覆盖缺口。点击省份,右侧列出该省各城市中位数。与《价格浏览器》同源同口径,只是把逐级下钻压成一眼可见的空间分布。</td></tr>
+<tr><th><a href="map-echarts.html">地图 · 彩色:连续色带与下钻</a></th><td>同一份中位数换成 ECharts 内置默认渐变(浅黄→深红)线性映射,支持滚轮缩放、拖拽平移与点击下钻——直辖市进到区县、省进到地市,下方排行表随视图切换。与灰度版互为对照:分位分档看层次,线性色带看两端。引擎为本地自托管的 ECharts(assets/echarts.min.js),无外部请求。</td></tr>
 </table>
 
-<p class="dim">两个视图当前均填充模拟数据(结构、字段、缺失形态对齐真实抓取),真实数据接入后无需改版。</p>
+<p class="dim">四个视图当前均填充模拟数据(结构、字段、缺失形态对齐真实抓取),真实数据接入后无需改版。</p>
 
 <!-- ============================================================ -->
 <h2 id="s8"><span class="no">8</span>延伸:五部百科卷</h2>
@@ -425,7 +429,7 @@ footer{border-top:1px solid #ddd;margin-top:50px;padding-top:14px;font-size:12.5
 
 <footer>
   专题一 · 中国城市小区数据体系 — 概念框架与数据字典。<br>
-  数据说明:价格浏览器与年份分析页当前为模拟数据演示,结构对齐真实抓取 schema;真实数据接入后自动适用本页全部口径定义。
+  数据说明:价格浏览器、年份分析页与两个地图页当前为模拟数据演示,结构对齐真实抓取 schema;真实数据接入后自动适用本页全部口径定义。
 </footer>
 </main>
 </div>

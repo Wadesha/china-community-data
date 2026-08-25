@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地图 · 彩色 · 全国省级挂牌中位数 · 中国城市小区数据体系</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.7;color:#111;background:#fff}
+a{color:#111}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 60px}
+header{border-bottom:2px solid #111;padding:22px 0 14px;margin-bottom:18px}
+header .kicker{font-size:12px;color:#666;letter-spacing:2px}
+header h1{font-size:22px;font-weight:700;margin-top:2px}
+header .sub{font-size:13px;color:#555;margin-top:4px}
+.topnav{display:flex;gap:16px;font-size:13px;margin-top:10px;flex-wrap:wrap}
+.topnav a{text-decoration:none;border-bottom:1px solid #999;padding-bottom:1px}
+.topnav a.cur{border-bottom:2px solid #111;font-weight:600}
+.banner{border:1px solid #111;background:#f7f7f7;padding:8px 14px;font-size:12.5px;margin-bottom:18px}
+.viewbar{display:flex;align-items:center;gap:12px;border:1px solid #ddd;background:#fafafa;padding:8px 12px;font-size:13px;flex-wrap:wrap}
+.btn{font:inherit;font-size:13px;background:#111;color:#fff;border:none;padding:5px 14px;cursor:pointer}
+.btn:hover{background:#444}
+.vlabel{font-weight:600}
+.vhint{margin-left:auto;color:#888;font-size:12px}
+.chartwrap{border:1px solid #ddd;border-top:none;background:#fff}
+#chart{height:600px;width:100%}
+.tblwrap{border:1px solid #ddd;border-top:none;padding:10px 12px 14px}
+.tblcap{font-size:12.5px;font-weight:600;color:#444;margin-bottom:8px;letter-spacing:1px}
+table.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl th{background:#f2f2f2;text-align:left;font-weight:600;padding:6px 8px;border:1px solid #e2e2e2;white-space:nowrap}
+.tbl td{padding:6px 8px;border:1px solid #e2e2e2}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl tr.clk{cursor:pointer}
+.tbl tr.clk:hover td{background:#f5f5f5}
+.note{border-left:3px solid #999;background:#fafafa;padding:8px 14px;margin:16px 0;font-size:12.5px;color:#444}
+footer{border-top:1px solid #ddd;margin-top:36px;padding-top:12px;font-size:12.5px;color:#777}
+@media(max-width:700px){#chart{height:420px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">CHINA RESIDENTIAL COMMUNITY DATA · 专题一 · 视图四</div>
+  <h1>地图 · 彩色:全国省级挂牌中位数</h1>
+  <div class="sub">同一份数据的第四种读法:与《地图 · 灰度》同源同口径,换成 ECharts 内置的连续彩色色带,支持滚轮缩放、拖拽平移与点击下钻——省级看分布,省内看梯度。</div>
+  <div class="topnav">
+    <a href="index.html">专题概述</a>
+    <a href="explorer.html">价格浏览器</a>
+    <a href="age-price.html">年份 × 价格</a>
+    <a href="map.html">地图 · 灰度</a>
+    <a href="map-echarts.html" class="cur">地图 · 彩色</a>
+    <a href="history.html">中国小区史</a>
+    <a href="planning.html">城市与区域</a>
+    <a href="landscape.html">城乡风貌</a>
+    <a href="region.html">区域志</a>
+    <a href="hotspot.html">热点片区</a>
+  </div>
+</header>
+<div class="banner">模拟数据演示:数值为模拟生成,不代表任何真实小区;覆盖 10 省 32 城,灰色区域为暂无样本省份。聚合一律用挂牌中位数(元/㎡)。图表引擎 ECharts 本地自托管(assets/echarts.min.js),无任何外部请求;本地预览需 http 服务(python3 -m http.server)。</div>
+
+<div class="viewbar">
+  <button class="btn" id="backBtn" hidden>← 返回全国</button>
+  <span class="vlabel" id="viewLabel">全国 · 省级</span>
+  <span class="vhint" id="vhint">滚轮缩放 · 拖拽平移 · 点击有色省份下钻至省内</span>
+</div>
+<div class="chartwrap"><div id="chart"></div></div>
+<div class="tblwrap">
+  <div class="tblcap" id="tblcap">有数据省份 · 挂牌中位数排行</div>
+  <table class="tbl" id="tbl"></table>
+</div>
+
+<div class="note">读法与口径:一,填色 = 该省全部样本小区挂牌价的中位数(逐小区取中位数,非城市数值的再平均),与《地图 · 灰度》《价格浏览器》同源同口径;二,色带为 ECharts 内置默认渐变(浅黄→深红),按数据最小值—最大值线性映射,与灰度版的六档分位分档不同——线性色标两端对比更醒目,中段间隔更密;三,灰色 = 该省暂无样本,是覆盖缺口而非房价最低,接入真实数据后自动着色;四,交互:滚轮缩放、拖拽平移,点击有数据省份下钻(直辖市至区县、省至地市),下方表格随视图同步切换;五,九段线为界线要素,不参与填色。地图边界来自公开地理数据(阿里 DataV GeoAtlas,简化渲染),仅供示意,不作为划界依据。</div>
+
+<footer>
+  <p>数据视图四:彩色版与灰度版互为对照——灰度版零依赖、分位分档,本版内置缩放下钻、线性连续色带。引擎为自托管 ECharts 5(约 1MB),边界与数据运行时读取 data/geo/ 与 data/communities.json。价格口径与局限见概述页 §3、§9。</p>
+  <p style="margin-top:4px"><a href="index.html">专题概述</a> · <a href="explorer.html">价格浏览器</a> · <a href="age-price.html">年份 × 价格</a> · <a href="map.html">地图 · 灰度</a> · <a href="history.html">中国小区史</a> · <a href="planning.html">城市与区域</a> · <a href="landscape.html">城乡风貌</a> · <a href="region.html">区域志</a> · <a href="hotspot.html">热点片区</a></p>
+</footer>
+</div>
+
+<script src="assets/echarts.min.js"></script>
+<script>
+const SUFFIX = /(省|市|自治区|壮族自治区|回族自治区|维吾尔自治区|特别行政区|地区|盟|自治州)$/;
+const JD_NAME = '九段线(示意)';
+const stripName = n => String(n||'').replace(SUFFIX,'');
+function median(arr){
+  if(!arr.length) return null;
+  const a=[...arr].sort((x,y)=>x-y), m=a.length>>1;
+  return a.length%2 ? a[m] : (a[m-1]+a[m])/2;
+}
+function matchKey(fn, map){
+  if(!fn) return null;
+  if(map[fn] != null) return fn;
+  for(const k in map){
+    if(k.length>=2 && fn.length>=2 && (fn.startsWith(k) || k.startsWith(fn))) return k;
+  }
+  return null;
+}
+const fmt = v => Math.round(v).toLocaleString();
+const tableHead = unit => `<tr><th>排名</th><th>${unit}</th><th>样本小区</th><th>挂牌中位数(元/㎡)</th></tr>`;
+
+(async () => {
+  const [data, chinaGeo] = await Promise.all([
+    fetch('data/communities.json').then(r=>r.json()),
+    fetch('data/geo/china.json').then(r=>r.json())
+  ]);
+
+  // 聚合:省级/城市级/区县级中位数(与灰度版同口径)
+  const provStats = {};
+  for(const p of data.provinces){
+    const st = provStats[p.name] || (provStats[p.name] = {prices:[], cities:{}, districts:{}});
+    for(const c of p.cities){
+      const cs = st.cities[c.name] || (st.cities[c.name] = {prices:[]});
+      for(const d of (c.districts||[])){
+        const ds = st.districts[d.name] || (st.districts[d.name] = {prices:[]});
+        for(const cm of (d.communities||[])){
+          if(typeof cm.price==='number' && cm.price>0){
+            st.prices.push(cm.price); cs.prices.push(cm.price); ds.prices.push(cm.price);
+          }
+        }
+      }
+    }
+  }
+  for(const k in provStats){
+    const st = provStats[k];
+    st.median = median(st.prices); st.count = st.prices.length;
+    for(const grp of [st.cities, st.districts])
+      for(const kk in grp){ grp[kk].median = median(grp[kk].prices); grp[kk].count = grp[kk].prices.length; }
+  }
+
+  // 九段线要素命名,便于 tooltip 与样式区分
+  for(const f of chinaGeo.features){
+    if(f.properties && f.properties.adchar === 'JD') f.properties.name = JD_NAME;
+  }
+
+  // 全国序列
+  const nameToCode = {};
+  const provData = [];
+  const natMeta = {};
+  for(const f of chinaGeo.features){
+    const nm = f.properties && f.properties.name;
+    if(!nm || nm === JD_NAME) continue;
+    nameToCode[nm] = String(f.properties.adcode);
+    const st = provStats[stripName(nm)];
+    if(st && st.median != null){
+      provData.push({name:nm, value:Math.round(st.median)});
+      natMeta[nm] = {median:st.median, count:st.count, st};
+    }
+  }
+  const natVals = provData.map(d=>d.value);
+  const natMin = Math.min.apply(null, natVals), natMax = Math.max.apply(null, natVals);
+
+  const chart = echarts.init(document.getElementById('chart'));
+  echarts.registerMap('china', chinaGeo);
+
+  let curLevel = 'national';
+  let curMeta = natMeta;
+
+  const mkOption = (mapName, seriesData, vmin, vmax) => ({
+    tooltip: {
+      trigger: 'item',
+      formatter: p => {
+        if(!p.name || p.name === JD_NAME) return p.name === JD_NAME ? JD_NAME : '';
+        const m = curMeta[p.name];
+        if(m) return `${p.name}<br/>挂牌中位数 ${fmt(m.median)} 元/㎡<br/>样本小区 ${m.count}`;
+        return `${p.name}<br/>暂无样本`;
+      }
+    },
+    visualMap: {
+      min: vmin, max: vmax,
+      text: ['高', '低'],
+      calculable: true
+    },
+    series: [{
+      type: 'map', map: mapName, roam: true,
+      data: seriesData,
+      itemStyle: {areaColor: '#eee'},
+      regions: [{name: JD_NAME, itemStyle: {areaColor: '#666'}}]
+    }]
+  });
+  const nationalOption = () => mkOption('china', provData, natMin, natMax);
+
+  function renderNatTable(){
+    const rows = provData
+      .map(d => ({name:d.name, m:natMeta[d.name]}))
+      .sort((a,b)=>b.m.median-a.m.median);
+    document.getElementById('tblcap').textContent = '有数据省份 · 挂牌中位数排行(点击行下钻)';
+    document.getElementById('tbl').innerHTML = tableHead('省份') +
+      rows.map((r,i)=>`<tr class="clk" data-n="${r.name}"><td>${i+1}</td><td>${r.name}</td><td>${r.m.count}</td><td class="num">${fmt(r.m.median)}</td></tr>`).join('');
+  }
+
+  chart.setOption(nationalOption());
+  renderNatTable();
+
+  // 下钻:直辖市匹配区县、省匹配地市(以命中数多的口径为准)
+  let loading = false;
+  async function drillTo(geoName){
+    const m = natMeta[geoName];
+    const code = nameToCode[geoName];
+    if(!m || !code || loading) return;
+    loading = true;
+    try{
+      const geo = await fetch('data/geo/'+code+'.json').then(r=>{ if(!r.ok) throw new Error('geo '+code); return r.json(); });
+      echarts.registerMap(code, geo);
+      const st = m.st;
+      const feats = geo.features.filter(f=>f.properties && f.properties.name);
+      let cityHits=0, distHits=0;
+      for(const f of feats){
+        const fn = stripName(f.properties.name);
+        if(matchKey(fn, st.cities)) cityHits++;
+        if(matchKey(fn, st.districts)) distHits++;
+      }
+      const useDist = distHits > cityHits;
+      const src = useDist ? st.districts : st.cities;
+      const rdata = [], rmeta = {};
+      for(const f of feats){
+        const full = f.properties.name;
+        const key = matchKey(stripName(full), src);
+        const s = key != null ? src[key] : null;
+        if(s && s.median != null){
+          rdata.push({name:full, value:Math.round(s.median)});
+          rmeta[full] = {median:s.median, count:s.count};
+        }
+      }
+      if(!rdata.length) return;
+      const vals = rdata.map(d=>d.value);
+      curLevel = 'region'; curMeta = rmeta;
+      chart.setOption(mkOption(code, rdata, Math.min.apply(null,vals), Math.max.apply(null,vals)), true);
+      document.getElementById('backBtn').hidden = false;
+      document.getElementById('viewLabel').textContent = `${geoName} · ${useDist?'区县级':'地市级'}`;
+      document.getElementById('vhint').textContent = '滚轮缩放 · 拖拽平移 · 区县以下暂无边界数据';
+      const unit = useDist ? '区县' : '地市';
+      const rows = rdata.map(d=>({name:d.name, m:rmeta[d.name]})).sort((a,b)=>b.m.median-a.m.median);
+      document.getElementById('tblcap').textContent = `${geoName} · ${unit}挂牌中位数排行`;
+      document.getElementById('tbl').innerHTML = tableHead(unit) +
+        rows.map((r,i)=>`<tr><td>${i+1}</td><td>${r.name}</td><td>${r.m.count}</td><td class="num">${fmt(r.m.median)}</td></tr>`).join('');
+    } catch(e){
+      console.error(e);
+    } finally {
+      loading = false;
+    }
+  }
+
+  chart.on('click', p => {
+    if(curLevel !== 'national' || !p.name || p.name === JD_NAME) return;
+    drillTo(p.name);
+  });
+
+  document.getElementById('tbl').addEventListener('click', e => {
+    if(curLevel !== 'national') return;
+    const tr = e.target.closest('tr.clk');
+    if(tr) drillTo(tr.dataset.n);
+  });
+
+  document.getElementById('backBtn').addEventListener('click', () => {
+    curLevel = 'national'; curMeta = natMeta;
+    chart.setOption(nationalOption(), true);
+    document.getElementById('backBtn').hidden = true;
+    document.getElementById('viewLabel').textContent = '全国 · 省级';
+    document.getElementById('vhint').textContent = '滚轮缩放 · 拖拽平移 · 点击有色省份下钻至省内';
+    renderNatTable();
+  });
+
+  window.addEventListener('resize', () => chart.resize());
+})();
+</script>
+</body>
+</html>
